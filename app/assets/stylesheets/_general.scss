@@ -7,6 +7,20 @@ html {
   margin: 0;
   padding: 0 5vw;
   font-family: sans-serif;
+  background: $bg-color;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $title-color;
+}
+
+a {
+  color: $text-color;
 }
 
 .wrapper {
@@ -16,18 +30,19 @@ html {
 
 nav {
   display: flex;
-  background: #f1f1f1;
+  background: darken($bg-color, 5%);
   max-width: 900px;
   margin: 0 auto;
 
   a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px;
     text-decoration: none;
 
     &:hover,
     &:active {
-      background: #e9e9e9;
+      background: lighten($bg-color, 5%);
+      color: white;
     }
   }
 }

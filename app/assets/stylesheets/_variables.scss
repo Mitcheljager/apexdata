@@ -1,1 +1,4 @@
-$border-color: #ccc;
+$bg-color: #282A36;
+$border-color: lighten($bg-color, 10%);
+$text-color: lighten($bg-color, 50%);
+$title-color: #FFF;
