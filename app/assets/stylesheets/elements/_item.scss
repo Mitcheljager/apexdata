@@ -1,12 +1,41 @@
 .item {
+  margin-bottom: $margin / 2;
+  filter: drop-shadow(0 6px 32px rgba($black, .1)) drop-shadow(0 2px 4px rgba($black, .27));
+}
+
+.item__content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
   padding: $margin;
-  margin-bottom: $margin / 2;
-  border: 2px solid  rgba(255, 255, 255, .1);
-  background: rgba(0, 0, 0, .2);
-  box-shadow: 0 6px 32px rgba(0, 0, 0, .1), 0 2px 4px rgba(0, 0, 0, .27);
+  border: 2px solid  rgba($white, .1);
+  background: $black image_url("item-pattern.jpg");
+  clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 40px;
+    transform: rotate(45deg) translateX(-32px) translateY(-20px);
+    background: $white;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    width: 70px;
+    background: $white;
+    clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
+  }
 }
 
 .item__description {
