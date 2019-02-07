@@ -1,15 +1,3 @@
 <h1>Assault Rifles</h1>
 
-<% assault_rifles.each do |weapon| %>
-  <div class="item">
-    <div class="item__description">
-      <h3 class="item__title">
-        <%= weapon["name"] %>
-      </h3>
-
-      Stats
-    </div>
-
-    <%= image_tag "https://placehold.it/600x200/333545/a3a6ba", class: "item__image" %>
-  </div>
-<% end %>
+<%= render partial: "item", collection: assault_rifles, as: :item %>
