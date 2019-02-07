@@ -22,7 +22,7 @@ h3 {
 .heading {
   display: flex;
   align-items: flex-end;
-  margin: 80px 0 40px;
+  margin: $margin * 2 0 $margin;
 
   &--small {
     margin: 0;
@@ -30,13 +30,13 @@ h3 {
 }
 
 .heading__title {
-  padding-right: 40px;
+  padding-right: $margin;
   margin: 0;
   line-height: .75em;
   white-space: nowrap;
 
   .heading--small & {
-    padding-right: 20px;
+    padding-right: $margin / 2;
   }
 
   a {
