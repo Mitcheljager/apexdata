@@ -23,6 +23,10 @@ h3 {
   display: flex;
   align-items: flex-end;
   margin: 80px 0 40px;
+
+  &--small {
+    margin: 0;
+  }
 }
 
 .heading__title {
@@ -30,6 +34,10 @@ h3 {
   margin: 0;
   line-height: .75em;
   white-space: nowrap;
+
+  .heading--small & {
+    padding-right: 20px;
+  }
 
   a {
     color: $title-color;
@@ -42,4 +50,8 @@ h3 {
   width: 100%;
   background: $white;
   opacity: .2;
+
+  .heading--small & {
+    height: 2px;
+  }
 }
