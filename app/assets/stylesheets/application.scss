@@ -1,5 +1,6 @@
 @import "variables";
 
-@import "general";
+@import "general/general",
+        "general/titles";
 
 @import "elements/item"

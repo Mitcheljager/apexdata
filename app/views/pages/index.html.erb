@@ -1,4 +1,7 @@
-<h1><%= link_to "Assault Rifles", page_path("assault-rifles") %></h1>
+<div class="heading">
+  <h1 class="heading__title"><%= link_to "Assault Rifles", page_path("assault-rifles") %></h1>
+  <div class="heading__line"></div>
+</div>
 
 <%= render partial: "item", collection: assault_rifles, as: :item %>
 

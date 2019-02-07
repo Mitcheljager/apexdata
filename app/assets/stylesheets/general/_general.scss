@@ -6,17 +6,11 @@ body,
 html {
   margin: 0;
   padding: 0 5vw;
-  font-family: sans-serif;
   background: $bg-color;
+  font-family: "Raleway", sans-serif;
   color: $text-color;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: $title-color;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 a {
@@ -36,7 +30,7 @@ nav {
 
   a {
     display: block;
-    padding: 10px;
+    padding: 5px;
     text-decoration: none;
 
     &:hover,

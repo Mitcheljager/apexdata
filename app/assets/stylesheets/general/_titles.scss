@@ -1,0 +1,45 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $title-color;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  margin: 80px 0 40px;
+}
+
+.heading__title {
+  padding-right: 40px;
+  margin: 0;
+  line-height: .75em;
+  white-space: nowrap;
+
+  a {
+    color: $title-color;
+    text-decoration: none;
+  }
+}
+
+.heading__line {
+  height: 4px;
+  width: 100%;
+  background: $white;
+  opacity: .2;
+}
