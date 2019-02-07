@@ -1,0 +1,23 @@
+<div class="item">
+  <div class="item__description">
+    <h3 class="item__title">
+      <%= item["name"] if item["name"] %>
+    </h3>
+
+    <strong>Stats</strong> <br>
+
+    Damage: <%= item["damage"] if item["damage"] %>
+
+    <br>
+
+    <strong>Attachments</strong>
+
+    <%= tag.div class:"item__attachments-table" do %>
+      <% item["available_attachments"].map do |key, value| %>
+        <%= key %> <%= value %> <br>
+      <% end %>
+    <% end if item["available_attachments"] %>
+  </div>
+
+  <%= image_tag "https://placehold.it/600x200/333545/a3a6ba", class: "item__image" %>
+</div>
