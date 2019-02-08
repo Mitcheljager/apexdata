@@ -1,0 +1,52 @@
+.switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch__item {
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:first-of-type {
+    color: $white;
+
+    .switch--active-right & {
+      color: $text-color;
+    }
+  }
+
+  &:last-of-type {
+    color: $text-color;
+
+    .switch--active-right & {
+      color: $white;
+    }
+  }
+}
+
+.switch__toggle {
+  position: relative;
+  width: 2.5em;
+  height: calc(1em + 4px);
+  margin: 0 .5em;
+  background: $white;
+  border-radius: 99px;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    top: 2px;
+    left: 2px;
+    background: $bg-color;
+    border-radius: 1em;
+
+    .switch--active-right & {
+      left: auto;
+      right: 2px;
+    }
+  }
+}

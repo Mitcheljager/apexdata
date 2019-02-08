@@ -1,4 +1,4 @@
-<div class="item">
+<div class="item <%= "item--compact" if cookies[:viewtype] == "compact" %>">
   <div class="item__content">
     <div class="item__description">
       <div class="item__title heading heading--small">
@@ -8,19 +8,23 @@
         <div class="heading__line"></div>
       </div>
 
-      <strong>Stats</strong> <br>
+      <div class="item__main">
+        Damage: <%= item["damage"] if item["damage"] %>
+      </div>
 
-      Damage: <%= item["damage"] if item["damage"] %>
+      <div class="item__extra">
+        <strong>Attachments</strong>
 
-      <br>
+        <%= tag.div class:"item__attachments-table" do %>
+          <% item["available_attachments"].map do |key, value| %>
+            <%= key %> <%= value %> <br>
+          <% end %>
+        <% end if item["available_attachments"] %>
+      </div>
 
-      <strong>Attachments</strong>
-
-      <%= tag.div class:"item__attachments-table" do %>
-        <% item["available_attachments"].map do |key, value| %>
-          <%= key %> <%= value %> <br>
-        <% end %>
-      <% end if item["available_attachments"] %>
+      <div class="item__actions">
+        <%= link_to "Expand", "#", class: "button", data: { action: "expand-item" } %>
+      </div>
     </div>
 
     <%= image_tag "https://placehold.it/600x200/333545/a3a6ba", class: "item__image" %>

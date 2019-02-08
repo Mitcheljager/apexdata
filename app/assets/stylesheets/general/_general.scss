@@ -18,14 +18,14 @@ a {
 }
 
 .wrapper {
-  max-width: 900px;
+  max-width: $max-width;
   margin: 0 auto;
 }
 
 nav {
   display: flex;
   background: darken($bg-color, 5%);
-  max-width: 900px;
+  max-width: $max-width;
   margin: 0 auto;
 
   a {

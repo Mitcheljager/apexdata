@@ -1,6 +1,6 @@
 .item {
   margin-bottom: $margin / 2;
-  filter: drop-shadow(0 6px 32px rgba($black, .1)) drop-shadow(0 2px 4px rgba($black, .27));
+  filter: drop-shadow(0 6px 32px rgba($black, .05)) drop-shadow(0 2px 4px rgba($black, .2));
 }
 
 .item__content {
@@ -13,6 +13,11 @@
   background: $black image_url("item-pattern.jpg");
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
 
+  .item--compact & {
+    padding: $margin / 2;
+    clip-path: polygon(calc(0% + #{$margin / 2}) 0%, 100% 0, 100% calc(100% - #{$margin / 2}), calc(100% - #{$margin / 2}) 100%, 0 100%, 0% calc(0% + #{$margin / 2}));
+  }
+
   &::before {
     content: "";
     display: block;
@@ -21,8 +26,12 @@
     left: 0;
     height: 80px;
     width: 40px;
+    background-color: $white;
     transform: rotate(45deg) translateX(-32px) translateY(-15px);
-    background: $white;
+
+    .item--compact & {
+      transform: rotate(45deg) translateX(-48px) translateY(-15px);
+    }
   }
 
   &::after {
@@ -35,14 +44,57 @@
     width: 70px;
     background: $white;
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
+
+    .item--compact & {
+      height: 35px;
+      width: 35px;
+      clip-path: polygon(calc(100% - 3px) 17px, calc(100% - 3px) calc(0% + 3px), 100% 0, 100% 100%, 0 100%, calc(0% + 3px) calc(100% - 3px), 17px calc(100% - 3px));
+    }
   }
 }
 
 .item__description {
   width: 100%;
+  max-width: $max-width - $item-image-width - ($margin * 2);
   padding-right: $margin / 2;
+
+  .item--compact & {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding-right: 0;
+  }
 }
 
 .item__title {
   margin-bottom: $margin / 2;
+
+  .item--compact & {
+    display: block;
+    margin: 0;
+
+    .heading__line {
+      display: none;
+    }
+  }
+}
+
+.item__image {
+  .item--compact & {
+    display: none;
+  }
+}
+
+.item__main {
+
+}
+
+.item__extra {
+  .item--compact & {
+    display: none;
+  }
+}
+
+.item__actions {
+  margin-left: auto;
 }

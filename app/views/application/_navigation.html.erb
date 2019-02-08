@@ -7,3 +7,11 @@
   <%= link_to "Shotguns", page_path("shotguns") %>
   <%= link_to "Sniper Rifles", page_path("sniper-rifles") %>
 </nav>
+
+<div class="wrapper">
+  <div class="switch <%= "switch--active-right" if cookies[:viewtype] == "compact" %>">
+    <%= link_to "Expanded view", expanded_path, class: "switch__item" %>
+    <div class="switch__toggle"></div>
+    <%= link_to "Compact view", compact_path, class: "switch__item" %>
+  </div>
+</div>
