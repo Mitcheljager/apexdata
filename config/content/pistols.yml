@@ -1,2 +1,57 @@
 -
-  name: pistol
+  name: RE-45
+  damage: 11
+  headshot_damage: 16.5
+  legshot_damage: 9.9
+  rate_of_fire: 13
+  ammo_capacity: 15
+  tactical_reload: 1.74
+  empty_reload: 2.12
+  ammo_type: light
+  projectile_speed: 19500
+  draw_time: 0.35
+  holster_time: 0.3
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true
+-
+  name: P2020
+  damage: 12
+  headshot_damage: 18
+  legshot_damage: 10.8
+  rate_of_fire: 8.5
+  ammo_capacity: 10
+  tactical_reload: 1.25
+  empty_reload: 1.25
+  ammo_type: light
+  projectile_speed: 18500
+  draw_time: 0.25
+  holster_time: 0.2
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true
+-
+  name: Wingman
+  damage: 45
+  headshot_damage: 90
+  legshot_damage: 40.5
+  rate_of_fire: 3.1
+  ammo_capacity: 6
+  tactical_reload: 2.1
+  empty_reload: 2.1
+  ammo_type: heavy
+  projectile_speed: 18000
+  draw_time: 0.45
+  holster_time: 0.4
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true

@@ -1,2 +1,57 @@
 -
-  name: Sub Machine Gun
+  name: R-99
+  damage: 12
+  headshot_damage: 18
+  legshot_dmg: 9.6
+  rate_of_fire: 18
+  ammo_capacity: 18
+  tactical_reload: 1.8
+  empty_reload: 2.45
+  ammo_type: light
+  projectile_speed: 21000
+  draw_time: 0.35
+  holster_time: 0.3
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true
+-
+  name: Alternator
+  damage: 13
+  headshot: 19
+  legshot_dmg: 10.4
+  rate_of_fire: 10
+  ammo_capacity: 16
+  tactical_reload: 1.9
+  empty_reload: 2.23
+  ammo_type: light
+  projectile_speed: 19500
+  draw_time: 0.35
+  holster_time: 0.3
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true
+-
+  name: Prowler
+  damage: 14
+  headshot_damage: 21
+  legshot_dmg: 11.2
+  rate_of_fire: 21
+  ammo_capacity: 20
+  tactical_reload: 2.0
+  empty_reload: 2.6
+  ammo_type: heavy
+  projectile_speed: 18000
+  draw_time: 0.35
+  holster_time: 0.3
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true

@@ -1,7 +1,35 @@
 -
   name: Flatline
-  damage: 5
-  clip_size: 18
+  damage: 16
+  headshot_damage: 32
+  legshot_damage: 12
+  rate_of_fire: 10
+  ammo_capacity: 20
+  tactical_reload: 2.4
+  empty_reload: 3.1
+  ammo_type: heavy
+  projectile_speed: 26000
+  draw_time: 0.6
+  holster_time: 0.55
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true
+-
+  name: Spitfire
+  damage: 20
+  headshot_damage: 40
+  legshot_damage: 15
+  rate_of_fire: 9
+  ammo_capacity: 35
+  tactical_reload: 2.8
+  empty_reload: 3.33
+  ammo_type: heavy
+  projectile_speed: 27500
+  draw_time: 0.7
+  holster_time: 0.65
   available_attachments:
     optic: true
     stock: true
@@ -10,9 +38,39 @@
     barrel: true
 -
   name: Hemlok
-  damage: 4
-  clip_size: 16
+  damage: 18
+  headshot_damage: 36
+  legshot_damage: 13.5
+  rate_of_fire: 15.5
+  ammo_capacity: 18
+  tactical_reload: 2.4
+  empty_reload: 2.85
+  ammo_type: heavy
+  projectile_speed: 27500
+  draw_time: 0.6
+  holster_time: 0.55
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true
 -
   name: R-301
-  damage: 3
-  clip_size: 19
+  damage: 14
+  headshot_damage: 28
+  legshot_damage: 10.5
+  rate_of_fire: 13.5
+  ammo_capacity: 18
+  tactical_reload: 2.4
+  empty_reload: 3.2
+  ammo_type: light
+  projectile_speed: 29000
+  draw_time: 0.6
+  holster_time: 0.55
+  available_attachments:
+    optic: true
+    stock: true
+    hop_up: false
+    magazine: true
+    barrel: true
