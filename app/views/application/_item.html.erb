@@ -10,6 +10,8 @@
 
       <div class="item__main">
         Damage: <%= item["damage"] if item["damage"] %>
+
+        <%= image_tag "ammo_types/#{ item["ammo_type"] }", class: "item__icon" %>
       </div>
 
       <div class="item__extra">
