@@ -18,25 +18,6 @@
     magazine: true
     barrel: true
 -
-  name: Spitfire
-  damage: 20
-  headshot_damage: 40
-  legshot_damage: 15
-  rate_of_fire: 9
-  ammo_capacity: 35
-  tactical_reload: 2.8
-  empty_reload: 3.33
-  ammo_type: heavy
-  projectile_speed: 27500
-  draw_time: 0.7
-  holster_time: 0.65
-  available_attachments:
-    optic: true
-    stock: true
-    hop_up: false
-    magazine: true
-    barrel: true
--
   name: Hemlok
   damage: 18
   headshot_damage: 36
