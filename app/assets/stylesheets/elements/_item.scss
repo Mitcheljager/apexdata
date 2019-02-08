@@ -80,6 +80,9 @@
 }
 
 .item__image {
+  border: 2px solid  rgba($white, .5);
+  box-shadow: 0 2px 10px rgba($black, .1);
+
   .item--compact & {
     display: none;
   }

@@ -26,7 +26,7 @@ nav {
   display: flex;
   background: darken($bg-color, 5%);
   max-width: $max-width;
-  margin: 0 auto;
+  margin: 0 auto $margin;
 
   a {
     display: block;
@@ -39,4 +39,11 @@ nav {
       color: white;
     }
   }
+}
+
+.logo {
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  margin: $margin * 2 0;
 }
