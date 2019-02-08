@@ -3,4 +3,8 @@
   <div class="heading__line"></div>
 </div>
 
-<%= render partial: "item", collection: @items, as: :item || "Nothing found" %>
+<% if @items.any? %>
+  <%= render partial: "item", collection: @items, as: :item || "Nothing found" %>
+<% else %>
+  Nothing found, sorry.
+<% end %>

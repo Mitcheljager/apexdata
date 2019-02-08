@@ -3,7 +3,7 @@
   damage: 16
   headshot_damage: 32
   legshot_damage: 12
-  rate_of_fire: 10
+  rate_of_fire: 600
   ammo_capacity: 20
   tactical_reload: 2.4
   empty_reload: 3.1
@@ -22,7 +22,7 @@
   damage: 18
   headshot_damage: 36
   legshot_damage: 13.5
-  rate_of_fire: 15.5
+  rate_of_fire: 490
   ammo_capacity: 18
   tactical_reload: 2.4
   empty_reload: 2.85
@@ -41,7 +41,7 @@
   damage: 14
   headshot_damage: 28
   legshot_damage: 10.5
-  rate_of_fire: 13.5
+  rate_of_fire: 720
   ammo_capacity: 18
   tactical_reload: 2.4
   empty_reload: 3.2

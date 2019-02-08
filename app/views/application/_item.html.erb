@@ -9,7 +9,9 @@
       </div>
 
       <div class="item__main">
-        Damage: <%= item["damage"] if item["damage"] %>
+        Damage: <%= item["damage"] if item["damage"] %> <br>
+        RPM: <%= item["rate_of_fire"] if item["rate_of_fire"] %><br>
+        DPS: <%= "%2g" % ("%.1f" % (item["damage"] * (item["rate_of_fire"] / 60))) if item["rate_of_fire"] && item["damage"] %> <br>
 
         <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }"), where_path("ammo_type", item["ammo_type"]) if item["ammo_type"] %>
       </div>
