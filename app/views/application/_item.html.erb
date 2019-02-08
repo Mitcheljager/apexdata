@@ -3,7 +3,7 @@
     <div class="item__description">
       <div class="item__title heading heading--small">
         <h3 class="heading__title">
-          <%= item["name"] if item["name"] %>
+          <%= link_to item["name"], where_path("name", item["name"]) if item["name"] %>
         </h3>
         <div class="heading__line"></div>
       </div>
@@ -11,7 +11,7 @@
       <div class="item__main">
         Damage: <%= item["damage"] if item["damage"] %>
 
-        <%= image_tag "ammo_types/#{ item["ammo_type"] }", class: "item__icon" %>
+        <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }"), where_path("ammo_type", item["ammo_type"]) if item["ammo_type"] %>
       </div>
 
       <div class="item__extra">

@@ -1,0 +1,6 @@
+<div class="heading">
+  <h1 class="heading__title"><%= params[:value].humanize %></h1>
+  <div class="heading__line"></div>
+</div>
+
+<%= render partial: "item", collection: @items, as: :item || "Nothing found" %>
