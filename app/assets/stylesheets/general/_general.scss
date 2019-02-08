@@ -5,7 +5,7 @@
 body,
 html {
   margin: 0;
-  padding: 0 5vw $margin * 2;
+  padding: 0 $body-padding $margin * 2;
   background: $bg-color image_url("bg-pattern.jpg");
   font-family: "Raleway", sans-serif;
   color: $text-color;
@@ -46,4 +46,12 @@ nav {
   font-weight: 300;
   text-align: center;
   margin: $margin * 4 0;
+}
+
+.columns {
+  display: flex;
+
+  .columns__column {
+    width: 50%;
+  }
 }

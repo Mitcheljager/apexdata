@@ -9,11 +9,31 @@
       </div>
 
       <div class="item__main">
-        Damage: <%= item["damage"] if item["damage"] %> <br>
-        RPM: <%= item["rate_of_fire"] if item["rate_of_fire"] %><br>
-        DPS: <%= "%2g" % ("%.1f" % (item["damage"] * (item["rate_of_fire"] / 60))) if item["rate_of_fire"] && item["damage"] %> <br>
+        <div class="columns">
+          <%= tag.div class: "columns__column item__large-info" do %>
+            <span>Damage</span>
+            <%= item["damage"] %>
+          <% end if item["damage"] %>
 
-        <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }"), where_path("ammo_type", item["ammo_type"]) if item["ammo_type"] %>
+          <%= tag.div class: "columns__column item__large-info" do %>
+            <span>RPM</span>
+            <%= item["rate_of_fire"] %>
+          <% end if item["rate_of_fire"] %>
+        </div>
+
+        <%= tag.div class: "item__small-info" do %>
+          Damage per second: <span><%= "%2g" % ("%.1f" % (item["damage"] * (item["rate_of_fire"] / 60))) %></span>
+        <% end if item["rate_of_fire"] && item["damage"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Headshot damage: <span><%= item["headshot_damage"] %></span>
+        <% end if item["headshot_damage"] %>
+
+        <div class="item__tray">
+          <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }"), where_path("ammo_type", item["ammo_type"]), class: "item__icon" if item["ammo_type"] %>
+
+          <%= link_to "More stats", "#", class: "button" %>
+        </div>
       </div>
 
       <div class="item__extra">
@@ -31,10 +51,12 @@
       </div>
     </div>
 
-    <% if asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") %>
-      <%= image_tag "weapons/#{ item["name"].downcase.gsub(" ", "_") }", class: "item__image" %>
-    <% else %>
-      <%= image_tag "weapons/placeholder", class: "item__image" %>
-    <% end %>
+    <div class="item__image-wrapper">
+      <% if asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") %>
+        <%= image_tag "weapons/#{ item["name"].downcase.gsub(" ", "_") }", class: "item__image" %>
+      <% else %>
+        <%= image_tag "weapons/placeholder", class: "item__image" %>
+      <% end %>
+    </div>
   </div>
 </article>

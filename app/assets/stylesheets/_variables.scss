@@ -1,14 +1,17 @@
-$bg-color: #282A36;
-$border-color: lighten($bg-color, 10%);
-$text-color: lighten($bg-color, 50%);
-$title-color: #FFF;
-
 $white: #FFF;
 $black: #000;
+
+$bg-color: #282A36;
+$border-color: lighten($bg-color, 10%);
+$text-color: rgba($white, .4);
+$title-color: #FFF;
+
+$border-width: 2px;
 
 $margin: 40px;
 
 $max-width: 900px;
+$body-padding: 5vw;
 
 $item-image-width: 600px;
 $item-transition-duration: 100ms;
