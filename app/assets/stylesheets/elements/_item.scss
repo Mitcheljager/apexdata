@@ -92,15 +92,15 @@
   max-width: $item-image-width + ($border-width * 2);
   border: 2px solid  rgba($white, .5);
   overflow: hidden;
+
+  .item--compact & {
+    display: none;
+  }
 }
 
 .item__image {
   display: block;
   box-shadow: 0 2px 10px rgba($black, .1);
-
-  .item--compact & {
-    display: none;
-  }
 }
 
 .item__main {
