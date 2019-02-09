@@ -43,6 +43,12 @@ h3 {
     color: $title-color;
     text-decoration: none;
   }
+
+  small {
+    font-weight: 300;
+    font-size: 1em;
+    color: $text-color;
+  }
 }
 
 .heading__line {
