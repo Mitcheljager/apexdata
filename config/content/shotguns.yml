@@ -1,6 +1,7 @@
 -
   name: Mozambique
   damage: 15
+  damage_modifier: 3
   headshot_dmg: 22.5
   legshot_dmg: 12
   rate_of_fire: 180
