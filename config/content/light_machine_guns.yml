@@ -33,6 +33,6 @@
   available_attachments:
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
+    hop_up: true
+    magazine: false
     barrel: true

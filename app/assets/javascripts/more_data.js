@@ -10,4 +10,11 @@ function expandItem() {
 
   const parentElement = this.closest(".item")
   parentElement.classList.toggle("item--more-data")
+
+  this.classList.toggle("button--primary")
+  if (this.innerHTML == "More data") {
+    this.innerHTML = "Less data"
+  } else {
+    this.innerHTML = "More data"
+  }
 }

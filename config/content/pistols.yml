@@ -13,7 +13,7 @@
   holster_time: 0.3
   available_attachments:
     optic: true
-    stock: true
+    stock: false
     hop_up: false
     magazine: true
     barrel: true
@@ -32,10 +32,10 @@
   holster_time: 0.2
   available_attachments:
     optic: true
-    stock: true
+    stock: false
     hop_up: false
     magazine: true
-    barrel: true
+    barrel: false
 -
   name: Wingman
   damage: 45
@@ -51,7 +51,7 @@
   holster_time: 0.4
   available_attachments:
     optic: true
-    stock: true
-    hop_up: false
+    stock: false
+    hop_up: true
     magazine: true
-    barrel: true
+    barrel: false

@@ -94,7 +94,9 @@
   }
 
   .item--more-data & {
-    min-width: $max-width - ($item-image-width / 2) - ($margin * 2) - ($border-width * 4);
+    min-width: 0;
+    max-width: 100%;
+    padding-right: 0;
   }
 }
 
@@ -123,6 +125,10 @@
   .item--compact & {
     display: none;
   }
+
+  .item--more-data & {
+    display: none;
+  }
 }
 
 .item__image {
@@ -133,6 +139,7 @@
 .item__main {
   margin-top: auto;
   width: 100%;
+  max-width: $max-width - $item-image-width - ($margin * 2.5);
 
   .item--compact & {
     display: flex;
@@ -147,13 +154,19 @@
 
 .item__extra {
   display: none;
+  padding-left: $margin / 2;
+  width: 100%;
 
   .item--compact & {
     display: none;
   }
 
   .item--more-data & {
-    display: block;
+    display: flex;
+  }
+
+  .columns__column:last-of-type {
+    padding-left: $margin / 2;
   }
 }
 
@@ -187,17 +200,21 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: space-between;
   width: 100%;
   font-size: 12px;
   font-weight: 300;
   color: $text-color;
 
   span {
+    margin-left: auto;
     display: block;
     font-size: 16px;
     font-weight: 700;
     color: $white
+  }
+
+  small {
+    margin-left: .25em;
   }
 }
 
@@ -226,4 +243,23 @@
   position: absolute;
   top: -1px;
   right: -1px;
+}
+
+.item__attachments-table {
+  display: flex;
+  margin-top: $margin / 4;
+}
+
+.item__attachments-item {
+  display: block;
+  border: 1px solid rgba($white, .5);
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba($white, .5);
+  margin-right: 2px;
+
+  &--disabled {
+    border: 1px solid rgba($white, .2);
+    background: rgba($white, .2);
+  }
 }

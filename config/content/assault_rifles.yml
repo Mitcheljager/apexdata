@@ -16,7 +16,7 @@
     stock: true
     hop_up: false
     magazine: true
-    barrel: true
+    barrel: false
 -
   name: Hemlok
   damage: 18

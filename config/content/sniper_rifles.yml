@@ -33,7 +33,7 @@
   available_attachments:
     optic: true
     stock: true
-    hop_up: false
+    hop_up: true
     magazine: true
     barrel: true
 -
@@ -52,9 +52,9 @@
   available_attachments:
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: true
+    hop_up: true
+    magazine: false
+    barrel: false
 -
   name: Kraber
   damage: 125
@@ -69,8 +69,8 @@
   draw_time: 1.2
   holster_time: 0.7
   available_attachments:
-    optic: true
-    stock: true
+    optic: false
+    stock: false
     hop_up: false
-    magazine: true
-    barrel: true
+    magazine: false
+    barrel: false
