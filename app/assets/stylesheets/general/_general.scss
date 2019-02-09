@@ -18,7 +18,6 @@ a {
 .wrapper {
   max-width: calc(#{$max-width} + #{$wrapper-padding * 2});
   padding: 0 $wrapper-padding;
-  max-width: $max-width;
   margin: 0 auto;
 }
 
