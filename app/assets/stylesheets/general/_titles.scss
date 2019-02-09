@@ -8,7 +8,7 @@ h5 {
 }
 
 h1 {
-  font-size: 48px;
+  @include responsive-font-width(48px, $max-width);
 }
 
 h2 {

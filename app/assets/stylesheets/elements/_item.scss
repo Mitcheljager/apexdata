@@ -89,7 +89,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(100vw - #{$body-padding * 2} - #{ $border-width * 2 });
+  width: calc(100vw - #{$wrapper-padding * 2} - #{ $border-width * 2 });
   max-width: $item-image-width + ($border-width * 2);
   border: 2px solid  rgba($white, .5);
   overflow: hidden;

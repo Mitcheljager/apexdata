@@ -1,0 +1,7 @@
+@mixin responsive-font-width($max-value, $max-width) {
+  font-size: ($max-value / ($max-value * 0 + 1)) / (($max-width / ($max-width * 0 + 1)) / 100) + vw;
+
+  @media (min-width: $max-width) {
+    font-size: $max-value;
+  }
+}
