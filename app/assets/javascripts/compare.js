@@ -8,8 +8,7 @@ document.addEventListener("turbolinks:load", function() {
 function compareAgainstItem() {
   event.preventDefault()
 
-  const currentCompareMain = document.querySelector(".item--compare-main")
-  if (currentCompareMain) currentCompareMain.classList.remove("item--compare-main")
+  removeCompareAgainst()
 
   const compareItem = this.closest("[data-compare-item]")
   const compareTargets = compareItem.querySelectorAll("[data-compare-target]")
@@ -23,16 +22,27 @@ function compareAgainstItem() {
     const allTargets = document.querySelectorAll(`[data-compare-target="${ main }"]`)
 
     allTargets.forEach((target) => {
-      target.classList.remove("compare-higher", "compare-lower")
-
       if (target.closest("[data-compare-item]") == element.closest("[data-compare-item]")) return
 
       const targetValue = parseInt(target.innerHTML)
 
+      const calculationElement = document.createElement("div")
+      calculationElement.classList.add("compare__difference")
+
       if (targetValue > mainValue) {
         target.classList.add("compare-higher")
+
+        const difference = targetValue - mainValue
+        calculationElement.innerHTML = `(+ ${ difference })`
+
+        target.appendChild(calculationElement)
       } else if (targetValue < mainValue) {
         target.classList.add("compare-lower")
+
+        const difference = mainValue - targetValue
+        calculationElement.innerHTML = `(- ${ difference })`
+
+        target.appendChild(calculationElement)
       }
     })
   })
@@ -41,30 +51,28 @@ function compareAgainstItem() {
 }
 
 function showCompareAgainstItemElement(compareItem) {
-  if (document.querySelector(".compare-float")) {
-    document.querySelector(".compare-float span").innerHTML = `Comparing against <strong>${ compareItem.dataset.compareItem }</strong>`
-  } else {
-    const compareAgainstElement = document.createElement("div")
-    compareAgainstElement.classList.add("compare-float")
-    compareAgainstElement.innerHTML = `<span>Comparing against <strong>${ compareItem.dataset.compareItem }</strong><span>`
+  const compareAgainstElement = document.createElement("div")
+  compareAgainstElement.classList.add("compare-float")
+  compareAgainstElement.innerHTML = `<span>Comparing against <strong>${ compareItem.dataset.compareItem }</strong><span>`
 
-    const compareAgainstElementClose = document.createElement("div")
-    compareAgainstElementClose.classList.add("compare-float__close")
-    compareAgainstElementClose.innerHTML = "x"
-    compareAgainstElementClose.addEventListener("click", removeCompareAgainst)
+  const compareAgainstElementClose = document.createElement("div")
+  compareAgainstElementClose.classList.add("compare-float__close")
+  compareAgainstElementClose.innerHTML = "x"
+  compareAgainstElementClose.addEventListener("click", removeCompareAgainst)
 
-    compareAgainstElement.appendChild(compareAgainstElementClose)
+  compareAgainstElement.appendChild(compareAgainstElementClose)
 
-    document.body.appendChild(compareAgainstElement)
-  }
+  document.body.appendChild(compareAgainstElement)
 }
 
 function removeCompareAgainst() {
   const allTargets = document.querySelectorAll(`[data-compare-target]`)
   const compareAgainstElement = document.querySelector(".compare-float")
   const currentCompareMain = document.querySelector(".item--compare-main")
+  const differenceElements = document.querySelectorAll(".compare__difference")
 
   if (currentCompareMain) currentCompareMain.classList.remove("item--compare-main")
-  allTargets.forEach((target) => target.classList.remove("compare-higher", "compare-lower"))
-  compareAgainstElement.remove()
+  if (allTargets) allTargets.forEach((target) => target.classList.remove("compare-higher", "compare-lower"))
+  if (compareAgainstElement) compareAgainstElement.remove()
+  if (differenceElements) differenceElements.forEach((element) => element.remove())
 }

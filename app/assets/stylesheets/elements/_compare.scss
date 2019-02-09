@@ -36,3 +36,18 @@
 .compare-lower {
   color: red;
 }
+
+[data-compare-target] {
+  position: relative;
+}
+
+.compare__difference {
+  position: absolute;
+  top: .75em;
+  right: -.1em;
+  transform: translateX(100%);
+  font-size: 14px;
+  color: $text-color;
+  font-weight: 300;
+  width: 100px;
+}
