@@ -37,11 +37,11 @@ function compareAgainstItem() {
 
 function showCompareAgainstItemElement(compareItem) {
   if (document.querySelector(".compare-float")) {
-    document.querySelector(".compare-float").innerHTML = `Comparing against <strong>${ compareItem.dataset.compareItem }</strong>`
+    document.querySelector(".compare-float span").innerHTML = `Comparing against <strong>${ compareItem.dataset.compareItem }</strong>`
   } else {
     const compareAgainstElement = document.createElement("div")
     compareAgainstElement.classList.add("compare-float")
-    compareAgainstElement.innerHTML = `Comparing against <strong>${ compareItem.dataset.compareItem }</strong>`
+    compareAgainstElement.innerHTML = `<span>Comparing against <strong>${ compareItem.dataset.compareItem }</strong><span>`
 
     const compareAgainstElementClose = document.createElement("div")
     compareAgainstElementClose.classList.add("compare-float__close")
