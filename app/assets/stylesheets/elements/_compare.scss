@@ -1,0 +1,38 @@
+.compare-float {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  padding: .5em .75em .25em;
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  background: $bg-color;
+  font-size: 14px;
+  box-shadow: 0 -2px 10px rgba($black, .1);
+
+  strong {
+    margin: 0 1em 0 .5em;
+    color: $white;
+  }
+}
+
+.compare-float__close {
+  font-size: 12px;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: $white;
+  }
+}
+
+.compare-higher {
+  color: green;
+}
+
+.compare-lower {
+  color: red;
+}

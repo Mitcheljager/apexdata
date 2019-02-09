@@ -19,10 +19,10 @@
     barrel: true
 -
   name: P2020
-  damage: 430
+  damage: 12
   headshot_damage: 18
   legshot_damage: 10.8
-  rate_of_fire: 8.5
+  rate_of_fire: 430
   ammo_capacity: 10
   tactical_reload: 1.25
   empty_reload: 1.25
@@ -38,10 +38,10 @@
     barrel: true
 -
   name: Wingman
-  damage: 205
+  damage: 45
   headshot_damage: 90
   legshot_damage: 40.5
-  rate_of_fire: 3.1
+  rate_of_fire: 205
   ammo_capacity: 6
   tactical_reload: 2.1
   empty_reload: 2.1

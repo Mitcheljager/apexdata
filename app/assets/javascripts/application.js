@@ -14,3 +14,4 @@
 //= require turbolinks
 
 //= require expand_item
+//= require compare
