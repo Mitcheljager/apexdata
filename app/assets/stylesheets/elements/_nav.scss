@@ -4,6 +4,7 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  padding-left: 18px;
 
   a {
     display: block;
@@ -11,17 +12,23 @@ nav {
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 0.5px;
-    width: 211px;
+    width: 166px;
     background: rgba($darkblue, 0.7);
     text-align: center;
     clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
-    margin-left: -30px;
+    margin-left: -24px;
     margin-bottom: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 10px;
     transition: all 250ms ease;
+
+    @media screen and (min-width: 420px) {
+      width: 211px;
+      margin-left: -30px;
+      font-size: 12px;
+    }
 
     &:hover,
     &:active,
