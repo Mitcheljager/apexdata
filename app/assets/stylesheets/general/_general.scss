@@ -21,11 +21,16 @@ a {
 }
 
 .logo {
-  font-size: 60px;
+  font-size: 30px;
   font-weight: 300;
   text-align: center;
-  padding: $margin * 3 0 $margin * 1.5;
+  padding: $margin * 1.5 0 $margin * 0.8;
   margin: 0;
+
+  @media screen and (min-width: 992px) {
+    font-size: 60px;
+    padding: $margin * 3 0 $margin * 1.5;
+  }
 }
 
 .columns {

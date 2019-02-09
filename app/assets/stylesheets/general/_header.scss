@@ -1,9 +1,23 @@
 .header {
-  height: 88px;
+  height: 51px;
   width: 100%;
   background: $darkblue;
+
+  @media screen and (min-width: 992px) {
+    height: 88px;
+  }
 }
 .header__logo {
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 70px;
+    height: auto;
+
+    @media screen and (min-width: 992px) {
+      max-width: 100%;
+    }
+  }
 }
