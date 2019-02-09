@@ -1,6 +1,12 @@
 <article class="item <%= "item--compact" if cookies[:viewtype] == "compact" %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
   <div class="item__content">
-    <%= link_to "Compare", "#", class: "button button--small item__top-action", data: { action: "compare" } %>
+    <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" } do %>
+      Compare
+
+      <div class="button__tooltip">
+        Compare other items against this. Hover over values to see the difference between the two.
+      </div>
+    <% end %>
 
     <div class="item__description">
       <div class="item__title heading heading--small">

@@ -17,14 +17,16 @@ function compareAgainstItem() {
 
   compareTargets.forEach((element) => {
     main = element.dataset.compareTarget
-    mainValue = parseInt(element.innerHTML)
+    mainValue = parseFloat(element.innerHTML)
+
+    console.log(mainValue)
 
     const allTargets = document.querySelectorAll(`[data-compare-target="${ main }"]`)
 
     allTargets.forEach((target) => {
       if (target.closest("[data-compare-item]") == element.closest("[data-compare-item]")) return
 
-      const targetValue = parseInt(target.innerHTML)
+      const targetValue = parseFloat(target.innerHTML)
 
       const calculationElement = document.createElement("div")
       calculationElement.classList.add("compare__difference")
@@ -32,14 +34,14 @@ function compareAgainstItem() {
       if (targetValue > mainValue) {
         target.classList.add("compare-higher")
 
-        const difference = targetValue - mainValue
+        const difference = Math.round((targetValue - mainValue) * 100) / 100
         calculationElement.innerHTML = `+ ${ difference }`
 
         target.appendChild(calculationElement)
       } else if (targetValue < mainValue) {
         target.classList.add("compare-lower")
 
-        const difference = mainValue - targetValue
+        const difference = Math.round((mainValue - targetValue) * 100) / 100
         calculationElement.innerHTML = `- ${ difference }`
 
         target.appendChild(calculationElement)
