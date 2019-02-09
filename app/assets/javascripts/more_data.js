@@ -5,7 +5,7 @@ document.addEventListener("turbolinks:load", function() {
   elements.forEach((element) => element.addEventListener("click", moreDetails))
 })
 
-function moreDetails() {
+function moreDetails(event) {
   event.preventDefault()
 
   const parentElement = this.closest(".item")

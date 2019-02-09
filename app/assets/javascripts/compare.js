@@ -5,7 +5,7 @@ document.addEventListener("turbolinks:load", function() {
   elements.forEach((element) => element.addEventListener("click", compareAgainstItem))
 })
 
-function compareAgainstItem() {
+function compareAgainstItem(event) {
   event.preventDefault()
 
   removeCompareAgainst()
