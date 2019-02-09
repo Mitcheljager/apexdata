@@ -22,6 +22,7 @@
             <%= tag.div class: "columns__column item__large-info" do %>
               <span>Damage</span>
               <div data-compare-target="damage"><%= item["damage"] %></div>
+              <%= content_tag :small, "x#{item["damage_modifier"]}" if item["damage_modifier"] %>
             <% end if item["damage"] %>
 
             <%= tag.div class: "columns__column item__large-info" do %>
@@ -31,11 +32,15 @@
           </div>
 
           <%= tag.div class: "item__small-info" do %>
-            Damage per second: <span><div data-compare-target="dps"><%= "%2g" % ("%.1f" % (item["damage"] * (item["rate_of_fire"] / 60))) %></div></span>
+            <% rate_of_fire = item["rate_of_fire"] < 60 ? 1 : item["rate_of_fire"] / 60 %>
+            <% dps_value = "%2g" % ("%.1f" % (item["damage"] * rate_of_fire)) %>
+            <% dps_value = dps_value.to_i * item["damage_modifier"] if item["damage_modifier"] %>
+
+            Damage per second <span><div data-compare-target="dps"><%= dps_value %></div></span>
           <% end if item["rate_of_fire"] && item["damage"] %>
 
           <%= tag.div class: "item__small-info" do %>
-            Headshot damage: <span><div data-compare-target="headshot-damage"><%= item["headshot_damage"] %></div></span>
+            Headshot damage <span><div data-compare-target="headshot-damage"><%= item["headshot_damage"] %></div></span>
           <% end if item["headshot_damage"] %>
 
           <div class="item__tray">

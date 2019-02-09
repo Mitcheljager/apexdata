@@ -20,6 +20,7 @@
 -
   name: Peacekeeper
   damage: 10
+  damage_modifier: 11
   headshot_damage: 15
   legshot_damage: 8
   rate_of_fire: 58
@@ -39,6 +40,7 @@
 -
   name: EVA-8 Auto
   damage: 7
+  damage_modifier: 9
   headshot_damage: 10.5
   legshot_damage: 5.6
   rate_of_fire: 128
@@ -58,6 +60,7 @@
 -
   name: Mastiff
   damage: 18
+  damage_modifier: 8
   headshot_damage: 36
   legshot_damage: 18
   rate_of_fire: 96
