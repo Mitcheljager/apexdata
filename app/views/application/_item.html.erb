@@ -1,5 +1,7 @@
 <article class="item <%= "item--compact" if cookies[:viewtype] == "compact" %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
   <div class="item__content">
+    <%= link_to "Compare", "#", class: "button button--small item__top-action", data: { action: "compare" } %>
+
     <div class="item__description">
       <div class="item__title heading heading--small">
         <h3 class="heading__title">
@@ -35,8 +37,6 @@
           <%= link_to "More data", "#", class: "button" %>
         </div>
       </div>
-
-      <%= link_to "Compare all items against this", "#", class: "button", data: { action: "compare" } %>
 
       <div class="item__extra">
         <strong>Attachments</strong>

@@ -206,3 +206,9 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+
+.item__top-action {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
