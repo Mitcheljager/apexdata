@@ -19,30 +19,33 @@ function compareAgainstItem() {
     main = element.dataset.compareTarget
     mainValue = parseFloat(element.innerHTML)
 
-    console.log(mainValue)
-
     const allTargets = document.querySelectorAll(`[data-compare-target="${ main }"]`)
 
     allTargets.forEach((target) => {
       if (target.closest("[data-compare-item]") == element.closest("[data-compare-item]")) return
 
+      const inverse = target.dataset.compareInverse ? true : false
       const targetValue = parseFloat(target.innerHTML)
 
       const calculationElement = document.createElement("div")
       calculationElement.classList.add("compare__difference")
 
-      if (targetValue > mainValue) {
+      if ((targetValue > mainValue && !inverse) || (targetValue < mainValue && inverse)) {
         target.classList.add("compare-higher")
 
-        const difference = Math.round((targetValue - mainValue) * 100) / 100
-        calculationElement.innerHTML = `+ ${ difference }`
+        let difference = Math.round((targetValue - mainValue) * 100) / 100
+        difference = inverse ? difference * -1 : difference
+
+        calculationElement.innerHTML = `${ inverse ? "-" : "+" } ${ difference }`
 
         target.appendChild(calculationElement)
-      } else if (targetValue < mainValue) {
+      } else if ((targetValue < mainValue) || (targetValue > mainValue && inverse)) {
         target.classList.add("compare-lower")
 
-        const difference = Math.round((mainValue - targetValue) * 100) / 100
-        calculationElement.innerHTML = `- ${ difference }`
+        let difference = Math.round((mainValue - targetValue) * 100) / 100
+        difference = inverse ? difference * -1 : difference
+
+        calculationElement.innerHTML = `${ inverse ? "+" : "-" } ${ difference }`
 
         target.appendChild(calculationElement)
       }

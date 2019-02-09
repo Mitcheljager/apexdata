@@ -39,6 +39,7 @@
 -
   name: Triple Take
   damage: 30
+  damage_modifier: 3
   headshot_damage: 60
   legshot_damage: 21.75
   rate_of_fire: 88

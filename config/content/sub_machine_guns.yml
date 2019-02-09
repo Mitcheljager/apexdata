@@ -20,7 +20,7 @@
 -
   name: Alternator
   damage: 13
-  headshot: 19
+  headshot_damage: 19
   legshot_dmg: 10.4
   rate_of_fire: 640
   ammo_capacity: 16
