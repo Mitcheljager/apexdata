@@ -6,7 +6,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-  padding: .5em .75em .25em;
+  padding: 0 0 0 .75em;
   border: 1px solid $border-color;
   border-bottom: 0;
   background: $bg-color;
@@ -20,11 +20,20 @@
 }
 
 .compare-float__close {
+  display: block;
+  background: $red;
+  color: $white;
+  height: 100%;
+  width: 2em;
+  text-align: center;
   font-size: 12px;
+  line-height: 14px;
+  padding: .55em;
   cursor: pointer;
 
   &:hover,
   &:active {
+    background: darken($red, 10%);
     color: $white;
   }
 }
