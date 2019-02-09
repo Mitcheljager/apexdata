@@ -22,7 +22,11 @@ h3 {
 .heading {
   display: flex;
   align-items: flex-end;
-  margin: $margin * 4 0 $margin;
+  margin: $margin * 2 0 $margin;
+
+  @media (min-width: 640px) {
+    margin: $margin * 4 0 $margin;
+  }
 
   &--small {
     margin: 0;

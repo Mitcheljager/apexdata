@@ -3,7 +3,7 @@
   width: 100%;
   background: $darkblue;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: $max-width) {
     height: 88px;
   }
 }
@@ -17,7 +17,7 @@
     max-width: 70px;
     height: auto;
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: $max-width) {
       max-width: 100%;
     }
   }
