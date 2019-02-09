@@ -8,8 +8,13 @@ document.addEventListener("turbolinks:load", function() {
 function compareAgainstItem() {
   event.preventDefault()
 
+  const currentCompareMain = document.querySelector(".item--compare-main")
+  if (currentCompareMain) currentCompareMain.classList.remove("item--compare-main")
+
   const compareItem = this.closest("[data-compare-item]")
   const compareTargets = compareItem.querySelectorAll("[data-compare-target]")
+
+  compareItem.classList.add("item--compare-main")
 
   compareTargets.forEach((element) => {
     main = element.dataset.compareTarget
@@ -57,7 +62,9 @@ function showCompareAgainstItemElement(compareItem) {
 function removeCompareAgainst() {
   const allTargets = document.querySelectorAll(`[data-compare-target]`)
   const compareAgainstElement = document.querySelector(".compare-float")
+  const currentCompareMain = document.querySelector(".item--compare-main")
 
+  if (currentCompareMain) currentCompareMain.classList.remove("item--compare-main")
   allTargets.forEach((target) => target.classList.remove("compare-higher", "compare-lower"))
   compareAgainstElement.remove()
 }
