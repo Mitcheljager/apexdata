@@ -30,6 +30,10 @@ nav {
       font-size: 12px;
     }
 
+    @supports (-ms-ime-align:auto) {
+      margin-left: 0;
+    }
+
     &:hover,
     &:active,
     &.active {

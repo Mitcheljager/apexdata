@@ -98,6 +98,13 @@
     background: $white;
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
   }
+
+  @supports (-ms-ime-align:auto) {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .item__description {
