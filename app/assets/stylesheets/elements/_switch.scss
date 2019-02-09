@@ -1,6 +1,7 @@
 .switch {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .switch__item {
@@ -41,7 +42,7 @@
     width: 1em;
     top: 2px;
     left: 2px;
-    background: $bg-color;
+    background: $red;
     border-radius: 1em;
 
     .switch--active-right & {
