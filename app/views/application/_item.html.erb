@@ -26,7 +26,7 @@
         <% end if item["rate_of_fire"] && item["damage"] %>
 
         <%= tag.div class: "item__small-info" do %>
-          Headshot damage: <span data-compare-target="headshot-damage"><div data-compare-target="dps"><%= item["headshot_damage"] %></div></span>
+          Headshot damage: <span><div data-compare-target="headshot-damage"><%= item["headshot_damage"] %></div></span>
         <% end if item["headshot_damage"] %>
 
         <div class="item__tray">

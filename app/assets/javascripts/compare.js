@@ -33,14 +33,14 @@ function compareAgainstItem() {
         target.classList.add("compare-higher")
 
         const difference = targetValue - mainValue
-        calculationElement.innerHTML = `(+ ${ difference })`
+        calculationElement.innerHTML = `+ ${ difference }`
 
         target.appendChild(calculationElement)
       } else if (targetValue < mainValue) {
         target.classList.add("compare-lower")
 
         const difference = mainValue - targetValue
-        calculationElement.innerHTML = `(- ${ difference })`
+        calculationElement.innerHTML = `- ${ difference }`
 
         target.appendChild(calculationElement)
       }
