@@ -2,10 +2,8 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body {
   margin: 0;
-  padding: 0 $body-padding $margin * 2;
   background: $bg-color image_url("bg-pattern.jpg");
   font-family: "Raleway", sans-serif;
   color: $text-color;
@@ -22,30 +20,12 @@ a {
   margin: 0 auto;
 }
 
-nav {
-  display: flex;
-  background: darken($bg-color, 5%);
-  max-width: $max-width;
-  margin: 0 auto $margin;
-
-  a {
-    display: block;
-    padding: 5px;
-    text-decoration: none;
-
-    &:hover,
-    &:active {
-      background: lighten($bg-color, 5%);
-      color: white;
-    }
-  }
-}
-
 .logo {
   font-size: 60px;
   font-weight: 300;
   text-align: center;
-  margin: $margin * 4 0;
+  padding: $margin * 3 0 $margin * 1.5;
+  margin: 0;
 }
 
 .columns {

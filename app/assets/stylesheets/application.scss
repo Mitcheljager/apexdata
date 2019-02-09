@@ -1,8 +1,5 @@
 @import "variables";
 
-@import "general/general",
-        "general/titles";
+@import "general/*";
 
-@import "elements/item",
-        "elements/button",
-        "elements/switch";
+@import "elements/*";

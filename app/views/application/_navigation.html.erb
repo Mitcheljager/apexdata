@@ -1,13 +1,13 @@
 <h1 class="logo">ApexData.<strong>gg</strong></h1>
 
 <nav>
-  <%= link_to "Home", root_path %>
-  <%= link_to "SMGs", page_path("sub-machine-guns") %>
-  <%= link_to "Assault Rifles", page_path("assault-rifles") %>
-  <%= link_to "LMGs", page_path("light-machine-guns") %>
-  <%= link_to "Pistols", page_path("pistols") %>
-  <%= link_to "Shotguns", page_path("shotguns") %>
-  <%= link_to "Sniper Rifles", page_path("sniper-rifles") %>
+  <%= link_to "All", root_path, class: current_page?(root_path) ? "active" : "" %>
+  <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
+  <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
+  <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
+  <%= link_to "Pistols", page_path("pistols"), class: current_page?(page_path("pistols")) ? "active" : "" %>
+  <%= link_to "Shotguns", page_path("shotguns"), class: current_page?(page_path("shotguns")) ? "active" : "" %>
+  <%= link_to "Sniper Rifles", page_path("sniper-rifles"), class: current_page?(page_path("sniper-rifles")) ? "active" : "" %>
 </nav>
 
 <div class="wrapper">
