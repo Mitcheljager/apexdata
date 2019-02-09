@@ -19,6 +19,14 @@ a {
   max-width: calc(#{$max-width} + #{$wrapper-padding * 2});
   padding: 0 $wrapper-padding;
   margin: 0 auto;
+
+  &__no-padding {
+    padding: 0;
+
+    @media screen and (min-width: 375px) {      
+      padding: 0 $wrapper-padding;
+    }
+  }
 }
 
 .logo {
