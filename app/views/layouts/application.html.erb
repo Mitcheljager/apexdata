@@ -16,7 +16,6 @@
   </head>
 
   <body>
-
     <header class="header">
       <%= link_to image_tag("layout/apexlogo.png"), root_path, class: "header__logo" %>
     </header>
@@ -30,5 +29,7 @@
 
       <%= render "footer" %>
     </main>
+
+    <%= render "analytics_code" if Rails.env.production? %>
   </body>
 </html>
