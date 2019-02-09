@@ -1,0 +1,12 @@
+.footer {
+  font-size: 12px;
+  margin-top: $margin * 2;
+  padding: $margin / 4 0;
+  border-top: 2px solid $border-color;
+
+  @media (min-width: $max-width) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $margin * 2;
+  }
+}

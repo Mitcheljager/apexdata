@@ -2,8 +2,13 @@
   box-sizing: border-box;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin: 0 0 $margin * 4;
+  margin: 0;
   background: $bg-color image_url("bg-pattern.jpg");
   font-family: "Raleway", sans-serif;
   color: $text-color;
