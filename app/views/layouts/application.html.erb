@@ -17,15 +17,13 @@
 
   <body>
 
-    <div class="header">
-      <div class="header__logo">
-        <%= image_tag "layout/apexlogo.png" %>
-      </div>
-    </div>
+    <header class="header">
+      <%= link_to image_tag("layout/apexlogo.png"), root_path, class: "header__logo" %>
+    </header>
 
-    <div class="wrapper wrapper__no-padding">
+    <aside class="wrapper wrapper__no-padding">
       <%= render "navigation" %>
-    </div>
+    </aside>
 
     <main class="wrapper">
       <%= yield %>

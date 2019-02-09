@@ -23,7 +23,7 @@ a {
   &__no-padding {
     padding: 0;
 
-    @media screen and (min-width: 375px) {      
+    @media screen and (min-width: 375px) {
       padding: 0 $wrapper-padding;
     }
   }
@@ -38,6 +38,16 @@ a {
 
   @media screen and (min-width: 992px) {
     padding: $margin * 3 0 $margin * 1.5;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
   }
 }
 

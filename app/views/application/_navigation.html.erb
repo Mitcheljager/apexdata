@@ -1,4 +1,4 @@
-<h1 class="logo">ApexData.<strong>gg</strong></h1>
+<h1 class="logo"><%= link_to root_path do %>ApexData.<strong>gg</strong><% end %></h1>
 
 <nav>
   <%= link_to "All", root_path, class: current_page?(root_path) ? "active" : "" %>
