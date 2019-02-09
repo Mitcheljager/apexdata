@@ -34,7 +34,7 @@
 
     @media screen and (min-width: 640px) and (max-width: $max-width - 1) {
       flex: 0 0 calc((100% - #{$margin} / 2) / 2);
-      width: calc((100% - #{$margin} / 2) / 2);
+      max-width: calc((100% - #{$margin} / 2) / 2);
       margin-right: $margin / 2;
 
       &:nth-of-type(2n) {
@@ -44,7 +44,7 @@
 
     @media screen and (min-width: $max-width) {
       flex: 0 0 calc((100% - #{$margin}) / 3);
-      width: calc((100% - #{$margin}) / 3);
+      max-width: calc((100% - #{$margin}) / 3);
       margin-right: $margin / 2;
 
       &:nth-of-type(3n) {
