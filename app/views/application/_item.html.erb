@@ -10,46 +10,48 @@
         <div class="heading__line"></div>
       </div>
 
-      <div class="item__main">
-        <div class="columns">
-          <%= tag.div class: "columns__column item__large-info" do %>
-            <span>Damage</span>
-            <div data-compare-target="damage"><%= item["damage"] %></div>
-          <% end if item["damage"] %>
+      <div class="item__data-wrapper">
+        <div class="item__main">
+          <div class="columns">
+            <%= tag.div class: "columns__column item__large-info" do %>
+              <span>Damage</span>
+              <div data-compare-target="damage"><%= item["damage"] %></div>
+            <% end if item["damage"] %>
 
-          <%= tag.div class: "columns__column item__large-info" do %>
-            <span>RPM</span>
-            <div data-compare-target="rate-of-fire"><%= item["rate_of_fire"] %></div>
-          <% end if item["rate_of_fire"] %>
+            <%= tag.div class: "columns__column item__large-info" do %>
+              <span>RPM</span>
+              <div data-compare-target="rate-of-fire"><%= item["rate_of_fire"] %></div>
+            <% end if item["rate_of_fire"] %>
+          </div>
+
+          <%= tag.div class: "item__small-info" do %>
+            Damage per second: <span><div data-compare-target="dps"><%= "%2g" % ("%.1f" % (item["damage"] * (item["rate_of_fire"] / 60))) %></div></span>
+          <% end if item["rate_of_fire"] && item["damage"] %>
+
+          <%= tag.div class: "item__small-info" do %>
+            Headshot damage: <span><div data-compare-target="headshot-damage"><%= item["headshot_damage"] %></div></span>
+          <% end if item["headshot_damage"] %>
+
+          <div class="item__tray">
+            <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }"), where_path("ammo_type", item["ammo_type"]), class: "item__icon" if item["ammo_type"] %>
+
+            <%= link_to "More data", "#", class: "button button--primary", data: { action: "item-more-data" } %>
+          </div>
         </div>
 
-        <%= tag.div class: "item__small-info" do %>
-          Damage per second: <span><div data-compare-target="dps"><%= "%2g" % ("%.1f" % (item["damage"] * (item["rate_of_fire"] / 60))) %></div></span>
-        <% end if item["rate_of_fire"] && item["damage"] %>
+        <div class="item__extra">
+          <strong>Attachments</strong>
 
-        <%= tag.div class: "item__small-info" do %>
-          Headshot damage: <span><div data-compare-target="headshot-damage"><%= item["headshot_damage"] %></div></span>
-        <% end if item["headshot_damage"] %>
-
-        <div class="item__tray">
-          <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }"), where_path("ammo_type", item["ammo_type"]), class: "item__icon" if item["ammo_type"] %>
-
-          <%= link_to "More data", "#", class: "button" %>
+          <%= tag.div class:"item__attachments-table" do %>
+            <% item["available_attachments"].map do |key, value| %>
+              <%= key %> <%= value %> <br>
+            <% end %>
+          <% end if item["available_attachments"] %>
         </div>
-      </div>
 
-      <div class="item__extra">
-        <strong>Attachments</strong>
-
-        <%= tag.div class:"item__attachments-table" do %>
-          <% item["available_attachments"].map do |key, value| %>
-            <%= key %> <%= value %> <br>
-          <% end %>
-        <% end if item["available_attachments"] %>
-      </div>
-
-      <div class="item__actions">
-        <%= link_to "Expand", "#", class: "button", data: { action: "expand-item" } if cookies[:viewtype] == "compact" %>
+        <div class="item__actions">
+          <%= link_to "Expand", "#", class: "button", data: { action: "expand-item" } if cookies[:viewtype] == "compact" %>
+        </div>
       </div>
     </div>
 

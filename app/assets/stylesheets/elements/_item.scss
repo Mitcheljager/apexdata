@@ -92,6 +92,10 @@
     min-height: 0;
     padding-right: 0;
   }
+
+  .item--more-data & {
+    min-width: $max-width - ($item-image-width / 2) - ($margin * 2) - ($border-width * 4);
+  }
 }
 
 .item__title {
@@ -128,10 +132,17 @@
 
 .item__main {
   margin-top: auto;
+  width: 100%;
 
   .item--compact & {
     display: flex;
   }
+}
+
+.item__data-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: auto;
 }
 
 .item__extra {
@@ -139,6 +150,10 @@
 
   .item--compact & {
     display: none;
+  }
+
+  .item--more-data & {
+    display: block;
   }
 }
 

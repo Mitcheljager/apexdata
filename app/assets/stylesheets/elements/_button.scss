@@ -22,4 +22,10 @@
     background-color: $bg-color;
     box-shadow: none;
   }
+
+  &--primary {
+    background: $red;
+    color: $white;
+    border-bottom-color: rgba($white, .5);
+  }
 }

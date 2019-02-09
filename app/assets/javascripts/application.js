@@ -15,3 +15,4 @@
 
 //= require expand_item
 //= require compare
+//= require more_data
