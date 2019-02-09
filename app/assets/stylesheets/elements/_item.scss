@@ -29,6 +29,11 @@
   background: $black image_url("item-pattern.jpg");
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: 620px) {
+    flex-direction: row;
+  }
 
   .item--compare-main & {
     background: $black image_url("item-pattern-dark.jpg");
@@ -79,10 +84,14 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-width: $max-width - $item-image-width - ($margin * 2) - ($border-width * 4);
-  max-width: $max-width - $item-image-width - ($margin * 2);
+  max-width: 100%;
   min-height: 204px;
-  padding-right: $margin / 2;
+
+  @media screen and (min-width: 620px) {
+    min-width: $max-width - $item-image-width - ($margin * 2) - ($border-width * 4);
+    max-width: $max-width - $item-image-width - ($margin * 2);
+    padding-right: $margin / 2;
+  }
 
   .item--compact & {
     display: flex;
@@ -116,30 +125,53 @@
 .item__image-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: calc(100vw - #{$wrapper-padding * 2} - #{ $border-width * 2 });
-  max-width: $item-image-width + ($border-width * 2);
+  align-items: end;
   border: 2px solid  rgba($white, .5);
+  width: 100%;
+  height: 100px;
+  margin-bottom: 25px;
   overflow: hidden;
+
+  @media screen and (min-width: 620px) {
+    width: calc(100vw - #{$wrapper-padding * 2} - #{ $border-width * 2 });
+    max-width: $item-image-width + ($border-width * 2);
+    height: auto;
+    margin-bottom: 0;
+    align-items: center;
+  }
 
   .item--compact & {
     display: none;
   }
 
   .item--more-data & {
-    display: none;
+    @media screen and (min-width: 620px) {
+      display: none;
+    }
   }
 }
 
 .item__image {
   display: block;
   box-shadow: 0 2px 10px rgba($black, .1);
+  object-fit: cover;
+  width: 100%;
+  height: 100px;
+
+  @media screen and (min-width: 620px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .item__main {
   margin-top: auto;
   width: 100%;
-  max-width: $max-width - $item-image-width - ($margin * 2.5);
+  max-width: 100%;
+
+  @media screen and (min-width: 620px) {
+    max-width: $max-width - $item-image-width - ($margin * 2.5);
+  }
 
   .item--compact & {
     display: flex;
@@ -149,13 +181,29 @@
 .item__data-wrapper {
   display: flex;
   width: 100%;
-  margin-top: auto;
+  flex-direction: column;
+  margin-top: 0;
+
+  @media screen and (min-width: 620px) {
+    flex-direction: row;
+    margin-top: auto;
+  }
 }
 
 .item__extra {
   display: none;
-  padding-left: $margin / 2;
   width: 100%;
+  flex-direction: column;
+  margin-top: $margin * 0.5;
+
+  @media screen and (min-width: 620px) {
+    margin-top: 0;
+    padding-left: $margin / 2;
+  }
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
 
   .item--compact & {
     display: none;
@@ -166,7 +214,24 @@
   }
 
   .columns__column:last-of-type {
-    padding-left: $margin / 2;
+    @media screen and (min-width: 900px) {
+      padding-left: $margin / 2;
+    }
+  }
+
+  .columns__column:first-of-type {
+    margin-bottom: 15px;
+    @media screen and (min-width: 900px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .columns__column {
+    width: 100%;
+
+    @media screen and (min-width: 900px) {
+      width: 50%;
+    }
   }
 }
 
