@@ -30,11 +30,11 @@
 }
 
 .compare-higher {
-  color: green;
+  color: $green;
 }
 
 .compare-lower {
-  color: red;
+  color: $red;
 }
 
 [data-compare-target] {
