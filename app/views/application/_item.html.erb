@@ -104,9 +104,9 @@
 
     <div class="item__image-wrapper">
       <% if asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") %>
-        <%= image_tag "weapons/#{ item["name"].downcase.gsub(" ", "_") }", class: "item__image" %>
+        <%= image_tag "weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg", class: "item__image" %>
       <% else %>
-        <%= image_tag "weapons/placeholder", class: "item__image" %>
+        <%= image_tag "weapons/placeholder.jpg", class: "item__image" %>
       <% end %>
     </div>
   </div>
