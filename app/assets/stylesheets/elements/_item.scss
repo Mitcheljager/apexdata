@@ -130,16 +130,6 @@
 
 .item__title {
   margin-bottom: $margin / 2;
-
-  .item--compact & {
-    display: block;
-    margin: 0;
-    margin-bottom: 25px;
-
-    .heading__line {
-      display: none;
-    }
-  }
 }
 
 .item__image-wrapper {
