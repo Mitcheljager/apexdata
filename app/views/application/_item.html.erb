@@ -44,7 +44,7 @@
           <% end if item["headshot_damage"] %>
 
           <div class="item__tray">
-            <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png"), where_path("ammo_type", item["ammo_type"]), class: "item__icon" if item["ammo_type"] %>
+            <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: ["ammo_type"]), where_path("ammo_type", item["ammo_type"]), class: "item__icon" if item["ammo_type"] %>
 
             <%= link_to "More data", "#", class: "button button--primary", data: { action: "item-more-data" } %>
           </div>
@@ -102,12 +102,12 @@
       </div>
     </div>
 
-    <div class="item__image-wrapper">
-      <% if asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") %>
-        <%= image_tag "weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg", class: "item__image" %>
-      <% else %>
-        <%= image_tag "weapons/placeholder.jpg", class: "item__image" %>
-      <% end %>
-    </div>
+    <% image_path = asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
+
+    <picture>
+      <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
+      <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
+      <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image" %>
+    </picture>
   </div>
 </article>
