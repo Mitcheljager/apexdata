@@ -11,6 +11,7 @@ body {
   margin: 0;
   background: $bg-color image_url("bg-pattern.jpg");
   font-family: "Raleway", sans-serif;
+  font-display: auto;
   color: $text-color;
   text-transform: uppercase;
   font-weight: 300;
