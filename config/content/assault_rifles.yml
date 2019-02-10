@@ -12,11 +12,11 @@
   draw_time: 0.6
   holster_time: 0.55
   available_attachments:
+    barrel: false
+    magazine: true
+    hop_up: false
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: false
 -
   name: Hemlok
   damage: 18
@@ -31,11 +31,11 @@
   draw_time: 0.6
   holster_time: 0.55
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: false
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: true
 -
   name: R-301
   damage: 14
@@ -50,8 +50,8 @@
   draw_time: 0.6
   holster_time: 0.55
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: false
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: true

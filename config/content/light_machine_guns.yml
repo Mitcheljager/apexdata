@@ -12,11 +12,11 @@
   draw_time: 0.7
   holster_time: 0.65
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: false
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: true
 -
   name: Devotion
   damage: 17
@@ -31,8 +31,8 @@
   draw_time: 0.7
   holster_time: 0.65
   available_attachments:
+    barrel: true
+    magazine: false
+    hop_up: true
     optic: true
     stock: true
-    hop_up: true
-    magazine: false
-    barrel: true

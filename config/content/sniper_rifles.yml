@@ -31,11 +31,11 @@
   draw_time: 0.9
   holster_time: 0.6
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: true
     optic: true
     stock: true
-    hop_up: true
-    magazine: true
-    barrel: true
 -
   name: Triple Take
   damage: 30
@@ -51,11 +51,11 @@
   draw_time: 0.9
   holster_time: 0.6
   available_attachments:
+    barrel: false
+    magazine: false
+    hop_up: true
     optic: true
     stock: true
-    hop_up: true
-    magazine: false
-    barrel: false
 -
   name: Kraber
   damage: 125
@@ -70,8 +70,8 @@
   draw_time: 1.2
   holster_time: 0.7
   available_attachments:
+    barrel: false
+    magazine: false
+    hop_up: false
     optic: false
     stock: false
-    hop_up: false
-    magazine: false
-    barrel: false

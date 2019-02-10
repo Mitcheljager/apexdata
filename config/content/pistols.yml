@@ -12,11 +12,11 @@
   draw_time: 0.35
   holster_time: 0.3
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: false
     optic: true
     stock: false
-    hop_up: false
-    magazine: true
-    barrel: true
 -
   name: P2020
   damage: 12
@@ -31,11 +31,11 @@
   draw_time: 0.25
   holster_time: 0.2
   available_attachments:
+    barrel: false
+    magazine: true
+    hop_up: false
     optic: true
     stock: false
-    hop_up: false
-    magazine: true
-    barrel: false
 -
   name: Wingman
   damage: 45
@@ -50,8 +50,8 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
+    barrel: false
+    magazine: true
+    hop_up: true
     optic: true
     stock: false
-    hop_up: true
-    magazine: true
-    barrel: false

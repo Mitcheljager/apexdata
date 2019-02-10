@@ -12,11 +12,11 @@
   draw_time: 0.35
   holster_time: 0.3
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: false
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: true
 -
   name: Alternator
   damage: 13
@@ -31,11 +31,11 @@
   draw_time: 0.35
   holster_time: 0.3
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: false
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: true
 -
   name: Prowler
   damage: 14
@@ -50,8 +50,8 @@
   draw_time: 0.35
   holster_time: 0.3
   available_attachments:
+    barrel: false
+    magazine: true
+    hop_up: true
     optic: true
     stock: true
-    hop_up: true
-    magazine: true
-    barrel: false

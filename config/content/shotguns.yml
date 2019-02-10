@@ -13,11 +13,11 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
+    barrel: false
+    magazine: true
+    hop_up: false
     optic: true
     stock: false
-    hop_up: false
-    magazine: true
-    barrel: false
 -
   name: Peacekeeper
   damage: 10
@@ -33,11 +33,11 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
+    barrel: false
+    magazine: true
+    hop_up: true
     optic: true
     stock: false
-    hop_up: true
-    magazine: true
-    barrel: false
 -
   name: EVA-8 Auto
   damage: 7
@@ -53,11 +53,11 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
+    barrel: false
+    magazine: true
+    hop_up: false
     optic: true
     stock: false
-    hop_up: false
-    magazine: true
-    barrel: false
 -
   name: Mastiff
   damage: 18
@@ -73,8 +73,8 @@
   draw_time: 0.8
   holster_time: 0.4
   available_attachments:
+    barrel: false
+    magazine: false
+    hop_up: false
     optic: false
     stock: false
-    hop_up: false
-    magazine: false
-    barrel: false
