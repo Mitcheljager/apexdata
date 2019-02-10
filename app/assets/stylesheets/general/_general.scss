@@ -55,6 +55,19 @@ a {
       text-decoration: none;
     }
   }
+
+  &__sub-title {
+    display: block;
+    font-size: 12px;
+    color: $text-color;
+    letter-spacing: .9px;
+    padding: 0 ($margin / 2);
+    margin-top: $margin / 8;
+
+    @media screen and (min-width: $max-width) {
+      font-size: 16px;
+    }
+  }
 }
 
 .columns {

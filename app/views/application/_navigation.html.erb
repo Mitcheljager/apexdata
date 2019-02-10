@@ -1,4 +1,7 @@
-<h1 class="logo"><%= link_to root_path do %>ApexData.<strong>gg</strong><% end %></h1>
+<h1 class="logo">
+  <%= link_to root_path do %>ApexData.<strong>gg</strong><% end %>
+  <span class="logo__sub-title">Apex Legends Weapon&nbsp;Data&nbsp;and&nbsp;Statistics</span>
+</h1>
 
 <nav>
   <%= link_to "All", root_path, class: current_page?(root_path) ? "active" : "" %>
