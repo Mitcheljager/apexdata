@@ -104,10 +104,12 @@
 
     <% image_path = asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
 
-    <picture>
-      <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
-      <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
-      <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image" %>
-    </picture>
+    <div class="item__image-wrapper">
+      <picture>
+        <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
+        <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
+        <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image" %>
+      </picture>
+    </div>
   </div>
 </article>
