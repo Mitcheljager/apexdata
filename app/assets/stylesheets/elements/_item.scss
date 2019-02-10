@@ -349,14 +349,24 @@
 
 .item__attachments-item {
   display: block;
-  border: 1px solid rgba($white, .5);
+  border: 1px solid rgba($white, .35);
   width: 2.5rem;
   height: 2.5rem;
-  background: rgba($white, .5);
+  padding: .25rem;
+  background: rgba($white, .35);
   margin-right: 2px;
 
   &--disabled {
-    border: 1px solid rgba($white, .2);
-    background: rgba($white, .2);
+    border: 1px solid rgba($white, .15);
+    background: rgba($white, .15);
+
+    img {
+      opacity: .5;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }
