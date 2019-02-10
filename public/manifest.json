@@ -1,0 +1,8 @@
+{
+  "name": "ApexData.GG",
+  "short_name": "ApexData",
+  "description": "Data and Statistics for Apex Legends",
+  "start_url": "/",
+  "background_color": "#282A36",
+  "theme_color": "#b52626"
+}
