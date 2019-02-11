@@ -89,7 +89,7 @@
             <%= tag.div class:"item__attachments-table" do %>
               <% item["available_attachments"].map do |key, value| %>
                 <div class="item__attachments-item <%= "item__attachments-item--disabled" unless value %>">
-                  <%= image_tag "attachments/#{ key }.png" %>
+                  <%= image_tag "attachments/#{ key }.png", alt: "attachment_#{key}", title: key.humanize %>
                 </div>
               <% end %>
             <% end %>
@@ -108,7 +108,7 @@
       <picture>
         <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
         <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
-        <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image" %>
+        <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image", alt: item["name"].humanize %>
       </picture>
     </div>
   </div>
