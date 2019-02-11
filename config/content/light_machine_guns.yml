@@ -1,5 +1,4 @@
 -
-  slug: spitfire
   name: Spitfire
   damage: 20
   headshot_damage: 40
@@ -19,7 +18,6 @@
     optic: true
     stock: true
 -
-  slug: devotion
   name: Devotion
   damage: 17
   headshot_damage: 34

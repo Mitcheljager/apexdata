@@ -7,7 +7,7 @@
     <div class="item__description">
       <div class="item__title heading heading--small">
         <h3 class="heading__title">
-          <%= link_to item["name"], where_path("slug", item["slug"]) if item["name"] %>
+          <%= link_to item["name"], where_path("name", item["name"].downcase.dasherize.gsub(" ", "-")) if item["name"] %>
         </h3>
         <div class="heading__line"></div>
       </div>

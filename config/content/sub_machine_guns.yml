@@ -1,5 +1,4 @@
 -
-  slug: r-99
   name: R-99
   damage: 12
   headshot_damage: 18
@@ -19,7 +18,6 @@
     optic: true
     stock: true
 -
-  slug: alternator
   name: Alternator
   damage: 13
   headshot_damage: 19
@@ -39,7 +37,6 @@
     optic: true
     stock: true
 -
-  slug: prowler
   name: Prowler
   damage: 14
   headshot_damage: 21

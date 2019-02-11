@@ -1,5 +1,4 @@
 -
-  slug: flatline
   name: Flatline
   damage: 16
   headshot_damage: 32
@@ -19,7 +18,6 @@
     optic: true
     stock: true
 -
-  slug: hemlok
   name: Hemlok
   damage: 18
   headshot_damage: 36
@@ -39,7 +37,6 @@
     optic: true
     stock: true
 -
-  slug: r-301
   name: R-301
   damage: 14
   headshot_damage: 28
