@@ -8,13 +8,28 @@
 
 <nav>
   <%= link_to "All", root_path, class: current_page?(root_path) ? "active" : "" %>
-  <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
-  <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
-  <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
-  <%= link_to "Pistols", page_path("pistols"), class: current_page?(page_path("pistols")) ? "active" : "" %>
-  <%= link_to "Shotguns", page_path("shotguns"), class: current_page?(page_path("shotguns")) ? "active" : "" %>
-  <%= link_to "Sniper Rifles", page_path("sniper-rifles"), class: current_page?(page_path("sniper-rifles")) ? "active" : "" %>
-  <%= link_to "Grenades", page_path("grenades"), class: current_page?(page_path("grenades")) ? "active" : "" %>
+
+  <div class="dropdown">
+    <a>Weapons</a>
+
+    <div class="dropdown__content">
+      <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
+      <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
+      <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
+      <%= link_to "Pistols", page_path("pistols"), class: current_page?(page_path("pistols")) ? "active" : "" %>
+      <%= link_to "Shotguns", page_path("shotguns"), class: current_page?(page_path("shotguns")) ? "active" : "" %>
+      <%= link_to "Sniper Rifles", page_path("sniper-rifles"), class: current_page?(page_path("sniper-rifles")) ? "active" : "" %>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a>Items</a>
+
+    <div class="dropdown__content">
+      <%= link_to "Grenades", page_path("grenades"), class: current_page?(page_path("grenades")) ? "active" : "" %>
+      <%= link_to "Consumables", page_path("grenades"), class: current_page?(page_path("grenades")) ? "active" : "" %>
+    </div>
+  </div>
 </nav>
 
 <div class="wrapper">

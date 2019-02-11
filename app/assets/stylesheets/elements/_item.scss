@@ -126,6 +126,10 @@
     max-width: 100%;
     padding-right: 0;
   }
+
+  .item--extra-compact & {
+    min-height: 0;
+  }
 }
 
 .item__title {

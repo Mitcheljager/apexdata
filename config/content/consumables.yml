@@ -1,0 +1,25 @@
+-
+  name: Syringe
+  heals: 25
+  cast_time: 5
+-
+  name: Med Kit
+  heals: 100
+  cast_time: 8
+-
+  name: Shield Cell
+  restores: 25
+  cast_time: 3
+-
+  name: Shield Battery
+  restores: 100
+  cast_time: 5
+-
+  name: Phoenix Kit
+  heals: 100
+  restores: 100
+  cast_time: 10
+-
+  name: Ultimate Accelerant
+  ultimate: 20
+  cast_time: 7

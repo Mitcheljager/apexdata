@@ -8,11 +8,10 @@ nav {
 
   a {
     display: block;
-    padding: 13px 40px;
+    padding: 13px $margin;
     text-decoration: none;
     font-weight: 700;
-    letter-spacing: 0.5px;
-    width: 166px;
+    width: $margin * 4;
     background: rgba($darkblue, 0.7);
     text-align: center;
     clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
@@ -21,11 +20,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    letter-spacing: 0.5px;
     font-size: 10px;
     transition: all 250ms ease;
 
     @media screen and (min-width: 420px) {
-      width: 211px;
+      width: $margin * 5;
       margin-left: -30px;
       font-size: 12px;
     }
@@ -40,5 +40,41 @@ nav {
       background: $red;
       color: $white;
     }
+  }
+}
+
+.dropdown {
+  position: relative;
+
+  > a {
+    cursor: pointer;
+
+    &::after {
+      content: "v";
+      display: inline-block;
+      font-weight: 300;
+      margin-left: 1em;
+      font-size: .6em;
+      opacity: .8;
+    }
+  }
+
+  &:hover,
+  &:active {
+    .dropdown__content {
+      display: block;
+    }
+  }
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: $margin + 7;
+  z-index: 10;
+
+  a {
+    background: lighten($darkblue, 1%);
   }
 }
