@@ -28,8 +28,21 @@ h3 {
     margin: $margin * 4 0 $margin;
   }
 
+  &::after {
+    display: block;
+    content: "";
+    height: 4px;
+    width: 100%;
+    background: $white;
+    opacity: .2;
+  }
+
   &--small {
     margin: 0;
+
+    &::after {
+      height: 2px;
+    }
   }
 }
 
@@ -52,16 +65,5 @@ h3 {
     font-weight: 300;
     font-size: 1em;
     color: $text-color;
-  }
-}
-
-.heading__line {
-  height: 4px;
-  width: 100%;
-  background: $white;
-  opacity: .2;
-
-  .heading--small & {
-    height: 2px;
   }
 }
