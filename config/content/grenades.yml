@@ -15,7 +15,7 @@
   after_burn_timer: 2
 -
   name: Arc Star
-  description: A throwable shuriken that deals damage on impact and damages and stuns the enemy when it explodes.
+  description: A throwable shuriken that sticks on impact and damages and stuns the enemy when it explodes.
   impact_damage: 15
   explosion_damage: 70
   explosion_timer: 3
