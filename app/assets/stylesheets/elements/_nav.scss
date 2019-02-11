@@ -7,21 +7,20 @@ nav {
   padding-left: 18px;
 
   a {
-    display: block;
-    padding: 13px $margin;
-    text-decoration: none;
-    font-weight: 700;
-    width: $margin * 4;
-    background: rgba($darkblue, 0.7);
-    text-align: center;
-    clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
-    margin-left: -24px;
-    margin-bottom: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: ($margin / 3) $margin;
+    margin-left: -#{ $margin / 2 };
+    margin-bottom: $margin / 6;
+    width: $margin * 4;
+    background: rgba($darkblue, 0.7);
+    text-decoration: none;
+    font-weight: 700;
     letter-spacing: 0.5px;
+    text-align: center;
     font-size: 10px;
+    clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
     transition: all 250ms ease;
 
     @media screen and (min-width: 420px) {
