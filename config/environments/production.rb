@@ -85,4 +85,9 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.public_file_server.headers = {
+    "Cache-Control" => "public, s-maxage=#{365.days.to_i}, maxage=#{180.days.to_i}",
+    "Expires" => "#{1.year.from_now.to_formatted_s(:rfc822)}"
+  }
 end
