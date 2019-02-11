@@ -13,6 +13,7 @@
   explosion_timer: On Impact
   effect_timer: 8
   after_burn_timer: 2
+  ticks_per_second: 10
 -
   name: Arc Star
   description: A throwable shuriken that <strong>sticks</strong> on impact and <strong>damages</strong> and <strong>stuns</strong> the enemy when it explodes.

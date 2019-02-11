@@ -91,10 +91,6 @@
             <% end %>
           <% end if item["available_attachments"] %>
         </div>
-
-        <div class="item__actions">
-          <%= link_to "Expand", "#", class: "button", data: { action: "expand-item" } if cookies[:viewtype] == "compact" %>
-        </div>
       </div>
     </div>
 

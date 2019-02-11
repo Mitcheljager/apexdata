@@ -376,3 +376,13 @@
   font-size: 12px;
   margin: 0 0 $margin / 4;
 }
+
+.item__large-icon-wrapper {
+  width: 100%;
+  text-align: center;
+  padding-bottom: $margin / 2;
+
+  .item--extra-compact & {
+    display: none;
+  }
+}

@@ -1,10 +1,16 @@
-<article class="item item--compact" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
+<article class="item item--compact <%= "item--extra-compact" if cookies[:viewtype] == "compact" %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
   <div class="item__content">
     <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" }, title: "Compare other items against this. Hover over values to see the difference between the two." do %>
       Compare
     <% end %>
 
     <div class="item__description">
+      <% if asset_exist?("grenades/#{ item["name"].downcase.gsub(" ", "_") }.png") %>
+        <div class="item__large-icon-wrapper">
+          <%= image_tag "grenades/#{ item["name"].downcase.gsub(" ", "_") }.png", class: "item__large-icon" %>
+        </div>
+      <% end %>
+
       <div class="item__title heading heading--small">
         <h3 class="heading__title">
           <%= item["name"] %>
@@ -49,6 +55,10 @@
             After Burn timer: <span><div data-compare-target="after-burn-timer"><%= item["after_burn_timer"] %></div></span>
             <small>s</small>
           <% end if item["after_burn_timer"] %>
+
+          <%= tag.div class: "item__small-info" do %>
+            Ticks per second: <span><div data-compare-target="ticks-per-second"><%= item["ticks_per_second"] %></div></span>
+          <% end if item["ticks_per_second"] %>
         </div>
       </div>
     </div>
