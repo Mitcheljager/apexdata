@@ -32,7 +32,7 @@
           </div>
 
           <%= tag.p class: "item__small-text" do %>
-            <%= item["description"] %>
+            <%= item["description"].html_safe %>
           <% end if item["description"] %>
 
           <%= tag.div class: "item__small-info" do %>
