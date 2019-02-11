@@ -1,0 +1,22 @@
+-
+  name: Frag Grenade
+  description: A throwable impact grenade that deals less damage the further you are from the explosion.
+  impact_damage: 10
+  explosion_damage: 100
+  explosion_timer: 4
+-
+  name: Thermite Grenade
+  description: A throwable item that leaves a line of fire which burns the enemy over a short period of time.
+  impact_damage: 0
+  explosion_damage: 0
+  burn_damage: 4
+  explosion_timer: On Impact
+  effect_timer: 8
+  after_burn_timer: 2
+-
+  name: Arc Star
+  description: A throwable shuriken that deals damage on impact and damages and stuns the enemy when it explodes.
+  impact_damage: 15
+  explosion_damage: 70
+  explosion_timer: 3
+  effect_timer: 5

@@ -2,4 +2,6 @@
   <h2 class="heading__title"><%= link_to "Shotguns", page_path("shotguns") %></h2>
 </div>
 
-<%= render partial: "item", collection: shotguns, as: :item %>
+<div class="items">
+  <%= render partial: "item", collection: shotguns, as: :item %>
+</div>

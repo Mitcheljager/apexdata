@@ -2,8 +2,10 @@
   <h2 class="heading__title"><%= params[:value].humanize %> <small>(<%= @items.count %>)</small></h2>
 </div>
 
-<% if @items.any? %>
-  <%= render partial: "item", collection: @items, as: :item || "Nothing found" %>
-<% else %>
-  Nothing found, sorry.
-<% end %>
+<div class="items">
+  <% if @items.any? %>
+    <%= render partial: "item", collection: @items, as: :item || "Nothing found" %>
+  <% else %>
+    Nothing found, sorry.
+  <% end %>
+</div>

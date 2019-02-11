@@ -1,10 +1,6 @@
-.items-wrapper {
+.items {
   display: flex;
   flex-wrap: wrap;
-
-  .heading {
-    flex: 0 0 100%;
-  }
 }
 
 .item {
@@ -13,6 +9,10 @@
   position: relative;
   margin-bottom: $margin / 2;
   filter: drop-shadow(0 6px 32px rgba($black, .05)) drop-shadow(0 2px 4px rgba($black, .2));
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &--compare-main {
     filter: drop-shadow(0 6px 32px rgba($black, .25)) drop-shadow(0 2px 4px rgba($black, .5));
@@ -203,6 +203,7 @@
 
   .item--compact & {
     display: block;
+    margin-top: 4px;
   }
 }
 
@@ -369,4 +370,9 @@
     width: 100%;
     height: auto;
   }
+}
+
+.item__small-text {
+  font-size: 12px;
+  margin: 0 0 $margin / 4;
 }
