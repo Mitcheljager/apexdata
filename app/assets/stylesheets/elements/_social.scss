@@ -1,0 +1,18 @@
+.social {
+  margin: 80px 0 0;
+
+  .logo__sub-title {
+    text-align: center;
+  }
+}
+
+.social__items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  a {
+    margin: 0 10px;
+    font-size: 20px;
+  }
+}
