@@ -320,6 +320,18 @@
   }
 }
 
+.item__full-width-info {
+  font-size: 14px;
+  margin-bottom: $margin / 4;
+
+  span {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: .1em;
+  }
+}
+
 .item__icon {
   display: block;
   margin-top: $margin / 2;

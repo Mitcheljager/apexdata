@@ -61,3 +61,11 @@
 <div class="items">
   <%= render partial: "pages/consumable", collection: consumables, as: :item %>
 </div>
+
+<div class="heading">
+  <h2 class="heading__title"><%= link_to "Equipment", page_path("equipment") %></h2>
+</div>
+
+<div class="items">
+  <%= render partial: "pages/equipment", collection: equipment, as: :item %>
+</div>
