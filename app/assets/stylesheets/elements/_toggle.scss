@@ -19,11 +19,11 @@
   display: block;
   width: 1em;
   height: 1em;
-  background: rgba($white, .35);
-  border: $border-color;
+  border: 2px solid $border-color;
   margin-right: .5em;
 
   .toggle--active & {
+    border: 0;
     background: image_url("checkmark.png");
   }
 }
