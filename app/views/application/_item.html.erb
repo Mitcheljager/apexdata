@@ -40,7 +40,14 @@
           <% end if item["headshot_damage"] %>
 
           <div class="item__tray">
-            <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize), class: "item__icon" if item["ammo_type"] %>
+            <div class="item__ammo-type">
+              <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize), class: "item__icon" if item["ammo_type"] %>
+
+              <%= tag.div do %>
+                <%= image_tag "fire_mode/single.png", class: "item__fire-mode", alt: "Single Fire", title: "Single Fire" if item["fire_modes"]["single"] %>
+                <%= image_tag "fire_mode/auto.png", class: "item__fire-mode", alt: "Automatic Fire", title: "Automatic Fire" if item["fire_modes"]["auto"] %>
+              <% end if item["fire_modes"] %>
+            </div>
 
             <% if alldata? %>
               <%= link_to "Less data", "#", class: "button", data: { action: "item-more-data" } %>

@@ -17,6 +17,8 @@
     hop_up: false
     optic: true
     stock: false
+  fire_modes:
+    auto: true
 -
   name: P2020
   damage: 12
@@ -36,6 +38,8 @@
     hop_up: false
     optic: true
     stock: false
+  fire_modes:
+    single: true
 -
   name: Wingman
   damage: 45
@@ -55,3 +59,5 @@
     hop_up: true
     optic: true
     stock: false
+  fire_modes:
+    single: true

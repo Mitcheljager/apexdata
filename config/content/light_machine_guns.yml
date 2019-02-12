@@ -17,6 +17,8 @@
     hop_up: false
     optic: true
     stock: true
+  fire_modes:
+    auto: true
 -
   name: Devotion
   damage: 17
@@ -36,3 +38,5 @@
     hop_up: true
     optic: true
     stock: true
+  fire_modes:
+    auto: true

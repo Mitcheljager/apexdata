@@ -17,6 +17,8 @@
     hop_up: false
     optic: true
     stock: true
+  fire_modes:
+    single: true
 -
   name: Longbow
   damage: 55
@@ -36,6 +38,8 @@
     hop_up: true
     optic: true
     stock: true
+  fire_modes:
+    single: true
 -
   name: Triple Take
   damage: 30
@@ -56,6 +60,8 @@
     hop_up: true
     optic: true
     stock: true
+  fire_modes:
+    single: true
 -
   name: Kraber
   damage: 125
@@ -75,3 +81,5 @@
     hop_up: false
     optic: false
     stock: false
+  fire_modes:
+    single: true

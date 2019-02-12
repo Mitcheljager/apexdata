@@ -17,6 +17,9 @@
     hop_up: false
     optic: true
     stock: true
+  fire_modes:
+    single: true
+    auto: true
 -
   name: Hemlok
   damage: 18
@@ -36,6 +39,9 @@
     hop_up: false
     optic: true
     stock: true
+  fire_modes:
+    single: true
+    burst: 3
 -
   name: R-301
   damage: 14
@@ -55,3 +61,6 @@
     hop_up: false
     optic: true
     stock: true
+  fire_modes:
+    single: true
+    auto: true

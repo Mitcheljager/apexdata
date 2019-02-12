@@ -18,6 +18,8 @@
     hop_up: false
     optic: true
     stock: false
+  fire_modes:
+    auto: true
 -
   name: Peacekeeper
   damage: 10
@@ -38,6 +40,8 @@
     hop_up: true
     optic: true
     stock: false
+  fire_modes:
+    single: true
 -
   name: EVA-8 Auto
   damage: 7
@@ -58,6 +62,8 @@
     hop_up: false
     optic: true
     stock: false
+  fire_modes:
+    auto: true
 -
   name: Mastiff
   damage: 18
@@ -78,3 +84,5 @@
     hop_up: false
     optic: false
     stock: false
+  fire_modes:
+    single: true

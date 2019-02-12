@@ -335,7 +335,6 @@
 
 .item__icon {
   display: block;
-  margin-top: $margin / 2;
 
   &:hover,
   &:active {
@@ -352,6 +351,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-top: $margin / 2;
 }
 
 .item__top-action {
@@ -401,5 +401,21 @@
 
   .item--extra-compact & {
     display: none;
+  }
+}
+
+.item__ammo-type {
+  display: flex;
+  align-items: center;
+}
+
+.item__fire-mode {
+  display: block;
+  margin: .1em 0 0 .25em;
+  height: .6em;
+  width: auto;
+
+  &:first-of-type {
+    margin-top: 0;
   }
 }
