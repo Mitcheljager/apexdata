@@ -42,22 +42,22 @@
           <% end if item["description"] %>
 
           <%= tag.div class: "item__small-info" do %>
-            Explosion timer: <span><div data-compare-target="explosion-timer"><%= item["explosion_timer"] %></div></span>
+            Explosion timer <span><div data-compare-target="explosion-timer"><%= item["explosion_timer"] %></div></span>
             <% if item["explosion_timer"].is_a?(Fixnum) %><small>s</small><% end %>
           <% end if item["explosion_timer"] %>
 
           <%= tag.div class: "item__small-info" do %>
-            Effect timer: <span><div data-compare-target="effect-timer"><%= item["effect_timer"] %></div></span>
+            Effect timer <span><div data-compare-target="effect-timer"><%= item["effect_timer"] %></div></span>
             <small>s</small>
           <% end if item["effect_timer"] %>
 
           <%= tag.div class: "item__small-info" do %>
-            After Burn timer: <span><div data-compare-target="after-burn-timer"><%= item["after_burn_timer"] %></div></span>
+            After Burn timer <span><div data-compare-target="after-burn-timer"><%= item["after_burn_timer"] %></div></span>
             <small>s</small>
           <% end if item["after_burn_timer"] %>
 
           <%= tag.div class: "item__small-info" do %>
-            Ticks per second: <span><div data-compare-target="ticks-per-second"><%= item["ticks_per_second"] %></div></span>
+            Ticks per second <span><div data-compare-target="ticks-per-second"><%= item["ticks_per_second"] %></div></span>
           <% end if item["ticks_per_second"] %>
         </div>
       </div>
