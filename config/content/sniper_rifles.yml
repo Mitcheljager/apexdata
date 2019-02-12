@@ -12,11 +12,11 @@
   draw_time: 0.9
   holster_time: 0.6
   available_attachments:
+    barrel: true
+    magazine: true
+    hop_up: false
     optic: true
     stock: true
-    hop_up: false
-    magazine: true
-    barrel: true
 -
   name: Longbow
   damage: 55
