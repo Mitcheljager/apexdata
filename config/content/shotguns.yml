@@ -13,8 +13,8 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
-    barrel: false
-    magazine: true
+    barrel: true
+    magazine: false
     hop_up: false
     optic: true
     stock: false
@@ -33,8 +33,8 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
-    barrel: false
-    magazine: true
+    barrel: true
+    magazine: false
     hop_up: true
     optic: true
     stock: false
@@ -53,8 +53,8 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
-    barrel: false
-    magazine: true
+    barrel: true
+    magazine: false
     hop_up: false
     optic: true
     stock: false
