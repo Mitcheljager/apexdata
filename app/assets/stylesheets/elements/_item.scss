@@ -9,6 +9,7 @@
   position: relative;
   margin-bottom: $margin / 2;
   filter: drop-shadow(0 6px 32px rgba($black, .05)) drop-shadow(0 2px 4px rgba($black, .2));
+  will-change: scroll-position, contents;
 
   &:last-child {
     margin-bottom: 0;
