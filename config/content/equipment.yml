@@ -3,22 +3,22 @@
   basic: <strong>30%</strong> Headshot Damage reduction
   rare: <strong>40%</strong> Headshot Damage reduction
   epic: <strong>50%</strong> Headshot Damage reduction
-  legendary: <strong>50%</strong> Headshot Damage reduction. Reduces Tactical and Ultimate <strong>Ability Recharge Times</strong>.
+  legendary: <strong>50%</strong> Headshot Damage reduction. Reduces Tactical and Ultimate <strong>Ability cooldowns</strong>.
 -
   name: Body Shield
   basic: Absorbs <strong>50</strong> Damage
   rare: Absorbs <strong>75</strong> Damage
   epic: Absorbs <strong>100</strong> Damage
-  legendary: Absorbs <strong>100</strong> Damage. Finishing Moves <strong>Fully Restore Shield</strong>.
+  legendary: Absorbs <strong>100</strong> Damage. Finishing Moves <strong>Fully restore shields</strong>.
 -
   name: Knockdown Shield
   basic: Blocks <strong>100</strong> Damage
   rare: Blocks <strong>250</strong> Damage
   epic: Blocks <strong>750</strong> Damage
-  legendary: Blocks <strong>750</strong> Damage. <strong>Self-Resurrects</strong> when downed (1 Times Use)
+  legendary: Blocks <strong>750</strong> Damage. <strong>Self-Resurrect</strong> when downed (1 time use)
 -
   name: Backpack
   basic: <strong>2</strong> Extra Inventory Slots
   rare: <strong>4</strong> Extra Inventory Slots
   epic: <strong>6</strong> Extra Inventory Slots
-  legendary: <strong>6</strong> Extra Inventory Slots. Healing and Shielding Consumables take <Strong>half the time</strong> to use.
+  legendary: <strong>6</strong> Extra inventory slots. Healing and Shielding consumables take <Strong>half the time</strong> to use.
