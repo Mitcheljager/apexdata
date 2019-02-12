@@ -6,4 +6,20 @@ module ApplicationHelper
       Rails.application.assets_manifest.assets[path].present?
     end
   end
+
+  def alldata?
+    if cookies[:alldata] == "expanded"
+      return true
+    else
+      return false
+    end
+  end
+
+  def compact?
+    if cookies[:viewtype] == "compact"
+      return true
+    else
+      return false
+    end
+  end
 end

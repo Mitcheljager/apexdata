@@ -102,3 +102,9 @@ a {
     text-align: right;
   }
 }
+
+.center-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

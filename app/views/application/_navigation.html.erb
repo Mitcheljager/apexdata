@@ -34,9 +34,16 @@
 </nav>
 
 <div class="wrapper">
-  <div class="switch <%= "switch--active-right" if cookies[:viewtype] == "compact" %>">
+  <div class="switch <%= "switch--active-right" if compact? %>">
     <%= link_to "Expanded view", expanded_path, class: "switch__item" %>
-    <%= link_to "", cookies[:viewtype] == "compact" ? expanded_path : compact_path, class:"switch__toggle" %>
+    <%= link_to "", compact? ? expanded_path : compact_path, class:"switch__toggle" %>
     <%= link_to "Compact view", compact_path, class: "switch__item" %>
+  </div>
+
+  <div class="center-element">
+    <%= link_to (cookies[:alldata] == "expanded" ? alldata_compact_path : alldata_expanded_path), class: "toggle #{ cookies[:alldata] == "expanded" ? "toggle--active" : "" }" do %>
+      <div class="toggle__check"></div>
+      <div class="toggle__content">Expand all Data</div>
+    <% end %>
   </div>
 </div>

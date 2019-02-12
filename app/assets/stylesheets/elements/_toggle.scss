@@ -1,0 +1,29 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5em;
+  margin-top: $margin / 2;
+  background: $darkblue;
+  font-size: 14px;
+  color: $text-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &--active {
+    color: $white;
+  }
+}
+
+.toggle__check {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background: rgba($white, .35);
+  border: $border-color;
+  margin-right: .5em;
+
+  .toggle--active & {
+    background: image_url("checkmark.png");
+  }
+}

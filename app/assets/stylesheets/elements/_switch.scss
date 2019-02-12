@@ -10,6 +10,7 @@
   text-decoration: none;
 
   &:first-of-type {
+    text-align: right;
     color: $white;
 
     .switch--active-right & {
@@ -18,6 +19,7 @@
   }
 
   &:last-of-type {
+    text-align: left;
     color: $text-color;
 
     .switch--active-right & {

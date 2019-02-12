@@ -1,4 +1,4 @@
-<article class="item <%= "item--compact" if cookies[:viewtype] == "compact" %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
+<article class="item <%= "item--compact" if compact? %> <%= "item--more-data" if alldata? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
   <div class="item__content">
     <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" }, title: "Compare other items against this. Hover over values to see the difference between the two." do %>
       Compare
@@ -42,7 +42,11 @@
           <div class="item__tray">
             <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize), class: "item__icon" if item["ammo_type"] %>
 
-            <%= link_to "More data", "#", class: "button button--primary", data: { action: "item-more-data" } %>
+            <% if alldata? %>
+              <%= link_to "Less data", "#", class: "button", data: { action: "item-more-data" } %>
+            <% else %>
+              <%= link_to "More data", "#", class: "button button--primary", data: { action: "item-more-data" } %>
+            <% end %>
           </div>
         </div>
 
