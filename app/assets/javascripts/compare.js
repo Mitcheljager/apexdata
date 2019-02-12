@@ -58,7 +58,7 @@ function compareAgainstItem(event) {
 function showCompareAgainstItemElement(compareItem) {
   const compareAgainstElement = document.createElement("div")
   compareAgainstElement.classList.add("compare-float")
-  compareAgainstElement.innerHTML = `<span>Comparing against <strong>${ compareItem.dataset.compareItem }</strong><span>`
+  compareAgainstElement.innerHTML = `<span>Comparing against <strong>${ compareItem.dataset.compareItem.replace(/_/g, " ") }</strong></span>`
 
   const compareAgainstElementClose = document.createElement("div")
   compareAgainstElementClose.classList.add("compare-float__close")
