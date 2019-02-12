@@ -96,3 +96,9 @@ a {
 .color-legendary {
   color: orange;
 }
+
+.text-right {
+  @media (min-width: $max-width) {
+    text-align: right;
+  }
+}
