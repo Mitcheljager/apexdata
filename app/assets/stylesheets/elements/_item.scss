@@ -11,12 +11,22 @@
   filter: drop-shadow(0 6px 32px rgba($black, .05)) drop-shadow(0 2px 4px rgba($black, .2));
   will-change: scroll-position, contents;
 
+  @supports (-webkit-overflow-scrolling: touch) {
+    filter: none;
+    box-shadow:  0 6px 32px rgba($black, .05), 0 2px 4px rgba($black, .2);
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
 
   &--compare-main {
     filter: drop-shadow(0 6px 32px rgba($black, .25)) drop-shadow(0 2px 4px rgba($black, .5));
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      filter: none;
+      box-shadow: 0 6px 32px rgba($black, .25), 0 2px 4px rgba($black, .5);
+    }
   }
 
   &::after {
@@ -67,6 +77,10 @@
   transition: transform 100ms;
   flex-direction: column-reverse;
 
+  @supports (-webkit-overflow-scrolling: touch) {
+    clip-path: none;
+  }
+
   @media screen and (min-width: 640px) {
     flex-direction: row;
   }
@@ -86,6 +100,10 @@
     width: 40px;
     background-color: $white;
     transform: rotate(45deg) translateX(-32px) translateY(-15px);
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      display: none;
+    }
   }
 
   &::after {
@@ -98,6 +116,10 @@
     width: 70px;
     background: $white;
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      display: none;
+    }
   }
 
   @supports (-ms-ime-align:auto) {
