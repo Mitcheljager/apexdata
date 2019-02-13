@@ -1,0 +1,28 @@
+<article class="item item--compact <%= "item--extra-compact" if compact? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
+  <div class="item__content">
+    <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" }, title: "Compare other items against this. Hover over values to see the difference between the two." do %>
+      Compare
+    <% end %>
+
+    <div class="item__description">
+      <% if asset_exist?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") %>
+        <div class="item__large-icon-wrapper">
+          <%= image_tag "attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
+        </div>
+      <% end %>
+
+      <div class="item__title heading heading--small">
+        <h3 class="heading__title">
+          <%= item["name"].truncate(17) %>
+        </h3>
+        <div class="heading__line"></div>
+      </div>
+
+      <div class="item__data-wrapper">
+        <div class="item__main">
+          <%= item["name"].downcase.gsub(" ", "_").gsub("'", "") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

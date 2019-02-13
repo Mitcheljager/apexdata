@@ -48,7 +48,7 @@
     zoom_time: -25%
 -
   name: Shotgun Bolt
-  type: shotgun_belt
+  type: stock
   common:
     description: Small upgrade to fire rate
     fire_rate: 115%
@@ -69,13 +69,13 @@
     kick_pitch_base: -5%
     kick_pitch_random: -20%
     kick_yaw_base: -5%
-    -10%
+    kick_yaw_random: -10%
   rare:
     description: Moderate recoil reduction.
     kick_pitch_base: -10%
     kick_pitch_random: -25%
     kick_yaw_base: -10%
-    -15%
+    kick_yaw_random: -15%
   epic:
     description: Large recoil reduction.
     kick_pitch_base: -15%
