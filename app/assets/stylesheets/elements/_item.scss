@@ -323,13 +323,21 @@
 
 .item__full-width-info {
   font-size: 14px;
-  margin-bottom: $margin / 4;
+  margin-top: $margin / 2;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
 
   span {
     display: block;
     font-size: 12px;
     font-weight: 700;
     margin-bottom: .1em;
+  }
+
+  + .item__small-info {
+    margin-top: $margin / 8;
   }
 }
 

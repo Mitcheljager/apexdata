@@ -1,7 +1,7 @@
 -
   name: Sniper Stock
   type: stock
-  common:
+  basic:
     description: Improves handling and reduces aim drift.
     draw_time: -15%
     holster_time: -15%
@@ -25,7 +25,7 @@
 -
   name: Standard Stock
   type: stock
-  common:
+  basic:
     description: Improves handling and reduces aim drift.
     draw_time: -15%
     holster_time: -15%
@@ -49,22 +49,22 @@
 -
   name: Shotgun Bolt
   type: stock
-  common:
+  basic:
     description: Small upgrade to fire rate
-    fire_rate: 115%
+    fire_rate: 15%
     rechamber_time: -10%
   rare:
     description: Moderate upgrade to fire rate
-    fire_rate: 125%
+    fire_rate: 25%
     rechamber_time: -20%
   epic:
     description: Maximum upgrade to fire rate
-    fire_rate: 135%
+    fire_rate: 35%
     rechamber_time: -25%
 -
   name: Barrel Stabilizer
   type: barrel
-  common:
+  basic:
     description: Small recoil reduction.
     kick_pitch_base: -5%
     kick_pitch_random: -20%
@@ -82,6 +82,12 @@
     kick_pitch_random: -30%
     kick_yaw_base: -15%
     kick_yaw_random: -20%
+  legendary:
+    description: Large recoil reduction.
+    kick_pitch_base: -20%
+    kick_pitch_random: -35%
+    kick_yaw_base: -20%
+    kick_yaw_random: -25%
 -
   name: Flash Hider
   type: barrel
@@ -110,52 +116,63 @@
     description: Increased headshot damage for compatible weapons.
     damage_multiplier: 2.5
 -
+  name: Turbocharger
+  type: hop-up
+  legendary:
+    description: Reduces autofire spin-up time for compatible weapons.
+-
   name: Extended Heavy Mag
   type: magazine
-  common:
+  basic:
     description: Slightly increases ammo capacity.
+    ammo_increase: 25%
   rare:
     description: Increased ammo capacity with quicker reloads.
     reload_time: -8%
+    ammo_increase: 50%
   epic:
     description: High ammo capacity with fast reloads.
     reload_time: -13%
+    ammo_increase: 100%
 -
   name: Extended Light Mag
   type: magazine
-  common:
+  basic:
     description: Slightly increases ammo capacity.
+    ammo_increase: 25%
   rare:
     description: Increased ammo capacity with quicker reloads.
     reload_time: -8%
+    ammo_increase: 50%
   epic:
     description: High ammo capacity with fast reloads.
     reload_time: -13%
+    ammo_increase: 100%
+-
+  name: 1x HCOG 'CLASSIC'
+  type: optic
+  basic:
+    description: Close range optic.
+-
+  name: 1x HOLO
+  type: optic
+  basic:
+    description: Close range optic.
 -
   name: 2x HCOG 'BRUISER'
   type: optic
   rare:
     description: Close range optic.
 -
-  name: 1x HCOG 'CLASSIC'
-  type: optic
-  common:
-    description: Close range optic.
--
-  name: 1x HOLO
-  type: optic
-  common:
-    description: Close range optic.
--
   name: 1x-2x VARIABLE HOLO
   type: optic
   rare:
-  description: Close range optic with variable zoom.
+    description: Close range optic with variable zoom.
 -
-  name: 1x DIGITAL THREAT
+  name: 6x SNIPER
   type: optic
-  legendary:
-    description: Close range optic with threat highlighting.
+  rare:
+    description: Basic sniper optic.
 -
   name: 2x-4x VARIABLE AOG
   type: optic
@@ -167,15 +184,15 @@
   epic:
     description: Mid-range optic.
 -
-  name: 6x SNIPER
-  type: optic
-  rare:
-    description: Basic sniper optic.
--
   name: 4x-8x VARIABLE SNIPER
   type: optic
   epic:
     description: Sniper optic with multiple zoom levels.
+-
+  name: 1x DIGITAL THREAT
+  type: optic
+  legendary:
+    description: Close range optic with threat highlighting.
 -
   name: 4x-10x DIGITAL SNIPER THREAT
   type: optic

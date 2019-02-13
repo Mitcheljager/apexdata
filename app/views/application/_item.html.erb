@@ -92,7 +92,7 @@
           </div>
 
           <%= tag.div class:"columns__column" do %>
-            <strong>Attachments</strong>
+            <strong>Attachments</strong> <small><%= link_to "View all", page_path("attachments") %></small>
 
             <%= tag.div class:"item__attachments-table" do %>
               <% item["available_attachments"].map do |key, value| %>
