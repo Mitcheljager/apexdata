@@ -13,12 +13,10 @@
 
   @supports (-webkit-overflow-scrolling: touch) {
     filter: none;
-    box-shadow:  0 6px 32px rgba($black, .05), 0 2px 4px rgba($black, .2);
   }
 
   @media (max-width: 639px) {
     filter: none;
-    box-shadow:  0 6px 32px rgba($black, .05), 0 2px 4px rgba($black, .2);
   }
 
   &:last-child {
@@ -30,12 +28,10 @@
 
     @supports (-webkit-overflow-scrolling: touch) {
       filter: none;
-      box-shadow: 0 6px 32px rgba($black, .25), 0 2px 4px rgba($black, .5);
     }
 
     @media (max-width: 639px) {
       filter: none;
-      box-shadow: 0 6px 32px rgba($black, .25), 0 2px 4px rgba($black, .5);
     }
   }
 
@@ -87,14 +83,6 @@
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
 
-  @supports (-webkit-overflow-scrolling: touch) {
-    clip-path: none;
-  }
-
-  @media (max-width: 639px) {
-    clip-path: none;
-  }
-
   @media screen and (min-width: 640px) {
     flex-direction: row;
   }
@@ -114,14 +102,6 @@
     width: 40px;
     background-color: $white;
     transform: rotate(45deg) translateX(-32px) translateY(-15px);
-
-    @supports (-webkit-overflow-scrolling: touch) {
-      display: none;
-    }
-
-    @media (max-width: 639px) {
-      display: none;
-    }
   }
 
   &::after {
@@ -134,14 +114,6 @@
     width: 70px;
     background: $white;
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
-
-    @supports (-webkit-overflow-scrolling: touch) {
-      display: none;
-    }
-
-    @media (max-width: 639px) {
-      display: none;
-    }
   }
 
   @supports (-ms-ime-align:auto) {
