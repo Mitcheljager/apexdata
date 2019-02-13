@@ -11,12 +11,28 @@
   filter: drop-shadow(0 6px 32px rgba($black, .05)) drop-shadow(0 2px 4px rgba($black, .2));
   will-change: scroll-position, contents;
 
+  @supports (-webkit-overflow-scrolling: touch) {
+    filter: none;
+  }
+
+  @media (max-width: 639px) {
+    filter: none;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
 
   &--compare-main {
     filter: drop-shadow(0 6px 32px rgba($black, .25)) drop-shadow(0 2px 4px rgba($black, .5));
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      filter: none;
+    }
+
+    @media (max-width: 639px) {
+      filter: none;
+    }
   }
 
   &::after {
@@ -57,6 +73,7 @@
 
 .item__content {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
@@ -65,7 +82,6 @@
   background: $black image_url("item-pattern.jpg");
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
-  flex-direction: column-reverse;
 
   @media screen and (min-width: 640px) {
     flex-direction: row;
