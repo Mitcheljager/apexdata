@@ -38,7 +38,7 @@
           </div>
 
           <%= tag.div class: "item__small-info" do %>
-            Cast time: <span><div data-compare-target="cast-time"><%= item["cast_time"] %></div></span>
+            Cast time: <span><div data-compare-target="cast-time" data-compare-inverse="true"><%= item["cast_time"] %></div></span>
             <small>s</small>
           <% end if item["cast_time"] %>
         </div>
