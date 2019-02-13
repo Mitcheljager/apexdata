@@ -46,6 +46,7 @@
               <%= tag.div do %>
                 <%= image_tag "fire_mode/single.png", class: "item__fire-mode", alt: "Single Fire", title: "Single Fire" if item["fire_modes"]["single"] %>
                 <%= image_tag "fire_mode/auto.png", class: "item__fire-mode", alt: "Automatic Fire", title: "Automatic Fire" if item["fire_modes"]["auto"] %>
+                <%= image_tag "fire_mode/burst.png", class: "item__fire-mode", alt: "Burst Fire)", title: "Burst Fire ( #{item["fire_modes"]["burst"] } Shots )" if item["fire_modes"]["burst"] %>
               <% end if item["fire_modes"] %>
             </div>
 
