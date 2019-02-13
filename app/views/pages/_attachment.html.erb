@@ -64,10 +64,10 @@
                 <span><div data-compare-target="ads-time"><%= item[rarity]["ads"] %></div></span>
               <% end if item[rarity]["ads"] %>
 
-              <%= tag.div class: "item__full-width-info" do %>
-                Recoil Reduction:
-                <span><%= item[rarity]["kick_pitch_base"] %></span>
-              <% end if item[rarity]["kick_pitch_base"] %>
+              <%= tag.div class: "item__small-info" do %>
+                Recoil (roughly):
+                <span><div data-compare-target="ads-time"><%= item[rarity]["kick_yaw_random"] %></div></span>
+              <% end if item[rarity]["kick_yaw_random"] %>
             <% end %>
           <% end %>
         </div>
