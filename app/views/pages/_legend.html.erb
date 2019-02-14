@@ -1,9 +1,9 @@
-<article class="item item--compact item--legends">
+<article class="item item--compact item--legend">
   <div class="item__content item__content--same-height">
     <div class="item__description">
       <div class="item__large-icon-wrapper">
         <% if asset_exist? "legends/#{ item["name"] }/character.png" %>
-          <%= image_tag "legends/#{ item["name"] }/character.png", class: "item__large-icon item__legend", alt: item["name"] %>
+          <%= image_tag "legends/#{ item["name"] }/character.png", class: "item__large-icon", alt: item["name"] %>
         <% end %>
       </div>
 

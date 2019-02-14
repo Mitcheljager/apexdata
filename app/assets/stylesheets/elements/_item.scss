@@ -19,9 +19,16 @@
     filter: none;
   }
 
-  // &:last-child {
-  //   margin-bottom: 0;
-  // }
+  &::after {
+    content: image_url("item-pattern-dark.jpg");
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
 
   &--compare-main {
     filter: drop-shadow(0 6px 32px rgba($black, .25)) drop-shadow(0 2px 4px rgba($black, .5));
@@ -33,17 +40,6 @@
     @media (max-width: 639px) {
       filter: none;
     }
-  }
-
-  &::after {
-    content: image_url("item-pattern-dark.jpg");
-    display: block;
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
   }
 
   &--compact {
@@ -69,12 +65,6 @@
       }
     }
   }
-
-  &--legends {
-    .button {
-      margin: 30px auto 0;
-    }
-  }
 }
 
 .item__content {
@@ -88,19 +78,6 @@
   background: $black image_url("item-pattern.jpg");
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
-
-  @media screen and (min-width: 640px) {
-    flex-direction: row;
-  }
-
-  &--same-height {
-    height: 100%;
-  }
-
-  .item--compare-main & {
-    background: $black image_url("item-pattern-dark.jpg");
-    transform: scale(1.025);
-  }
 
   &::before {
     content: "";
@@ -126,11 +103,28 @@
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
   }
 
+  @media screen and (min-width: 640px) {
+    flex-direction: row;
+  }
+
   @supports (-ms-ime-align:auto) {
     &::before,
     &::after {
       display: none;
     }
+  }
+
+  &--same-height {
+    height: 100%;
+  }
+
+  .item--compare-main & {
+    background: $black image_url("item-pattern-dark.jpg");
+    transform: scale(1.025);
+  }
+
+  .item--legend & {
+    padding-top: $margin / 4;
   }
 }
 
@@ -452,6 +446,10 @@
 
   .item--extra-compact & {
     display: none;
+  }
+
+  img {
+    max-width: $margin * 3.5;
   }
 }
 
