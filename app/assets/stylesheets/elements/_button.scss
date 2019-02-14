@@ -31,6 +31,11 @@
     font-weight: 300;
   }
 
+  &--smaller {
+    padding: ($margin / 6) ($margin / 2);
+    font-size: 10px;
+  }
+
   &--primary {
     background: $red;
     color: $white;
