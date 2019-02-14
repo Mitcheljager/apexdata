@@ -1,0 +1,120 @@
+-
+  name: Bangalore
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: Smoke Launcher
+      desc: Fire a high-velocity smoke canister that explodes into a smoke wall on impact.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Double Time
+      desc: Taking fire while sprinting makes you move faster for a brief time.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Rolling Thunder
+      desc: Call in an artillery strike that slowly creeps across the landscape.
+-
+  name: Bloodhound
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: Eye of the Allfather
+      desc: Briefly reveal hidden enemies, traps, and clues throughout structures in front of you.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Tracker
+      desc: See tracks left behind by your foes.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Beast of the Hunt
+      desc: Enhances your senses, allowing you move faster and highlighting your prey.
+-
+  name: Caustic
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: Nox Gas Trap
+      desc: Drop canisters that release deadly Nox gas when shot or triggered by enemies.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Nox Vision
+      desc: Allows you to see enemies through your gas.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Nox Gas Grenade
+      desc: Blankets a large area in Nox gas.
+-
+  name: Gibraltar
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: Dome of Protection
+      desc: Throw down a dome-shield that blocks attacks for 15 seconds.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Gun Shield
+      desc: Aiming down sights deploys a gun shield that blocks incoming fire.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Defensive Bombardment
+      desc: Call in a concentrated mortar strike on a marked position.
+-
+  name: Lifeline
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: D.O.C. Heal Drone
+      desc: Call your Drone of Compassion to automatically heal nearby teammates over time.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Combat Medic
+      desc: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Care Package
+      desc: Call in a drop pod full of high-quality defensive gear.
+-
+  name: Mirage
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: Psyche Out
+      desc: Send out a holographic decoy to confuse the enemy.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Encore!
+      desc: Automatically drop a decoy and cloak for five seconds when knocked down.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Vanishing Act
+      desc: Deploy a team of Decoys to distract enemies while you cloak.
+-
+  name: Pathfinder
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: Grappling Hook
+      desc: Grapple to get to out-of-reach places quickly.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Insider Knowledge
+      desc: Scan a survey beacon to reveal the ring’s next location.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Zipline Gun
+      desc: Create a zipline for everyone to use.
+-
+  name: Wraith
+  abilities:
+    ability_1:
+      abilityname: TACTICAL ABILITY
+      name: Into the Void
+      desc: Reposition quickly through the safety of void space, avoiding all damage.
+    ability_2:
+      abilityname: PASSIVE ABILITY
+      name: Voices from the Void
+      desc: A voice warns you when danger approaches. As far as you can tell, it’s on your side.
+    ability_3:
+      abilityname: ULTIMATE ABILITY
+      name: Dimensional Rift
+      desc: Link two locations with portals for 60 seconds, allowing your entire team to use them.

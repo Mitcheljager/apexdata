@@ -39,6 +39,10 @@ module ContentHelper
     YAML.load(File.read(Rails.root.join("config/content", "attachments.yml")))
   end
 
+  def legends
+    YAML.load(File.read(Rails.root.join("config/content", "legends.yml")))
+  end
+
   def weapons
     assault_rifles.concat(sub_machine_guns).concat(pistols).concat(light_machine_guns).concat(shotguns).concat(sniper_rifles)
   end

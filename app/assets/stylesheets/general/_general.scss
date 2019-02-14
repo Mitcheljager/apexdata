@@ -76,8 +76,17 @@ a {
 .columns {
   display: flex;
 
+  &--abilities {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .columns__column {
     width: 50%;
+
+    &--third {
+      width: 33.333%;
+    }
   }
 }
 

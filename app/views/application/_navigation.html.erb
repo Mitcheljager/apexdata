@@ -32,7 +32,8 @@
       <%= link_to "Attachments", page_path("attachments"), class: current_page?(page_path("attachments")) ? "active" : "" %>
     </div>
   </div>
-
+  
+  <%= link_to "Legends", page_path("legends"), class: current_page?("legends") ? "active" : "" %>
   <%= link_to "Patch Notes", page_path("patch-notes/2-13-2019"), class: current_page?("/patch-notes/2-13-2019") ? "active" : "" %>
 </nav>
 
