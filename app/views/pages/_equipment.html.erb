@@ -22,22 +22,22 @@
         <div class="item__main">
           <%= tag.div class: "item__full-width-info" do %>
             <span class="color-basic">Basic</span>
-            <%= item["basic"].html_safe %>
+            <div class="no-text-transform"><%= item["basic"].html_safe %></div>
           <% end if item["basic"] %>
 
           <%= tag.div class: "item__full-width-info" do %>
             <span class="color-rare">Rare</span>
-            <%= item["rare"].html_safe %>
+            <div class="no-text-transform"><%= item["rare"].html_safe %></div>
           <% end if item["rare"] %>
 
           <%= tag.div class: "item__full-width-info" do %>
             <span class="color-epic">Epic</span>
-            <%= item["epic"].html_safe %>
+            <div class="no-text-transform"><%= item["epic"].html_safe %></div>
           <% end if item["epic"] %>
 
           <%= tag.div class: "item__full-width-info" do %>
             <span class="color-legendary">Legendary</span>
-            <%= item["legendary"].html_safe %>
+            <div class="no-text-transform"><%= item["legendary"].html_safe %></div>
           <% end if item["legendary"] %>
         </div>
       </div>

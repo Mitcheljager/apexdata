@@ -15,7 +15,7 @@
   basic: Blocks <strong>100</strong> Damage
   rare: Blocks <strong>250</strong> Damage
   epic: Blocks <strong>750</strong> Damage
-  legendary: Blocks <strong>750</strong> Damage. <strong>Self-Resurrect</strong> when downed (1 time use)
+  legendary: Blocks <strong>750</strong> Damage. <strong>Self-Resurrect</strong> when downed (1 time use).<br><br>Self-revive takes <strong>12 seconds</strong> to use.
 -
   name: Backpack
   basic: <strong>2</strong> Extra Inventory Slots
