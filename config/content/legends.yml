@@ -4,17 +4,14 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: Smoke Launcher
-      icon: ability_1.png
       desc: Fire a high-velocity smoke canister that explodes into a smoke wall on impact.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Double Time
-      icon: ability_2.png
       desc: Taking fire while sprinting makes you move faster for a brief time.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Rolling Thunder
-      icon: ability_3.png
       desc: Call in an artillery strike that slowly creeps across the landscape.
 -
   name: Bloodhound
@@ -22,17 +19,14 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: Eye of the Allfather
-      icon: ability_1.png
       desc: Briefly reveal hidden enemies, traps, and clues throughout structures in front of you.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Tracker
-      icon: ability_2.png
       desc: See tracks left behind by your foes.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Beast of the Hunt
-      icon: ability_3.png
       desc: Enhances your senses, allowing you move faster and highlighting your prey.
 -
   name: Caustic
@@ -40,17 +34,14 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: Nox Gas Trap
-      icon: ability_1.png
       desc: Drop canisters that release deadly Nox gas when shot or triggered by enemies.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Nox Vision
-      icon: ability_2.png
       desc: Allows you to see enemies through your gas.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Nox Gas Grenade
-      icon: ability_3.png
       desc: Blankets a large area in Nox gas.
 -
   name: Gibraltar
@@ -58,17 +49,14 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: Dome of Protection
-      icon: ability_1.png
       desc: Throw down a dome-shield that blocks attacks for 15 seconds.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Gun Shield
-      icon: ability_2.png
       desc: Aiming down sights deploys a gun shield that blocks incoming fire.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Defensive Bombardment
-      icon: ability_3.png
       desc: Call in a concentrated mortar strike on a marked position.
 -
   name: Lifeline
@@ -76,17 +64,14 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: D.O.C. Heal Drone
-      icon: ability_1.png
       desc: Call your Drone of Compassion to automatically heal nearby teammates over time.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Combat Medic
-      icon: ability_2.png
       desc: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Care Package
-      icon: ability_3.png
       desc: Call in a drop pod full of high-quality defensive gear.
 -
   name: Mirage
@@ -94,17 +79,14 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: Psyche Out
-      icon: ability_1.png
       desc: Send out a holographic decoy to confuse the enemy.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Encore!
-      icon: ability_2.png
       desc: Automatically drop a decoy and cloak for five seconds when knocked down.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Vanishing Act
-      icon: ability_3.png
       desc: Deploy a team of Decoys to distract enemies while you cloak.
 -
   name: Pathfinder
@@ -112,17 +94,14 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: Grappling Hook
-      icon: ability_1.png
       desc: Grapple to get to out-of-reach places quickly.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Insider Knowledge
-      icon: ability_2.png
       desc: Scan a survey beacon to reveal the ring’s next location.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Zipline Gun
-      icon: ability_3.png
       desc: Create a zipline for everyone to use.
 -
   name: Wraith
@@ -130,15 +109,12 @@
     ability_1:
       abilityname: TACTICAL ABILITY
       name: Into the Void
-      icon: ability_1.png
       desc: Reposition quickly through the safety of void space, avoiding all damage.
     ability_2:
       abilityname: PASSIVE ABILITY
       name: Voices from the Void
-      icon: ability_2.png
       desc: A voice warns you when danger approaches. As far as you can tell, it’s on your side.
     ability_3:
       abilityname: ULTIMATE ABILITY
       name: Dimensional Rift
-      icon: ability_3.png
       desc: Link two locations with portals for 60 seconds, allowing your entire team to use them.
