@@ -1,4 +1,4 @@
-<article class="item item--compact item--legend">
+<article class="item item--legend item--compact <%= "item--extra-compact" if compact? %>">
   <div class="item__content item__content--same-height">
     <div class="item__description">
       <div class="item__large-icon-wrapper">
@@ -23,7 +23,7 @@
 
                 <div>
                   <span class="color-basic"><%= ability["name"] %></span>
-                  <small class="no-text-transform"><%= ability["desc"] %></small>
+                  <small class="no-text-transform"><%= ability["description"] %></small>
                 </div>
               </div>
             <% end if item["abilities"] %>
