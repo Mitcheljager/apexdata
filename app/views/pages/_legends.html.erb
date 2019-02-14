@@ -1,0 +1,34 @@
+<article class="item item--compact item--legends">
+  <div class="item__content item__content--same-height">
+    <div class="item__description">
+      <div class="item__large-icon-wrapper">
+          <img class="item__large-icon item__legend" alt="<%= item["name"] if item["name"] %>" src="/assets/legends/<%= item["name"] if item["name"] %>/character.png">
+      </div>
+      <div class="item__title heading heading--small">
+        <h3 class="heading__title"><%= item["name"] if item["name"] %></h3>
+        <div class="heading__line"></div>
+      </div>
+      <div class="item__data-wrapper">
+        <div class="item__main">
+          <div class="columns columns--abilities">
+            <% item["abilities"].each do |key, ability| %>
+              <div class="item__full-width-info item__full-width-info--image">
+                <img src="/assets/legends/<%= item["name"] if item["name"] %>/<%= ability['icon'] %>" />
+                <div>
+                  <span class="color-basic"><%= ability["name"] %></span>
+                  <small class="no-text-transform"><%= ability["desc"] %></small>
+                </div>
+              </div>
+            <% end if item["abilities"] %>
+          </div>
+          <div class="item__full-width-info">
+            <div>
+              <span class="color-basic">More soon</span>
+              <small class="no-text-transform">Individual pages are coming soon</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
