@@ -1,9 +1,10 @@
 .social {
   margin: 80px 0 0;
+}
 
-  .logo__sub-title {
-    text-align: center;
-  }
+.social__title {
+  @extend .logo__sub-title;
+  text-align: center;
 }
 
 .social__items {
@@ -12,7 +13,6 @@
   justify-content: center;
 
   a {
-    margin: 0 10px;
-    font-size: 13px;
+    margin: 0 -.5em;
   }
 }

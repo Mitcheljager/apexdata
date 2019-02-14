@@ -340,6 +340,7 @@
 .item__full-width-info {
   font-size: 14px;
   margin-top: $margin / 2;
+  text-transform: none;
 
   &:first-of-type {
     margin-top: 0;
@@ -350,6 +351,11 @@
     font-size: 12px;
     font-weight: 700;
     margin-bottom: .1em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    text-transform: uppercase;
   }
 
   + .item__small-info {

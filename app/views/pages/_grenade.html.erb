@@ -37,8 +37,8 @@
             <% end if item["burn_damage"] %>
           </div>
 
-          <%= tag.p class: "item__small-text" do %>
-            <%= item["description"].html_safe %>
+          <%= tag.p class: "item__full-width-info" do %>
+            <small><%= item["description"].html_safe %></small>
           <% end if item["description"] %>
 
           <%= tag.div class: "item__small-info" do %>
