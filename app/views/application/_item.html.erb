@@ -94,14 +94,14 @@
           <%= tag.div class:"columns__column" do %>
             <strong>Attachments</strong> <small><%= link_to "View all", page_path("attachments") %></small>
 
-            <%= tag.div class:"item__attachments-table" do %>
-              <% item["available_attachments"].map do |key, value| %>
-                <div class="item__attachments-item <%= "item__attachments-item--disabled" unless value %>">
-                  <%= image_tag "attachments/#{ key }.png", alt: "attachment_#{key}", title: key.humanize %>
-                </div>
-              <% end %>
+            <% if item["available_attachments"] %>
+              <%= render "pages/attachments_table", item: item %>
+            <% else %>
+              <div>
+                <small>None</small>
+              </div>
             <% end %>
-          <% end if item["available_attachments"] %>
+          <% end %>
         </div>
       </div>
     </div>
