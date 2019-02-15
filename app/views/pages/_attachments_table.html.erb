@@ -3,9 +3,15 @@
     <div class="attachments-table__item <%= "attachments-table__item--disabled" unless attachment_type %>">
       <%= image_tag "attachments/#{ attachment_type.first }.png", alt: "attachment_#{attachment_type.first}", title: attachment_type.first.humanize if asset_exist?("attachments/#{ attachment_type.first }.png") %>
 
-      <% attachment_type.map do |attachment| %>
-        <%= attachment.humanize %>
-      <% end %>
+      <div class="attachments-table__dropdown">
+        <% attachment_type.map do |attachment| %>
+          <a class="attachments-table__dropdown-item">
+            <%= image_tag "attachments/#{ attachment.downcase.gsub(" ", "_") }.png", alt: attachment.humanize %>
+
+            <%= attachment.humanize %>
+          </a>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
