@@ -39,8 +39,9 @@ function setModifier(event) {
       targetElement.appendChild(modifyElement)
     })
   })
-
+  
   changeItemIcon(this)
+  trackGA(this.closest(".item").querySelector("h3 a").innerHTML)
 }
 
 function changeItemIcon(self) {
@@ -78,5 +79,16 @@ function removeModifier() {
       const element = targetElement.querySelector(".item__small-info-modify-value")
       if (element) element.remove()
     })
+  })
+}
+
+function trackGA(label) {
+  if (typeof ga !== "function") return
+
+  ga("send", {
+    hitType: "event",
+    eventCategory: "buttons",
+    eventAction: "modify",
+    eventLabel: label
   })
 }
