@@ -18,9 +18,9 @@
     magazine:
       - extended_light_mag
     optics:
-      - 2x_hcog_bruiser
       - 1x_hcog_classic
       - 1x_holo
+      - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 2x-4x_variable_aog
       - 3x_hcog_ranger
@@ -49,9 +49,9 @@
     magazine:
       - extended_light_mag
     optics:
-      - 2x_hcog_bruiser
       - 1x_hcog_classic
       - 1x_holo
+      - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 2x-4x_variable_aog
       - 3x_hcog_ranger
@@ -79,9 +79,9 @@
     hop_up:
       - selectfire_receiver
     optics:
-      - 2x_hcog_bruiser
       - 1x_hcog_classic
       - 1x_holo
+      - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 2x-4x_variable_aog
       - 3x_hcog_ranger

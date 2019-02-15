@@ -5,19 +5,13 @@
 
 .attachments-table__item {
   display: block;
-  border: 1px solid rgba($white, .35);
+  border: 1px dashed rgba($white, .25);
   width: 2.5rem;
   height: 2.5rem;
   padding: .25rem;
-  background: rgba($white, .35);
+  background: rgba($white, .15);
   margin-right: 2px;
-
-  &:hover,
-  &:active {
-    .attachments-table__dropdown {
-      display: block;
-    }
-  }
+  cursor: pointer;
 
   &--disabled {
     border: 1px solid rgba($white, .15);
@@ -39,26 +33,48 @@
   width: 200px;
   background: $darkblue;
   border: 1px solid $border-color;
-  padding: $margin / 4;
-  max-height: calc(4em + #{$margin});
+  max-height: calc(5em + #{$margin});
   overflow: auto;
+  transform: translateX(-3px) translateY(1px);
+
+  &.active {
+    display: block;
+  }
 }
 
 .attachments-table__dropdown-item {
   display: flex;
   align-items: center;
   width: 100%;
-  border-top: 1px solid $border-color;
-  padding: ($margin / 4) 0;
+  border-bottom: 1px solid $border-color;
+  padding: ($margin / 6) ($margin / 8);
   font-size: 11px;
+  cursor: pointer;
+
+  &--remove {
+    display: none;
+
+    .attachments-table__item[class*="border-"] & {
+      display: block;
+    }
+  }
+
+  &:hover,
+  &:active {
+    background: lighten($darkblue, 5%);
+  }
 
   &:last-of-type {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 0;
   }
 
   img {
     height: 3em;
     width: auto;
-    margin-right: 1em;
+    margin-right: .5em;
   }
+}
+
+[data-modify-target] {
+  display: flex;
 }

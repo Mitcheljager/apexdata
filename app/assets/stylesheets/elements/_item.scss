@@ -333,7 +333,13 @@
     display: block;
     font-size: 16px;
     font-weight: 700;
-    color: $white
+    color: $white;
+
+    &.item__small-info-modify-value {
+      font-weight: 300;
+      font-size: .8em;
+      margin-left: .25em;
+    }
   }
 
   small {
