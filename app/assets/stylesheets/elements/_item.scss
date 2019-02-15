@@ -19,8 +19,15 @@
     filter: none;
   }
 
-  &:last-child {
-    margin-bottom: 0;
+  &::after {
+    content: image_url("item-pattern-dark.jpg");
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
   }
 
   &--compare-main {
@@ -33,17 +40,6 @@
     @media (max-width: 639px) {
       filter: none;
     }
-  }
-
-  &::after {
-    content: image_url("item-pattern-dark.jpg");
-    display: block;
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
   }
 
   &--compact {
@@ -83,15 +79,6 @@
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
 
-  @media screen and (min-width: 640px) {
-    flex-direction: row;
-  }
-
-  .item--compare-main & {
-    background: $black image_url("item-pattern-dark.jpg");
-    transform: scale(1.025);
-  }
-
   &::before {
     content: "";
     display: block;
@@ -116,11 +103,28 @@
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
   }
 
+  @media screen and (min-width: 640px) {
+    flex-direction: row;
+  }
+
   @supports (-ms-ime-align:auto) {
     &::before,
     &::after {
       display: none;
     }
+  }
+
+  &--same-height {
+    height: 100%;
+  }
+
+  .item--compare-main & {
+    background: $black image_url("item-pattern-dark.jpg");
+    transform: scale(1.025);
+  }
+
+  .item--legend:not(.item--extra-compact) & {
+    padding-top: $margin / 4;
   }
 }
 
@@ -346,6 +350,17 @@
     margin-top: 0;
   }
 
+  &--image {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    img {
+      width: 64px;
+      margin-left: -19px;
+    }
+  }
+
   span {
     display: block;
     font-size: 12px;
@@ -403,6 +418,10 @@
   .item--extra-compact & {
     display: none;
   }
+
+  img {
+    max-width: $margin * 3.5;
+  }
 }
 
 .item__ammo-type {
@@ -419,4 +438,23 @@
   &:first-of-type {
     margin-top: 0;
   }
+}
+
+.item__ability {
+  align-items: center;
+
+  img {
+    width: 100%;
+  }
+
+  span {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.item__legend {
+  width: 100%;
+  object-fit: contain;
+  object-position: 50% -10px;
 }
