@@ -12,11 +12,17 @@
   draw_time: 0.35
   holster_time: 0.3
   available_attachments:
-    barrel: true
-    magazine: true
-    hop_up: false
-    optic: true
-    stock: false
+    barrel:
+      - barrel_stabilizer
+      - flash_hider
+    magazine:
+      - extended_light_mag
+    optics:
+      - 1x_hcog_classic
+      - 1x_holo
+      - 2x_hcog_bruiser
+      - 1x-2x_variable_holo
+      - 1x_digital_threat
   fire_modes:
     auto: true
 -
@@ -33,11 +39,17 @@
   draw_time: 0.25
   holster_time: 0.2
   available_attachments:
-    barrel: false
-    magazine: true
-    hop_up: false
-    optic: true
-    stock: false
+    barrel:
+      - barrel_stabilizer
+      - flash_hider
+    magazine:
+      - extended_light_mag
+    optics:
+      - 1x_hcog_classic
+      - 1x_holo
+      - 2x_hcog_bruiser
+      - 1x-2x_variable_holo
+      - 1x_digital_threat
   fire_modes:
     single: true
 -
@@ -54,10 +66,18 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
-    barrel: false
-    magazine: true
-    hop_up: true
-    optic: true
-    stock: false
+    barrel:
+      - barrel_stabilizer
+      - flash_hider
+    magazine:
+      - extended_heavy_mag
+    hop_up:
+      - skullpiercer_rifling
+    optics:
+      - 1x_hcog_classic
+      - 1x_holo
+      - 2x_hcog_bruiser
+      - 1x-2x_variable_holo
+      - 1x_digital_threat
   fire_modes:
     single: true

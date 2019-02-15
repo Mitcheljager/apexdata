@@ -65,7 +65,7 @@
             <% end if item["legshot_damage"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Ammo capacity <span><div data-compare-target="ammo_capacity"><%= item["ammo_capacity"] %></div></span>
+              Ammo capacity <span><div data-compare-target="ammo_capacity" data-modify-target="ammo_increase" data-modify-round><%= item["ammo_capacity"] %></div></span>
             <% end if item["ammo_capacity"] %>
 
             <%= tag.div class: "item__small-info" do %>
@@ -75,33 +75,39 @@
             <br>
 
             <%= tag.div class: "item__small-info" do %>
-              Tactical reload <span><div data-compare-target="tactical_reload" data-compare-inverse="true"><%= item["tactical_reload"] %></div></span> <small>s</small>
+              Tactical reload
+              <span>
+                <div data-compare-target="tactical_reload" data-compare-inverse="true" data-modify-target="reload_time"><%= item["tactical_reload"] %></div>
+              </span>
+              <small>s</small>
             <% end if item["tactical_reload"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Empty reload <span><div data-compare-target="empty_reload" data-compare-inverse="true"><%= item["empty_reload"] %></div></span> <small>s</small>
+              Empty reload <span><div data-compare-target="empty_reload" data-compare-inverse="true" data-modify-target="reload_time"><%= item["empty_reload"] %></div></span> <small>s</small>
             <% end if item["empty_reload"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Draw time <span><div data-compare-target="draw_time" data-compare-inverse="true"><%= item["draw_time"] %></div></span> <small>s</small>
+              Draw time <span><div data-compare-target="draw_time" data-compare-inverse="true" data-modify-target="draw_time"><%= item["draw_time"] %></div></span> <small>s</small>
             <% end if item["draw_time"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Holster time <span><div data-compare-target="holster_time" data-compare-inverse="true"><%= item["holster_time"] %></div></span> <small>s</small>
+              Holster time <span><div data-compare-target="holster_time" data-compare-inverse="true" data-modify-target="holster_time"><%= item["holster_time"] %></div></span> <small>s</small>
             <% end if item["holster_time"] %>
           </div>
 
           <%= tag.div class:"columns__column" do %>
             <strong>Attachments</strong> <small><%= link_to "View all", page_path("attachments") %></small>
 
-            <%= tag.div class:"item__attachments-table" do %>
-              <% item["available_attachments"].map do |key, value| %>
-                <div class="item__attachments-item <%= "item__attachments-item--disabled" unless value %>">
-                  <%= image_tag "attachments/#{ key }.png", alt: "attachment_#{key}", title: key.humanize %>
-                </div>
-              <% end %>
+            <% if item["available_attachments"] %>
+              <%= render "pages/attachments_table", item: item %>
+
+              <small class="tiny-help">Click on the icons to see how the values would change by adding the attachment. These values are rough estimates and are a work in progress.</small>
+            <% else %>
+              <div>
+                <small>None</small>
+              </div>
             <% end %>
-          <% end if item["available_attachments"] %>
+          <% end %>
         </div>
       </div>
     </div>

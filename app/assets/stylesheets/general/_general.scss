@@ -90,20 +90,25 @@ a {
   }
 }
 
-.color-basic {
-  color: $white;
-}
+$rarities: (
+  basic: $white,
+  rare: #56a8ff,
+  epic: #f128f1,
+  legendary: orange
+);
 
-.color-rare {
-  color: #56a8ff;
-}
+@each $rarity, $value in $rarities {
+  .bg-#{$rarity} {
+    background: $value !important;
+  }
 
-.color-epic {
-  color: #f128f1;
-}
+  .color-#{$rarity} {
+    color: $value !important;
+  }
 
-.color-legendary {
-  color: orange;
+  .border-#{$rarity} {
+    border: 1px solid $value !important;
+  }
 }
 
 .text-right {
@@ -120,4 +125,11 @@ a {
 
 .no-text-transform {
   text-transform: none;
+}
+
+.tiny-help {
+  display: block;
+  font-size: 10px;
+  text-transform: none;
+  margin: ($margin / 8) 0;
 }

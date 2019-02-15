@@ -333,7 +333,13 @@
     display: block;
     font-size: 16px;
     font-weight: 700;
-    color: $white
+    color: $white;
+
+    &.item__small-info-modify-value {
+      font-weight: 300;
+      font-size: .8em;
+      margin-left: .25em;
+    }
   }
 
   small {
@@ -403,35 +409,6 @@
   position: absolute;
   top: -1px;
   right: -1px;
-}
-
-.item__attachments-table {
-  display: flex;
-  margin-top: $margin / 4;
-}
-
-.item__attachments-item {
-  display: block;
-  border: 1px solid rgba($white, .35);
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: .25rem;
-  background: rgba($white, .35);
-  margin-right: 2px;
-
-  &--disabled {
-    border: 1px solid rgba($white, .15);
-    background: rgba($white, .15);
-
-    img {
-      opacity: .5;
-    }
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
 }
 
 .item__small-text {

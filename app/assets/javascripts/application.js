@@ -15,3 +15,5 @@
 
 //= require compare
 //= require more_data
+//= require dropdown
+//= require modify
