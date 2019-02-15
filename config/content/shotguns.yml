@@ -5,7 +5,7 @@
   headshot_damage: 22.5
   legshot_damage: 12
   rate_of_fire: 180
-  ammo_capacity: 4
+  ammo_capacity: 3
   tactical_reload: 2.1
   empty_reload: 2.6
   ammo_type: shotgun
