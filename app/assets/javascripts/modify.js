@@ -39,7 +39,7 @@ function setModifier(event) {
       targetElement.appendChild(modifyElement)
     })
   })
-  
+
   changeItemIcon(this)
   trackGA(this.closest(".item").querySelector("h3 a").innerHTML)
 }
@@ -84,6 +84,8 @@ function removeModifier() {
 
 function trackGA(label) {
   if (typeof ga !== "function") return
+
+  console.log(label)
 
   ga("send", {
     hitType: "event",
