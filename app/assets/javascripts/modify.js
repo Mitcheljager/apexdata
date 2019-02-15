@@ -34,7 +34,7 @@ function setModifier(event) {
       const modifyElement = document.createElement("span")
       modifyElement.classList.add(`item__small-info-modify-value`)
       modifyElement.classList.add(`color-${ rarity }`)
-      modifyElement.innerHTML = `( ${ Math.sign(newValue) == 1 ? "+" : "" }  ${newValue})`
+      modifyElement.innerHTML = `(${ Math.sign(newValue) == 1 ? "+" : "" }${newValue})`
 
       targetElement.appendChild(modifyElement)
     })
