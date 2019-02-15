@@ -14,4 +14,8 @@ function toggleDropdown(event) {
   if (activeDropdown && activeDropdown != target) activeDropdown.classList.remove("active")
 
   target.classList.toggle("active")
+
+  const activeDropdownTrigger = document.querySelector(".attachments-table__item--active")
+  if (activeDropdownTrigger && activeDropdownTrigger != this) activeDropdownTrigger.classList.remove("attachments-table__item--active")
+  this.classList.toggle("attachments-table__item--active")
 }
