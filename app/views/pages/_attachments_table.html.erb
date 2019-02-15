@@ -1,6 +1,6 @@
-<%= tag.div class:"item__attachments-table" do %>
+<%= tag.div class:"attachments-table" do %>
   <% item["available_attachments"].map do |key, attachment_type| %>
-    <div class="item__attachments-item <%= "item__attachments-item--disabled" unless attachment_type %>">
+    <div class="attachments-table__item <%= "attachments-table__item--disabled" unless attachment_type %>">
       <%= image_tag "attachments/#{ attachment_type.first }.png", alt: "attachment_#{attachment_type.first}", title: attachment_type.first.humanize if asset_exist?("attachments/#{ attachment_type.first }.png") %>
 
       <% attachment_type.map do |attachment| %>
