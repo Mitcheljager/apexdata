@@ -85,8 +85,7 @@ function removeModifier() {
 function trackModifyGA(label) {
   if (typeof gtag !== "function") return
 
-  gtag("event", "modify", {
-    "event_category" : "Button",
-    "event_label" : label
+  gtag("event", "Modify", {
+    "event_category" : label
   })
 }

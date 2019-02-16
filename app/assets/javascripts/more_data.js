@@ -24,8 +24,7 @@ function moreDetails(event) {
 function trackMoreDataGA(label) {
   if (typeof gtag !== "function") return
 
-  gtag("event", "more_data", {
-    "event_category" : "Button",
-    "event_label" : label
+  gtag("event", "More Data", {
+    "event_category" : label
   })
 }
