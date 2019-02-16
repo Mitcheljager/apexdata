@@ -1,0 +1,277 @@
+<div class="heading">
+  <h2 class="heading__title">Pathfinder</h2>
+</div>
+
+<div class="items">
+  <article class="item">
+    <div class="item__content item__content--same-height">
+      <div class="legend__image">
+        <img src="https://i.imgur.com/77i1TmQ.png" />
+      </div>
+      <div class="legend__intro">
+        <div class="legend__lore">
+
+          <div class="item__title heading heading--small">
+            <h3 class="heading__title">Forward Scout</h3>
+            <div class="heading__line"></div>
+          </div>
+
+          <div class="item__full-width-info">
+            <p>Pathfinder is the picture of optimism, despite his circumstances. A MRVN (Mobile Robotic Versatile eNtity) modified to specialize in location scouting and surveying, he booted up decades ago in an abandoned laboratory with no idea who created him or why. With only his MRVN designation to hint at his identity, Pathfinder set off in search of his creator.</p>
+            <p>Pathfinder has learned much in his travels since then (like how to make a mean Eastern Leviathan Stew) but hasn’t come any closer to finding his creator. Still, he’s never given up hope, and has joined the Apex Games to gain a following--and hopefully draw the attention of his maker. In the meantime, he remains enthusiastic and helpful, always ready to make new friends (then shoot them).</p>
+          </div>
+
+        </div>
+
+        <div class="columns">
+
+          <div class="columns__column">
+            <div class="item__full-width-info item__full-width-info--large">
+              <div>
+                <span class="color-basic">MRVN</span>
+                <small class="no-text-transform">Real Name</small>
+              </div>
+            </div>
+            <div class="item__full-width-info item__full-width-info--large">
+              <div>
+                <span class="color-basic">Unknown</span>
+                <small class="no-text-transform">Age</small>
+              </div>
+            </div>
+            <div class="item__full-width-info item__full-width-info--large">
+              <div>
+                <span class="color-basic">Unknown</span>
+                <small class="no-text-transform">Home World</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns__column">
+            <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
+              <% if asset_exist? "legends/Pathfinder/ability_1.png" %>
+                <%= image_tag "legends/Pathfinder/ability_1.png", alt: "Grappling Hook" %>
+              <% end %>
+              <div>
+                <span class="color-basic">Grappling Hook</span>
+                <small class="no-text-transform">Tactical Ability</small>
+              </div>
+            </div>
+            <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
+              <% if asset_exist? "legends/Pathfinder/ability_2.png" %>
+                <%= image_tag "legends/Pathfinder/ability_2.png", alt: "Insider Knowledge" %>
+              <% end %>
+              <div>
+                <span class="color-basic">Insider Knowledge</span>
+                <small class="no-text-transform">Passive Ability</small>
+              </div>
+            </div>
+            <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
+              <% if asset_exist? "legends/Pathfinder/ability_3.png" %>
+                <%= image_tag "legends/Pathfinder/ability_3.png", alt: "Zipline Gun" %>
+              <% end %>
+              <div>
+                <span class="color-basic">Zipline Gun</span>
+                <small class="no-text-transform">Ultimate Ability</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="heading heading--medium">
+  <h2 class="heading__title">Abilities</h2>
+</div>
+
+<div class="items">
+  <article class="item item--compact">
+    <div class="item__content item__content--same-height item__content--direction-column">
+      <div class="legend__ability">
+        <% if asset_exist? "legends/Pathfinder/ability_1.png" %>
+          <%= image_tag "legends/Pathfinder/ability_1.png", alt: "Grappling Hook" %>
+        <% end %>
+      </div>
+      <div class="item__title heading heading--small">
+        <h3 class="heading__title">Grappling Hook</h3>
+        <div class="heading__line"></div>
+      </div>
+
+      <div class="item__full-width-info item__full-width-info--no-margin-top ability__full-width-info">
+        <div>
+          <small class="no-text-transform">Grapple to get to out-of-reach places quickly.</small>
+        </div>
+      </div>
+
+      <div class="ability__information">
+        <div class="columns">
+          <div class="columns__column item__large-info">
+            <span>Iets</span>
+            <div data-compare-target="damage">10</div>
+          </div>
+          <div class="columns__column item__large-info">
+            <span>Iets</span>
+            <div data-compare-target="rate-of-fire">250</div>
+          </div>
+        </div>
+        <div class="columns columns--direction-column">
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">12</div></span>
+          </div>
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">12</div></span>
+          </div>
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">12</div></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="item item--compact">
+    <div class="item__content item__content--same-height item__content--direction-column">
+      <div class="legend__ability">
+        <% if asset_exist? "legends/Pathfinder/ability_2.png" %>
+          <%= image_tag "legends/Pathfinder/ability_2.png", alt: "Insider Knowledge" %>
+        <% end %>
+      </div>
+      <div class="item__title heading heading--small">
+        <h3 class="heading__title">Insider Knowledge</h3>
+        <div class="heading__line"></div>
+      </div>
+
+      <div class="item__full-width-info item__full-width-info--no-margin-top ability__full-width-info">
+        <div>
+          <small class="no-text-transform">Scan a survey beacon to reveal the ring’s next location.</small>
+        </div>
+      </div>
+
+      <div class="ability__information">
+        <div class="columns">
+          <div class="columns__column item__large-info">
+            <span>Iets</span>
+            <div data-compare-target="damage">10</div>
+          </div>
+          <div class="columns__column item__large-info">
+            <span>Iets</span>
+            <div data-compare-target="rate-of-fire">250</div>
+          </div>
+        </div>
+        <div class="columns columns--direction-column">
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">12</div></span>
+          </div>
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">12</div></span>
+          </div>
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">12</div></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="item item--compact">
+    <div class="item__content item__content--same-height item__content--direction-column">
+      <div class="legend__ability">
+        <% if asset_exist? "legends/Pathfinder/ability_3.png" %>
+          <%= image_tag "legends/Pathfinder/ability_3.png", alt: "Zipline Gun" %>
+        <% end %>
+      </div>
+      <div class="item__title heading heading--small">
+        <h3 class="heading__title">Zipline Gun</h3>
+        <div class="heading__line"></div>
+      </div>
+
+      <div class="item__full-width-info item__full-width-info--no-margin-top ability__full-width-info">
+        <div>
+          <small class="no-text-transform">Create a zipline for everyone to use.</small>
+        </div>
+      </div>
+
+      <div class="ability__information">
+        <div class="columns">
+          <div class="columns__column item__large-info">
+            <span>Iets</span>
+            <div data-compare-target="damage">10</div>
+          </div>
+          <div class="columns__column item__large-info">
+            <span>Iets</span>
+            <div data-compare-target="rate-of-fire">250</div>
+          </div>
+        </div>
+        <div class="columns columns--direction-column">
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">12</div></span>
+          </div>
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">35</div></span>
+          </div>
+          <div class="item__small-info">
+            Legshot damage <span><div data-compare-target="legshot_damage">322</div></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</div>
+
+<div class="heading heading--medium">
+  <h2 class="heading__title">Extra's</h2>
+</div>
+
+<div class="items">
+  <div class="columns columns__extra">
+    <div class="columns__column columns__column--spacing">
+      <article class="item">
+        <div class="item__content item__content--same-height item__content--direction-column">
+          <div class="item__title heading heading--small">
+            <h3 class="heading__title">Badges</h3>
+            <div class="heading__line"></div>
+          </div>
+
+          <div class="legend__badges">
+            <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
+              <% if asset_exist? "legends/Pathfinder/badges/baller.png" %>
+                <%= image_tag "legends/Pathfinder/badges/baller.png", alt: "Baller Badge" %>
+              <% end %>
+              <div>
+                <span class="color-basic">Baller</span>
+                <small class="no-text-transform">Own 125 Legendary items.</small>
+              </div>
+            </div>
+
+            <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
+              <% if asset_exist? "legends/Pathfinder/badges/banner_legend.png" %>
+                <%= image_tag "legends/Pathfinder/badges/banner_legend.png", alt: "Banner Legend Badge" %>
+              <% end %>
+              <div>
+                <span class="color-basic">Banner Legend</span>
+                <small class="no-text-transform">Equipped an item in every Banner slot on 8 different legends.</small>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </article>
+    </div>
+    <div class="columns__column">
+      <article class="item">
+        <div class="item__content item__content--same-height">
+          <div class="item__title heading heading--small">
+            <h3 class="heading__title">Tips and Tricks</h3>
+            <div class="heading__line"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

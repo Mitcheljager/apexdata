@@ -1,0 +1,82 @@
+.legend__image {
+  width: 100%;
+  max-width: 200px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.legend__intro {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 40px;
+}
+
+.legend__lore {
+  width: 100%;
+
+  p {
+    font-size: 17px;
+    line-height: 23px;
+  }
+}
+
+.legend__ability {
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.item__content--ability {
+  h3 {
+    font-size: 16px;
+  }
+  .ability__full-width-info {
+    min-height: 28px;
+    display: flex;
+  }
+}
+
+.ability__information {
+  margin-top: 25px;
+}
+
+
+.columns__column--spacing {
+  margin-right: 20px;
+}
+
+.columns__extra {
+  width: 100%;
+
+  .item__title {
+    width: 100%;
+  }
+}
+
+.legend__badges {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 25px;
+
+  .item__full-width-info--image {
+    img {
+      width: 84px;
+      margin-left: 0;
+    }
+  }
+
+  .item__full-width-info {
+    margin-top: 10px;
+  }
+}
