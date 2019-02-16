@@ -18,16 +18,14 @@ function moreDetails(event) {
     this.innerHTML = "More data"
   }
 
-  trackGA(parentElement.querySelector("h3 a").innerHTML)
+  trackMoreDataGA(parentElement.querySelector("h3 a").innerHTML)
 }
 
-function trackGA(label) {
-  if (typeof ga !== "function") return
+function trackMoreDataGA(label) {
+  if (typeof gtag !== "function") return
 
-  ga("send", {
-    hitType: "event",
-    eventCategory: "buttons",
-    eventAction: "more_data",
-    eventLabel: label
+  gtag("event", "more_data", {
+    "event_category" : "Button",
+    "event_label" : label
   })
 }

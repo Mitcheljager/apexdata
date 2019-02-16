@@ -41,7 +41,7 @@ function setModifier(event) {
   })
 
   changeItemIcon(this)
-  trackGA(this.closest(".item").querySelector("h3 a").innerHTML)
+  trackModifyGA(this.closest(".item").querySelector("h3 a").innerHTML)
 }
 
 function changeItemIcon(self) {
@@ -82,8 +82,11 @@ function removeModifier() {
   })
 }
 
-function trackGA(label) {
-  if (typeof ga !== "function") return
+function trackModifyGA(label) {
+  if (typeof gtag !== "function") return
 
-  ga("send", "event", "Buttons", "modify", label)
+  gtag("event", "modify", {
+    "event_category" : "Button",
+    "event_label" : label
+  })
 }
