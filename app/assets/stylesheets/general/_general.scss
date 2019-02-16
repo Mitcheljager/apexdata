@@ -84,6 +84,10 @@ a {
   .columns__column {
     width: 50%;
 
+    &--half {
+      width: 25%;
+    }
+
     &--third {
       width: 33.333%;
     }
