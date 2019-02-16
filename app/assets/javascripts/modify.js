@@ -85,12 +85,5 @@ function removeModifier() {
 function trackGA(label) {
   if (typeof ga !== "function") return
 
-  console.log(label)
-
-  ga("send", {
-    hitType: "event",
-    eventCategory: "buttons",
-    eventAction: "modify",
-    eventLabel: label
-  })
+  ga("send", "event", "Buttons", "modify", label)
 }

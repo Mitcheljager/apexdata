@@ -24,8 +24,6 @@ function moreDetails(event) {
 function trackGA(label) {
   if (typeof ga !== "function") return
 
-  console.log(label)
-
   ga("send", {
     hitType: "event",
     eventCategory: "buttons",
