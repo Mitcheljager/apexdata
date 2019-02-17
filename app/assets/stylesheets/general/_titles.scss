@@ -77,3 +77,11 @@ h3 {
   color: $text-color;
   margin-top: 0;
 }
+
+h3.heading__title {
+  font-size: 16px;
+
+  @media screen and (min-width: 900px) {
+    font-size: 21px;
+  }
+}

@@ -124,6 +124,16 @@
     align-items: inherit;
   }
 
+  &--legend {
+    flex-direction: column;
+    height: auto;
+
+    @media screen and (min-width: 900px) {
+      flex-direction: row;
+      height: 100%;
+    }
+  }
+
   .item--compare-main & {
     background: $black image_url("item-pattern-dark.jpg");
     transform: scale(1.025);
@@ -389,10 +399,18 @@
 
   &--large {
     small {
-      font-size: 14px;
+      font-size: 12px;
+
+      @media screen and (min-width: 640px) {
+        font-size: 14px;
+      }
     }
     span {
-      font-size: 17px;
+      font-size: 12px;
+
+      @media screen and (min-width: 640px) {
+        font-size: 17px;
+      }
     }
   }
 }

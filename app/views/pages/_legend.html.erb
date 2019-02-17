@@ -2,8 +2,8 @@
   <div class="item__content item__content--same-height">
     <div class="item__description">
       <div class="item__large-icon-wrapper">
-        <% if asset_exist? "legends/#{ item["name"] }/character.png" %>
-          <%= image_tag "legends/#{ item["name"] }/character.png", class: "item__large-icon", alt: item["name"] %>
+        <% if asset_exist? "legends/#{ item["name"].downcase }/character.png" %>
+          <%= image_tag "legends/#{ item["name"].downcase }/character.png", class: "item__large-icon", alt: item["name"] %>
         <% end %>
       </div>
 
@@ -17,8 +17,8 @@
           <div class="columns columns--abilities">
             <% item["abilities"].each do |key, ability| %>
               <div class="item__full-width-info item__full-width-info--image">
-                <% if asset_exist? "legends/#{ item["name"] }/#{ key }.png" %>
-                  <%= image_tag "legends/#{ item["name"] }/#{ key }.png", alt: ability["name"] %>
+                <% if asset_exist? "legends/#{ item["name"].downcase }/#{ key }.png" %>
+                  <%= image_tag "legends/#{ item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
                 <% end %>
 
                 <div>
@@ -29,12 +29,10 @@
             <% end if item["abilities"] %>
           </div>
 
-          <div class="item__full-width-info">
-            <div>
-              <span class="color-basic">More soon</span>
-              <small class="no-text-transform">Individual pages coming soon</small>
-            </div>
+          <div class="item__tray">
+            <%= link_to "More Data", page_path("legends/#{item["name"].downcase }"), class: "button button--primary" %>
           </div>
+
         </div>
       </div>
     </div>
