@@ -1,5 +1,5 @@
 <div class="heading">
-  <h2 class="heading__title"><%= params[:value].humanize %> <small>(<%= @items.count %>)</small></h2>
+  <h2 class="heading__title"><%= params[:value].humanize %> <% if @items.many? %><small>(<%= @items.count %>)</small><% end %></h2>
 </div>
 
 <div class="items">

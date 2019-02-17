@@ -1,0 +1,34 @@
+<% current_x = spray["starter"].first["x"] %>
+<% current_y = spray["starter"].first["y"] %>
+
+<svg height="150" width="100" style="--modifier: 1;
+  --dot-starter-x: <%= spray["starter"].first["x"] %>;
+  --dot-starter-y: <%= spray["starter"].first["y"] %>;
+  <% spray["follow"].each_with_index do |dot, index| %>
+    <% current_x += dot["x"] %>
+    <% current_y += dot["y"] %>
+    --dot-<%= index %>-x: <%= current_x %>; --dot-<%= index %>-y: <%= current_y %>;
+  <% end %>">
+  <g>
+
+
+    <% if spray["starter"].many? %>
+      <% spray["starter"].each do |dot| %>
+        <%= tag.circle cx: dot["x"], cy: dot["y"], r: 3, fill: "red" %>
+      <% end %>
+    <% else %>
+      <%= tag.circle r: 3, fill: "red", style: "
+        cx: calc(var(--dot-starter-x) * var(--modifier));
+        cy: calc(var(--dot-starter-y) * var(--modifier));" %>
+    <% end %>
+
+    <% spray["follow"].each_with_index do |dot, index| %>
+      <%= tag.circle r: 3, fill: "green", style: "
+        cx: calc(var(--dot-#{ index }-x) * var(--modifier));
+        cy: calc(var(--dot-#{ index }-y) * var(--modifier));" %>
+
+      <% current_x = current_x + dot["x"] %>
+      <% current_y = current_y + dot["y"] %>
+    <% end %>
+  </g>
+</svg>
