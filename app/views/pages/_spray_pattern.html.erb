@@ -1,7 +1,7 @@
 <% current_x = spray["starter"].first["x"] %>
 <% current_y = spray["starter"].first["y"] %>
 
-<svg height="150" width="100" style="--modifier: 1;
+<svg data-modify-css-variable data-modify-target="kick_yaw_random" height="150" width="100" style="--modifier: 1;
   --dot-starter-x: <%= spray["starter"].first["x"] %>;
   --dot-starter-y: <%= spray["starter"].first["y"] %>;
   <% spray["follow"].each_with_index do |dot, index| %>
@@ -17,13 +17,13 @@
         <%= tag.circle cx: dot["x"], cy: dot["y"], r: 3, fill: "red" %>
       <% end %>
     <% else %>
-      <%= tag.circle r: 3, fill: "red", style: "
+      <%= tag.circle r: 3, fill: "#a02222", style: "
         cx: calc(var(--dot-starter-x) * var(--modifier));
         cy: calc(var(--dot-starter-y) * var(--modifier));" %>
     <% end %>
 
     <% spray["follow"].each_with_index do |dot, index| %>
-      <%= tag.circle r: 3, fill: "green", style: "
+      <%= tag.circle r: 3, fill: "#797b80", style: "
         cx: calc(var(--dot-#{ index }-x) * var(--modifier));
         cy: calc(var(--dot-#{ index }-y) * var(--modifier));" %>
 
