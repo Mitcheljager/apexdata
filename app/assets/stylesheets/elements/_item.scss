@@ -167,6 +167,10 @@
   .item--extra-compact & {
     min-height: 0;
   }
+
+  .item--legend & {
+    height: 100%;
+  }
 }
 
 .item__title {
@@ -245,6 +249,10 @@
   .item--compact & {
     display: block;
     margin-top: 4px;
+  }
+
+  .item--legend & {
+    margin-bottom: $margin / 2;
   }
 }
 
@@ -434,6 +442,10 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-top: $margin / 2;
+
+  .item--legend & {
+    margin-top: auto;
+  }
 }
 
 .item__top-action {
