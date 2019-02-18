@@ -53,6 +53,7 @@ function compareAgainstItem(event) {
   })
 
   showCompareAgainstItemElement(compareItem)
+  trackCompareGA(compareItem.querySelector("h3 a").innerHTML)
 }
 
 function showCompareAgainstItemElement(compareItem) {
@@ -80,4 +81,12 @@ function removeCompareAgainst() {
   if (allTargets) allTargets.forEach((target) => target.classList.remove("compare-higher", "compare-lower"))
   if (compareAgainstElement) compareAgainstElement.remove()
   if (differenceElements) differenceElements.forEach((element) => element.remove())
+}
+
+function trackCompareGA(label) {
+  if (typeof gtag !== "function") return
+
+  gtag("event", "Compare", {
+    "event_category" : label
+  })
 }

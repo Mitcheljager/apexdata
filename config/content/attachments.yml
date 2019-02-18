@@ -114,7 +114,7 @@
   type: hop-up
   epic:
     description: Increased headshot damage for compatible weapons.
-    damage_multiplier: 2.5
+    headshot_damage_modifier: 50%
 -
   name: Turbocharger
   type: hop-up
