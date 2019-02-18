@@ -53,7 +53,7 @@ function compareAgainstItem(event) {
   })
 
   showCompareAgainstItemElement(compareItem)
-  trackMoreDataGA(compareItem.querySelector("h3 a").innerHTML)
+  trackCompareGA(compareItem.querySelector("h3 a").innerHTML)
 }
 
 function showCompareAgainstItemElement(compareItem) {
