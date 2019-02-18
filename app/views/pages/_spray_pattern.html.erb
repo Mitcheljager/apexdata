@@ -1,7 +1,7 @@
 <% current_x = spray["starter"].first["x"] %>
 <% current_y = spray["starter"].first["y"] %>
 
-<svg data-modify-css-variable data-modify-target="kick_yaw_random" height="150" width="100" style="--modifier: 1;
+<svg class="spray-pattern" data-modify-css-variable data-modify-target="kick_yaw_random" height="140" width="100" style="--modifier: 1;
   --dot-starter-x: <%= spray["starter"].first["x"] %>;
   --dot-starter-y: <%= spray["starter"].first["y"] %>;
   <% spray["follow"].each_with_index do |dot, index| %>

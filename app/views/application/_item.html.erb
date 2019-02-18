@@ -109,11 +109,11 @@
             <% end %>
           <% end %>
 
-          <div class="columns__column columns__column--half">
+          <%= tag.div class: "columns__column columns__column--half" do %>
             <strong>Spray</strong>
 
-            <%= render "pages/spray_pattern", spray: item["spray_pattern"] if item["spray_pattern"] %>
-          </div>
+            <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
+          <% end if item["spray_pattern"]%>
         </div>
       </div>
     </div>

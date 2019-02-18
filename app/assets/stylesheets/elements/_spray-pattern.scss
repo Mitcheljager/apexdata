@@ -1,0 +1,10 @@
+.spray-pattern {
+  margin-top: $margin / 4;
+  background: rgba($bg-color, .5);
+  border: 1px solid $border-color;
+
+  circle {
+    transition-property: cx, cy;
+    transition-duration: 500ms;
+  }
+}

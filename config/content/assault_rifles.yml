@@ -89,9 +89,9 @@
     single: true
     auto: true
   spray_pattern:
-    starter: 
+    starter:
       - x: 45,
-        y: 130
+        y: 125
     follow:
       - x: 3,
         y: -11,
