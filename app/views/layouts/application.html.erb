@@ -18,9 +18,13 @@
 
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+
+    <%= render "ads" %>
   </head>
 
   <body>
+    <%= render "ads_no_script" %>
+
     <header class="header">
       <%= link_to image_tag("layout/apexlogo.png", alt: "Apex Legends logo"), root_path, class: "header__logo" %>
     </header>
@@ -33,6 +37,8 @@
       <div class="items-wrapper">
         <%= yield %>
       </div>
+
+      <%= render "ad", number: 1 %>
 
       <%= render "social" %>
 
