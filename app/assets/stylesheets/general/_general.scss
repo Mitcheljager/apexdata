@@ -21,6 +21,10 @@ a {
   color: $text-color;
 }
 
+.content-page p {
+  margin: ($margin / 2) 0;
+}
+
 .wrapper {
   max-width: calc(#{$max-width} + #{$wrapper-padding * 2});
   padding: 0 $wrapper-padding;
