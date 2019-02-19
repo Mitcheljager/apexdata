@@ -1,0 +1,25 @@
+.cmp-state {
+  &--bar {
+    margin-bottom: $margin * 3;
+  }
+
+  &--open {
+
+  }
+
+  &--closed {
+
+  }
+}
+
+[class^="app_gdpr"] {
+  --cmpBgColor: #{$darkblue};
+  --cmpTextColor: #{$text-color};
+  --cmpBrandColor: #{lighten($border-color, 20%)};
+  --cmpHoverColor: #{lighten($border-color, 30%)};
+  text-transform: none;
+}
+
+[class^="intro_title"] {
+  text-transform: uppercase;
+}
