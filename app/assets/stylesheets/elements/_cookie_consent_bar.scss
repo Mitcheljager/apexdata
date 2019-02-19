@@ -14,12 +14,13 @@
 
 [class^="app_gdpr"] {
   --cmpBgColor: #{$darkblue};
-  --cmpTextColor: #{$text-color};
-  --cmpBrandColor: #{lighten($border-color, 20%)};
-  --cmpHoverColor: #{lighten($border-color, 30%)};
+  --cmpTextColor: #{darken($white, 35%)};
+  --cmpBrandColor: #{lighten($border-color, 15%)};
+  --cmpHoverColor: #{lighten($border-color, 25%)};
   text-transform: none;
 }
 
 [class^="intro_title"] {
+  color: $white;
   text-transform: uppercase;
 }
