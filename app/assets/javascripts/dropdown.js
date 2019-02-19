@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   const elements = document.querySelectorAll("[data-action='toggle-dropdown']")
 
   elements.forEach((element) => element.removeEventListener("click", toggleDropdown))
