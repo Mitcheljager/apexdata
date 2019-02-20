@@ -1,5 +1,10 @@
 <div class="ad-container">
   <span class="ad-container__title">Advertisement</span>
-  <div id="nn_lb<%= number %>"></div>
-  <div id="nn_mobile_mpu<%= number %>"></div>
+  <div id="nn_lb<%= $ad_counter %>"></div>
+
+  <% unless $ad_counter > 2 %>
+    <div id="nn_mobile_mpu<%= $ad_counter %>"></div>
+  <% end %>
 </div>
+
+<% $ad_counter += 1 %>
