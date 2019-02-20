@@ -1,3 +1,5 @@
+<% content_for :page_title, @item["name"] if @item["name"] %>
+
 <div class="heading">
   <h2 class="heading__title"><%= @item["name"] if @item["name"] %></h2>
 </div>
