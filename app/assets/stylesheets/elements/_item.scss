@@ -124,16 +124,6 @@
     align-items: inherit;
   }
 
-  &--legend {
-    flex-direction: column;
-    height: auto;
-
-    @media screen and (min-width: 900px) {
-      flex-direction: row;
-      height: 100%;
-    }
-  }
-
   .item--compare-main & {
     background: $black image_url("item-pattern-dark.jpg");
     transform: scale(1.025);
