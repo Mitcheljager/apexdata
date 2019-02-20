@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   const elements = document.querySelectorAll("[data-action='item-more-data']")
 
   elements.forEach((element) => element.removeEventListener("click", moreDetails))

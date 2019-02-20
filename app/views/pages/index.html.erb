@@ -1,4 +1,12 @@
 <div class="heading">
+  <h2 class="heading__title">New</h2>
+</div>
+
+<div class="items">
+  <%= render partial: "item", collection: weapons.select { |weapon| weapon["name"] == "Havoc" }, as: :item %>
+</div>
+
+<div class="heading">
   <h2 class="heading__title"><%= link_to "Assault Rifles", page_path("assault-rifles") %></h2>
 </div>
 
@@ -13,6 +21,8 @@
 <div class="items">
   <%= render partial: "item", collection: sub_machine_guns, as: :item %>
 </div>
+
+<%= render "ad" %>
 
 <div class="heading">
   <h2 class="heading__title"><%= link_to "Pistols", page_path("pistols") %></h2>
@@ -37,6 +47,8 @@
 <div class="items">
   <%= render partial: "item", collection: sniper_rifles, as: :item %>
 </div>
+
+<%= render "ad" %>
 
 <div class="heading">
   <h2 class="heading__title"><%= link_to "Shotguns", page_path("shotguns") %></h2>

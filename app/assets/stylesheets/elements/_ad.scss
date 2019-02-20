@@ -1,0 +1,24 @@
+.ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $margin / 4;
+  margin: $margin 0 0;
+  background: $darkblue;
+  border: 1px solid $border-color;
+
+  @media screen and (min-width: 900px) {
+    margin: ($margin * 2) 0 0;
+  }
+}
+
+.ad-container__title {
+  font-size: 14px;
+
+
+  + div:not(:empty),
+  + div + div:not(:empty) {
+    margin: ($margin / 4) 0 0;
+  }
+}

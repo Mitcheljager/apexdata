@@ -181,3 +181,83 @@
         y: -2
       - x: -7
         y: -1
+-
+  name: Havoc
+  damage: 18
+  headshot_damage: 36
+  legshot_damage: 13.5
+  rate_of_fire: 672
+  ammo_capacity: 25
+  tactical_reload: 2.4
+  empty_reload: 3.2
+  ammo_type: energy
+  projectile_speed: 30500
+  draw_time: 0.5
+  holster_time: 0.55
+  available_attachments:
+    optics:
+      - 2x_hcog_bruiser
+      - 1x_hcog_classic
+      - 1x_holo
+      - 1x-2x_variable_holo
+      - 2x-4x_variable_aog
+      - 3x_hcog_ranger
+    hop_up:
+      - selectfire_receiver
+      - turbocharger
+    stock:
+      - standard_stock
+  fire_modes:
+    single: true
+    auto: true
+  spray_pattern:
+    starter:
+      - x: 45
+        y: 125
+    follow:
+      - x: 3
+        y: -8
+      - x: -4
+        y: -8
+      - x: 2
+        y: -6
+      - x: -2
+        y: -6
+      - x: 2
+        y: -6
+      - x: 2
+        y: -6
+      - x: 2
+        y: -6
+      - x: 2
+        y: -6
+      - x: 0
+        y: -6
+      - x: -2
+        y: -6
+      - x: -2
+        y: -6
+      - x: -1
+        y: -6
+      - x: 0
+        y: -6
+      - x: 2
+        y: -7
+      - x: 2
+        y: -5
+      - x: 2
+        y: -4
+      - x: -2
+        y: -3
+      - x: -2
+        y: -3
+      - x: -2
+        y: -3
+      - x: -2
+        y: -2
+      - x: -1
+        y: -1
+      - x: 0
+        y: -1
+      - x: 0
+        y: -1

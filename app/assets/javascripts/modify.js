@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   const elements = document.querySelectorAll("[data-action='set-modifier']")
   const removeElements = document.querySelectorAll("[data-action='remove-modifier']")
 
