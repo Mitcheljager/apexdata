@@ -1,7 +1,9 @@
+<% content_for :page_title, "Grenades" %>
+
 <div class="heading">
   <h2 class="heading__title"><%= link_to "Grenades", page_path("grenades") %></h2>
 </div>
 
 <div class="items">
-  <%= render partial: "pages/grenade", collection: grenades, as: :item %>
+  <%= render partial: "pages/item_types/grenade", collection: grenades, as: :item %>
 </div>

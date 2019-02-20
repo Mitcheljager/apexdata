@@ -1,0 +1,90 @@
+.attachments-table {
+  display: flex;
+  margin: ($margin / 4) 0;
+}
+
+.attachments-table__item {
+  display: block;
+  border: 1px dashed rgba($white, .25);
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: .25rem;
+  background: rgba($white, .15);
+  margin-right: 2px;
+  cursor: pointer;
+
+  &--active {
+    border-color: rgba($white, .5);
+    background: rgba($white, .2);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.attachments-table__dropdown {
+  position: relative;
+  display: none;
+  width: 200px;
+  background: $darkblue;
+  border: 1px solid $border-color;
+  max-height: calc(5em + #{$margin});
+  overflow: auto;
+  margin-top: -100%;
+  transform: translateX(-5px) translateY(-110%);
+  z-index: 10;
+
+  @media (min-width: 640px) {
+    margin-left: 50%;
+    transform: translateX(-50%) translateY(-110%);
+  }
+
+  @media (min-width: $max-width) {
+    margin-top: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+.attachments-table__dropdown-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: $darkblue;
+  border-bottom: 1px solid $border-color;
+  padding: ($margin / 6) ($margin / 8);
+  font-size: 11px;
+  cursor: pointer;
+
+  &--remove {
+    display: none;
+
+    .attachments-table__item[class*="border-"] & {
+      display: block;
+    }
+  }
+
+  &:hover,
+  &:active {
+    background: lighten($darkblue, 5%);
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  img {
+    height: 3em;
+    width: auto;
+    margin-right: .5em;
+  }
+}
+
+[data-modify-target] {
+  display: flex;
+}

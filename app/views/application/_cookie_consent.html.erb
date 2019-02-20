@@ -1,0 +1,15 @@
+<script>
+  window.cmpConfig = {
+    globalVendorListLocation: "https://cmp.network-n.com/vendorlist.json",
+    customLogo: "<%= image_url "layout/logo.svg" %>",
+    customLogoLink: "<%= root_path %>",
+    customLogoTitle: "ApexData.GG"
+  }
+
+  !function(t,n){if(!t.__cmp){t.__cmp=function(){(t.attachEvent||t.addEventListener)("message",function(e){t.__cmp.receiveMessage(e)},!1),function e(){
+  if(!t.frames.__cmpLocator)if(n.body){var a=n.createElement("iframe");a.style.display="none",a.name="__cmpLocator",n.body.appendChild(a)}else setTimeout(e,5)}();
+  var c=[],e=function(e,a,n){"ping"===e?n&&n({gdprAppliesGlobally:!!(t.__cmp&&t.__cmp.config&&t.__cmp.config.storeConsentGlobally),cmpLoaded:!1}):c.push({command:e,parameter:a,callback:n})};
+  return e.commandQueue=c,e.receiveMessage=function(e){var a=e&&e.data&&e.data.__cmpCall;a&&c.push({callId:a.callId,command:a.command,parameter:a.parameter,event:e})},
+  e.config=t.cmpConfig||{globalVendorListLocation:"https://cmp.network-n.com/vendorlist.json"},e}();var e=n.createElement("script");e.async=!0,
+  e.src="https://cmp.network-n.com/js/cmp.complete.bundle.js",n.getElementsByTagName("head")[0].appendChild(e)}}(window,document);
+</script>

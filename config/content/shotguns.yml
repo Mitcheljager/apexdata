@@ -5,7 +5,7 @@
   headshot_damage: 22.5
   legshot_damage: 12
   rate_of_fire: 180
-  ammo_capacity: 4
+  ammo_capacity: 3
   tactical_reload: 2.1
   empty_reload: 2.6
   ammo_type: shotgun
@@ -13,11 +13,14 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
-    barrel: true
-    magazine: false
-    hop_up: false
-    optic: true
-    stock: false
+    optics:
+      - 2x_hcog_bruiser
+      - 1x_hcog_classic
+      - 1x_holo
+      - 1x-2x_variable_holo
+      - 1x_digital_threat
+    stock:
+      - shotgun_bolt
   fire_modes:
     auto: true
 -
@@ -35,11 +38,16 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
-    barrel: true
-    magazine: false
-    hop_up: true
-    optic: true
-    stock: false
+    hop_up:
+      - precision_choke
+    optics:
+      - 2x_hcog_bruiser
+      - 1x_hcog_classic
+      - 1x_holo
+      - 1x-2x_variable_holo
+      - 1x_digital_threat
+    stock:
+      - shotgun_bolt
   fire_modes:
     single: true
 -
@@ -57,11 +65,14 @@
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
-    barrel: true
-    magazine: false
-    hop_up: false
-    optic: true
-    stock: false
+    optics:
+      - 2x_hcog_bruiser
+      - 1x_hcog_classic
+      - 1x_holo
+      - 1x-2x_variable_holo
+      - 1x_digital_threat
+    stock:
+      - shotgun_bolt
   fire_modes:
     auto: true
 -
@@ -78,11 +89,5 @@
   projectile_speed: 12000
   draw_time: 0.8
   holster_time: 0.4
-  available_attachments:
-    barrel: false
-    magazine: false
-    hop_up: false
-    optic: false
-    stock: false
   fire_modes:
     single: true

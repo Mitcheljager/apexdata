@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ApexData.GG | Apex Legends - Weapon Data and Statistics</title>
+    <title>ApexData.GG | <%= content_for?(:page_title) ? yield(:page_title) : "Apex Legends - Weapon Data and Statistics" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Apex Data | Apex Legends Weapons Data and Statistics to find out what items suit you best.">
     <meta name="keywords" content="Apex Legends, Apex Weapons, Weapon Data, Weapon Statistics, ApexData GG, Apex Data">
@@ -14,11 +14,17 @@
 
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <%= render "cookie_consent" %>
+
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= render "ads" %>
   </head>
 
   <body>
+    <%= render "ads_no_script" %>
+
     <header class="header">
       <%= link_to image_tag("layout/apexlogo.png", alt: "Apex Legends logo"), root_path, class: "header__logo" %>
     </header>
@@ -31,6 +37,8 @@
       <div class="items-wrapper">
         <%= yield %>
       </div>
+
+      <%= render "ad", number: 1 %>
 
       <%= render "social" %>
 

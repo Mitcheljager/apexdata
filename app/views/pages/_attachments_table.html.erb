@@ -1,0 +1,32 @@
+<%= tag.div class:"attachments-table" do %>
+  <% item["available_attachments"].map do |key, attachment_type| %>
+    <div class="attachments-table__item" data-action="toggle-dropdown">
+      <%= image_tag "attachments/#{ attachment_type.first }.png", alt: "attachment_#{attachment_type.first}", title: attachment_type.first.humanize if asset_exist?("attachments/#{ attachment_type.first }.png") %>
+
+      <div class="attachments-table__dropdown" data-dropdown>
+        <a class="attachments-table__dropdown-item attachments-table__dropdown-item--remove" data-action="remove-modifier">- Remove</a>
+
+        <% attachment_type.map do |attachment_item| %>
+          <% available_attachments = attachments.select { |attachment| attachment["name"].downcase.gsub(" ", "_").gsub("'", "") == attachment_item } %>
+
+          <% available_attachments.map do |attachment| %>
+            <% rarities = ["basic", "rare", "epic", "legendary"] %>
+
+            <% rarities.map do |rarity| %>
+              <% if attachment[rarity] %>
+                <a class="attachments-table__dropdown-item"
+                   data-action="set-modifier"
+                   data-modify-rarity="<%= rarity %>"
+                   data-to-modify="<%= attachment[rarity].without("description").to_json %>">
+                  <%= image_tag "attachments/#{ attachment["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", alt: attachment["name"].humanize %>
+
+                  <span class="color-<%= rarity %>"><%= attachment["name"].humanize %></span>
+                </a>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

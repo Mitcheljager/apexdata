@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   const elements = document.querySelectorAll("[data-action='item-more-data']")
 
   elements.forEach((element) => element.removeEventListener("click", moreDetails))
@@ -17,4 +17,14 @@ function moreDetails(event) {
   } else {
     this.innerHTML = "More data"
   }
+
+  trackMoreDataGA(parentElement.querySelector("h3 a").innerHTML)
+}
+
+function trackMoreDataGA(label) {
+  if (typeof gtag !== "function") return
+
+  gtag("event", "More Data", {
+    "event_category" : label
+  })
 }
