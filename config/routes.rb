@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   get "alldata/expanded" => "alldata#expanded", as: "alldata_expanded"
   get "alldata/compact" => "alldata#compact", as: "alldata_compact"
+
+  get "legends" => "legends#index"
+  get "legends/:name" => "legends#show", as: "legend_show"
 end

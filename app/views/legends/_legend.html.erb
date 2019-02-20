@@ -1,0 +1,39 @@
+<article class="item item--legend item--compact <%= "item--extra-compact" if compact? %>">
+  <div class="item__content item__content--same-height">
+    <div class="item__description">
+      <div class="item__large-icon-wrapper">
+        <% if asset_exist? "legends/#{ item["name"].downcase }/character.png" %>
+          <%= image_tag "legends/#{ item["name"].downcase }/character.png", class: "item__large-icon", alt: item["name"] %>
+        <% end %>
+      </div>
+
+      <div class="item__title heading heading--small">
+        <h3 class="heading__title"><%= item["name"] if item["name"] %></h3>
+        <div class="heading__line"></div>
+      </div>
+
+      <div class="item__data-wrapper">
+        <div class="item__main">
+          <div class="columns columns--abilities">
+            <% item["abilities"].each do |key, ability| %>
+              <div class="item__full-width-info item__full-width-info--image">
+                <% if asset_exist? "legends/#{ item["name"].downcase }/#{ key }.png" %>
+                  <%= image_tag "legends/#{ item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
+                <% end %>
+
+                <div>
+                  <span class="color-basic"><%= ability["name"] %></span>
+                  <small class="no-text-transform"><%= ability["description"] %></small>
+                </div>
+              </div>
+            <% end if item["abilities"] %>
+          </div>
+        </div>
+      </div>
+
+      <div class="item__tray">
+        <%= link_to "More Data", legend_show_path(item["name"].downcase), class: "button button--primary" %>
+      </div>
+    </div>
+  </div>
+</article>

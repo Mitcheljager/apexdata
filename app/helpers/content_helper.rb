@@ -44,7 +44,7 @@ module ContentHelper
   end
 
   def legend(name)
-    legends.select { |legend| legend["name"] == name }.first
+    legends.select { |legend| legend["name"].parameterize.downcase == name.parameterize.downcase }.first
   end
 
   def badges
