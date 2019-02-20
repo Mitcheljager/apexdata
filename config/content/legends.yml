@@ -358,54 +358,50 @@
       description: Call your Drone of Compassion to automatically heal nearby teammates over time.
       primarydata:
         data_1:
-          name: DMG
-          result: 29
+          name: Cast time
+          result: 2<span>s</span>
         data_2:
-          name: RPM
-          result: 100
+          name: Cooldown
+          result: 60<span>s</span>
       secondarydata:
         data_1:
-          name: LEGSHOT DAMAGE
-          result: 15
+          name: Healing per sec
+          result: 5
         data_2:
-          name: LEGSHOT 2
-          result: 17
+          name: Max healing range
+          result: 2<small>m</small>
+        data_3:
+          name: Duration time
+          result: 20<small>s</small>
     ability_2:
       type: Passive Ability
       name: Combat Medic
       description: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
       primarydata:
         data_1:
-          name: DMG
-          result: 29
+          name: Revive
+          result: 5<span>s</span>
         data_2:
-          name: RPM
-          result: 100
-      secondarydata:
-        data_1:
-          name: LEGSHOT DAMAGE
-          result: 15
-        data_2:
-          name: LEGSHOT 2
-          result: 17
+          name: Self heal
+          result: 3<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Care Package
       description: Call in a drop pod full of high-quality defensive gear.
       primarydata:
         data_1:
-          name: DMG
-          result: 29
+          name: Cast time
+          result: 29<span>s</span>
         data_2:
-          name: RPM
-          result: 100
+          name: Landing time
+          result: 100<span>s</span>
       secondarydata:
         data_1:
-          name: LEGSHOT DAMAGE
-          result: 15
+          name: Items
+          result: 3
         data_2:
-          name: LEGSHOT 2
-          result: 17
+          name: Ultimate generation
+          result: 100<small>s</small>
   badges:
     badge_1:
       name: Apex Lifeline

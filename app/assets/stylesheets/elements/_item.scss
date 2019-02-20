@@ -333,6 +333,16 @@
     font-weight: 300;
     color: $text-color;
   }
+
+  > div {
+    display: flex;
+    align-items: flex-end;
+
+    > span {
+      margin-bottom: 6px;
+      margin-left: 6px;
+    }
+  }
 }
 
 .item__small-info {

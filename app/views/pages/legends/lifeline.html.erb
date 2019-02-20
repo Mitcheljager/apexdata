@@ -101,15 +101,15 @@
           <div class="columns">
             <% ability["primarydata"].each do |key, data| %>
               <div class="columns__column item__large-info">
-                <span><%= data['name'] if data['name']; %></span>
-                <div><%= data['result'] if data['result']; %></div>
+                <span><%= data['name'] if data['name'] %></span>
+                <div><%= raw data['result'] if data['result'] %></div>
               </div>
             <% end if ability["primarydata"] %>
           </div>
           <div class="columns columns--direction-column">
             <% ability["secondarydata"].each do |key, data| %>
               <div class="item__small-info">
-                <%= data['name'] if data['name']; %> <span><div><%= data['result'] if data['result']; %></div></span>
+                <%= data['name'] if data['name'] %> <span><div><%= raw data["result"] if data["result"] %></div></span>
               </div>
             <% end if ability["secondarydata"] %>
           </div>
