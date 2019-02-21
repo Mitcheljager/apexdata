@@ -23,6 +23,14 @@
       - shotgun_bolt
   fire_modes:
     auto: true
+  spray_pattern:
+    starter:
+      - x: 30
+        y: 80
+      - x: 70
+        y: 80
+      - x: 50
+        y: 50
 -
   name: Peacekeeper
   damage: 10

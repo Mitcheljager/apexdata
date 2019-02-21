@@ -8,10 +8,9 @@
     <% current_x += dot["x"] %>
     <% current_y += dot["y"] %>
     --dot-<%= index %>-x: <%= current_x %>; --dot-<%= index %>-y: <%= current_y %>;
-  <% end %>">
+  <% end if spray["follow"] %>">
+
   <g>
-
-
     <% if spray["starter"].many? %>
       <% spray["starter"].each do |dot| %>
         <%= tag.circle cx: dot["x"], cy: dot["y"], r: 3, fill: "#a02222" %>
@@ -29,6 +28,6 @@
 
       <% current_x = current_x + dot["x"] %>
       <% current_y = current_y + dot["y"] %>
-    <% end %>
+    <% end if spray["follow"] %>
   </g>
 </svg>
