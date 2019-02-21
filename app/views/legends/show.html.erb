@@ -86,18 +86,19 @@
 
         <div class="ability__information">
           <%= tag.div class: "columns" do %>
-            <% ability["primary_data"].each do |data| %>
+            <% ability["primary_data"].each do |key, data| %>
               <div class="columns__column item__large-info">
-                <span><%= data["name"] if data["name"] %></span>
-                <div><%= data["result"] if data["result"] %></div>
+                <span><%= key.humanize %></span>
+                <div><%= raw data %></div>
               </div>
             <% end %>
           <% end if ability["primary_data"] %>
 
           <%= tag.div class: "columns columns--direction-column" do %>
-            <% ability["secondary_data"].each do |data| %>
+            <% ability["secondary_data"].each do |key, data| %>
               <div class="item__small-info">
-                <%= data["name"] if data["name"] %> <span><div><%= data["result"] if data["result"] %></div></span>
+                <%= key.humanize %>
+                <span><div><%= raw data %></div></span>
               </div>
             <% end %>
           <% end if ability["secondary_data"] %>

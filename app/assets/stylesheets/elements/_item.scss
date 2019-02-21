@@ -367,7 +367,10 @@
   }
 
   small {
+    font-size: 10px;
     margin-left: .25em;
+    color: $text-color;
+    font-weight: 300;
   }
 }
 

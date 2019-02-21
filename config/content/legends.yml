@@ -17,43 +17,31 @@
       name: Smoke Launcher
       description: Fire a high-velocity smoke canister that explodes into a smoke wall on impact.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_2:
       type: Passive Ability
       name: Double Time
       description: Taking fire while sprinting makes you move faster for a brief time.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Rolling Thunder
       description: Call in an artillery strike that slowly creeps across the landscape.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
   badges:
     - name: Apex Bangalore
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -83,43 +71,31 @@
       name: Eye of the Allfather
       description: Briefly reveal hidden enemies, traps, and clues throughout structures in front of you.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_2:
       type: Passive Ability
       name: Tracker
       description: See tracks left behind by your foes.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Beast of the Hunt
       description: Enhances your senses, allowing you move faster and highlighting your prey.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
   badges:
     - name: Apex Bloodhound
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -148,43 +124,31 @@
       name: Nox Gas Trap
       description: Drop canisters that release deadly Nox gas when shot or triggered by enemies.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_2:
       type: Passive Ability
       name: Nox Vision
       description: Allows you to see enemies through your gas.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Nox Gas Grenade
       description: Blankets a large area in Nox gas.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
   badges:
     - name: Apex Caustic
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -214,43 +178,31 @@
       name: Dome of Protection
       description: Throw down a dome-shield that blocks attacks for 15 seconds.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_2:
       type: Passive Ability
       name: Gun Shield
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment
       description: Call in a concentrated mortar strike on a marked position.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
   badges:
     - name: Apex Gibraltar
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -279,40 +231,29 @@
       name: D.O.C. Heal Drone
       description: Call your Drone of Compassion to automatically heal nearby teammates over time.
       primary_data:
-        - name: Cast time
-          result: 2<span>s</span>
-        - name: Cooldown
-          result: 60<span>s</span>
+        cast_time: 2<span>s</span>
+        cooldown: 60<span>s</span>
       secondary_data:
-        - name: Healing per sec
-          result: 5
-        - name: Max healing range
-          result: 2<small>m</small>
-        - name: Duration time
-          result: 20<small>s</small>
+        healing_per_second: 5
+        max_healing_range: 2<small>m</small>
+        duration: 20<small>s</small>
     ability_2:
       type: Passive Ability
       name: Combat Medic
       description: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
       primary_data:
-        - name: Revive
-          result: 5<span>s</span>
-        - name: Self heal
-          result: 3<span>s</span>
+        revive: 4<span>s</span>
+        self_heal: -25%
     ability_3:
       type: Ultimate Ability
       name: Care Package
       description: Call in a drop pod full of high-quality defensive gear.
       primary_data:
-        - name: Cast time
-          result: 29<span>s</span>
-        - name: Landing time
-          result: 100<span>s</span>
+        cast_time: 29<span>s</span>
+        landing_time: 360<small>s</small>
       secondary_data:
-        - name: Items
-          result: 3
-        - name: Ultimate generation
-          result: 100<small>s</small>
+        items: 3
+        ultimate_generation: 100<small>s</small>
   badges:
     - name: Apex Lifeline
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -342,43 +283,31 @@
       name: Psyche Out
       description: Send out a holographic decoy to confuse the enemy.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_2:
       type: Passive Ability
       name: Encore!
       description: Automatically drop a decoy and cloak for five seconds when knocked down.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Vanishing Act
       description: Deploy a team of Decoys to distract enemies while you cloak.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
   badges:
     - name: Apex Mirage
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -408,43 +337,31 @@
       name: Grappling Hook
       description: Grapple to get to out-of-reach places quickly.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_2:
       type: Passive Ability
       name: Insider Knowledge
       description: Scan a survey beacon to reveal the ring’s next location.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Zipline Gun
       description: Create a zipline for everyone to use.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
   badges:
     - name: Apex Pathfinder
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -474,43 +391,31 @@
       name: Into the Void
       description: Reposition quickly through the safety of void space, avoiding all damage.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_2:
       type: Passive Ability
       name: Voices from the Void
       description: A voice warns you when danger approaches. As far as you can tell, it’s on your side.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Dimensional Rift
       description: Link two locations with portals for 60 seconds, allowing your entire team to use them.
       primary_data:
-        - name: DMG
-          result: 29
-        - name: RPM
-          result: 100
+        damage: 29
+        rounds_per_minute: 100
       secondary_data:
-        - name: LEGSHOT DAMAGE
-          result: 15
-        - name: LEGSHOT 2
-          result: 17
+        legshot_damage: 15
+        legshot_2: 17
   badges:
     - name: Apex Wraith
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
