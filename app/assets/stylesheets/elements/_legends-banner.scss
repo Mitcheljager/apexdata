@@ -39,6 +39,7 @@
 
   .item__content {
     padding: 0;
+    overflow: hidden;
     clip-path: polygon(calc(0% + #{ $margin / 2 }) 0%, 100% 0, 100% calc(100% - #{ $margin / 2 }), calc(100% - #{ $margin / 2 }) 100%, 0 100%, 0% calc(0% + #{ $margin / 2 }));
 
     &::before {
