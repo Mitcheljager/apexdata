@@ -1,10 +1,10 @@
 <article class="item item--compact">
   <div class="item__content item__content--same-height item__content--direction-column item__content--ability">
-    <div class="legend__ability">
+    <%= tag.div class: "legend__ability" do %>
       <% if asset_exist? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
         <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
       <% end %>
-    </div>
+    <% end unless compact? %>
 
     <div class="item__title heading heading--small">
       <h3 class="heading__title"><%= ability["name"] if ability["name"] %></h3>

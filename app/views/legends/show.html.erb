@@ -5,17 +5,17 @@
 </div>
 
 <div class="items">
-  <article class="item">
+  <article class="item <%= "item--compact item--compact-full-width" if compact? %>">
     <div class="item__content item__content--same-height legend">
-      <%= tag.div class:"mobile__legend-image" do %>
+      <%= tag.div class:"mobile__legend-image hidden-compact" do %>
         <%= image_tag "legends/#{ @item["name"].downcase }/character.png", alt: "#{ @item["name"] }" %>
-      <% end if asset_exist? "legends/#{ @item["name"].downcase }/character.png" %>
+      <% end if asset_exist? "legends/#{ @item["name"].downcase }/character.png" && !compact? %>
 
-      <div class="legend__image">
+      <%= tag.div class: "legend__image" do %>
         <%= tag.div class: "legend__image" do %>
           <%= image_tag "legends/#{ @item["name"].downcase }/banner.jpg", alt: "#{ @item["name"] }" %>
         <% end if asset_exist? "legends/#{ @item["name"].downcase }/banner.jpg" %>
-      </div>
+      <% end unless compact? %>
 
       <div class="legend__intro">
         <div class="legend__lore">

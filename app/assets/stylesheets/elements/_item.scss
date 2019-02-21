@@ -64,6 +64,15 @@
         margin-right: 0;
       }
     }
+
+    .hidden-compact {
+      display: none;
+    }
+  }
+
+  &--compact-full-width {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
