@@ -130,7 +130,7 @@
     ability_3:
       type: Ultimate Ability
       name: Nox Gas Grenade
-      description: Blankets a large area in Nox gas.
+      description: Blankets a large area in Nox gas. Damage increases the longer an enemy is inside of it.
       primary_data:
         gas_radius: 10<span>m</span>
         charge_time: 150<span>s</span>
