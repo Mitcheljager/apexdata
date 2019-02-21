@@ -61,55 +61,17 @@
 
 <%= render "ad" %>
 
-<div class="heading heading--medium">
-  <h2 class="heading__title">Abilities</h2>
-</div>
+<% if @item["abilities"] %>
+  <div class="heading heading--medium">
+    <h2 class="heading__title">Abilities</h2>
+  </div>
 
-<div class="items">
-  <% @item["abilities"].each do |key, ability| %>
-    <article class="item item--compact">
-      <div class="item__content item__content--same-height item__content--direction-column item__content--ability">
-        <div class="legend__ability">
-          <% if asset_exist? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
-            <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
-          <% end %>
-        </div>
-
-        <div class="item__title heading heading--small">
-          <h3 class="heading__title"><%= ability["name"] if ability["name"] %></h3>
-          <div class="heading__line"></div>
-        </div>
-
-        <div class="item__full-width-info item__full-width-info--no-margin-top ability__full-width-info">
-          <div>
-            <small class="no-text-transform"><%= ability["description"] if ability["description"] %></small>
-          </div>
-        </div>
-
-        <div class="ability__information">
-          <%= tag.div class: "columns" do %>
-            <% ability["primary_data"].each do |key, data| %>
-              <div class="columns__column item__large-info">
-                <span><%= key.humanize %></span>
-                <div><%= raw data %></div>
-              </div>
-            <% end %>
-          <% end if ability["primary_data"] %>
-
-          <%= tag.div class: "columns columns--direction-column" do %>
-            <% ability["secondary_data"].each do |key, data| %>
-              <div class="item__small-info">
-                <%= key.humanize %>
-                <span><div><%= raw data %></div></span>
-              </div>
-            <% end %>
-          <% end if ability["secondary_data"] %>
-        </div>
-
-      </div>
-    </article>
-  <% end if @item["abilities"] %>
-</div>
+  <div class="items">
+    <% @item["abilities"].each do |key, ability| %>
+      <%= render "ability", key: key, ability: ability %>
+    <% end %>
+  </div>
+<% end %>
 
 <div class="heading heading--medium">
   <h2 class="heading__title">Extras</h2>
@@ -117,66 +79,12 @@
 
 <div class="items">
   <div class="columns columns__extra">
-    <div class="columns__column columns__column--spacing">
-      <article class="item">
-        <div class="item__content item__content--same-height item__content--direction-column">
-          <div class="item__title heading heading--small">
-            <h3 class="heading__title">Badges</h3>
-            <div class="heading__line"></div>
-          </div>
+    <%= tag.div class: "columns__column columns__column--spacing" do %>
+      <%= render "badges" %>
+    <% end if @item["badges"] %>
 
-          <div class="legend__badges">
-            <% @item["badges"].each do |badge| %>
-              <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-                <% if asset_exist? "badges/#{ badge["name"].parameterize.underscore }.png" %>
-                  <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
-                <% end %>
-                <div>
-                  <span class="color-basic"><%= badge["name"] if badge["name"] %></span>
-                  <small class="no-text-transform"><%= badge["desc"] if badge["desc"] %></small>
-                </div>
-              </div>
-            <% end if @item["badges"] %>
-
-            <% badges.each do |badge| %>
-              <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-                <% if asset_exist? "badges/#{ badge["name"].parameterize.underscore }.png" %>
-                  <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
-                <% end %>
-                <div>
-                  <span class="color-basic"><%= badge["name"] if badge["name"] %></span>
-                  <small class="no-text-transform"><%= badge["desc"] if badge["desc"] %></small>
-                </div>
-              </div>
-            <% end %>
-          </div>
-
-        </div>
-      </article>
-    </div>
     <div class="columns__column">
-      <article class="item">
-        <div class="item__content item__content--same-height item__content--direction-column">
-          <div class="item__title heading heading--small">
-            <h3 class="heading__title">Tips and Tricks</h3>
-            <div class="heading__line"></div>
-          </div>
-
-          <% @item["tips"].each do |tip| %>
-            <div class="item__full-width-info item__full-width-info--large">
-              <div>
-                <span class="color-basic"><%= tip["name"] if tip["name"] %></span>
-                <small class="no-text-transform"><%= tip["tip"] if tip["tip"] %></small>
-              </div>
-            </div>
-          <% end if @item["tips"] %>
-
-          <div class="item__full-width-info">
-            <span class="color-basic">Send your tips and tricks</span>
-            <small class="no-text-transform">Send your tips and tricks to <a href="mailto:info@apexdata.gg">info@apexdata.gg</a>. Don"t forget to mention the legend and your IGN.</small>
-          </div>
-        </div>
-      </article>
+      <%= render "tips_tricks" %>
     </div>
   </div>
 </div>
