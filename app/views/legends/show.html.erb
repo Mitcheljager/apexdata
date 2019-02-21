@@ -128,8 +128,8 @@
           <div class="legend__badges">
             <% @item["badges"].each do |badge| %>
               <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-                <% if asset_exist? "legends/#{ @item["name"].downcase }/badges/#{ badge["name"].parameterize.underscore }.png" %>
-                  <%= image_tag "legends/#{ @item["name"].downcase }/badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
+                <% if asset_exist? "badges/#{ badge["name"].parameterize.underscore }.png" %>
+                  <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
                 <% end %>
                 <div>
                   <span class="color-basic"><%= badge["name"] if badge["name"] %></span>
