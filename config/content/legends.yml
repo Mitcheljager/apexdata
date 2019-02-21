@@ -17,31 +17,31 @@
       name: Smoke Launcher
       description: Fire a high-velocity smoke canister that explodes into a smoke wall on impact.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        damage: 10
+        duration: 20<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        range: 7.5<small>m</small>
+        cooldown: 33<small>s</small>
+        charges: 2
     ability_2:
       type: Passive Ability
       name: Double Time
       description: Taking fire while sprinting makes you move faster for a brief time.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        movement: +25<span>%</span>
+        duration: 2<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Rolling Thunder
       description: Call in an artillery strike that slowly creeps across the landscape.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        damage: 40
+        charge_time: 270<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        radius: 25<small>m</small>
+        slow: -35<small>%</small>
+        detonation_time: 8<small>s</small>
+        duration: 5<small>s</small>
   badges:
     - name: Apex Bangalore
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -71,31 +71,21 @@
       name: Eye of the Allfather
       description: Briefly reveal hidden enemies, traps, and clues throughout structures in front of you.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        scan_range: 35<span>m</span>
+        cooldown: 35<span>s</span>
     ability_2:
       type: Passive Ability
       name: Tracker
       description: See tracks left behind by your foes.
-      primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Beast of the Hunt
       description: Enhances your senses, allowing you move faster and highlighting your prey.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        movement: +25<span>%</span>
+        charge_time: 180<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        duration: 35<small>s</small>
   badges:
     - name: Apex Bloodhound
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -124,31 +114,30 @@
       name: Nox Gas Trap
       description: Drop canisters that release deadly Nox gas when shot or triggered by enemies.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        gas_radius: 5<span>m</span>
+        duration: 12.5<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        damage: 1 / 10<small>tick</small>
+        cooldown: 30<small>s</small>
+        speed: -25<small>%</small>
+        detection: 2.5<small>m</small>
+        traps: 3
+        max_traps_on_field: 6
     ability_2:
       type: Passive Ability
       name: Nox Vision
       description: Allows you to see enemies through your gas.
-      primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
     ability_3:
       type: Ultimate Ability
       name: Nox Gas Grenade
       description: Blankets a large area in Nox gas.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        gas_radius: 10<span>m</span>
+        charge_time: 150<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        damage: 1 / 10<small>tick</small>
+        duration: 20<small>s</small>
+        speed: -25<small>%</small>
   badges:
     - name: Apex Caustic
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -178,31 +167,30 @@
       name: Dome of Protection
       description: Throw down a dome-shield that blocks attacks for 15 seconds.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        radius: 5<span>m</span>
+        cooldown: 20<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        duration: 15<small>s</small>
+        throw_distance: 15<small>m</small>
     ability_2:
       type: Passive Ability
       name: Gun Shield
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        blocks: 100
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment
       description: Call in a concentrated mortar strike on a marked position.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        damage: 40
+        charge_time: 270<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        duration: 8<small>s</small>
+        delay: 2<small>s</small>
+        stun: 4<small>s</small>
+        radius: 25<small>m</small>
+        throw_range: 50<small>m</small>
   badges:
     - name: Apex Gibraltar
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -249,11 +237,10 @@
       name: Care Package
       description: Call in a drop pod full of high-quality defensive gear.
       primary_data:
-        cast_time: 29<span>s</span>
-        landing_time: 360<small>s</small>
+        cast_time: 15<span>s</span>
+        charge_time: 360<span>s</span>
       secondary_data:
         items: 3
-        ultimate_generation: 100<small>s</small>
   badges:
     - name: Apex Lifeline
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -283,31 +270,24 @@
       name: Psyche Out
       description: Send out a holographic decoy to confuse the enemy.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        cooldown: 15<span>s</span>
+        duration: 15<span>s</span>
     ability_2:
       type: Passive Ability
       name: Encore!
       description: Automatically drop a decoy and cloak for five seconds when knocked down.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        invisible_duration: 5<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Vanishing Act
       description: Deploy a team of Decoys to distract enemies while you cloak.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        duration: 5<span>s</span>
+        charge_time: 150<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        decoys: 5
+        invisible: 5<small>s</small>
   badges:
     - name: Apex Mirage
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -337,31 +317,23 @@
       name: Grappling Hook
       description: Grapple to get to out-of-reach places quickly.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        range: 20<span>m</span>
+        cooldown: 15<span>s</span>
     ability_2:
       type: Passive Ability
       name: Insider Knowledge
       description: Scan a survey beacon to reveal the ring’s next location.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        cast_time: 8<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Zipline Gun
       description: Create a zipline for everyone to use.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        range: 135<span>m</span>
+        charge_time: 90<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        max_speed_zipline: +200<small>%</small>
   badges:
     - name: Apex Pathfinder
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -391,31 +363,26 @@
       name: Into the Void
       description: Reposition quickly through the safety of void space, avoiding all damage.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        cooldown: 20<span>s</span>
+        duration: 3<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        movement: +10<small>%</small>
     ability_2:
       type: Passive Ability
       name: Voices from the Void
       description: A voice warns you when danger approaches. As far as you can tell, it’s on your side.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
-      secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        cooldown: 10<span>s</span>
+        warn_teammates: +6<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Dimensional Rift
       description: Link two locations with portals for 60 seconds, allowing your entire team to use them.
       primary_data:
-        damage: 29
-        rounds_per_minute: 100
+        duration: 60<span>s</span>
+        charge_time: 150<span>s</span>
       secondary_data:
-        legshot_damage: 15
-        legshot_2: 17
+        movement: +110<small>%</small>
   badges:
     - name: Apex Wraith
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
