@@ -2,8 +2,6 @@
 <% current_y = spray["starter"].last["y"] %>
 
 <svg class="spray-pattern" data-modify-css-variable data-modify-target="kick_yaw_random" height="140" width="100" style="--modifier: 1;
-  --dot-starter-x: <%= spray["starter"].last["x"] %>;
-  --dot-starter-y: <%= spray["starter"].last["y"] %>;
   <% spray["follow"].each_with_index do |dot, index| %>
     <% current_x += dot["x"] %>
     <% current_y += dot["y"] %>
@@ -11,14 +9,10 @@
   <% end if spray["follow"] %>">
 
   <g>
-    <% if spray["starter"].many? %>
-      <% spray["starter"].each do |dot| %>
-        <%= tag.circle cx: dot["x"], cy: dot["y"], r: 3, fill: "#a02222" %>
-      <% end %>
-    <% else %>
+    <% spray["starter"].each do |dot| %>
       <%= tag.circle r: 3, fill: "#a02222", style: "
-        cx: calc(var(--dot-starter-x) * var(--modifier));
-        cy: calc(var(--dot-starter-y) * var(--modifier));" %>
+        cx: calc(#{dot["x"]} * var(--modifier));
+        cy: calc(#{dot["y"]} * var(--modifier));" %>
     <% end %>
 
     <% spray["follow"].each_with_index do |dot, index| %>
