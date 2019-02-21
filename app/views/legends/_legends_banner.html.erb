@@ -1,0 +1,15 @@
+<div class="legends-banner">
+  <% legends.each do |item| %>
+    <%= link_to legend_show_path(item["name"].downcase), class: "item legends-banner__item" do %>
+      <div class="item__content">
+        <% if asset_exist?("legends/#{ item["name"].downcase }/character.png")  %>
+          <%= image_tag "legends/#{ item["name"].downcase }/character.png", class: "legends-banner__image", alt: item["name"] %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<center>
+  <%= link_to "View all legends", legends_path, class: "button button--primary" %>
+</center>

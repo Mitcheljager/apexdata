@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
   const elements = document.querySelectorAll("[data-action='toggle']")
 
-  elements.forEach((element) => element.removeEventListener("click", moreDetails))
-  elements.forEach((element) => element.addEventListener("click", moreDetails))
+  elements.forEach((element) => element.removeEventListener("click", toggleElement))
+  elements.forEach((element) => element.addEventListener("click", toggleElement))
 })
 
-function moreDetails(event) {
+function toggleElement(event) {
   event.preventDefault()
 
   const target = this.dataset.target
