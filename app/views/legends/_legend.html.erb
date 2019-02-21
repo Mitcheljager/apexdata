@@ -2,7 +2,7 @@
   <div class="item__content item__content--same-height">
     <div class="item__description">
       <div class="item__large-icon-wrapper">
-        <% if asset_exist? "legends/#{ item["name"].downcase }/character.png" %>
+        <% if asset_exist?("legends/#{ item["name"].downcase }/character.png") && !compact? %>
           <%= image_tag "legends/#{ item["name"].downcase }/character.png", class: "item__large-icon", alt: item["name"] %>
         <% end %>
       </div>

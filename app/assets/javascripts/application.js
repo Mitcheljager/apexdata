@@ -18,3 +18,4 @@
 //= require more_data
 //= require dropdown
 //= require modify
+//= require toggle
