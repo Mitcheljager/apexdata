@@ -85,6 +85,10 @@ a {
     justify-content: center;
   }
 
+  &--direction-column {
+    flex-direction: column;
+  }
+
   .columns__column {
     width: 50%;
 
