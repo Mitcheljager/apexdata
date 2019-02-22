@@ -1,11 +1,19 @@
 <% content_for :page_title, "Attachments" %>
 
 <div class="heading">
-  <h2 class="heading__title"><%= link_to "Optics", page_path("attachments") %></h2>
+  <h2 class="heading__title"><%= link_to "Stocks", page_path("attachments") %></h2>
 </div>
 
 <div class="items">
-  <%= render partial: "pages/item_types/attachment", collection: attachments.select { |attachment| attachment["type"] == "optic" }, as: :item %>
+  <%= render partial: "pages/item_types/attachment", collection: attachments.select { |attachment| attachment["type"] == "stock" }, as: :item %>
+</div>
+
+<div class="heading">
+  <h2 class="heading__title"><%= link_to "Barrels", page_path("attachments") %></h2>
+</div>
+
+<div class="items">
+  <%= render partial: "pages/item_types/attachment", collection: attachments.select { |attachment| attachment["type"] == "barrel" }, as: :item %>
 </div>
 
 <div class="heading">
@@ -25,17 +33,9 @@
 </div>
 
 <div class="heading">
-  <h2 class="heading__title"><%= link_to "Barrels", page_path("attachments") %></h2>
+  <h2 class="heading__title"><%= link_to "Optics", page_path("attachments") %></h2>
 </div>
 
 <div class="items">
-  <%= render partial: "pages/item_types/attachment", collection: attachments.select { |attachment| attachment["type"] == "barrel" }, as: :item %>
-</div>
-
-<div class="heading">
-  <h2 class="heading__title"><%= link_to "Stocks", page_path("attachments") %></h2>
-</div>
-
-<div class="items">
-  <%= render partial: "pages/item_types/attachment", collection: attachments.select { |attachment| attachment["type"] == "stock" }, as: :item %>
+  <%= render partial: "pages/item_types/attachment", collection: attachments.select { |attachment| attachment["type"] == "optic" }, as: :item %>
 </div>
