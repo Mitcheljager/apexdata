@@ -24,6 +24,11 @@ function setModifier(event) {
       value.replace("%", "")
       value = parseFloat(value)
 
+      if (typeof targetElement.dataset.modifyCssVariable !== "undefined") {
+        modifyCSSVariable(targetElement, value)
+        return
+      }
+
       const alreadyActiveModifier = targetElement.querySelector(".item__small-info-modify-value")
       if (alreadyActiveModifier) alreadyActiveModifier.remove()
 
@@ -76,10 +81,25 @@ function removeModifier() {
     const targetElements = item.querySelectorAll(`[data-modify-target=${ dataTarget }]`)
 
     targetElements.forEach((targetElement) => {
+      if (typeof targetElement.dataset.modifyCssVariable !== "undefined") {
+        resetCSSVariable(targetElement)
+        return
+      }
+
       const element = targetElement.querySelector(".item__small-info-modify-value")
       if (element) element.remove()
     })
   })
+}
+
+function modifyCSSVariable(element, value) {
+  value = 1 + (value / 100)
+
+  element.style.setProperty("--modifier", value)
+}
+
+function resetCSSVariable(element) {
+  element.style.setProperty("--modifier", 1)
 }
 
 function trackModifyGA(label) {

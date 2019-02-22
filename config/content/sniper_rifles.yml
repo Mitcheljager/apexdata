@@ -100,6 +100,14 @@
       - sniper_stock
   fire_modes:
     single: true
+  spray_pattern:
+    starter:
+      - x: 35
+        y: 70
+      - x: 50
+        y: 70
+      - x: 65
+        y: 70
 -
   name: Kraber
   damage: 125

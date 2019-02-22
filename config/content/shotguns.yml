@@ -23,6 +23,14 @@
       - shotgun_bolt
   fire_modes:
     auto: true
+  spray_pattern:
+    starter:
+      - x: 30
+        y: 80
+      - x: 70
+        y: 80
+      - x: 50
+        y: 50
 -
   name: Peacekeeper
   damage: 10
@@ -50,6 +58,30 @@
       - shotgun_bolt
   fire_modes:
     single: true
+  spray_pattern:
+    starter:
+      - x: 50
+        y: 70
+      - x: 58
+        y: 66
+      - x: 65
+        y: 62
+      - x: 50
+        y: 61
+      - x: 50
+        y: 52
+      - x: 42
+        y: 66
+      - x: 35
+        y: 62
+      - x: 44
+        y: 76
+      - x: 37
+        y: 82
+      - x: 56
+        y: 76
+      - x: 63
+        y: 82
 -
   name: EVA-8 Auto
   damage: 7
@@ -75,6 +107,26 @@
       - shotgun_bolt
   fire_modes:
     auto: true
+  spray_pattern:
+    starter:
+      - x: 50
+        y: 70
+      - x: 40
+        y: 70
+      - x: 60
+        y: 70
+      - x: 38
+        y: 60
+      - x: 62
+        y: 60
+      - x: 50
+        y: 52
+      - x: 38
+        y: 80
+      - x: 62
+        y: 80
+      - x: 50
+        y: 87
 -
   name: Mastiff
   damage: 18
@@ -91,3 +143,13 @@
   holster_time: 0.4
   fire_modes:
     single: true
+  spray_pattern:
+    starter:
+      - x: 25
+        y: 70
+      - x: 40
+        y: 70
+      - x: 55
+        y: 70
+      - x: 70
+        y: 70
