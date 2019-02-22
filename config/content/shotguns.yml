@@ -107,6 +107,26 @@
       - shotgun_bolt
   fire_modes:
     auto: true
+  spray_pattern:
+    starter:
+      - x: 50
+        y: 70
+      - x: 40
+        y: 70
+      - x: 60
+        y: 70
+      - x: 38
+        y: 60
+      - x: 62
+        y: 60
+      - x: 50
+        y: 52
+      - x: 38
+        y: 80
+      - x: 62
+        y: 80
+      - x: 50
+        y: 87
 -
   name: Mastiff
   damage: 18
