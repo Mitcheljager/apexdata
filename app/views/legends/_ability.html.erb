@@ -1,0 +1,41 @@
+<article class="item item--compact">
+  <div class="item__content item__content--same-height item__content--direction-column item__content--ability">
+    <%= tag.div class: "legend__ability" do %>
+      <% if asset_exist? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
+        <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
+      <% end %>
+    <% end unless compact? %>
+
+    <div class="item__title heading heading--small">
+      <h3 class="heading__title"><%= ability["name"] if ability["name"] %></h3>
+      <div class="heading__line"></div>
+    </div>
+
+    <div class="item__full-width-info item__full-width-info--no-margin-top ability__full-width-info">
+      <div>
+        <small class="no-text-transform"><%= ability["description"] if ability["description"] %></small>
+      </div>
+    </div>
+
+    <div class="ability__information">
+      <%= tag.div class: "columns" do %>
+        <% ability["primary_data"].each do |key, data| %>
+          <div class="columns__column item__large-info">
+            <span><%= key.humanize %></span>
+            <div><%= raw data %></div>
+          </div>
+        <% end %>
+      <% end if ability["primary_data"] %>
+
+      <%= tag.div class: "columns columns--direction-column" do %>
+        <% ability["secondary_data"].each do |key, data| %>
+          <div class="item__small-info">
+            <%= key.humanize %>
+            <span><div><%= raw data %></div></span>
+          </div>
+        <% end %>
+      <% end if ability["secondary_data"] %>
+    </div>
+
+  </div>
+</article>

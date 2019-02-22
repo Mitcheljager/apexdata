@@ -43,6 +43,14 @@ module ContentHelper
     YAML.load(File.read(Rails.root.join("config/content", "legends.yml")))
   end
 
+  def legend(name)
+    legends.select { |legend| legend["name"].parameterize.downcase == name.parameterize.downcase }.first
+  end
+
+  def badges
+    YAML.load(File.read(Rails.root.join("config/content", "universal_badges.yml")))
+  end
+
   def weapons
     assault_rifles.concat(sub_machine_guns).concat(pistols).concat(light_machine_guns).concat(shotguns).concat(sniper_rifles)
   end

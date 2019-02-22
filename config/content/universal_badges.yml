@@ -1,0 +1,87 @@
+-
+  name: Baller
+  desc: Own 125 legendary items
+-
+  name: Banner legend
+  desc: Equipped an item in every Banner slot on 8 different legends
+-
+  name: Fashionista
+  desc: Own a legendary skin and legendary finisher for 8 different legends
+-
+  name: Founder
+  desc: Own the Founder’s Pack
+-
+  name: Fully Kitted
+  desc: Equip two fully kitted weapons at the same time in a game
+-
+  name: Group theatrics
+  desc: With a full pre-made squad, win games where each person executes an enemy 3 Tiers available
+-
+  name: Long shot
+  desc: Downed a player from a distance greater than 300 meters
+-
+  name: Master of all
+  desc: Win at least 10 times with 8 different legends
+-
+  name: No witnesses
+  desc: With a full pre-made squad, kill 15 players and no one who your squad downs is ever revived or resurrected
+-
+  name: Pack victory
+  desc: With a full pre-made squad, win a game
+-
+  name: Starter
+  desc: Own the Starter Pack
+-
+  name: Team Work
+  desc: With a full pre-made squad, play a game where each player gets (3 / 5 / 7 / 10) kills 4 Tiers available
+-
+  name: Warlord
+  desc: Own a legendary skin for 15 weapons
+-
+  name: Well-Rounded
+  desc: Deal 20,000 damage with 8 different legends
+-
+  name: Live Die Live
+  desc: Revive or respawn a player. Available for a limited time around Valentine’s Day.
+-
+  name: Apex Predator
+  desc: Win a game while being the Kill Leader
+-
+  name: Assassin
+  desc: Play (5 / 15 / 50 / 100) games with 5 or more kills
+-
+  name: Deadeye
+  desc: Get the last kill of a game
+-
+  name: Double duty
+  desc: Win a game where you were the Kill Leader and the Champion
+-
+  name: Flawless victory 1
+  desc: Win a game where no one in the squad dies during the match
+-
+  name: Flawless victory 2
+  desc: Win a game where no one in the squad gets knocked down during the match
+-
+  name: Headshot hotshot
+  desc: Win a game with 5 headshot kills
+-
+  name: No one left behind
+  desc: Respawn both teammates in the same game
+-
+  name: Rapid elimination
+  desc: Down 4 enemies within 20 seconds
+-
+  name: Reinforcement recall
+  desc: Kill someone within 10s of them landing from a respawn dropship
+-
+  name: Shot caller
+  desc: Win a game as the Jumpmaster
+-
+  name: Squad wipe
+  desc: Kill all 3 members of an enemy squad
+-
+  name: The legacy continues
+  desc: Win a game where your full squad was alive at the end
+-
+  name: Triple Triple
+  desc: Kill all 3 members of 3 squads in the same match

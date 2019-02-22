@@ -1,0 +1,65 @@
+.legends-banner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$margin / 8} ($margin / 4);
+}
+
+.legends-banner__item {
+  flex: 0 0 calc((100% / 3) - #{$margin / 4});
+  width: calc((100% / 3) - #{$margin / 4});
+  max-width: 100%;
+  margin: 0 #{$margin / 8} ($margin / 4);
+
+  @media (min-width: 560px) {
+    flex: 0 0 calc((100% / 4) - #{$margin / 4});
+    width: calc((100% / 4) - #{$margin / 4});
+  }
+
+  @media (min-width: 768px) {
+    flex: 0 0 calc((100% / 6) - #{$margin / 4});
+    width: calc((100% / 6) - #{$margin / 4});
+  }
+
+  @media (min-width: $max-width) {
+    flex: 0 0 calc((100% / 8) - #{$margin / 4});
+    width: calc((100% / 8) - #{$margin / 4});
+  }
+
+  &:hover,
+  &:active {
+    .item__content {
+      border-color: rgba($white, .2);
+
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .item__content {
+    padding: 0;
+    overflow: hidden;
+    clip-path: polygon(calc(0% + #{ $margin / 2 }) 0%, 100% 0, 100% calc(100% - #{ $margin / 2 }), calc(100% - #{ $margin / 2 }) 100%, 0 100%, 0% calc(0% + #{ $margin / 2 }));
+
+    &::before {
+      opacity: .8;
+      transform: rotate(45deg) translateX(-49px) translateY(-15px);
+      z-index: 2;
+    }
+
+    &::after {
+      opacity: .8;
+      width: 35px;
+      height: 35px;
+      clip-path: polygon(calc(100% - 2px) 14px, calc(100% - 2px) calc(0% + 2px), 100% 0, 100% 100%, 0 100%, calc(0% + 2px) calc(100% - 2px), 14px calc(100% - 2px));
+      transform: translateX(2px) translateY(2px);
+      z-index: 2;
+    }
+  }
+}
+
+.legends-banner__image {
+  width: 100%;
+  transform: scale(2) translateY(20px);
+}

@@ -1,25 +1,78 @@
 -
   name: Bangalore
+  function: Professional Soldier
+  lore: |
+    <p>
+      Born into a military family where she, her parents, and her four older brothers all served in the IMC Armed Forces, Bangalore has been an exceptional soldier since she was young. She was top of her class at the IMC Military Academy and the only cadet who could take apart a Peacekeeper, equip it with a Precision Choke hop-up, and put it back together in under twenty seconds – blindfolded.
+    </p>
+    <p>
+      Three years ago, Anita and her brother Jackson were ordered to retrieve a mercenary fleet from the Outlands to aid in the IMC's fight against the Militia. However, their unit lost contact with IMC HQ and were ambushed on arrival. The squad scattered, but Jackson stayed behind to give his sister time to escape. Alone and with no way home, Anita put her training, extensive weapon knowledge, and competitive spirit to work by joining the Apex Games. Now, she fights to raise money for passage back to the IMC home base, where she hopes to reunite with what remains of her family.
+    </p>
+  about:
+    real_name: Anita Williams
+    age: 35
   abilities:
     ability_1:
       type: Tactical Ability
       name: Smoke Launcher
       description: Fire a high-velocity smoke canister that explodes into a smoke wall on impact.
+      primary_data:
+        damage: 10
+        duration: 20<span>s</span>
+      secondary_data:
+        range: 7.5<small>m</small>
+        cooldown: 33<small>s</small>
+        charges: 2
     ability_2:
       type: Passive Ability
       name: Double Time
       description: Taking fire while sprinting makes you move faster for a brief time.
+      primary_data:
+        movement: +25<span>%</span>
+        duration: 2<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Rolling Thunder
       description: Call in an artillery strike that slowly creeps across the landscape.
+      primary_data:
+        damage: 40
+        charge_time: 270<span>s</span>
+      secondary_data:
+        radius: 25<small>m</small>
+        slow: -35<small>%</small>
+        detonation_time: 8<small>s</small>
+        duration: 5<small>s</small>
+  badges:
+    - name: Apex Bangalore
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Bangalore's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Bangalore's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Bangalore, win 2 games in a row
 -
   name: Bloodhound
+  function: Technological Tracker
+  lore: |
+    <p>
+      Bloodhound is known across the Outlands as one of the greatest game hunters the Frontier has ever seen - and that's about all anyone knows. Their identity is a mystery wrapped in layers of rumors they are fabulously wealthy, a bloodthirsty murderer, a Goliath whisperer, a former slave, half bat, and a dozen other things depending on who's doing the whispering.
+    </p>
+    <p>
+      All anyone truly knows is that Bloodhound is a force to be reckoned with in the Apex Games. Bloodhound's unparalleled tracking skills are a boon to any team they join, helping them root out hidden opponents and tracking the enemy's movements. Calling on Earth's Old Norse Gods to guide them, Bloodhound believes that destiny is a path that has already been laid out, eventually carrying all to their death. But with that knowledge comes strength, because until that day comes, Bloodhound knows
+    </p> they can't be stopped.
+  about:
+    real_name: Unknown
+    age: Unknown
+    home_world: Unknown
   abilities:
     ability_1:
       type: Tactical Ability
       name: Eye of the Allfather
       description: Briefly reveal hidden enemies, traps, and clues throughout structures in front of you.
+      primary_data:
+        scan_range: 35<span>m</span>
+        cooldown: 35<span>s</span>
     ability_2:
       type: Passive Ability
       name: Tracker
@@ -28,13 +81,48 @@
       type: Ultimate Ability
       name: Beast of the Hunt
       description: Enhances your senses, allowing you move faster and highlighting your prey.
+      primary_data:
+        movement: +25<span>%</span>
+        charge_time: 180<span>s</span>
+      secondary_data:
+        duration: 35<small>s</small>
+  badges:
+    - name: Apex Bloodhound
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Bloodhound's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Bloodhound's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Bloodhound, win 2 games in a row
 -
   name: Caustic
+  function: Toxic Trapper
+  lore: |
+    <p>
+      Before there was Caustic, a scientist named Alexander Nox worked at Humbert Labs, the Frontier’s leading manufacturer of pesticide gases. With a glut of pesticides needed to protect the growing Frontier colonies’ crops, Humbert Labs was constantly on the hunt for better and stronger formulas. Nox was one of their brightest scientists and worked day and night developing new gases. But to make sure they worked, he needed to test them on more than just inert tissue, he needed something living.
+    </p>
+    <p>
+      As he toiled in secret, Nox began to see the beauty in his creations and their ability to destroy anything they touched. But the head of Humbert Labs soon discovered his gruesome experiments, and their confrontation ended with the lab in flames and its chief dead. Today, Nox is missing and presumed deceased. Caustic, meanwhile, now finds new test subjects in the Apex Games, where he puts his gaseous creations to work and observes their effects with great interest.
+    </p>
+  about:
+    real_name: Alexander Nox
+    age: 48
   abilities:
     ability_1:
       type: Tactical Ability
       name: Nox Gas Trap
       description: Drop canisters that release deadly Nox gas when shot or triggered by enemies.
+      primary_data:
+        gas_radius: 5<span>m</span>
+        duration: 12.5<span>s</span>
+      secondary_data:
+        damage: 1 / 10<small>tick</small>
+        cooldown: 30<small>s</small>
+        speed: -25<small>%</small>
+        detection: 2.5<small>m</small>
+        traps: 3
+        max_traps_on_field: 6
     ability_2:
       type: Passive Ability
       name: Nox Vision
@@ -42,79 +130,265 @@
     ability_3:
       type: Ultimate Ability
       name: Nox Gas Grenade
-      description: Blankets a large area in Nox gas.
+      description: Blankets a large area in Nox gas. Damage increases the longer an enemy is inside of it.
+      primary_data:
+        gas_radius: 10<span>m</span>
+        charge_time: 150<span>s</span>
+      secondary_data:
+        damage: 1 / 10<small>tick</small>
+        duration: 20<small>s</small>
+        speed: -25<small>%</small>
+  badges:
+    - name: Apex Caustic
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Caustic's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Caustic's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Caustic, win 2 games in a row
 -
   name: Gibraltar
+  function: Shielded Fortress
+  lore: |
+    <p>
+      Gibraltar is a gentle giant with a wild side. The son of two SARAS (Search and Rescue Association of Solace) volunteers, he has always been skilled at getting others out of dangerous situations that are common in the Outlands. However, he only began to understand the value of protecting others when he and his boyfriend stole his father’s motorcycle, took it on a joyride, and got trapped by a deadly mudslide. His parents saved them, and his father lost an arm in the process. Gibraltar has never forgotten that sacrifice and has devoted his life to helping those in need.
+    </p>
+    <p>
+      The Apex Games didn’t change that, but they changed what it meant. Many of Gibraltar’s friends and colleagues have competed in the Games for extra money, fame, and glory over the years, and some never came home. Gibraltar joined to keep them safe and, for the first time, his skills as a rescuer and his rebellious nature worked together. He’s now become an icon in the Apex Games, putting himself in the line of fire to protect his squad and send his opponents running for cover.
+    </p>
+  about:
+    real_name: Makoa Gibraltar
+    age: 30
+    home_world: Solace
   abilities:
     ability_1:
       type: Tactical Ability
       name: Dome of Protection
       description: Throw down a dome-shield that blocks attacks for 15 seconds.
+      primary_data:
+        radius: 5<span>m</span>
+        cooldown: 20<span>s</span>
+      secondary_data:
+        duration: 15<small>s</small>
+        throw_distance: 15<small>m</small>
     ability_2:
       type: Passive Ability
       name: Gun Shield
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
+      primary_data:
+        blocks: 100
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment
       description: Call in a concentrated mortar strike on a marked position.
+      primary_data:
+        damage: 40
+        charge_time: 270<span>s</span>
+      secondary_data:
+        duration: 8<small>s</small>
+        delay: 2<small>s</small>
+        stun: 4<small>s</small>
+        radius: 25<small>m</small>
+        throw_range: 50<small>m</small>
+  badges:
+    - name: Apex Gibraltar
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Gibraltar's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Gibraltar's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Gibraltar, win 2 games in a row
 -
   name: Lifeline
+  function: Combat Medic
+  lore: |
+    <p>
+      Ajay Che, aka Lifeline, isn’t someone you would expect to find in the Apex Games. Once the child of wealthy war profiteers, she left home when she learned of the damage her family had caused and enlisted in the Frontier Corps, a humanitarian organization that aids Frontier communities in need. She’s since devoted her life to helping others and joined the Apex Games to fund the Frontier Corps with her winnings.
+    </p>
+    <p>
+      Since no one in the Games is innocent — they all know what they signed up for — and every one of her victories means help for those in need, Lifeline has no problem engaging in the popular bloodsport. Or so she tells herself. She may seem sarcastic and callous, but deep down she wants to help people and make the world a better place. If that means taking a few people down in the process, so be it.
+    </p>
+  about:
+    real_name: Ajay Che
+    age: 24
   abilities:
     ability_1:
       type: Tactical Ability
       name: D.O.C. Heal Drone
       description: Call your Drone of Compassion to automatically heal nearby teammates over time.
+      primary_data:
+        cast_time: 2<span>s</span>
+        cooldown: 60<span>s</span>
+      secondary_data:
+        healing_per_second: 5
+        max_healing_range: 2<small>m</small>
+        duration: 20<small>s</small>
     ability_2:
       type: Passive Ability
       name: Combat Medic
       description: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
+      primary_data:
+        revive: 4<span>s</span>
+        self_heal: -25%
     ability_3:
       type: Ultimate Ability
       name: Care Package
       description: Call in a drop pod full of high-quality defensive gear.
+      primary_data:
+        cast_time: 15<span>s</span>
+        charge_time: 360<span>s</span>
+      secondary_data:
+        items: 3
+  badges:
+    - name: Apex Lifeline
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Lifeline's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Lifeline's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Lifeline, win 2 games in a row
 -
   name: Mirage
+  function: Holographic Trickster
+  lore: |
+    <p>
+      Mirage is the kind of guy who likes to stand out. The youngest of four brothers, he perfected the art of fooling around to get attention. The one thing he took seriously was Holo-Pilot technology, introduced to the illusion-creating tech by his engineer mother, he poured over the mechanisms and learned all he could about them. Even when his brothers went MIA during the Frontier War, Mirage and his mother continued to develop holo devices, and the work brought them closer.
+    </p>
+    <p>
+      While working as a bartender to make ends meet, Mirage heard amazing stories from his patrons about the Apex Games and the wealth and glory that came with victory. As good as both of those sounded, he knew he couldn’t risk leaving his mother childless – until she gave him a set of customized holo devices and told him to follow his dream. Mirage is now the life of the Apex Games, outwitting opponents and charming audiences across the Outlands.
+    </p>
+  about:
+    real_name: Elliott Witt
+    age: 30
+    home_world: Solace
   abilities:
     ability_1:
       type: Tactical Ability
       name: Psyche Out
       description: Send out a holographic decoy to confuse the enemy.
+      primary_data:
+        cooldown: 15<span>s</span>
+        duration: 15<span>s</span>
     ability_2:
       type: Passive Ability
       name: Encore!
       description: Automatically drop a decoy and cloak for five seconds when knocked down.
+      primary_data:
+        invisible_duration: 5<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Vanishing Act
       description: Deploy a team of Decoys to distract enemies while you cloak.
+      primary_data:
+        duration: 5<span>s</span>
+        charge_time: 150<span>s</span>
+      secondary_data:
+        decoys: 5
+        invisible: 5<small>s</small>
+  badges:
+    - name: Apex Mirage
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Mirage's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Mirage's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Mirage, win 2 games in a row
 -
   name: Pathfinder
+  function: Forward Scout
+  lore: |
+    <p>
+      Pathfinder is the picture of optimism, despite his circumstances. A MRVN (Mobile Robotic Versatile eNtity) modified to specialize in location scouting and surveying, he booted up decades ago in an abandoned laboratory with no idea who created him or why. With only his MRVN designation to hint at his identity, Pathfinder set off in search of his creator.
+    </p>
+    <p>
+      Pathfinder has learned much in his travels since then (like how to make a mean Eastern Leviathan Stew) but hasn’t come any closer to finding his creator. Still, he’s never given up hope, and has joined the Apex Games to gain a following--and hopefully draw the attention of his maker. In the meantime, he remains enthusiastic and helpful, always ready to make new friends (then shoot them).
+    </p>
+  about:
+    real_name: MRVN
+    age: Unknown
+    home_world: Unknown
   abilities:
     ability_1:
       type: Tactical Ability
       name: Grappling Hook
       description: Grapple to get to out-of-reach places quickly.
+      primary_data:
+        range: 20<span>m</span>
+        cooldown: 15<span>s</span>
     ability_2:
       type: Passive Ability
       name: Insider Knowledge
       description: Scan a survey beacon to reveal the ring’s next location.
+      primary_data:
+        cast_time: 8<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Zipline Gun
       description: Create a zipline for everyone to use.
+      primary_data:
+        range: 135<span>m</span>
+        charge_time: 90<span>s</span>
+      secondary_data:
+        max_speed_zipline: +200<small>%</small>
+  badges:
+    - name: Apex Pathfinder
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Pathfinder's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Pathfinder's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Pathfinder, win 2 games in a row
 -
   name: Wraith
+  function: Interdimensional Skirmisher
+  lore: |
+    <p>
+      Wraith is a whirlwind fighter, able to execute swift and deadly attacks and manipulate spacetime by opening rifts in the fabric of reality — but she has no idea how she got that way. Years ago, she woke up in an IMC Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a distant voice whispering in her mind that would keep her awake for days on end. Despite nearly driving her insane, once she started to listen and trust it, the voice helped her harness her newfound power of void manipulation and escape the facility.
+    </p>
+    <p>
+      Determined to uncover her true identity, Wraith began a quest to find out more about the experiments. Many of the old research facilities, however, are buried beneath heavily guarded arenas used for the Apex Games. Now Wraith has joined the competition, and with every match she gets closer to the truth.
+    </p>
+  about:
+    real_name: Redacted
+    age: Redacted
+    home_world: Redacted
   abilities:
     ability_1:
       type: Tactical Ability
       name: Into the Void
       description: Reposition quickly through the safety of void space, avoiding all damage.
+      primary_data:
+        cooldown: 20<span>s</span>
+        duration: 3<span>s</span>
+      secondary_data:
+        movement: +10<small>%</small>
     ability_2:
       type: Passive Ability
       name: Voices from the Void
       description: A voice warns you when danger approaches. As far as you can tell, it’s on your side.
+      primary_data:
+        cooldown: 10<span>s</span>
+        warn_teammates: +6<span>s</span>
     ability_3:
       type: Ultimate Ability
       name: Dimensional Rift
       description: Link two locations with portals for 60 seconds, allowing your entire team to use them.
+      primary_data:
+        duration: 60<span>s</span>
+        charge_time: 150<span>s</span>
+      secondary_data:
+        movement: +110<small>%</small>
+  badges:
+    - name: Apex Wraith
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Wraith's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Wraith's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Wraith, win 2 games in a row

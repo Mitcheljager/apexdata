@@ -69,7 +69,7 @@
             <% end if item["ammo_capacity"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] %></div></span> <small>fps</small>
+              Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] / 10 %></div></span> <small>m/s</small>
             <% end if item["projectile_speed"] %>
 
             <br>
@@ -118,14 +118,16 @@
       </div>
     </div>
 
-    <% image_path = asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
+    <% unless compact? %>
+      <% image_path = asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
 
-    <div class="item__image-wrapper">
-      <picture>
-        <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
-        <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
-        <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image", alt: item["name"].humanize %>
-      </picture>
-    </div>
+      <div class="item__image-wrapper">
+        <picture>
+          <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
+          <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
+          <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image", alt: item["name"].humanize %>
+        </picture>
+      </div>
+    <% end %>
   </div>
 </article>
