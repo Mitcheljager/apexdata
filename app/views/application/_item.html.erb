@@ -69,10 +69,24 @@
             <% end if item["ammo_capacity"] %>
 
             <%= tag.div class: "item__small-info" do %>
+              Damage per magazine
+              <span>
+                <div data-compare-target="damage_per_magazine" data-modify-target="ammo_increase" data-modify-round>
+                  <% damage = item["ammo_capacity"] * item["damage"] %>
+                  <% if item["damage_modifier"]%>
+                    <% damage = damage * item["damage_modifier"] %>
+                  <% end %>
+
+                  <%= damage %>
+                </div>
+              </span>
+            <% end if item["projectile_speed"] %>
+
+            <%= tag.div class: "item__small-info" do %>
               Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] / 10 %></div></span> <small>m/s</small>
             <% end if item["projectile_speed"] %>
 
-            <br>
+            <hr>
 
             <%= tag.div class: "item__small-info" do %>
               Tactical reload
@@ -110,7 +124,7 @@
           <% end %>
 
           <%= tag.div class: "columns__column columns__column--half" do %>
-            <strong>Spray</strong>
+            <strong title="Spray pattern. Red indicates the first shot. Add a Barrel Stabilizer to see how it affects the spray.">Spray</strong>
 
             <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
           <% end if item["spray_pattern"]%>

@@ -145,3 +145,8 @@ $rarities: (
   text-transform: none;
   margin: ($margin / 8) 0;
 }
+
+hr {
+  border-color: $border-color;
+  margin: ($margin / 5.5) 0;
+}
