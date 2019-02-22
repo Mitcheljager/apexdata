@@ -123,3 +123,13 @@
   holster_time: 0.4
   fire_modes:
     single: true
+  spray_pattern:
+    starter:
+      - x: 25
+        y: 70
+      - x: 40
+        y: 70
+      - x: 55
+        y: 70
+      - x: 70
+        y: 70
