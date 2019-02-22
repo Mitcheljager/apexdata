@@ -69,7 +69,7 @@
             <% end if item["ammo_capacity"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] %></div></span> <small>fps</small>
+              Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] / 10 %></div></span> <small>m/s</small>
             <% end if item["projectile_speed"] %>
 
             <br>
