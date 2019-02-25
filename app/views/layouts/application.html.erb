@@ -59,13 +59,18 @@
               <%= image_tag "sun.png" %>
             <% end %>
           <% end %>
-        <% end %>
-
-        <% if theme_light? %>
+        <% else if theme_light? %>
           <%= link_to theme_dark_path do %>
             <span>Night mode</span>
             <% if asset_exist?("moon.png") %>
               <%= image_tag "moon.png" %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to theme_light_path do %>
+            <span>Day mode</span>
+            <% if asset_exist?("sun.png") %>
+              <%= image_tag "sun.png" %>
             <% end %>
           <% end %>
         <% end %>
