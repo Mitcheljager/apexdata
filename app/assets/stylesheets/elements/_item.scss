@@ -84,9 +84,14 @@
   position: relative;
   padding: $margin;
   border: 2px solid  rgba($white, .1);
-  background: $black image_url("item-pattern.jpg");
+  background: var(--bg-color) image_url("item-pattern.jpg");
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
+
+  body.light_theme & {
+    background: var(--white);
+    border: 2px solid rgba($black, .1);
+  }
 
   &::before {
     content: "";
@@ -98,6 +103,10 @@
     width: 40px;
     background-color: $white;
     transform: rotate(45deg) translateX(-32px) translateY(-15px);
+
+    body.light_theme & {
+      background-color: var(--title-color);
+    }
   }
 
   &::after {
@@ -110,6 +119,10 @@
     width: 70px;
     background: $white;
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
+
+    body.light_theme & {
+      background-color: var(--title-color);
+    }
   }
 
   @media screen and (min-width: 640px) {
@@ -192,6 +205,10 @@
     height: auto;
     margin-bottom: 0;
     align-items: center;
+  }
+
+  body.light_theme & {
+    border: 2px solid rgba($black, .5);
   }
 
   .item--compact & {
@@ -331,11 +348,15 @@
   font-weight: 700;
   color: $white;
 
+  body.light_theme & {
+    color: var(--title-color);
+  }
+
   span {
     display: block;
     font-size: 12px;
     font-weight: 300;
-    color: $text-color
+    color: var(--text-color)
   }
 
   small {
@@ -344,7 +365,7 @@
     right: 2em;
     font-size: 14px;
     font-weight: 300;
-    color: $text-color;
+    color: var(--text-color);
   }
 
   > div {
@@ -365,7 +386,7 @@
   width: 100%;
   font-size: 12px;
   font-weight: 300;
-  color: $text-color;
+  color: var(--text-color);
 
   span {
     margin-left: auto;
@@ -373,6 +394,10 @@
     font-size: 16px;
     font-weight: 700;
     color: $white;
+
+    body.light_theme & {
+      color: var(--text-color);
+    }
 
     &.item__small-info-modify-value {
       font-weight: 300;
@@ -384,7 +409,7 @@
   small {
     font-size: 10px;
     margin-left: .25em;
-    color: $text-color;
+    color: var(--text-color);
     font-weight: 300;
   }
 }
@@ -406,6 +431,10 @@
     img {
       width: 64px;
       margin-left: -19px;
+
+      body.light_theme & {
+        filter: brightness(20%);
+      }
     }
   }
 
@@ -494,6 +523,14 @@
 
   img {
     max-width: $margin * 3.5;
+
+    body.light_theme & {
+      filter: brightness(0%);
+    }
+
+    .item--legend & {
+      filter: brightness(100%) !important;
+    }
   }
 }
 
@@ -507,6 +544,10 @@
   margin: .1em 0 0 .25em;
   height: .6em;
   width: auto;
+
+  body.light_theme & {
+    filter: brightness(20%);
+  }
 
   &:first-of-type {
     margin-top: 0;

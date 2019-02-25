@@ -2,7 +2,7 @@
   font-size: 12px;
   margin-top: $margin * 2;
   padding: $margin / 4 0;
-  border-top: 2px solid $border-color;
+  border-top: 2px solid var(--border-color);
 
   @media (min-width: $max-width) {
     display: flex;

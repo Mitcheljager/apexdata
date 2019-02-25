@@ -54,6 +54,10 @@
 
   img {
     width: 100%;
+
+    body.light_theme & {
+      filter: brightness(20%);
+    }
   }
 }
 
@@ -105,6 +109,10 @@
     img {
       width: 60px;
       margin-left: 0;
+
+      body.light_theme & {
+        filter: brightness(100%);
+      }
 
       @media screen and (min-width: 425px) {
         width: 84px;

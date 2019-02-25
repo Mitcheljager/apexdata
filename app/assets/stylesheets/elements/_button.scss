@@ -5,16 +5,21 @@
   font-weight: 700;
   font-size: 11px;
   text-decoration: none;
-  background: $border-color;
+  background: var(--border-color);
   color: rgba($white, .6);
-  box-shadow: 3px 3px 0 darken($border-color, 15%);
+  box-shadow: 3px 3px 0 var(--border-color);
   clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
+
+  body.light_theme & {
+    background: var(--primaryDark);
+    color: $white;
+  }
 
   &:hover,
   &:active {
     color: $white;
     border-color: $white;
-    background: darken($border-color, 5%);
+    background: var(--border-color);
 
     .button__tooltip {
       display: block;
@@ -24,11 +29,17 @@
   &--small {
     padding: .25em .5em;
     font-size: 12px;
-    border-color: $border-color;
-    background-color: $border-color;
+    border-color: var(--border-color);
+    background-color: var(--border-color);
     box-shadow: none;
     clip-path: none;
     font-weight: 300;
+
+    body.light_theme & {
+      border-color: var(--bg-color);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
   }
 
   &--smaller {
@@ -41,6 +52,10 @@
     background: $red;
     color: $white;
     border-color: $red;
+
+    body.light_theme & {
+      background: $red;
+    }
 
     &:hover {
       background: darken($red, 5%);
@@ -61,7 +76,7 @@
   font-weight: 300;
   text-align: center;
   white-space: nowrap;
-  background: $bg-color;
-  border: 1px solid $border-color;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
   z-index: 10;
 }

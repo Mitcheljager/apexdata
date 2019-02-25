@@ -13,6 +13,11 @@
   margin-right: 2px;
   cursor: pointer;
 
+  body.light_theme & {
+    border: 1px dashed rgba($black, .25);
+    background: rgba($black, .15);
+  }
+
   &--active {
     border-color: rgba($white, .5);
     background: rgba($white, .2);
@@ -21,6 +26,10 @@
   img {
     width: 100%;
     height: auto;
+
+    body.light_theme & {
+      filter: brightness(20%);
+    }
   }
 }
 
@@ -28,8 +37,8 @@
   position: relative;
   display: none;
   width: 200px;
-  background: $darkblue;
-  border: 1px solid $border-color;
+  background: var(--primaryDark);
+  border: 1px solid var(--border-color);
   max-height: calc(5em + #{$margin});
   overflow: auto;
   margin-top: -100%;
@@ -55,8 +64,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  background: $darkblue;
-  border-bottom: 1px solid $border-color;
+  background: var(--primaryDark);
+  border-bottom: 1px solid var(--border-color);
   padding: ($margin / 6) ($margin / 8);
   font-size: 11px;
   cursor: pointer;
@@ -71,7 +80,7 @@
 
   &:hover,
   &:active {
-    background: lighten($darkblue, 5%);
+    background: var(--primaryDark);
   }
 
   &:last-of-type {

@@ -14,7 +14,7 @@ nav {
     margin-left: -#{ $margin / 2 };
     margin-bottom: $margin / 6;
     width: $margin * 4;
-    background: rgba($darkblue, 0.7);
+    background: var(--primaryDark);
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -74,6 +74,6 @@ nav {
   z-index: 10;
 
   a {
-    background: lighten($darkblue, 1%);
+    background: var(--primaryDark);
   }
 }

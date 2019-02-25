@@ -9,16 +9,20 @@ html {
 
 body {
   margin: 0;
-  background: $bg-color image_url("bg-pattern.jpg");
+  background: var(--bg-color) image_url("bg-pattern.jpg");
   font-family: "Raleway", sans-serif;
   font-display: auto;
-  color: $text-color;
+  color: var(--text-color);
   text-transform: uppercase;
   font-weight: 300;
+
+  &.light_theme {
+    background: var(--bg-color);
+  }
 }
 
 a {
-  color: $text-color;
+  color: var(--text-color);
 }
 
 .content-page p {
@@ -56,6 +60,10 @@ a {
     color: $white;
     text-decoration: none;
 
+    body.light_theme & {
+      color: var(--title-color);
+    }
+
     &:hover,
     &:active {
       text-decoration: none;
@@ -65,7 +73,7 @@ a {
   &__sub-title {
     display: block;
     font-size: 12px;
-    color: $text-color;
+    color: var(--text-color);
     letter-spacing: .9px;
     padding: 0 ($margin / 2);
     margin-top: $margin / 8;
@@ -116,6 +124,12 @@ $rarities: (
 
   .color-#{$rarity} {
     color: $value !important;
+
+    @if $rarity == 'basic' {
+      body.light_theme & {
+        color: var(--text-color) !important;
+      }
+    }
   }
 
   .border-#{$rarity} {
@@ -147,6 +161,6 @@ $rarities: (
 }
 
 hr {
-  border-color: $border-color;
+  border-color: var(--border-color);
   margin: ($margin / 5.5) 0;
 }
