@@ -21,18 +21,16 @@
 
     <%= render "ads" %>
 
-    <% if theme_dark? %>
-      <style>
-        :root {
-          --primaryDark: #1d1f27;
-          --bg-color: #282A36;
-          --border-color: #3e4153;
-          --text-color: #8e8e8e;
-          --title-color: #ffffff;
-          --white: #ffffff;
-        }
-      </style>
-    <% end %>
+    <style>
+      :root {
+        --primaryDark: #1d1f27;
+        --bg-color: #282A36;
+        --border-color: #3e4153;
+        --text-color: #8e8e8e;
+        --title-color: #ffffff;
+        --white: #ffffff;
+      }
+    </style>
 
     <% if theme_light? %>
       <style>
