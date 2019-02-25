@@ -4,9 +4,9 @@
   justify-content: space-between;
   padding: .5em;
   margin-top: $margin / 2;
-  background: $darkblue;
+  background: var(--primaryDark);
   font-size: 14px;
-  color: $text-color;
+  color: var(--text-color);
   text-decoration: none;
   cursor: pointer;
 
@@ -19,7 +19,7 @@
   display: block;
   width: 1em;
   height: 1em;
-  border: 2px solid $border-color;
+  border: 2px solid var(--border-color);
   margin-right: .5em;
 
   .toggle--active & {

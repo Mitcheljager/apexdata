@@ -1,7 +1,10 @@
 .header {
   height: 51px;
   width: 100%;
-  background: $darkblue;
+  background: var(--primaryDark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (min-width: $max-width) {
     height: 88px;
@@ -9,10 +12,6 @@
 }
 
 .header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   img {
     max-width: 70px;
     height: auto;

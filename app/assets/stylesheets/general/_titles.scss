@@ -3,7 +3,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: $title-color;
+  color: var(--title-color);
   font-weight: 700;
 }
 
@@ -35,6 +35,10 @@ h3 {
     width: 100%;
     background: $white;
     opacity: .2;
+
+    body.light_theme & {
+      background: var(--title-color);
+    }
   }
 
   &--small {
@@ -61,20 +65,20 @@ h3 {
   }
 
   a {
-    color: $title-color;
+    color: var(--title-color);
     text-decoration: none;
   }
 
   small {
     font-weight: 300;
     font-size: 1em;
-    color: $text-color;
+    color: var(--text-color);
   }
 }
 
 .title-small {
   font-weight: 300;
-  color: $text-color;
+  color: var(--text-color);
   margin-top: 0;
 }
 

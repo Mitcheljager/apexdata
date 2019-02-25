@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "viewtype/expanded" => "viewtype#expanded", as: "expanded"
   get "viewtype/compact" => "viewtype#compact", as: "compact"
 
+  get "theme/light" => "theme#light", as: "theme_light"
+  get "theme/dark" => "theme#dark", as: "theme_dark"
+
   get "alldata/expanded" => "alldata#expanded", as: "alldata_expanded"
   get "alldata/compact" => "alldata#compact", as: "alldata_compact"
 
