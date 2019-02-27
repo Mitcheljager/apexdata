@@ -1,5 +1,5 @@
 .filter {
-  margin: ($margin * 4) 0 ($margin * 2);
+  margin: ($margin * 2) 0 ($margin * 2);
   padding: .5em 0;
   border: 2px solid rgba($white, .2);
   border-left: 0;
@@ -17,6 +17,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: ($margin * 4) 0 ($margin * 2);
   }
 }
 
