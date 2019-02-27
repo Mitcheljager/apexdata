@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   get "legends" => "legends#index"
   get "legends/:name" => "legends#show", as: "legend_show"
+
+  get "sort/:items/:sort_by" => "sort#index", as: "sort"
 end

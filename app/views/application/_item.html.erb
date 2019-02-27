@@ -28,12 +28,8 @@
           </div>
 
           <%= tag.div class: "item__small-info" do %>
-            <% rate_of_fire = item["rate_of_fire"] < 60 ? 1 : item["rate_of_fire"] / 60 %>
-            <% dps_value = "%2g" % ("%.1f" % (item["damage"] * rate_of_fire)) %>
-            <% dps_value = dps_value.to_i * item["damage_modifier"] if item["damage_modifier"] %>
-
-            Damage per second <span><div data-compare-target="dps"><%= dps_value %></div></span>
-          <% end if item["rate_of_fire"] && item["damage"] %>
+            Damage per second <span><div data-compare-target="dps"><%= item["damage_per_second"] %></div></span>
+          <% end if item["damage_per_second"] %>
 
           <%= tag.div class: "item__small-info" do %>
             Headshot damage <span><div data-compare-target="headshot-damage"  data-modify-target="headshot_damage_modifier"><%= item["headshot_damage"] %></div></span>
@@ -72,15 +68,10 @@
               Damage per magazine
               <span>
                 <div data-compare-target="damage_per_magazine" data-modify-target="ammo_increase" data-modify-round>
-                  <% damage = item["ammo_capacity"] * item["damage"] %>
-                  <% if item["damage_modifier"]%>
-                    <% damage = damage * item["damage_modifier"] %>
-                  <% end %>
-
-                  <%= damage %>
+                  <%= item["damage_per_magazine"] %>
                 </div>
               </span>
-            <% end if item["projectile_speed"] %>
+            <% end if item["damage_per_magazine"] %>
 
             <%= tag.div class: "item__small-info" do %>
               Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] / 10 %></div></span> <small>m/s</small>

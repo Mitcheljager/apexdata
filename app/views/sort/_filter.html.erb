@@ -1,0 +1,21 @@
+<div class="filter" data-role="filter">
+  <div class="filter__title">
+    Filter
+  </div>
+
+  <div class="filter__item">
+    <% types = ["all", "sub-machine-guns", "assault-rifles", "light-machine-guns", "pistols", "shotguns", "sniper-rifles"] %>
+
+    <%= label "type", "Type" %>
+    <%= select "type", "type", types.collect {|type| [ type.underscore.humanize, type ] }, { selected: active }, { data: { target: "filter-type" }} %>
+  </div>
+
+  <div class="filter__item">
+    <% sort_by = ["damage", "rate-of-fire", "damage-per-second", "damage-per-magazine", "headshot-damage", "legshot-damage", "ammo-capacity", "projectile-speed"] %>
+
+    <%= label "type", "Sort by" %>
+    <%= select "sort-by", "sort-by", sort_by.collect {|sort| [ sort.underscore.humanize, sort ] }, { selected: params[:sort_by] }, { data: { target: "filter-sort-by" }} %>
+  </div>
+
+  <%= link_to "Filter", "#", class: "button", data: { action: "set-filter" } %>
+</div>

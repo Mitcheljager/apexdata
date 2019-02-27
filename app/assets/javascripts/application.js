@@ -19,3 +19,4 @@
 //= require dropdown
 //= require modify
 //= require toggle
+//= require filter

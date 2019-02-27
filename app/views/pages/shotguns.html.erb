@@ -4,6 +4,8 @@
   <h2 class="heading__title"><%= link_to "Shotguns", page_path("shotguns") %></h2>
 </div>
 
+<%= render "sort/filter", active: "shotguns" %>
+
 <div class="items">
   <%= render partial: "item", collection: shotguns, as: :item %>
 </div>
