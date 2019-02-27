@@ -12,7 +12,7 @@
 
   body.light_theme & {
     background: var(--primaryDark);
-    color: $white;
+    color: var(--text-color);
   }
 
   &:hover,
@@ -55,6 +55,7 @@
 
     body.light_theme & {
       background: $red;
+      color: $white;
     }
 
     &:hover {

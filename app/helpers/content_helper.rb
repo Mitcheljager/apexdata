@@ -1,26 +1,32 @@
 module ContentHelper
   def assault_rifles
-    YAML.load(File.read(Rails.root.join("config/content", "assault_rifles.yml")))
+    items = YAML.load(File.read(Rails.root.join("config/content", "assault_rifles.yml")))
+    calculate_extra_values(items)
   end
 
   def sub_machine_guns
-    YAML.load(File.read(Rails.root.join("config/content", "sub_machine_guns.yml")))
+    items = YAML.load(File.read(Rails.root.join("config/content", "sub_machine_guns.yml")))
+    calculate_extra_values(items)
   end
 
   def pistols
-    YAML.load(File.read(Rails.root.join("config/content", "pistols.yml")))
+    items = YAML.load(File.read(Rails.root.join("config/content", "pistols.yml")))
+    calculate_extra_values(items)
   end
 
   def light_machine_guns
-    YAML.load(File.read(Rails.root.join("config/content", "light_machine_guns.yml")))
+    items = YAML.load(File.read(Rails.root.join("config/content", "light_machine_guns.yml")))
+    calculate_extra_values(items)
   end
 
   def shotguns
-    YAML.load(File.read(Rails.root.join("config/content", "shotguns.yml")))
+    items = YAML.load(File.read(Rails.root.join("config/content", "shotguns.yml")))
+    calculate_extra_values(items)
   end
 
   def sniper_rifles
-    YAML.load(File.read(Rails.root.join("config/content", "sniper_rifles.yml")))
+    items = YAML.load(File.read(Rails.root.join("config/content", "sniper_rifles.yml")))
+    calculate_extra_values(items)
   end
 
   def grenades
@@ -53,5 +59,22 @@ module ContentHelper
 
   def weapons
     assault_rifles.concat(sub_machine_guns).concat(pistols).concat(light_machine_guns).concat(shotguns).concat(sniper_rifles)
+  end
+
+  def calculate_extra_values(array)
+    array.each do |item|
+      rate_of_fire = item["rate_of_fire"] < 60 ? 1 : item["rate_of_fire"] / 60
+      dps_value = "%2g" % ("%.1f" % (item["damage"] * rate_of_fire))
+      dps_value = dps_value.to_i * item["damage_modifier"] if item["damage_modifier"]
+
+      item["damage_per_second"] = dps_value.to_i
+
+      damage = item["ammo_capacity"] * item["damage"]
+      if item["damage_modifier"]
+        damage = damage * item["damage_modifier"]
+      end
+
+      item["damage_per_magazine"] = damage
+    end
   end
 end
