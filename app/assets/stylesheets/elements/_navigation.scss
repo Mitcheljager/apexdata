@@ -43,7 +43,7 @@
   }
 
   &--mobile-floating {
-    @media (max-width: 767px) {
+    @media (max-width: 639px) {
       display: none;
       position: fixed;
       top: 0;
@@ -124,7 +124,7 @@
   background: var(--primaryDark);
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     display: none;
   }
 }

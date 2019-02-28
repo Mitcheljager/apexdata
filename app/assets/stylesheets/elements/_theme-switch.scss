@@ -4,7 +4,7 @@
   right: 25px;
   top: 13px;
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 640px) {
     display: block;
   }
 
@@ -19,7 +19,7 @@
     right: 0;
     top: 0;
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 640px) {
       display: none;
     }
 
