@@ -465,6 +465,10 @@
       @media screen and (min-width: 640px) {
         font-size: 14px;
       }
+
+      &.extra-small {
+        font-size: 12px;
+      }
     }
     span {
       font-size: 12px;
@@ -571,4 +575,8 @@
   width: 100%;
   object-fit: contain;
   object-position: 50% -10px;
+}
+
+.item__tips {
+  margin-top: 10px;
 }

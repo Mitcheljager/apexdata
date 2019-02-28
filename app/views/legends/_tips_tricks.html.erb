@@ -5,18 +5,19 @@
       <div class="heading__line"></div>
     </div>
 
-    <% @item["tips"].each do |tip| %>
-      <div class="item__full-width-info item__full-width-info--large">
-        <div>
-          <span class="color-basic"><%= tip["name"] if tip["name"] %></span>
-          <small class="no-text-transform"><%= raw tip["tip"] if tip["tip"] %></small>
-        </div>
-      </div>
-    <% end if @item["tips"] %>
-
     <div class="item__full-width-info">
       <span class="color-basic">Send your tips and tricks</span>
       <small class="no-text-transform">Send your tips and tricks to <a href="mailto:info@apexdata.gg">info@apexdata.gg</a>. Don"t forget to mention the legend and your IGN.</small>
     </div>
+
+    <% @item["tips"].each do |tip| %>
+      <div class="item__full-width-info item__full-width-info--large item__tips">
+        <div>
+          <hr />
+          <small class="no-text-transform"><%= raw tip["tip"] if tip["tip"] %></small>
+          <small class="tip__username extra-small">Submitted by <%= tip["name"] if tip["name"] %></small>
+        </div>
+      </div>
+    <% end if @item["tips"] %>
   </div>
 </article>
