@@ -76,6 +76,13 @@
           font-size: 14px;
           padding-top: $margin / 2;
           margin-top: ($margin / 2) - ($margin / 4);
+
+          &:hover,
+          &:active {
+            background: var(--primaryDark);
+            color: var(--text-color);
+            cursor: auto;
+          }
         }
       }
 
