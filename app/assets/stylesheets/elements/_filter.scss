@@ -1,5 +1,5 @@
 .filter {
-  margin: ($margin * 2) 0 ($margin * 2);
+  margin: ($margin * 2) 0 $margin;
   padding: .5em 0;
   border: 2px solid rgba($white, .2);
   border-left: 0;
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: ($margin * 4) 0 ($margin * 2);
+    margin: ($margin * 4) 0 $margin;
   }
 }
 
@@ -25,6 +25,10 @@
   padding-top: 0;
   border-top: 0;
   margin-top: calc(-#{$margin / 2} - .5em - 2px);
+
+  @media (min-width: 640px) {
+    margin-bottom: $margin * 2;
+  }
 }
 
 .filter__title {
