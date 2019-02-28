@@ -1,0 +1,54 @@
+.theme-switch {
+  display: none;
+  position: absolute;
+  right: 25px;
+  top: 13px;
+
+  @media screen and (min-width: 767px) {
+    display: block;
+  }
+
+  @media screen and (min-width: 900px) {
+    top: 26px;
+  }
+
+  &--in-mobile-navigation {
+    display: block;
+    position: relative;
+    text-align: right;
+    right: 0;
+    top: 0;
+
+    @media screen and (min-width: 767px) {
+      display: none;
+    }
+
+    a {
+      justify-content: flex-end;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  span {
+    font-size: 13px;
+  }
+
+  img {
+    width: 100%;
+    margin-left: 10px;
+    max-width: 23px;
+
+    body.light_theme & {
+      filter: brightness(20%);
+    }
+
+    @media screen and (min-width: 900px) {
+      max-width: 30px;
+    }
+  }
+}

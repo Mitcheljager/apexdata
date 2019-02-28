@@ -20,3 +20,4 @@
 //= require modify
 //= require toggle
 //= require filter
+//= require navigation

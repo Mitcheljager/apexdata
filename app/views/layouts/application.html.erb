@@ -29,30 +29,7 @@
 
     <header class="header">
       <%= link_to image_tag("layout/apexlogo.png", alt: "Apex Legends logo"), root_path, class: "header__logo" %>
-      <div class="theme__switch">
-        <% if theme_dark? %>
-          <%= link_to theme_light_path do %>
-            <span>Switch to day mode</span>
-            <% if asset_exist?("sun.png") %>
-              <%= image_tag "sun.png" %>
-            <% end %>
-          <% end %>
-        <% elsif theme_light? %>
-          <%= link_to theme_dark_path do %>
-            <span>Switch to night mode</span>
-            <% if asset_exist?("moon.png") %>
-              <%= image_tag "moon.png" %>
-            <% end %>
-          <% end %>
-        <% else %>
-          <%= link_to theme_light_path do %>
-            <span>Switch to day mode</span>
-            <% if asset_exist?("sun.png") %>
-              <%= image_tag "sun.png" %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
+      <%= render "theme_switch" %>
     </header>
 
     <aside class="wrapper wrapper--no-padding">

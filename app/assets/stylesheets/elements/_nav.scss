@@ -1,4 +1,4 @@
-nav {
+.navigation {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -21,7 +21,8 @@ nav {
     text-align: center;
     font-size: 10px;
     clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
-    transition: all 250ms ease;
+    transition-property: background, color;
+    transition-duration: 250ms;
 
     @media screen and (min-width: 420px) {
       width: $margin * 5;
@@ -39,6 +40,85 @@ nav {
       background: $red;
       color: $white;
     }
+  }
+
+  &--mobile-floating {
+    @media (max-width: 767px) {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 60vw;
+      height: 100vh;
+      padding: ($margin * 2) ($margin / 4) 0;
+      background: var(--primaryDark);
+      z-index: 100;
+      box-shadow: 0 0 30px rgba($black, .35);
+      overflow-y: auto;
+
+      &.active {
+        display: block;
+      }
+
+      a {
+        display: block;
+        clip-path: none;
+        width: 100%;
+        margin: 0;
+        padding: ($margin / 4) ($margin / 2);
+        text-align: right;
+        font-weight: 300;
+        border-bottom: 0;
+
+        &:not([href]) {
+          border-top: 1px solid var(--border-color);
+          font-weight: 700;
+          font-size: 14px;
+          padding-top: $margin / 2;
+          margin-top: ($margin / 2) - ($margin / 4);
+        }
+      }
+
+      .dropdown > a {
+        &::after {
+          display: none;
+        }
+      }
+
+      .dropdown__content {
+        display: block;
+        position: relative;
+        max-width: auto;
+        top: 0;
+      }
+    }
+  }
+
+  &--footer {
+    margin: #{($margin) - ($margin / 4)} 0 $margin;
+
+    @media (min-width: 640px) {
+      margin: #{($margin * 2) - ($margin / 2)} 0 ($margin * 2);
+    }
+  }
+}
+
+.mobile-navigation-trigger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 30px;
+  color: $white;
+  z-index: 200;
+  background: var(--primaryDark);
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
   }
 }
 
@@ -75,13 +155,5 @@ nav {
 
   a {
     background: var(--primaryDark);
-  }
-}
-
-.footer-navigation {
-  margin: #{($margin) - ($margin / 4)} 0 $margin;
-
-  @media (min-width: 640px) {
-    margin: #{($margin * 2) - ($margin / 2)} 0 ($margin * 2);
   }
 }

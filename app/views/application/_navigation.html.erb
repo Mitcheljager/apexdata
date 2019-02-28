@@ -6,7 +6,11 @@
   <h2 class="logo__sub-title">Apex Legends Weapon&nbsp;Data&nbsp;and&nbsp;Statistics</h2>
 </div>
 
-<nav>
+<div class="mobile-navigation-trigger" data-action="toggle-navigation">≡</div>
+
+<nav class="navigation navigation--mobile-floating" data-target="navigation">
+  <%= render "theme_switch", extra_class: "theme-switch--in-mobile-navigation" %>
+
   <%= link_to "Home", root_path, class: current_page?(root_path) ? "active" : "" %>
 
   <div class="dropdown">
