@@ -21,29 +21,7 @@
 
     <%= render "ads" %>
 
-    <% if theme_light? %>
-      <style>
-        :root {
-          --primaryDark: #dedede;
-          --bg-color: #f1f1f1;
-          --border-color: #ffffff;
-          --text-color: #313131;
-          --title-color: #212121;
-          --white: #ffffff;
-        }
-      </style>
-    <% else %>
-      <style>
-        :root {
-          --primaryDark: #1d1f27;
-          --bg-color: #282A36;
-          --border-color: #3e4153;
-          --text-color: #8e8e8e;
-          --title-color: #ffffff;
-          --white: #ffffff;
-        }
-      </style>
-    <% end %>
+    <%= render "theme_settings" %>
   </head>
 
   <body <% if theme_light? %>class="light_theme"<% end %>>
