@@ -9,7 +9,7 @@
       <div class="item__full-width-info item__full-width-info--large">
         <div>
           <span class="color-basic"><%= tip["name"] if tip["name"] %></span>
-          <small class="no-text-transform"><%= tip["tip"] if tip["tip"] %></small>
+          <small class="no-text-transform"><%= raw tip["tip"] if tip["tip"] %></small>
         </div>
       </div>
     <% end if @item["tips"] %>

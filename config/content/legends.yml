@@ -297,6 +297,18 @@
       desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
     - name: Hot streak
       desc: When playing as Mirage, win 2 games in a row
+  tips:
+    - name: Ataraxic89
+      tip: |
+        <p>Send your decoy through any door before you go through it, going in or out</p>
+        <p>When trying to escape an pursuer, try to break line of sight long enough to send a decoy the direction you were heading, then use crouch to silently double back on the enemy to lose them or ambush them from behind.</p>
+        <p>Do NOT send the illusion out if you aren't ready to fight and an enemy could guess the point of origin</p>
+        <p>The illusion works best if you are in position to shoot the enemy just after they shoot your decoy.</p>
+        <p>Even experienced players can be fooled if you give them very little time to study the decoy.</p>
+        <p>Do not simply send it out in the open unless you have a plan to take advantage of them shooting at it.</p>
+        <p><u>Passive</u><br/>Use the 5 seconds of invis to get into a corner, or under a building</p>
+        <p><u>Ultimate</u><br/>Best used as an escape, use this when you need to retreat and regroup</p>
+        <p>While it can be used to flank on the offense, be wary that you cannot fire until it has ended</p>
 -
   name: Pathfinder
   function: Forward Scout
@@ -392,3 +404,20 @@
       desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
     - name: Hot streak
       desc: When playing as Wraith, win 2 games in a row
+  tips:
+    - name: Jordan C.
+      tip: |
+        <p>
+          Voices from the void has saved my team countless times. Typically I will hear Wraiths voice slightly altered like she is from the void saying one of a few things, and a prompt on screen to warn team mates (Down on d-pad PS4):
+          <ul>
+            <li>You’re in the enemy sites</li>
+            <li>There are traps near by</li>
+            <li>Enemy’s nearby</li>
+            <li>You’ve been spotted</li>
+            <li>Probably more, but all I can think of right now.</li>
+          </ul>
+        </p>
+        <p>My primary Offensive use for Wraiths Ultimate is typically setting up a second vantage point for my team to easily surround an enemy before the fighting begins. When we spot on enemy squad I’ll look to drop the first portal near cover and if possible high ground. If not rushing the opponents I’ll look to move horizontally so that me or team mates can easily hop back and forth for better angles. (My understanding is that traveling through a portal is roughly 5x the speed if I were to normally run the 2 distances, but not sure?)</p>
+        <p>According to a reddit post I saw a few days back Wraiths portal will vanish when the ultimate is back to 39%. (This can be helpful, because anyone that is in the void when it vanishes will die)</p>
+        <p>Dimensional Rift provides a slight speed boost after dropping first portal and before setting second portal. This can be combined with the Into the Void ability to get into great positions and I might be wrong, but believe the speed boosts stack for even quicker movement.</p>
+        <p>Team mates can travel through portals when downed and it works great to help respawned opponents get back to loot quickly.</p>
