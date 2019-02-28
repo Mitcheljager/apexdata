@@ -1,3 +1,13 @@
+@keyframes move-in-navigation {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .navigation {
   display: flex;
   width: 100%;
@@ -48,13 +58,15 @@
       position: fixed;
       top: 0;
       right: 0;
-      width: 60vw;
+      width: 80%;
+      max-width: 300px;
       height: 100vh;
       padding: ($margin * 2) ($margin / 4) 0;
       background: var(--primaryDark);
       z-index: 100;
       box-shadow: 0 0 30px rgba($black, .35);
       overflow-y: auto;
+      animation: move-in-navigation 300ms;
 
       &.active {
         display: block;
@@ -119,7 +131,7 @@
   line-height: 50px;
   text-align: center;
   font-size: 30px;
-  color: $white;
+  color: var(--text-color);
   z-index: 200;
   background: var(--primaryDark);
   cursor: pointer;
