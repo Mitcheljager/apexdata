@@ -37,7 +37,7 @@
   position: relative;
   display: none;
   width: 200px;
-  background: var(--primaryDark);
+  background: var(--primary-dark);
   border: 1px solid var(--border-color);
   max-height: calc(5em + #{$margin});
   overflow: auto;
@@ -64,7 +64,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  background: var(--primaryDark);
+  background: var(--primary-dark);
   border-bottom: 1px solid var(--border-color);
   padding: ($margin / 6) ($margin / 8);
   font-size: 11px;
@@ -80,7 +80,7 @@
 
   &:hover,
   &:active {
-    background: var(--primaryDark);
+    background: var(--primary-dark);
   }
 
   &:last-of-type {

@@ -13,7 +13,7 @@
 }
 
 [class^="app_gdpr"] {
-  --cmpBgColor: #{$primaryDark};
+  --cmpBgColor: #{$primary-dark};
   --cmpTextColor: #{darken($white, 35%)};
   --cmpBrandColor: #{lighten($border-color, 15%)};
   --cmpHoverColor: #{lighten($border-color, 25%)};

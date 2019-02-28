@@ -11,7 +11,7 @@
   clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
 
   body.light_theme & {
-    background: var(--primaryDark);
+    background: var(--primary-dark);
     color: var(--text-color);
   }
 
