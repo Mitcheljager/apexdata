@@ -34,10 +34,24 @@ function moreDetailsAll(event) {
   const items = document.querySelectorAll(".item")
 
   if (this.classList.contains("toggle--active")) {
-    items.forEach((element) => element.classList.add("item--more-data"))
+    items.forEach((element) => {
+      element.classList.add("item--more-data")
+
+      const button = element.querySelector("[data-action='item-more-data']")
+      button.classList.remove("button--primary")
+      button.innerHTML = "Less data"
+    })
+
     document.cookie = "alldata=expanded"
   } else {
-    items.forEach((element) => element.classList.remove("item--more-data"))
+    items.forEach((element) => {
+      element.classList.remove("item--more-data")
+
+      const button = element.querySelector("[data-action='item-more-data']")
+      button.classList.add("button--primary")
+      button.innerHTML = "More data"
+    })
+
     document.cookie = "alldata=compact"
   }
 }
