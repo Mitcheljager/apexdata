@@ -1,7 +1,7 @@
 <%= tag.div class:"attachments-table" do %>
   <% item["available_attachments"].map do |key, attachment_type| %>
     <div class="attachments-table__item" data-action="toggle-dropdown">
-      <%= image_tag "attachments/#{ attachment_type.first }.png", alt: "attachment_#{attachment_type.first}", title: attachment_type.first.humanize if asset_exist?("attachments/#{ attachment_type.first }.png") %>
+      <%= image_tag "attachments/#{ attachment_type.first }.png", alt: "attachment_#{attachment_type.first}", title: attachment_type.first.humanize if asset_exists?("attachments/#{ attachment_type.first }.png") %>
 
       <div class="attachments-table__dropdown" data-dropdown>
         <a class="attachments-table__dropdown-item attachments-table__dropdown-item--remove" data-action="remove-modifier">- Remove</a>

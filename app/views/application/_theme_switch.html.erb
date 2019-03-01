@@ -2,7 +2,7 @@
   <div class="theme-switch__item">
     <span>Switch to day mode</span>
 
-    <% if asset_exist?("sun.png") %>
+    <% if asset_exists?("sun.png") %>
       <%= image_tag "sun.png", class: "theme-switch__icon" %>
     <% end %>
   </div>
@@ -10,7 +10,7 @@
   <div class="theme-switch__item">
     <span>Switch to night mode</span>
 
-    <% if asset_exist?("moon.png") %>
+    <% if asset_exists?("moon.png") %>
       <%= image_tag "moon.png", class: "theme-switch__icon" %>
     <% end %>
   </div>

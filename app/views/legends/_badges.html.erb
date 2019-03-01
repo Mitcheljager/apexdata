@@ -8,7 +8,7 @@
     <div class="legend__badges">
       <% @item["badges"].each do |badge| %>
         <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-          <% if asset_exist? "badges/#{ badge["name"].parameterize.underscore }.png" %>
+          <% if asset_exists? "badges/#{ badge["name"].parameterize.underscore }.png" %>
             <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" unless compact? %>
           <% end %>
           <div>
@@ -25,7 +25,7 @@
       <div data-role="togglable" data-is="badges" style="display: none">
         <% badges.each do |badge| %>
           <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-            <% if asset_exist? "badges/#{ badge["name"].parameterize.underscore }.png" %>
+            <% if asset_exists? "badges/#{ badge["name"].parameterize.underscore }.png" %>
               <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" unless compact? %>
             <% end %>
 

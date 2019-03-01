@@ -124,7 +124,7 @@
     </div>
 
     <% unless compact? %>
-      <% image_path = asset_exist?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
+      <% image_path = asset_exists?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
 
       <div class="item__image-wrapper">
         <picture>

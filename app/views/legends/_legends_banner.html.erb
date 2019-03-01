@@ -2,7 +2,7 @@
   <% legends.each do |item| %>
     <%= link_to legend_show_path(item["name"].downcase), class: "item legends-banner__item" do %>
       <div class="item__content">
-        <% if asset_exist?("legends/#{ item["name"].downcase }/character.png")  %>
+        <% if asset_exists?("legends/#{ item["name"].downcase }/character.png")  %>
           <%= image_tag "legends/#{ item["name"].downcase }/character.png", class: "legends-banner__image", alt: item["name"] %>
         <% end %>
       </div>

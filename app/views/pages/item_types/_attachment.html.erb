@@ -1,7 +1,7 @@
 <article class="item item--compact <%= "item--extra-compact" if compact? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
   <div class="item__content">
     <div class="item__description">
-      <% if asset_exist?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") && !compact? %>
+      <% if asset_exists?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") && !compact? %>
         <div class="item__large-icon-wrapper">
           <%= image_tag "attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
         </div>

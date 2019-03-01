@@ -5,7 +5,7 @@
     <% end %>
 
     <div class="item__description">
-      <% if asset_exist?("grenades/#{ item["name"].downcase.gsub(" ", "_") }.png") && !compact? %>
+      <% if asset_exists?("grenades/#{ item["name"].downcase.gsub(" ", "_") }.png") && !compact? %>
         <div class="item__large-icon-wrapper">
           <%= image_tag "grenades/#{ item["name"].downcase.gsub(" ", "_") }.png", class: "item__large-icon", alt: item["name"] %>
         </div>

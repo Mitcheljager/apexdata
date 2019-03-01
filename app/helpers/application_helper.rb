@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def asset_exist?(path)
+  def asset_exists?(path)
     if Rails.configuration.assets.compile
       Rails.application.precompiled_assets.include? path
     else
