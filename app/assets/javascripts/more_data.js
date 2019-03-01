@@ -38,8 +38,10 @@ function moreDetailsAll(event) {
       element.classList.add("item--more-data")
 
       const button = element.querySelector("[data-action='item-more-data']")
-      button.classList.remove("button--primary")
-      button.innerHTML = "Less data"
+      if (button) {
+        button.classList.remove("button--primary")
+        button.innerHTML = "Less data"
+      }
     })
 
     document.cookie = "alldata=expanded"
@@ -48,8 +50,10 @@ function moreDetailsAll(event) {
       element.classList.remove("item--more-data")
 
       const button = element.querySelector("[data-action='item-more-data']")
-      button.classList.add("button--primary")
-      button.innerHTML = "More data"
+      if (button) {
+        button.classList.add("button--primary")
+        button.innerHTML = "More data"
+      }
     })
 
     document.cookie = "alldata=compact"
