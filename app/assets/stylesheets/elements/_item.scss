@@ -89,7 +89,7 @@
   transition: transform 100ms;
 
   .theme-light & {
-    background: var(--white);
+    background: $white image_url("item-pattern-theme-light.jpg");
     border: 2px solid rgba($black, .1);
   }
 
@@ -113,12 +113,12 @@
     content: "";
     display: block;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -2px;
+    right: -2px;
     height: 70px;
     width: 70px;
     background: $white;
-    clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
+    clip-path: polygon(calc(100% - 4px) 28px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 28px calc(100% - 4px));
 
     .theme-light & {
       background-color: var(--title-color);
@@ -149,6 +149,10 @@
   .item--compare-main & {
     background: $black image_url("item-pattern-dark.jpg");
     transform: scale(1.025);
+
+    .theme-light & {
+      background: $white;
+    }
   }
 
   .item--legend:not(.item--extra-compact) & {
