@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   elements.forEach((element) => element.removeEventListener("click", moreDetails))
   elements.forEach((element) => element.addEventListener("click", moreDetails))
+
+  const all = document.querySelector("[data-action='more-data-all']")
+
+  all.removeEventListener("click", moreDetailsAll)
+  all.addEventListener("click", moreDetailsAll)
 })
 
 function moreDetails(event) {
@@ -19,6 +24,22 @@ function moreDetails(event) {
   }
 
   trackMoreDataGA(parentElement.querySelector("h3 a").innerHTML)
+}
+
+function moreDetailsAll(event) {
+  event.preventDefault()
+
+  this.classList.toggle("toggle--active")
+
+  const items = document.querySelectorAll(".item")
+
+  if (this.classList.contains("toggle--active")) {
+    items.forEach((element) => element.classList.add("item--more-data"))
+    document.cookie = "alldata=expanded"
+  } else {
+    items.forEach((element) => element.classList.remove("item--more-data"))
+    document.cookie = "alldata=compact"
+  }
 }
 
 function trackMoreDataGA(label) {

@@ -56,9 +56,9 @@
   </div>
 
   <div class="center-element">
-    <%= link_to (cookies[:alldata] == "expanded" ? alldata_compact_path : alldata_expanded_path), class: "toggle #{ cookies[:alldata] == "expanded" ? "toggle--active" : "" }" do %>
+    <div class="toggle <%= "toggle--active" if alldata? %>" data-action="more-data-all">
       <div class="toggle__check"></div>
       <div class="toggle__content">Expand all Data</div>
-    <% end %>
+    </div>
   </div>
 </div>
