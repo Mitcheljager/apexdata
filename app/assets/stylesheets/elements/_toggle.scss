@@ -11,7 +11,7 @@
   cursor: pointer;
 
   &--active {
-    color: $white;
+    color: var(--title-color);
   }
 }
 
