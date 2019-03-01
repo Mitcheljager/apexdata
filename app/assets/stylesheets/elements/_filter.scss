@@ -71,5 +71,11 @@
     .theme-light & {
       border-color: var(--title-color);
     }
+
+    option {
+      color: var(--text-color);
+      background: var(--bg-color);
+      border-color: var(--border-color);
+    }
   }
 }

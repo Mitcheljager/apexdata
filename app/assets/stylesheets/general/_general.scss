@@ -15,7 +15,8 @@ body {
   --title-color: #{ $white };
 
   margin: 0;
-  background: var(--bg-color) image_url("bg-pattern.jpg");
+  background: var(--bg-color);
+  background-image: image_url("bg-pattern.jpg");
   font-family: "Raleway", sans-serif;
   font-display: auto;
   color: var(--text-color);
