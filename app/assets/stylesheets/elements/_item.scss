@@ -88,7 +88,7 @@
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
 
-  body.light_theme & {
+  .theme-light & {
     background: var(--white);
     border: 2px solid rgba($black, .1);
   }
@@ -104,7 +104,7 @@
     background-color: $white;
     transform: rotate(45deg) translateX(-32px) translateY(-15px);
 
-    body.light_theme & {
+    .theme-light & {
       background-color: var(--title-color);
     }
   }
@@ -120,7 +120,7 @@
     background: $white;
     clip-path: polygon(calc(100% - 4px) 32px, calc(100% - 4px) calc(0% + 4px), 100% 0, 100% 100%, 0 100%, calc(0% + 4px) calc(100% - 4px), 32px calc(100% - 4px));
 
-    body.light_theme & {
+    .theme-light & {
       background-color: var(--title-color);
     }
   }
@@ -207,7 +207,7 @@
     align-items: center;
   }
 
-  body.light_theme & {
+  .theme-light & {
     border: 2px solid rgba($black, .5);
   }
 
@@ -348,7 +348,7 @@
   font-weight: 700;
   color: $white;
 
-  body.light_theme & {
+  .theme-light & {
     color: var(--title-color);
   }
 
@@ -395,7 +395,7 @@
     font-weight: 700;
     color: $white;
 
-    body.light_theme & {
+    .theme-light & {
       color: var(--text-color);
     }
 
@@ -432,7 +432,7 @@
       width: 64px;
       margin-left: -19px;
 
-      body.light_theme & {
+      .theme-light & {
         filter: brightness(20%);
       }
     }
@@ -528,7 +528,7 @@
   img {
     max-width: $margin * 3.5;
 
-    body.light_theme & {
+    .theme-light & {
       filter: brightness(0%);
     }
 
@@ -549,7 +549,7 @@
   height: .6em;
   width: auto;
 
-  body.light_theme & {
+  .theme-light & {
     filter: brightness(20%);
   }
 

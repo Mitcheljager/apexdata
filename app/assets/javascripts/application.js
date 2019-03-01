@@ -21,3 +21,4 @@
 //= require toggle
 //= require filter
 //= require navigation
+//= require theme_switch

@@ -8,6 +8,12 @@ html {
 }
 
 body {
+  --primary-dark: #1D1F27;
+  --bg-color: #282A36;
+  --border-color: #3E4153;
+  --text-color: #8E8E8E;
+  --title-color: #FFF;
+
   margin: 0;
   background: var(--bg-color) image_url("bg-pattern.jpg");
   font-family: "Raleway", sans-serif;
@@ -18,7 +24,13 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 
-  &.light_theme {
+  &.theme-light {
+    --primary-dark: #DEDEDE;
+    --bg-color: #F1F1F1;
+    --border-color: #FFF;
+    --text-color: #313131;
+    --title-color: #212121;
+
     background: var(--bg-color);
   }
 }
@@ -62,7 +74,7 @@ a {
     color: $white;
     text-decoration: none;
 
-    body.light_theme & {
+    .theme-light & {
       color: var(--title-color);
     }
 
@@ -128,7 +140,7 @@ $rarities: (
     color: $value !important;
 
     @if $rarity == 'basic' {
-      body.light_theme & {
+      .theme-light & {
         color: var(--text-color) !important;
       }
     }

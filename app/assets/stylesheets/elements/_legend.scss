@@ -55,7 +55,7 @@
   img {
     width: 100%;
 
-    body.light_theme & {
+    .theme-light & {
       filter: brightness(20%);
     }
   }
@@ -110,7 +110,7 @@
       width: 60px;
       margin-left: 0;
 
-      body.light_theme & {
+      .theme-light & {
         filter: brightness(100%);
       }
 

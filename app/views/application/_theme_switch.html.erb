@@ -1,17 +1,17 @@
-<div class="theme-switch <%= extra_class if !local_assigns[:extra_class].nil? %>">
-  <% if theme_dark? %>
-    <%= link_to theme_light_path do %>
-      <span>Switch to day mode</span>
-      <% if asset_exist?("sun.png") %>
-        <%= image_tag "sun.png" %>
-      <% end %>
+<div class="theme-switch <%= "theme-switch--light" if theme_light? %> <%= extra_class if !local_assigns[:extra_class].nil? %>" data-action="theme-switch">
+  <div class="theme-switch__item">
+    <span>Switch to day mode</span>
+
+    <% if asset_exist?("sun.png") %>
+      <%= image_tag "sun.png", class: "theme-switch__icon" %>
     <% end %>
-  <% else %>
-    <%= link_to theme_dark_path do %>
-      <span>Switch to night mode</span>
-      <% if asset_exist?("moon.png") %>
-        <%= image_tag "moon.png" %>
-      <% end %>
+  </div>
+
+  <div class="theme-switch__item">
+    <span>Switch to night mode</span>
+
+    <% if asset_exist?("moon.png") %>
+      <%= image_tag "moon.png", class: "theme-switch__icon" %>
     <% end %>
-  <% end %>
+  </div>
 </div>

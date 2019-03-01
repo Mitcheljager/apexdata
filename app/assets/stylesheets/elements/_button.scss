@@ -10,7 +10,7 @@
   box-shadow: 3px 3px 0 var(--border-color);
   clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
 
-  body.light_theme & {
+  .theme-light & {
     background: var(--primary-dark);
     color: var(--text-color);
   }
@@ -35,7 +35,7 @@
     clip-path: none;
     font-weight: 300;
 
-    body.light_theme & {
+    .theme-light & {
       border-color: var(--bg-color);
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -53,7 +53,7 @@
     color: $white;
     border-color: $red;
 
-    body.light_theme & {
+    .theme-light & {
       background: $red;
       color: $white;
     }

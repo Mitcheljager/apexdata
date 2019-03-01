@@ -13,7 +13,7 @@
   margin-right: 2px;
   cursor: pointer;
 
-  body.light_theme & {
+  .theme-light & {
     border: 1px dashed rgba($black, .25);
     background: rgba($black, .15);
   }
@@ -27,7 +27,7 @@
     width: 100%;
     height: auto;
 
-    body.light_theme & {
+    .theme-light & {
       filter: brightness(20%);
     }
   }

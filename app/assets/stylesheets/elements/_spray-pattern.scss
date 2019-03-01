@@ -3,7 +3,7 @@
   background: rgba($bg-color, .5);
   border: 1px solid var(--border-color);
 
-  body.light_theme & {
+  .theme-light & {
     background: rgba($black, 0.05);
     border: 1px solid rgba($black, .25);
   }

@@ -17,7 +17,7 @@
       color: var(--text-color);
     }
 
-    body.light_theme & {
+    .theme-light & {
       color: var(--text-color);
     }
   }
@@ -30,7 +30,7 @@
       color: $white;
     }
 
-    body.light_theme & {
+    .theme-light & {
       color: var(--text-color);
     }
   }

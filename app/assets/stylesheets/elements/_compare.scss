@@ -24,7 +24,7 @@
   strong {
     color: $white;
 
-    body.light_theme & {
+    .theme-light & {
       color: var(--text-color);
     }
 
