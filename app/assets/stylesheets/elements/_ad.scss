@@ -1,12 +1,16 @@
 .ad-container {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: grid;
+  grid-template:
+    "title"
+    "ad-desktop"
+    "ad-mobile"
+    "background";
   align-items: center;
   justify-content: center;
-  padding: $margin / 4;
   margin: $margin 0 0;
   background: var(--primary-dark);
-  border: 1px solid var(--border-color);
+  box-shadow: inset 0 0 0 1px var(--border-color);
   overflow: hidden;
 
   @media screen and (min-width: 900px) {
@@ -15,11 +19,33 @@
 }
 
 .ad-container__title {
+  grid-area: title;
   font-size: 14px;
+  padding: ($margin / 4) 0;
+  text-align: center;
+}
 
+[id^="nn_lb"] {
+  grid-area: ad-desktop;
 
-  + div:not(:empty),
-  + div + div:not(:empty) {
-    margin: ($margin / 4) 0 0;
+  &:empty + .ad-container__title,
+  &:empty + div:empty + .ad-container__title {
+    display: none;
+  }
+
+  &:empty + div:not(:empty) + .ad-container__title {
+    display: block;
+  }
+
+  &:not(:empty) {
+    padding: 0 ($margin / 4) ($margin / 4);
+  }
+}
+
+[id^="nn_mobile_mpu"] {
+  grid-area: ad-mobile;
+
+  &:not(:empty) {
+    padding: 0 ($margin / 4) ($margin / 4);
   }
 }
