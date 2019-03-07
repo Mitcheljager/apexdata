@@ -12,5 +12,10 @@ function setFilter(event) {
   const filterType = parentElement.querySelector("[data-target='filter-type']").value
   const filterSortBy = parentElement.querySelector("[data-target='filter-sort-by']").value
 
+  if (!filterSortBy) {
+    parentElement.querySelector("[data-target='filter-sort-by']").style.borderColor = "#b52626"
+    return
+  }
+
   window.location.href = `/sort/${ filterType }/${ filterSortBy }`
 }
