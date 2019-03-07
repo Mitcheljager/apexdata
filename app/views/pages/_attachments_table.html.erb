@@ -32,7 +32,10 @@
                    data-to-modify="<%= attachment[rarity].without("description").to_json %>">
                   <%= image_tag "attachments/#{ attachment["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", alt: attachment["name"].humanize %>
 
-                  <span class="color-<%= rarity %>"><%= attachment["name"].humanize %></span>
+                  <div>
+                    <span class="color-<%= rarity %>"><%= attachment["name"].humanize %></span><br>
+                    <span class="no-text-transform"><%= attachment[rarity]["description"] %></span>
+                  </div>
                 </a>
               <% end %>
             <% end %>
