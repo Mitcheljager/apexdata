@@ -5,19 +5,18 @@
   border-left: 0;
   border-right: 0;
 
+  @media (min-width: 640px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center
+  }
+
   .theme-light & {
     border-color: rgba($black, .2);
   }
 
   + .heading {
     margin-top: 0;
-  }
-
-  @media (min-width: 640px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: ($margin * 4) 0 $margin;
   }
 }
 
@@ -27,7 +26,7 @@
   margin-top: calc(-#{$margin / 2} - .5em - 2px);
 
   @media (min-width: 640px) {
-    margin-bottom: $margin * 2;
+    margin-bottom: $margin;
   }
 }
 

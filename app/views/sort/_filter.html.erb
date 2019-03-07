@@ -14,7 +14,7 @@
     <% sort_by = ["damage", "rate-of-fire", "damage-per-second", "damage-per-magazine", "headshot-damage", "legshot-damage", "ammo-capacity", "projectile-speed"] %>
 
     <%= label "type", "Sort by" %>
-    <%= select "sort-by", "sort-by", sort_by.collect {|sort| [ sort.underscore.humanize, sort ] }, { selected: params[:sort_by] }, { data: { target: "filter-sort-by" }} %>
+    <%= select "sort-by", "sort-by", sort_by.collect {|sort| [ sort.underscore.humanize, sort ] }, { include_blank: "Select...", selected: params[:sort_by] }, { required: true, data: { target: "filter-sort-by" }} %>
   </div>
 
   <%= link_to "Filter", "#", class: "button", data: { action: "set-filter" } %>

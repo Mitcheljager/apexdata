@@ -24,8 +24,8 @@ h3 {
   align-items: flex-end;
   margin: $margin * 2 0 $margin;
 
-  @media (min-width: 640px) {
-    margin: $margin * 4 0 $margin;
+  .items + & {
+     margin: $margin * 4 0 $margin;
   }
 
   &::after {
@@ -49,8 +49,8 @@ h3 {
     }
   }
 
-  &--medium {
-    margin: 70px 0 40px;
+  &--half-margin {
+    margin: ($margin * 2) 0 $margin;
   }
 }
 

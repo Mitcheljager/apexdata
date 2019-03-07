@@ -56,6 +56,14 @@
       - 1x_digital_threat
     stock:
       - shotgun_bolt
+  attachments_overwrite:
+    shotgun_bolt:
+      basic:
+        rechamber_time: -7.5%
+      rare:
+        rechamber_time: -13%
+      epic:
+        rechamber_time: -16%
   fire_modes:
     single: true
   spray_pattern:

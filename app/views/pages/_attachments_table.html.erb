@@ -14,13 +14,28 @@
 
             <% rarities.map do |rarity| %>
               <% if attachment[rarity] %>
+                <% if item["attachments_overwrite"] %>
+                  <% if item["attachments_overwrite"][attachment_item] %>
+                    <% overwrite = item["attachments_overwrite"][attachment_item] %>
+
+                    <% if overwrite[rarity] %>
+                      <% overwrite[rarity].each do |overwrite_item, value| %>
+                        <% attachment[rarity][overwrite_item] = value %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+
                 <a class="attachments-table__dropdown-item"
                    data-action="set-modifier"
                    data-modify-rarity="<%= rarity %>"
                    data-to-modify="<%= attachment[rarity].without("description").to_json %>">
                   <%= image_tag "attachments/#{ attachment["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", alt: attachment["name"].humanize %>
 
-                  <span class="color-<%= rarity %>"><%= attachment["name"].humanize %></span>
+                  <div>
+                    <span class="color-<%= rarity %>"><%= attachment["name"].humanize %></span><br>
+                    <span class="no-text-transform"><%= attachment[rarity]["description"] %></span>
+                  </div>
                 </a>
               <% end %>
             <% end %>

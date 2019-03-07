@@ -5,20 +5,20 @@
   <% spray["follow"].each_with_index do |dot, index| %>
     <% current_x += dot["x"] %>
     <% current_y += dot["y"] %>
-    --dot-<%= index %>-x: <%= current_x %>; --dot-<%= index %>-y: <%= current_y %>;
+    --dot-<%= index %>-x: <%= current_x %>px; --dot-<%= index %>-y: <%= current_y %>px;
   <% end if spray["follow"] %>">
 
   <g>
     <% spray["starter"].each do |dot| %>
-      <%= tag.circle r: 3, fill: "#a02222", style: "
-        cx: calc(#{dot["x"]} * var(--modifier));
-        cy: calc(#{dot["y"]} * var(--modifier));" %>
+      <%= tag.circle r: 3, fill: "#a02222", style: "transform:
+        translateX(calc(#{dot["x"]}px * var(--modifier)))
+        translateY(calc(#{dot["y"]}px * var(--modifier)))" %>
     <% end %>
 
     <% spray["follow"].each_with_index do |dot, index| %>
-      <%= tag.circle r: 3, fill: "#797b80", style: "
-        cx: calc(var(--dot-#{ index }-x) * var(--modifier));
-        cy: calc(var(--dot-#{ index }-y) * var(--modifier));" %>
+      <%= tag.circle r: 3, fill: "#797b80", style: "transform:
+        translateX(calc(var(--dot-#{ index }-x) * var(--modifier)))
+        translateY(calc(var(--dot-#{ index }-y) * var(--modifier)))" %>
 
       <% current_x = current_x + dot["x"] %>
       <% current_y = current_y + dot["y"] %>

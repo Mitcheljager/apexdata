@@ -23,6 +23,14 @@
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 1x_digital_threat
+  attachments_overwrite:
+    extended_light_mag:
+      basic:
+        ammo_increase: 20%
+      rare:
+        ammo_increase: 40%
+      epic:
+        ammo_increase: 60%
   fire_modes:
     auto: true
   spray_pattern:
@@ -83,6 +91,14 @@
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 1x_digital_threat
+  attachments_overwrite:
+    extended_light_mag:
+      basic:
+        ammo_increase: 30%
+      rare:
+        ammo_increase: 50%
+      epic:
+        ammo_increase: 80%
   fire_modes:
     single: true
 -
@@ -90,7 +106,7 @@
   damage: 45
   headshot_damage: 90
   legshot_damage: 40.5
-  rate_of_fire: 205
+  rate_of_fire: 156
   ammo_capacity: 6
   tactical_reload: 2.1
   empty_reload: 2.1
@@ -112,5 +128,9 @@
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 1x_digital_threat
+  attachments_overwrite:
+    skullpiercer_rifling:
+      epic:
+        headshot_damage_modifier: 25%
   fire_modes:
     single: true

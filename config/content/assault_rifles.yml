@@ -23,6 +23,12 @@
       - 3x_hcog_ranger
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_heavy_mag:
+      rare:
+        ammo_increase: 40%
+      epic:
+        ammo_increase: 50%
   fire_modes:
     single: true
     auto: true
@@ -95,6 +101,12 @@
       - 3x_hcog_ranger
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_heavy_mag:
+      basic:
+        ammo_increase: 33%
+      epic:
+        ammo_increase: 66%
   fire_modes:
     single: true
     burst: 3
@@ -141,6 +153,14 @@
       - 3x_hcog_ranger
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_light_mag:
+      basic:
+        ammo_increase: 10%
+      rare:
+        ammo_increase: 40%
+      epic:
+        ammo_increase: 55%
   fire_modes:
     single: true
     auto: true
