@@ -90,7 +90,7 @@
   damage: 45
   headshot_damage: 90
   legshot_damage: 40.5
-  rate_of_fire: 205
+  rate_of_fire: 156
   ammo_capacity: 6
   tactical_reload: 2.1
   empty_reload: 2.1
