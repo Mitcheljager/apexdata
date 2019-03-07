@@ -9,7 +9,7 @@
   }
 
   circle {
-    transition-property: cx, cy;
+    transition-property: transform;
     transition-duration: 500ms;
   }
 }
