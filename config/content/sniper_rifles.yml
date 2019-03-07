@@ -30,6 +30,12 @@
       - 4x_10x_digital_sniper_threat
     stock:
       - sniper_stock
+  attachments_overwrite:
+    extended_light_mag:
+      basic:
+        ammo_increase: 50%
+      rare:
+        ammo_increase: 80%
   fire_modes:
     single: true
 -

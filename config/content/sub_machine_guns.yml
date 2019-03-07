@@ -27,6 +27,14 @@
       - 1x_digital_threat
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_light_mag:
+      basic:
+        ammo_increase: 20%
+      rare:
+        ammo_increase: 45%
+      epic:
+        ammo_increase: 65%
   fire_modes:
     auto: true
   spray_pattern:
@@ -96,6 +104,12 @@
       - 1x_digital_threat
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_light_mag:
+      rare:
+        ammo_increase: 45%
+      epic:
+        ammo_increase: 60%
   fire_modes:
     auto: true
   spray_pattern:
@@ -161,6 +175,10 @@
       - 1x_digital_threat
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_heavy_mag:
+      epic:
+        ammo_increase: 75%
   fire_modes:
     burst: 5
     auto: true

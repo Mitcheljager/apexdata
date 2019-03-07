@@ -26,6 +26,14 @@
       - 3x_hcog_ranger
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_heavy_mag:
+      basic:
+        ammo_increase: 28%
+      rare:
+        ammo_increase: 58%
+      epic:
+        ammo_increase: 70%
   fire_modes:
     auto: true
   spray_pattern:
