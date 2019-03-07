@@ -40,6 +40,16 @@ a {
   color: var(--text-color);
 }
 
+blockquote {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5em;
+  background: rgba($black, .1);
+  margin: $margin 0;
+  padding: 1em 1em 1em 2em;
+  border-left: 3px solid var(--border-color)
+}
+
 .content-page p {
   margin: ($margin / 2) 0;
 }
