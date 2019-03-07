@@ -19,6 +19,10 @@
     filter: none;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   &::after {
     content: image_url("item-pattern-dark.jpg");
     display: block;
