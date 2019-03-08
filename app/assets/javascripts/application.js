@@ -22,4 +22,3 @@
 //= require filter
 //= require navigation
 //= require theme_switch
-//= require strawpoll

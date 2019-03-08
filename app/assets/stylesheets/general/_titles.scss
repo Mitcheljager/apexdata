@@ -55,10 +55,14 @@ h3 {
 }
 
 .heading__title {
-  padding-right: $margin;
+  padding-right: $margin / 2;
   margin: 0;
   line-height: .75em;
   white-space: nowrap;
+
+  @media (min-width: 640px) {
+    padding-right: $margin;
+  }
 
   .heading--small & {
     padding-right: $margin / 2;

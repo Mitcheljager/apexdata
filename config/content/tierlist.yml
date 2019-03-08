@@ -1,0 +1,34 @@
+-
+  designation: Very strong
+  items:
+    - kraber
+    - mastiff
+    - peacekeeper
+-
+  designation: Strong
+  items:
+    - wingman
+    - spitfire
+    - havoc
+    - r-301
+    - r-99
+-
+  designation: Good
+  items:
+    - flatline
+    - hemlok
+    - prowler
+    - devotion
+-
+  designation: Average
+  items:
+    - alternator
+    - re-45
+-
+  designation: Below Average
+  items:
+    - p2020
+-
+  designation: Bad
+  items:
+    - mozambique

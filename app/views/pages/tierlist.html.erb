@@ -1,1 +1,56 @@
-<div class="tierlist" data-role="strawpoll-tierlist" data-url="https://strawpoll.me/api/v2/polls/1">Loading...</div>
+<div class=" wrapper wrapper--small">
+  <div class="heading">
+    <h2 class="heading__title">Weapon Tier List</h2>
+  </div>
+
+  <p class="no-text-transform">
+    <em>We've compiled a list of what we believe are the best and worst weapons in Apex Legends. This list is highly subjective and is mostly down to personal preference and skill. We've compiled this list by comparing preferences from well known players as well as our own opinion.</em>
+  </p>
+
+  <div class="tierlist">
+    <% tierlist.each do |tier| %>
+      <div class="tierlist__row">
+        <div class="tierlist__legend">
+          <%= tier["designation"] %>
+        </div>
+
+        <div class="tierlist__content">
+          <% tier["items"].each do |item| %>
+            <%= link_to "##{ item }", class: "tierlist__item" do %>
+              <%= image_tag "weapons/icons/#{ item }.png" if asset_exists? "weapons/icons/#{ item }.png" %>
+              <span><%= item.humanize %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="heading heading--small">
+    <h3 class="heading__title">Very Strong</h3>
+  </div>
+
+  <p class="no-text-transform">
+    This category contains weapons that are almost always too good not to bring with you. These weapons are strong enough that even in the hands of someone less skilled they will perform well.
+  </p>
+
+  <br>
+
+  <h4 id="kraber">Kraber</h4>
+
+  <% unless compact? %>
+    <div class="tierlist-description-image">
+      <picture>
+        <source srcset="<%= image_url "weapons/webp/kraber.webp" %>" type="image/webp">
+        <source srcset="<%= image_url "weapons/kraber.jpg" %>" type="image/jpeg">
+        <%= image_tag "weapons/kraber.jpg", alt: "Kraber" %>
+      </picture>
+    </div>
+  <% end %>
+
+  <p class="no-text-transform">
+    This legendary weapon has the potential to one-shot any enemy regardless of their armor, health, and helmet. For this reason alone it is a top pick. Of course this isn't easy, but even with simple body shots this weapon deals more damage than anything else in the game.
+    <br>
+    It's largest downsides are it's slow fire rate and small amount of ammo, but most of all it's rarity. It can also be difficult to use effectively with a small circle or in close quarters, but in any other situations the Kraber is hard to beat.
+  </p>
+</div>

@@ -66,6 +66,10 @@ blockquote {
       padding: 0 $wrapper-padding;
     }
   }
+
+  &--small {
+    max-width: calc(650px + #{$wrapper-padding * 2});
+  }
 }
 
 .logo {
@@ -176,6 +180,7 @@ $rarities: (
 
 .no-text-transform {
   text-transform: none;
+  line-height: 1.5em;
 }
 
 .tiny-help {
