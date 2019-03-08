@@ -55,9 +55,14 @@ blockquote {
 }
 
 .wrapper {
-  max-width: calc(#{$max-width} + #{$wrapper-padding * 2});
-  padding: 0 $wrapper-padding;
+  max-width: calc(#{$max-width} + #{$margin});
+  padding: 0 $margin / 2;
   margin: 0 auto;
+
+  @media screen and (min-width: 400px) {
+    max-width: calc(#{$max-width} + 20vw);
+    padding: 0 10vw;
+  }
 
   &--no-padding {
     padding: 0;
