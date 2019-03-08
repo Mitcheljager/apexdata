@@ -10,11 +10,11 @@
 
 .navigation {
   display: flex;
-  width: 100%;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  justify-content: center;
+  width: 100%;
   padding-left: 18px;
+  margin: 0 auto 30px;
 
   a {
     display: flex;
