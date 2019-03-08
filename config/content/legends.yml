@@ -177,7 +177,7 @@
       name: Gun Shield
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
       primary_data:
-        blocks: 50
+        shield: 50
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment
