@@ -1,5 +1,5 @@
 <article class="item item--compact">
-  <div class="item__content item__content--same-height item__content--direction-column item__content--ability">
+  <div class="item__content item__content--direction-column item__content--ability">
     <%= tag.div class: "legend__ability" do %>
       <% if asset_exists? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
         <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
