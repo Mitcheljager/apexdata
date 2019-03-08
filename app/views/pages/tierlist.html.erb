@@ -20,9 +20,9 @@
 
         <div class="tierlist__content">
           <% tier["items"].each do |item| %>
-            <%= link_to "##{ item }", class: "tierlist__item" do %>
-              <%= image_tag "weapons/icons/#{ item }.png" if asset_exists? "weapons/icons/#{ item }.png" %>
-              <span><%= item.humanize %></span>
+            <%= link_to "##{ item["name"] }", class: "tierlist__item" do %>
+              <%= image_tag "weapons/icons/#{ item["name"] }.png" if asset_exists? "weapons/icons/#{ item["name"] }.png" %>
+              <span><%= item["name"].humanize %></span>
             <% end %>
           <% end %>
         </div>
@@ -30,31 +30,39 @@
     <% end %>
   </div>
 
-  <div class="heading heading--small">
-    <h3 class="heading__title">Very Strong</h3>
-  </div>
+  <% tierlist.each do |tier| %>
+    <br><br><br><br>
 
-  <p class="no-text-transform">
-    This category contains weapons that are almost always too good not to bring with you. These weapons are strong enough that even in the hands of someone less skilled they will perform well.
-  </p>
-
-  <br>
-
-  <h4 id="kraber">Kraber</h4>
-
-  <% unless compact? %>
-    <div class="tierlist-description-image">
-      <picture>
-        <source srcset="<%= image_url "weapons/webp/kraber.webp" %>" type="image/webp">
-        <source srcset="<%= image_url "weapons/kraber.jpg" %>" type="image/jpeg">
-        <%= image_tag "weapons/kraber.jpg", alt: "Kraber" %>
-      </picture>
+    <div class="heading heading--small">
+      <h3 class="heading__title"><%= tier["designation"] %></h3>
     </div>
-  <% end %>
 
-  <p class="no-text-transform">
-    This legendary weapon has the potential to one-shot any enemy regardless of their armor, health, and helmet. For this reason alone it is a top pick. Of course this isn't easy, but even with simple body shots this weapon deals more damage than anything else in the game.
+    <p class="no-text-transform">
+      <big><em>
+        <%= tier["description"] %>
+      </em></big>
+    </p>
+
     <br>
-    It's largest downsides are it's slow fire rate and small amount of ammo, but most of all it's rarity. It can also be difficult to use effectively with a small circle or in close quarters, but in any other situations the Kraber is hard to beat.
-  </p>
+
+    <% tier["items"].each do |item| %>
+      <h4 id="<%= item["name"] %>"><%= item["name"].humanize %></h4>
+
+      <% unless compact? %>
+        <%= tag.div class: "tierlist-description-image" do %>
+          <picture>
+            <source srcset="<%= image_url "weapons/webp/#{ item["name"] }.webp" %>" type="image/webp">
+            <source srcset="<%= image_url "weapons/#{ item["name"] }.jpg" %>" type="image/jpeg">
+            <%= image_tag "weapons/#{ item["name"] }.jpg", alt: item["name"].humanize %>
+          </picture>
+        <% end if asset_exists?("weapons/#{ item["name"] }.jpg") %>
+      <% end %>
+
+      <%= item["description"].html_safe %>
+
+      <%= link_to "View data", where_path("name", item["name"]), class: "button" %>
+
+      <br><br>
+    <% end %>
+  <% end %>
 </div>

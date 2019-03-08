@@ -1,34 +1,100 @@
 -
   designation: Very strong
+  description: This category contains weapons that are almost always too good not to bring with you. These weapons are strong enough that even in the hands of someone less skilled they will perform well.
   items:
-    - kraber
-    - mastiff
-    - peacekeeper
+    - name: kraber
+      description: |
+        <p class="no-text-transform">
+          This legendary weapon has the potential to one-shot any enemy regardless of their armor, health, and helmet. For this reason alone it is a top pick. Of course this isn't easy, but even with simple body shots this weapon deals more damage than anything else in the game.
+        </p>
+
+        <p class="no-text-transform">
+          It's largest downsides are it's slow fire rate and small amount of ammo, but most of all it's rarity. It can also be difficult to use effectively with a small circle or in close quarters, but in any other situations the Kraber is hard to beat.
+        </p>
+    - name: mastiff
+      description: |
+        <p class="no-text-transform">
+          This legendary shotgun has the highest DPS of all shotguns. But raw statistics mean very little in the heat of battle. What makes this shotgun great is it's consistency. It's spread is very easy to work with, when hitting only part of the shots you will still deal a good amount of damage. It even has the potential to one-shot any enemy with a well placed headshot.
+        </p>
+
+        <p class="no-text-transform">
+          It's biggest downsides are the same as the Kraber, it's rarity and it's limited ammo. Getting this early in the game might mean you run out of ammo and will need to find a new gun.
+        </p>
+
+        <p class="no-text-transform">
+          In the hands of someone skilled it's hard to beat the Mastiff.
+        </p>
+    - name: peacekeeper
+      description: |
+        <p class="no-text-transform">
+          Despite the recent nerfs the Peacekeeper remains a force to be reckoned with. It deals a large amount of damage at close range and has a large amount of attachments available to make it even stronger. With a Precision Choke it turns in to a solid medium range sniper along with it's regular capabilities. Whether it's early or late in the game, you can't go wrong with a Peacekeeper.
+        </p>
 -
   designation: Strong
+  description: The weapons in this category are always a solid choice. Some of these require attachments to be truly effective, but they will be strong regardless.
   items:
-    - wingman
-    - spitfire
-    - havoc
-    - r-301
-    - r-99
+    - name: wingman
+      description: |
+        <p class="no-text-transform">
+          The Wingman recently received some significant nerfs which definitely toned it down in power. Despite that it's still a very strong choice in the right hands. With good accuracy it is able to deal a large amount of damage.
+        </p>
+    - name: spitfire
+      description: |
+        <p class="no-text-transform"></p>
+    - name: havoc
+      description: |
+        <p class="no-text-transform"></p>
+    - name: r-301
+      description: |
+        <p class="no-text-transform"></p>
+    - name: r-99
+      description: |
+        <p class="no-text-transform"></p>
+    - name: longbow
+      description: |
+        <p class="no-text-transform"></p>
 -
   designation: Good
   items:
-    - flatline
-    - hemlok
-    - prowler
-    - devotion
+    - name: flatline
+      description: |
+        <p class="no-text-transform"></p>
+    - name: hemlok
+      description: |
+        <p class="no-text-transform"></p>
+    - name: prowler
+      description: |
+        <p class="no-text-transform"></p>
+    - name: devotion
+      description: |
+        <p class="no-text-transform"></p>
+    - name: eva-8_auto
+      description: |
+        <p class="no-text-transform"></p>
+    - name: g7_scout
+      description: |
+        <p class="no-text-transform"></p>
+    - name: triple_take
+      description: |
+        <p class="no-text-transform"></p>
 -
   designation: Average
   items:
-    - alternator
-    - re-45
+    - name: alternator
+      description: |
+        <p class="no-text-transform"></p>
+    - name: re-45
+      description: |
+        <p class="no-text-transform"></p>
 -
   designation: Below Average
   items:
-    - p2020
+    - name: p2020
+      description: |
+        <p class="no-text-transform"></p>
 -
-  designation: Bad
+  designation: Weak
   items:
-    - mozambique
+    - name: mozambique
+      description: |
+        <p class="no-text-transform"></p>
