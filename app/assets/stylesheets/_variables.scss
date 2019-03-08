@@ -13,8 +13,8 @@ $border-width: 2px;
 
 $margin: 40px;
 
-$max-width: 900px;
-$wrapper-padding: 5vw;
+$wrapper-padding: $margin / 2;
+$max-width: 900px + $margin;
 
 $item-image-width: 600px;
 $item-transition-duration: 100ms;
