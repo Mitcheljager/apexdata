@@ -17,6 +17,7 @@
     <a>Weapons</a>
 
     <div class="dropdown__content">
+      <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
       <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
       <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
       <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
