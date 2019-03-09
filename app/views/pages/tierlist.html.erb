@@ -30,6 +30,20 @@
     <% end %>
   </div>
 
+  <div class="strawpoll-tierlist">
+    <div class="heading heading--small">
+      <h3 class="heading__title">Community Vote</h3>
+    </div>
+
+    <p class="no-text-transform"><big>Do you not agree with our list? Vote for what in your opinion is the best gun!</big></p>
+
+    <%= link_to "Vote on Strawpoll", "https://www.strawpoll.me/17575463", class: "button button--primary button--full-width", target: "_blank" %>
+
+    <br><br>
+
+    <div data-role="strawpoll-tierlist" data-url="https://strawpoll.me/api/v2/polls/17575463">Loading...</div>
+  </div>
+
   <div class="tierlist-description">
     <% tierlist.each do |tier| %>
       <div class="tierlist-description__title heading heading--small">

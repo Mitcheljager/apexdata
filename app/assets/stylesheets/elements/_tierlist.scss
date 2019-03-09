@@ -107,6 +107,10 @@
   background: rgba($black, .3);
   text-align: center;
 
+  .theme-light & {
+    background: var(--border-color);
+  }
+
   img,
   picture {
     display: inline-block;
@@ -117,4 +121,39 @@
 
 .tierlist-description__item {
   margin-top: $margin * 1.5;
+}
+
+.strawpoll-tierlist {
+  max-width: 300px;
+  margin: ($margin) auto;
+}
+
+.strawpoll-tierlist__item {
+  position: relative;
+  margin-bottom: $margin / 8;
+  background: rgba($black, .3);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 3px 10px rgba($black, .25);
+  text-align: center;
+  padding: $margin / 6;
+  font-size: 12px;
+  color: var(--text-color);
+
+  .theme-light & {
+    background: var(--border-color);
+  }
+
+  &:first-child {
+    padding: $margin / 2;
+    font-size: 16px;
+    color: var(--title-color);
+    font-weight: 700;
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    padding: $margin / 4;
+    font-size: 14px;
+    color: var(--title-color);
+  }
 }

@@ -30,7 +30,7 @@
     letter-spacing: 0.5px;
     text-align: center;
     font-size: 10px;
-    clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
+    clip-path: polygon(calc(100% - #{ $margin }) 0, 100% 100%, #{ $margin } 100%, 0 0);
     transition-property: background, color;
     transition-duration: 250ms;
 
