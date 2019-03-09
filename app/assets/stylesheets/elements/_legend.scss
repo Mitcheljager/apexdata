@@ -51,9 +51,11 @@
 
 .legend__ability {
   margin-bottom: 30px;
+  text-align: center;
 
   img {
     width: 100%;
+    max-width: 300px;
 
     .theme-light & {
       filter: brightness(20%);

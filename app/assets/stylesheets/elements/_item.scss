@@ -86,11 +86,15 @@
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  padding: $margin;
+  padding: $margin / 1.5;
   border: 2px solid  rgba($white, .1);
   background: var(--bg-color) image_url("item-pattern.jpg");
   clip-path: polygon(calc(0% + #{$margin}) 0%, 100% 0, 100% calc(100% - #{$margin}), calc(100% - #{$margin}) 100%, 0 100%, 0% calc(0% + #{$margin}));
   transition: transform 100ms;
+
+  @media (min-width: 400px) {
+    padding: $margin;
+  }
 
   .theme-light & {
     background: $white image_url("item-pattern-theme-light.jpg");
