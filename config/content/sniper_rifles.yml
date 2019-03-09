@@ -79,7 +79,7 @@
   damage: 23
   damage_modifier: 3
   headshot_damage: 46
-  legshot_damage: 21.75
+  legshot_damage: 17
   rate_of_fire: 88
   ammo_capacity: 5
   tactical_reload: 2.6
