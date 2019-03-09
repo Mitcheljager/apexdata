@@ -138,6 +138,21 @@
   padding: $margin / 6;
   font-size: 12px;
   color: var(--text-color);
+  counter-increment: strawpoll-tierlist-item;
+
+  &::before {
+    content: counter(strawpoll-tierlist-item);
+    display: block;
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (min-width: 400px) {
+      left: -1em;
+      transform: translateX(-100%) translateY(-50%);
+    }
+  }
 
   .theme-light & {
     background: var(--border-color);
