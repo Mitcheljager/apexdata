@@ -83,7 +83,25 @@
   }
 }
 
-.tierlist-description-image {
+.tierlist-description {
+  margin-top: $margin * 4;
+
+  p {
+    text-transform: none;
+    line-height: 1.5em;
+    font-size: 14px;
+
+    @media (min-width: 640px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.tierlist-description__title {
+  margin-top: $margin * 2;
+}
+
+.tierlist-description__image {
   padding: $margin / 2;
   border: 1px solid var(--border-color);
   background: rgba($black, .3);
@@ -95,4 +113,8 @@
     max-width: 100%;
     height: auto;
   }
+}
+
+.tierlist-description__item {
+  margin-top: $margin * 1.5;
 }

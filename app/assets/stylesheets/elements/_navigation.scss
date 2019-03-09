@@ -22,7 +22,7 @@
     justify-content: center;
     padding: ($margin / 3) $margin;
     margin-left: -#{ $margin / 2 };
-    margin-bottom: $margin / 8;
+    margin-bottom: $margin / 6;
     width: $margin * 4;
     background: var(--primary-dark);
     text-decoration: none;
@@ -108,7 +108,7 @@
         display: block;
         position: relative;
         max-width: auto;
-        top: 0;
+        padding-top: 0;
       }
     }
   }
@@ -169,7 +169,8 @@
   display: none;
   position: absolute;
   left: 0;
-  top: $margin + 7;
+  top: 0;
+  padding-top: calc(1.4em + #{$margin / 3} + #{$margin / 8} + #{$margin / 6});
   z-index: 10;
 
   a {

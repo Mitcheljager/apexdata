@@ -30,39 +30,37 @@
     <% end %>
   </div>
 
-  <% tierlist.each do |tier| %>
-    <br><br><br><br>
+  <div class="tierlist-description">
+    <% tierlist.each do |tier| %>
+      <div class="tierlist-description__title heading heading--small">
+        <h3 class="heading__title"><%= tier["designation"] %></h3>
+      </div>
 
-    <div class="heading heading--small">
-      <h3 class="heading__title"><%= tier["designation"] %></h3>
-    </div>
+      <p>
+        <big><em>
+          <%= tier["description"] %>
+        </em></big>
+      </p>
 
-    <p class="no-text-transform">
-      <big><em>
-        <%= tier["description"] %>
-      </em></big>
-    </p>
+      <% tier["items"].each do |item| %>
+        <div class="tierlist-description__item">
+          <h4 id="<%= item["name"] %>"><%= item["name"].humanize %></h4>
 
-    <br>
+          <% unless compact? %>
+            <%= tag.div class: "tierlist-description__image" do %>
+              <picture>
+                <source srcset="<%= image_url "weapons/webp/#{ item["name"] }.webp" %>" type="image/webp">
+                <source srcset="<%= image_url "weapons/#{ item["name"] }.jpg" %>" type="image/jpeg">
+                <%= image_tag "weapons/#{ item["name"] }.jpg", alt: item["name"].humanize %>
+              </picture>
+            <% end if asset_exists?("weapons/#{ item["name"] }.jpg") %>
+          <% end %>
 
-    <% tier["items"].each do |item| %>
-      <h4 id="<%= item["name"] %>"><%= item["name"].humanize %></h4>
+          <%= item["description"].html_safe %>
 
-      <% unless compact? %>
-        <%= tag.div class: "tierlist-description-image" do %>
-          <picture>
-            <source srcset="<%= image_url "weapons/webp/#{ item["name"] }.webp" %>" type="image/webp">
-            <source srcset="<%= image_url "weapons/#{ item["name"] }.jpg" %>" type="image/jpeg">
-            <%= image_tag "weapons/#{ item["name"] }.jpg", alt: item["name"].humanize %>
-          </picture>
-        <% end if asset_exists?("weapons/#{ item["name"] }.jpg") %>
+          <%= link_to "View data", where_path("name", item["name"]), class: "button" %>
+        </div>
       <% end %>
-
-      <%= item["description"].html_safe %>
-
-      <%= link_to "View data", where_path("name", item["name"]), class: "button" %>
-
-      <br><br>
     <% end %>
-  <% end %>
+  </div>
 </div>
