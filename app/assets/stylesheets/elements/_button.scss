@@ -17,7 +17,7 @@
 
   &:hover,
   &:active {
-    color: $white;
+    color: var(--title-color);
     border-color: $white;
     background: var(--border-color);
 
@@ -61,6 +61,12 @@
     &:hover {
       background: darken($red, 5%);
     }
+  }
+
+  &--full-width {
+    width: 100%;
+    text-align: center;
+    clip-path: polygon(calc(100% - #{$margin}) 0, 100% 100%, #{$margin} 100%, 0 0);
   }
 }
 

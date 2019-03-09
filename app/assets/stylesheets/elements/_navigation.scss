@@ -10,11 +10,11 @@
 
 .navigation {
   display: flex;
-  width: 100%;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  justify-content: center;
+  width: 100%;
   padding-left: 18px;
+  margin: 0 auto 30px;
 
   a {
     display: flex;
@@ -30,7 +30,7 @@
     letter-spacing: 0.5px;
     text-align: center;
     font-size: 10px;
-    clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
+    clip-path: polygon(calc(100% - #{ $margin }) 0, 100% 100%, #{ $margin } 100%, 0 0);
     transition-property: background, color;
     transition-duration: 250ms;
 
@@ -108,7 +108,7 @@
         display: block;
         position: relative;
         max-width: auto;
-        top: 0;
+        padding-top: 0;
       }
     }
   }
@@ -169,7 +169,8 @@
   display: none;
   position: absolute;
   left: 0;
-  top: $margin + 7;
+  top: 0;
+  padding-top: calc(1.4em + #{$margin / 3} + #{$margin / 8} + #{$margin / 6});
   z-index: 10;
 
   a {

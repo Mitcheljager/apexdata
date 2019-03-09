@@ -71,6 +71,12 @@ blockquote {
       padding: 0 $wrapper-padding;
     }
   }
+
+  &--small {
+    padding: 0;
+    max-width: 650px;
+    margin: 0 auto;
+  }
 }
 
 .logo {
@@ -181,6 +187,7 @@ $rarities: (
 
 .no-text-transform {
   text-transform: none;
+  line-height: 1.5em;
 }
 
 .tiny-help {

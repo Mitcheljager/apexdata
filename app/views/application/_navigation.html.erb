@@ -17,6 +17,7 @@
     <a>Weapons</a>
 
     <div class="dropdown__content">
+      <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
       <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
       <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
       <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
@@ -46,6 +47,7 @@
       <%= link_to "3.6.2019", page_path("patch-notes/3-6-2019"), class: current_page?("/patch-notes/3-6-2019") ? "active" : "" %>
       <%= link_to "2.19.2019", page_path("patch-notes/2-19-2019"), class: current_page?("/patch-notes/2-19-2019") ? "active" : "" %>
       <%= link_to "2.13.2019", page_path("patch-notes/2-13-2019"), class: current_page?("/patch-notes/2-13-2019") ? "active" : "" %>
+    </div>
   </div>
 </nav>
 
