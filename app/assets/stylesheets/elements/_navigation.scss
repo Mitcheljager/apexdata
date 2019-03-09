@@ -148,7 +148,7 @@
     cursor: pointer;
 
     &::after {
-      content: "v";
+      content: "▼";
       display: inline-block;
       font-weight: 300;
       margin-left: 1em;
@@ -159,7 +159,7 @@
 
   &:hover,
   &:active {
-    .dropdown__content {
+    > .dropdown__content {
       display: block;
     }
   }
