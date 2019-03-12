@@ -23,3 +23,4 @@
 //= require navigation
 //= require theme_switch
 //= require strawpoll
+//= require ga-scroll-depth
