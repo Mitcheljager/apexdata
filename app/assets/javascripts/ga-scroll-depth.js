@@ -17,13 +17,13 @@ function checkScrollDepth() {
 
   if (scrollPercentage > 25 && !scrolledPast25) {
     scrolledPast25 = true
-    trackScrollDepthGA("25% reached")
+    trackScrollDepthGA("25% Scroll reached")
   } else if (scrollPercentage > 50 && !scrolledPast50) {
     scrolledPast50 = true
-    trackScrollDepthGA("50% reached")
+    trackScrollDepthGA("50% Scroll reached")
   } else if (scrollPercentage > 75 && !scrolledPast75) {
     scrolledPast75 = true
-    trackScrollDepthGA("75% reached")
+    trackScrollDepthGA("75% Scroll reached")
   }
 }
 
