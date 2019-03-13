@@ -1,31 +1,31 @@
 module ContentHelper
   def assault_rifles
-    items = YAML.load(File.read(Rails.root.join("config/content", "assault_rifles.yml")))
+    items ||= YAML.load(File.read(Rails.root.join("config/content", "assault_rifles.yml")))
     calculate_extra_values(items)
   end
 
   def sub_machine_guns
-    items = YAML.load(File.read(Rails.root.join("config/content", "sub_machine_guns.yml")))
+    items ||= YAML.load(File.read(Rails.root.join("config/content", "sub_machine_guns.yml")))
     calculate_extra_values(items)
   end
 
   def pistols
-    items = YAML.load(File.read(Rails.root.join("config/content", "pistols.yml")))
+    items ||= YAML.load(File.read(Rails.root.join("config/content", "pistols.yml")))
     calculate_extra_values(items)
   end
 
   def light_machine_guns
-    items = YAML.load(File.read(Rails.root.join("config/content", "light_machine_guns.yml")))
+    items ||= YAML.load(File.read(Rails.root.join("config/content", "light_machine_guns.yml")))
     calculate_extra_values(items)
   end
 
   def shotguns
-    items = YAML.load(File.read(Rails.root.join("config/content", "shotguns.yml")))
+    items ||= YAML.load(File.read(Rails.root.join("config/content", "shotguns.yml")))
     calculate_extra_values(items)
   end
 
   def sniper_rifles
-    items = YAML.load(File.read(Rails.root.join("config/content", "sniper_rifles.yml")))
+    items ||= YAML.load(File.read(Rails.root.join("config/content", "sniper_rifles.yml")))
     calculate_extra_values(items)
   end
 

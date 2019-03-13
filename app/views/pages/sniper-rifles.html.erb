@@ -7,5 +7,5 @@
 <%= render "sort/filter", active: "sniper-rifles" %>
 
 <div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: sniper_rifles, as: :item %>
+  <%= render partial: "pages/item_types/weapon", collection: sniper_rifles, as: :item, cached: true%>
 </div>

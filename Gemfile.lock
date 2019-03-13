@@ -75,6 +75,8 @@ GEM
     ffi (1.10.0-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    heroku-deflater (0.6.3)
+      rack (>= 1.4.5)
     high_voltage (3.0.0)
     i18n (1.5.2)
       concurrent-ruby (~> 1.0)
@@ -185,6 +187,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  heroku-deflater
   high_voltage (~> 3.0.0)
   jbuilder (~> 2.5)
   puma (~> 3.7)
