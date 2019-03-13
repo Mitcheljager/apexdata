@@ -12,8 +12,6 @@
 //
 //= require rails-ujs
 
-//= require cookie_consent_modal
-
 //= require compare
 //= require more_data
 //= require dropdown

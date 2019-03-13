@@ -4,8 +4,6 @@
 
 <%= render "legends/legends_banner" %>
 
-<%= render "ad" %>
-
 <%= render "sort/filter", active: "weapons" %>
 
 <div class="heading">
@@ -16,8 +14,6 @@
   <%= render partial: "pages/item_types/weapon", collection: assault_rifles, as: :item %>
 </div>
 
-<%= render "ad" unless compact? %>
-
 <div class="heading">
   <h2 class="heading__title"><%= link_to "Sub Machine Guns", page_path("sub-machine-guns") %></h2>
 </div>
@@ -25,8 +21,6 @@
 <div class="items">
   <%= render partial: "pages/item_types/weapon", collection: sub_machine_guns, as: :item %>
 </div>
-
-<%= render "ad" %>
 
 <div class="heading">
   <h2 class="heading__title"><%= link_to "Pistols", page_path("pistols") %></h2>
@@ -43,8 +37,6 @@
 <div class="items">
   <%= render partial: "pages/item_types/weapon", collection: light_machine_guns, as: :item %>
 </div>
-
-<%= render "ad" if compact? %>
 
 <div class="heading">
   <h2 class="heading__title"><%= link_to "Sniper Rifles", page_path("sniper-rifles") %></h2>

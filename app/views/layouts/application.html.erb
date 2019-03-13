@@ -14,19 +14,13 @@
 
     <%= csrf_meta_tags %>
 
-    <%= render "cookie_consent" %>
-
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
-
-    <%= render "ads" %>
 
     <%= render "theme_settings" %>
   </head>
 
   <body <% if theme_light? %>class="theme-light"<% end %>>
-    <%= render "ads_no_script" %>
-
     <header class="header">
       <%= link_to image_tag("layout/apexlogo.png", alt: "Apex Legends logo"), root_path, class: "header__logo" %>
       <%= render "theme_switch" %>
@@ -41,7 +35,6 @@
         <%= yield %>
       </div>
 
-      <%= render "ad" %>
       <%= render "social" %>
       <%= render "footer" %>
     </main>
