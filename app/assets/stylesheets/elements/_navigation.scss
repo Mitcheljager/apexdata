@@ -114,10 +114,10 @@
   }
 
   &--footer {
-    margin: #{($margin) - ($margin / 4)} 0 $margin;
+    margin: $margin 0 $margin;
 
     @media (min-width: 640px) {
-      margin: #{($margin * 2) - ($margin / 2)} 0 ($margin * 2);
+      margin: ($margin * 2) 0 ($margin * 2);
     }
   }
 }

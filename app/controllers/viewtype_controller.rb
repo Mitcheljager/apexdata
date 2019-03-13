@@ -1,6 +1,4 @@
-class ViewtypeController < ApplicationController
-  before_action :reset_ad_counter
-  
+class ViewtypeController < ApplicationController  
   def expanded
     cookies.permanent[:viewtype] = "expanded"
     redirect_to request.referer || root_path
