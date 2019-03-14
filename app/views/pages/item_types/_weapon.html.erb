@@ -1,138 +1,140 @@
-<article class="item <%= "item--compact" if compact? %> <%= "item--more-data" if alldata? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
-  <div class="item__content">
-    <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" }, title: "Compare other items against this. Hover over values to see the difference between the two." do %>
-      Compare
-    <% end %>
+<% cache "#{ item["name"] }_#{ compact? }_#{ alldata? }" do %>
+  <article class="item <%= "item--compact" if compact? %> <%= "item--more-data" if alldata? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
+    <div class="item__content">
+      <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" }, title: "Compare other items against this. Hover over values to see the difference between the two." do %>
+        Compare
+      <% end %>
 
-    <div class="item__description">
-      <div class="item__title heading heading--small">
-        <h3 class="heading__title">
-          <%= link_to item["name"], where_path("name", item["name"].downcase.dasherize.gsub(" ", "-")) if item["name"] %>
-        </h3>
-        <div class="heading__line"></div>
-      </div>
+      <div class="item__description">
+        <div class="item__title heading heading--small">
+          <h3 class="heading__title">
+            <%= link_to item["name"], where_path("name", item["name"].downcase.dasherize.gsub(" ", "-")) if item["name"] %>
+          </h3>
+          <div class="heading__line"></div>
+        </div>
 
-      <div class="item__data-wrapper">
-        <div class="item__main">
-          <div class="columns">
-            <%= tag.div class: "columns__column item__large-info" do %>
-              <span>Damage</span>
-              <div data-compare-target="damage"><%= item["damage"] %></div>
-              <%= content_tag :small, "x#{item["damage_modifier"]}" if item["damage_modifier"] %>
-            <% end if item["damage"] %>
+        <div class="item__data-wrapper">
+          <div class="item__main">
+            <div class="columns">
+              <%= tag.div class: "columns__column item__large-info" do %>
+                <span>Damage</span>
+                <div data-compare-target="damage"><%= item["damage"] %></div>
+                <%= content_tag :small, "x#{item["damage_modifier"]}" if item["damage_modifier"] %>
+              <% end if item["damage"] %>
 
-            <%= tag.div class: "columns__column item__large-info" do %>
-              <span>RPM</span>
-              <div data-compare-target="rate-of-fire" data-modify-target="fire_rate"><%= item["rate_of_fire"] %></div>
-            <% end if item["rate_of_fire"] %>
-          </div>
-
-          <%= tag.div class: "item__small-info" do %>
-            Damage per second <span><div data-compare-target="dps"><%= item["damage_per_second"] %></div></span>
-          <% end if item["damage_per_second"] %>
-
-          <%= tag.div class: "item__small-info" do %>
-            Headshot damage <span><div data-compare-target="headshot-damage"  data-modify-target="headshot_damage_modifier"><%= item["headshot_damage"] %></div></span>
-          <% end if item["headshot_damage"] %>
-
-          <div class="item__tray">
-            <div class="item__ammo-type">
-              <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize), class: "item__icon" if item["ammo_type"] %>
-
-              <%= tag.div do %>
-                <%= image_tag "fire_mode/single.png", class: "item__fire-mode", alt: "Single Fire", title: "Single Fire" if item["fire_modes"]["single"] %>
-                <%= image_tag "fire_mode/auto.png", class: "item__fire-mode", alt: "Automatic Fire", title: "Automatic Fire" if item["fire_modes"]["auto"] %>
-                <%= image_tag "fire_mode/burst.png", class: "item__fire-mode", alt: "Burst Fire)", title: "Burst Fire ( #{item["fire_modes"]["burst"] } Shots )" if item["fire_modes"]["burst"] %>
-              <% end if item["fire_modes"] %>
+              <%= tag.div class: "columns__column item__large-info" do %>
+                <span>RPM</span>
+                <div data-compare-target="rate-of-fire" data-modify-target="fire_rate"><%= item["rate_of_fire"] %></div>
+              <% end if item["rate_of_fire"] %>
             </div>
 
-            <% if alldata? %>
-              <%= link_to "Less data", "#", class: "button", data: { action: "item-more-data" } %>
-            <% else %>
-              <%= link_to "More data", "#", class: "button button--primary", data: { action: "item-more-data" } %>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="item__extra columns">
-          <div class="columns__column">
             <%= tag.div class: "item__small-info" do %>
-              Legshot damage <span><div data-compare-target="legshot_damage"><%= item["legshot_damage"] %></div></span>
-            <% end if item["legshot_damage"] %>
+              Damage per second <span><div data-compare-target="dps"><%= item["damage_per_second"] %></div></span>
+            <% end if item["damage_per_second"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Ammo capacity <span><div data-compare-target="ammo_capacity" data-modify-target="ammo_increase" data-modify-round><%= item["ammo_capacity"] %></div></span>
-            <% end if item["ammo_capacity"] %>
+              Headshot damage <span><div data-compare-target="headshot-damage"  data-modify-target="headshot_damage_modifier"><%= item["headshot_damage"] %></div></span>
+            <% end if item["headshot_damage"] %>
 
-            <%= tag.div class: "item__small-info" do %>
-              Damage per magazine
-              <span>
-                <div data-compare-target="damage_per_magazine" data-modify-target="ammo_increase" data-modify-round>
-                  <%= item["damage_per_magazine"] %>
-                </div>
-              </span>
-            <% end if item["damage_per_magazine"] %>
+            <div class="item__tray">
+              <div class="item__ammo-type">
+                <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize), class: "item__icon" if item["ammo_type"] %>
 
-            <%= tag.div class: "item__small-info" do %>
-              Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] / 10 %></div></span> <small>m/s</small>
-            <% end if item["projectile_speed"] %>
-
-            <hr>
-
-            <%= tag.div class: "item__small-info" do %>
-              Tactical reload
-              <span>
-                <div data-compare-target="tactical_reload" data-compare-inverse="true" data-modify-target="reload_time"><%= item["tactical_reload"] %></div>
-              </span>
-              <small>s</small>
-            <% end if item["tactical_reload"] %>
-
-            <%= tag.div class: "item__small-info" do %>
-              Empty reload <span><div data-compare-target="empty_reload" data-compare-inverse="true" data-modify-target="reload_time"><%= item["empty_reload"] %></div></span> <small>s</small>
-            <% end if item["empty_reload"] %>
-
-            <%= tag.div class: "item__small-info" do %>
-              Draw time <span><div data-compare-target="draw_time" data-compare-inverse="true" data-modify-target="draw_time"><%= item["draw_time"] %></div></span> <small>s</small>
-            <% end if item["draw_time"] %>
-
-            <%= tag.div class: "item__small-info" do %>
-              Holster time <span><div data-compare-target="holster_time" data-compare-inverse="true" data-modify-target="holster_time"><%= item["holster_time"] %></div></span> <small>s</small>
-            <% end if item["holster_time"] %>
-          </div>
-
-          <%= tag.div class:"columns__column" do %>
-            <strong>Attachments</strong> <small><%= link_to "View all", page_path("attachments") %></small>
-
-            <% if item["available_attachments"] %>
-              <%= render "pages/attachments_table", item: item %>
-
-              <small class="tiny-help">Click on the icons to see how the values would change by adding the attachment. These values are rough estimates and are a work in progress.</small>
-            <% else %>
-              <div>
-                <small>None</small>
+                <%= tag.div do %>
+                  <%= image_tag "fire_mode/single.png", class: "item__fire-mode", alt: "Single Fire", title: "Single Fire" if item["fire_modes"]["single"] %>
+                  <%= image_tag "fire_mode/auto.png", class: "item__fire-mode", alt: "Automatic Fire", title: "Automatic Fire" if item["fire_modes"]["auto"] %>
+                  <%= image_tag "fire_mode/burst.png", class: "item__fire-mode", alt: "Burst Fire)", title: "Burst Fire ( #{item["fire_modes"]["burst"] } Shots )" if item["fire_modes"]["burst"] %>
+                <% end if item["fire_modes"] %>
               </div>
+
+              <% if alldata? %>
+                <%= link_to "Less data", "#", class: "button", data: { action: "item-more-data" } %>
+              <% else %>
+                <%= link_to "More data", "#", class: "button button--primary", data: { action: "item-more-data" } %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="item__extra columns">
+            <div class="columns__column">
+              <%= tag.div class: "item__small-info" do %>
+                Legshot damage <span><div data-compare-target="legshot_damage"><%= item["legshot_damage"] %></div></span>
+              <% end if item["legshot_damage"] %>
+
+              <%= tag.div class: "item__small-info" do %>
+                Ammo capacity <span><div data-compare-target="ammo_capacity" data-modify-target="ammo_increase" data-modify-round><%= item["ammo_capacity"] %></div></span>
+              <% end if item["ammo_capacity"] %>
+
+              <%= tag.div class: "item__small-info" do %>
+                Damage per magazine
+                <span>
+                  <div data-compare-target="damage_per_magazine" data-modify-target="ammo_increase" data-modify-round>
+                    <%= item["damage_per_magazine"] %>
+                  </div>
+                </span>
+              <% end if item["damage_per_magazine"] %>
+
+              <%= tag.div class: "item__small-info" do %>
+                Projectile speed <span><div data-compare-target="projectile_speed"><%= item["projectile_speed"] / 10 %></div></span> <small>m/s</small>
+              <% end if item["projectile_speed"] %>
+
+              <hr>
+
+              <%= tag.div class: "item__small-info" do %>
+                Tactical reload
+                <span>
+                  <div data-compare-target="tactical_reload" data-compare-inverse="true" data-modify-target="reload_time"><%= item["tactical_reload"] %></div>
+                </span>
+                <small>s</small>
+              <% end if item["tactical_reload"] %>
+
+              <%= tag.div class: "item__small-info" do %>
+                Empty reload <span><div data-compare-target="empty_reload" data-compare-inverse="true" data-modify-target="reload_time"><%= item["empty_reload"] %></div></span> <small>s</small>
+              <% end if item["empty_reload"] %>
+
+              <%= tag.div class: "item__small-info" do %>
+                Draw time <span><div data-compare-target="draw_time" data-compare-inverse="true" data-modify-target="draw_time"><%= item["draw_time"] %></div></span> <small>s</small>
+              <% end if item["draw_time"] %>
+
+              <%= tag.div class: "item__small-info" do %>
+                Holster time <span><div data-compare-target="holster_time" data-compare-inverse="true" data-modify-target="holster_time"><%= item["holster_time"] %></div></span> <small>s</small>
+              <% end if item["holster_time"] %>
+            </div>
+
+            <%= tag.div class:"columns__column" do %>
+              <strong>Attachments</strong> <small><%= link_to "View all", page_path("attachments") %></small>
+
+              <% if item["available_attachments"] %>
+                <%= render "pages/attachments_table", item: item %>
+
+                <small class="tiny-help">Click on the icons to see how the values would change by adding the attachment. These values are rough estimates and are a work in progress.</small>
+              <% else %>
+                <div>
+                  <small>None</small>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
 
-          <%= tag.div class: "columns__column columns__column--half" do %>
-            <strong title="Spray pattern. Red indicates the first shot. Add a Barrel Stabilizer to see how it affects the spray.">Spray</strong>
+            <%= tag.div class: "columns__column columns__column--half" do %>
+              <strong title="Spray pattern. Red indicates the first shot. Add a Barrel Stabilizer to see how it affects the spray.">Spray</strong>
 
-            <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
-          <% end if item["spray_pattern"]%>
+              <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
+            <% end if item["spray_pattern"]%>
+          </div>
         </div>
       </div>
+
+      <% unless compact? %>
+        <% image_path = asset_exists?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
+
+        <div class="item__image-wrapper">
+          <picture>
+            <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
+            <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
+            <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image", alt: item["name"].humanize %>
+          </picture>
+        </div>
+      <% end %>
     </div>
-
-    <% unless compact? %>
-      <% image_path = asset_exists?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
-
-      <div class="item__image-wrapper">
-        <picture>
-          <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
-          <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
-          <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image", alt: item["name"].humanize %>
-        </picture>
-      </div>
-    <% end %>
-  </div>
-</article>
+  </article>
+<% end %>

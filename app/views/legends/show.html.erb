@@ -1,88 +1,90 @@
 <% content_for :page_title, @item["name"] if @item["name"] %>
 
-<div class="heading">
-  <h2 class="heading__title"><%= @item["name"] if @item["name"] %></h2>
-</div>
-
-<div class="items">
-  <article class="item <%= "item--compact item--compact-full-width" if compact? %>">
-    <div class="item__content item__content--same-height legend">
-      <%= tag.div class:"mobile__legend-image hidden-compact" do %>
-        <%= image_tag "legends/#{ @item["name"].downcase }/character.png", alt: "#{ @item["name"] }" %>
-      <% end if asset_exists?("legends/#{ @item["name"].downcase }/character.png") && !compact? %>
-
-      <%= tag.div class: "legend__image" do %>
-        <%= tag.div class: "legend__image" do %>
-          <%= image_tag "legends/#{ @item["name"].downcase }/banner.jpg", alt: "#{ @item["name"] }" %>
-        <% end if asset_exists? "legends/#{ @item["name"].downcase }/banner.jpg" %>
-      <% end unless compact? %>
-
-      <div class="legend__intro">
-        <div class="legend__lore">
-          <div class="item__title heading heading--small">
-            <h3 class="heading__title"><%= @item["function"] if @item["function"] %></h3>
-            <div class="heading__line"></div>
-          </div>
-
-          <%= tag.div class: "item__full-width-info" do %>
-            <%= @item["lore"].html_safe %>
-          <% end if @item["lore"] %>
-        </div>
-
-        <div class="columns columns__about">
-          <div class="columns__column">
-            <% @item["about"].each do |key, about| %>
-              <div class="item__full-width-info item__full-width-info--large">
-                <span class="color-basic"><%= key.humanize %></span>
-                <small class="no-text-transform"><%= about %></small>
-              </div>
-            <% end if @item["about"] %>
-          </div>
-
-          <%= tag.div class: "columns__column" do %>
-            <% @item["abilities"].each do |key, ability| %>
-              <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-                <% if asset_exists? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
-                  <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
-                <% end %>
-
-                <div>
-                  <span class="color-basic"><%= ability["name"] %></span>
-                  <small class="no-text-transform"><%= ability["type"] %></small>
-                </div>
-              </div>
-            <% end %>
-          <% end if @item["abilities"] %>
-        </div>
-      </div>
-    </div>
-  </article>
-</div>
-
-<% if @item["abilities"] %>
-  <div class="heading heading--half-margin">
-    <h2 class="heading__title">Abilities</h2>
+<% cache "#{ @item["name"] }_#{ compact? }_#{ alldata? }" do %>
+  <div class="heading">
+    <h2 class="heading__title"><%= @item["name"] if @item["name"] %></h2>
   </div>
 
   <div class="items">
-    <% @item["abilities"].each do |key, ability| %>
-      <%= render "ability", key: key, ability: ability %>
-    <% end %>
+    <article class="item <%= "item--compact item--compact-full-width" if compact? %>">
+      <div class="item__content item__content--same-height legend">
+        <%= tag.div class:"mobile__legend-image hidden-compact" do %>
+          <%= image_tag "legends/#{ @item["name"].downcase }/character.png", alt: "#{ @item["name"] }" %>
+        <% end if asset_exists?("legends/#{ @item["name"].downcase }/character.png") && !compact? %>
+
+        <%= tag.div class: "legend__image" do %>
+          <%= tag.div class: "legend__image" do %>
+            <%= image_tag "legends/#{ @item["name"].downcase }/banner.jpg", alt: "#{ @item["name"] }" %>
+          <% end if asset_exists? "legends/#{ @item["name"].downcase }/banner.jpg" %>
+        <% end unless compact? %>
+
+        <div class="legend__intro">
+          <div class="legend__lore">
+            <div class="item__title heading heading--small">
+              <h3 class="heading__title"><%= @item["function"] if @item["function"] %></h3>
+              <div class="heading__line"></div>
+            </div>
+
+            <%= tag.div class: "item__full-width-info" do %>
+              <%= @item["lore"].html_safe %>
+            <% end if @item["lore"] %>
+          </div>
+
+          <div class="columns columns__about">
+            <div class="columns__column">
+              <% @item["about"].each do |key, about| %>
+                <div class="item__full-width-info item__full-width-info--large">
+                  <span class="color-basic"><%= key.humanize %></span>
+                  <small class="no-text-transform"><%= about %></small>
+                </div>
+              <% end if @item["about"] %>
+            </div>
+
+            <%= tag.div class: "columns__column" do %>
+              <% @item["abilities"].each do |key, ability| %>
+                <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
+                  <% if asset_exists? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
+                    <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
+                  <% end %>
+
+                  <div>
+                    <span class="color-basic"><%= ability["name"] %></span>
+                    <small class="no-text-transform"><%= ability["type"] %></small>
+                  </div>
+                </div>
+              <% end %>
+            <% end if @item["abilities"] %>
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
-<% end %>
 
-<div class="heading heading--half-margin">
-  <h2 class="heading__title">Extras</h2>
-</div>
+  <% if @item["abilities"] %>
+    <div class="heading heading--half-margin">
+      <h2 class="heading__title">Abilities</h2>
+    </div>
 
-<div class="items">
-  <div class="columns columns__extra">
-    <%= tag.div class: "columns__column columns__column--spacing" do %>
-      <%= render "badges" %>
-    <% end if @item["badges"] %>
+    <div class="items">
+      <% @item["abilities"].each do |key, ability| %>
+        <%= render "ability", key: key, ability: ability %>
+      <% end %>
+    </div>
+  <% end %>
 
-    <div class="columns__column">
-      <%= render "tips_tricks" %>
+  <div class="heading heading--half-margin">
+    <h2 class="heading__title">Extras</h2>
+  </div>
+
+  <div class="items">
+    <div class="columns columns__extra">
+      <%= tag.div class: "columns__column columns__column--spacing" do %>
+        <%= render "badges" %>
+      <% end if @item["badges"] %>
+
+      <div class="columns__column">
+        <%= render "tips_tricks" %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

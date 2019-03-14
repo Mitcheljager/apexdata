@@ -1,77 +1,79 @@
-<article class="item item--compact <%= "item--extra-compact" if compact? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
-  <div class="item__content">
-    <div class="item__description">
-      <% if asset_exists?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") && !compact? %>
-        <div class="item__large-icon-wrapper">
-          <%= image_tag "attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
+<% cache "#{ item["name"] }_#{ compact? }_#{ alldata? }" do %>
+  <article class="item item--compact <%= "item--extra-compact" if compact? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
+    <div class="item__content">
+      <div class="item__description">
+        <% if asset_exists?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") && !compact? %>
+          <div class="item__large-icon-wrapper">
+            <%= image_tag "attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
+          </div>
+        <% end %>
+
+        <div class="item__title heading heading--small">
+          <h3 class="heading__title">
+            <%= item["name"].truncate(17) %>
+          </h3>
+          <div class="heading__line"></div>
         </div>
-      <% end %>
 
-      <div class="item__title heading heading--small">
-        <h3 class="heading__title">
-          <%= item["name"].truncate(17) %>
-        </h3>
-        <div class="heading__line"></div>
-      </div>
+        <div class="item__data-wrapper">
+          <div class="item__main">
+            <% ["basic", "rare", "epic", "legendary"].each do |rarity| %>
+              <% if item[rarity] %>
+                <%= tag.div class: "item__full-width-info" do %>
+                  <span class="color-<%= rarity %>"><%= rarity.humanize %></span>
 
-      <div class="item__data-wrapper">
-        <div class="item__main">
-          <% ["basic", "rare", "epic", "legendary"].each do |rarity| %>
-            <% if item[rarity] %>
-              <%= tag.div class: "item__full-width-info" do %>
-                <span class="color-<%= rarity %>"><%= rarity.humanize %></span>
+                  <%= item[rarity]["description"].html_safe %>
+                <% end if item[rarity]["description"] %>
 
-                <%= item[rarity]["description"].html_safe %>
-              <% end if item[rarity]["description"] %>
+                <%= tag.div class: "item__small-info", title: "This can vary per weapon" do %>
+                Ammo Increase:
+                <span><div data-compare-target="ammo-increase"><%= item[rarity]["ammo_increase"] %></div></span>
+                <% end if item[rarity]["ammo_increase"] %>
 
-              <%= tag.div class: "item__small-info", title: "This can vary per weapon" do %>
-              Ammo Increase:
-              <span><div data-compare-target="ammo-increase"><%= item[rarity]["ammo_increase"] %></div></span>
-              <% end if item[rarity]["ammo_increase"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  Reload time:
+                  <span><div data-compare-target="reload-time"><%= item[rarity]["reload_time"] %></div></span>
+                <% end if item[rarity]["reload_time"] %>
 
-              <%= tag.div class: "item__small-info" do %>
-                Reload time:
-                <span><div data-compare-target="reload-time"><%= item[rarity]["reload_time"] %></div></span>
-              <% end if item[rarity]["reload_time"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  Headshot damage multiplier:
+                  <span><div data-compare-target="damage-multiplier"><%= item[rarity]["damage_multiplier"] %></div></span>
+                <% end if item[rarity]["damage_multiplier"] %>
 
-              <%= tag.div class: "item__small-info" do %>
-                Headshot damage multiplier:
-                <span><div data-compare-target="damage-multiplier"><%= item[rarity]["damage_multiplier"] %></div></span>
-              <% end if item[rarity]["damage_multiplier"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  Charge time:
+                  <span><div data-compare-target="charge-time"><%= item[rarity]["charge_time"] %></div></span>
+                <% end if item[rarity]["charge_time"] %>
 
-              <%= tag.div class: "item__small-info" do %>
-                Charge time:
-                <span><div data-compare-target="charge-time"><%= item[rarity]["charge_time"] %></div></span>
-              <% end if item[rarity]["charge_time"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  Fire Rate Increase:
+                  <span><div data-compare-target="fire-rate"><%= item[rarity]["fire_rate"] %></div></span>
+                <% end if item[rarity]["fire_rate"] %>
 
-              <%= tag.div class: "item__small-info" do %>
-                Fire Rate Increase:
-                <span><div data-compare-target="fire-rate"><%= item[rarity]["fire_rate"] %></div></span>
-              <% end if item[rarity]["fire_rate"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  Rechamber time:
+                  <span><div data-compare-target="rechamber-time"><%= item[rarity]["rechamber_time"] %></div></span>
+                <% end if item[rarity]["rechamber_time"] %>
 
-              <%= tag.div class: "item__small-info" do %>
-                Rechamber time:
-                <span><div data-compare-target="rechamber-time"><%= item[rarity]["rechamber_time"] %></div></span>
-              <% end if item[rarity]["rechamber_time"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  Draw, Holster, and Zoom time:
+                  <span><div data-compare-target="draw-time"><%= item[rarity]["draw_time"] %></div></span>
+                <% end if item[rarity]["draw_time"] %>
 
-              <%= tag.div class: "item__small-info" do %>
-                Draw, Holster, and Zoom time:
-                <span><div data-compare-target="draw-time"><%= item[rarity]["draw_time"] %></div></span>
-              <% end if item[rarity]["draw_time"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  ADS time:
+                  <span><div data-compare-target="ads-time"><%= item[rarity]["ads"] %></div></span>
+                <% end if item[rarity]["ads"] %>
 
-              <%= tag.div class: "item__small-info" do %>
-                ADS time:
-                <span><div data-compare-target="ads-time"><%= item[rarity]["ads"] %></div></span>
-              <% end if item[rarity]["ads"] %>
-
-              <%= tag.div class: "item__small-info" do %>
-                Recoil (roughly):
-                <span><div data-compare-target="ads-time"><%= item[rarity]["kick_yaw_random"] %></div></span>
-              <% end if item[rarity]["kick_yaw_random"] %>
+                <%= tag.div class: "item__small-info" do %>
+                  Recoil (roughly):
+                  <span><div data-compare-target="ads-time"><%= item[rarity]["kick_yaw_random"] %></div></span>
+                <% end if item[rarity]["kick_yaw_random"] %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</article>
+  </article>
+<% end %>
