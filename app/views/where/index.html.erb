@@ -4,7 +4,7 @@
 
 <div class="items">
   <% if @items.any? %>
-    <%= render partial: "pages/item_types/weapon", collection: @items, as: :item, cached: true|| "Nothing found" %>
+    <%= render partial: "pages/item_types/weapon", collection: @items, as: :item || "Nothing found" %>
   <% else %>
     Nothing found, sorry.
   <% end %>
