@@ -25,25 +25,17 @@
   text-align: center;
 }
 
-[id^="nn_lb"] {
+.adsbygoogle {
   grid-area: ad-desktop;
 
-  &:empty + .ad-container__title,
-  &:empty + div:empty + .ad-container__title {
+  &:empty + script + .ad-container__title,
+  &:empty + script + div:empty + .ad-container__title {
     display: none;
   }
 
-  &:empty + div:not(:empty) + .ad-container__title {
+  &:empty + script + div:not(:empty) + .ad-container__title {
     display: block;
   }
-
-  &:not(:empty) {
-    padding: 0 ($margin / 4) ($margin / 4);
-  }
-}
-
-[id^="nn_mobile_mpu"] {
-  grid-area: ad-mobile;
 
   &:not(:empty) {
     padding: 0 ($margin / 4) ($margin / 4);
