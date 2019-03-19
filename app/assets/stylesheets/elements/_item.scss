@@ -595,3 +595,68 @@
 .item__tips {
   margin-top: 10px;
 }
+
+.item--table {
+  display: flex;
+  border: 2px solid var(--border-color);
+  background: rgba($black, .2);
+  box-shadow: 0 3px 10px rgba($black, .25);
+}
+
+.item--table__icon-wrapper {
+  display: flex;
+  border-right: 1px solid var(--border-color);
+}
+
+.item--table__icon {
+  align-self: center;
+
+  @media (max-width: 639px) {
+    max-width: 120px;
+  }
+}
+
+.item--table__content {
+  width: 100%;
+}
+
+.item--table__title {
+  width: 100%;
+  margin: 0;
+  padding: .25em .5em;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.item--table__info {
+  font-size: 14px;
+  padding: .25em .5em;
+
+  @media (min-width: 640px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.item--table__item {
+  margin-right: $margin / 1.5;
+}
+
+.item--table__item-title {
+  display: flex;
+  align-items: flex-start;
+  margin: -.25em 0 0;
+  font-size: 20px;
+
+  small {
+    display: block;
+    margin-left: .25em;
+    font-weight: normal;
+    color: var(--text-color);
+  }
+}
+
+.item--table__item-other {
+  display: block;
+  margin: -.25em 0 0;
+}
