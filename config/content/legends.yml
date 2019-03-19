@@ -472,3 +472,12 @@
       type: Ultimate Ability
       name: Launch Pad
       description: Deploy a jump pad that catapults teammates through the air.
+  badges:
+    - name: Apex Octane
+      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
+    - name: Octanes's wake
+      desc: Kill at least 20 enemies in one game
+    - name: Octanes's wrath
+      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
+    - name: Hot streak
+      desc: When playing as Octane, win 2 games in a row
