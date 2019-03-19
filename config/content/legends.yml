@@ -463,11 +463,15 @@
       name: Stim
       description: Move 30% faster for six seconds. Costs health to use.
       primary_data:
-        movement_speed: +30%
+        movement: +30<span>%</span>
+        health_cost: 10<span>%</span>
     ability_2:
       type: Passive Ability
       name: Swift Mend
       description: Automatically restores health over time.
+      primary_data:
+        healing: 1 <span>/sec</span>
+        cooldown: 5 <span>sec</span>
     ability_3:
       type: Ultimate Ability
       name: Launch Pad
