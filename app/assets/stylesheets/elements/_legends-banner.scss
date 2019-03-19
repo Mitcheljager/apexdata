@@ -1,14 +1,14 @@
 .legends-banner {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -#{$margin / 8} ($margin / 4);
+  margin: 0 -#{$margin / 9} ($margin / 4);
 }
 
 .legends-banner__item {
   flex: 0 0 calc((100% / 3) - #{$margin / 4});
   width: calc((100% / 3) - #{$margin / 4});
   max-width: 100%;
-  margin: 0 #{$margin / 8} ($margin / 4);
+  margin: 0 #{$margin / 9} ($margin / 4);
 
   @media (min-width: 560px) {
     flex: 0 0 calc((100% / 4) - #{$margin / 4});
@@ -21,8 +21,8 @@
   }
 
   @media (min-width: $max-width) {
-    flex: 0 0 calc((100% / 8) - #{$margin / 4});
-    width: calc((100% / 8) - #{$margin / 4});
+    flex: 0 0 calc((100% / 9) - #{$margin / 4});
+    width: calc((100% / 9) - #{$margin / 4});
   }
 
   &:hover,
