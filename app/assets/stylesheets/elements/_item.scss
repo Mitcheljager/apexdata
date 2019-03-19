@@ -19,7 +19,7 @@
     filter: none;
   }
 
-  &:last-child {
+  &:not(.item--compact):last-child {
     margin-bottom: 0;
   }
 
