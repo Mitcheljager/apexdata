@@ -601,11 +601,22 @@
   border: 2px solid var(--border-color);
   background: rgba($black, .2);
   box-shadow: 0 3px 10px rgba($black, .25);
+  line-height: 1.1em;
+  text-transform: uppercase;
+
+  .theme-light & {
+    background: $white;
+    border: 0;
+  }
 }
 
 .item--table__icon-wrapper {
   display: flex;
   border-right: 1px solid var(--border-color);
+
+  .theme-light & {
+    border-color: rgba($black, .1);
+  }
 }
 
 .item--table__icon {
@@ -613,6 +624,10 @@
 
   @media (max-width: 639px) {
     max-width: 120px;
+  }
+
+  .theme-light & {
+    filter: invert(1);
   }
 }
 
@@ -623,14 +638,18 @@
 .item--table__title {
   width: 100%;
   margin: 0;
-  padding: .25em .5em;
-  font-size: 14px;
+  padding: .5em;
   border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+
+  .theme-light & {
+    border-color: rgba($black, .1);
+  }
 }
 
 .item--table__info {
   font-size: 14px;
-  padding: .25em .5em;
+  padding: .5em .5em 0;
 
   @media (min-width: 640px) {
     display: flex;
@@ -639,13 +658,19 @@
 }
 
 .item--table__item {
-  margin-right: $margin / 1.5;
+  margin: 0 ($margin / 2.5) .5em 0;
+  color: var(--title-color);
+
+  span {
+    text-transform: none;
+    color: var(--text-color);
+  }
 }
 
 .item--table__item-title {
   display: flex;
   align-items: flex-start;
-  margin: -.25em 0 0;
+  margin: .25em 0 0;
   font-size: 20px;
 
   small {
@@ -659,5 +684,6 @@
 
 .item--table__item-other {
   display: block;
-  margin: -.25em 0 0;
+  font-size: 12px;
+  line-height: 1.25em;
 }
