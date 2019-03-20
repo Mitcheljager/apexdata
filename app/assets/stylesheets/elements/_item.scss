@@ -573,27 +573,16 @@
   }
 }
 
-.item__ability {
-  align-items: center;
-
-  img {
-    width: 100%;
-  }
-
-  span {
-    text-align: center;
-    margin-top: 10px;
-  }
-}
-
-.item__legend {
-  width: 100%;
-  object-fit: contain;
-  object-position: 50% -10px;
-}
-
 .item__tips {
-  margin-top: 10px;
+  margin-top: $margin / 4;
+}
+
+.item__note {
+  display: block;
+  margin-bottom: $margin / 2;
+  font-size: 11px;
+  line-height: 1.5em;
+  text-transform: none;
 }
 
 .item--table {
