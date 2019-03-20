@@ -476,6 +476,8 @@
       type: Ultimate Ability
       name: Launch Pad
       description: Deploy a jump pad that catapults teammates through the air.
+      primary_data:
+        charge_time: 90<span>s</span>
   badges:
     - name: Apex Octane
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
