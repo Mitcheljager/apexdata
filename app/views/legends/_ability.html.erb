@@ -17,25 +17,27 @@
       </div>
     </div>
 
-    <div class="ability__information">
-      <%= tag.div class: "columns" do %>
-        <% ability["primary_data"].each do |key, data| %>
-          <div class="columns__column item__large-info">
-            <span><%= key.humanize %></span>
-            <div><%= raw data %></div>
-          </div>
-        <% end %>
-      <% end if ability["primary_data"] %>
 
-      <%= tag.div class: "columns columns--direction-column" do %>
-        <% ability["secondary_data"].each do |key, data| %>
-          <div class="item__small-info">
-            <%= key.humanize %>
-            <span><div><%= raw data %></div></span>
-          </div>
-        <% end %>
-      <% end if ability["secondary_data"] %>
-    </div>
+    <% if ability["primary_data"] || ability["secondary_data"] %>
+      <div class="ability__information">
+        <%= tag.div class: "columns" do %>
+          <% ability["primary_data"].each do |key, data| %>
+            <div class="columns__column item__large-info">
+              <span><%= key.humanize %></span>
+              <div><%= raw data %></div>
+            </div>
+          <% end %>
+        <% end if ability["primary_data"] %>
 
+        <%= tag.div class: "columns columns--direction-column" do %>
+          <% ability["secondary_data"].each do |key, data| %>
+            <div class="item__small-info">
+              <%= key.humanize %>
+              <span><div><%= raw data %></div></span>
+            </div>
+          <% end %>
+        <% end if ability["secondary_data"] %>
+      </div>
+    <% end %>
   </div>
 </article>

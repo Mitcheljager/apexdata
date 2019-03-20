@@ -123,6 +123,7 @@
 -
   name: Extended Heavy Mag
   type: magazine
+  note: Magazine increasements vary per weapon. These are the general rules.
   basic:
     description: Slightly increases ammo capacity.
     ammo_increase: 25%
@@ -137,6 +138,7 @@
 -
   name: Extended Light Mag
   type: magazine
+  note: Magazine increasements vary per weapon. These are the general rules.
   basic:
     description: Slightly increases ammo capacity.
     ammo_increase: 25%

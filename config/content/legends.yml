@@ -20,7 +20,7 @@
         damage: 10
         duration: 20<span>s</span>
       secondary_data:
-        range: 7.5<small>m</small>
+        radius: 7.5<small>m</small>
         cooldown: 33<small>s</small>
         charges: 2
     ability_2:
@@ -231,7 +231,7 @@
       description: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
       primary_data:
         revive: 4<span>s</span>
-        self_heal: -25%
+        self_heal: -25<span>%</span>
     ability_3:
       type: Ultimate Ability
       name: Care Package

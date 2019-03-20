@@ -17,6 +17,10 @@
 
         <div class="item__data-wrapper">
           <div class="item__main">
+            <% if item["note"] %>
+              <em class="item__note"><%= item["note"] %></em>
+            <% end %>
+
             <% ["basic", "rare", "epic", "legendary"].each do |rarity| %>
               <% if item[rarity] %>
                 <%= tag.div class: "item__full-width-info" do %>
