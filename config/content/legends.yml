@@ -470,7 +470,7 @@
       name: Swift Mend
       description: Automatically restores health over time.
       primary_data:
-        healing: 1 <span>/sec</span>
+        healing: 1 <span>/ 2 secs</span>
         cooldown: 5 <span>sec</span>
     ability_3:
       type: Ultimate Ability
