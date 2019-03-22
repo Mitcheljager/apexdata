@@ -16,8 +16,6 @@
 
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
-
-    <%= render "adsense" %>
   </head>
 
   <body <% if theme_light? %>class="theme-light"<% end %>>
@@ -34,8 +32,6 @@
       <div class="items-wrapper">
         <%= yield %>
       </div>
-
-      <%= render "banner" %>
 
       <%= render "social" %>
       <%= render "footer" %>
