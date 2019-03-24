@@ -13,14 +13,17 @@ body {
   --border-color: #{ $border-color };
   --text-color: #{ $text-color };
   --title-color: #{ $white };
+  --graph-bg: #{ darken($bg-color, 5%) };
+  --graph-color: #{ lighten($bg-color, 15%) };
 
   margin: 0;
-  background: var(--bg-color);
-  background-image: image_url("bg-pattern.jpg");
+  background-color: var(--bg-color);
+  background-image: image_url("layout/bg-body.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   font-family: "Raleway", sans-serif;
   font-display: auto;
   color: var(--text-color);
-  text-transform: uppercase;
   font-weight: 300;
   max-width: 100%;
   overflow-x: hidden;

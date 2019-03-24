@@ -4,7 +4,7 @@ h3,
 h4,
 h5 {
   color: var(--title-color);
-  font-weight: 700;
+  font-weight: 300;
 }
 
 h1 {
@@ -16,7 +16,11 @@ h2 {
 }
 
 h3 {
-  font-size: 21px;
+  @include responsive-font-width(30px, $max-width, 21px);
+}
+
+h4 {
+  @include responsive-font-width(30px, $max-width, 21px);
 }
 
 .heading {
@@ -31,14 +35,11 @@ h3 {
   &::after {
     display: block;
     content: "";
-    height: 4px;
+    height: 2px;
     width: 100%;
-    background: $white;
-    opacity: .2;
-
-    .theme-light & {
-      background: var(--title-color);
-    }
+    max-width: calc(#{ $max-width / 3 * 2 } - #{ $margin / 4 });
+    margin-left: auto;
+    background: var(--border-color);
   }
 
   &--small {

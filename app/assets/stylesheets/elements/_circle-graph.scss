@@ -1,0 +1,47 @@
+.circle-graph {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+}
+
+.circle-graph__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: var(--title-color);
+
+  h4 {
+    margin: 0;
+    font-weight: 700;
+  }
+}
+
+.circle-graph__graph {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.circle-graph__bar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(var(--graph-color) calc(var(--value) * 1%), var(--graph-bg) 0%);
+  transform: scale(-1, 1);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $circle-graph-thickness;
+    left: $circle-graph-thickness;
+    background: $bg-color;
+    width: calc(100% - #{ $circle-graph-thickness * 2 });
+    height: calc(100% - #{ $circle-graph-thickness * 2 });
+    border-radius: 50%;
+  }
+}

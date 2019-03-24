@@ -1,0 +1,119 @@
+.item-columns {
+  display: grid;
+  grid-template: "sidebar content";
+  grid-template-columns: 1fr 2fr;
+
+  hr {
+    margin: $margin / 2 0;
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+  }
+}
+
+.item-columns__sidebar {
+  grid-area: sidebar;
+  width: 100%;
+  padding: 0 ($margin / 4) 0 0;
+}
+
+.item-columns__sidebar-item {
+  display: block;
+}
+
+.item-columns__content {
+  grid-area: content;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 0 0 ($margin / 4);
+}
+
+.item-columns__center {
+  width: 50%;
+  padding-right: $margin / 4;
+}
+
+.item-columns__item {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  margin-bottom: $margin / 4;
+  filter: drop-shadow(0px 3px 7px rgba($black, .1)) drop-shadow(0px 3px 27px rgba($black, .1));
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: rgba($white, .1);
+    z-index: 1;
+  }
+}
+
+.item-columns__item-name {
+  position: absolute;
+  bottom: $margin / 4;
+  left: $margin / 4;
+  color: rgba($white, .5);
+  z-index: 2;
+}
+
+.item-columns__item-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% 0%, 0% 100%, calc(100% - 100px) 100%, 100% 0%);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.item-columns__detail {
+  display: none;
+  width: 50%;
+  padding-left: $margin / 4;
+}
+
+.item-columns__detail-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 75px;
+  margin-bottom: $margin;
+
+  h3 {
+    margin: #{ $margin / 4 } 0 0;
+  }
+}
+
+.item-columns__radial-graphs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $margin
+}
+
+.item-columns__data {
+  display: flex;
+  font-size: 14px;
+  margin-bottom: $margin / 8;
+}
+
+.item-columns__data-value {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.item-columns__data-identifier {
+  font-size: 12px;
+  line-height: 1.5em;
+  margin-left: $margin / 8;
+}

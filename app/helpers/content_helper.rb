@@ -81,4 +81,20 @@ module ContentHelper
       item["damage_per_magazine"] = damage
     end
   end
+
+  def get_max_value(array, target)
+    max_value = 0
+
+    array.each do |item|
+      new_value = item[target]
+
+      if new_value
+        if new_value > max_value
+          max_value = new_value
+        end
+      end
+    end
+
+    return max_value
+  end
 end

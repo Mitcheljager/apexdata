@@ -22,3 +22,4 @@
 //= require theme_switch
 //= require strawpoll
 //= require ga-scroll-depth
+//= require item_columns
