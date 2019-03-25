@@ -22,9 +22,9 @@
   display: block;
   font-size: 21px;
   line-height: 1em;
-  margin: ($margin / 4) 0;
+  padding: ($margin / 8) 0;
   text-decoration: none;
-  transition-property: font-size, margin;
+  transition-property: font-size, padding;
   transition-duration: 100ms;
 
   &:hover,
@@ -35,7 +35,7 @@
   &--is-active {
     color: $red;
     font-size: 28px;
-    margin: ($margin / 2) 0;
+    padding: ($margin / 4) 0;
 
     &:hover,
     &:active {
