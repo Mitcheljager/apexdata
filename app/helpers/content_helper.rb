@@ -65,6 +65,18 @@ module ContentHelper
     assault_rifles.concat(sub_machine_guns).concat(pistols).concat(light_machine_guns).concat(shotguns).concat(sniper_rifles)
   end
 
+  def attachment_icons
+    attachments_with_icons = {}
+    attachments.each do |attachment_type|
+      name = attachment_type["name"].downcase.gsub(" ", "_").gsub("'", "")
+      url = image_url "attachments/#{ attachment_type["name"].downcase.gsub(" ", "_").gsub("'", "") }.png"
+
+      attachments_with_icons.store(name, url)
+    end
+
+    return attachments_with_icons
+  end
+
   def calculate_extra_values(array)
     array.each do |item|
       rate_of_fire = item["rate_of_fire"] < 60 ? 1 : item["rate_of_fire"] / 60

@@ -23,6 +23,11 @@ h4 {
   @include responsive-font-width(30px, $max-width, 21px);
 }
 
+h5 {
+  font-size: 18px;
+  margin: $margin 0 $margin / 4;
+}
+
 .heading {
   display: flex;
   align-items: flex-end;

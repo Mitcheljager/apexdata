@@ -11,8 +11,17 @@
           <%= item["name"] %>
         </div>
 
-        <% image_path = asset_exists?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
+        <div class="item-columns__item-extra">
+          <%= tag.div do %>
+            <%= image_tag "fire_mode/single.png", alt: "Single Fire", title: "Single Fire" if item["fire_modes"]["single"] %>
+            <%= image_tag "fire_mode/auto.png", alt: "Automatic Fire", title: "Automatic Fire" if item["fire_modes"]["auto"] %>
+            <%= image_tag "fire_mode/burst.png", alt: "Burst Fire)", title: "Burst Fire ( #{item["fire_modes"]["burst"] } Shots )" if item["fire_modes"]["burst"] %>
+          <% end if item["fire_modes"] %>
 
+          <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize) if item["ammo_type"] %>
+        </div>
+
+        <% image_path = asset_exists?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
         <div class="item-columns__item-background">
           <picture>
             <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
@@ -31,7 +40,7 @@
     </div>
 
     <div class="item-columns__radial-graphs">
-      <%= render "pages/item_columns/radial_graph", target: "damage", label: "Damage", max: get_max_value(items, "damage") %>
+      <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage") %>
       <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire") %>
     </div>
 
@@ -48,5 +57,23 @@
     <%= render "pages/item_columns/static_value", target: "empty_reload", label: "Empty reload", identifier: "s" %>
     <%= render "pages/item_columns/static_value", target: "draw_time", label: "Draw time", identifier: "s" %>
     <%= render "pages/item_columns/static_value", target: "holster_time", label: "Holster time", identifier: "s" %>
+
+    <% items.each do |item| %>
+      <div class="item-columns__detail-extra-static-content" data-extra-static-content="<%= item["name"].downcase.gsub(" ", "_") %>">
+        <% if item["available_attachments"] %>
+          <h5>Attachments</h5>
+
+          <%= render "pages/attachments_table", item: item %>
+          <small class="tiny-help">Click on the icons to see how the values would change by adding the attachment. These values are rough estimates.</small>
+        <% end %>
+
+        <% if item["spray_pattern"] %>
+          <h5>Spray pattern</h5>
+          <small class="tiny-help">The spray pattern is based on a basic weapon without attachments, shot while aiming.</small>
+
+          <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
+        <% end %>
+      </div>
+    <% end %>
   </article>
 </div>

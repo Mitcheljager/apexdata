@@ -1,7 +1,9 @@
 .circle-graph {
   position: relative;
-  width: 10rem;
-  height: 10rem;
+  width: 11vw;
+  height: 11vw;
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 .circle-graph__label {

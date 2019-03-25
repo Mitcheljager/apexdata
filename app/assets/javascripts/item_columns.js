@@ -28,6 +28,9 @@ function changeDetails(event) {
 
   if (targetParent.style.display != "block") targetParent.style.display = "block"
 
+  setActiveItem(this)
+  setActiveExtraStaticContent(targetParent, data["name"].toLowerCase().replace(" ", "_"))
+
   changeBarGraphs(targetParent, data)
   changeCircleGraphs(targetParent, data)
   changeStaticValues(targetParent, data)
@@ -117,4 +120,47 @@ function setCircleValue(barElement, value) {
   } else {
     barElement.style.setProperty("--value", valuePercentage)
   }
+}
+
+function makeAttachmentsTable(parentElement, data) {
+  const tableElement = parentElement.querySelector("[data-role='attachments-table']")
+  if (!tableElement || !data) return
+
+  tableElement.innerHTML = ""
+  attachmentIcons = JSON.parse(tableElement.dataset.iconUrls)
+
+  Object.values(data).forEach(attachmentType => {
+    const attachmentTypeElement = document.createElement("div")
+    attachmentTypeElement.classList.add("attachments-table__item")
+    attachmentTypeElement.setAttribute("data-action", "toggle-dropdown")
+
+    const attachmentTypeIcon = document.createElement("img")
+    attachmentTypeIcon.setAttribute("src", attachmentIcons[attachmentType[0]])
+
+    const dropdownElement = document.createElement("div")
+    dropdownElement.classList.add("attachments-table__dropdown")
+    dropdownElement.setAttribute("data-dropdown", "")
+    dropdownElement.addEventListener("click", toggleDropdown)
+
+    attachmentTypeElement.append(attachmentTypeIcon)
+    attachmentTypeElement.append(dropdownElement)
+    tableElement.append(attachmentTypeElement)
+  })
+}
+
+function setActiveItem(item) {
+  const activeClass = "item-columns__item--is-active"
+  const currentActive = document.querySelector(`.${ activeClass }`)
+  if (currentActive) currentActive.classList.remove(activeClass)
+
+  item.classList.add(activeClass)
+}
+
+function setActiveExtraStaticContent(parentElement, id) {
+  const activeClass = "item-columns__detail-extra-static-content--is-active"
+  const contentElement = parentElement.querySelector(`[data-extra-static-content="${ id }"]`)
+  const currentActive = document.querySelector(`.${ activeClass }`)
+
+  if (currentActive) currentActive.classList.remove(activeClass)
+  contentElement.classList.add(activeClass)
 }
