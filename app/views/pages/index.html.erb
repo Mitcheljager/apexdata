@@ -4,12 +4,14 @@
 
 <div class="item-columns">
   <aside class="item-columns__sidebar">
-    <%= link_to "Assault Rifles", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "assault-rifles" } %>
+    <%= link_to "Assault Rifles", "#", class: "item-columns__sidebar-item item-columns__sidebar-item--is-active", data: { action: "item-columns-change-category", target: "assault-rifles" } %>
     <%= link_to "Sub Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sub-machine-guns" } %>
     <%= link_to "Light Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "light-machine-guns" } %>
     <%= link_to "Shotguns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "shotguns" } %>
     <%= link_to "Sniper Rifles", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sniper-rifles" } %>
     <%= link_to "Pistols", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "pistols" } %>
+
+    <%= render "sort/filter", active: "weapons" %>
   </aside>
 
   <%= render "pages/item_columns/weapons", block_id: "assault-rifles", items: assault_rifles, is_active: true %>

@@ -1,7 +1,7 @@
 .item-columns {
   display: grid;
   grid-template: "sidebar content";
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: #{ 100% / 3 * 1 } #{ 100% / 3 * 2 };
 
   hr {
     margin: $margin / 2 0;
@@ -14,6 +14,7 @@
 .item-columns__sidebar {
   grid-area: sidebar;
   width: 100%;
+  max-width: $max-width / 3;
   padding: 0 ($margin / 4) 0 0;
 }
 
@@ -21,8 +22,26 @@
   display: block;
   font-size: 21px;
   line-height: 1em;
-  margin-bottom: $margin / 4;
+  margin: ($margin / 4) 0;
   text-decoration: none;
+  transition-property: font-size, margin;
+  transition-duration: 100ms;
+
+  &:hover,
+  &:active {
+    color: var(--title-color);
+  }
+
+  &--is-active {
+    color: $red;
+    font-size: 28px;
+    margin: ($margin / 2) 0;
+
+    &:hover,
+    &:active {
+      color: $red;
+    }
+  }
 }
 
 .item-columns__content {
@@ -126,7 +145,6 @@
     background: $white;
     z-index: 2;
     opacity: 0;
-    transition: opacity 100ms;
     clip-path: polygon(
       0% 0%,
       0% 100%,

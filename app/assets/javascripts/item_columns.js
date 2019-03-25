@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const categoryElements = document.querySelectorAll("[data-action='item-columns-change-category']")
   categoryElements.forEach(element => element.addEventListener("click", changeCategory))
+
+  document.querySelector("[data-action='item-columns-change-details']").click()
 })
 
 function changeCategory(event) {
@@ -18,6 +20,13 @@ function changeCategory(event) {
   const target = this.dataset.target
   const targetElement = document.querySelector(`[item-columns-target='${ target }']`)
   targetElement.style.display = "flex"
+
+  const activeClass = "item-columns__sidebar-item--is-active"
+  const currentActive = document.querySelector(`.${ activeClass }`)
+  if (currentActive) currentActive.classList.remove(activeClass)
+  this.classList.add(activeClass)
+
+  targetElement.querySelector("[data-action='item-columns-change-details']").click()
 }
 
 function changeDetails(event) {
