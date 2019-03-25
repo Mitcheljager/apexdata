@@ -25,19 +25,7 @@
   text-align: center;
 }
 
-.adsbygoogle {
+iframe {
   grid-area: ad-desktop;
-
-  &:empty + script + .ad-container__title,
-  &:empty + script + div:empty + .ad-container__title {
-    display: none;
-  }
-
-  &:empty + script + div:not(:empty) + .ad-container__title {
-    display: block;
-  }
-
-  &:not(:empty) {
-    padding: 0 ($margin / 4) ($margin / 4);
-  }
+  margin-bottom: ($margin / 4);
 }
