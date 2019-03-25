@@ -25,6 +25,22 @@
   text-align: center;
 }
 
+.ad-container__desktop {
+  display: none;
+
+  @media (min-width: 950px) {
+    display: block;
+  }
+}
+
+.ad-container__mobile {
+  display: block;
+
+  @media (min-width: 950px) {
+    display: none;
+  }
+}
+
 iframe {
   grid-area: ad-desktop;
   margin-bottom: ($margin / 4);
