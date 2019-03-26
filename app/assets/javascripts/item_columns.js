@@ -30,6 +30,11 @@ function changeCategory(event) {
 }
 
 function changeDetails(event) {
+  const isTarget = event.target.closest("a")
+  if (isTarget) {
+    if (isTarget.href != "#") return
+  }
+
   event.preventDefault()
 
   const data = JSON.parse(this.dataset.columnsData)

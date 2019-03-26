@@ -114,6 +114,11 @@
     width: auto;
   }
 
+  a img:hover,
+  a img:active {
+    opacity: .5;
+  }
+
   div {
     display: flex;
 

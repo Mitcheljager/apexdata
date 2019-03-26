@@ -1,11 +1,11 @@
-<% content_for :page_title, "Sniper Rifles" %>
-
 <div class="heading">
-  <h2 class="heading__title"><%= link_to "Sniper Rifles", page_path("sniper-rifles") %></h2>
+  <h2 class="heading__title">Sniper Rifles</h2>
 </div>
 
-<%= render "sort/filter", active: "sniper-rifles" %>
+<div class="item-columns">
+  <aside class="item-columns__sidebar">
+    <%= render "sort/filter", active: "sniper-rifles" %>
+  </aside>
 
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: sniper_rifles, as: :item %>
+  <%= render "pages/item_columns/weapons", block_id: "sniper-rifles", items: sniper_rifles, is_active: true %>
 </div>

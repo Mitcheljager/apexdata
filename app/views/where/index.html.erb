@@ -2,10 +2,14 @@
   <h2 class="heading__title"><%= params[:value].humanize %> <% if @items.many? %><small>(<%= @items.count %>)</small><% end %></h2>
 </div>
 
-<div class="items">
+<div class="item-columns">
+  <aside class="item-columns__sidebar">
+    <%= render "sort/filter", active: params[:items] %>
+  </aside>
+
   <% if @items.any? %>
-    <%= render partial: "pages/item_types/weapon", collection: @items, as: :item || "Nothing found" %>
+    <%= render "pages/item_columns/weapons", block_id: "sorted", items: @items, is_active: true %>
   <% else %>
-    Nothing found, sorry.
+    Nothing found
   <% end %>
 </div>

@@ -2,12 +2,14 @@
   <h3 class="heading__title"><%= params[:items].underscore.humanize %> <small>sorted by</small> <%= params[:sort_by].underscore.humanize %></h3>
 </div>
 
-<%= render "filter", active: params[:items] %>
+<div class="item-columns">
+  <aside class="item-columns__sidebar">
+    <%= render "sort/filter", active: params[:items] %>
+  </aside>
 
-<div class="items">
   <% if @items.any? %>
-    <%= render partial: "pages/item_types/weapon", collection: @items, as: :item || "Nothing found" %>
+    <%= render "pages/item_columns/weapons", block_id: "sorted", items: @items, is_active: true %>
   <% else %>
-    Nothing found, sorry.
+    Nothing found
   <% end %>
 </div>
