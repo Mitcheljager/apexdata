@@ -5,11 +5,11 @@
 
 .attachments-table__item {
   display: block;
-  border: 1px dashed rgba($white, .25);
   width: 2.5rem;
   height: 2.5rem;
   padding: .25rem;
-  background: rgba($white, .15);
+  border: 1px dashed #797c8d;
+  background: rgba($bg-color, .5) image-url("bg-pattern-light.jpg");
   margin-right: 2px;
   cursor: pointer;
 

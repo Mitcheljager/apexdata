@@ -1,7 +1,7 @@
 .spray-pattern {
   margin-top: $margin / 4;
-  background: rgba($bg-color, .5);
-  border: 1px solid var(--border-color);
+  background: rgba($bg-color, .5) image-url("bg-pattern-light.jpg");
+  border: 1px solid #797c8d;
 
   .theme-light & {
     background: rgba($black, 0.05);
