@@ -13,7 +13,6 @@
 //= require rails-ujs
 
 //= require compare
-//= require more_data
 //= require dropdown
 //= require modify
 //= require toggle
@@ -21,5 +20,5 @@
 //= require navigation
 //= require theme_switch
 //= require strawpoll
-//= require ga-scroll-depth
+//= require ga_scroll_depth
 //= require item_columns

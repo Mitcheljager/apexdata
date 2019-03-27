@@ -67,8 +67,8 @@ blockquote {
   margin: 0 auto;
 
   @media screen and (min-width: 400px) {
-    max-width: calc(#{$max-width} + 20vw);
-    padding: 0 10vw;
+    max-width: calc(#{$max-width} + 10vw);
+    padding: 0 5vw;
   }
 
   &--no-padding {

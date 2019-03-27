@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const categoryElements = document.querySelectorAll("[data-action='item-columns-change-category']")
   categoryElements.forEach(element => element.addEventListener("click", changeCategory))
 
-  document.querySelector("[data-action='item-columns-change-details']").click()
+  const viewDetailsElements = document.querySelectorAll("[data-action='item-columns-view-details']")
+  viewDetailsElements.forEach(element => element.addEventListener("click", viewingDetails))
+
+  const viewItemsElements = document.querySelectorAll("[data-action='item-columns-view-items']")
+  viewItemsElements.forEach(element => element.addEventListener("click", viewingItems))
+
+  if (document.body.clientWidth > 1100) document.querySelector("[data-action='item-columns-change-details']").click()
 })
 
 function changeCategory(event) {
@@ -26,7 +32,9 @@ function changeCategory(event) {
   if (currentActive) currentActive.classList.remove(activeClass)
   this.classList.add(activeClass)
 
-  targetElement.querySelector("[data-action='item-columns-change-details']").click()
+  if (document.body.clientWidth > 1100) targetElement.querySelector("[data-action='item-columns-change-details']").click()
+
+  viewingItems(event)
 }
 
 function changeDetails(event) {
@@ -38,8 +46,8 @@ function changeDetails(event) {
   event.preventDefault()
 
   const data = JSON.parse(this.dataset.columnsData)
-  const targetParent = this.closest("[item-columns-target]").querySelector("[data-role='item-columns-details']")
 
+  const targetParent = this.closest("[item-columns-target]").querySelector("[data-role='item-columns-details']")
   if (targetParent.style.display != "block") targetParent.style.display = "block"
 
   setActiveItem(this)
@@ -49,6 +57,8 @@ function changeDetails(event) {
   changeCircleGraphs(targetParent, data)
   changeStaticValues(targetParent, data)
   changeIcon(targetParent, this.dataset.iconSource)
+
+  viewingDetails(event)
 }
 
 function changeIcon(parent, image) {
@@ -177,4 +187,19 @@ function setActiveExtraStaticContent(parentElement, id) {
 
   if (currentActive) currentActive.classList.remove(activeClass)
   contentElement.classList.add(activeClass)
+}
+
+function viewingItems(event) {
+  const element = event.target.closest("[data-item-columns-main]")
+
+  element.classList.remove("item-columns--viewing-details")
+  element.classList.add("item-columns--viewing-items")
+
+}
+
+function viewingDetails(event) {
+  const element = event.target.closest("[data-item-columns-main]")
+
+  element.classList.remove("item-columns--viewing-items")
+  element.classList.add("item-columns--viewing-details")
 }

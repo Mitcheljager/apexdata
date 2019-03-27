@@ -1,6 +1,6 @@
 <% is_active = is_active || false %>
 
-<% cache items do %>
+<% cache block_id do %>
   <div class="item-columns__content" item-columns-target="<%= block_id %>" style="<%= "display: none" if !is_active %>">
     <nav class="item-columns__center">
       <% items.each do |item| %>

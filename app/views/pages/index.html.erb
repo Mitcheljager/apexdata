@@ -1,23 +1,30 @@
 <div class="heading">
   <h2 class="heading__title">Weapons</h2>
 </div>
+<div class="item-columns" data-item-columns-main>
+  <div class="item-columns__mobile-navigation">
+    <div class="buttons" data-action="item-columns-view-items">Categories</div>
 
-<div class="item-columns">
-  <aside class="item-columns__sidebar">
-    <%= link_to "Assault Rifles", "#", class: "item-columns__sidebar-item item-columns__sidebar-item--is-active", data: { action: "item-columns-change-category", target: "assault-rifles" } %>
-    <%= link_to "Sub Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sub-machine-guns" } %>
-    <%= link_to "Light Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "light-machine-guns" } %>
-    <%= link_to "Shotguns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "shotguns" } %>
-    <%= link_to "Sniper Rifles", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sniper-rifles" } %>
-    <%= link_to "Pistols", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "pistols" } %>
+    <hr><br><br>
+  </div>
 
-    <%= render "sort/filter", active: "weapons" %>
-  </aside>
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <%= link_to "Assault Rifles", "#", class: "item-columns__sidebar-item item-columns__sidebar-item--is-active", data: { action: "item-columns-change-category", target: "assault-rifles" } %>
+      <%= link_to "Sub Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sub-machine-guns" } %>
+      <%= link_to "Light Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "light-machine-guns" } %>
+      <%= link_to "Shotguns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "shotguns" } %>
+      <%= link_to "Sniper Rifles", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sniper-rifles" } %>
+      <%= link_to "Pistols", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "pistols" } %>
 
-  <%= render "pages/item_columns/weapons", block_id: "assault-rifles", items: assault_rifles, is_active: true %>
-  <%= render "pages/item_columns/weapons", block_id: "sub-machine-guns", items: sub_machine_guns %>
-  <%= render "pages/item_columns/weapons", block_id: "light-machine-guns", items: light_machine_guns %>
-  <%= render "pages/item_columns/weapons", block_id: "shotguns", items: shotguns %>
-  <%= render "pages/item_columns/weapons", block_id: "sniper-rifles", items: sniper_rifles %>
-  <%= render "pages/item_columns/weapons", block_id: "pistols", items: pistols %>
+      <%= render "sort/filter", active: "weapons" %>
+    </aside>
+
+    <%= render "pages/item_columns/weapons", block_id: "assault-rifles", items: assault_rifles, is_active: true %>
+    <%= render "pages/item_columns/weapons", block_id: "sub-machine-guns", items: sub_machine_guns %>
+    <%= render "pages/item_columns/weapons", block_id: "light-machine-guns", items: light_machine_guns %>
+    <%= render "pages/item_columns/weapons", block_id: "shotguns", items: shotguns %>
+    <%= render "pages/item_columns/weapons", block_id: "sniper-rifles", items: sniper_rifles %>
+    <%= render "pages/item_columns/weapons", block_id: "pistols", items: pistols %>
+  </main>
 </div>

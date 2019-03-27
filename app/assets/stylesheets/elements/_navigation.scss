@@ -1,204 +1,27 @@
-@keyframes move-in-navigation {
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
 .navigation {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  padding-left: 18px;
-  margin: 0 auto 30px;
 
   a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: ($margin / 3) $margin;
-    margin-left: -#{ $margin / 2 };
-    margin-bottom: $margin / 6;
-    width: $margin * 4;
-    background: var(--primary-dark);
+    font-size: 15px;
+    color: rgba($white, 0.25);
+    transition: color 250ms ease;
+
+    &:hover {
+      color: rgba($white, 1);
+    }
+  }
+
+  > a,
+  .dropdown > a {
+    margin-right: 30px;
     text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-align: center;
-    font-size: 10px;
-    clip-path: polygon(calc(100% - #{ $margin }) 0, 100% 100%, #{ $margin } 100%, 0 0);
-    transition-property: background, color;
-    transition-duration: 250ms;
-
-    @media screen and (min-width: 420px) {
-      width: $margin * 5;
-      margin-left: -30px;
-      font-size: 12px;
-    }
-
-    @supports (-ms-ime-align:auto) {
-      margin-left: 0;
-    }
-
-    &:hover,
-    &:active,
-    &.active {
-      background: $red;
-      color: $white;
-    }
   }
 
-  &--mobile-floating {
-    @media (max-width: 639px) {
-      display: none;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 80%;
-      max-width: 300px;
-      height: 100vh;
-      padding: ($margin * 2) ($margin / 4) 0;
-      background: var(--primary-dark);
-      z-index: 100;
-      box-shadow: 0 0 30px rgba($black, .35);
-      overflow-y: auto;
-      animation: move-in-navigation 300ms;
-
-      &.active {
-        display: block;
-      }
-
-      a {
-        display: block;
-        clip-path: none;
-        width: 100%;
-        margin: 0;
-        padding: ($margin / 4) ($margin / 2);
-        text-align: right;
-        font-weight: 300;
-        border-bottom: 0;
-
-        &:not([href]) {
-          border-top: 1px solid var(--border-color);
-          font-weight: 700;
-          font-size: 14px;
-          padding-top: $margin / 2;
-          margin-top: ($margin / 2) - ($margin / 4);
-
-          &:hover,
-          &:active {
-            background: var(--primary-dark);
-            color: var(--text-color);
-            cursor: auto;
-          }
-        }
-      }
-
-      .dropdown > a {
-        &::after {
-          display: none;
-        }
-      }
-
-      .dropdown__content {
-        display: block;
-        position: relative;
-        max-width: auto;
-        padding-top: 0;
+  .dropdown {
+    &:hover {
+      > a {
+        color: rgba($white, 1);
       }
     }
-  }
-
-  &--footer {
-    margin: $margin 0 $margin;
-
-    @media (min-width: 640px) {
-      margin: ($margin * 2) 0 ($margin * 2);
-    }
-  }
-}
-
-.mobile-navigation-trigger {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 30px;
-  color: var(--title-color);
-  z-index: 200;
-  background: var(--primary-dark);
-  cursor: pointer;
-
-  @media (min-width: 640px) {
-    display: none;
-  }
-}
-
-.dropdown {
-  position: relative;
-
-  > a {
-    cursor: pointer;
-
-    svg {
-      width: 12px;
-      height: 13px;
-      margin-bottom: -2px;
-      margin-left: 3px;
-    }
-  }
-
-  &:hover,
-  &:active {
-    > .dropdown__content {
-      display: block;
-    }
-  }
-}
-
-.dropdown__content {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  padding-top: calc(2em + #{$margin / 3} + #{$margin / 8} + #{$margin / 6});
-  z-index: 10;
-  width: 190px;
-  transform: translate(calc(-50% - 15px));
-
-  a {
-    padding: 6px 0;
-    text-decoration: none;
-    text-align: center;
-  }
-}
-
-.dropdown__inner {
-  background: var(--primary);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.53);
-  padding: 20px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  &::before {
-    position: absolute;
-    left: 50%;
-    top: -8px;
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 9px solid var(--primary);
-    transform: translate(-50%);
   }
 }
