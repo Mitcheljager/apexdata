@@ -1,7 +1,12 @@
 .item-columns {
   display: grid;
   grid-template: "sidebar content";
-  grid-template-columns: #{ 100% / 3 * 1 } #{ 100% / 3 * 2 };
+  grid-template-columns: 50% 50%;
+  overflow-x: hidden;
+
+  @media (min-width: 1100px) {
+    grid-template-columns: #{ 100% / 3 * 1 } #{ 100% / 3 * 2 };
+  }
 
   hr {
     margin: $margin / 2 0;
@@ -16,6 +21,10 @@
   width: 100%;
   max-width: $max-width / 3;
   padding: 0 ($margin / 4) 0 0;
+
+  @media (min-width: 1100px) {
+    max-width: $max-width / 2;
+  }
 }
 
 .item-columns__sidebar-item {
@@ -48,13 +57,20 @@
   grid-area: content;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   padding: 0 0 0 ($margin / 4);
+
+  @media (max-width: 1099px) {
+    width: 80vw;
+  }
 }
 
 .item-columns__center {
-  width: 50%;
+  width: calc(40vw - #{ $margin / 4 });
   padding-right: $margin / 4;
+
+  @media (min-width: 1100px) {
+    width: 50%;
+  }
 }
 
 .item-columns__item {

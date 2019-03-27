@@ -1,79 +1,83 @@
 <% is_active = is_active || false %>
 
-<div class="item-columns__content" item-columns-target="<%= block_id %>" style="<%= "display: none" if !is_active %>">
-  <nav class="item-columns__center">
-    <% items.each do |item| %>
-      <div class="item-columns__item"
-        data-action="item-columns-change-details"
-        data-columns-data="<%= item.to_json %>"
-        data-icon-source="<%= image_url "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" %>">
-        <div class="item-columns__item-name">
-          <%= item["name"] %>
-        </div>
+<% cache items do %>
+  <div class="item-columns__content" item-columns-target="<%= block_id %>" style="<%= "display: none" if !is_active %>">
+    <nav class="item-columns__center">
+      <% items.each do |item| %>
+        <div class="item-columns__item"
+          data-action="item-columns-change-details"
+          data-columns-data="<%= item.to_json %>"
+          data-icon-source="<%= image_url "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" %>">
+          <div class="item-columns__item-name">
+            <%= item["name"] %>
+          </div>
 
-        <div class="item-columns__item-extra">
-          <%= tag.div do %>
-            <%= image_tag "fire_mode/single.png", alt: "Single Fire", title: "Single Fire" if item["fire_modes"]["single"] %>
-            <%= image_tag "fire_mode/auto.png", alt: "Automatic Fire", title: "Automatic Fire" if item["fire_modes"]["auto"] %>
-            <%= image_tag "fire_mode/burst.png", alt: "Burst Fire)", title: "Burst Fire ( #{item["fire_modes"]["burst"] } Shots )" if item["fire_modes"]["burst"] %>
-          <% end if item["fire_modes"] %>
+          <div class="item-columns__item-extra">
+            <%= tag.div do %>
+              <%= image_tag "fire_mode/single.png", alt: "Single Fire", title: "Single Fire" if item["fire_modes"]["single"] %>
+              <%= image_tag "fire_mode/auto.png", alt: "Automatic Fire", title: "Automatic Fire" if item["fire_modes"]["auto"] %>
+              <%= image_tag "fire_mode/burst.png", alt: "Burst Fire)", title: "Burst Fire ( #{item["fire_modes"]["burst"] } Shots )" if item["fire_modes"]["burst"] %>
+            <% end if item["fire_modes"] %>
 
-          <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize) if item["ammo_type"] %>
-        </div>
+            <%= link_to image_tag("ammo_types/#{ item["ammo_type"] }.png", alt: item["ammo_type"].humanize + " ammo", title: item["ammo_type"].humanize + " ammo"), where_path("ammo-type", item["ammo_type"].dasherize) if item["ammo_type"] %>
+          </div>
 
-        <% image_path = asset_exists?("weapons/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
-        <div class="item-columns__item-background">
-          <picture>
-            <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
-            <source srcset="<%= image_url "weapons/#{ image_path }.jpg" %>" type="image/jpeg">
-            <%= image_tag "weapons/#{ image_path }.jpg", class: "item__image", alt: item["name"].humanize %>
-          </picture>
+          <% image_path = asset_exists?("weapons/jpg/#{ item["name"].downcase.gsub(" ", "_") }.jpg") ? "#{ item["name"].downcase.gsub(" ", "_") }" : "placeholder" %>
+          <div class="item-columns__item-background">
+            <picture>
+              <source srcset="<%= image_url "weapons/webp/small/#{ image_path }.webp" %>" type="image/webp">
+              <source srcset="<%= image_url "weapons/webp/#{ image_path }.webp" %>" type="image/webp">
+              <source srcset="<%= image_url "weapons/jpg/small/#{ image_path }.jpg" %>" type="image/jpeg">
+              <source srcset="<%= image_url "weapons/jpg/#{ image_path }.jpg" %>" type="image/jpeg">
+              <%= image_tag "weapons/jpg/#{ image_path }.jpg", class: "item__image", alt: item["name"].humanize %>
+            </picture>
+          </div>
         </div>
+      <% end %>
+    </nav>
+
+    <article class="item-columns__detail" data-role="item-columns-details">
+      <div class="item-columns__detail-title">
+        <h3 data-role="static-value" data-target="name"></h3>
+        <img src="" data-role="item-columns-detail-icon" />
       </div>
-    <% end %>
-  </nav>
 
-  <article class="item-columns__detail" data-role="item-columns-details">
-    <div class="item-columns__detail-title">
-      <h3 data-role="static-value" data-target="name"></h3>
-      <img src="" data-role="item-columns-detail-icon" />
-    </div>
-
-    <div class="item-columns__radial-graphs">
-      <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage") %>
-      <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire") %>
-    </div>
-
-    <%= render "pages/item_columns/bar_graph", target: "damage_per_second", label: "Damage per second", max: get_max_value(items, "damage_per_second") %>
-    <%= render "pages/item_columns/bar_graph", target: "headshot_damage", label: "Headshot damage", max: get_max_value(items, "headshot_damage") %>
-    <%= render "pages/item_columns/bar_graph", target: "legshot_damage", label: "Legshot damage", max: get_max_value(items, "legshot_damage") %>
-    <%= render "pages/item_columns/bar_graph", target: "damage_per_magazine", label: "Damage per mag", max: get_max_value(items, "damage_per_magazine") %>
-
-    <hr>
-
-    <%= render "pages/item_columns/static_value", target: "ammo_capacity", label: "Ammo capacity" %>
-    <%= render "pages/item_columns/static_value", target: "projectile_speed", label: "Projectile speed", identifier: "m/s" %>
-    <%= render "pages/item_columns/static_value", target: "tactical_reload", label: "Tactical reload", identifier: "s" %>
-    <%= render "pages/item_columns/static_value", target: "empty_reload", label: "Empty reload", identifier: "s" %>
-    <%= render "pages/item_columns/static_value", target: "draw_time", label: "Draw time", identifier: "s" %>
-    <%= render "pages/item_columns/static_value", target: "holster_time", label: "Holster time", identifier: "s" %>
-
-    <% items.each do |item| %>
-      <div class="item-columns__detail-extra-static-content" data-extra-static-content="<%= item["name"].downcase.gsub(" ", "_") %>">
-        <% if item["available_attachments"] %>
-          <h5>Attachments</h5>
-
-          <%= render "pages/attachments_table", item: item %>
-          <small class="tiny-help">Click on the icons to see how the values would change by adding the attachment. These values are rough estimates.</small>
-        <% end %>
-
-        <% if item["spray_pattern"] %>
-          <h5>Spray pattern</h5>
-          <small class="tiny-help">The spray pattern is based on a basic weapon without attachments, shot while aiming.</small>
-
-          <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
-        <% end %>
+      <div class="item-columns__radial-graphs">
+        <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage") %>
+        <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire") %>
       </div>
-    <% end %>
-  </article>
-</div>
+
+      <%= render "pages/item_columns/bar_graph", target: "damage_per_second", label: "Damage per second", max: get_max_value(items, "damage_per_second") %>
+      <%= render "pages/item_columns/bar_graph", target: "headshot_damage", label: "Headshot damage", max: get_max_value(items, "headshot_damage") %>
+      <%= render "pages/item_columns/bar_graph", target: "legshot_damage", label: "Legshot damage", max: get_max_value(items, "legshot_damage") %>
+      <%= render "pages/item_columns/bar_graph", target: "damage_per_magazine", label: "Damage per mag", max: get_max_value(items, "damage_per_magazine") %>
+
+      <hr>
+
+      <%= render "pages/item_columns/static_value", target: "ammo_capacity", label: "Ammo capacity" %>
+      <%= render "pages/item_columns/static_value", target: "projectile_speed", label: "Projectile speed", identifier: "m/s" %>
+      <%= render "pages/item_columns/static_value", target: "tactical_reload", label: "Tactical reload", identifier: "s" %>
+      <%= render "pages/item_columns/static_value", target: "empty_reload", label: "Empty reload", identifier: "s" %>
+      <%= render "pages/item_columns/static_value", target: "draw_time", label: "Draw time", identifier: "s" %>
+      <%= render "pages/item_columns/static_value", target: "holster_time", label: "Holster time", identifier: "s" %>
+
+      <% items.each do |item| %>
+        <div class="item-columns__detail-extra-static-content" data-extra-static-content="<%= item["name"].downcase.gsub(" ", "_") %>">
+          <% if item["available_attachments"] %>
+            <h5>Attachments</h5>
+
+            <%= render "pages/attachments_table", item: item %>
+            <small class="tiny-help">Click on the icons to see how the values would change by adding the attachment. These values are rough estimates.</small>
+          <% end %>
+
+          <% if item["spray_pattern"] %>
+            <h5>Spray pattern</h5>
+            <small class="tiny-help">The spray pattern is based on a basic weapon without attachments, shot while aiming.</small>
+
+            <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
+          <% end %>
+        </div>
+      <% end %>
+    </article>
+  </div>
+<% end %>
