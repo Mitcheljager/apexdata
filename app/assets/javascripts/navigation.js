@@ -12,3 +12,12 @@ function toggleNavigation(event) {
 
   target.classList.toggle("active")
 }
+
+window.addEventListener('scroll', function() {
+  const header = document.querySelector(".header")
+  if(document.documentElement.scrollTop > 100) {
+    header.classList.add('header--small')
+  } else {
+    header.classList.remove('header--small')
+  }
+})

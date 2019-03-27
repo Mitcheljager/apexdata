@@ -1,23 +1,156 @@
 .header {
-  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: var(--primary-dark);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  z-index: 999999;
+  transition: top 250ms ease;
 
-  @media screen and (min-width: $max-width) {
-    height: 88px;
+  &--small {
+    top: -47px;
+  }
+}
+
+.header__top {
+  background: var(--secondary);
+
+  .wrapper {
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header__bottom {
+  background: var(--primary);
+
+  .wrapper {
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header__content {
+  width: calc(50% - (112px / 2) - 50px);
+
+  &--right {
+    text-align: right;
+  }
+
+  &--social-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 15px;
+      transition: color 250ms ease;
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 23px;
+    }
   }
 }
 
 .header__logo {
-  img {
-    max-width: 70px;
-    height: auto;
+  width: 112px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 
-    @media screen and (min-width: $max-width) {
-      max-width: 100%;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: -7px;
+    width: 125px;
+    height: 125px;
+    background: var(--primary);
+    border-radius: 100%;
+    z-index: -1;
+    transition: all 250ms ease;
+
+    .header--small & {
+      bottom: -28px;
+      left: -2px;
+      width: 115px;
+      height: 115px;
+    }
+  }
+}
+
+.player-form {
+  width: 100%;
+  position: relative;
+
+  input {
+    width: 100%;
+    background: darken($primary, 3%);
+    border: 0;
+    padding: 9px 125px 9px 25px;
+    border-radius: 1000px;
+    color: var(--white);
+    font-size: 15px;
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: lighten($primary, 10%);
+    }
+  }
+}
+
+.player-platforms {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  display: flex;
+}
+
+.platform__icon {
+  padding-left: 10px;
+
+  svg {
+    width: 21px;
+    height: 19px;
+    transition: color 250ms ease;
+
+    &.active {
+      color: var(--white);
+    }
+  }
+
+  &:hover {
+    svg {
+      color: var(--white);
+    }
+  }
+}
+
+.logo__image {
+  img {
+    width: 87px;
+    margin-bottom: 0;
+    transition: all 250ms ease;
+
+    .header--small & {
+      width: 47px;
+      margin-bottom: -20px;
     }
   }
 }
