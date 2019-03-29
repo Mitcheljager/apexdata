@@ -1,14 +1,16 @@
 .button {
   position: relative;
   display: inline-block;
-  padding: ($margin / 4) ($margin / 1.25);
-  font-weight: 700;
-  font-size: 11px;
+  height: $margin;
+  padding: 0 $margin / 2;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: $margin;
   text-decoration: none;
-  background: var(--border-color);
-  color: rgba($white, .6);
-  box-shadow: 3px 3px 0 var(--border-color);
-  clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
+  background: $red;
+  color: $white;
+  clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin }) 100%, 0 100%);
+  filter: drop-shadow(0px 3px 7px rgba($black, .1)) drop-shadow(0px 3px 27px rgba($black, .1));
 
   .theme-light & {
     background: var(--primary-dark);
@@ -19,7 +21,7 @@
   &:active {
     color: var(--title-color);
     border-color: $white;
-    background: var(--border-color);
+    background: darken($red, 10%);
 
     .button__tooltip {
       display: block;

@@ -12,7 +12,12 @@
   @media (min-width: 640px) {
     background: transparent;
     padding: 0;
+    margin-bottom: 0;
     clip-path: none;
+
+    [class*=item-columns--] & {
+      margin-bottom: $margin;
+    }
   }
 
   @media (min-width: 1100px) {
@@ -47,6 +52,10 @@
         display: flex;
       }
     }
+
+    .item-columns:not([class*=item-columns--]) & {
+      color: $white;
+    }
   }
 
   &:nth-child(2) {
@@ -59,6 +68,14 @@
         display: none;
       }
     }
+
+    .item-columns--viewing-items & {
+      color: $white;
+
+      @media (min-width: 640px) {
+        display: none;
+      }
+    }
   }
 
   &:nth-child(3) {
@@ -66,6 +83,7 @@
 
     .item-columns--viewing-details & {
       display: flex;
+      color: $white;
 
       @media (min-width: 640px) {
         display: none;

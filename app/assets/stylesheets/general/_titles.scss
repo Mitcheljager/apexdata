@@ -33,6 +33,10 @@ h5 {
   align-items: flex-end;
   margin: $margin * 2 0 $margin;
 
+  @media (min-width: 1100px) {
+    margin: $margin * 2 0;
+  }
+
   .items + & {
      margin: $margin * 4 0 $margin;
   }
