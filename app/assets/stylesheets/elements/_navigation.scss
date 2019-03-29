@@ -3,11 +3,11 @@
 
   a {
     font-size: 15px;
-    color: rgba($white, 0.25);
+    color: lighten($text-color, 10%);
     transition: color 250ms ease;
 
     &:hover {
-      color: rgba($white, 1);
+      color: $white;
     }
   }
 
@@ -20,7 +20,7 @@
   .dropdown {
     &:hover {
       > a {
-        color: rgba($white, 1);
+        color: $white;
       }
     }
   }

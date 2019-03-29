@@ -2,10 +2,14 @@
   <h2 class="heading__title">Shotguns</h2>
 </div>
 
-<div class="item-columns">
-  <aside class="item-columns__sidebar">
-    <%= render "sort/filter", active: "shotguns" %>
-  </aside>
+<div class="item-columns" data-item-columns-main>
+  <%= render "pages/item_columns/mobile_navigation" %>
 
-  <%= render "pages/item_columns/weapons", block_id: "shotguns", items: shotguns, is_active: true %>
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <%= render "sort/filter", active: "shotguns" %>
+    </aside>
+
+    <%= render "pages/item_columns/weapons", block_id: "shotguns", items: shotguns, is_active: true %>
+  </main>
 </div>

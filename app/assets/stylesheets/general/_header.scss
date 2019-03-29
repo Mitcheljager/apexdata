@@ -18,7 +18,7 @@
     height: 47px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 }
 
@@ -110,7 +110,7 @@
     }
 
     &::placeholder {
-      color: lighten($primary, 10%);
+      color: lighten($primary, 15%);
     }
   }
 }

@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const viewItemsElements = document.querySelectorAll("[data-action='item-columns-view-items']")
   viewItemsElements.forEach(element => element.addEventListener("click", viewingItems))
 
+  const viewItemsCategories = document.querySelectorAll("[data-action='item-columns-view-categories']")
+  viewItemsCategories.forEach(element => element.addEventListener("click", viewingCategories))
+
+  if (!detailElements.length) return
+
   if (document.body.clientWidth > 1100) document.querySelector("[data-action='item-columns-change-details']").click()
 })
 
@@ -189,12 +194,24 @@ function setActiveExtraStaticContent(parentElement, id) {
   contentElement.classList.add(activeClass)
 }
 
+function viewingCategories(event) {
+  const element = event.target.closest("[data-item-columns-main]")
+  const activeItem = document.querySelector(".item-columns__item--is-active")
+
+  element.classList.remove("item-columns--viewing-details")
+  element.classList.remove("item-columns--viewing-items")
+
+  if (activeItem) activeItem.classList.remove("item-columns__item--is-active")
+}
+
 function viewingItems(event) {
   const element = event.target.closest("[data-item-columns-main]")
+  const activeItem = document.querySelector(".item-columns__item--is-active")
 
   element.classList.remove("item-columns--viewing-details")
   element.classList.add("item-columns--viewing-items")
 
+  if (activeItem) activeItem.classList.remove("item-columns__item--is-active")
 }
 
 function viewingDetails(event) {

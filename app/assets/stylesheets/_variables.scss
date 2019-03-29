@@ -5,7 +5,7 @@ $green: #357b35;
 $primary-dark: #1d1f27;
 
 $primary: #313443;
-$secondary: #333645;
+$secondary: #363848;
 $bg-color: #262732;
 $border-color: lighten($bg-color, 10%);
 $text-color: #6d7284;
@@ -24,5 +24,7 @@ $item-transition-duration: 100ms;
 $columns-item-height: 120px;
 
 $circle-graph-thickness: 15px;
+
+$bar-graph-height: 6px;
 
 $box-shadow: 0px 3px 7px rgba($black, .1), 0px 3px 27px rgba($black, .1);

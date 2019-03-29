@@ -2,10 +2,14 @@
   <h2 class="heading__title">Light Machine Guns</h2>
 </div>
 
-<div class="item-columns">
-  <aside class="item-columns__sidebar">
-    <%= render "sort/filter", active: "light-machine-guns" %>
-  </aside>
+<div class="item-columns" data-item-columns-main>
+  <%= render "pages/item_columns/mobile_navigation" %>
 
-  <%= render "pages/item_columns/weapons", block_id: "light-machine-guns", items: light_machine_guns, is_active: true %>
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <%= render "sort/filter", active: "light-machine-guns" %>
+    </aside>
+
+    <%= render "pages/item_columns/weapons", block_id: "light-machine-guns", items: light_machine_guns, is_active: true %>
+  </main>
 </div>

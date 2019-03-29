@@ -13,6 +13,9 @@
         <%= link_to "Pistols", page_path("pistols"), class: current_page?(page_path("pistols")) ? "active" : "" %>
         <%= link_to "Shotguns", page_path("shotguns"), class: current_page?(page_path("shotguns")) ? "active" : "" %>
         <%= link_to "Sniper Rifles", page_path("sniper-rifles"), class: current_page?(page_path("sniper-rifles")) ? "active" : "" %>
+
+        <hr>
+
         <%= link_to "Grenades", page_path("grenades"), class: current_page?(page_path("grenades")) ? "active" : "" %>
         <%= link_to "Consumables", page_path("consumables"), class: current_page?(page_path("consumables")) ? "active" : "" %>
         <%= link_to "Equipment", page_path("equipment"), class: current_page?(page_path("equipment")) ? "active" : "" %>
@@ -21,8 +24,22 @@
     </div>
   </div>
 
-  <%= link_to "Legends", page_path("legends"), class: current_page?(page_path("legends")) ? "active" : "" %>
-  <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
+  <div class="dropdown">
+    <%= link_to page_path("legends") do %>
+      Legends
+      <%= inline_svg("layout/icon-dropdown.svg") %>
+    <% end %>
+
+    <div class="dropdown__content">
+      <div class="dropdown__inner">
+        <% legends = ["Bangalore", "Bloodhound", "Caustic", "Gibraltar", "Lifeline", "Mirage", "Pathfinder", "Wraith", "Octane"] %>
+
+        <% legends.each do |legend| %>
+          <%= link_to legend, legend_show_path(legend.downcase), class: current_page?(legend_show_path(legend.downcase)) ? "active" : "" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
   <div class="dropdown">
     <%= link_to "#" do %>
@@ -39,4 +56,6 @@
       </div>
     </div>
   </div>
+
+  <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
 </nav>

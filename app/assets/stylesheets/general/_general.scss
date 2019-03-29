@@ -14,7 +14,7 @@ body {
   --text-color: #{ $text-color };
   --title-color: #{ $white };
   --graph-bg: #{ darken($bg-color, 5%) };
-  --graph-color: #{ lighten($bg-color, 15%) };
+  --graph-color: #{ lighten($bg-color, 20%) };
   --primary: #{ $primary };
   --secondary: #{ $secondary };
   --white: #{ $white };
@@ -23,7 +23,7 @@ body {
   background-color: var(--bg-color);
   background-image: image_url("layout/bg-body.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% auto;
   font-family: "Raleway", sans-serif;
   font-display: auto;
   color: var(--text-color);
@@ -62,14 +62,9 @@ blockquote {
 }
 
 .wrapper {
-  max-width: $max-width + $margin;
-  padding: 0 $wrapper-padding;
+  max-width: calc(#{$max-width} + 10vw);
+  padding: 0 5vw;
   margin: 0 auto;
-
-  @media screen and (min-width: 400px) {
-    max-width: calc(#{$max-width} + 10vw);
-    padding: 0 5vw;
-  }
 
   &--no-padding {
     padding: 0;
@@ -206,6 +201,16 @@ $rarities: (
 }
 
 hr {
-  border-color: var(--border-color);
-  margin: ($margin / 5.5) 0;
+  margin: $margin / 2 0;
+  border: 0;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.medium-only {
+  display: none;
+
+  @media (min-width: 640px) and (max-width: 1099px) {
+    display: block;
+  }
 }
