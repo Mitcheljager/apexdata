@@ -1,0 +1,73 @@
+.banner {
+  height: auto;
+  width: 100%;
+  background: image_url("layout/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  padding: 25px;
+  text-decoration: none;
+  margin-top: 80px;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: 730px) {
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 60px 0 50px;
+  }
+
+  @media screen and (min-width: 1091px) {
+    height: 130px;
+    margin-top: 110px;
+  }
+
+  @media screen and (min-width: 1240px) {
+    padding: 0 100px 0 80px;
+  }
+
+  h3 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+
+    @media screen and (min-width: 1091px) {
+      font-size: 24px;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 730px) {
+      padding: 0 20px;
+    }
+
+    @media screen and (min-width: 1091px) {
+      font-size: 48px;
+    }
+  }
+
+  img {
+    margin-top: -78px;
+    width: 200px;
+    display: none;
+
+    @media screen and (min-width: 730px) {
+      display: block;
+    }
+
+    @media screen and (min-width: 1091px) {
+      margin-top: -103px;
+      width: auto;
+    }
+  }
+}
