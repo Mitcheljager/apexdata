@@ -1,6 +1,5 @@
-.items-wrapper {
+.item-columns {
   overflow-x: hidden;
-  padding-bottom: $margin;
 }
 
 .item-columns__mobile-navigation {
@@ -118,17 +117,17 @@
 
   .item-columns--viewing-items & {
     @media (max-width: 639px) {
-      transform: translateX(calc(-100% - #{ $margin / 4 }));
+      transform: translateX(calc(-100%));
     }
   }
 
   .item-columns--viewing-details & {
     @media (max-width: 1099px) {
-      transform: translateX(calc(-50% - #{ $margin / 4 }));
+      transform: translateX(calc(-50%));
     }
 
     @media (max-width: 639px) {
-      transform: translateX(calc(-200% - #{ $margin / 4 }));
+      transform: translateX(calc(-200%));
     }
   }
 }
@@ -137,7 +136,6 @@
   grid-area: sidebar;
   width: 100%;
   max-width: $max-width;
-  padding: 0 ($margin / 4) 0 0;
 
   @media (min-width: 640px) {
     max-width: $max-width / 3;
@@ -180,7 +178,6 @@
   grid-area: content;
   display: flex;
   flex-wrap: wrap;
-  padding: 0 0 0 ($margin / 4);
 
   @media (max-width: 1099px) {
     width: calc(180vw - #{ $margin / 2 });

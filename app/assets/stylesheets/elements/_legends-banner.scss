@@ -1,25 +1,30 @@
 .legends-banner {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -#{ $margin / 9 } ($margin / 2);
+  margin: 0 -#{ $margin / 8 } ($margin / 2);
 }
 
 .legends-banner__item {
+  position: relative;
   flex: 0 0 calc(100% / 3);
   width: calc(100% / 3);
   max-width: 100%;
-  max-height: 250px;
-  padding: 0 #{ $margin / 9 } ($margin / 9);
+  max-height: 200px;
+  padding: 0 #{ $margin / 8 };
+  margin-bottom: ($margin / 8 * 2);
+  box-shadow: 0px 3px 7px rgba($black, .1), 0px 3px 27px rgba($black, .1);
   overflow: hidden;
+  transition: transform 100ms;
 
   @media (min-width: 560px) {
-    flex: 0 0 calc(100% / 4);
-    width: calc(100% / 4);
+    flex: 0 0 calc(100% / 5);
+    width: calc(100% / 5);
   }
 
   @media (min-width: 768px) {
     flex: 0 0 calc(100% / 6);
     width: calc(100% / 6);
+    max-height: 250px;
   }
 
   @media (min-width: $max-width) {
@@ -29,17 +34,49 @@
 
   &:hover,
   &:active {
-    .item__content {
-      border-color: rgba($white, .2);
+    transform: scale(1.05);
 
-      &::before,
-      &::after {
-        opacity: 1;
-      }
+    .legends-banner__button {
+      background: $red;
+      color: $white;
     }
   }
 }
 
 .legends-banner__image {
   width: 100%;
+}
+
+.legends-banner__content {
+  position: absolute;
+  bottom: 0;
+  left: $margin / 8;
+  padding: $margin / 4;
+  width: calc(100% - #{ $margin / 4 });
+  color: $white;
+  font-size: 12px;
+  line-height: 1em;
+  background: var(--secondary);
+}
+
+.legends-banner__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: $margin / 4;
+  height: $margin / 1.25;
+  width: $margin / 1.25;
+  font-size: $margin;
+  color: var(--secondary);
+  background: $white;
+  border-radius: 50%;
+  transform: translateY(calc(-100% - #{ $margin / 4 }));
+  transition-property: background-color, color;
+  transition-duration: 100ms;
+
+  @media (min-width: 640px) {
+    transform: translateY(-50%);
+  }
 }
