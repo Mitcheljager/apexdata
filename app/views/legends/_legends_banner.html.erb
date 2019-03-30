@@ -2,7 +2,11 @@
   <% legends_list.each do |legend| %>
     <%= link_to legend_show_path(legend.downcase), class: "legends-banner__item" do %>
       <% if asset_exists?("legends/#{ legend.downcase }/banner.jpg")  %>
-        <%= image_tag "legends/#{ legend.downcase }/banner.jpg", class: "legends-banner__image", alt: legend %>
+        <picture>
+          <source srcset="<%= image_url "legends/#{ legend.downcase }/banner.webp" %>" type="image/webp">
+          <source srcset="<%= image_url "legends/#{ legend.downcase }/banner.jpg" %>" type="image/jpeg">
+          <%= image_tag "legends/#{ legend.downcase }/banner.jpg", class: "legends-banner__image", alt: legend %>
+        </picture>
       <% end %>
 
       <div class="legends-banner__content">

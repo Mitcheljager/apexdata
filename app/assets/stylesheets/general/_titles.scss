@@ -46,7 +46,7 @@ h5 {
     content: "";
     height: 2px;
     width: 100%;
-    max-width: calc(#{ $max-width / 3 * 2 } - #{ $margin / 4 });
+    max-width: $max-width / 3 * 2;
     margin-left: auto;
     background: var(--border-color);
   }

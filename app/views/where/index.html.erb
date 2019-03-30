@@ -2,14 +2,18 @@
   <h2 class="heading__title"><%= params[:value].humanize %> <% if @items.many? %><small>(<%= @items.count %>)</small><% end %></h2>
 </div>
 
-<div class="item-columns">
-  <aside class="item-columns__sidebar">
-    <%= render "sort/filter", active: params[:items] %>
-  </aside>
+<div class="item-columns" data-item-columns-main>
+  <%= render "pages/item_columns/mobile_navigation" %>
 
-  <% if @items.any? %>
-    <%= render "pages/item_columns/weapons", block_id: "sorted", items: @items, is_active: true %>
-  <% else %>
-    Nothing found
-  <% end %>
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <%= render "sort/filter", active: params[:items] %>
+    </aside>
+
+    <% if @items.any? %>
+      <%= render "pages/item_columns/weapons", block_id: "sorted", items: @items, is_active: true %>
+    <% else %>
+      Nothing found
+    <% end %>
+  </main>
 </div>

@@ -51,7 +51,7 @@
   position: absolute;
   bottom: 0;
   left: $margin / 8;
-  padding: $margin / 4;
+  padding: $margin / 3 $margin / 4;
   width: calc(100% - #{ $margin / 4 });
   color: $white;
   font-size: 12px;
@@ -73,7 +73,7 @@
   background: $white;
   border-radius: 50%;
   transform: translateY(calc(-100% - #{ $margin / 4 }));
-  transition-property: background-color, color;
+  transition-property: background, color;
   transition-duration: 100ms;
 
   @media (min-width: 640px) {
