@@ -12,8 +12,8 @@
   max-height: 200px;
   padding: 0 #{ $margin / 8 };
   margin-bottom: ($margin / 8 * 2);
-  box-shadow: 0px 3px 7px rgba($black, .1), 0px 3px 27px rgba($black, .1);
   overflow: hidden;
+  filter: drop-shadow(0px 3px 7px rgba($black, .1)) drop-shadow(0px 3px 27px rgba($black, .05));
   transition: transform 100ms;
 
   @media (min-width: 560px) {

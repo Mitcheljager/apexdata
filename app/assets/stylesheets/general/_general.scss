@@ -14,7 +14,7 @@ body {
   --text-color: #{ $text-color };
   --title-color: #{ $white };
   --graph-bg: #{ darken($bg-color, 5%) };
-  --graph-color: #{ lighten($bg-color, 20%) };
+  --graph-color: #{ $secondary };
   --primary: #{ $primary };
   --secondary: #{ $secondary };
   --white: #{ $white };
