@@ -20,7 +20,7 @@
     height: 47px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }
 
@@ -89,6 +89,23 @@
       left: -2px;
       width: 115px;
       height: 115px;
+    }
+  }
+}
+
+.header__logo-top {
+  font-size: 12px;
+  font-weight: 300;
+  color: lighten($text-color, 15%);
+
+  a {
+    font-size: 16px;
+    color: lighten($text-color, 35%);
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $white;
     }
   }
 }
