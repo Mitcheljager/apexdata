@@ -39,7 +39,7 @@
   width: 200px;
   background: var(--primary-dark);
   border: 1px solid var(--border-color);
-  max-height: calc(5em + #{$margin});
+  max-height: calc(50vh);
   overflow: auto;
   margin-top: -100%;
   transform: translateX(-5px) translateY(-110%);

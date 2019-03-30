@@ -3,6 +3,8 @@
 
   > a {
     cursor: pointer;
+    position: relative;
+    z-index: 15;
 
     svg {
       width: 12px;

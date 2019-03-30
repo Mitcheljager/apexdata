@@ -214,3 +214,11 @@ hr {
     display: block;
   }
 }
+
+.top-offset {
+  padding-top: $margin;
+
+  @media (min-width: 640px) {
+    padding-top: $margin * 2;
+  }
+}

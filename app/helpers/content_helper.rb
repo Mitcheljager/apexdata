@@ -49,6 +49,10 @@ module ContentHelper
     YAML.load(File.read(Rails.root.join("config/content", "legends.yml")))
   end
 
+  def legends_list
+    ["Bangalore", "Bloodhound", "Caustic", "Gibraltar", "Lifeline", "Mirage", "Pathfinder", "Wraith", "Octane"]
+  end
+
   def legend(name)
     legends.select { |legend| legend["name"].parameterize.downcase == name.parameterize.downcase }.first
   end

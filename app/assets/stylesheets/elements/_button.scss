@@ -2,15 +2,17 @@
   position: relative;
   display: inline-block;
   height: $margin;
-  padding: 0 $margin / 2;
+  padding: 0 $margin * 1.5 0 $margin / 2;
   font-weight: 300;
   font-size: 16px;
   line-height: $margin;
   text-decoration: none;
-  background: $red;
+  background: linear-gradient(135deg, $red 50%, lighten($red, 10%) 100%);
+  border-bottom: 1px solid lighten($red, 10%);
   color: $white;
   clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin }) 100%, 0 100%);
   filter: drop-shadow(0px 3px 7px rgba($black, .1)) drop-shadow(0px 3px 27px rgba($black, .1));
+  transition: padding 100ms;
 
   .theme-light & {
     background: var(--primary-dark);
@@ -20,8 +22,9 @@
   &:hover,
   &:active {
     color: var(--title-color);
-    border-color: $white;
-    background: darken($red, 10%);
+    border-color: darken($red, 5%);
+    background: darken($red, 5%);
+    padding-left: $margin / 1.5;
 
     .button__tooltip {
       display: block;

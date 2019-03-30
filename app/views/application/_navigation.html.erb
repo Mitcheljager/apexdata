@@ -1,12 +1,13 @@
 <nav class="navigation">
   <div class="dropdown">
-    <%= link_to "#" do %>
+    <%= link_to page_path("weapons"), class: current_page?(page_path("weapons")) ? "active" : "" do %>
       Weapons & items
       <%= inline_svg("layout/icon-dropdown.svg") %>
     <% end %>
 
     <div class="dropdown__content">
       <div class="dropdown__inner">
+        <%= link_to "All", page_path("weapons"), class: current_page?(page_path("weapons")) ? "active" : "" %>
         <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
         <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
         <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
@@ -25,16 +26,15 @@
   </div>
 
   <div class="dropdown">
-    <%= link_to page_path("legends") do %>
+    <%= link_to legends_path, class: current_page?(legends_path) ? "active" : "" do %>
       Legends
       <%= inline_svg("layout/icon-dropdown.svg") %>
     <% end %>
 
     <div class="dropdown__content">
       <div class="dropdown__inner">
-        <% legends = ["Bangalore", "Bloodhound", "Caustic", "Gibraltar", "Lifeline", "Mirage", "Pathfinder", "Wraith", "Octane"] %>
-
-        <% legends.each do |legend| %>
+        <%= link_to "All", legends_path, class: current_page?(legends_path) ? "active" : "" %>
+        <% legends_list.each do |legend| %>
           <%= link_to legend, legend_show_path(legend.downcase), class: current_page?(legend_show_path(legend.downcase)) ? "active" : "" %>
         <% end %>
       </div>
@@ -42,7 +42,7 @@
   </div>
 
   <div class="dropdown">
-    <%= link_to "#" do %>
+    <%= link_to page_path("patch-notes"), class: current_page?(page_path("patch-notes")) ? "active" : "" do %>
       Patch Notes
       <%= inline_svg("layout/icon-dropdown.svg") %>
     <% end %>
