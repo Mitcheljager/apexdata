@@ -4,6 +4,14 @@
       <% if asset_exists?("legends/#{ legend.downcase }/banner.jpg")  %>
         <%= image_tag "legends/#{ legend.downcase }/banner.jpg", class: "legends-banner__image", alt: legend %>
       <% end %>
+
+      <div class="legends-banner__content">
+        <%= legend %>
+
+        <div class="legends-banner__button">
+          +
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>

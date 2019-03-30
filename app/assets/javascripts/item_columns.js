@@ -14,10 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
   const viewItemsCategories = document.querySelectorAll("[data-action='item-columns-view-categories']")
   viewItemsCategories.forEach(element => element.addEventListener("click", viewingCategories))
 
+  setColumnWidth()
+
   if (!detailElements.length) return
 
   if (document.body.clientWidth > 1100) document.querySelector("[data-action='item-columns-change-details']").click()
 })
+
+window.addEventListener("resize", setColumnWidth)
 
 function changeCategory(event) {
   event.preventDefault()
@@ -62,6 +66,7 @@ function changeDetails(event) {
   changeCircleGraphs(targetParent, data)
   changeStaticValues(targetParent, data)
   changeIcon(targetParent, this.dataset.iconSource)
+
 
   viewingDetails(event)
 }
@@ -182,7 +187,7 @@ function setActiveItem(item) {
   const currentActive = document.querySelector(`.${ activeClass }`)
   if (currentActive) currentActive.classList.remove(activeClass)
 
-  item.classList.add(activeClass)
+  setTimeout(() => {item.classList.add(activeClass)})
 }
 
 function setActiveExtraStaticContent(parentElement, id) {
@@ -219,4 +224,20 @@ function viewingDetails(event) {
 
   element.classList.remove("item-columns--viewing-items")
   element.classList.add("item-columns--viewing-details")
+}
+
+function setColumnWidth() {
+  const mainElement = document.querySelector("[data-item-columns-main]")
+  if (!mainElement) return
+  const mainElementWidth = mainElement.offsetWidth
+
+  let modifier = 1
+  if (document.body.clientWidth > 640) modifier = 2
+  if (document.body.clientWidth > 1100) modifier = 3
+
+  const elements = mainElement.querySelectorAll(".item-columns__sidebar, .item-columns__center, .item-columns__detail")
+  elements.forEach(element => element.style.width = mainElementWidth / modifier + "px")
+
+  const contentElements = mainElement.querySelectorAll(".item-columns__content")
+  contentElements.forEach(element => element.style.width = mainElementWidth / modifier * 2 + "px")
 }
