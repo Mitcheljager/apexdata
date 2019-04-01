@@ -1,9 +1,9 @@
 .circle-graph {
   position: relative;
-  width: 11vw;
-  height: 11vw;
-  max-width: 11rem;
-  max-height: 11rem;
+  width: 10vw;
+  height: 10vw;
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 .circle-graph__label {
@@ -41,7 +41,7 @@
     position: absolute;
     top: $circle-graph-thickness;
     left: $circle-graph-thickness;
-    background: $bg-color;
+    background: var(--primary);
     width: calc(100% - #{ $circle-graph-thickness * 2 });
     height: calc(100% - #{ $circle-graph-thickness * 2 });
     border-radius: 50%;

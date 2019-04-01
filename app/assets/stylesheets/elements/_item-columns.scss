@@ -319,6 +319,7 @@
   }
 
   img {
+    display: block;
     width: auto;
     height: 100%;
   }
@@ -348,6 +349,13 @@
       height: 40vw;
     }
   }
+}
+
+.item-columns__detail-content {
+  padding: $margin / 1.5;
+  background: var(--primary);
+  border: 1px solid lighten($primary, 8%);
+  border-radius: 2px;
 }
 
 .item-columns__detail-title {

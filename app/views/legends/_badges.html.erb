@@ -9,7 +9,7 @@
       <% @item["badges"].each do |badge| %>
         <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
           <% if asset_exists? "badges/#{ badge["name"].parameterize.underscore }.png" %>
-            <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" unless compact? %>
+            <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
           <% end %>
           <div>
             <span class="color-basic"><%= badge["name"] if badge["name"] %></span>
@@ -26,7 +26,7 @@
         <% badges.each do |badge| %>
           <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
             <% if asset_exists? "badges/#{ badge["name"].parameterize.underscore }.png" %>
-              <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" unless compact? %>
+              <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
             <% end %>
 
             <div>
