@@ -14,7 +14,7 @@ body {
   --text-color: #{ $text-color };
   --title-color: #{ $white };
   --graph-bg: #{ darken($bg-color, 5%) };
-  --graph-color: #{ $secondary };
+  --graph-color: #{ lighten($secondary, 10%) };
   --primary: #{ $primary };
   --secondary: #{ $secondary };
   --white: #{ $white };
@@ -77,6 +77,12 @@ blockquote {
   &--small {
     padding: 0;
     max-width: 650px;
+    margin: 0 auto;
+  }
+
+  &--medium {
+    padding: 0;
+    max-width: 950px;
     margin: 0 auto;
   }
 }

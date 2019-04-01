@@ -67,8 +67,14 @@ function changeDetails(event) {
   changeStaticValues(targetParent, data)
   changeIcon(targetParent, this.dataset.iconSource)
 
-
   viewingDetails(event)
+
+  document.dispatchEvent(new CustomEvent("changeItem", {
+    detail: {
+      name: data["name"].toLowerCase().replace(" ", "_"),
+      detailElement: targetParent
+    }
+  }))
 }
 
 function changeIcon(parent, image) {

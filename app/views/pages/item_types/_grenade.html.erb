@@ -1,40 +1,33 @@
-<% cache "#{ item["name"] }_#{ compact? }_#{ alldata? }" do %>
-  <article class="item item--compact <%= "item--extra-compact" if compact? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
-    <div class="item__content">
-      <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" }, title: "Compare other items against this. Hover over values to see the difference between the two." do %>
-        Compare
-      <% end %>
-
+<% cache "#{ item["name"] }" do %>
+  <article class="item item--compact">
+    <div class="item__content item__content--same-height">
       <div class="item__description">
-        <% if asset_exists?("grenades/#{ item["name"].downcase.gsub(" ", "_") }.png") && !compact? %>
+        <% if asset_exists?("grenades/#{ item["name"].downcase.gsub(" ", "_") }.png") %>
           <div class="item__large-icon-wrapper">
             <%= image_tag "grenades/#{ item["name"].downcase.gsub(" ", "_") }.png", class: "item__large-icon", alt: item["name"] %>
           </div>
         <% end %>
 
-        <div class="item__title heading heading--small">
-          <h3 class="heading__title">
-            <%= item["name"] %>
-          </h3>
-          <div class="heading__line"></div>
-        </div>
+        <h3 class="item__title">
+          <%= item["name"] %>
+        </h3>
 
         <div class="item__data-wrapper">
           <div class="item__main">
             <div class="columns">
               <%= tag.div class: "columns__column item__large-info" do %>
                 <span>Explosion <br> Damage</span>
-                <div data-compare-target="explosion-damage"><%= item["explosion_damage"] %></div>
+                <div><%= item["explosion_damage"] %></div>
               <% end if item["explosion_damage"] %>
 
               <%= tag.div class: "columns__column item__large-info" do %>
                 <span title="The damage this deals when throwing it straight against an enemy">Impact <br> Damage</span>
-                <div data-compare-target="impact-damage"><%= item["impact_damage"] %></div>
+                <div><%= item["impact_damage"] %></div>
               <% end if item["impact_damage"] %>
 
               <%= tag.div class: "columns__column item__large-info" do %>
                 <span>Burn <br> Damage</span>
-                <div data-compare-target="burn-damage"><%= item["burn_damage"] %></div>
+                <div><%= item["burn_damage"] %></div>
               <% end if item["burn_damage"] %>
             </div>
 
@@ -43,22 +36,26 @@
             <% end if item["description"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Explosion timer <span><div data-compare-target="explosion-timer"><%= item["explosion_timer"] %></div></span>
+              Explosion timer
+              <span><%= item["explosion_timer"] %></span>
               <% if item["explosion_timer"].is_a?(Fixnum) %><small>s</small><% end %>
             <% end if item["explosion_timer"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Effect timer <span><div data-compare-target="effect-timer"><%= item["effect_timer"] %></div></span>
+              Effect timer
+              <span><%= item["effect_timer"] %></span>
               <small>s</small>
             <% end if item["effect_timer"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              After Burn timer <span><div data-compare-target="after-burn-timer"><%= item["after_burn_timer"] %></div></span>
+              After Burn timer
+              <span><%= item["after_burn_timer"] %></span>
               <small>s</small>
             <% end if item["after_burn_timer"] %>
 
             <%= tag.div class: "item__small-info" do %>
-              Ticks per second <span><div data-compare-target="ticks-per-second"><%= item["ticks_per_second"] %></div></span>
+              Ticks per second
+              <span><%= item["ticks_per_second"] %></span>
             <% end if item["ticks_per_second"] %>
           </div>
         </div>

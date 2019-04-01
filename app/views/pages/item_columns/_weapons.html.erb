@@ -7,7 +7,8 @@
         <div class="item-columns__item"
           data-action="item-columns-change-details"
           data-columns-data="<%= item.to_json %>"
-          data-icon-source="<%= image_url "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" %>">
+          data-icon-source="<%= image_url "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" %>"
+          data-compare-source="<%= item["name"].downcase.gsub(" ", "_") %>">
           <div class="item-columns__item-name">
             <%= item["name"] %>
           </div>
@@ -41,6 +42,8 @@
         <h3 data-role="static-value" data-target="name"></h3>
         <img src="" data-role="item-columns-detail-icon" />
       </div>
+
+      <div class="button" data-action="compare">Compare others against this</div>
 
       <div class="item-columns__radial-graphs">
         <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage") %>

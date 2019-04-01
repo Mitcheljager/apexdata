@@ -1,86 +1,131 @@
+let compareData = ""
+let currentData = ""
+
 document.addEventListener("DOMContentLoaded", function() {
   const elements = document.querySelectorAll("[data-action='compare']")
 
-  elements.forEach((element) => element.removeEventListener("click", compareAgainstItem))
-  elements.forEach((element) => element.addEventListener("click", compareAgainstItem))
+  elements.forEach((element) => element.addEventListener("click", setCompareData))
+  document.addEventListener("changeItem", initiateCompare)
 })
 
-function compareAgainstItem(event) {
+function initiateCompare(event) {
+  if (compareData == "") return
+
+  setCurrentData(event.detail.name)
+  compareStaticValues(event.detail.detailElement)
+  compareBarGraph(event.detail.detailElement)
+
+  trackCompareGA(compareData["name"])
+}
+
+function setCompareData(event) {
   event.preventDefault()
 
-  removeCompareAgainst()
+  resetCompareData()
 
-  const compareItem = this.closest("[data-compare-item]")
-  const compareTargets = compareItem.querySelectorAll("[data-compare-target]")
+  const detailsElement = this.closest("[data-role='item-columns-details']")
+  const compareName = detailsElement.querySelector("[data-target='name']").innerHTML.toLowerCase().replace(" ", "_")
+  const compareElement = document.querySelector(`[data-compare-source="${ compareName }"]`)
+  compareData = JSON.parse(compareElement.dataset.columnsData)
 
-  compareItem.classList.add("item--compare-main")
+  compareElement.classList.add("item-columns__item--is-compare")
+}
 
-  compareTargets.forEach((element) => {
-    main = element.dataset.compareTarget
-    mainValue = parseFloat(element.innerHTML)
+function resetCompareData() {
+  if (compareData != "") {
+    const currentCompareElement = document.querySelector(`[data-compare-source="${ compareData.name.toLowerCase().replace(" ", "_") }"]`)
+    if (currentCompareElement) currentCompareElement.classList.remove("item-columns__item--is-compare")
+  }
 
-    const allTargets = document.querySelectorAll(`[data-compare-target="${ main }"]`)
+  const compareElements = document.querySelectorAll(".compare-element")
+  compareElements.forEach(element => element.remove())
 
-    allTargets.forEach((target) => {
-      if (target.closest("[data-compare-item]") == element.closest("[data-compare-item]")) return
+  compareData = ""
+}
 
-      const inverse = target.dataset.compareInverse ? true : false
-      const targetValue = parseFloat(target.innerHTML)
+function setCurrentData(itemName) {
+  const currentItem = document.querySelector(`[data-compare-source="${ itemName }"]`)
+  currentData = JSON.parse(currentItem.dataset.columnsData)
+}
 
-      const calculationElement = document.createElement("div")
-      calculationElement.classList.add("compare__difference")
+function compareStaticValues(detailElement) {
+  const elements = detailElement.querySelectorAll("[data-compare-static]")
 
-      if ((targetValue > mainValue && !inverse) || (targetValue < mainValue && inverse)) {
-        target.classList.add("compare-higher")
+  elements.forEach(element => {
+    const target = element.dataset.compareStatic
+    const compareDifference = getDifference(target)
+    if (compareDifference == 0) return
 
-        let difference = Math.round((targetValue - mainValue) * 100) / 100
-        difference = inverse ? difference * -1 : difference
+    let isPositive = true
+    if (Math.sign(compareDifference) == -1) isPositive = false
 
-        calculationElement.innerHTML = `${ inverse ? "-" : "+" } ${ difference }`
+    const resultElement = document.createElement("div")
+    resultElement.classList.add("compare-element")
+    if (isPositive) {
+      resultElement.innerHTML = `(+${ compareDifference })`
+      resultElement.classList.add("compare-higher")
+    } else {
+      resultElement.classList.add("compare-lower")
+      resultElement.innerHTML = `(${ compareDifference })`
+    }
 
-        target.appendChild(calculationElement)
-      } else if ((targetValue < mainValue) || (targetValue > mainValue && inverse)) {
-        target.classList.add("compare-lower")
-
-        let difference = Math.round((mainValue - targetValue) * 100) / 100
-        difference = inverse ? difference * -1 : difference
-
-        calculationElement.innerHTML = `${ inverse ? "+" : "-" } ${ difference }`
-
-        target.appendChild(calculationElement)
-      }
-    })
+    element.prepend(resultElement)
   })
-
-  showCompareAgainstItemElement(compareItem)
-  trackCompareGA(compareItem.querySelector("h3 a").innerHTML)
 }
 
-function showCompareAgainstItemElement(compareItem) {
-  const compareAgainstElement = document.createElement("div")
-  compareAgainstElement.classList.add("compare-float")
-  compareAgainstElement.innerHTML = `<span>Comparing against <strong>${ compareItem.dataset.compareItem.replace(/_/g, " ") }</strong></span>`
+function compareBarGraph(detailElement) {
+  const elements = detailElement.querySelectorAll("[data-compare-bar]")
 
-  const compareAgainstElementClose = document.createElement("div")
-  compareAgainstElementClose.classList.add("compare-float__close")
-  compareAgainstElementClose.innerHTML = "x"
-  compareAgainstElementClose.addEventListener("click", removeCompareAgainst)
+  elements.forEach(element => {
+    const target = element.dataset.compareBar
+    const compareDifference = getDifference(target)
 
-  compareAgainstElement.appendChild(compareAgainstElementClose)
+    const barElement = element.closest("[data-role='bar-graph']")
+    const lineElement = barElement.querySelector("[data-role='bar-graph-line']")
+    lineElement.innerHTML = ""
 
-  document.body.appendChild(compareAgainstElement)
+    if (compareDifference == 0) return
+
+    let isPositive = true
+    if (Math.sign(compareDifference) == -1) isPositive = false
+
+    const maxValue = barElement.querySelector("[data-role='bar-graph-bar']").dataset.max
+    const valuePercentage = Math.abs(Math.round((compareDifference / maxValue) * 100))
+
+    const resultElement = document.createElement("div")
+    resultElement.classList.add("compare-element")
+
+    const compareBarElement = document.createElement("div")
+    compareBarElement.classList.add("bar-graph__compare")
+    compareBarElement.classList.add("compare-element")
+
+    if (isPositive) {
+      resultElement.innerHTML = `(+${ compareDifference })`
+      resultElement.classList.add("compare-higher")
+      compareBarElement.classList.add("bar-graph__compare--positive")
+    } else {
+      resultElement.classList.add("compare-lower")
+      resultElement.innerHTML = `(${ compareDifference })`
+      compareBarElement.classList.add("bar-graph__compare--negative")
+
+      const lineElementWidth = parseInt(lineElement.style.width)
+      lineElement.style.width = lineElementWidth + valuePercentage + "%"
+    }
+
+    element.prepend(resultElement)
+    lineElement.append(compareBarElement)
+    setTimeout(() => { compareBarElement.style.width = valuePercentage + "%" })
+  })
 }
 
-function removeCompareAgainst() {
-  const allTargets = document.querySelectorAll(`[data-compare-target]`)
-  const compareAgainstElement = document.querySelector(".compare-float")
-  const currentCompareMain = document.querySelector(".item--compare-main")
-  const differenceElements = document.querySelectorAll(".compare__difference")
+function getDifference(target) {
+  const currentValue = currentData[target]
+  const compareValue = compareData[target]
 
-  if (currentCompareMain) currentCompareMain.classList.remove("item--compare-main")
-  if (allTargets) allTargets.forEach((target) => target.classList.remove("compare-higher", "compare-lower"))
-  if (compareAgainstElement) compareAgainstElement.remove()
-  if (differenceElements) differenceElements.forEach((element) => element.remove())
+  let compareDifference = currentValue - compareValue
+  compareDifference = Math.round(compareDifference * 100) / 100
+
+  return compareDifference
 }
 
 function trackCompareGA(label) {

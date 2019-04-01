@@ -1,7 +1,7 @@
 .bar-graph {
   display: grid;
   grid-template: "label bar value";
-  grid-template-columns: 3fr 3fr 1fr;
+  grid-template-columns: 9fr 9fr 4fr;
   align-items: center;
   width: 100%;
   font-size: 14px;
@@ -22,6 +22,8 @@
 }
 
 .bar-graph__line {
+  display: flex;
+  justify-content: flex-end;
   width: 0;
   height: 100%;
   background: var(--graph-color);
@@ -31,7 +33,30 @@
 
 .bar-graph__value {
   grid-area: value;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
   text-align: right;
   font-weight: 700;
   color: var(--title-color);
+
+  [class^="compare-"] {
+    margin-right: .5em;
+    font-size: 11px;
+  }
+}
+
+.bar-graph__compare {
+  height: 100%;
+  width: 0;
+  clip-path: polygon($bar-graph-height 0, 100% 0, calc(100% - #{ $bar-graph-height }) 100%, 0 100%);
+  transition: width 200ms;
+
+  &--positive {
+    background: $green;
+  }
+
+  &--negative {
+    background: $red;
+  }
 }
