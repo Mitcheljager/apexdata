@@ -7,6 +7,9 @@
   transition: top 250ms;
   filter: drop-shadow(0px 3px 7px rgba($black, .1)) drop-shadow(0px 3px 27px rgba($black, .1));
 
+  @media (hover: none) and (pointer: coarse) {
+    filter: none;
+  }
 
   &--small {
     @media screen and (min-width: 992px) {
