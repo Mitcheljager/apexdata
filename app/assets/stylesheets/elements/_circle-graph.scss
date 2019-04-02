@@ -19,6 +19,13 @@
     margin: 0;
     font-weight: 700;
   }
+
+  [class^="compare-"] {
+    font-size: 13px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .circle-graph__graph {

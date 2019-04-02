@@ -44,6 +44,8 @@ function changeCategory(event) {
   if (document.body.clientWidth > 1100) targetElement.querySelector("[data-action='item-columns-change-details']").click()
 
   viewingItems(event)
+
+  document.dispatchEvent(new CustomEvent("changeCategory"))
 }
 
 function changeDetails(event) {
@@ -58,6 +60,8 @@ function changeDetails(event) {
 
   const targetParent = this.closest("[item-columns-target]").querySelector("[data-role='item-columns-details']")
   if (targetParent.style.display != "block") targetParent.style.display = "block"
+
+  if (this.classList.contains("item-columns__item--is-active")) return
 
   setActiveItem(this)
   setActiveExtraStaticContent(targetParent, data["name"].toLowerCase().replace(" ", "_"))

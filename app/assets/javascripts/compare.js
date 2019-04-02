@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   elements.forEach((element) => element.addEventListener("click", setCompareData))
   document.addEventListener("changeItem", initiateCompare)
+  document.addEventListener("changeCategory", resetCompareData)
 })
 
 function initiateCompare(event) {
@@ -14,6 +15,7 @@ function initiateCompare(event) {
   setCurrentData(event.detail.name)
   compareStaticValues(event.detail.detailElement)
   compareBarGraph(event.detail.detailElement)
+  compareCircleGraph(event.detail.detailElement)
 
   trackCompareGA(compareData["name"])
 }
@@ -39,6 +41,9 @@ function resetCompareData() {
 
   const compareElements = document.querySelectorAll(".compare-element")
   compareElements.forEach(element => element.remove())
+
+  const circleGraphElements = document.querySelectorAll("[data-role='circle-graph-bar']")
+  if (circleGraphElements.length) circleGraphElements.forEach(element => element.style.background = "")
 
   compareData = ""
 }
@@ -118,6 +123,55 @@ function compareBarGraph(detailElement) {
   })
 }
 
+function compareCircleGraph(detailElement) {
+  const elements = detailElement.querySelectorAll("[data-compare-circle]")
+
+  elements.forEach(element => {
+    const target = element.dataset.compareCircle
+    const compareDifference = getDifference(target)
+
+    const graphElement = element.closest("[data-role='circle-graph']")
+    const barElement = graphElement.querySelector("[data-role='circle-graph-bar']")
+    barElement.style.background = null
+
+    if (compareDifference == 0) {
+      barElement.style.setProperty("--compare-value", null)
+      return
+    }
+
+    let isPositive = true
+    if (Math.sign(compareDifference) == -1) isPositive = false
+
+    const maxValue = barElement.dataset.max
+    const valuePercentage = Math.abs(Math.round((currentData[target] / maxValue) * 100))
+    const compareValuePercentage = Math.abs(Math.round((compareData[target] / maxValue) * 100))
+
+    const resultElement = document.createElement("div")
+    resultElement.classList.add("compare-element")
+
+    if (isPositive) {
+      resultElement.innerHTML = `(+${ compareDifference })`
+      resultElement.classList.add("compare-higher")
+
+      barElement.style.background = `conic-gradient(var(--graph-color) ${ compareValuePercentage }%,
+                                          var(--green) ${ compareValuePercentage }%,
+                                          var(--green) var(--compare-value),
+                                          var(--graph-bg) 0%)`
+    } else {
+      resultElement.innerHTML = `(${ compareDifference })`
+      resultElement.classList.add("compare-lower")
+
+      barElement.style.background = `conic-gradient(var(--graph-color) var(--compare-value),
+                                          var(--red) var(--compare-value),
+                                          var(--red) ${ compareValuePercentage }%,
+                                          var(--graph-bg) 0%)`
+    }
+    
+    intervalCircleGraphCompare(compareValuePercentage, valuePercentage - compareValuePercentage, valuePercentage, barElement)
+    element.append(resultElement)
+  })
+}
+
 function getDifference(target) {
   const currentValue = currentData[target]
   const compareValue = compareData[target]
@@ -126,6 +180,35 @@ function getDifference(target) {
   compareDifference = Math.round(compareDifference * 100) / 100
 
   return compareDifference
+}
+
+function intervalCircleGraphCompare(value, starterStep, endValue, element) {
+  const transitionDuration = 200
+  const fps = 20
+  const interval = transitionDuration / fps
+  let step = starterStep / interval
+  let currentStep = value
+
+  const currentVar = parseInt(element.style.getPropertyValue("--compare-value"))
+  if (currentVar) {
+    currentStep = currentVar
+    step = (endValue - currentVar) / interval
+  } else {
+    element.style.setProperty("--compare-value", value + "%")
+  }
+
+  let iteration = 0
+  const intervalTimer = setInterval(() => {
+    iteration++
+    currentStep = currentStep + step
+
+    element.style.setProperty("--compare-value", currentStep + "%")
+
+    if (iteration == interval) {
+      element.style.setProperty("--compare-value", endValue + "%")
+      clearInterval(intervalTimer)
+    }
+  }, interval)
 }
 
 function trackCompareGA(label) {
