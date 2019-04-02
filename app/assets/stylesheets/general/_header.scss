@@ -9,12 +9,19 @@
 
 
   &--small {
-    top: -47px;
+    @media screen and (min-width: 992px) {
+      top: -47px;
+    }
   }
 }
 
 .header__top {
   background: var(--secondary);
+  display: none;
+
+  @media screen and (min-width: 992px) {
+    display: block;
+  }
 
   .wrapper {
     height: 47px;
@@ -36,7 +43,23 @@
 }
 
 .header__content {
-  width: calc(50% - (112px / 2) - 50px);
+  width: calc(50% - 50px);
+
+  @media screen and (min-width: 992px) {
+    width: calc(50% - 50px);
+  }
+
+  @media screen and (min-width: 1400px) {
+    width: calc(50% - (112px / 2) - 50px);
+  }
+
+  &--search {
+    padding-left: 50px;
+
+    @media screen and (min-width: 1400px) {
+      padding-left: 0;
+    }
+  }
 
   &--right {
     text-align: right;
@@ -75,20 +98,29 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: -15px;
-    left: -7px;
-    width: 125px;
-    height: 125px;
     background: var(--primary);
     border-radius: 100%;
     z-index: -1;
     transition: all 250ms ease;
+    bottom: -28px;
+    left: -2px;
+    width: 115px;
+    height: 115px;
+
+    @media screen and (min-width: 992px) {
+      bottom: -15px;
+      left: -7px;
+      width: 125px;
+      height: 125px;
+    }
 
     .header--small & {
-      bottom: -28px;
-      left: -2px;
-      width: 115px;
-      height: 115px;
+      @media screen and (min-width: 992px) {
+        bottom: -28px;
+        left: -2px;
+        width: 115px;
+        height: 115px;
+      }
     }
   }
 }
@@ -113,6 +145,11 @@
 .player-form {
   width: 100%;
   position: relative;
+  display: none;
+
+  @media screen and (min-width: 992px) {
+    display: block;
+  }
 
   input {
     width: 100%;
@@ -163,13 +200,20 @@
 
 .logo__image {
   img {
-    width: 87px;
-    margin-bottom: 0;
+    width: 47px;
+    margin-bottom: -20px;
     transition: all 250ms ease;
 
+    @media screen and (min-width: 992px) {
+      width: 87px;
+      margin-bottom: 0;
+    }
+
     .header--small & {
-      width: 47px;
-      margin-bottom: -20px;
+      @media screen and (min-width: 992px) {
+        width: 47px;
+        margin-bottom: -20px;
+      }
     }
   }
 }

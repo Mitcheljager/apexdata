@@ -1,8 +1,46 @@
 .navigation {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 100%;
+  max-width: 300px;
+  background: #313443;
+  height: 100vh;
+  overflow: auto;
+  z-index: 9999999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.42);
+  flex-direction: column;
+  transition: left 250ms ease;
+
+  @media screen and (min-width: 992px) {
+    position: relative;
+    width: auto;
+    max-width: inherit;
+    background: transparent;
+    height: auto;
+    overflow: inherit;
+    box-shadow: none;
+    z-index: 1;
+    left: 0;
+    flex-direction: row;
+  }
+
+  &.active {
+    left: 0;
+  }
 
   a {
     font-size: 15px;
+
+    @media screen and (min-width: 992px) {
+      font-size: 13px;
+    }
+
+    @media screen and (min-width: 1250px) {
+      font-size: 15px;
+    }
+
     color: lighten($text-color, 10%);
     transition: color 250ms ease;
 
@@ -15,10 +53,31 @@
     }
   }
 
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+    }
+  }
+
   > a,
   .dropdown > a {
-    margin-right: 30px;
+    margin-right: 0;
     text-decoration: none;
+    padding: 20px;
+    color: var(--white);
+
+    @media screen and (min-width: 992px) {
+      margin-right: 13px;
+      padding: 0;
+      color: lighten($text-color, 10%);
+    }
+
+    @media screen and (min-width: 1250px) {
+      margin-right: 30px;
+    }
   }
 
   .dropdown {
@@ -27,5 +86,32 @@
         color: $white;
       }
     }
+  }
+}
+
+.navigation-close {
+  display: block;
+  padding: 20px;
+  cursor: pointer;
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+
+  svg {
+    width: 20px;
+  }
+}
+
+.navigation-open {
+  display: block;
+  cursor: pointer;
+
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+
+  svg {
+    width: 20px;
   }
 }
