@@ -1,4 +1,7 @@
 <nav class="navigation">
+  <div class="navigation-close">
+    <%= inline_svg("layout/close.svg") %>
+  </div>
   <div class="dropdown">
     <%= link_to page_path("weapons"), class: current_page?(page_path("weapons")) ? "active" : "" do %>
       Weapons & items
