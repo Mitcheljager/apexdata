@@ -32,7 +32,11 @@ body {
   font-weight: 300;
   max-width: 100%;
   overflow-x: hidden;
-  padding-top: 110px;
+  padding-top: 63px;
+
+  @media screen and (min-width: 992px) {
+    padding-top: 110px;
+  }
 
   &.theme-light {
     --primary-dark: #DEDEDE;
@@ -42,6 +46,10 @@ body {
     --title-color: #212121;
 
     background-image: image_url("bg-pattern-theme-light.jpg");
+  }
+
+  &.menu {
+    overflow: hidden;
   }
 }
 
