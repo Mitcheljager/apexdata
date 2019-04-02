@@ -224,6 +224,20 @@
     z-index: 1;
   }
 
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $margin * 1.25;
+    height: $margin * 1.25;
+    background: $purple image-url("icons/icon-compare.png") no-repeat;
+    background-position: $margin / 10 $margin / 10;
+    background-size: 20px;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
+
   &--is-active,
   &--is-compare {
     &:hover .item-columns__item-background::after,
@@ -233,6 +247,10 @@
   }
 
   &--is-compare {
+    &::after {
+      display: block;
+    }
+    
     &:hover .item-columns__item-background::after,
     .item-columns__item-background::after {
       background: $purple;
