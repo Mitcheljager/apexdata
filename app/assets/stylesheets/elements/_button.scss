@@ -13,11 +13,6 @@
   clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin }) 100%, 0 100%);
   transition: padding 100ms;
 
-  .theme-light & {
-    background: var(--primary-dark);
-    color: var(--text-color);
-  }
-
   &:hover,
   &:active {
     color: var(--title-color);
@@ -31,18 +26,18 @@
   }
 
   &--small {
-    padding: .25em .5em;
-    font-size: 12px;
+    height: $margin / 1.25;
+    padding: 0 $margin * 1.25 0 $margin / 4;
     border-color: var(--border-color);
     background-color: var(--border-color);
     box-shadow: none;
-    clip-path: none;
-    font-weight: 300;
+    font-size: 12px;
+    line-height: $margin / 1.25;
+    clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin / 1.25 }) 100%, 0 100%);
 
-    .theme-light & {
-      border-color: var(--bg-color);
-      background-color: var(--bg-color);
-      color: var(--text-color);
+    &:hover,
+    &:active {
+      padding-left: $margin / 2;
     }
   }
 
