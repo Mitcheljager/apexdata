@@ -28,7 +28,7 @@
 }
 
 .dropdown__content {
-  display: flex;
+  display: block;
   position: relative;
   left: 0;
   top: 0;
@@ -61,13 +61,14 @@
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.53);
   padding: 0 20px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
+  display: block;
   position: relative;
   width: 100%;
   margin-top: -10px;
 
   @media screen and (min-width: 992px) {
+    display: flex;
+    flex-direction: column;
     width: auto;
     padding: 20px;
     margin-top: 0;
