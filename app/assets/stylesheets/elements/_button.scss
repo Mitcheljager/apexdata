@@ -12,6 +12,7 @@
   color: $white;
   clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin }) 100%, 0 100%);
   transition: padding 100ms;
+  cursor: pointer;
 
   &:hover,
   &:active {
@@ -37,7 +38,7 @@
 
     &:hover,
     &:active {
-      padding-left: $margin / 2;
+      padding-left: $margin / 2.5;
     }
   }
 
@@ -62,10 +63,38 @@
     }
   }
 
+  &--compare {
+    background: $purple;
+    display: inline-flex;
+    align-items: center;
+
+    &:not([disabled]):hover,
+    &:not([disabled]):active {
+      background: darken($purple, 5%);
+    }
+
+    &[disabled] {
+      opacity: .5;
+      cursor: default;
+
+      &:hover,
+      &:active {
+        background: $purple;
+        padding-left: $margin / 4;
+      }
+    }
+  }
+
   &--full-width {
     width: 100%;
     text-align: center;
     clip-path: polygon(calc(100% - #{$margin}) 0, 100% 100%, #{$margin} 100%, 0 0);
+  }
+
+  img,
+  svg {
+    display: block;
+    margin-right: 1em;
   }
 }
 

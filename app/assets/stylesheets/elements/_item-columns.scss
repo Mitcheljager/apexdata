@@ -237,8 +237,8 @@
     width: $margin * 1.25;
     height: $margin * 1.25;
     background: $purple image-url("icons/icon-compare.png") no-repeat;
-    background-position: $margin / 10 $margin / 10;
-    background-size: 20px;
+    background-position: $margin / 6 $margin / 5;
+    background-size: 16px;
     clip-path: polygon(0 0, 0 100%, 100% 0);
   }
 
@@ -393,7 +393,28 @@
 }
 
 .item-columns__compare-actions {
-  margin-bottom: $margin / 1.5;
+  margin-bottom: $margin;
+  font-size: 12px;
+
+  .compare-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: $margin / 8;
+
+    a {
+      display: block;
+      margin-left: .5em;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        color: $white;
+      }
+    }
+  }
 }
 
 .item-columns__radial-graphs {

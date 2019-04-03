@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const viewItemsCategories = document.querySelectorAll("[data-action='item-columns-view-categories']")
   viewItemsCategories.forEach(element => element.addEventListener("click", viewingCategories))
 
+  document.addEventListener("setCompare", viewingItems)
+
   setColumnWidth()
 
   if (!detailElements.length) return
@@ -220,7 +222,12 @@ function viewingCategories(event) {
 }
 
 function viewingItems(event) {
-  const element = event.target.closest("[data-item-columns-main]")
+  let element = ""
+  if (event.detail.element) {
+    element = event.detail.element
+  } else {
+    element = event.target.closest("[data-item-columns-main]")
+  }
   const activeItem = document.querySelector(".item-columns__item--is-active")
 
   element.classList.remove("item-columns--viewing-details")

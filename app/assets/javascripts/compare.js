@@ -16,6 +16,7 @@ function initiateCompare(event) {
   compareStaticValues(event.detail.detailElement)
   compareBarGraph(event.detail.detailElement)
   compareCircleGraph(event.detail.detailElement)
+  setCompareButton(event.detail.detailElement)
 
   trackCompareGA(compareData["name"])
 }
@@ -31,6 +32,28 @@ function setCompareData(event) {
   compareData = JSON.parse(compareElement.dataset.columnsData)
 
   compareElement.classList.add("item-columns__item--is-compare")
+
+  const compareActionsElement = detailsElement.querySelector("[data-role='compare-actions']")
+
+  const compareActionsTextElement = document.createElement("div")
+  compareActionsTextElement.classList.add("compare-element")
+  compareActionsTextElement.innerHTML = `Currently comparing against: <strong>${ compareData.name }</strong>`
+
+  const compareActionsCancelElement = document.createElement("a")
+  compareActionsCancelElement.innerHTML = `Cancel`
+  compareActionsCancelElement.addEventListener("click", resetCompareData)
+
+  compareActionsTextElement.append(compareActionsCancelElement)
+  compareActionsElement.append(compareActionsTextElement)
+
+  setCompareButton(detailsElement, true)
+
+  if (document.body.clientWidth >= 640) return
+  document.dispatchEvent(new CustomEvent("setCompare", {
+    detail: {
+      element: detailsElement.closest("[data-item-columns-main]")
+    }
+  }))
 }
 
 function resetCompareData() {
@@ -44,6 +67,9 @@ function resetCompareData() {
 
   const circleGraphElements = document.querySelectorAll("[data-role='circle-graph-bar']")
   if (circleGraphElements.length) circleGraphElements.forEach(element => element.style.background = "")
+
+  const disabledButtons = document.querySelectorAll(".item-columns__compare-actions .button[disabled]")
+  disabledButtons.forEach(element => element.removeAttribute("disabled"))
 
   compareData = ""
 }
@@ -166,7 +192,7 @@ function compareCircleGraph(detailElement) {
                                           var(--red) ${ compareValuePercentage }%,
                                           var(--graph-bg) 0%)`
     }
-    
+
     intervalCircleGraphCompare(compareValuePercentage, valuePercentage - compareValuePercentage, valuePercentage, barElement)
     element.append(resultElement)
   })
@@ -209,6 +235,20 @@ function intervalCircleGraphCompare(value, starterStep, endValue, element) {
       clearInterval(intervalTimer)
     }
   }, interval)
+}
+
+function setCompareButton(parentElement, toSet = undefined) {
+  const button = parentElement.querySelector(".item-columns__compare-actions .button")
+  if (toSet) {
+    button.setAttribute("disabled", toSet)
+    return
+  }
+
+  if (compareData.name == currentData.name) {
+    button.setAttribute("disabled", true)
+  } else {
+    button.removeAttribute("disabled")
+  }
 }
 
 function trackCompareGA(label) {
