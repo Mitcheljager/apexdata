@@ -37,7 +37,7 @@ function setCompareData(event) {
 
   const compareActionsTextElement = document.createElement("div")
   compareActionsTextElement.classList.add("compare-element")
-  compareActionsTextElement.innerHTML = `Currently comparing against: <strong>${ compareData.name }</strong>`
+  compareActionsTextElement.innerHTML = `Currently comparing: <strong>${ compareData.name }</strong>`
 
   const compareActionsCancelElement = document.createElement("a")
   compareActionsCancelElement.innerHTML = `Cancel`

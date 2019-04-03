@@ -5,8 +5,10 @@
 .item-columns__mobile-navigation {
   display: flex;
   margin-bottom: $margin;
-  background: var(--border-color);
   padding: 0 $margin / 2;
+  border-radius: 2px;
+  background: var(--primary);
+  border: 1px solid lighten($primary, 8%);
 
   @media (min-width: 640px) {
     background: transparent;
@@ -97,7 +99,6 @@
     line-height: $margin;
     color: var(--text-color);
     margin: 0 .25em;
-    font-weight: bold;
   }
 }
 
@@ -393,6 +394,7 @@
 }
 
 .item-columns__compare-actions {
+  position: relative;
   margin-bottom: $margin;
   font-size: 12px;
 
