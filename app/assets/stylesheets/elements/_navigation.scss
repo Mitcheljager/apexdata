@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   max-width: 300px;
   padding-bottom: $margin;
@@ -12,7 +12,7 @@
   z-index: 1000;
   box-shadow: 0 0 ($margin / 4) rgba($black, .42);
   flex-direction: column;
-  transform: translateX(-100%);
+  transform: translateX(-120%);
   transition: transform 250ms ease;
 
   @media screen and (min-width: 992px) {
@@ -38,9 +38,12 @@
     font-size: 15px;
     color: lighten($text-color, 10%);
     transition: color 250ms ease;
+    width: 100%;
+    display: block;
 
     @media screen and (min-width: 992px) {
       font-size: 13px;
+      width: auto;
     }
 
     @media screen and (min-width: 1250px) {
@@ -57,10 +60,10 @@
   }
 
   .dropdown {
-    display: flex;
-    flex-direction: column;
+    display: block;
 
     @media screen and (min-width: 992px) {
+      display: flex;
       flex-direction: row;
     }
   }
