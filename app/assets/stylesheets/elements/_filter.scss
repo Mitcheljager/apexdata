@@ -3,7 +3,7 @@
     max-width: 200px;
   }
 
-  a + & {
+  a:not(.button) + & {
     margin: $margin 0 0;
 
     @media (min-width: 640px) {

@@ -231,6 +231,12 @@ hr {
   }
 }
 
+.mobile-only {
+  @media (min-width: 640px) {
+    display: none !important;
+  }
+}
+
 .top-offset {
   padding-top: $margin;
 
