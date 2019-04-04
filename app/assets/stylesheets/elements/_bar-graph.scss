@@ -25,6 +25,7 @@
   height: $bar-graph-height;
   background: var(--graph-bg);
   clip-path: polygon($bar-graph-height 0, 100% 0, calc(100% - #{ $bar-graph-height }) 100%, 0 100%);
+  overflow: hidden;
 }
 
 .bar-graph__line {
@@ -35,6 +36,10 @@
   background: var(--graph-color);
   clip-path: polygon(0 0, 100% 0, calc(100% - #{ $bar-graph-height }) 100%, 0 100%);
   transition: width 200ms;
+
+  &.modify-full-width-placeholder {
+    width: 100% !important; // This is a placeholder and should be replaced with a proper calculation
+  }
 }
 
 .bar-graph__value {
@@ -46,13 +51,15 @@
   font-weight: 700;
   color: var(--title-color);
 
-  [class^="compare-"] {
+  [class^="compare-"],
+  [class^="modify-"] {
     margin-right: .5em;
     font-size: 11px;
   }
 }
 
-.bar-graph__compare {
+.bar-graph__compare,
+.bar-graph__modify {
   height: 100%;
   width: 0;
   clip-path: polygon($bar-graph-height 0, 100% 0, calc(100% - #{ $bar-graph-height }) 100%, 0 100%);

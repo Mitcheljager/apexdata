@@ -56,16 +56,16 @@
         <%= render "pages/item_columns/bar_graph", target: "damage_per_second", label: "Damage per second", max: get_max_value(items, "damage_per_second") %>
         <%= render "pages/item_columns/bar_graph", target: "headshot_damage", label: "Headshot damage", max: get_max_value(items, "headshot_damage") %>
         <%= render "pages/item_columns/bar_graph", target: "legshot_damage", label: "Legshot damage", max: get_max_value(items, "legshot_damage") %>
-        <%= render "pages/item_columns/bar_graph", target: "damage_per_magazine", label: "Damage per mag", max: get_max_value(items, "damage_per_magazine") %>
+        <%= render "pages/item_columns/bar_graph", target: "damage_per_magazine", label: "Damage per mag", modify_target: "ammo_increase", max: get_max_value(items, "damage_per_magazine") %>
 
         <hr>
 
         <%= render "pages/item_columns/static_value", target: "ammo_capacity", modify_target: "ammo_increase", label: "Ammo capacity" %>
-        <%= render "pages/item_columns/static_value", target: "projectile_speed", label: "Projectile speed", identifier: "m/s" %>
-        <%= render "pages/item_columns/static_value", target: "tactical_reload", label: "Tactical reload", identifier: "s" %>
-        <%= render "pages/item_columns/static_value", target: "empty_reload", label: "Empty reload", identifier: "s" %>
-        <%= render "pages/item_columns/static_value", target: "draw_time", label: "Draw time", identifier: "s" %>
-        <%= render "pages/item_columns/static_value", target: "holster_time", label: "Holster time", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "projectile_speed", modify_target: "projectile_speed", label: "Projectile speed", identifier: "m/s" %>
+        <%= render "pages/item_columns/static_value", target: "tactical_reload", modify_target: "reload_time", label: "Tactical reload", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "empty_reload", modify_target: "reload_time", label: "Empty reload", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "draw_time", modify_target: "draw_time", label: "Draw time", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "holster_time", modify_target: "draw_time", label: "Holster time", identifier: "s" %>
 
         <% items.each do |item| %>
           <div class="item-columns__detail-extra-static-content" data-extra-static-content="<%= item["name"].downcase.gsub(" ", "_") %>">
@@ -78,7 +78,7 @@
 
             <% if item["spray_pattern"] %>
               <h5>Spray pattern</h5>
-              <small class="tiny-help">The spray pattern is based on a basic weapon without attachments, shot while aiming.</small>
+              <small class="tiny-help">The spray pattern is based on a basic weapon without attachments, shot while aiming. Try adding a barrel attachment to see this pattern change.</small>
 
               <%= render "pages/spray_pattern", spray: item["spray_pattern"] %>
             <% end %>

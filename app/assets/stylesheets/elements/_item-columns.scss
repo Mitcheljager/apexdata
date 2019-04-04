@@ -62,7 +62,8 @@
   &:nth-child(2) {
     display: none;
 
-    [class*=item-columns--] & {
+    [class*=item-columns--] &,
+    .item-columns--single & {
       display: flex;
 
       @media (min-width: 640px) {

@@ -63,6 +63,17 @@
     }
   }
 
+  &--secondary {
+    background: $primary;
+    border: 0;
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--title-color);
+      background: lighten($primary, 5%);
+    }
+  }
+
   &--compare {
     background: $purple;
     display: inline-flex;

@@ -1,6 +1,6 @@
 <div class="item-columns__mobile-navigation">
   <div class="item-columns__mobile-navigation-item" data-action="item-columns-view-categories">
-    <span class="medium-only">&lt; Back to&nbsp;</span> Categories
+    <span class="medium-only">&lt; Back to&nbsp;</span> <%= defined?(first_item_overwrite) ? first_item_overwrite : "Categories" %>
   </div>
 
   <div class="item-columns__mobile-navigation-item" data-action="item-columns-view-items">
