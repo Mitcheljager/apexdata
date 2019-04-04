@@ -67,6 +67,7 @@
     background: $primary;
     border: 0;
     color: var(--text-color);
+    margin-bottom: $margin / 2;
 
     &:hover {
       color: var(--title-color);
