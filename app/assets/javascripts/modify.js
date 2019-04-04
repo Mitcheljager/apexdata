@@ -2,10 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const elements = document.querySelectorAll("[data-action='set-modifier']")
   const removeElements = document.querySelectorAll("[data-action='remove-modifier']")
 
-  elements.forEach((element) => element.removeEventListener("click", setModifier))
   elements.forEach((element) => element.addEventListener("click", setModifier))
-
-  removeElements.forEach((element) => element.removeEventListener("click", removeModifier))
   removeElements.forEach((element) => element.addEventListener("click", removeModifier))
 })
 
@@ -13,9 +10,10 @@ function setModifier(event) {
   event.preventDefault()
 
   const targets = JSON.parse(this.dataset.toModify)
+  const currentItemElement =
 
   Object.keys(targets).forEach((target) => {
-    const targetElements = this.closest(".item").querySelectorAll(`[data-modify-target="${ target }"]`)
+    const targetElements = this.closest(".item-columns__detail").querySelectorAll(`[data-modify-target="${ target }"]`)
     const rarity = this.dataset.modifyRarity
 
     targetElements.forEach((targetElement) => {
@@ -37,16 +35,15 @@ function setModifier(event) {
       if (typeof targetElement.dataset.modifyRound !== "undefined") newValue = Math.round(newValue)
 
       const modifyElement = document.createElement("span")
-      modifyElement.classList.add(`item__small-info-modify-value`)
+      modifyElement.classList.add("modify-element")
       modifyElement.classList.add(`color-${ rarity }`)
       modifyElement.innerHTML = `(${ Math.sign(newValue) == 1 ? "+" : "" }${newValue})`
 
-      targetElement.appendChild(modifyElement)
+      targetElement.prepend(modifyElement)
     })
   })
 
   changeItemIcon(this)
-  trackModifyGA(this.closest(".item").querySelector("h3 a").innerHTML)
 }
 
 function changeItemIcon(self) {

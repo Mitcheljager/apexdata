@@ -36,11 +36,7 @@ h5 {
   @media (min-width: 1100px) {
     margin: $margin * 2 0;
   }
-
-  .items + & {
-     margin: $margin * 4 0 $margin;
-  }
-
+  
   &::after {
     display: block;
     content: "";

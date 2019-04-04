@@ -1,80 +1,72 @@
 <% cache "#{ item["name"] }" do %>
-  <article class="item item--compact">
-    <div class="item__content item__content--same-height">
-      <div class="item__description">
-        <% if asset_exists?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") %>
-          <div class="item__large-icon-wrapper">
-            <%= image_tag "attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
-          </div>
-        <% end %>
-
-        <h3 class="item__title">
-          <%= item["name"] %>
-        </h3>
-
-        <div class="item__data-wrapper">
-          <div class="item__main">
-            <% if item["note"] %>
-              <em class="item__note"><%= item["note"] %></em>
-            <% end %>
-
-            <% ["basic", "rare", "epic", "legendary"].each do |rarity| %>
-              <% if item[rarity] %>
-                <%= tag.div class: "item__full-width-info" do %>
-                  <span class="color-<%= rarity %>"><%= rarity.humanize %></span>
-
-                  <%= item[rarity]["description"].html_safe %>
-                <% end if item[rarity]["description"] %>
-
-                <%= tag.div class: "item__small-info", title: "This can vary per weapon" do %>
-                Ammo Increase:
-                <span><%= item[rarity]["ammo_increase"] %></span>
-                <% end if item[rarity]["ammo_increase"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  Reload time:
-                  <span><%= item[rarity]["reload_time"] %></span>
-                <% end if item[rarity]["reload_time"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  Headshot damage multiplier:
-                  <span><%= item[rarity]["damage_multiplier"] %></span>
-                <% end if item[rarity]["damage_multiplier"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  Charge time:
-                  <span><%= item[rarity]["charge_time"] %></span>
-                <% end if item[rarity]["charge_time"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  Fire Rate Increase:
-                  <span><%= item[rarity]["fire_rate"] %></span>
-                <% end if item[rarity]["fire_rate"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  Rechamber time:
-                  <span><%= item[rarity]["rechamber_time"] %></span>
-                <% end if item[rarity]["rechamber_time"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  Draw, Holster, and Zoom time:
-                  <span><%= item[rarity]["draw_time"] %></span>
-                <% end if item[rarity]["draw_time"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  ADS time:
-                  <span><%= item[rarity]["ads"] %></span>
-                <% end if item[rarity]["ads"] %>
-
-                <%= tag.div class: "item__small-info" do %>
-                  Recoil (roughly):
-                  <span><%= item[rarity]["kick_yaw_random"] %></span>
-                <% end if item[rarity]["kick_yaw_random"] %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+  <article class="item">
+    <% if asset_exists?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") %>
+      <div class="item__large-icon-wrapper">
+        <%= image_tag "attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
       </div>
-    </div>
+    <% end %>
+
+    <h3 class="item__title">
+      <%= item["name"] %>
+    </h3>
+
+    <% if item["note"] %>
+      <em class="item__note"><%= item["note"] %></em>
+    <% end %>
+
+    <% ["basic", "rare", "epic", "legendary"].each do |rarity| %>
+      <% if item[rarity] %>
+        <%= tag.div class: "item__full-width-info" do %>
+          <span class="color-<%= rarity %>"><%= rarity.humanize %></span>
+
+          <%= item[rarity]["description"].html_safe %>
+        <% end if item[rarity]["description"] %>
+
+        <%= tag.div class: "item__small-info", title: "This can vary per weapon" do %>
+        Ammo Increase:
+        <span><%= item[rarity]["ammo_increase"] %></span>
+        <% end if item[rarity]["ammo_increase"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Reload time:
+          <span><%= item[rarity]["reload_time"] %></span>
+        <% end if item[rarity]["reload_time"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Headshot damage multiplier:
+          <span><%= item[rarity]["damage_multiplier"] %></span>
+        <% end if item[rarity]["damage_multiplier"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Charge time:
+          <span><%= item[rarity]["charge_time"] %></span>
+        <% end if item[rarity]["charge_time"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Fire Rate Increase:
+          <span><%= item[rarity]["fire_rate"] %></span>
+        <% end if item[rarity]["fire_rate"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Rechamber time:
+          <span><%= item[rarity]["rechamber_time"] %></span>
+        <% end if item[rarity]["rechamber_time"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Draw, Holster, and Zoom time:
+          <span><%= item[rarity]["draw_time"] %></span>
+        <% end if item[rarity]["draw_time"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          ADS time:
+          <span><%= item[rarity]["ads"] %></span>
+        <% end if item[rarity]["ads"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Recoil (roughly):
+          <span><%= item[rarity]["kick_yaw_random"] %></span>
+        <% end if item[rarity]["kick_yaw_random"] %>
+      <% end %>
+    <% end %>
   </article>
 <% end %>

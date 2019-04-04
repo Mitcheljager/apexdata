@@ -6,7 +6,7 @@
       <% items.each do |item| %>
         <div class="item-columns__item"
           data-action="item-columns-change-details"
-          data-columns-data="<%= item.to_json %>"
+          data-columns-data="<%= item.except("spray_pattern", "attachments_overwrite").to_json %>"
           data-icon-source="<%= image_url "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" %>"
           data-compare-source="<%= item["name"].downcase.gsub(" ", "_") %>">
           <div class="item-columns__item-name">
@@ -60,7 +60,7 @@
 
         <hr>
 
-        <%= render "pages/item_columns/static_value", target: "ammo_capacity", label: "Ammo capacity" %>
+        <%= render "pages/item_columns/static_value", target: "ammo_capacity", modify_target: "ammo_increase", label: "Ammo capacity" %>
         <%= render "pages/item_columns/static_value", target: "projectile_speed", label: "Projectile speed", identifier: "m/s" %>
         <%= render "pages/item_columns/static_value", target: "tactical_reload", label: "Tactical reload", identifier: "s" %>
         <%= render "pages/item_columns/static_value", target: "empty_reload", label: "Empty reload", identifier: "s" %>
@@ -72,7 +72,7 @@
             <% if item["available_attachments"] %>
               <h5>Attachments</h5>
 
-              <%= render "pages/attachments_table", item: item %>
+              <%= render "pages/item_columns/attachments_table", item: item %>
               <small class="tiny-help">Click on the icons to see how the values would change by adding the attachment. These values are rough estimates.</small>
             <% end %>
 

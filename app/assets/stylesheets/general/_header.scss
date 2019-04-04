@@ -5,12 +5,7 @@
   width: 100%;
   z-index: 1000;
   transition: top 250ms;
-  filter: drop-shadow(0px 3px 7px rgba($black, .1)) drop-shadow(0px 3px 27px rgba($black, .1));
-
-  @media (hover: none) and (pointer: coarse) {
-    filter: none;
-    box-shadow: 0px 3px 7px rgba($black, .15), 0px 10px 50px rgba($black, .35);
-  }
+  box-shadow: 0px 3px 7px rgba($black, .15), 0px 10px 50px rgba($black, .35);
 
   &--small {
     @media screen and (min-width: 992px) {

@@ -23,6 +23,10 @@
     background: rgba($white, .2);
   }
 
+  &[class*="border-"] {
+    background: rgba($white, .2);
+  }
+
   img {
     width: 100%;
     height: auto;
@@ -39,21 +43,10 @@
   width: 200px;
   background: var(--primary-dark);
   border: 1px solid var(--border-color);
-  max-height: 250px;
   overflow: auto;
   margin-top: -100%;
-  transform: translateX(-5px) translateY(-110%);
+  transform: translateX(calc(-50% + 1rem)) translateY(calc(-100% - #{ $margin / 2 }));
   z-index: 10;
-
-  @media (min-width: 640px) {
-    margin-left: 50%;
-    transform: translateX(-50%) translateY(-110%);
-  }
-
-  @media (min-width: $max-width) {
-    margin-top: 0;
-    transform: translateX(-50%) translateY(5px);
-  }
 
   &.active {
     display: block;

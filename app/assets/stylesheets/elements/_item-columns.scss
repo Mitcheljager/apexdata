@@ -405,6 +405,10 @@
     position: absolute;
     margin-top: $margin / 8;
 
+    strong {
+      margin-left: .25em;
+    }
+
     a {
       display: block;
       margin-left: .5em;
@@ -443,7 +447,8 @@
   font-weight: 700;
   color: var(--title-color);
 
-  [class^="compare-"] {
+  [class^="compare-"],
+  [class^="modify-"] {
     margin-right: .5em;
     font-size: 11px;
   }

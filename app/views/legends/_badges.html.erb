@@ -1,41 +1,39 @@
-<article class="item">
-  <div class="item__content item__content--same-height item__content--direction-column">
-    <div class="item__title heading heading--small">
-      <h3 class="heading__title">Badges</h3>
-      <div class="heading__line"></div>
+<article class="item item--full-width">
+  <div class="item__title heading heading--small">
+    <h3 class="heading__title">Badges</h3>
+    <div class="heading__line"></div>
+  </div>
+
+  <div class="legend__badges">
+    <% @item["badges"].each do |badge| %>
+      <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
+        <% if asset_exists? "badges/#{ badge["name"].parameterize.underscore }.png" %>
+          <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
+        <% end %>
+        <div>
+          <span class="color-basic"><%= badge["name"] if badge["name"] %></span>
+          <small class="no-text-transform"><%= badge["desc"] if badge["desc"] %></small>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="legend__toggle-button">
+      <%= link_to "Toggle all badges", "#", class: "button", data: { action: "toggle", target: "badges" } %>
     </div>
 
-    <div class="legend__badges">
-      <% @item["badges"].each do |badge| %>
+    <div data-role="togglable" data-is="badges" style="display: none">
+      <% badges.each do |badge| %>
         <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
           <% if asset_exists? "badges/#{ badge["name"].parameterize.underscore }.png" %>
             <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
           <% end %>
+
           <div>
             <span class="color-basic"><%= badge["name"] if badge["name"] %></span>
             <small class="no-text-transform"><%= badge["desc"] if badge["desc"] %></small>
           </div>
         </div>
       <% end %>
-
-      <div class="legend__toggle-button">
-        <%= link_to "Toggle all badges", "#", class: "button", data: { action: "toggle", target: "badges" } %>
-      </div>
-
-      <div data-role="togglable" data-is="badges" style="display: none">
-        <% badges.each do |badge| %>
-          <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-            <% if asset_exists? "badges/#{ badge["name"].parameterize.underscore }.png" %>
-              <%= image_tag "badges/#{ badge["name"].parameterize.underscore }.png", alt: "#{ badge["name"] }" %>
-            <% end %>
-
-            <div>
-              <span class="color-basic"><%= badge["name"] if badge["name"] %></span>
-              <small class="no-text-transform"><%= badge["desc"] if badge["desc"] %></small>
-            </div>
-          </div>
-        <% end %>
-      </div>
     </div>
   </div>
 </article>
