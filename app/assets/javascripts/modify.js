@@ -40,7 +40,7 @@ function setModifier(event) {
       const modifyElement = document.createElement("span")
       modifyElement.classList.add("modify-element")
       modifyElement.classList.add(`color-${ rarity }`)
-      modifyElement.innerHTML = `(${ Math.sign(newValue) == 1 ? "+" : "" }${ Math.round(newValue) })`
+      modifyElement.innerHTML = `(${ Math.sign(newValue) == 1 ? "+" : "" }${ newValue })`
 
       if (targetElement.dataset.role == "bar-graph") {
         modifyBarGraph(percentageOf, targetElement, modifyElement, rarity)
