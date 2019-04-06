@@ -109,6 +109,7 @@
   grid-template: "sidebar content";
   grid-template-columns: 100% 100%;
   transition: transform 200ms;
+  will-change: transform;
 
   @media (min-width: 640px) {
     grid-template-columns: 50% 50%;
@@ -161,6 +162,7 @@
   text-decoration: none;
   transition-property: font-size, padding;
   transition-duration: 100ms;
+  will-change: padding, font-size;
 
   &:hover,
   &:active {

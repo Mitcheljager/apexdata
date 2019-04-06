@@ -13,6 +13,7 @@
   clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin }) 100%, 0 100%);
   transition: padding 100ms;
   cursor: pointer;
+  will-change: padding;
 
   @supports (-ms-ime-align: auto) {
     padding-right: $margin / 2;

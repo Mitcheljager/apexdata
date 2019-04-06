@@ -14,6 +14,7 @@
   flex-direction: column;
   transform: translateX(-120%);
   transition: transform 250ms ease;
+  will-change: transform;
 
   @media screen and (min-width: 992px) {
     position: relative;
