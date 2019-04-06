@@ -1,25 +1,29 @@
 .button {
   position: relative;
   display: inline-block;
-  padding: ($margin / 4) ($margin / 1.25);
-  font-weight: 700;
-  font-size: 11px;
+  height: $margin;
+  padding: 0 $margin * 1.5 0 $margin / 2;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: $margin;
   text-decoration: none;
-  background: var(--border-color);
-  color: rgba($white, .6);
-  box-shadow: 3px 3px 0 var(--border-color);
-  clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 0);
+  background: linear-gradient(135deg, $red 50%, lighten($red, 10%) 100%);
+  border-bottom: 1px solid lighten($red, 10%);
+  color: $white;
+  clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin }) 100%, 0 100%);
+  transition: padding 100ms;
+  cursor: pointer;
 
-  .theme-light & {
-    background: var(--primary-dark);
-    color: var(--text-color);
+  @supports (-ms-ime-align: auto) {
+    padding-right: $margin / 2;
   }
 
   &:hover,
   &:active {
     color: var(--title-color);
-    border-color: $white;
-    background: var(--border-color);
+    border-color: darken($red, 5%);
+    background: darken($red, 5%);
+    padding-left: $margin / 1.5;
 
     .button__tooltip {
       display: block;
@@ -27,18 +31,22 @@
   }
 
   &--small {
-    padding: .25em .5em;
-    font-size: 12px;
+    height: $margin / 1.25;
+    padding: 0 $margin * 1.25 0 $margin / 4;
     border-color: var(--border-color);
     background-color: var(--border-color);
     box-shadow: none;
-    clip-path: none;
-    font-weight: 300;
+    font-size: 12px;
+    line-height: $margin / 1.25;
+    clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin / 1.25 }) 100%, 0 100%);
 
-    .theme-light & {
-      border-color: var(--bg-color);
-      background-color: var(--bg-color);
-      color: var(--text-color);
+    @supports (-ms-ime-align: auto) {
+      padding-right: $margin / 4;
+    }
+
+    &:hover,
+    &:active {
+      padding-left: $margin / 2.5;
     }
   }
 
@@ -63,10 +71,50 @@
     }
   }
 
+  &--secondary {
+    background: $primary;
+    border: 0;
+    color: var(--text-color);
+    margin-bottom: $margin / 2;
+
+    &:hover {
+      color: var(--title-color);
+      background: lighten($primary, 5%);
+    }
+  }
+
+  &--compare {
+    background: $purple;
+    display: inline-flex;
+    align-items: center;
+
+    &:not([disabled]):hover,
+    &:not([disabled]):active {
+      background: darken($purple, 5%);
+    }
+
+    &[disabled] {
+      opacity: .5;
+      cursor: default;
+
+      &:hover,
+      &:active {
+        background: $purple;
+        padding-left: $margin / 4;
+      }
+    }
+  }
+
   &--full-width {
     width: 100%;
     text-align: center;
     clip-path: polygon(calc(100% - #{$margin}) 0, 100% 100%, #{$margin} 100%, 0 0);
+  }
+
+  img,
+  svg {
+    display: block;
+    margin-right: 1em;
   }
 }
 

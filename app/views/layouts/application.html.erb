@@ -18,20 +18,11 @@
     <%= javascript_include_tag "application" %>
   </head>
 
-  <body <% if theme_light? %>class="theme-light"<% end %>>
-    <header class="header">
-      <%= link_to image_tag("layout/apexlogo.png", alt: "Apex Legends logo"), root_path, class: "header__logo" %>
-      <%= render "theme_switch" %>
-    </header>
+  <body>
+    <%= render "header" %>
 
-    <aside class="wrapper wrapper--no-padding">
-      <%= render "navigation" %>
-    </aside>
-
-    <main class="wrapper">
-      <div class="items-wrapper">
-        <%= yield %>
-      </div>
+    <main class="wrapper top-offset">
+      <%= yield %>
 
       <%= render "social" %>
       <%= render "footer" %>

@@ -1,0 +1,9 @@
+<div class="bar-graph" data-role="bar-graph" data-target="<%= target %>" data-modify-target="<%= modify_target if defined?(modify_target) %>" data-modify-round>
+  <div class="bar-graph__label"><%= label %></div>
+
+  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="<%= max %>">
+    <div class="bar-graph__line" data-role="bar-graph-line"></div>
+  </div>
+
+  <div class="bar-graph__value" data-role="bar-graph-value" data-compare-bar="<%= target %>"></div>
+</div>

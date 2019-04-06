@@ -1,11 +1,16 @@
-<% content_for :page_title, "Sub Machine Guns" %>
-
 <div class="heading">
-  <h2 class="heading__title"><%= link_to "Sub Machine Guns", page_path("sub-machine-guns") %></h2>
+  <h2 class="heading__title">Sub Machine Guns</h2>
 </div>
 
-<%= render "sort/filter", active: "sub-machine-guns" %>
+<div class="item-columns item-columns--viewing-items item-columns--single" data-item-columns-main>
+  <%= render "pages/item_columns/mobile_navigation", first_item_overwrite: "Filter" %>
 
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: sub_machine_guns, as: :item %>
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <%= link_to "Go back to Weapons", "#", class: "button button--secondary mobile-only", data: { action: "item-columns-view-items" } %>
+      <%= render "sort/filter", active: "sub-machine-guns" %>
+    </aside>
+
+    <%= render "pages/item_columns/weapons", block_id: "sub-machine-guns-single", items: sub_machine_guns, is_active: true %>
+  </main>
 </div>

@@ -1,11 +1,16 @@
-<% content_for :page_title, "Pistols" %>
-
 <div class="heading">
-  <h2 class="heading__title"><%= link_to "Pistols", page_path("pistols") %></h2>
+  <h2 class="heading__title">Pistols</h2>
 </div>
 
-<%= render "sort/filter", active: "pistols" %>
+<div class="item-columns item-columns--viewing-items item-columns--single" data-item-columns-main>
+  <%= render "pages/item_columns/mobile_navigation", first_item_overwrite: "Filter" %>
 
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: pistols, as: :item %>
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <%= link_to "Go back to Weapons", "#", class: "button button--secondary mobile-only", data: { action: "item-columns-view-items" } %>
+      <%= render "sort/filter", active: "pistols" %>
+    </aside>
+
+    <%= render "pages/item_columns/weapons", block_id: "pistols-single", items: pistols, is_active: true %>
+  </main>
 </div>

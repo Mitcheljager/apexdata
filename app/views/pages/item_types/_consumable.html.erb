@@ -1,50 +1,35 @@
-<% cache "#{ item["name"] }_#{ compact? }_#{ alldata? }" do %>
-  <article class="item item--compact <%= "item--extra-compact" if compact? %>" data-compare-item="<%= item["name"].downcase.gsub(" ", "_") %>">
-    <div class="item__content">
-      <%= link_to "#", class: "button button--small item__top-action", data: { action: "compare" }, title: "Compare other items against this. Hover over values to see the difference between the two." do %>
-        Compare
-      <% end %>
-
-      <div class="item__description">
-        <% if asset_exists?("consumables/#{ item["name"].downcase.gsub(" ", "_") }.png") && !compact? %>
-          <div class="item__large-icon-wrapper">
-            <%= image_tag "consumables/#{ item["name"].downcase.gsub(" ", "_") }.png", class: "item__large-icon", alt: item["name"] %>
-          </div>
-        <% end %>
-
-        <div class="item__title heading heading--small">
-          <h3 class="heading__title">
-            <%= item["name"].truncate(16) %>
-          </h3>
-          <div class="heading__line"></div>
-        </div>
-
-        <div class="item__data-wrapper">
-          <div class="item__main">
-            <div class="columns">
-              <%= tag.div class: "columns__column item__large-info" do %>
-                <span>Heals</span>
-                <div data-compare-target="heals"><%= item["heals"] %></div>
-              <% end if item["heals"] %>
-
-              <%= tag.div class: "columns__column item__large-info" do %>
-                <span>Shields</span>
-                <div data-compare-target="restores"><%= item["restores"] %></div>
-              <% end if item["restores"] %>
-
-              <%= tag.div class: "columns__column item__large-info" do %>
-                <span>Ultimate</span>
-                <div data-compare-target="ultimate"><%= item["ultimate"] %></div>
-              <% end if item["ultimate"] %>
-            </div>
-
-            <%= tag.div class: "item__small-info" do %>
-              Cast time: <span><div data-compare-target="cast-time" data-compare-inverse="true"><%= item["cast_time"] %></div></span>
-              <small>s</small>
-            <% end if item["cast_time"] %>
-          </div>
-        </div>
+<% cache "#{ item["name"] }" do %>
+  <article class="item">
+    <% if asset_exists?("consumables/#{ item["name"].downcase.gsub(" ", "_") }.png") %>
+      <div class="item__large-icon-wrapper">
+        <%= image_tag "consumables/#{ item["name"].downcase.gsub(" ", "_") }.png", class: "item__large-icon", alt: item["name"] %>
       </div>
+    <% end %>
+
+    <h3 class="item__title">
+      <%= item["name"] %>
+    </h3>
+
+    <div class="columns">
+      <%= tag.div class: "columns__column item__large-info" do %>
+        <span>Heals</span>
+        <div><%= item["heals"] %></div>
+      <% end if item["heals"] %>
+
+      <%= tag.div class: "columns__column item__large-info" do %>
+        <span>Shields</span>
+        <div><%= item["restores"] %></div>
+      <% end if item["restores"] %>
+
+      <%= tag.div class: "columns__column item__large-info" do %>
+        <span>Ultimate</span>
+        <div><%= item["ultimate"] %></div>
+      <% end if item["ultimate"] %>
     </div>
+
+    <%= tag.div class: "item__small-info" do %>
+      Cast time: <span><div><%= item["cast_time"] %></div></span>
+      <small>s</small>
+    <% end if item["cast_time"] %>
   </article>
 <% end %>

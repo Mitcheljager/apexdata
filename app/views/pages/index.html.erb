@@ -1,62 +1,35 @@
-<div class="heading">
+<%= render "banners/octane" %>
+
+<div class="heading top-offset">
   <h2 class="heading__title">Legends</h2>
 </div>
 
 <%= render "legends/legends_banner" %>
 
-<%= render "sort/filter", active: "weapons" %>
-
-<div class="heading">
-  <h2 class="heading__title"><%= link_to "Assault Rifles", page_path("assault-rifles") %></h2>
+<div class="heading top-offset">
+  <h2 class="heading__title">Weapons</h2>
 </div>
 
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: assault_rifles, as: :item %>
-</div>
+<div class="item-columns" data-item-columns-main>
+  <%= render "pages/item_columns/mobile_navigation" %>
 
-<div class="heading">
-  <h2 class="heading__title"><%= link_to "Sub Machine Guns", page_path("sub-machine-guns") %></h2>
-</div>
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <%= link_to "Assault Rifles", "#", class: "item-columns__sidebar-item item-columns__sidebar-item--is-active", data: { action: "item-columns-change-category", target: "assault-rifles" } %>
+      <%= link_to "Sub Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sub-machine-guns" } %>
+      <%= link_to "Light Machine Guns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "light-machine-guns" } %>
+      <%= link_to "Shotguns", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "shotguns" } %>
+      <%= link_to "Sniper Rifles", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "sniper-rifles" } %>
+      <%= link_to "Pistols", "#", class: "item-columns__sidebar-item", data: { action: "item-columns-change-category", target: "pistols" } %>
 
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: sub_machine_guns, as: :item %>
-</div>
+      <%= render "sort/filter", active: "weapons" %>
+    </aside>
 
-<div class="heading">
-  <h2 class="heading__title"><%= link_to "Pistols", page_path("pistols") %></h2>
+    <%= render "pages/item_columns/weapons", block_id: "assault-rifles", items: assault_rifles, is_active: true %>
+    <%= render "pages/item_columns/weapons", block_id: "sub-machine-guns", items: sub_machine_guns %>
+    <%= render "pages/item_columns/weapons", block_id: "light-machine-guns", items: light_machine_guns %>
+    <%= render "pages/item_columns/weapons", block_id: "shotguns", items: shotguns %>
+    <%= render "pages/item_columns/weapons", block_id: "sniper-rifles", items: sniper_rifles %>
+    <%= render "pages/item_columns/weapons", block_id: "pistols", items: pistols %>
+  </main>
 </div>
-
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: pistols, as: :item %>
-</div>
-
-<div class="heading">
-  <h2 class="heading__title"><%= link_to "Light Machine Guns", page_path("light-machine-guns") %></h2>
-</div>
-
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: light_machine_guns, as: :item %>
-</div>
-
-<div class="heading">
-  <h2 class="heading__title"><%= link_to "Sniper Rifles", page_path("sniper-rifles") %></h2>
-</div>
-
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: sniper_rifles, as: :item %>
-</div>
-
-<div class="heading">
-  <h2 class="heading__title"><%= link_to "Shotguns", page_path("shotguns") %></h2>
-</div>
-
-<div class="items">
-  <%= render partial: "pages/item_types/weapon", collection: shotguns, as: :item %>
-</div>
-
-<nav class="navigation navigation--footer">
-  <%= link_to "Grenades", page_path("grenades") %>
-  <%= link_to "Consumables", page_path("consumables") %>
-  <%= link_to "Equipment", page_path("equipment") %>
-  <%= link_to "Attachments", page_path("attachments") %>
-</nav>

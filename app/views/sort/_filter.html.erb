@@ -6,7 +6,7 @@
   <div class="filter__item">
     <% types = ["all", "sub-machine-guns", "assault-rifles", "light-machine-guns", "pistols", "shotguns", "sniper-rifles"] %>
 
-    <%= label "type", "Type" %>
+    <%= label "type", "Weapon type" %>
     <%= select "type", "type", types.collect {|type| [ type.underscore.humanize, type ] }, { selected: active }, { data: { target: "filter-type" }} %>
   </div>
 
@@ -17,5 +17,5 @@
     <%= select "sort-by", "sort-by", sort_by.collect {|sort| [ sort.underscore.humanize, sort ] }, { include_blank: "Select...", selected: params[:sort_by] }, { required: true, data: { target: "filter-sort-by" }} %>
   </div>
 
-  <%= link_to "Filter", "#", class: "button", data: { action: "set-filter" } %>
+  <%= link_to "Filter", "#", class: "button filter__button", data: { action: "set-filter" } %>
 </div>

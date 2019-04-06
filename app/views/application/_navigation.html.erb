@@ -1,76 +1,65 @@
-<div class="logo">
-  <h1>
-    <%= link_to root_path do %>ApexData.<strong>gg</strong><% end %>
-  </h1>
-
-  <h2 class="logo__sub-title">Apex Legends Weapon&nbsp;Data&nbsp;and&nbsp;Statistics</h2>
-</div>
-
-<div class="mobile-navigation-trigger" data-action="toggle-navigation">≡</div>
-
-<nav class="navigation navigation--mobile-floating" data-target="navigation">
-  <%= render "theme_switch", extra_class: "theme-switch--in-mobile-navigation" %>
-
-  <%= link_to "Home", root_path, class: current_page?(root_path) ? "active" : "" %>
-
-  <div class="dropdown">
-    <a>Weapons</a>
-
-    <div class="dropdown__content">
-      <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
-      <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
-      <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
-      <%= link_to "Pistols", page_path("pistols"), class: current_page?(page_path("pistols")) ? "active" : "" %>
-      <%= link_to "Shotguns", page_path("shotguns"), class: current_page?(page_path("shotguns")) ? "active" : "" %>
-      <%= link_to "Sniper Rifles", page_path("sniper-rifles"), class: current_page?(page_path("sniper-rifles")) ? "active" : "" %>
-    </div>
+<nav class="navigation">
+  <div class="navigation-close">
+    <%= inline_svg("layout/close.svg") %>
   </div>
-
   <div class="dropdown">
-    <a>Items</a>
+    <%= link_to page_path("weapons"), class: current_page?(page_path("weapons")) ? "active" : "" do %>
+      Weapons & items
+      <%= inline_svg("layout/icon-dropdown.svg") %>
+    <% end %>
 
     <div class="dropdown__content">
-      <%= link_to "Grenades", page_path("grenades"), class: current_page?(page_path("grenades")) ? "active" : "" %>
-      <%= link_to "Consumables", page_path("consumables"), class: current_page?(page_path("consumables")) ? "active" : "" %>
-      <%= link_to "Equipment", page_path("equipment"), class: current_page?(page_path("equipment")) ? "active" : "" %>
-      <%= link_to "Attachments", page_path("attachments"), class: current_page?(page_path("attachments")) ? "active" : "" %>
-    </div>
-  </div>
+      <div class="dropdown__inner">
+        <%= link_to "All", page_path("weapons"), class: current_page?(page_path("weapons")) ? "active" : "" %>
+        <%= link_to "SMGs", page_path("sub-machine-guns"), class: current_page?(page_path("sub-machine-guns")) ? "active" : "" %>
+        <%= link_to "Assault Rifles", page_path("assault-rifles"), class: current_page?(page_path("assault-rifles")) ? "active" : "" %>
+        <%= link_to "LMGs", page_path("light-machine-guns"), class: current_page?(page_path("light-machine-guns")) ? "active" : "" %>
+        <%= link_to "Pistols", page_path("pistols"), class: current_page?(page_path("pistols")) ? "active" : "" %>
+        <%= link_to "Shotguns", page_path("shotguns"), class: current_page?(page_path("shotguns")) ? "active" : "" %>
+        <%= link_to "Sniper Rifles", page_path("sniper-rifles"), class: current_page?(page_path("sniper-rifles")) ? "active" : "" %>
 
-  <%= link_to "Legends", page_path("legends"), class: current_page?(page_path("legends")) ? "active" : "" %>
+        <hr>
 
-  <div class="dropdown">
-    <a>Other</a>
-
-    <div class="dropdown__content">
-      <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
-
-      <div class="dropdown">
-        <a>Patch Notes</a>
-
-        <div class="dropdown__content">
-          <%= link_to "4.3.2019", page_path("patch-notes/4-3-2019"), class: current_page?("/patch-notes/4-3-2019") ? "active" : "" %>
-          <%= link_to "3.19.2019", page_path("patch-notes/3-19-2019"), class: current_page?("/patch-notes/3-19-2019") ? "active" : "" %>
-          <%= link_to "3.6.2019", page_path("patch-notes/3-6-2019"), class: current_page?("/patch-notes/3-6-2019") ? "active" : "" %>
-          <%= link_to "2.19.2019", page_path("patch-notes/2-19-2019"), class: current_page?("/patch-notes/2-19-2019") ? "active" : "" %>
-          <%= link_to "2.13.2019", page_path("patch-notes/2-13-2019"), class: current_page?("/patch-notes/2-13-2019") ? "active" : "" %>
-        </div>
+        <%= link_to "Grenades", page_path("grenades"), class: current_page?(page_path("grenades")) ? "active" : "" %>
+        <%= link_to "Consumables", page_path("consumables"), class: current_page?(page_path("consumables")) ? "active" : "" %>
+        <%= link_to "Equipment", page_path("equipment"), class: current_page?(page_path("equipment")) ? "active" : "" %>
+        <%= link_to "Attachments", page_path("attachments"), class: current_page?(page_path("attachments")) ? "active" : "" %>
       </div>
     </div>
   </div>
-</nav>
 
-<div class="wrapper">
-  <div class="switch <%= "switch--active-right" if compact? %>">
-    <%= link_to "Expanded view", expanded_path, class: "switch__item" %>
-    <%= link_to "", compact? ? expanded_path : compact_path, class:"switch__toggle" %>
-    <%= link_to "Compact view", compact_path, class: "switch__item" %>
-  </div>
+  <div class="dropdown">
+    <%= link_to legends_path, class: current_page?(legends_path) ? "active" : "" do %>
+      Legends
+      <%= inline_svg("layout/icon-dropdown.svg") %>
+    <% end %>
 
-  <div class="center-element">
-    <div class="toggle <%= "toggle--active" if alldata? %>" data-action="more-data-all">
-      <div class="toggle__check"></div>
-      <div class="toggle__content">Expand all Data</div>
+    <div class="dropdown__content">
+      <div class="dropdown__inner">
+        <%= link_to "All", legends_path, class: current_page?(legends_path) ? "active" : "" %>
+        <% legends_list.each do |legend| %>
+          <%= link_to legend, legend_show_path(legend.downcase), class: current_page?(legend_show_path(legend.downcase)) ? "active" : "" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="dropdown">
+    <%= link_to page_path("patch-notes"), class: current_page?(page_path("patch-notes")) ? "active" : "" do %>
+      Patch Notes
+      <%= inline_svg("layout/icon-dropdown.svg") %>
+    <% end %>
+
+    <div class="dropdown__content">
+      <div class="dropdown__inner">
+        <%= link_to "4.3.2019", page_path("patch-notes/4-3-2019"), class: current_page?("/patch-notes/4-3-2019") ? "active" : "" %>
+        <%= link_to "3.19.2019", page_path("patch-notes/3-19-2019"), class: current_page?("/patch-notes/3-19-2019") ? "active" : "" %>
+        <%= link_to "3.6.2019", page_path("patch-notes/3-6-2019"), class: current_page?("/patch-notes/3-6-2019") ? "active" : "" %>
+        <%= link_to "2.19.2019", page_path("patch-notes/2-19-2019"), class: current_page?("/patch-notes/2-19-2019") ? "active" : "" %>
+        <%= link_to "2.13.2019", page_path("patch-notes/2-13-2019"), class: current_page?("/patch-notes/2-13-2019") ? "active" : "" %>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
+</nav>

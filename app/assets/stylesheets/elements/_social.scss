@@ -14,6 +14,17 @@
   justify-content: center;
 
   a {
-    margin: 0 -.5em;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:active {
+      filter: brightness(2);
+    }
+  }
+
+  svg {
+    width: 20px;
   }
 }

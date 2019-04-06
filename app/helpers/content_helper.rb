@@ -49,6 +49,10 @@ module ContentHelper
     YAML.load(File.read(Rails.root.join("config/content", "legends.yml")))
   end
 
+  def legends_list
+    ["Bangalore", "Bloodhound", "Caustic", "Gibraltar", "Lifeline", "Mirage", "Pathfinder", "Wraith", "Octane"]
+  end
+
   def legend(name)
     legends.select { |legend| legend["name"].parameterize.downcase == name.parameterize.downcase }.first
   end
@@ -63,6 +67,18 @@ module ContentHelper
 
   def weapons
     assault_rifles.concat(sub_machine_guns).concat(pistols).concat(light_machine_guns).concat(shotguns).concat(sniper_rifles)
+  end
+
+  def attachment_icons
+    attachments_with_icons = {}
+    attachments.each do |attachment_type|
+      name = attachment_type["name"].downcase.gsub(" ", "_").gsub("'", "")
+      url = image_url "attachments/#{ attachment_type["name"].downcase.gsub(" ", "_").gsub("'", "") }.png"
+
+      attachments_with_icons.store(name, url)
+    end
+
+    return attachments_with_icons
   end
 
   def calculate_extra_values(array)
@@ -80,5 +96,21 @@ module ContentHelper
 
       item["damage_per_magazine"] = damage
     end
+  end
+
+  def get_max_value(array, target)
+    max_value = 0
+
+    array.each do |item|
+      new_value = item[target]
+
+      if new_value
+        if new_value > max_value
+          max_value = new_value
+        end
+      end
+    end
+
+    return max_value
   end
 end

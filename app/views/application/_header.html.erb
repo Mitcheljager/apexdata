@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="header__top">
+    <div class="wrapper">
+      <h1 class="header__logo-top">
+        <%= link_to raw("ApexData.<strong>gg</strong>"), root_path %>
+        &nbsp;|&nbsp; Apex legends Data and Stats
+      </h1>
+
+      <div class="header__content header__content--right header__content--social-icons">
+        <%= link_to inline_svg("icons/icon-twitter.svg"), "https://twitter.com/apexdatagg", target: "_blank" %>
+        <%= link_to inline_svg("icons/icon-facebook.svg"), "https://www.facebook.com/ApexData-1430225080436016/", target: "_blank" %>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="wrapper">
+      <div class="header__content">
+        <div class="navigation-open">
+          <%= inline_svg("layout/menu.svg") %>
+        </div>
+        <%= render "navigation" %>
+      </div>
+
+      <div class="header__logo">
+        <%= link_to image_tag("layout/apexlogo.png", alt: "Apex Legends logo"), root_path, class: "logo__image" %>
+      </div>
+
+      <div class="header__content header__content--search">
+        <form class="player-form" method="post">
+          <input disabled type="text" name="player" placeholder="Player profiles coming soon." />
+          <div class="player-platforms">
+            <div class="platform__icon">
+              <%= inline_svg "icons/icon-windows.svg", class: "active" %>
+            </div>
+
+            <div class="platform__icon">
+              <%= inline_svg "icons/icon-xbox.svg" %>
+            </div>
+
+            <div class="platform__icon">
+              <%= inline_svg "icons/icon-playstation.svg" %>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>

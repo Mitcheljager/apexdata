@@ -2,7 +2,7 @@
   name: R-99
   damage: 12
   headshot_damage: 18
-  legshot_dmg: 9.6
+  legshot_damage: 9.6
   rate_of_fire: 1080
   ammo_capacity: 18
   tactical_reload: 1.8
@@ -79,7 +79,7 @@
   name: Alternator
   damage: 13
   headshot_damage: 19
-  legshot_dmg: 10.4
+  legshot_damage: 10.4
   rate_of_fire: 640
   ammo_capacity: 16
   tactical_reload: 1.9
@@ -151,7 +151,7 @@
   name: Prowler
   damage: 14
   headshot_damage: 21
-  legshot_dmg: 11.2
+  legshot_damage: 11.2
   rate_of_fire: 800
   ammo_capacity: 20
   tactical_reload: 2.0

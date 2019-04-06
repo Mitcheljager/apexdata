@@ -5,11 +5,11 @@
 
 .attachments-table__item {
   display: block;
-  border: 1px dashed rgba($white, .25);
   width: 2.5rem;
   height: 2.5rem;
   padding: .25rem;
-  background: rgba($white, .15);
+  border: 1px dashed #797c8d;
+  background: rgba($bg-color, .5) image-url("bg-pattern-light.jpg");
   margin-right: 2px;
   cursor: pointer;
 
@@ -20,6 +20,10 @@
 
   &--active {
     border-color: rgba($white, .5);
+    background: rgba($white, .2);
+  }
+
+  &[class*="border-"] {
     background: rgba($white, .2);
   }
 
@@ -39,21 +43,10 @@
   width: 200px;
   background: var(--primary-dark);
   border: 1px solid var(--border-color);
-  max-height: calc(5em + #{$margin});
   overflow: auto;
   margin-top: -100%;
-  transform: translateX(-5px) translateY(-110%);
+  transform: translateX(calc(-50% + 1rem)) translateY(calc(-100% - #{ $margin / 2 }));
   z-index: 10;
-
-  @media (min-width: 640px) {
-    margin-left: 50%;
-    transform: translateX(-50%) translateY(-110%);
-  }
-
-  @media (min-width: $max-width) {
-    margin-top: 0;
-    transform: translateX(-50%) translateY(5px);
-  }
 
   &.active {
     display: block;

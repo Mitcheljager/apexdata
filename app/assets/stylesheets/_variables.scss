@@ -1,12 +1,15 @@
 $white: #FFF;
 $black: #000;
-$red: #b52626;
+$red: #b33834;
 $green: #357b35;
+$purple: #a12aac;
 $primary-dark: #1d1f27;
 
-$bg-color: #282A36;
-$border-color: lighten($bg-color, 10%);
-$text-color: rgba($white, .4);
+$primary: #313443;
+$secondary: #363848;
+$bg-color: #21212a;
+$border-color: lighten($bg-color, 15%);
+$text-color: #8f94a5;
 $title-color: #FFF;
 
 $border-width: 2px;
@@ -14,7 +17,15 @@ $border-width: 2px;
 $margin: 40px;
 
 $wrapper-padding: $margin / 2;
-$max-width: 900px + $margin;
+$max-width: 1200px + $margin;
 
 $item-image-width: 600px;
 $item-transition-duration: 100ms;
+
+$columns-item-height: 120px;
+
+$circle-graph-thickness: 15px;
+
+$bar-graph-height: 6px;
+
+$box-shadow: 0px 3px 7px rgba($black, .1), 0px 3px 27px rgba($black, .1);
