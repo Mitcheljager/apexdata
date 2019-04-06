@@ -110,11 +110,11 @@ function removeModifier(event, parentElement = undefined) {
 
       const element = targetElement.querySelector(".modify-element")
       if (element) element.remove()
+
+      const modifyBarPlaceholder = targetElement.querySelector(".modify-full-width-placeholder")
+      if (modifyBarPlaceholder) modifyBarPlaceholder.classList.remove("modify-full-width-placeholder")
     })
   })
-
-  const modifyBarPlaceholder = document.querySelector(".modify-full-width-placeholder")
-  if (modifyBarPlaceholder) modifyBarPlaceholder.classList.remove("modify-full-width-placeholder")
 }
 
 function removeAllModifiers() {
