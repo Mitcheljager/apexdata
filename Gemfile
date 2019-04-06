@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem "bootsnap", require: false
 gem "rails", "~> 5.2"
 gem "pg"
 gem "puma", "~> 3.7"
@@ -17,6 +16,7 @@ gem "jbuilder", "~> 2.5"
 gem "inline_svg"
 
 gem "flipper"
+gem "flipper-active_record"
 gem "flipper-ui"
 
 gem "bcrypt", :require => "bcrypt"
@@ -26,7 +26,6 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
-  gem "sqlite3", "1.3.13"
 end
 
 group :development do
