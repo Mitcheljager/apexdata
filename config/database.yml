@@ -26,4 +26,4 @@ production:
   database: apexdata_production_database
   pool: 5
   username: apexdata
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  password: <%= ENV['APEXDATA_DATABASE_PASSWORD'] %>
