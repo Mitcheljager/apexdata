@@ -14,6 +14,10 @@
   transition: padding 100ms;
   cursor: pointer;
 
+  @supports (-ms-ime-align: auto) {
+    padding-right: $margin / 2;
+  }
+
   &:hover,
   &:active {
     color: var(--title-color);
@@ -35,6 +39,10 @@
     font-size: 12px;
     line-height: $margin / 1.25;
     clip-path: polygon(0 0, 100% 0, calc(100% - #{ $margin / 1.25 }) 100%, 0 100%);
+
+    @supports (-ms-ime-align: auto) {
+      padding-right: $margin / 4;
+    }
 
     &:hover,
     &:active {

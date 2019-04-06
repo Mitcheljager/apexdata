@@ -12,11 +12,21 @@
     grid-template: "label bar value";
     grid-template-columns: 9fr 9fr 4fr;
   }
+
+  @supports (-ms-ime-align: auto) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .bar-graph__label {
   grid-area: label;
   position: relative;
+
+  @supports (-ms-ime-align: auto) {
+    flex: 0 0 40%;
+    margin-bottom: $margin / 8;
+  }
 }
 
 .bar-graph__bar {
@@ -26,6 +36,10 @@
   background: var(--graph-bg);
   clip-path: polygon($bar-graph-height 0, 100% 0, calc(100% - #{ $bar-graph-height }) 100%, 0 100%);
   overflow: hidden;
+
+  @supports (-ms-ime-align: auto) {
+    flex: 0 0 40%;
+  }
 }
 
 .bar-graph__line {
@@ -50,6 +64,10 @@
   text-align: right;
   font-weight: 700;
   color: var(--title-color);
+
+  @supports (-ms-ime-align: auto) {
+    flex: 0 0 20%;
+  }
 
   [class^="compare-"],
   [class^="modify-"] {

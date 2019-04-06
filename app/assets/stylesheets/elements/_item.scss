@@ -46,6 +46,10 @@
     }
   }
 
+  @supports (-ms-ime-align: auto) {
+    flex: 0 0 calc((100% - #{$margin}) / 3 - 1px);
+  }
+
   &--full-width {
     flex: 0 0 100%;
     max-width: 100%;
