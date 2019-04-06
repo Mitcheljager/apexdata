@@ -25,19 +25,23 @@
   text-align: center;
 }
 
-.adsbygoogle {
-  grid-area: ad-desktop;
+.ad-container__desktop {
+  display: none;
 
-  &:empty + script + .ad-container__title,
-  &:empty + script + div:empty + .ad-container__title {
-    display: none;
-  }
-
-  &:empty + script + div:not(:empty) + .ad-container__title {
+  @media (min-width: 950px) {
     display: block;
   }
+}
 
-  &:not(:empty) {
-    padding: 0 ($margin / 4) ($margin / 4);
+.ad-container__mobile {
+  display: block;
+
+  @media (min-width: 950px) {
+    display: none;
   }
+}
+
+iframe {
+  grid-area: ad-desktop;
+  margin-bottom: ($margin / 4);
 }
