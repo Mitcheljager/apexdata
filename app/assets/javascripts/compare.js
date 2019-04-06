@@ -179,7 +179,7 @@ function compareCircleGraph(detailElement) {
       resultElement.innerHTML = `(+${ compareDifference })`
       resultElement.classList.add("compare-higher")
 
-      barElement.style.background = `conic-gradient(var(--graph-color) ${ compareValuePercentage }%,
+      barElement.style.backgroundImage = `conic-gradient(var(--graph-color) ${ compareValuePercentage }%,
                                           var(--green) ${ compareValuePercentage }%,
                                           var(--green) var(--compare-value),
                                           var(--graph-bg) 0%)`
@@ -187,7 +187,7 @@ function compareCircleGraph(detailElement) {
       resultElement.innerHTML = `(${ compareDifference })`
       resultElement.classList.add("compare-lower")
 
-      barElement.style.background = `conic-gradient(var(--graph-color) var(--compare-value),
+      barElement.style.backgroundImage = `conic-gradient(var(--graph-color) var(--compare-value),
                                           var(--red) var(--compare-value),
                                           var(--red) ${ compareValuePercentage }%,
                                           var(--graph-bg) 0%)`
