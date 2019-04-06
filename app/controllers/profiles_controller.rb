@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action do
-    if Flipper.enabled?(:profiles)
+    unless Flipper.enabled?(:profiles)
       redirect_to root_path
     end
   end
