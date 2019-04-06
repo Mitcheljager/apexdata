@@ -1,11 +1,19 @@
-<% if Flipper.enabled?(:users) %>
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Username:</strong>
-    <%= @user.username %>
-  </p>
+<div class="">
+  <% if current_user %>
+    Logged in as <%= current_user.username %>.
+    <%= link_to "Logout", logout_path %>
+  <% else %>
+    <%= link_to "Register", register_path %> |
+    <%= link_to "Login", login_path %>
+  <% end %>
+</div>
 
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', users_path %>
-<% end %>
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

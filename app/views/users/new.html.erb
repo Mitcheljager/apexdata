@@ -1,7 +1,5 @@
-<% if Flipper.enabled?(:users) %>
-  <h1>New User</h1>
+<h1>New User</h1>
 
-  <%= render 'form', user: @user %>
+<%= render 'form', user: @user %>
 
-  <%= link_to 'Back', users_path %>
-<% end %>
+<%= link_to 'Back', users_path %>

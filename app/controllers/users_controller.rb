@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action do
+    unless Flipper.enabled?(:users)
+      redirect_to root_path
+    end
+  end
 
   def index
     @users = User.all
