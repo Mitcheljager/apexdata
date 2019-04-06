@@ -1,11 +1,13 @@
-<h1>Index</h1>
+<% if Flipper.enabled?(:profiles) %>
+  <h1>Index</h1>
 
-<div class="">
-  <% if current_user %>
-    Logged in as <%= current_user.username %>.
-    <%= link_to "Logout", logout_path %>
-  <% else %>
-    <%= link_to "Register", register_path %> |
-    <%= link_to "Login", login_path %>
-  <% end %>
-</div>
+  <div class="">
+    <% if current_user %>
+      Logged in as <%= current_user.username %>.
+      <%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Register", register_path %> |
+      <%= link_to "Login", login_path %>
+    <% end %>
+  </div>
+<% end %>

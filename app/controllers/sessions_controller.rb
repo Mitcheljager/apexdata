@@ -1,10 +1,4 @@
 class SessionsController < ApplicationController
-  before_action do
-    if Flipper.enabled?(:login)
-      redirect_to root_path
-    end
-  end
-  
   def new
   end
 

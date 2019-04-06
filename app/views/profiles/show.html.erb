@@ -1,1 +1,3 @@
-<h1>Show | <%= params[:platform] %> | <%= params[:user] %></h1>
+<% if Flipper.enabled?(:profiles) %>
+  <h1>Show | <%= params[:platform] %> | <%= params[:user] %></h1>
+<% end %>
