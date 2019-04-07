@@ -1,0 +1,2 @@
+class ClaimedProfile < ApplicationRecord
+end

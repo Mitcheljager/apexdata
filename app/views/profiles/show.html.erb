@@ -1,3 +1,5 @@
 <h1>Show | <%= params[:platform] %> | <%= params[:user] %></h1>
 
-<%= @response %>
+<% @savedValues.each do |data| %>
+  <%= data.data_name %> : <%= data.data_value %> <br>
+<% end if @savedValues.any? %>

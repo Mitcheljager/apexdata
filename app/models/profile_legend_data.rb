@@ -1,0 +1,2 @@
+class ProfileLegendData < ApplicationRecord
+end

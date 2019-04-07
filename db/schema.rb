@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_06_202530) do
+ActiveRecord::Schema.define(version: 2019_04_07_134005) do
+
+  create_table "claimed_profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "profile_uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "flipper_features", force: :cascade do |t|
     t.string "key", null: false
@@ -28,11 +35,21 @@ ActiveRecord::Schema.define(version: 2019_04_06_202530) do
     t.index ["feature_key", "key", "value"], name: "index_flipper_gates_on_feature_key_and_key_and_value", unique: true
   end
 
+  create_table "profile_legend_data", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "legend"
+    t.string "data_name"
+    t.string "data_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "level"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
