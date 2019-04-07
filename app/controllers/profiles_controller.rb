@@ -39,10 +39,10 @@ class ProfilesController < ApplicationController
 
     @response["legends"]["selected"].each do |legend, data|
       data.each do |key, value|
-        currentData = ProfileLegendData.find_by_user_id_and_data_name_and_data_value(user_id, key, value)
+        currentData = ProfileLegendData.find_by_user_id_and_legend_and_data_name_and_data_value(user_id, legend, key, value)
 
         if currentData.nil?
-          @new_entry = ProfileLegendData.new(user_id: user_id, data_name: key, data_value: value)
+          @new_entry = ProfileLegendData.new(user_id: user_id, legend: legend, data_name: key, data_value: value)
           @new_entry.save
         end
       end
