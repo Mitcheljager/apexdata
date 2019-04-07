@@ -1,0 +1,52 @@
+.profile-intro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-platform {
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.intro-user {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 35px;
+  color: var(--white);
+  font-weight: 700;
+  margin: 0;
+}
+
+.user-status {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-color);
+  background: var(--primary);
+  padding: 6px 12px;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+.profile-content {
+  margin-top: 40px;
+}
+
+.level-graph {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  .circle-graph__bar {
+    position: relative;
+    width: 175px;
+    height: 175px;
+  }
+}

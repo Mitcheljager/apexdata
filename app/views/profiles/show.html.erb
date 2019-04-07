@@ -1,5 +1,33 @@
-<h1>Show | <%= params[:platform] %> | <%= params[:user] %></h1>
+<!-- <h1>Show | <%#= params[:platform] %> | <%#= params[:user] %></h1> -->
 
-<% @savedValues.each do |data| %>
-  <%= data.data_name %> : <%= data.data_value %> <br>
-<% end if @savedValues.any? %>
+<%# @savedValues.each do |data| %>
+  <%#= data.data_name %> <%#= data.data_value %> <br>
+<%# end if @savedValues.any? %>
+
+<div class="profile-intro">
+  <h2 class="intro-platform"><%= params[:platform] %></h2>
+  <div class="intro-user">
+    <h1 class="user-name"><%= params[:user] %></h1>
+    <span class="user-status">Offline</span>
+  </div>
+</div>
+
+<div class="profile-content item-columns item-columns--viewing-items item-columns--single">
+  <main class="item-columns__main">
+    <aside class="item-columns__sidebar">
+      <div class="item item--profile">
+        <div class="circle-graph__label">
+          Level
+          <h4>77</h4>
+        </div>
+        <div class="level-graph circle-graph__graph">
+          <div class="circle-graph__bar" data-max="100" data-role="circle-graph-bar"></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="item-columns__content">
+      d
+    </div>
+  </main>
+</div>
