@@ -54,7 +54,7 @@
         </div>
 
         <%= render "pages/item_columns/bar_graph", target: "damage_per_second", label: "Damage per second", max: get_max_value(items, "damage_per_second") %>
-        <%= render "pages/item_columns/bar_graph", target: "headshot_damage", label: "Headshot damage", max: get_max_value(items, "headshot_damage") %>
+        <%= render "pages/item_columns/bar_graph", target: "headshot_damage", modify_target: "headshot_damage_modifier", label: "Headshot damage", max: get_max_value(items, "headshot_damage") %>
         <%= render "pages/item_columns/bar_graph", target: "legshot_damage", label: "Legshot damage", max: get_max_value(items, "legshot_damage") %>
         <%= render "pages/item_columns/bar_graph", target: "damage_per_magazine", label: "Damage per mag", modify_target: "ammo_increase", max: get_max_value(items, "damage_per_magazine") %>
 
