@@ -13,7 +13,9 @@ class ProfilesController < ApplicationController
   def show
     url = "http://api.apexlegendsstatus.com/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=MqoOOiZTU1H8ADHItbfI"
     response = HTTParty.get(url)
-    @response = JSON.parse(response)
+    if response
+      @response = JSON.parse(response)
+    end
 
     if @response["global"]
       @savedValues = ProfileLegendData.where(profile_uid: @response["global"]["uid"])

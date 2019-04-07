@@ -1,5 +1,5 @@
-<h1>Show | <%= params[:platform] %> | <%= params[:user] %></h1>
+<h1>Show | <%= params[:platform] %> | <%= @response["global"]["name"] %></h1>
 
 <% @savedValues.each do |data| %>
-  <%= data.data_name %> : <%= data.data_value %> <br>
+  <%= data.legend %> : <%= data.data_name %> : <%= data.data_value %> <br>
 <% end if @savedValues.any? %>
