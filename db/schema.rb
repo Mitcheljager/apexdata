@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_04_07_134005) do
 
   create_table "claimed_profiles", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "profile_uid"
+    t.integer "user_id", limit: 12
+    t.integer "profile_uid", limit: 12
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_134005) do
   end
 
   create_table "profile_legend_data", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", limit: 12
     t.string "legend"
     t.string "data_name"
     t.string "data_value"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_134005) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "level"
+    t.integer "level", default: 0
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
