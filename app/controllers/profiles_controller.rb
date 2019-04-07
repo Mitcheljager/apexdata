@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
     @response = JSON.parse(response)
 
     if @response["global"]
-      @savedValues = ProfileLegendData.where(user_id: @response["global"]["uid"])
+      @savedValues = ProfileLegendData.where(profile_uid: @response["global"]["uid"])
     else
       @savedValues = nil
     end
@@ -34,15 +34,15 @@ class ProfilesController < ApplicationController
   private
 
   def saveNewValues
-    user_id = @response["global"]["uid"]
+    profile_uid = @response["global"]["uid"]
     legend = @response["realtime"]["selectedLegend"]
 
     @response["legends"]["selected"].each do |legend, data|
       data.each do |key, value|
-        currentData = ProfileLegendData.find_by_user_id_and_legend_and_data_name_and_data_value(user_id, legend, key, value)
+        currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
 
         if currentData.nil?
-          @new_entry = ProfileLegendData.new(user_id: user_id, legend: legend, data_name: key, data_value: value)
+          @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
           @new_entry.save
         end
       end
