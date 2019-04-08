@@ -9,6 +9,8 @@ class ClaimedProfilesController < ApplicationController
     step_3_legend = legends_list.sample
 
     @claimed_profile = ClaimedProfile.new(user_id: current_user.id, profile_uid: claimed_profile_params[:profile_uid], check_1: step_1_legend, check_2: step_2_legend, check_3: step_3_legend)
+    @current_legend = @claimed_profile.check_1
+
     if @claimed_profile.save
       respond_to  do |format|
         format.js
@@ -19,6 +21,8 @@ class ClaimedProfilesController < ApplicationController
   def step_1
     setApiData
     getProfileData
+
+    @current_legend = @claimed_profile.check_2
 
     respond_to  do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_1]
@@ -32,6 +36,8 @@ class ClaimedProfilesController < ApplicationController
   def step_2
     setApiData
     getProfileData
+
+    @current_legend = @claimed_profile.check_3
 
     respond_to  do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_2]
