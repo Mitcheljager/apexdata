@@ -20,11 +20,11 @@ class ClaimedProfilesController < ApplicationController
 
   def step_1
     setApiData
-    getProfileData
+    getClaimedProfile
 
     @current_legend = @claimed_profile.check_2
 
-    respond_to  do |format|
+    respond_to do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_1]
         format.js
       else
@@ -35,11 +35,11 @@ class ClaimedProfilesController < ApplicationController
 
   def step_2
     setApiData
-    getProfileData
+    getClaimedProfile
 
     @current_legend = @claimed_profile.check_3
 
-    respond_to  do |format|
+    respond_to do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_2]
         format.js
       else
@@ -49,10 +49,11 @@ class ClaimedProfilesController < ApplicationController
   end
 
   def step_3
-    getProfileData
+    getClaimedProfile
 
-    respond_to  do |format|
+    respond_to do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_3]
+        @claimed_profile.update(checks_completed: 1)
         format.js
       else
         format.js { render "error.js.erb" }
@@ -62,12 +63,12 @@ class ClaimedProfilesController < ApplicationController
 
   private
 
-  def getProfileData
+  def getClaimedProfile
     url = "http://api.apexlegendsstatus.com/bridge?platform=#{ claimed_profile_params[:platform].upcase }&player=#{ claimed_profile_params[:user] }&auth=MqoOOiZTU1H8ADHItbfI"
     response = HTTParty.get(url)
     if response
       @response = JSON.parse(response)
-      @claimed_profile = ClaimedProfile.find_by_user_id_and_profile_uid(current_user.id, @response["global"]["uid"])
+      @claimed_profile = ClaimedProfile.where(user_id: current_user.id, profile_uid: @response["global"]["uid"]).last
     end
   end
 
