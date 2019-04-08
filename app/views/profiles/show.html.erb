@@ -1,5 +1,19 @@
 <h1>Show | <%= params[:platform] %> | <%= @response["global"]["name"] %></h1>
 
+<% if current_user %>
+  <div style="margin-bottom: 50px" data-role="claim-profile">
+    <p>To claim a profile please Log In to Apex Legends and follow the steps</p>
+
+    <%= form_for :claimed_profile, url: claim_profile_initiate_path, remote: true do |form| %>
+      <%= form.hidden_field :platform, value: @response["global"]["platform"] %>
+      <%= form.hidden_field :user, value: @response["global"]["name"] %>
+      <%= form.hidden_field :profile_uid, value: @response["global"]["uid"] %>
+
+      <%= form.submit "Start claim" %>
+    <% end %>
+  </div>
+<% end %>
+
 <% @savedValues.each do |data| %>
   <%= data.legend %> : <%= data.data_name %> : <%= data.data_value %> <br>
 <% end if @savedValues.any? %>

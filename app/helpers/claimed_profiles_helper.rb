@@ -1,0 +1,2 @@
+module ClaimedProfilesHelper
+end

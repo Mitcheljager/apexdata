@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_134005) do
+ActiveRecord::Schema.define(version: 2019_04_08_095918) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
     t.string "profile_uid", limit: 12
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "check_1"
+    t.string "check_2"
+    t.string "check_3"
+    t.integer "checks_completed", default: 0
   end
 
   create_table "flipper_features", force: :cascade do |t|
