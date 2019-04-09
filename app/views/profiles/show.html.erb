@@ -23,7 +23,7 @@
   <% end %>
 </div>
 
-<% @savedValues.group_by(&:legend).each do |legend, legend_data| %>
+<% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
   <h3><%= legend %></h3>
   <% legend_data.group_by(&:data_name).each do |data_name, data| %>
     <h5><%= data_name %></h5>
@@ -32,4 +32,6 @@
       <%= dataset.data_value %> <br>
     <% end %>
   <% end %>
-<% end if @savedValues.any? %>
+<% end if @saved_values.any? %>
+
+<%= @saved_values.map(&:legend) %>
