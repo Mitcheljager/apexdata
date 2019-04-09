@@ -1,23 +1,31 @@
 <h1>Show | <%= params[:platform] %> | <%= @response["global"]["name"] %></h1>
 
-<% if current_user %>
-  <% if @claimedProfile.empty? %>
-    <div style="margin-bottom: 50px" data-role="claim-profile">
-      <p>To claim a profile please Log In to Apex Legends and follow the steps</p>
+<div style="margin-bottom: 50px" data-role="claim-profile">
+  <% if current_user %>
+    <% if @claimedProfile.nil? %>
+        <p>To claim a profile please Log In to Apex Legends and follow these steps</p>
 
-      <%= form_for :claimed_profile, url: claim_profile_initiate_path, remote: true do |form| %>
-        <%= form.hidden_field :platform, value: @response["global"]["platform"] %>
-        <%= form.hidden_field :user, value: @response["global"]["name"] %>
-        <%= form.hidden_field :profile_uid, value: @response["global"]["uid"] %>
+        <%= form_for :claimed_profile, url: claim_profile_initiate_path, remote: true do |form| %>
+          <%= form.hidden_field :platform, value: @response["global"]["platform"] %>
+          <%= form.hidden_field :user, value: @response["global"]["name"] %>
+          <%= form.hidden_field :profile_uid, value: @response["global"]["uid"] %>
 
-        <%= form.submit "Start claim" %>
+          <%= form.submit "Start claim" %>
+        <% end %>
+      </div>
+    <% else %>
+      <% if @claimedProfile.user_id == current_user.id %>
+        <p>You have claimed this profile</p>
+      <% else %>
+        <p>This profile has been claimed</p>
       <% end %>
-    </div>
-  <% else %>
-    This profile has been claimed
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<% @savedValues.each do |data| %>
-  <%= data.legend %> : <%= data.data_name %> : <%= data.data_value %> <br>
+<% @savedValues.group_by(&:legend).each do |legend, legend_data| %>
+  <h3><%= legend %></h3>
+  <% legend_data.each do |dataset| %>
+    <%= dataset.data_name %> : <%= dataset.data_value %> <br>
+  <% end %>
 <% end if @savedValues.any? %>

@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
       saveNewValues
     end
 
-    @claimedProfile = ClaimedProfile.where(profile_uid: @response["global"]["uid"], checks_completed: 1)
+    @claimedProfile = ClaimedProfile.where(profile_uid: @response["global"]["uid"], checks_completed: 1).last
 
     respond_to do |format|
       format.html
