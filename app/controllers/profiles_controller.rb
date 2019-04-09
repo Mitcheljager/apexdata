@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     end
 
     if @response["global"]
-      @savedValues = ProfileLegendData.where(profile_uid: @response["global"]["uid"])
+      @savedValues = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
     else
       @savedValues = nil
     end

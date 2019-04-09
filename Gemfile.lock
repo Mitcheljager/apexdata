@@ -121,7 +121,6 @@ GEM
     pg (1.1.4-x86-mingw32)
     public_suffix (3.0.3)
     puma (3.12.1)
-    pwned (1.2.1)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
@@ -220,7 +219,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   pg
   puma (~> 3.7)
-  pwned (~> 1.2.1)
   rails (~> 5.2)
   sass-rails (~> 5.0)
   selenium-webdriver

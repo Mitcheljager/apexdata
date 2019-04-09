@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 
+//= require Chart.min
 //= require compare
 //= require dropdown
 //= require modify
