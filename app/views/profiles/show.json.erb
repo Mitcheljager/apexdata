@@ -9,8 +9,8 @@
         <% values = [] %>
         <% ProfileLegendData.where(
                                   profile_uid: @response["global"]["uid"],
-                                  legend: "Pathfinder",
-                                  data_name: "grapple_travel_distance").group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
+                                  legend: legend,
+                                  data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
           <% dates.push(date) %>
           <% values.push(data.last.data_value) %>
         <% end %>
