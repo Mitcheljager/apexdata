@@ -24,10 +24,9 @@
       - 1x-2x_variable_holo
       - 2x-4x_variable_aog
       - 3x_hcog_ranger
-      - 1x_digital_threat
       - 6x_sniper
-      - 4x_8x_variable_sniper
-      - 4x_10x_digital_sniper_threat
+      - 4x-8x_variable_sniper
+      - 4x-10x_digital_sniper_threat
     stock:
       - sniper_stock
   attachments_overwrite:
@@ -64,10 +63,9 @@
       - 1x-2x_variable_holo
       - 2x-4x_variable_aog
       - 3x_hcog_ranger
-      - 1x_digital_threat
       - 6x_sniper
-      - 4x_8x_variable_sniper
-      - 4x_10x_digital_sniper_threat
+      - 4x-8x_variable_sniper
+      - 4x-10x_digital_sniper_threat
     hop_up:
       - skullpiercer_rifling
     stock:
@@ -96,10 +94,9 @@
       - 1x-2x_variable_holo
       - 2x-4x_variable_aog
       - 3x_hcog_ranger
-      - 1x_digital_threat
       - 6x_sniper
-      - 4x_8x_variable_sniper
-      - 4x_10x_digital_sniper_threat
+      - 4x-8x_variable_sniper
+      - 4x-10x_digital_sniper_threat
     hop_up:
       - precision_choke
     stock:
