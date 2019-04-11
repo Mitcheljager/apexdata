@@ -49,7 +49,7 @@
         </div>
 
         <div class="item-columns__radial-graphs">
-          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage") %>
+          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage"), damage_modifier: true %>
           <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire") %>
         </div>
 
