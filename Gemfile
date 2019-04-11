@@ -15,6 +15,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "inline_svg"
 gem "httparty"
+gem "chart-js-rails"
 
 gem "flipper"
 gem "flipper-active_record"
