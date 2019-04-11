@@ -154,7 +154,7 @@
     width: 100%;
     background: darken($primary, 3%);
     border: 0;
-    padding: 9px 125px 9px 25px;
+    padding: 9px 200px 9px 25px;
     border-radius: 1000px;
     color: var(--white);
     font-size: 15px;
@@ -172,20 +172,27 @@
 
 .player-platforms {
   position: absolute;
-  top: 8px;
-  right: 18px;
+  top: 0;
+  right: 6px;
   display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 .platform__icon {
   padding-left: 10px;
+  display: flex;
+  align-items: center;
 
   svg {
     width: 21px;
     height: 19px;
     transition: color 250ms ease;
+    cursor: pointer;
+  }
 
-    &.active {
+  &.active {
+    svg {
       color: var(--white);
     }
   }
@@ -214,5 +221,27 @@
         margin-bottom: -20px;
       }
     }
+  }
+}
+
+.player-submit {
+  background: var(--primary);
+  border: 0px;
+  border-radius: 1000px;
+  padding: 5px 14px;
+  font-weight: 700;
+  color: var(--text-color);
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 250ms ease;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:hover {
+    background: var(--red);
+    color: var(--white);
   }
 }

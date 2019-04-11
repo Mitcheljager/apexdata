@@ -22,3 +22,4 @@
 //= require strawpoll
 //= require ga_scroll_depth
 //= require item_columns
+//= require profile_form
