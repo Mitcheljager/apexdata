@@ -12,12 +12,12 @@ task :keep_profiles_updated => :environment do
     end
 
     Thread.new do
-      duration = 10.minutes
+      duration = 2.minutes
       interval = 10.seconds
       number_of_checks_left = duration.seconds / interval.seconds
 
       while(number_of_checks_left > 0) do
-        puts "Updating"
+        puts "Updating #{ @response["global"]["name"] }"
         number_of_checks_left -= 1
         sleep(interval)
       end
