@@ -37,6 +37,20 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def check_online
+    url = "http://api.mozambiquehe.re/bridge?platform=PC&player=mitsiee&auth=iokwcDa2wJKnnfkp193u"
+    response = HTTParty.get(url)
+    if response
+      @response = JSON.parse(response)
+    end
+
+    if @response["realtime"]["isOnline"] == 1
+      puts "is online"
+    else
+      puts "is not online"
+    end
+  end
+
   private
 
   def saveNewValues
