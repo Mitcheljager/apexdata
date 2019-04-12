@@ -23,6 +23,17 @@
   <% end %>
 </div>
 
+<% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
+  <h3><%= legend %></h3>
+  <% legend_data.group_by(&:data_name).each do |data_name, data| %>
+    <h5><%= data_name %></h5>
+
+    <% data.each do |dataset| %>
+      <%= dataset.data_value %> <br>
+    <% end %>
+  <% end %>
+<% end if @saved_values.any? %>
+
 <h1>Values</h1>
 
 <% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
