@@ -25,7 +25,6 @@ class ProfilesController < ApplicationController
 
     if @response["legends"]["selected"]
       saveNewValues
-      keepValuesUpdated
     end
 
     @claimedProfile = ClaimedProfile.where(profile_uid: @response["global"]["uid"], checks_completed: 1).last
@@ -66,20 +65,6 @@ class ProfilesController < ApplicationController
           @new_entry.save
         end
       end
-    end
-  end
-end
-
-def keepValuesUpdated
-  Thread.new do
-    duration = 2.minutes
-    interval = 10.seconds
-    number_of_questions_left = duration.seconds / interval.seconds
-
-    while(number_of_questions_left > 0) do
-      puts "Updating"
-      number_of_questions_left -= 1
-      sleep(interval)
     end
   end
 end

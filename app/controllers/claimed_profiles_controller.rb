@@ -53,7 +53,7 @@ class ClaimedProfilesController < ApplicationController
 
     respond_to do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_3]
-        @claimed_profile.update(checks_completed: 1)
+        @claimed_profile.update(checks_completed: 1, username: @response["realtime"]["name"], platform: @response["realtime"]["platform"])
         format.js
       else
         format.js { render "error.js.erb" }

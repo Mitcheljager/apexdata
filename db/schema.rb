@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_095918) do
+ActiveRecord::Schema.define(version: 2019_04_12_184336) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_04_08_095918) do
     t.string "check_2"
     t.string "check_3"
     t.integer "checks_completed", default: 0
+    t.string "platform"
+    t.string "username"
   end
 
   create_table "flipper_features", force: :cascade do |t|
