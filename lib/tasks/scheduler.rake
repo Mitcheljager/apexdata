@@ -11,17 +11,15 @@ task :keep_profiles_updated => :environment do
       @response = JSON.parse(response)
     end
 
-    def keepValuesUpdated
-      Thread.new do
-        duration = 10.minutes
-        interval = 10.seconds
-        number_of_checks_left = duration.seconds / interval.seconds
+    Thread.new do
+      duration = 10.minutes
+      interval = 10.seconds
+      number_of_checks_left = duration.seconds / interval.seconds
 
-        while(number_of_checks_left > 0) do
-          puts "Updating"
-          number_of_checks_left -= 1
-          sleep(interval)
-        end
+      while(number_of_checks_left > 0) do
+        puts "Updating"
+        number_of_checks_left -= 1
+        sleep(interval)
       end
     end
 
