@@ -51,3 +51,15 @@
     height: 175px;
   }
 }
+
+.profile-charts {
+  width: 100%;
+  border: 1px solid lighten($primary, 10%);
+  border-radius: 2px;
+  background: var(--primary);
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
+}

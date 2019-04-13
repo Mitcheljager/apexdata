@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    url = "http://api.apexlegendsstatus.com/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=MqoOOiZTU1H8ADHItbfI"
+    url = "http://api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u"
     response = HTTParty.get(url)
     @response = JSON.parse(response)
 
