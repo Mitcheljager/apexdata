@@ -40,20 +40,5 @@
 
   &:not(:empty) {
     padding: 0 ($margin / 4) ($margin / 4);
-
-    &.responsive_ad {
-      width: 320px;
-      height: 100px;
-
-      @media (min-width: 500px) {
-        width: 468px;
-        height: 60px;
-      }
-
-      @media (min-width: 800px) {
-        width: 728px;
-        height: 90px;
-      }
-    }
   }
 }
