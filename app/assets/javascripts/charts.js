@@ -20,7 +20,5 @@ function createCharts() {
         }]
       }
     })
-
-    console.log(chart)
   })
 }

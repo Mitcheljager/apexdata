@@ -18,8 +18,22 @@ task :keep_profiles_updated => :environment do
         end
 
         if @response["realtime"]["isOnline"] == 1
-          puts "Updating #{ @response["global"]["name"] }"
+          profile_uid = @response["global"]["uid"]
+          legend = @response["realtime"]["selectedLegend"]
+
+          @response["legends"]["selected"].each do |legend, data|
+            data.each do |key, value|
+              currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
+
+              if currentData.nil?
+                @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
+                @new_entry.save
+              end
+            end
+          end
         end
+
+        puts "Updating #{ @response["global"]["name"] }"
       end
 
       number_of_checks_left -= 1
@@ -28,4 +42,6 @@ task :keep_profiles_updated => :environment do
   end
 
   sleep(duration)
+
+  puts "Done updating profiles"
 end

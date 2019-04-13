@@ -1,0 +1,43 @@
+.ad-container {
+  position: relative;
+  display: grid;
+  grid-template:
+    "title"
+    "ad-desktop"
+    "ad-mobile"
+    "background";
+  align-items: center;
+  justify-content: center;
+  margin: $margin 0 0;
+  background: var(--primary-dark);
+  box-shadow: inset 0 0 0 1px var(--border-color);
+  overflow: hidden;
+
+  @media screen and (min-width: 900px) {
+    margin: ($margin * 2) 0 0;
+  }
+}
+
+.ad-container__title {
+  grid-area: title;
+  font-size: 14px;
+  padding: ($margin / 4) 0;
+  text-align: center;
+}
+
+.adsbygoogle {
+  grid-area: ad-desktop;
+
+  &:empty + script + .ad-container__title,
+  &:empty + script + div:empty + .ad-container__title {
+    display: none;
+  }
+
+  &:empty + script + div:not(:empty) + .ad-container__title {
+    display: block;
+  }
+
+  &:not(:empty) {
+    padding: 0 ($margin / 4) ($margin / 4);
+  }
+}
