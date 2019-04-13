@@ -8,13 +8,14 @@
     "background";
   align-items: center;
   justify-content: center;
-  margin: $margin 0 0;
+  max-width: 850px;
+  margin: $margin auto 0;
   background: var(--primary-dark);
   box-shadow: inset 0 0 0 1px var(--border-color);
   overflow: hidden;
 
   @media screen and (min-width: 900px) {
-    margin: ($margin * 2) 0 0;
+    margin: ($margin * 2) auto 0;
   }
 }
 
@@ -39,5 +40,20 @@
 
   &:not(:empty) {
     padding: 0 ($margin / 4) ($margin / 4);
+
+    &.responsive_ad {
+      width: 320px;
+      height: 100px;
+
+      @media (min-width: 500px) {
+        width: 468px;
+        height: 60px;
+      }
+
+      @media (min-width: 800px) {
+        width: 728px;
+        height: 90px;
+      }
+    }
   }
 }
