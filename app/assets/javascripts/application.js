@@ -21,7 +21,6 @@
 //= require navigation
 //= require theme_switch
 //= require strawpoll
-//= require ga_scroll_depth
 //= require item_columns
 //= require charts
 //= require ads
