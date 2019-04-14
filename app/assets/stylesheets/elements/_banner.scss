@@ -1,8 +1,6 @@
 .banner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
   position: relative;
   height: auto;
   width: 100%;
@@ -17,24 +15,19 @@
     flex-direction: row;
     align-items: center;
     height: $margin * 2.5;
-    padding: 0 ($margin * 1.5) 0 ($margin * 1.5);
+    padding: $margin;
     margin-top: $margin * 2;
   }
 
   @include media-min(xxl) {
-    height: 130px;
     margin-top: $margin * 3;
-  }
-
-  @include media-min(max-width) {
-    padding: 0 ($margin * 2.5) 0 ($margin * 2);
+    padding: ($margin * 1.5) ($margin * 2);
   }
 
   h3 {
     font-weight: 400;
     text-transform: uppercase;
     font-size: 18px;
-    padding: 0;
     margin: 0;
 
     @include media-min(xxl) {
@@ -46,19 +39,24 @@
     font-weight: 700;
     font-size: 36px;
     margin: 0;
-    padding: 0;
 
     @include media-min(md) {
-      padding: 0 ($margin / 2);
+      margin: 0 0 0 $margin / 2;
     }
 
     @include media-min(xxl) {
       font-size: 48px;
     }
+
+    @include media-min(max-width) {
+      margin: 0 0 0 $margin * 2;
+    }
   }
 
   img {
-    margin-top: -78px;
+    position: absolute;
+    bottom: 0;
+    right: $margin / 2;
     width: 200px;
     display: none;
 
@@ -67,8 +65,11 @@
     }
 
     @include media-min(xxl) {
-      margin-top: -103px;
       width: auto;
+    }
+
+    @include media-min(max-width) {
+      right: $margin * 2;
     }
   }
 }
