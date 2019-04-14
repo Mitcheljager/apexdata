@@ -29,3 +29,16 @@ $circle-graph-thickness: 15px;
 $bar-graph-height: 6px;
 
 $box-shadow: 0px 3px 7px rgba($black, .1), 0px 3px 27px rgba($black, .1);
+
+$header-top-height: 47px;
+$header-bottom-height: 63px;
+
+$media-min-widths: (
+  xs: 400px,
+  sm: 640px,
+  md: 768px,
+  lg: 900px,
+  xl: 990px,
+  xxl: 1100px,
+  max-width: $max-width
+)

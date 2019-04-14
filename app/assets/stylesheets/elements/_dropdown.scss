@@ -13,7 +13,7 @@
       margin-left: 3px;
       display: none;
 
-      @media screen and (min-width: 992px) {
+      @include media-min(xl) {
         display: inline-block;
       }
     }
@@ -35,7 +35,7 @@
   z-index: 10;
   width: 100%;
 
-  @media screen and (min-width: 992px) {
+  @include media-min(xl) {
     display: none;
     position: absolute;
     left: 50%;
@@ -50,7 +50,7 @@
     text-decoration: none;
     text-align: left;
 
-    @media screen and (min-width: 992px) {
+    @include media-min(xl) {
       text-align: center;
     }
   }
@@ -66,7 +66,7 @@
   width: 100%;
   margin-top: -10px;
 
-  @media screen and (min-width: 992px) {
+  @include media-min(xl) {
     display: flex;
     flex-direction: column;
     width: auto;

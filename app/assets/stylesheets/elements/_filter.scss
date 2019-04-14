@@ -1,12 +1,12 @@
 .filter {
-  @media (min-width: 400px) {
+  @include media-min(xs) {
     max-width: 200px;
   }
 
   a:not(.button) + & {
     margin: $margin 0 0;
 
-    @media (min-width: 640px) {
+    @include media-min(sm) {
       margin: ($margin * 2) 0 0;
     }
   }

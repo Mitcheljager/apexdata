@@ -16,7 +16,7 @@
   transition: transform 250ms ease;
   will-change: transform;
 
-  @media screen and (min-width: 992px) {
+  @include media-min(xl) {
     position: relative;
     flex-direction: row;
     height: auto;
@@ -42,12 +42,12 @@
     width: 100%;
     display: block;
 
-    @media screen and (min-width: 992px) {
+    @include media-min(xl) {
       font-size: 13px;
       width: auto;
     }
 
-    @media screen and (min-width: 1250px) {
+    @include media-min(max-width) {
       font-size: 15px;
     }
 
@@ -63,7 +63,7 @@
   .dropdown {
     display: block;
 
-    @media screen and (min-width: 992px) {
+    @include media-min(xl) {
       display: flex;
       flex-direction: row;
     }
@@ -76,13 +76,13 @@
     padding: $margin / 2;
     color: var(--white);
 
-    @media screen and (min-width: 992px) {
+    @include media-min(xl) {
       margin-right: $margin / 4;
       padding: 0;
       color: lighten($text-color, 10%);
     }
 
-    @media screen and (min-width: 1250px) {
+    @include media-min(max-width) {
       margin-right: $margin / 1.25;
 
       &:last-child {
@@ -105,7 +105,7 @@
   padding: 20px;
   cursor: pointer;
 
-  @media screen and (min-width: 992px) {
+  @include media-min(xl) {
     display: none;
   }
 
@@ -118,7 +118,7 @@
   display: block;
   cursor: pointer;
 
-  @media screen and (min-width: 992px) {
+  @include media-min(xl) {
     display: none;
   }
 

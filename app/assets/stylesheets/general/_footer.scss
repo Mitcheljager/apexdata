@@ -4,7 +4,7 @@
   padding: $margin / 4 0;
   border-top: 2px solid var(--border-color);
 
-  @media (min-width: $max-width) {
+  @include media-min(max-width) {
     display: flex;
     justify-content: space-between;
     margin-top: $margin * 2;

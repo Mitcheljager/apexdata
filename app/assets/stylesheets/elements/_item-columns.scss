@@ -10,7 +10,7 @@
   background: var(--primary);
   border: 1px solid lighten($primary, 8%);
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     background: transparent;
     padding: 0;
     margin-bottom: 0;
@@ -22,7 +22,7 @@
     }
   }
 
-  @media (min-width: 1100px) {
+  @include media-min(xxl) {
     display: none;
   }
 }
@@ -35,7 +35,7 @@
   color: lighten($text-color, 20%);
   cursor: pointer;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     font-size: 18px;
   }
 
@@ -47,7 +47,7 @@
   &:first-child {
     display: flex;
 
-    @media (min-width: 640px) {
+    @include media-min(sm) {
       display: none;
 
       .item-columns--viewing-details & {
@@ -67,7 +67,7 @@
     .item-columns--single & {
       display: flex;
 
-      @media (min-width: 640px) {
+      @include media-min(sm) {
         display: none;
       }
     }
@@ -75,7 +75,7 @@
     .item-columns--viewing-items & {
       color: $white;
 
-      @media (min-width: 640px) {
+      @include media-min(sm) {
         display: none;
       }
     }
@@ -88,7 +88,7 @@
       display: flex;
       color: $white;
 
-      @media (min-width: 640px) {
+      @include media-min(sm) {
         display: none;
       }
     }
@@ -111,11 +111,11 @@
   transition: transform 200ms;
   will-change: transform;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     grid-template-columns: 50% 50%;
   }
 
-  @media (min-width: 1100px) {
+  @include media-min(xxl) {
     grid-template-columns: #{ 100% / 3 * 1 } #{ 100% / 3 * 2 };
   }
 
@@ -145,11 +145,11 @@
   width: 100%;
   max-width: $max-width;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     max-width: $max-width / 3;
   }
 
-  @media (min-width: 1100px) {
+  @include media-min(xxl) {
     max-width: $max-width / 2;
   }
 }
@@ -170,7 +170,7 @@
   }
 
   &--is-active {
-    @media (min-width: 640px) {
+    @include media-min(sm) {
       color: $red;
       font-size: 28px;
       padding: ($margin / 4) 0;
@@ -197,11 +197,11 @@
   width: calc(90vw - 15px);
   padding-right: $margin / 4;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     width: calc(50vw - 5vw - #{ $margin / 4 });
   }
 
-  @media (min-width: 1100px) {
+  @include media-min(xxl) {
     width: 50%;
   }
 
@@ -391,12 +391,12 @@
   display: none;
   width: calc(90vw - #{ $margin / 2 });
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     width: calc(50vw - 5vw - #{ $margin / 4 });
     padding-left: $margin / 2;
   }
 
-  @media (min-width: 1100px) {
+  @include media-min(xxl) {
     width: 50%;
   }
 

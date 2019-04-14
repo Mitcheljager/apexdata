@@ -15,7 +15,7 @@
     display: block;
     padding: .5em 0;
 
-    @media (min-width: 640px) {
+    @include media-min(sm) {
       display: flex;
       align-items: center;
     }
@@ -28,7 +28,7 @@
       color: var(--text-color);
     }
 
-    @media (min-width: 640px) {
+    @include media-min(sm) {
       margin: 0 0 0 .5em;
     }
   }

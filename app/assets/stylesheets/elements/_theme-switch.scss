@@ -5,11 +5,11 @@
   top: 3px;
   padding: ($margin / 4) 0;
 
-  @media screen and (min-width: 640px) {
+  @include media-min(sm) {
     display: block;
   }
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     top: $margin / 2;
   }
 
@@ -35,7 +35,7 @@
     top: 0;
     margin-bottom: $margin / 2;
 
-    @media screen and (min-width: 640px) {
+    @include media-min(sm) {
       display: none;
     }
 
@@ -62,7 +62,7 @@
     filter: brightness(20%);
   }
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     max-width: 30px;
   }
 }
