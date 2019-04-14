@@ -10,7 +10,7 @@
   justify-content: center;
   max-width: 850px;
   margin: $margin auto 0;
-  margin: $margin -#{ $margin / 4 } 0;
+  margin: $margin -#{ $margin / 3 } 0;
   background: var(--primary-dark);
   box-shadow: inset 0 0 0 1px var(--border-color);
   overflow: hidden;
