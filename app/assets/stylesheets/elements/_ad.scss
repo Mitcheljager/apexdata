@@ -16,7 +16,7 @@
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
 
-  @include media-min(xs) {
+  @media (min-width: 500px) {
     margin: $margin auto 0;
     box-shadow: inset 0 0 0 1px var(--border-color);
     border: 0;
