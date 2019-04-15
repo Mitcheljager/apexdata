@@ -76,6 +76,12 @@ blockquote {
   padding: 0 5vw;
   margin: 0 auto;
 
+  &--tiny {
+    padding: 0;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
   &--small {
     padding: 0;
     max-width: 650px;
