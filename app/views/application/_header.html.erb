@@ -26,20 +26,21 @@
       </div>
 
       <div class="header__content header__content--search">
-        <form class="player-form" method="post">
-          <input disabled type="text" name="player" placeholder="Player profiles coming soon." />
+        <form class="player-form" method="post" autocomplete="off">
+          <input id="playerName" <%= "disabled" unless Flipper.enabled?(:profiles) %> type="text" name="player" placeholder="Find player" />
           <div class="player-platforms">
-            <div class="platform__icon">
-              <%= inline_svg "icons/icon-windows.svg", class: "active" %>
+            <div class="platform__icon active" data-platform="PC">
+              <%= inline_svg "icons/icon-windows.svg" %>
             </div>
 
-            <div class="platform__icon">
+            <div class="platform__icon" data-platform="X1">
               <%= inline_svg "icons/icon-xbox.svg" %>
             </div>
 
-            <div class="platform__icon">
+            <div class="platform__icon" data-platform="PS4">
               <%= inline_svg "icons/icon-playstation.svg" %>
             </div>
+            <button type="submit" class="player-submit">Search</button>
           </div>
         </form>
       </div>

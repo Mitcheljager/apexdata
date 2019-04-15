@@ -142,7 +142,7 @@
     width: 100%;
     background: darken($primary, 3%);
     border: 0;
-    padding: ($margin / 4) ($margin * 3) ($margin / 4) ($margin / 2);
+    padding: 9px 200px 9px 25px;
     border-radius: 1000px;
     color: var(--white);
     font-size: 14px;
@@ -160,20 +160,27 @@
 
 .player-platforms {
   position: absolute;
-  top: $margin / 4;
-  right: $margin / 2;
+  top: 0;
+  right: 6px;
   display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 .platform__icon {
-  padding-left: $margin / 4;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 
   svg {
     width: auto;
     height: $margin / 2.5;
     transition: color 250ms ease;
+    cursor: pointer;
+  }
 
-    &.active {
+  &.active {
+    svg {
       color: var(--white);
     }
   }
@@ -204,5 +211,27 @@
         margin-bottom: -#{ $margin / 2 };
       }
     }
+  }
+}
+
+.player-submit {
+  background: var(--primary);
+  border: 0px;
+  border-radius: 1000px;
+  padding: 5px 14px;
+  font-weight: 700;
+  color: var(--text-color);
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 250ms ease;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:hover {
+    background: var(--red);
+    color: var(--white);
   }
 }

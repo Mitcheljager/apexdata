@@ -54,6 +54,13 @@
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  &--profile {
+    width: 100%;
+    margin: 0;
+    flex: 0 0 calc(100% - 30px);
+    max-width: calc(100% - 30px);
+  }
 }
 
 .item__title {
