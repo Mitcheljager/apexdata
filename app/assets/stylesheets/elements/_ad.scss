@@ -36,5 +36,8 @@
 
 .adsbygoogle {
   grid-area: ad-desktop;
-  margin-bottom: $margin / 4;
+
+  @media (min-width: 500px) {
+    margin-bottom: $margin / 4;
+  }
 }
