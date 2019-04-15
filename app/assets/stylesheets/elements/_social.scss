@@ -1,5 +1,5 @@
 .social {
-  margin: 80px 0 0;
+  margin: $margin * 2 0 0;
 }
 
 .social__title {
@@ -14,17 +14,19 @@
   justify-content: center;
 
   a {
-    margin: 0px 10px;
+    margin: 0px $margin / 4;
     display: flex;
     align-items: center;
 
     &:hover,
     &:active {
-      filter: brightness(2);
+      svg path {
+        fill: $white;
+      }
     }
   }
 
   svg {
-    width: 20px;
+    width: $margin / 2;
   }
 }

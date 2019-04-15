@@ -32,10 +32,10 @@ body {
   font-weight: 300;
   max-width: 100%;
   overflow-x: hidden;
-  padding-top: 63px;
+  padding-top: $header-bottom-height;
 
-  @media screen and (min-width: 992px) {
-    padding-top: 110px;
+  @include media-min(xl) {
+    padding-top: $header-top-height + $header-bottom-height;
   }
 
   &.theme-light {
@@ -76,12 +76,10 @@ blockquote {
   padding: 0 5vw;
   margin: 0 auto;
 
-  &--no-padding {
+  &--tiny {
     padding: 0;
-
-    @media screen and (min-width: 375px) {
-      padding: 0 $wrapper-padding;
-    }
+    max-width: 420px;
+    margin: 0 auto;
   }
 
   &--small {
@@ -101,7 +99,7 @@ blockquote {
   text-align: center;
   padding: $margin * 1.5 0 $margin * 0.75;
 
-  @media screen and (min-width: $max-width) {
+  @include media-min(max-width) {
     padding: $margin * 3 0 $margin * 1.5;
   }
 
@@ -133,7 +131,7 @@ blockquote {
     margin-top: $margin / 8;
     font-weight: 300;
 
-    @media screen and (min-width: $max-width) {
+    @include media-min(max-width) {
       font-size: 16px;
     }
   }
@@ -192,7 +190,7 @@ $rarities: (
 }
 
 .text-right {
-  @media (min-width: $max-width) {
+  @include media-min(max-width) {
     text-align: right;
   }
 }
@@ -232,7 +230,7 @@ hr {
 }
 
 .mobile-only {
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     display: none !important;
   }
 }
@@ -240,7 +238,7 @@ hr {
 .top-offset {
   padding-top: $margin;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     padding-top: $margin * 2;
   }
 }

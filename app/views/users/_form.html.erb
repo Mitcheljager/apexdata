@@ -1,34 +1,37 @@
 <% if Flipper.enabled?(:users) %>
-  <%= form_with(model: user, local: true) do |form| %>
+  <%= form_for @user, url: url do |f| %>
     <% if user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <div class="form-alert">
+        <div><strong><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</strong></div>
 
         <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+          <% user.errors.full_messages.each do |message| %>
+            <li><small><%= message %></small></li>
+          <% end %>
         </ul>
       </div>
     <% end %>
 
-    <div class="field">
-      <%= form.label :username %>
-      <%= form.text_field :username %>
+    <div class="form-field">
+      <%= f.label :username, class: "form-label" %>
+      <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+      <div class="form-hint">We recommend using a different username from the one you use in Apex Legends.</div>
     </div>
 
-    <div class="field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
+    <hr>
+
+    <div class="form-field">
+      <%= f.label :password, class: "form-label" %>
+      <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+
+      <div class="form-hint">Please use a unique password that is different from the one you use for Apex Legends. Passwords are encrypted and securely stored.</div>
     </div>
 
-    <div class="field">
-      <%= form.label :password_confirmation %>
-      <%= form.password_field :password_confirmation %>
+    <div class="form-field">
+      <%= f.label :password_confirmation, class: "form-label" %>
+      <%= f.password_field :password_confirmation, placeholder: "Password confirmation", class: "form-control" %>
     </div>
 
-    <div class="actions">
-      <%= form.submit %>
-    </div>
+    <%= submit_tag "Submit", class: "button" %>
   <% end %>
 <% end %>

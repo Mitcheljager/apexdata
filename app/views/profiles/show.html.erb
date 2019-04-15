@@ -1,3 +1,5 @@
+<% content_for :page_title, @response["global"]["name"] %>
+
 <div class="profile-intro">
   <h2 class="intro-platform"><%= params[:platform] %></h2>
   <div class="intro-user">
@@ -350,3 +352,61 @@
     </div>
   </main>
 </div>
+
+<h1>Show | <%= params[:platform] %> | <%= @response["global"]["name"] %></h1>
+
+<div style="margin-bottom: 50px" data-role="claim-profile">
+  <% if current_user %>
+    <% if @claimedProfile.nil? %>
+        <p>To claim a profile please Log In to Apex Legends and follow these steps</p>
+
+        <%= form_for :claimed_profile, url: claim_profile_initiate_path, remote: true do |form| %>
+          <%= form.hidden_field :platform, value: @response["global"]["platform"] %>
+          <%= form.hidden_field :user, value: @response["global"]["name"] %>
+          <%= form.hidden_field :profile_uid, value: @response["global"]["uid"] %>
+
+          <%= form.submit "Start claim" %>
+        <% end %>
+      </div>
+    <% else %>
+      <% if @claimedProfile.user_id == current_user.id %>
+        <p>You have claimed this profile</p>
+      <% else %>
+        <p>This profile has been claimed</p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
+  <h3><%= legend %></h3>
+  <% legend_data.group_by(&:data_name).each do |data_name, data| %>
+    <h5><%= data_name %></h5>
+
+    <% data.each do |dataset| %>
+      <%= dataset.data_value %> <br>
+    <% end %>
+  <% end %>
+<% end if @saved_values.any? %>
+
+<h1>Values</h1>
+
+<% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
+  <hr>
+  <h3><%= legend %></h3>
+  <% legend_data.group_by(&:data_name).each do |data_name, data| %>
+    <h5><%= data_name.humanize %></h5>
+
+    <% dates = [] %>
+    <% values = [] %>
+    <% ProfileLegendData.where(
+                              profile_uid: @response["global"]["uid"],
+                              legend: legend,
+                              data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
+      <% dates.push(date) %>
+      <% values.push(data.last.data_value) %>
+    <% end %>
+
+    <canvas width="400" height="100" data-role="profile-chart" data-labels="<%= dates %>" data-values="<%= values %>"></canvas>
+  <% end %>
+<% end if @saved_values.any? %>

@@ -2,6 +2,9 @@
   <div class="circle-graph__label">
     <%= label %>
     <h4 data-role="circle-graph-value" data-compare-circle="<%= target %>"></h4>
+    <% if defined?(damage_modifier) %>
+      <div class="circle-graph__extra-modifier" data-role="damage-modifier"></div>
+    <% end %>
   </div>
 
   <div class="circle-graph__graph">

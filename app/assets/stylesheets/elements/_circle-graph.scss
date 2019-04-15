@@ -55,3 +55,12 @@
     border-radius: 50%;
   }
 }
+
+.circle-graph__extra-modifier {
+  position: absolute;
+  right: 0;
+  bottom: .5em;
+  transform: translateX(calc(100% + .25em));
+  font-size: 12px;
+  color: lighten($text-color, 10%);
+}

@@ -8,8 +8,8 @@
   box-shadow: 0px 3px 7px rgba($black, .15), 0px 10px 50px rgba($black, .35);
 
   &--small {
-    @media screen and (min-width: 992px) {
-      top: -47px;
+    @include media-min(xl) {
+      top: -$header-top-height;
     }
   }
 }
@@ -18,12 +18,12 @@
   background: var(--secondary);
   display: none;
 
-  @media screen and (min-width: 992px) {
+  @include media-min(xl) {
     display: block;
   }
 
   .wrapper {
-    height: 47px;
+    height: $header-top-height;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,7 +34,7 @@
   background: var(--primary);
 
   .wrapper {
-    height: 63px;
+    height: $header-bottom-height;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,20 +44,8 @@
 .header__content {
   width: calc(50% - 50px);
 
-  @media screen and (min-width: 992px) {
-    width: calc(50% - 50px);
-  }
-
-  @media screen and (min-width: 1400px) {
-    width: calc(50% - (112px / 2) - 50px);
-  }
-
   &--search {
     padding-left: 50px;
-
-    @media screen and (min-width: 1400px) {
-      padding-left: 0;
-    }
   }
 
   &--right {
@@ -106,7 +94,7 @@
     width: 115px;
     height: 115px;
 
-    @media screen and (min-width: 992px) {
+    @include media-min(xl) {
       bottom: -15px;
       left: -7px;
       width: 125px;
@@ -114,7 +102,7 @@
     }
 
     .header--small & {
-      @media screen and (min-width: 992px) {
+      @include media-min(xl) {
         bottom: -28px;
         left: -2px;
         width: 115px;
@@ -146,7 +134,7 @@
   position: relative;
   display: none;
 
-  @media screen and (min-width: 992px) {
+  @include media-min(xl) {
     display: block;
   }
 
@@ -157,7 +145,7 @@
     padding: 9px 200px 9px 25px;
     border-radius: 1000px;
     color: var(--white);
-    font-size: 15px;
+    font-size: 14px;
 
     &:focus,
     &:active {
@@ -185,8 +173,8 @@
   align-items: center;
 
   svg {
-    width: 21px;
-    height: 19px;
+    width: auto;
+    height: $margin / 2.5;
     transition: color 250ms ease;
     cursor: pointer;
   }
@@ -206,19 +194,21 @@
 
 .logo__image {
   img {
-    width: 47px;
-    margin-bottom: -20px;
-    transition: all 250ms ease;
+    width: $header-top-height;
+    margin-bottom: -#{ $margin / 2 };
+    transition-property: margin-bottom, width;
+    transition-duration: 250ms;
+    will-change: margin-bottom, width;
 
-    @media screen and (min-width: 992px) {
+    @include media-min(xl) {
       width: 87px;
       margin-bottom: 0;
     }
 
     .header--small & {
-      @media screen and (min-width: 992px) {
-        width: 47px;
-        margin-bottom: -20px;
+      @include media-min(xl) {
+        width: $header-top-height;
+        margin-bottom: -#{ $margin / 2 };
       }
     }
   }

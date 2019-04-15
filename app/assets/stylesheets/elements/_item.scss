@@ -22,7 +22,7 @@
     filter: none;
   }
 
-  @media (min-width: 400px) {
+  @include media-min(xs) {
     padding: $margin;
   }
 
@@ -36,7 +36,7 @@
     }
   }
 
-  @media (min-width: $max-width) {
+  @include media-min(max-width) {
     flex: 0 0 calc((100% - #{$margin}) / 3);
     max-width: calc((100% - #{$margin}) / 3);
     margin-right: $margin / 2;
@@ -188,7 +188,7 @@
     small {
       font-size: 12px;
 
-      @media screen and (min-width: 640px) {
+      @include media-min(sm) {
         font-size: 14px;
       }
 
@@ -199,7 +199,7 @@
     span {
       font-size: 12px;
 
-      @media screen and (min-width: 640px) {
+      @include media-min(sm) {
         font-size: 17px;
       }
     }
@@ -323,7 +323,7 @@
   font-size: 14px;
   padding: .5em .5em 0;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     display: flex;
     flex-wrap: wrap;
   }

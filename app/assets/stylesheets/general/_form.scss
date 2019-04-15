@@ -1,0 +1,58 @@
+.form-field {
+  margin-bottom: $margin / 2;
+}
+
+.form-control {
+  width: 100%;
+  background: darken($primary, 3%);
+  border: 0;
+  padding: ($margin / 4);
+  color: var(--white);
+  font-size: 14px;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: lighten($primary, 20%);
+  }
+}
+
+.form-label {
+  display: block;
+  margin-bottom: $margin / 8;
+  font-size: 14px;
+  color: $white;
+}
+
+.form-title {
+  margin: 0 0 $margin;
+  font-size: 36px;
+}
+
+.form-alert:not(:empty) {
+  background: $bg-color;
+  color: $white;
+  padding: $margin / 4;
+  margin: $margin / 4 0 $margin / 2;
+  border-left: 4px solid $red;
+}
+
+.form-hint {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: $margin / 4;
+}
+
+.form-danger-zone {
+  border: 4px solid $red;
+  padding: $margin / 4;
+  margin-top: $margin;
+  font-size: 14px;
+
+  a {
+    color: $white;
+  }
+}

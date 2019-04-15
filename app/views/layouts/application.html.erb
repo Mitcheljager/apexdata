@@ -16,6 +16,8 @@
 
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
+
+    <%= render "adsense" %>
   </head>
 
   <body>
@@ -24,6 +26,7 @@
     <main class="wrapper top-offset">
       <%= yield %>
 
+      <%= render "ad_footer" %>
       <%= render "social" %>
       <%= render "footer" %>
     </main>

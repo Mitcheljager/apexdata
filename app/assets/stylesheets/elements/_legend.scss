@@ -2,7 +2,7 @@
   flex-direction: column;
   height: auto;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     flex-direction: row;
     height: 100%;
   }
@@ -13,7 +13,7 @@
   max-width: 200px;
   display: none;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     display: block;
   }
 
@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     padding-left: 40px;
   }
 
@@ -86,7 +86,7 @@
   display: flex;
   flex-direction: column-reverse;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     flex-direction: row;
   }
 
@@ -96,7 +96,7 @@
 
   .columns__column {
     width: 100%;
-    @media screen and (min-width: 900px) {
+    @include media-min(lg) {
       width: 50%;
     }
   }
@@ -116,7 +116,7 @@
         filter: brightness(100%);
       }
 
-      @media screen and (min-width: 425px) {
+      @media (min-width: 425px) {
         width: 84px;
       }
     }
@@ -125,7 +125,7 @@
   .item__full-width-info {
     margin-top: 20px;
 
-    @media screen and (min-width: 425px) {
+    @media (min-width: 425px) {
       margin-top: 10px;
     }
 
@@ -139,21 +139,21 @@
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 640px) {
+  @include media-min(sm) {
     flex-direction: row;
   }
 
   .columns__column {
     width: 100%;
 
-    @media screen and (min-width: 640px) {
+    @include media-min(sm) {
       width: 50%;
     }
 
     &:last-of-type {
       margin-top: 25px;
 
-      @media screen and (min-width: 640px) {
+      @include media-min(sm) {
         margin-top: 0;
       }
     }
@@ -168,7 +168,7 @@
   overflow: hidden;
   margin-bottom: 25px;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     display: none;
   }
 

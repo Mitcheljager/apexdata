@@ -33,7 +33,7 @@ h5 {
   align-items: flex-end;
   margin: $margin 0;
 
-  @media (min-width: 1100px) {
+  @include media-min(xxl) {
     margin: $margin * 2 0;
   }
   
@@ -66,7 +66,7 @@ h5 {
   line-height: .75em;
   white-space: nowrap;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     padding-right: $margin;
   }
 
@@ -95,7 +95,7 @@ h5 {
 h3.heading__title {
   font-size: 16px;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     font-size: 21px;
   }
 }

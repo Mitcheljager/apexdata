@@ -1,17 +1,33 @@
-<p id=”alert”><%= alert %></p>
+<% content_for :page_title, "Login" %>
 
-<h1>Login</h1>
+<div class="wrapper wrapper--tiny top-offset">
+  <div class="item item--full-width">
+    <h2 class="form-title">Login</h2>
 
-<%= form_tag sessions_path do |form| %>
-  <div class=”field”>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
+    <div class="form-alert"><%= alert %></div>
+
+    <%= form_tag sessions_path do |form| %>
+      <div class="form-field">
+        <%= label_tag :username, "Username", class: "form-label" %>
+        <%= text_field_tag :username, "", placeholder: "Username", class: "form-control" %>
+      </div>
+
+      <div class="form-field">
+        <%= label_tag :password, "Password", class: "form-label" %>
+        <%= password_field_tag :password, "", placeholder: "Password", class: "form-control" %>
+      </div>
+
+      <%= submit_tag "Submit", class: "button" %>
+    <% end %>
+
+    <br>
+
+    <hr>
+
+    <p>
+      Don't have an account?
+    </p>
+
+    <div><%= link_to "Create an account", new_user_path, class: "button button--small" %></div>
   </div>
-  <div class=”field”>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class=”actions”>
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>
+</div>

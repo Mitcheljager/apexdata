@@ -25,13 +25,13 @@
     width: calc(100% / 5);
   }
 
-  @media (min-width: 768px) {
+  @include media-min(md) {
     flex: 0 0 calc(100% / 6);
     width: calc(100% / 6);
     max-height: 250px;
   }
 
-  @media (min-width: $max-width) {
+  @include media-min(max-width) {
     flex: 0 0 calc(100% / 9);
     width: calc(100% / 9);
   }
@@ -80,7 +80,7 @@
   transition-property: background, color;
   transition-duration: 100ms;
 
-  @media (min-width: 640px) {
+  @include media-min(sm) {
     transform: translateY(-50%);
   }
 }

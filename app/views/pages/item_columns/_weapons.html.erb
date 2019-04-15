@@ -49,12 +49,12 @@
         </div>
 
         <div class="item-columns__radial-graphs">
-          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage") %>
+          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage"), damage_modifier: true %>
           <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire") %>
         </div>
 
         <%= render "pages/item_columns/bar_graph", target: "damage_per_second", label: "Damage per second", max: get_max_value(items, "damage_per_second") %>
-        <%= render "pages/item_columns/bar_graph", target: "headshot_damage", label: "Headshot damage", max: get_max_value(items, "headshot_damage") %>
+        <%= render "pages/item_columns/bar_graph", target: "headshot_damage", modify_target: "headshot_damage_modifier", label: "Headshot damage", max: get_max_value(items, "headshot_damage") %>
         <%= render "pages/item_columns/bar_graph", target: "legshot_damage", label: "Legshot damage", max: get_max_value(items, "legshot_damage") %>
         <%= render "pages/item_columns/bar_graph", target: "damage_per_magazine", label: "Damage per mag", modify_target: "ammo_increase", max: get_max_value(items, "damage_per_magazine") %>
 

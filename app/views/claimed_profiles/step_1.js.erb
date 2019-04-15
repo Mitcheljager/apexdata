@@ -1,0 +1,12 @@
+console.log("Platform: <%= @platform %>")
+
+document.querySelector("[data-role='claim-profile']").innerHTML = `
+  <p>Step 2: <%= @current_legend %></p>
+
+  <%= form_for :claimed_profile, url: claim_profile_step_2_path, remote: true do |form| %>
+    <%= form.hidden_field :platform, value: @platform %>
+    <%= form.hidden_field :user, value: @user %>
+
+    <%= form.submit "Next step" %>
+  <% end %>
+`

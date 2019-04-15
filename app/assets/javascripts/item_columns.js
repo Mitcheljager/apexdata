@@ -128,8 +128,15 @@ function changeCircleGraphs(parent, data) {
     const dataTarget = graph.dataset.target
     const barElement = graph.querySelector("[data-role='circle-graph-bar']")
     const valueElement = graph.querySelector("[data-role='circle-graph-value']")
+    const damageModifierElement = graph.querySelector("[data-role='damage-modifier']")
 
     valueElement.innerHTML = data[dataTarget]
+
+    if (data.damage_modifier && damageModifierElement) {
+      damageModifierElement.innerHTML = "x" + data.damage_modifier
+    } else if (damageModifierElement) {
+      damageModifierElement.innerHTML = ""
+    }
 
     setCircleValue(barElement, data[dataTarget])
   })

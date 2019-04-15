@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 
+//= require Chart.min
 //= require compare
 //= require dropdown
 //= require modify
@@ -20,6 +21,7 @@
 //= require navigation
 //= require theme_switch
 //= require strawpoll
-//= require ga_scroll_depth
 //= require item_columns
 //= require profile_form
+//= require charts
+//= require ads

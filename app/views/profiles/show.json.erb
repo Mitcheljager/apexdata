@@ -1,0 +1,23 @@
+{"api": <%= raw(@response.to_json) %>,
+"savedData": {
+  <% i = 0 %>
+  <% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
+    "<%= legend %>": {
+      <% j = 0 %>
+      <% legend_data.group_by(&:data_name).each do |data_name, data| %>
+        <% dates = [] %>
+        <% values = [] %>
+        <% ProfileLegendData.where(
+                                  profile_uid: @response["global"]["uid"],
+                                  legend: legend,
+                                  data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
+          <% dates.push(date) %>
+          <% values.push(data.last.data_value) %>
+        <% end %>
+        "<%= data_name %>": {"labels": <%= raw(dates.to_json) %>, "values": <%= raw(values.to_json) %> }<%= "," unless j + 1 == legend_data.group_by(&:data_name).length %>
+        <% j = j + 1 %>
+      <% end %>
+    }<%= "," unless i + 1 == @saved_values.group_by(&:legend).length %>
+    <% i = i + 1 %>
+  <% end if @saved_values.any? %>}
+}

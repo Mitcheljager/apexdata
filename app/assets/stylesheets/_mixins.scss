@@ -8,7 +8,13 @@
     font-size: ($max-value / ($max-value * 0 + 1)) / (($max-width / ($max-width * 0 + 1)) / 100) + vw;
   }
 
-  @media (min-width: $max-width) {
+  @include media-min(max-width) {
     font-size: $max-value;
+  }
+}
+
+@mixin media-min($media) {
+  @media (min-width: #{ map-get($media-min-widths, $media) }) {
+    @content;
   }
 }
