@@ -14,7 +14,7 @@ module ApexData
 
     config.after_initialize do
       Rails.application.load_tasks
-      Rake::Task["keep_profiles_updated"].invoke
+      Rake::Task["keep_profiles_updated"].invoke if Flipper.enabled?(:profiles)
     end
 
     # Settings in config/environments/* take precedence over those specified here.
