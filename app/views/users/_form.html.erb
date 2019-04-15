@@ -1,5 +1,5 @@
 <% if Flipper.enabled?(:users) %>
-  <%= form_with(model: user, local: true) do |f| %>
+  <%= form_for @user, url: url do |f| %>
     <% if user.errors.any? %>
       <div class="form-alert">
         <div><strong><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</strong></div>

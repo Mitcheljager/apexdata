@@ -45,3 +45,14 @@
   font-style: italic;
   margin-top: $margin / 4;
 }
+
+.form-danger-zone {
+  border: 4px solid $red;
+  padding: $margin / 4;
+  margin-top: $margin;
+  font-size: 14px;
+
+  a {
+    color: $white;
+  }
+}

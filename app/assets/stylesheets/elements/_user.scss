@@ -1,0 +1,16 @@
+.user__claimed-profile-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $margin / 2 0;
+  border-bottom: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  a {
+    font-size: 12px;
+  }
+}

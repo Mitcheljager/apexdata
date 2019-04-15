@@ -61,6 +61,12 @@ class ClaimedProfilesController < ApplicationController
     end
   end
 
+  def destroy
+    @claimed_profile = ClaimedProfile.find(params[:id])
+    redirect_to user_path if @claimed_profile.id != current_user.id
+    redirect_to claimed_profile
+  end
+
   private
 
   def getClaimedProfile
