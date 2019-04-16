@@ -117,7 +117,7 @@
         gas_radius: 5<span>m</span>
         duration: 12.5<span>s</span>
       secondary_data:
-        damage: 1 / 10<small>tick</small>
+        damage: 4 / 10<small>tick</small>
         cooldown: 30<small>s</small>
         speed: -25<small>%</small>
         detection: 2.5<small>m</small>
@@ -138,6 +138,7 @@
         damage: 1 / 10<small>tick</small>
         duration: 20<small>s</small>
         speed: -25<small>%</small>
+        throw_distance: 33<small>m</small>
   badges:
     - name: Apex Caustic
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -177,7 +178,7 @@
       name: Gun Shield
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
       primary_data:
-        shield: 50
+        shield: 75
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment
