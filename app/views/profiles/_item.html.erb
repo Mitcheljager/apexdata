@@ -16,10 +16,18 @@
           <div class="profile-stats">
             <span class="profile-stats__name"><%= key.humanize %></span>
             <span class="profile-stats__amount"><span class="amount__total"><%= value["value"] %></span></span>
-            
+
             <div class="profile-stats__bar">
-              <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
+              <% if ProfileLegendData.where(data_name: key).order(:data_value).last %>
+                <% max_value = ProfileLegendData.where(data_name: key).order(:data_value).last.data_value %>
+                <% value_percentage = ((100 / max_value.to_f) * value["value"].to_f).round(2) %>
+              <% else %>
+                <% max_value = value["value"] %>
+                <% value_percentage = 100 %>
+              <% end %>
+
+              <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="<%= max_value %>">
+                <div class="bar-graph__line" data-role="bar-graph-line" style="width: <%= value_percentage %>%;"></div>
               </div>
             </div>
           </div>

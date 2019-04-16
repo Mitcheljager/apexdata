@@ -10,6 +10,7 @@
     </div>
 
     <div class="user__actions">
+      <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.strftime("%F at %T") %></em></small>
       <a href="#" class="profile__button">Update profile</a>
       <a href="#" class="profile__button profile__button--primary">Get automatic updates</a>
     </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="profile__notification">
-        Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve the data you have set as your badges.
+        Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve the data you have set as your Tickers.
       </div>
 
       <%= render "profiles/charts" %>
