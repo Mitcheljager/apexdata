@@ -1,12 +1,14 @@
 <% content_for :page_title, @response["global"]["name"] %>
 
 <div class="profile-intro">
-  <h2 class="intro-platform"><%= params[:platform] %></h2>
+  <h2 class="intro-platform"><%= @response["global"]["platform"] %></h2>
+
   <div class="intro-user">
     <div class="user__about">
-      <h1 class="user-name"><%= params[:user] %></h1>
+      <h1 class="user-name"><%= @response["global"]["name"] %></h1>
       <span class="user-status">Offline</span>
     </div>
+    
     <div class="user__actions">
       <a href="#" class="profile__button">Update profile</a>
       <a href="#" class="profile__button profile__button--primary">Get automatic updates</a>
@@ -40,322 +42,20 @@
 
     <div class="item-columns__content">
       <div class="profile-legends">
-        <%= @response["legends"]["all"].each do |legend, content| %>
-          <%= render "profiles/item", data: content["data"], legend: legend, current: @response["legends"]["selected"][legend] ? true : false %>
+        <% legends_hash = @response["legends"]["all"] %>
+        <% no_data_legends_array = [] %>
+        <% legends_hash.each do |item| %>
+          <% legends_hash = Hash[legends_hash.to_a.unshift(item)] if @response["legends"]["selected"][item.first] %>
+
+          <% legends_hash.delete(item.first) unless item.last["data"] %>
+          <% no_data_legends_array.push(item) unless item.last["data"] %>
         <% end %>
 
-        <div class="profile-legend profile-legend--current item">
-          <div class="profile-legend__image">
-            <%= image_tag "legends/bangalore/banner.jpg" %>
-          </div>
+        <% legends_hash = legends_hash.merge(Hash[no_data_legends_array]) %>
 
-          <div class="profile-legend__content">
-            <span class="profile-legend__selected">Selected</span>
-
-            <h2 class="profile-legend__name">Bangalore</h2>
-
-            <div class="profile-legend__stats">
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-legend item">
-          <div class="profile-legend__image">
-            <%= image_tag "legends/mirage/banner.jpg" %>
-          </div>
-
-          <div class="profile-legend__content">
-            <span class="profile-legend__selected">Selected</span>
-            <h2 class="profile-legend__name">Mirage</h2>
-            <div class="profile-legend__stats">
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-legend item">
-          <div class="profile-legend__image">
-            <%= image_tag "legends/pathfinder/banner.jpg" %>
-          </div>
-          <div class="profile-legend__content">
-            <span class="profile-legend__selected">Selected</span>
-            <h2 class="profile-legend__name">Pathfinder</h2>
-            <div class="profile-legend__stats">
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-legend item">
-          <div class="profile-legend__no-data"><span>Change to <strong>Caustic</strong> and update the page</span></div>
-          <div class="profile-legend__image">
-            <%= image_tag "legends/caustic/banner.jpg" %>
-          </div>
-          <div class="profile-legend__content">
-            <span class="profile-legend__selected">Selected</span>
-            <h2 class="profile-legend__name">Caustic</h2>
-            <div class="profile-legend__stats">
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-legend item">
-          <div class="profile-legend__no-data"><span>Change to <strong>Wraith</strong> and update the page</span></div>
-          <div class="profile-legend__image">
-            <%= image_tag "legends/wraith/banner.jpg" %>
-          </div>
-          <div class="profile-legend__content">
-            <span class="profile-legend__selected">Selected</span>
-            <h2 class="profile-legend__name">Wraith</h2>
-            <div class="profile-legend__stats">
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-legend item">
-          <div class="profile-legend__no-data"><span>Change to <strong>Octane</strong> and update the page</span></div>
-          <div class="profile-legend__image">
-            <%= image_tag "legends/octane/banner.jpg" %>
-          </div>
-          <div class="profile-legend__content">
-            <span class="profile-legend__selected">Selected</span>
-            <h2 class="profile-legend__name">Octane</h2>
-            <div class="profile-legend__stats">
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-legend item">
-          <div class="profile-legend__no-data"><span>Change to <strong>Gibraltar</strong> and update the page</span></div>
-          <div class="profile-legend__image">
-            <%= image_tag "legends/gibraltar/banner.jpg" %>
-          </div>
-          <div class="profile-legend__content">
-            <span class="profile-legend__selected">Selected</span>
-            <h2 class="profile-legend__name">Gibraltar</h2>
-            <div class="profile-legend__stats">
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="profile-stats">
-                <span class="profile-stats__name">Kills</span>
-                <span class="profile-stats__amount"><span class="amount__total">?</span><span class="amount__global">#?</span></span>
-                <div class="profile-stats__bar">
-                  <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-                    <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <% legends_hash.each do |legend, content| %>
+          <%= render "profiles/item", data: content["data"], legend: legend, current: @response["legends"]["selected"][legend] ? true : false %>
+        <% end %>
       </div>
     </div>
   </main>

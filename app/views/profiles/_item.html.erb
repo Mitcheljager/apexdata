@@ -11,55 +11,22 @@
     <h2 class="profile-legend__name"><%= legend %></h2>
 
     <div class="profile-legend__stats">
-      <div class="profile-stats">
-        <span class="profile-stats__name">Kills</span>
-        <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-        <div class="profile-stats__bar">
-          <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-            <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
+      <% if data %>
+        <% data.each do |key, value| %>
+          <div class="profile-stats">
+            <span class="profile-stats__name"><%= key.humanize %></span>
+            <span class="profile-stats__amount"><span class="amount__total"><%= value["value"] %></span></span>
+            
+            <div class="profile-stats__bar">
+              <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
+                <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="profile-stats">
-        <span class="profile-stats__name">Kills</span>
-        <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-        <div class="profile-stats__bar">
-          <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-            <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="profile-stats">
-        <span class="profile-stats__name">Kills</span>
-        <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-        <div class="profile-stats__bar">
-          <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-            <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="profile-stats">
-        <span class="profile-stats__name">Kills</span>
-        <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-        <div class="profile-stats__bar">
-          <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-            <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="profile-stats">
-        <span class="profile-stats__name">Kills</span>
-        <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
-        <div class="profile-stats__bar">
-          <div class="bar-graph__bar" data-role="bar-graph-bar" data-max="198">
-            <div class="bar-graph__line" data-role="bar-graph-line" style="width: 80.8081%;"></div>
-          </div>
-        </div>
-      </div>
+        <% end %>
+      <% else %>
+        <%= render "item_no_data", legend: legend %>
+      <% end %>
     </div>
   </div>
 </div>
