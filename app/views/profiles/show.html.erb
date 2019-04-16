@@ -1,6 +1,6 @@
 <% content_for :page_title, @response["global"]["name"] %>
 
-<div class="profile-intro">
+<div class="profile-intro top-offset">
   <h2 class="intro-platform"><%= @response["global"]["platform"] %></h2>
 
   <div class="intro-user">
@@ -8,7 +8,7 @@
       <h1 class="user-name"><%= @response["global"]["name"] %></h1>
       <span class="user-status">Offline</span>
     </div>
-    
+
     <div class="user__actions">
       <a href="#" class="profile__button">Update profile</a>
       <a href="#" class="profile__button profile__button--primary">Get automatic updates</a>
