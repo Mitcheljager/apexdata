@@ -18,39 +18,42 @@
   <main class="item-columns__main">
     <aside class="item-columns__sidebar">
       <div class="item item--profile">
-
         <div class="profile__level">
           <div class="circle-graph__label">
             Level
-            <h4>77</h4>
+            <h4><%= @response["global"]["level"] %></h4>
           </div>
           <div class="level-graph circle-graph__graph">
-            <div class="circle-graph__bar" style="--value: 23" data-max="100" data-role="circle-graph-bar"></div>
+            <div class="circle-graph__bar" style="--value: <%= @response["global"]["level"] %>" data-max="100" data-role="circle-graph-bar"></div>
           </div>
         </div>
 
-        <div class="profile__claim">
-          <h3>Your profile?</h3>
-          <p>Ajay Che, aka Lifeline, isn’t someone you would expect to find in the Apex Games. Once the child of wealthy war profiteers, she left home when she learned of the damage her family had caused and enlisted in the Frontier Corps, a humanitarian</p>
-          <a href="#" class="button">Claim this profile</a>
-        </div>
+        <%= render "profiles/claim" %>
       </div>
 
-      <div class="profile-charts">
-        <%= image_tag "chart.png" %>
+      <div class="profile__notification">
+        Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve the data you have set as your badges.
       </div>
+
+      <%= render "profiles/charts" %>
     </aside>
 
     <div class="item-columns__content">
       <div class="profile-legends">
+        <%= @response["legends"]["all"].each do |legend, content| %>
+          <%= render "profiles/item", data: content["data"], legend: legend, current: @response["legends"]["selected"][legend] ? true : false %>
+        <% end %>
 
         <div class="profile-legend profile-legend--current item">
           <div class="profile-legend__image">
             <%= image_tag "legends/bangalore/banner.jpg" %>
           </div>
+
           <div class="profile-legend__content">
             <span class="profile-legend__selected">Selected</span>
+
             <h2 class="profile-legend__name">Bangalore</h2>
+
             <div class="profile-legend__stats">
               <div class="profile-stats">
                 <span class="profile-stats__name">Kills</span>
@@ -61,6 +64,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="profile-stats">
                 <span class="profile-stats__name">Kills</span>
                 <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
@@ -70,6 +74,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="profile-stats">
                 <span class="profile-stats__name">Kills</span>
                 <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
@@ -79,6 +84,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="profile-stats">
                 <span class="profile-stats__name">Kills</span>
                 <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
@@ -88,6 +94,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="profile-stats">
                 <span class="profile-stats__name">Kills</span>
                 <span class="profile-stats__amount"><span class="amount__total">850</span><span class="amount__global">#5</span></span>
@@ -105,6 +112,7 @@
           <div class="profile-legend__image">
             <%= image_tag "legends/mirage/banner.jpg" %>
           </div>
+
           <div class="profile-legend__content">
             <span class="profile-legend__selected">Selected</span>
             <h2 class="profile-legend__name">Mirage</h2>

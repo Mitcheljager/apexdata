@@ -52,12 +52,12 @@
   background: var(--primary);
   padding: 6px 12px;
   border-radius: 3px;
-  margin-left: 20px;
-  letter-spacing: 0.5px;
+  margin-left: $margin / 2;
+  letter-spacing: .5px;
 }
 
 .profile-content {
-  margin-top: 40px;
+  margin-top: $margin;
 }
 
 .level-graph {
@@ -81,7 +81,8 @@
   background: var(--primary);
   flex: 0 0 calc(100% - 30px);
   max-width: calc(100% - 30px);
-  margin-top: 20px;
+  margin-top: $margin / 2;
+  padding: $margin;
 
   img {
     vertical-align: middle;

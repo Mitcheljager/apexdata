@@ -4,9 +4,13 @@ class ClaimedProfilesController < ApplicationController
 
   def initiate
     setApiData
-    step_1_legend = legends_list.sample
-    step_2_legend = legends_list.sample
-    step_3_legend = legends_list.sample
+
+    available_legends = ["Bangalore", "Bloodhound", "Gibraltar", "Lifeline", "Pathfinder", "Wraith"]
+    step_1_legend = available_legends.sample
+    available_legends.delete(step_1_legend)
+    step_2_legend = available_legends.sample
+    available_legends.delete(step_2_legend)
+    step_3_legend = available_legends.sample
 
     @claimed_profile = ClaimedProfile.new(user_id: current_user.id, profile_uid: claimed_profile_params[:profile_uid], check_1: step_1_legend, check_2: step_2_legend, check_3: step_3_legend)
     @current_legend = @claimed_profile.check_1
@@ -70,7 +74,7 @@ class ClaimedProfilesController < ApplicationController
   private
 
   def getClaimedProfile
-    url = "http://api.apexlegendsstatus.com/bridge?platform=#{ claimed_profile_params[:platform].upcase }&player=#{ claimed_profile_params[:user] }&auth=MqoOOiZTU1H8ADHItbfI"
+    url = "http://api.mozambiquehe.re/bridge?platform=#{ claimed_profile_params[:platform].upcase }&player=#{ claimed_profile_params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
     response = HTTParty.get(url)
     if response
       @response = JSON.parse(response)
