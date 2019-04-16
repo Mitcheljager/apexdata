@@ -60,7 +60,7 @@
 
         <hr>
 
-        <%= render "pages/item_columns/static_value", target: "ammo_capacity", modify_target: "ammo_increase", label: "Ammo capacity" %>
+        <%= render "pages/item_columns/static_value", target: "ammo_capacity", modify_target: "ammo_increase", modify_round: true, label: "Ammo capacity" %>
         <%= render "pages/item_columns/static_value", target: "projectile_speed", modify_target: "projectile_speed", label: "Projectile speed", identifier: "m/s" %>
         <%= render "pages/item_columns/static_value", target: "tactical_reload", modify_target: "reload_time", label: "Tactical reload", identifier: "s" %>
         <%= render "pages/item_columns/static_value", target: "empty_reload", modify_target: "reload_time", label: "Empty reload", identifier: "s" %>

@@ -29,11 +29,11 @@
   attachments_overwrite:
     extended_heavy_mag:
       basic:
-        ammo_increase: 14.28%
+        ammo_increase: 15%
       rare:
-        ammo_increase: 28.585%
+        ammo_increase: 28%
       epic:
-        ammo_increase: 57.155%
+        ammo_increase: 56%
   fire_modes:
     auto: true
   spray_pattern:
