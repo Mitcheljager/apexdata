@@ -15,7 +15,24 @@
         <% data.each do |key, value| %>
           <div class="profile-stats">
             <span class="profile-stats__name"><%= key.humanize %></span>
-            <span class="profile-stats__amount"><span class="amount__total"><%= value["value"] %></span></span>
+            <span class="profile-stats__amount">
+              <span class="amount__total"><%= value["value"] %></span>
+
+              <div class="dropdown dropdown--dropup profile-stats__updates">
+                <small>Updates</small>
+
+                <div class="dropdown__content">
+                  <div class="dropdown__inner">
+                    <% saved_values.where(data_name: key).limit(8).each do |data| %>
+                      <div class="profile-stats__updates-item">
+                        <em><%= data.created_at.to_formatted_s(:short) %>: </em>
+                        <strong><%= data.data_value %></strong>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </span>
 
             <div class="profile-stats__bar">
               <% if ProfileLegendData.where(data_name: key).order(:data_value).last %>

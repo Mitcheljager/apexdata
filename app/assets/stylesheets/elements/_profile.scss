@@ -54,6 +54,12 @@
   border-radius: 3px;
   margin-left: $margin / 2;
   letter-spacing: .5px;
+
+  &--is-online {
+    background: $green;
+    color: $white;
+    border-color: lighten($green, 10%);
+  }
 }
 
 .profile-content {
@@ -188,6 +194,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.profile-stats__updates {
+  font-size: 11px;
+  color: var(--text-color);
+  font-weight: normal;
+  cursor: default;
+}
+
+.profile-stats__updates-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
 }
 
 .amount__global {
