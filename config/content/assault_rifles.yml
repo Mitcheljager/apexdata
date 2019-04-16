@@ -207,7 +207,7 @@
   headshot_damage: 36
   legshot_damage: 13.5
   rate_of_fire: 672
-  ammo_capacity: 25
+  ammo_capacity: 32
   tactical_reload: 2.4
   empty_reload: 3.2
   ammo_type: energy

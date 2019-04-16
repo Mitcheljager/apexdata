@@ -2,7 +2,7 @@
   name: G7 Scout
   damage: 30
   headshot_damage: 60
-  legshot_damage: 21.75
+  legshot_damage: 27
   rate_of_fire: 273
   ammo_capacity: 10
   tactical_reload: 2.4
@@ -41,9 +41,9 @@
   name: Longbow
   damage: 55
   headshot_damage: 110
-  legshot_damage: 40
-  rate_of_fire: 86
-  ammo_capacity: 5
+  legshot_damage: 50
+  rate_of_fire: 108
+  ammo_capacity: 6
   tactical_reload: 2.66
   empty_reload: 3.66
   ammo_type: heavy
@@ -77,7 +77,7 @@
   damage: 23
   damage_modifier: 3
   headshot_damage: 46
-  legshot_damage: 17
+  legshot_damage: 21
   rate_of_fire: 88
   ammo_capacity: 5
   tactical_reload: 2.6

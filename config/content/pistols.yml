@@ -107,7 +107,7 @@
   headshot_damage: 90
   legshot_damage: 40.5
   rate_of_fire: 156
-  ammo_capacity: 6
+  ammo_capacity: 4
   tactical_reload: 2.1
   empty_reload: 2.1
   ammo_type: heavy
@@ -132,5 +132,12 @@
     skullpiercer_rifling:
       epic:
         headshot_damage_modifier: 25%
+    extended_heavy_mag:
+      basic:
+        ammo_increase: 50%
+      rare:
+        ammo_increase: 100%
+      epic:
+        ammo_increase: 150%
   fire_modes:
     single: true

@@ -1,6 +1,6 @@
 -
   name: Spitfire
-  damage: 20
+  damage: 18
   headshot_damage: 40
   legshot_damage: 15
   rate_of_fire: 512
@@ -29,11 +29,11 @@
   attachments_overwrite:
     extended_heavy_mag:
       basic:
-        ammo_increase: 28%
+        ammo_increase: 14.28%
       rare:
-        ammo_increase: 58%
+        ammo_increase: 28.585%
       epic:
-        ammo_increase: 70%
+        ammo_increase: 57.155%
   fire_modes:
     auto: true
   spray_pattern:
