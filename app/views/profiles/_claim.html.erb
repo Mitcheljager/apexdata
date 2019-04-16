@@ -20,8 +20,12 @@
       <%= link_to "Claim this profile", login_path, class: "button" %>
     <% end %>
   <% else %>
-    <% if @claimedProfile.user_id == current_user.id %>
-      <p><center>You have claimed this profile</center></p>
+    <% if current_user %>
+      <% if @claimedProfile.user_id == current_user.id %>
+        <p><center>You have claimed this profile</center></p>
+      <% else %>
+        <p><center>This profile has been claimed</center></p>
+      <% end %>
     <% else %>
       <p><center>This profile has been claimed</center></p>
     <% end %>

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = current_user
     redirect_to root_path unless @user
 
-    @claimed_profiles = ClaimedProfile.where(user_id: @user.id)
+    @claimed_profiles = ClaimedProfile.where(user_id: @user.id, checks_completed: 1)
   end
 
   def new
