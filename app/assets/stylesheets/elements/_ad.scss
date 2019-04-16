@@ -34,7 +34,7 @@
   text-align: center;
 }
 
-.adsbygoogle {
+.adsbygoogle:not(.ad-container) {
   grid-area: ad-desktop;
 
   @media (min-width: 500px) {
