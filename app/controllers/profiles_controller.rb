@@ -12,7 +12,16 @@ class ProfilesController < ApplicationController
 
   def show
     url = "http://api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
-    response = HTTParty.get(url)
+    begin
+      response = HTTParty.get(url)
+    rescue HTTParty::Error
+      render "not_found"
+      return
+    rescue StandardError
+      render "not_found"
+      return
+    end
+
     if response
       @response = JSON.parse(response)
     end
@@ -20,7 +29,8 @@ class ProfilesController < ApplicationController
     if @response["global"]
       @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
     else
-      @saved_values = nil
+      render "not_found"
+      return
     end
 
     if @response["legends"]["selected"]

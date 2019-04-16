@@ -18,25 +18,27 @@
             <span class="profile-stats__amount">
               <span class="amount__total"><%= value["value"] %></span>
 
-              <div class="dropdown dropdown--dropup profile-stats__updates">
-                <small>Updates</small>
+              <% if saved_values.where(legend: legend, data_name: key).any? %>
+                <div class="dropdown dropdown--dropup profile-stats__updates">
+                  <small>Updates</small>
 
-                <div class="dropdown__content">
-                  <div class="dropdown__inner">
-                    <% saved_values.where(data_name: key).limit(8).each do |data| %>
-                      <div class="profile-stats__updates-item">
-                        <em><%= data.created_at.to_formatted_s(:short) %>: </em>
-                        <strong><%= data.data_value %></strong>
-                      </div>
-                    <% end %>
+                  <div class="dropdown__content">
+                    <div class="dropdown__inner">
+                      <% saved_values.where(legend: legend, data_name: key).limit(8).each do |data| %>
+                        <div class="profile-stats__updates-item">
+                          <em><%= data.created_at.to_formatted_s(:short) %>: </em>
+                          <strong><%= data.data_value %></strong>
+                        </div>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             </span>
 
             <div class="profile-stats__bar">
-              <% if ProfileLegendData.where(data_name: key).order(:data_value).last %>
-                <% max_value = ProfileLegendData.where(data_name: key).order(:data_value).last.data_value %>
+              <% if ProfileLegendData.where(legend: legend, data_name: key).order(:data_value).last %>
+                <% max_value = ProfileLegendData.where(legend: legend, data_name: key).order(:data_value).last.data_value %>
                 <% value_percentage = ((100 / max_value.to_f) * value["value"].to_f).round(2) %>
               <% else %>
                 <% max_value = value["value"] %>
