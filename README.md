@@ -4,20 +4,23 @@ This is the repository for [ApexData.gg](https://www.apexdata.gg/). Anyone is fe
 
 ### API
 
+**This Documentation can also be found on [ApexData.gg/api](https://www.apexdata.gg/api)**
+
 _We provide an API with most of the Data you will find on ApexData.gg. This API is free of charge and has unlimited calls. We do ask for a respectful use of our API, excessive spam requests will be blocked._
 
-#### Aquiring an API Key
+#### Acquiring an API Key
 
-To aquire an API key please login or create an account on [ApexData.gg](https://www.apexdata.gg/). You will find your API key on your account page. This key is associated with your account and is required for all of your requests. To get multiple API keys you will need to create multiple accounts.
+To acquire an API key please login or create an account on [ApexData.gg](https://www.apexdata.gg/). You will find your API key on your account page. This key is associated with your account and is required for all of your requests. To get multiple API keys you will need to create multiple accounts.
 
 #### How to retrieve data
 
-Calls are contructed as follows:
+Calls are constructed as follows:
 ```
 https://www.apexdata.gg/api/[your_api_key]/[type]/[optional_values].json
 ```
 
-**Weapons**
+##### Weapons
+
 To retrieve all weapon data you would call:
 ```
 https://www.apexdata.gg/api/[your_api_key]/weapons.json
@@ -42,7 +45,8 @@ https://www.apexdata.gg/api/[your_api_key]/weapons/[data_type]/[_value].json
 For example: `.../weapons/ammo-type/light.json` will return all weapons that use "Light" ammo.
 This can also be used to get a specific weapon by it's name. `/weapons/name/eva-8-auto.json`. All names are downcase, and spaces are replaced with a dash `-`.
 
-**Legends**
+##### Legends
+
 To retrieve all legends data you would call:
 ```
 https://www.apexdata.gg/api/[your_api_key]/legends.json
@@ -50,7 +54,8 @@ https://www.apexdata.gg/api/[your_api_key]/legends.json
 
 Similar to weapons, you can also find legends by their name using `/legends/name/bangalore.json`. All names are downcase, and spaces are replaced with a dash `-`.
 
-**Items**
+##### Items
+
 Items come in several categories; `equipment`, `consumables`, `grenades`, `attachments`.
 
 To retrieve items you would call:
