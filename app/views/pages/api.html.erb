@@ -32,9 +32,13 @@
   <p>You can also retrieve weapons by their category:</p>
   <pre><code>https://www.apexdata.gg/api/[your_api_key]/weapons/[category].json</code></pre>
   <p>Categories include: <code>assault-rifles</code>, <code>pistols</code>, <code>shotguns</code>, <code>sniper-rifles</code>, <code>light-machine-guns</code>, <code>sub-machine-guns</code>.</p>
+
+  <strong>Sorting</strong><br>
   <p>Weapons can optionally be sorted by whichever numerical value you want. You would retrieve this as:</p>
   <pre><code>https://www.apexdata.gg/api/[your_api_key]/weapons/sort/[weapon_category]/[data_type].json</code></pre>
-  <p>For example: <code>.../weapons/sort/pistols/damage-per-second.json</code>. The values are separated with dashes <code>-</code>, even though the values might have underscores <code>_</code>.</p>
+  <p>For example: <code>.../weapons/sort/pistols/damage-per-second.json</code>. The values are separated with dashes <code>-</code>, even though the values might have underscores <code>_</code>. <code>all</code> Can be used to sort by all categories.</p>
+
+  <strong>Search</strong><br>
   <p>You can also retrieve weapons by any of it’s values.</p>
   <pre><code>https://www.apexdata.gg/api/[your_api_key]/weapons/[data_type]/[_value].json</code></pre>
   <p>For example: <code>.../weapons/ammo-type/light.json</code> will return all weapons that use “Light” ammo.<br>

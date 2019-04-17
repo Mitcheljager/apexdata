@@ -35,7 +35,7 @@ Weapons can optionally be sorted by whichever numerical value you want. You woul
 ```
 https://www.apexdata.gg/api/[your_api_key]/weapons/sort/[weapon_category]/[data_type].json
 ```
-For example: `.../weapons/sort/pistols/damage-per-second.json`. The values are separated with dashes `-`, even though the values might have underscores `_`.
+For example: `.../weapons/sort/pistols/damage-per-second.json`. The values are separated with dashes `-`, even though the values might have underscores `_`. `all` Can be used to sort by all categories.
 
 You can also retrieve weapons by any of it's values.
 ```
