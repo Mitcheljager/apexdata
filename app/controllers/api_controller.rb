@@ -3,6 +3,10 @@ class ApiController < ApplicationController
 
   before_action :check_api_key
 
+  rescue_from StandardError do |exception|
+    render :json => @error_object.to_json, :status => :unprocessable_entity
+  end
+
   def basic
     @items = eval params[:type].underscore
 
@@ -25,11 +29,16 @@ class ApiController < ApplicationController
       params[:items] = "weapons"
     end
 
-    items = eval params[:items].underscore
+    @items = eval params[:items].underscore
+    @items = @items.sort! { |a,b| b[params[:sort_by].underscore] <=> a[params[:sort_by].underscore] }
 
-    if items.any?
-      @items = items.sort! { |a,b| b[params[:sort_by].underscore] <=> a[params[:sort_by].underscore] }
+    respond_to do |format|
+      format.json { render json: JSON.pretty_generate(JSON.parse(@items.to_json()))}
     end
+  end
+
+  def category
+    @items = eval params[:category].underscore
 
     respond_to do |format|
       format.json { render json: JSON.pretty_generate(JSON.parse(@items.to_json()))}

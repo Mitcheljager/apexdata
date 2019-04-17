@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get "api/:key/:type" => "api#basic"
   get "api/:key/:type/:where/:value" => "api#where"
   get "api/:key/:type/sort/:items/:sort_by" => "api#sort"
-  get "api/:key/:type/:category" => "api#weapon_category"
+  get "api/:key/:type/:category" => "api#category"
 
   resources :claimed_profiles, only: [:destroy]
   post "claim-initiate", to: "claimed_profiles#initiate", as: "claim_profile_initiate"

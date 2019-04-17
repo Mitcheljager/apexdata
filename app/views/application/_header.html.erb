@@ -7,6 +7,7 @@
       </h1>
 
       <div class="header__content header__content--right header__content--social-icons">
+        <%= link_to "Login", login_path, class: "header__login" if Flipper.enabled?(:users) %>
         <%= link_to inline_svg("icons/icon-twitter.svg"), "https://twitter.com/apexdatagg", target: "_blank" %>
         <%= link_to inline_svg("icons/icon-facebook.svg"), "https://www.facebook.com/ApexData-1430225080436016/", target: "_blank" %>
       </div>

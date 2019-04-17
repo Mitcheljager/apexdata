@@ -2,6 +2,7 @@
   <div class="navigation-close">
     <%= inline_svg("layout/close.svg") %>
   </div>
+
   <div class="dropdown">
     <%= link_to page_path("weapons"), class: current_page?(page_path("weapons")) ? "active" : "" do %>
       Weapons & items
@@ -62,5 +63,20 @@
     </div>
   </div>
 
-  <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
+  <div class="dropdown">
+    <a>
+      Other
+      <%= inline_svg("layout/icon-dropdown.svg") %>
+    </a>
+
+    <div class="dropdown__content">
+      <div class="dropdown__inner">
+        <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
+
+        <hr>
+
+        <%= link_to "API", page_path("api"), class: current_page?(page_path("api")) ? "active" : "" %>
+      </div>
+    </div>
+  </div>
 </nav>

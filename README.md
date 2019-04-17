@@ -2,6 +2,78 @@
 
 This is the repository for [ApexData.gg](https://www.apexdata.gg/). Anyone is feel to contribute by forking this project.
 
+### API
+
+_We provide an API with most of the Data you will find on ApexData.gg. This API is free of charge and has unlimited calls. We do ask for a respectful use of our API, excessive spam requests will be blocked._
+
+#### Aquiring an API Key
+
+To aquire an API key please login or create an account. You will find your API key on your account page. This key is associated with your account and is required for all of your requests. To get multiple API keys you will need to create multiple accounts.
+
+#### How to retrieve data
+
+Calls are contructed as follows:
+```
+https://www.apexdata.gg/api/[your_api_key]/[type]/[optional_values].json
+```
+
+**Weapons**
+To retrieve all weapon data you would call:
+```
+https://www.apexdata.gg/api/[your_api_key]/weapons.json
+```
+You can also retrieve weapons by their category:
+```
+https://www.apexdata.gg/api/[your_api_key]/weapons/[category].json
+```
+Categories include: `assault-rifles`, `pistols`, `shotguns`, `sniper-rifles`, `light-machine-guns`, `sub-machine-guns`.
+
+Weapons can optionally be sorted by whichever numerical value you want. You would retrieve this as:
+```
+https://www.apexdata.gg/api/[your_api_key]/weapons/sort/[weapon_category]/[data_type].json
+```
+For example: `.../weapons/sort/pistols/damage-per-second.json`. The values are separated with dashes `-`, even though the values might have underscores `_`.
+
+You can also retrieve weapons by any of it's values.
+```
+https://www.apexdata.gg/api/[your_api_key]/weapons/[data_type]/[_value].json
+```
+
+For example: `.../weapons/ammo-type/light.json` will return all weapons that use "Light" ammo.
+This can also be used to get a specific weapon by it's name. `/weapons/name/eva-8-auto.json`. All names are downcase, and spaces are replaced with a dash `-`.
+
+**Legends**
+To retrieve all legends data you would call:
+```
+https://www.apexdata.gg/api/[your_api_key]/legends.json
+```
+
+Similar to weapons, you can also find legends by their name using `/legends/name/bangalore.json`. All names are downcase, and spaces are replaced with a dash `-`.
+
+**Items**
+Items come in several categories; `equipment`, `consumables`, `grenades`, `attachments`.
+
+To retrieve items you would call:
+```
+https://www.apexdata.gg/api/[your_api_key]/[category].json
+```
+
+For example: `.../grenades.json` will retrieve all Grenades.
+
+Similar to weapons and legends, you can also find items by their name using `/[category]/name/1x-holo.json`. All names are downcase, and spaces are replaced with a dash `-`.
+
+#### Player Data
+
+We do not supply Player or Account data. Check out [https://github.com/HugoDerave/ApexLegendsAPI](https://github.com/HugoDerave/ApexLegendsAPI) if you are looking for Player data.
+
+#### Questions, Requests and issues
+
+For any problems you encounter, requests, or questions, please create an issue and we will see what we can do!
+
+---
+
+### The project
+
 ### Getting it running
 
 This is a basic Rails (5.2) project without anything added that needs additional steps to get started. There is no database and as a result no rake tasks are required to be ran.

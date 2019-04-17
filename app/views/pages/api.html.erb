@@ -1,0 +1,60 @@
+<% content_for :page_title, "API" %>
+
+<div class="wrapper wrapper--small no-text-transform">
+  <div class="heading">
+    <h2 class="heading__title">API</h2>
+  </div>
+
+  <div class="relative">
+    <nav class="scroll-spy" data-role="scroll-spy">
+      <%= link_to "Aquiring an API Key", "#Aquiring_an_API_Key_2", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "How to retrieve data", "#How_to_retrieve_data_6", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "Weapons", "#Weapons", class: "scroll-spy__item" %>
+      <%= link_to "Legends", "#Legends", class: "scroll-spy__item" %>
+      <%= link_to "Items", "#Items", class: "scroll-spy__item" %>
+      <%= link_to "Player Data", "#Player_Data_58", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "Questions, Requests and Issues", "#Questions_Requests_and_issues_62", class: "scroll-spy__item scroll-spy__item--large" %>
+    </nav>
+  </div>
+
+  <p><em>We provide an API with most of the Data you will find on <a href="http://ApexData.gg">ApexData.gg</a>. This API is free of charge and has unlimited calls. We do ask for a respectful use of our API, excessive spam requests will be blocked.</em></p>
+
+  <h4><a data-scroll-spy id="Aquiring_an_API_Key_2"></a>Aquiring an API Key</h4>
+  <p>To aquire an API key please login or create an account. You will find your API key on your account page. This key is associated with your account and is required for all of your requests. To get multiple API keys you will need to create multiple accounts.</p>
+
+  <h4><a data-scroll-spy id="How_to_retrieve_data_6"></a>How to retrieve data</h4>
+  <p>Calls are contructed as follows:</p>
+  <pre><code>https://www.apexdata.gg/api/[your_api_key]/[type]/[optional_values].json</code></pre>
+
+  <h5><a data-scroll-spy id="Weapons"></a>Weapons</h5>
+  <p>To retrieve all weapon data you would call:</p>
+  <pre><code>https://www.apexdata.gg/api/[your_api_key]/weapons.json</code></pre>
+  <p>You can also retrieve weapons by their category:</p>
+  <pre><code>https://www.apexdata.gg/api/[your_api_key]/weapons/[category].json</code></pre>
+  <p>Categories include: <code>assault-rifles</code>, <code>pistols</code>, <code>shotguns</code>, <code>sniper-rifles</code>, <code>light-machine-guns</code>, <code>sub-machine-guns</code>.</p>
+  <p>Weapons can optionally be sorted by whichever numerical value you want. You would retrieve this as:</p>
+  <pre><code>https://www.apexdata.gg/api/[your_api_key]/weapons/sort/[weapon_category]/[data_type].json</code></pre>
+  <p>For example: <code>.../weapons/sort/pistols/damage-per-second.json</code>. The values are separated with dashes <code>-</code>, even though the values might have underscores <code>_</code>.</p>
+  <p>You can also retrieve weapons by any of it’s values.</p>
+  <pre><code>https://www.apexdata.gg/api/[your_api_key]/weapons/[data_type]/[_value].json</code></pre>
+  <p>For example: <code>.../weapons/ammo-type/light.json</code> will return all weapons that use “Light” ammo.<br>
+  This can also be used to get a specific weapon by it’s name. <code>/weapons/name/eva-8-auto.json</code>. All names are downcase, and spaces are replaced with a dash <code>-</code>.</p>
+
+  <h5><a data-scroll-spy id="Legends"></a>Legends</h5>
+  <p>To retrieve all legends data you would call:</p>
+  <pre><code>https://www.apexdata.gg/api/[your_api_key]/legends.json</code></pre>
+  <p>Similar to weapons, you can also find legends by their name using <code>/legends/name/bangalore.json</code>. All names are downcase, and spaces are replaced with a dash <code>-</code>.</p>
+
+  <h5><a data-scroll-spy id="Items"></a>Items</h5>
+  <p>Items come in several categories; <code>equipment</code>, <code>consumables</code>, <code>grenades</code>, <code>attachments</code>.</p>
+  <p>To retrieve items you would call:</p>
+  <pre><code>https://www.apexdata.gg/api/[your_api_key]/[category].json</code></pre>
+  <p>For example: <code>.../grenades.json</code> will retrieve all Grenades.</p>
+  <p>Similar to weapons and legends, you can also find items by their name using <code>/[category]/name/1x-holo.json</code>. All names are downcase, and spaces are replaced with a dash <code>-</code>.</p>
+
+  <h4><a data-scroll-spy id="Player_Data_58"></a>Player Data</h4>
+  <p>We do not supply Player or Account data. Check out <a href="https://github.com/HugoDerave/ApexLegendsAPI">https://github.com/HugoDerave/ApexLegendsAPI</a> if you are looking for Player data.</p>
+
+  <h4><a data-scroll-spy id="Questions_Requests_and_issues_62"></a>Questions, Requests and issues</h4>
+  <p>Any problems you encounter, requests, or questions can be taken care of on <a href="https://github.com/Mitcheljager/apexdata">https://github.com/Mitcheljager/apexdata</a>. Please create an issue and we will see what we can do!</p>
+</div>

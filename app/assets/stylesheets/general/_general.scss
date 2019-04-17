@@ -57,6 +57,29 @@ a {
   color: var(--text-color);
 }
 
+code {
+  font-family: monospace;
+  font-size: 1em;
+  padding: 2px 4px;
+  color: var(--text-color);
+  background-color: $primary;
+  border-radius: 2px;
+}
+
+pre {
+  background: $primary;
+  border: 1px solid $border-color;
+  padding: .5rem;
+  line-height: 2rem;
+
+  code {
+    padding: 0;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
 blockquote {
   font-size: 14px;
   font-style: italic;
