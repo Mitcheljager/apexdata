@@ -12,10 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   })
 
-  profileForm.addEventListener('submit', function (event) {
+  profileForm.addEventListener("submit", function (event) {
     event.preventDefault()
+
     const playerName = this.querySelector("#playerName").value
     const playerPlatform = this.querySelector(".platform__icon.active").dataset.platform
+    
     toProfile(playerName, playerPlatform)
   })
 })

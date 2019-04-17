@@ -25,3 +25,4 @@
 //= require profile_form
 //= require charts
 //= require ads
+//= require scroll_spy

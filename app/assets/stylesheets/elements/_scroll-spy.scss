@@ -1,0 +1,45 @@
+.scroll-spy {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: -#{ $margin };
+  top: 0px;
+  max-width: 200px;
+  transform: translateX(-100%);
+
+  @include media-min(max-width) {
+    display: flex;
+  }
+
+  &--is-fixed {
+    position: fixed;
+  }
+}
+
+.scroll-spy__item {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: $margin / 8;
+  transition-property: border-width, padding;
+  transition-duration: 200ms;
+
+  &--large {
+    font-size: 18px;
+    color: $white;
+  }
+
+  &:hover,
+  &:active,
+  &--is-active {
+    color: $white;
+    border-right: 2px solid $red;
+    padding-right: $margin / 4;
+  }
+
+  &:hover,
+  &:active {
+    border-color: $border-color;
+  }
+}

@@ -2,42 +2,61 @@
 
 <%= render "ad_content" %>
 
-<div class=" wrapper wrapper--small no-text-transform">
+<div class="wrapper wrapper--small no-text-transform">
+
   <div class="heading">
     <h2 class="heading__title">Patch Notes</h2>
   </div>
 
-  <h3 class="title-small">4.16.2019 - 1.1.1 PATCH NOTES</h3>
+  <h3 class="title-small relative">
+    4.16.2019 - 1.1.1 PATCH NOTES
 
-  <h2><a id="Legend_Balancing_0"></a>Legend Balancing</h2>
+    <nav class="scroll-spy" data-role="scroll-spy">
+      <%= link_to "Legend Balancing", "#Legend_Balancing_0", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "Caustic", "#Caustic_8", class: "scroll-spy__item" %>
+      <%= link_to "Gibraltar", "#Gibraltar_14", class: "scroll-spy__item" %>
+      <%= link_to "Weapon Balancing", "#Weapon_Balancing_19", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "Sniper Rifles", "#G7_Scout__Triple_take__Longbow_DMR_25", class: "scroll-spy__item" %>
+      <%= link_to "Longbow", "#Longbow_DMR_31", class: "scroll-spy__item" %>
+      <%= link_to "Havoc", "#Havoc_40", class: "scroll-spy__item" %>
+      <%= link_to "Wingman", "#Wingman_50", class: "scroll-spy__item" %>
+      <%= link_to "Spitfire", "#Spitfire_58", class: "scroll-spy__item" %>
+      <%= link_to "Golden Weapons", "#Adjustments_to_Golden_Weapon_Attachments_65", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "Battle Pass XP Event", "#Battle_Pass_Bonus_XP_Event_76", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "Additional Changes", "#Additional_changes_82", class: "scroll-spy__item scroll-spy__item--large" %>
+      <%= link_to "Jump ship speed", "#Jump_ship_speed_84", class: "scroll-spy__item" %>
+    </nav>
+  </h3>
+
+  <h2><a data-scroll-spy id="Legend_Balancing_0"></a>Legend Balancing</h2>
   <blockquote>
     <p>At the start of Season 1, we previously talked about how our beloved Thicc Bois (Pathfinder, Gibraltar and Caustic) were getting crushed due to their hitbox size compared to other Legends. We first wanted to try adjusting hitboxes to better fit the model. For Pathfinder, this change worked very well. (Note: separately, we are actively investigating and working on fixing unrelated hit registration issues sometimes affecting all characters). However, after looking at the data and player feedback, Gibraltar and Caustic only improved slightly with the hitbox adjustments.</p>
     <p>We don’t believe that hit box and character kit tuning is sufficient to bring Gibraltar and Caustic in line with their smaller competitors. Starting with Patch 1.1.1, Gibraltar and Caustic will get a new perk added to their passive - Fortified, which reduces damage taken by 10%. Over the week or two following this change, we will be watching how they perform with this additional protection and aggressively tune it if they are still underpowered relative to their size. Our goal is to ensure both Legends are viable picks by the end of this process.</p>
     <p>Additionally, we’re also making a few quality of life kit adjustments to ensure their marquee abilities are a more impactful part of their individual playstyles.</p>
   </blockquote>
-  <h4><a id="Caustic_8"></a>Caustic</h4>
+  <h4><a data-scroll-spy id="Caustic_8"></a>Caustic</h4>
   <ul>
   <li>Fortified Passive Perk added: reduces damage taken by <strong>10%</strong></li>
   <li>Gas Damage per tick increased: <strong>1</strong> -&gt; <strong>4</strong></li>
   <li>Ultimate Throw distance increased: <strong>28 meters</strong> -&gt; <strong>33 meters</strong></li>
   </ul>
-  <h4><a id="Gibraltar_14"></a>Gibraltar</h4>
+  <h4><a data-scroll-spy id="Gibraltar_14"></a>Gibraltar</h4>
   <ul>
   <li>Fortified Passive Perk added: reduces damage taken by <strong>10%</strong></li>
   <li>Gun Shield health increased: <strong>50</strong> -&gt; <strong>75</strong></li>
   </ul>
-  <h2><a id="Weapon_Balancing_19"></a>Weapon Balancing</h2>
+  <h2><a data-scroll-spy id="Weapon_Balancing_19"></a>Weapon Balancing</h2>
   <blockquote>
     <p>On the weapons side of the equation, we’ve made a number of changes to try to improve the power of long range gameplay. We’re reducing leg shot damage reductions on sniper category weapons, so you’re not punished for landing inaccurate shots at long distances. Given the semi-auto and low damage nature of our current sniper suite, coupled with the general speed and evasiveness of many Legend kits, it already takes several challenging shots to down someone at range. Because of this difficult sniper environment, we’re also reducing general sniper weapon sway and hitting the DMR with a few targeted buffs to make it more viable to engage Legends at range.</p>
     <p>Separately from the sniper category, we are nerfing the Spitfire a bit, but our goal is to still keep it strong, as it’s a rarer spawning weapon. The Wingman is receiving a few magazine size nerfs, so that it doesn’t dominate the stock gun vs. stock gun battle early on due to its super high damage per bullet. Lastly, the Havoc is getting some general ammo and charge beam buffs to bring it in line as a viable energy ammo AR that competes with the R-301 and Flatine/Hemlok. The end goal is that the Havoc pressures a player’s ability to find Energy ammo, but is less dependent on finding attachments, whereas the R-301 and Flatline/Hemlok have less ammo pressure, but a higher reliance on finding more attachments to achieve power.</p>
   </blockquote>
-  <h4><a id="G7_Scout__Triple_take__Longbow_DMR_25"></a>G7 Scout / Triple take / Longbow DMR</h4>
+  <h4><a data-scroll-spy id="G7_Scout__Triple_take__Longbow_DMR_25"></a>G7 Scout / Triple take / Longbow DMR</h4>
   <ul>
   <li>Lowered leg shot damage reduction: <strong>25%</strong> -&gt; <strong>10%</strong></li>
   <li>Reduced base weapon sway by about <strong>33%</strong></li>
   <li>Reduced base sway speed by about <strong>25%</strong></li>
   </ul>
-  <h4><a id="Longbow_DMR_31"></a>Longbow DMR</h4>
+  <h4><a data-scroll-spy id="Longbow_DMR_31"></a>Longbow DMR</h4>
 
   <div class="item item--table">
     <div class="item--table__icon-wrapper">
@@ -78,7 +97,7 @@
   </ul>
   </li>
   </ul>
-  <h4><a id="Havoc_40"></a>Havoc</h4>
+  <h4><a data-scroll-spy id="Havoc_40"></a>Havoc</h4>
   <div class="item item--table">
     <div class="item--table__icon-wrapper">
       <%= image_tag "weapons/icons/havoc.png", class: "item--table__icon" %>
@@ -132,7 +151,7 @@
   </ul>
   </ul>
 
-  <h4><a id="Wingman_50"></a>Wingman</h4>
+  <h4><a data-scroll-spy id="Wingman_50"></a>Wingman</h4>
 
   <div class="item item--table">
     <div class="item--table__icon-wrapper">
@@ -165,7 +184,7 @@
   <li>Rare mag extender reduced: <strong>9</strong> -&gt; <strong>8</strong> rounds</li>
   <li>Epic mag extender reduced: <strong>12</strong> -&gt; <strong>10</strong> rounds</li>
   </ul>
-  <h4><a id="Spitfire_58"></a>Spitfire</h4>
+  <h4><a data-scroll-spy id="Spitfire_58"></a>Spitfire</h4>
 
   <div class="item item--table">
     <div class="item--table__icon-wrapper">
@@ -203,7 +222,7 @@
   <li>Rare mag extender reduced: <strong>55</strong> -&gt; <strong>45</strong> rounds</li>
   <li>Eprc mag extender reduced: <strong>60</strong> -&gt; <strong>55</strong> rounds</li>
   </ul>
-  <h4><a id="Adjustments_to_Golden_Weapon_Attachments_65"></a>Adjustments to Golden Weapon Attachments</h4>
+  <h4><a data-scroll-spy id="Adjustments_to_Golden_Weapon_Attachments_65"></a>Adjustments to Golden Weapon Attachments</h4>
   <p><strong>Gold Havoc</strong></p>
   <ul>
   <li>Now has Turbocharger</li>
@@ -217,11 +236,11 @@
   <ul>
   <li>Now has digital threat</li>
   </ul>
-  <h2><a id="Battle_Pass_Bonus_XP_Event_76"></a>Battle Pass Bonus XP Event</h2>
+  <h2><a data-scroll-spy id="Battle_Pass_Bonus_XP_Event_76"></a>Battle Pass Bonus XP Event</h2>
   <p>In honor of Thicc-boi buffs, we’re going to be running a bonus Battle Pass XP event. From approximately 10AM PST 4/16 through approximately 10AM PST 4/18, your first Top 5 of the day (your squad places 5th or better in a match) will grant you 1 full bonus Battle Pass Level (29,500 BPP), up to a max of level 110. You can earn this once per day.</p>
   <p>We’ll also be finding other moments during the season to add Battle Pass XP bonuses, so stay tuned!</p>
-  <h2><a id="Additional_changes_82"></a>Additional changes</h2>
-  <h4><a id="Jump_ship_speed_84"></a>Jump ship speed</h4>
+  <h2><a data-scroll-spy id="Additional_changes_82"></a>Additional changes</h2>
+  <h4><a data-scroll-spy id="Jump_ship_speed_84"></a>Jump ship speed</h4>
   <ul>
   <li>Increased the speed of the ship by about 50%</li>
   </ul>
