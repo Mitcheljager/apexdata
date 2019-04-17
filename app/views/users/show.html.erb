@@ -7,30 +7,34 @@
     <div>Logged in as <strong><%= current_user.username %></strong></div>
 
     <hr>
+      <small>Your API Key: <strong><%= current_user.api_key %></strong></small>
+    <hr>
 
     <%= link_to "Edit your account", edit_user_path %>
     <%= link_to "Logout", logout_path %>
   </div>
 
-  <div class="item item--full-width">
-    <div class="heading heading--small">
-      <h4 class="heading__title">Claimed profiles</h4>
-    </div>
+  <% if Flipper.enabled?(:profiles) %>
+    <div class="item item--full-width">
+      <div class="heading heading--small">
+        <h4 class="heading__title">Claimed profiles</h4>
+      </div>
 
-    <% if @claimed_profiles.any? %>
-      <% @claimed_profiles.each do |profile| %>
-        <div class="user__claimed-profile-item">
-          <div>
-            <strong><%= profile.username %></strong>
-            <small><%= profile.platform %></small>
+      <% if @claimed_profiles.any? %>
+        <% @claimed_profiles.each do |profile| %>
+          <div class="user__claimed-profile-item">
+            <div>
+              <strong><%= profile.username %></strong>
+              <small><%= profile.platform %></small>
+            </div>
+
+            <%= link_to "Remove claim", profile, method: :delete, data: { confirm: "Are you sure you wish to delete your account? This cannot be undone." } %>
           </div>
-
-          <%= link_to "Remove claim", profile, method: :delete, data: { confirm: "Are you sure you wish to delete your account? This cannot be undone." } %>
-        </div>
+        <% end %>
+      <% else %>
+        <br>
+        You have not yet claimed any profiles.
       <% end %>
-    <% else %>
-      <br>
-      You have not yet claimed any profiles.
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>

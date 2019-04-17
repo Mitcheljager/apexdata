@@ -26,7 +26,10 @@ class UsersController < ApplicationController
   end
 
   def create
+    generate_api_key
+
     @user = User.new(user_params)
+    @user.api_key = @token
 
     if @user.save
       session[:user_id] = @user.id
@@ -62,4 +65,11 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :password, :password_confirmation)
     end
+
+    def generate_api_key
+    loop do
+      @token = SecureRandom.base64.tr('+/=', 'Qrt')
+      break @token unless User.exists?(api_key: @token)
+    end
+  end
 end
