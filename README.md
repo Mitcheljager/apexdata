@@ -8,7 +8,7 @@ _We provide an API with most of the Data you will find on ApexData.gg. This API 
 
 #### Aquiring an API Key
 
-To aquire an API key please login or create an account. You will find your API key on your account page. This key is associated with your account and is required for all of your requests. To get multiple API keys you will need to create multiple accounts.
+To aquire an API key please login or create an account on [ApexData.gg](https://www.apexdata.gg/). You will find your API key on your account page. This key is associated with your account and is required for all of your requests. To get multiple API keys you will need to create multiple accounts.
 
 #### How to retrieve data
 
