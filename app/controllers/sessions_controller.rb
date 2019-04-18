@@ -5,6 +5,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  before_action only: [:new, :create] do
+    redirect_to root_path if current_user
+  end
+
   def new
   end
 

@@ -35,4 +35,6 @@ Rails.application.routes.draw do
   post "claim-step-1", to: "claimed_profiles#step_1", as: "claim_profile_step_1"
   post "claim-step-2", to: "claimed_profiles#step_2", as: "claim_profile_step_2"
   post "claim-step-3", to: "claimed_profiles#step_3", as: "claim_profile_step_3"
+
+  resources :memberships, only: [:new, :create, :update]
 end

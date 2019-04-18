@@ -1,0 +1,45 @@
+<div class="wrapper wrapper--tiny top-offset">
+  <div class="item item--full-width" data-role="paypal-wrapper">
+    <div class="heading heading--small">
+      <h4 class="heading__title">Get a Membership</h4>
+    </div>
+
+    <div class="no-text-transform">
+      <p>
+        <big><em>A Membership will grant you the following benefits:</em></big>
+      </p>
+
+      <h5>Automatic updates</h5>
+      <div>Your profile will be automatically updated after every game you play. No need to keep track yourself.</div>
+
+      <h5>Detailed profile statistics</h5>
+      <div>Your profile will contain detailed reports on your performance. Keep easy track of your progress over every game, day, or season.</div>
+
+      <h5>Ad free</h5>
+      <div>You will not be shown any ads over the entire website as long as you are logged in.</div>
+
+      <h5>Support ApexData.gg</h5>
+      <div>We run this website for free. Memberships help us do this while keeping ads to an absolute minimum.</div>
+    </div>
+
+    <center><h4><small>Only</small> <strong>€1</strong><small> /month</small></h4></center>
+
+    <div><center><small><em>Payments are one-time only and are non-recurring.</em></small></center></div>
+
+    <br>
+
+    <% if current_user %>
+      <% if membership.present? %>
+        <center class="color-basic">You already have a Membership, thanks!</center>
+      <% else %>
+        <%= render "paypal_button" %>
+      <% end %>
+    <% else %>
+      <center class="no-text-transform">
+        <%= link_to "Log in", login_path, class: "color-basic" %>
+        <br>
+        <%= link_to "Create an account", register_path %>
+      </center>
+    <% end %>
+  </div>
+</div>

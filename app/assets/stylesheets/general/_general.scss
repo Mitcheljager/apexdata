@@ -189,7 +189,9 @@ $rarities: (
   basic: $white,
   rare: #56a8ff,
   epic: #f128f1,
-  legendary: orange
+  legendary: orange,
+  green: $green,
+  red: $red
 );
 
 @each $rarity, $value in $rarities {
@@ -272,4 +274,8 @@ hr {
 
 .m-0 {
   margin: 0 !important;
+}
+
+.p-25 {
+  padding: .25em;
 }

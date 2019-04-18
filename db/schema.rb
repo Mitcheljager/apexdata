@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_134636) do
+ActiveRecord::Schema.define(version: 2019_04_18_123406) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -41,32 +41,12 @@ ActiveRecord::Schema.define(version: 2019_04_17_134636) do
     t.index ["feature_key", "key", "value"], name: "index_flipper_gates_on_feature_key_and_key_and_value", unique: true
   end
 
-  create_table "pay_charges", force: :cascade do |t|
-    t.integer "owner_id"
-    t.string "processor", null: false
-    t.string "processor_id", null: false
-    t.integer "amount", null: false
-    t.integer "amount_refunded"
-    t.string "card_type"
-    t.string "card_last4"
-    t.string "card_exp_month"
-    t.string "card_exp_year"
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "payment_complete", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_pay_charges_on_owner_id"
-  end
-
-  create_table "pay_subscriptions", force: :cascade do |t|
-    t.integer "owner_id"
-    t.string "name", null: false
-    t.string "processor", null: false
-    t.string "processor_id", null: false
-    t.string "processor_plan", null: false
-    t.integer "quantity", default: 1, null: false
-    t.datetime "trial_ends_at"
-    t.datetime "ends_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "order_id"
   end
 
   create_table "profile_legend_data", force: :cascade do |t|
@@ -84,14 +64,6 @@ ActiveRecord::Schema.define(version: 2019_04_17_134636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "level", default: 0
-    t.string "processor"
-    t.string "processor_id"
-    t.datetime "trial_ends_at"
-    t.string "card_type"
-    t.string "card_last4"
-    t.string "card_exp_month"
-    t.string "card_exp_year"
-    t.text "extra_billing_info"
     t.string "api_key"
     t.index ["username"], name: "index_users_on_username", unique: true
   end

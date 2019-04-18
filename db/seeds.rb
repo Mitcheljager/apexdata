@@ -8,3 +8,4 @@
 
 Flipper.enable(:users)
 Flipper.enable(:profiles)
+Flipper.enable(:memberships)

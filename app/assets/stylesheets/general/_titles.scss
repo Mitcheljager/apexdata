@@ -5,6 +5,11 @@ h4,
 h5 {
   color: var(--title-color);
   font-weight: 300;
+
+  small {
+    color: var(--text-color);
+    font-size: .5em;
+  }
 }
 
 h1 {
@@ -36,7 +41,7 @@ h5 {
   @include media-min(xxl) {
     margin: $margin * 2 0;
   }
-  
+
   &::after {
     display: block;
     content: "";
