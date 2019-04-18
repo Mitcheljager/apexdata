@@ -35,6 +35,8 @@ function setScrollSpyItem(activeItem) {
   const items = document.querySelectorAll("[data-role='scroll-spy'] .scroll-spy__item")
   const currentItem = document.querySelector(".scroll-spy__item--is-active")
 
+  if (currentItem == items[activeItem - 1]) return
+
   if (currentItem) currentItem.classList.remove("scroll-spy__item--is-active")
   items[activeItem - 1].classList.add("scroll-spy__item--is-active")
 }
