@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
   include ContentHelper
 
-  before_action :check_api_key
+  before_action :check_api_key, :set_headers
 
   rescue_from StandardError do |exception|
     render :json => @error_object.to_json, :status => :unprocessable_entity
@@ -53,5 +53,12 @@ class ApiController < ApplicationController
     unless valid_api_key
       render json: "API Key is not valid", status: :unauthorized
     end
+  end
+
+  def set_headers
+    headers["Access-Control-Allow-Origin"] = "*"
+    headers["Access-Control-Allow-Methods"] = "GET"
+    headers["Access-Control-Request-Method"] = "*"
+    headers["Access-Control-Allow-Headers"] = "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   end
 end
