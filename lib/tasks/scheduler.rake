@@ -9,10 +9,9 @@ task :keep_profiles_updated => :environment do
   number_of_checks_left = duration.seconds / interval.seconds
   infinite_checks = true
 
-  profiles = ClaimedProfile.where(checks_completed: 1).select(:username).map(&:username).join(",")
-
   Thread.new do
     while(infinite_checks) do
+      profiles = ClaimedProfile.where(checks_completed: 1).select(:username).map(&:username).join(",")
       url = "http://api.mozambiquehe.re/bridge?platform=PC&player=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
       response = HTTParty.get(url)
 

@@ -104,3 +104,21 @@ h3.heading__title {
     font-size: 21px;
   }
 }
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  margin: $margin 0 $margin / 4;
+
+  svg {
+    margin-right: .5em;
+
+    path {
+      fill: $white;
+    }
+  }
+
+  h5 {
+    margin: 0;
+  }
+}
