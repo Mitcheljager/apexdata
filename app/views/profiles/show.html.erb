@@ -16,7 +16,11 @@
     <div class="user__actions">
       <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.strftime("%F at %T") %></em></small>
       <a href="#" class="profile__button">Update profile</a>
-      <a href="#" class="profile__button profile__button--primary">Get automatic updates</a>
+      <% if current_user && @claimed_profile.present? %>
+        <% if @claimed_profile.user_id == current_user.id %>
+          <%= link_to "Get automatic updates", new_membership_path, class: "profile__button profile__button--primary" %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -31,7 +35,7 @@
             <h4><%= @response["global"]["level"] %></h4>
           </div>
           <div class="level-graph circle-graph__graph">
-            <div class="circle-graph__bar" style="--value: <%= @response["global"]["level"] %>" data-max="100" data-role="circle-graph-bar"></div>
+            <div class="circle-graph__bar" style="--value: <%= @response["global"]["toNextLevelPercent"] %>" data-max="100" data-role="circle-graph-bar"></div>
           </div>
         </div>
 
