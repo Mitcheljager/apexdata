@@ -1,19 +1,21 @@
-<% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
-  <div class="profile__charts">
-    <hr>
-    <% legend_data.group_by(&:data_name).each do |data_name, data| %>
-      <h5><%= data_name.humanize %></h5>
+<div class="profile__charts">
+  <% @saved_values.group_by(&:data_name).each do |data_name, data| %>
+    <h5><%= data_name.humanize %></h5>
 
-      <% dates = [] %>
-      <% values = [] %>
-      <% ProfileLegendData.where(
-                                profile_uid: @response["global"]["uid"],
-                                data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
-        <% dates.push(date) %>
-        <% values.push(data.last.data_value) %>
-      <% end %>
-
-      <canvas width="400" height="200" data-role="profile-chart" data-labels="<%= dates %>" data-values="<%= values %>"></canvas>
+    <% dates = [] %>
+    <% values = [] %>
+    <% ProfileLegendData.where(
+                              profile_uid: @response["global"]["uid"],
+                              data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
+      <% dates.push(date) %>
+      <% all_values_of_date = ProfileLegendData.where(
+                              profile_uid: @response["global"]["uid"],
+                              data_name: data_name,
+                              created_at: Date.parse(date).midnight..Date.parse(date).end_of_day).pluck(:data_value) %>
+      <% sum_of_values = all_values_of_date.sum(&:to_f) %>
+      <% values.push(sum_of_values.round) %>
     <% end %>
-  </div>
-<% end if @saved_values.any? %>
+
+    <canvas width="400" height="200" data-role="profile-chart" data-labels="<%= dates %>" data-values="<%= values %>"></canvas>
+  <% end %>
+</div>

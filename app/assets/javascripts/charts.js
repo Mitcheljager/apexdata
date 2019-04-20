@@ -16,8 +16,27 @@ function createCharts() {
           data: JSON.parse(element.dataset.values),
           backgroundColor: ["rgba(179, 56, 52, 0.2)"],
           borderColor: ["rgba(179, 56, 52, 1)"],
-          borderWidth: 1
+          borderWidth: 1,
+          lineTension: 0
         }]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              userCallback: function(label, index, labels) {
+                // when the floored value is the same as the value we have a whole number
+                if (Math.floor(label) === label) {
+                  return label;
+                }
+
+              },
+            }
+          }],
+        }
       }
     })
   })
