@@ -258,3 +258,58 @@
   border-radius: 2px;
   margin-top: $margin / 2;
 }
+
+.level__badge {
+  margin-top: -20px;
+  margin-bottom: -20px;
+  text-align: center;
+  position: relative;
+
+  h4 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 56px;
+    color: var(--white);
+
+    &.level__max {
+      top: 138px;
+      font-size: 36px;
+      color: var(--white);
+      background: lighten($secondary, 7%);
+      width: 100px;
+      height: 46px;
+      border-radius: 10px;
+    }
+  }
+
+  svg {
+    max-width: 240px;
+  }
+
+  polyline,
+  path,
+  polygon,
+  rect {
+    fill: var(--graph-color);
+    stroke: none;
+  }
+
+  .st0 {
+    stroke: var(--graph-color) !important;
+    fill: transparent !important;
+  }
+
+  .level1_4,
+  .level90_94,
+  .level95_99,
+  .level100 {
+    .st1 {
+      stroke: var(--graph-color) !important;
+      fill: transparent !important;
+    }
+  }
+}
