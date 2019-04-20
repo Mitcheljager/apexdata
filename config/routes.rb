@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  mount Flipper::UI.app(Flipper) => "/flipper"
+  if Rails.env.development?
+    mount Flipper::UI.app(Flipper) => "/flipper"
+  end
 
   root "high_voltage/pages#show", id: "index"
 
