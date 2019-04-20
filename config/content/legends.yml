@@ -127,6 +127,7 @@
       type: Passive Ability
       name: Nox Vision
       description: Allows you to see enemies through your gas.
+      extra: <h5>Fortified</h5> Reduces damage taken by 10%
     ability_3:
       type: Ultimate Ability
       name: Nox Gas Grenade
@@ -179,6 +180,7 @@
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
       primary_data:
         shield: 75
+      extra: <h5>Fortified</h5> Reduces damage taken by 10%
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment

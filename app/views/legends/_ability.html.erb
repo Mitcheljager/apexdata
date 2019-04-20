@@ -38,4 +38,10 @@
       <% end if ability["secondary_data"] %>
     </div>
   <% end %>
+
+  <%= tag.div class: "item__full-width-info ability__full-width-info" do %>
+    <div>
+      <small class="no-text-transform"><%= ability["extra"].html_safe %></small>
+    </div>
+  <% end if ability["extra"] %>
 </article>

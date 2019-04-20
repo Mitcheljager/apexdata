@@ -62,7 +62,6 @@
 
 .dropdown__inner {
   background: var(--primary);
-  box-shadow: 0 0 0 rgba($black, 0.53);
   padding: 0 $margin / 2;
   border-radius: 5px;
   display: block;
@@ -76,6 +75,7 @@
     width: auto;
     padding: 20px;
     margin-top: 0;
+    box-shadow: 0 $margin / 4 ($margin / 4) rgba($black, .2);
   }
 
   &::before {
