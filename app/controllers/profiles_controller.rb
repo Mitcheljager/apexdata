@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
       return
     end
 
-    if @response["legends"]["selected"]
+    if @response["legends"]["all"]
       save_new_values
     end
 
@@ -49,16 +49,18 @@ class ProfilesController < ApplicationController
 
   def save_new_values
     profile_uid = @response["global"]["uid"]
-    legend = @response["realtime"]["selectedLegend"]
 
-    @response["legends"]["selected"][legend].each do |key, value|
-      next if key == "ImgAssets"
+    @response["legends"]["all"].each do |legend, data_values|
+      next unless data_values["data"]
 
-      currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
+      data_values["data"].each do |key, data|
+        currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, data["key"], data["value"])
 
-      if currentData.nil?
-        @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
-        @new_entry.save
+
+        if currentData.nil?
+          @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: data["key"], data_value: data["value"])
+          @new_entry.save
+        end
       end
     end
   end

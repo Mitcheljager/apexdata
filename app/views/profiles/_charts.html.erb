@@ -1,5 +1,5 @@
 <% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
-  <div class="profile-charts">
+  <div class="profile__charts">
     <hr>
     <% legend_data.group_by(&:data_name).each do |data_name, data| %>
       <h5><%= data_name.humanize %></h5>
@@ -8,7 +8,6 @@
       <% values = [] %>
       <% ProfileLegendData.where(
                                 profile_uid: @response["global"]["uid"],
-                                legend: legend,
                                 data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
         <% dates.push(date) %>
         <% values.push(data.last.data_value) %>
