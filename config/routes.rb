@@ -18,17 +18,19 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
 
-  get "where/:where/:value" => "where#index", as: "where"
+  get "where/:where/:value", to: "where#index", as: "where"
 
-  get "legends" => "legends#index"
-  get "legends/:name" => "legends#show", as: "legend_show"
+  get "legends", to: "legends#index"
+  get "legends/:name", to: "legends#show", as: "legend_show"
 
-  get "sort/:items/:sort_by" => "sort#index", as: "sort"
+  get "sort/:items/:sort_by", to: "sort#index", as: "sort"
 
-  get "api/:key/:type" => "api#basic"
-  get "api/:key/:type/:where/:value" => "api#where"
-  get "api/:key/:type/sort/:items/:sort_by" => "api#sort"
-  get "api/:key/:type/:category" => "api#category"
+  scope :api do
+    get ":key/:type", to: "api#basic"
+    get ":key/:type/:where/:value", to: "api#where"
+    get ":key/:type/sort/:items/:sort_by", to: "api#sort"
+    get ":key/:type/:category", to: "api#category"
+  end
 
   resources :claimed_profiles, only: [:destroy]
   post "claim-initiate", to: "claimed_profiles#initiate", as: "claim_profile_initiate"
