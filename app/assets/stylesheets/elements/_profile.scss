@@ -246,3 +246,15 @@
     font-weight: 700;
   }
 }
+
+.profile__notification {
+  width: 100%;
+  margin: 0;
+  flex: 0 0 calc(100% - 30px);
+  max-width: calc(100% - 30px);
+  background: var(--orange);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 2px;
+  margin-top: 20px;
+}
