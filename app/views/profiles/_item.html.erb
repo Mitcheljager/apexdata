@@ -16,7 +16,7 @@
           <div class="profile-stats">
             <span class="profile-stats__name"><%= key.humanize %></span>
             <span class="profile-stats__amount">
-              <span class="amount__total"><%= value["value"] %></span>
+              <span class="amount__total"><%= number_with_delimiter value["value"] %></span>
 
               <% if saved_values.where(legend: legend, data_name: key).any? %>
                 <div class="dropdown dropdown--dropup profile-stats__updates">
@@ -27,7 +27,7 @@
                       <% saved_values.where(legend: legend, data_name: key).limit(8).each do |data| %>
                         <div class="profile-stats__updates-item">
                           <em><%= data.created_at.to_formatted_s(:short) %>: </em>
-                          <strong><%= data.data_value %></strong>
+                          <strong><%= number_with_delimiter data.data_value %></strong>
                         </div>
                       <% end %>
                     </div>
