@@ -30,16 +30,14 @@
     <aside class="item-columns__sidebar">
       <div class="item item--profile">
         <div class="profile__level">
-          <!-- <div class="circle-graph__label">
-            Level
-            <h4><%#= @response["global"]["level"] %></h4>
-          </div>
-          <div class="level-graph circle-graph__graph">
-            <div class="circle-graph__bar" style="--value: <%#= @response["global"]["toNextLevelPercent"] %>" data-max="100" data-role="circle-graph-bar"></div>
-          </div> -->
           <div class="level__badge">
-            <%= inline_svg "badges/levels/level95_99.svg", class: "level95_99" %>
-            <h4><%= @response["global"]["level"] %></h4>
+            <% level = @response["global"]["level"] %>
+            <% rounded_level = ( level / 5.0 ).floor * 5 %>
+            <% level_range = "#{ rounded_level }_#{ rounded_level + 4 }" %>
+            <% level_range = "100" if rounded_level >= 100 %>
+
+            <%= inline_svg "badges/levels/level#{ level_range }.svg", class: "level#{ level_range }" %>
+            <h4 class="<%= "level__max" if level >= 100 %>"><%= @response["global"]["level"] %></h4>
           </div>
         </div>
 
