@@ -11,7 +11,14 @@ task :keep_profiles_updated => :environment do
 
   Thread.new do
     while(infinite_checks) do
-      profiles = ClaimedProfile.where(checks_completed: 1).select(:username).map(&:username).join(",")
+      profiles = []
+      active_memberships = Membership.where("created_at > ?", 1.month.ago).each do |membership|
+        user = User.find_by_id(membership.user_id)
+        claimed_profiles = ClaimedProfile.where(checks_completed: 1).select(:username).map(&:username)
+        profiles.push(claimed_profiles)
+      end
+
+      profiles = profiles.join(",")
       url = "http://api.mozambiquehe.re/bridge?platform=PC&player=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
       response = HTTParty.get(url)
 
