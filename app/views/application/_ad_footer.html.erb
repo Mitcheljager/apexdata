@@ -1,4 +1,6 @@
-<% return if membership.present? %>
+<% if Flipper.enabled?(:memberships) %>
+  <% return if membership.present? %>
+<% end %>
 
 <div class="ad-container adsbygoogle">
   <style>
