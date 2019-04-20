@@ -3,7 +3,7 @@ class ClaimedProfilesController < ApplicationController
   require "httparty"
 
   def initiate
-    setApiData
+    set_api_data
 
     available_legends = ["Bangalore", "Bloodhound", "Gibraltar", "Lifeline", "Pathfinder", "Wraith"]
     step_1_legend = available_legends.sample
@@ -23,8 +23,8 @@ class ClaimedProfilesController < ApplicationController
   end
 
   def step_1
-    setApiData
-    getClaimedProfile
+    set_api_data
+    get_claimed_profile
 
     @current_legend = @claimed_profile.check_2
 
@@ -38,8 +38,8 @@ class ClaimedProfilesController < ApplicationController
   end
 
   def step_2
-    setApiData
-    getClaimedProfile
+    set_api_data
+    get_claimed_profile
 
     @current_legend = @claimed_profile.check_3
 
@@ -53,7 +53,7 @@ class ClaimedProfilesController < ApplicationController
   end
 
   def step_3
-    getClaimedProfile
+    get_claimed_profile
 
     respond_to do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_3]
@@ -73,7 +73,7 @@ class ClaimedProfilesController < ApplicationController
 
   private
 
-  def getClaimedProfile
+  def get_claimed_profile
     url = "http://api.mozambiquehe.re/bridge?platform=#{ claimed_profile_params[:platform].upcase }&player=#{ claimed_profile_params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
     response = HTTParty.get(url)
     if response
@@ -82,7 +82,7 @@ class ClaimedProfilesController < ApplicationController
     end
   end
 
-  def setApiData
+  def set_api_data
     @user = claimed_profile_params[:user]
     @platform = claimed_profile_params[:platform]
   end

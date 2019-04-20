@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
     end
 
     if @response["legends"]["selected"]
-      saveNewValues
+      save_new_values
     end
 
     @claimed_profile = ClaimedProfile.where(profile_uid: @response["global"]["uid"], checks_completed: 1).last
@@ -47,7 +47,7 @@ class ProfilesController < ApplicationController
 
   private
 
-  def saveNewValues
+  def save_new_values
     profile_uid = @response["global"]["uid"]
     legend = @response["realtime"]["selectedLegend"]
 
