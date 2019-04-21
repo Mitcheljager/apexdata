@@ -21,17 +21,11 @@
   designation: Strong
   description: The weapons in this category are always a solid choice. Some of these require attachments to be truly effective, but they will be strong regardless.
   items:
-    - name: wingman
-      description: |
-        <p>The Wingman recently received some significant nerfs which definitely toned it down in power. Despite that it's still a very strong choice in the right hands. With good accuracy it is able to deal a large amount of damage./p>
-
-        <p>There is no other gun that serves the same purpose as the Wingman does, which makes it an obvious choice in many situations.</p>
-    - name: spitfire
-      description: |
-        <p>In Apex Legends many weapons share the same problem; their magazine size is rather small which means you will need to reload often. With an LMG like the Spitfire you do not have the problem and you can use this to your advantage. In constant fire you can put out is a real danger. In top of that is deals a ton of damage and has manageable recoil. Add some good attachments and the Spitfire becomes a real monster.</p>
     - name: havoc
       description: |
         <p>The Havoc is a real hit or miss. Some love it, some hate it. Most of this comes down to the wind up time, which can be difficult to get used to. Add a Turbocharger and this becomes a non-issue. Another option is the Selectfire Receiver, but this one again is a difficult one to get used to. It's beam is hitscan, unlike any other weapon in the game.</p>
+
+        <p>The recent buffs have definitely increased it's power. It's high standard ammo capacity is unlike any other assault rifle. From the start it's a solid pick up, with the right attachments it can be a real monster.</p>
 
         <p>Once you do get a feel for this weapon it can be a real beast. It's low recoil, relatively high rate of fire, and high damage often come as a surprise.</p>
     - name: r-301
@@ -39,6 +33,11 @@
         <p>Perhaps the most reliable and simple gun in the game. It has an exceptionally high rate of fire, it's recoil pattern is very predictable and it's very accurate at longer ranges.</p>
 
         <p>It's the most "regular" gun you will find, but there in lies it strengths. It does require some good attachments to really get going, but even without it is a reliable weapon.</p>
+    - name: spitfire
+      description: |
+        <p>In Apex Legends many weapons share the same problem; their magazine size is rather small which means you will need to reload often. With an LMG like the Spitfire you do not have the problem and you can use this to your advantage. In constant fire you can put out is a real danger. In top of that is deals a ton of damage and has manageable recoil. Add some good attachments and the Spitfire becomes a real monster.</p>
+
+        <p>The Spitfire is easy to use and very forgiving. If you are struggling to consitantly do well in Apex, consider giving the Spitfire a chance.</p>
     - name: r-99
       description: |
         <p>The R-99 has the highest rate of fire of all guns, by a significant margin. This allows you to melt enemies faster than with any other weapon. This also makes the weapon more difficult to use than others, as missing means you will have to reload more quickly and frequently than others.</p>
@@ -48,7 +47,7 @@
       description: |
         <p>A very classic Sniper that can take out enemies very quickly. It has enough damage potential to put pressure on your enemies as you shoot at them from far.</p>
 
-        <p>It's biggest weakness is it's need for a proper Scope. On top of that it's not easy to use. It's slow rate of fire means you better hit your shots, or your enemies might escape before you can land a hit. But in the hands of a skilled sniper the Longbow will be a real force.</p>
+        <p>It's biggest weakness is it's need for a proper Scope. On top of that it's not easy to use. It's slow rate of fire means you better hit your shots, or your enemies might escape before you can land a hit. But in the hands of a skilled sniper the Longbow will be a real force. The recent buffs have definitely upped it in power, but we will have to see how much it truly affects it.</p>
     - name: devotion
       description: |
         <p>The Devotion's biggest weakness used to be the rarity of Energy ammo. With the recent update to their spawnrate this has changed. The damage the Devotion can put out is unlike anything else. Add a Turbocharger and you will melt anything in your path. Even it's recoil pattern is easy enough to work with.</p>
@@ -58,6 +57,11 @@
   designation: Good
   description: The weapons in the category can be decent in the right hands, but either require a great skill, or an excessive amount of attachments.
   items:
+    - name: wingman
+      description: |
+        <p>Despite the recent nerfs to the Wingman it remains a solid pick. It's magazine size is now significantly smaller, but it's still enough to kill an enemy with some well aimed shots. An extended mag is now definitely a necessity if you wish to carry it in to late game. Early game it remains a solid pick up, even without any attachments.</p>
+
+        <p>Another strength of the Wingman is it's low ammo requirement. This keeps your backup free for all sorts of pick ups you might otherwise not want to carry around.</p>
     - name: hemlok
       description: |
         <p>Burst fire weapons can be difficult to use and are generally not well liked. Putting this in single fire mode can make it a strong weapon, but at that point a G7-Scout or Wingman might just serve you better.</p>
