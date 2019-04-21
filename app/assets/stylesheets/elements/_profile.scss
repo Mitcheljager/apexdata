@@ -88,12 +88,32 @@
   flex: 0 0 calc(100% - 30px);
   max-width: calc(100% - 30px);
   margin-top: $margin / 2;
-  padding: $margin / 2;
+  padding: $margin;
 
   img {
     vertical-align: middle;
     max-width: 100%;
   }
+}
+
+.profile__chart {
+  display: none;
+
+  &:first-of-type:not(.profile__chart--is-hidden) {
+    display: block;
+  }
+
+  &--is-hidden {
+    display: none;
+  }
+
+  &--is-visible {
+    display: block;
+  }
+}
+
+.profile__chart-select {
+  margin-top: $margin;
 }
 
 .profile-legends {

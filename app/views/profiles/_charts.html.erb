@@ -1,27 +1,40 @@
-<div class="profile__charts">
+<div class="profile__charts" data-role="charts">
+  <header class="heading m-0">
+    <h4 class="heading__title">Total Values</h4>
+    <span class="heading__line"></span>
+  </header>
+
+  <select class="profile__chart-select" data-action="chart-select">
+    <% @saved_values.group_by(&:data_name).each do |data_name, data| %>
+      <option value="<%= data_name %>"><%= data_name.humanize %></option>
+    <% end %>
+  </select>
+
   <% @saved_values.group_by(&:data_name).each do |data_name, data| %>
-    <h5><%= data_name.humanize %></h5>
+    <div data-chart="<%= data_name %>" class="profile__chart">
+      <h5><%= data_name.humanize %></h5>
 
-    <% dates = [] %>
-    <% values = [] %>
-    <% ProfileLegendData.where(
-                              profile_uid: @response["global"]["uid"],
-                              data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
-      <% dates.push(date) %>
-      <% all_values_by_legend = ProfileLegendData.where(
-                              profile_uid: @response["global"]["uid"],
-                              data_name: data_name).where(
-                              "created_at <= ?", Date.parse(date).end_of_day).select(:legend, :data_value).group_by(&:legend) %>
+      <% dates = [] %>
+      <% values = [] %>
+      <% ProfileLegendData.where(
+                                profile_uid: @response["global"]["uid"],
+                                data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
+        <% dates.push(date) %>
+        <% all_values_by_legend = ProfileLegendData.where(
+                                profile_uid: @response["global"]["uid"],
+                                data_name: data_name).where(
+                                "created_at <= ?", Date.parse(date).end_of_day).select(:legend, :data_value).group_by(&:legend) %>
 
-      <% values_to_add = [] %>
-      <% all_values_by_legend.each do |legend, data| %>
-        <% values_to_add.push(data.last.data_value) %>
+        <% values_to_add = [] %>
+        <% all_values_by_legend.each do |legend, data| %>
+          <% values_to_add.push(data.last.data_value) %>
+        <% end %>
+
+        <% sum_of_values = values_to_add.sum(&:to_f) %>
+        <% values.push(sum_of_values.round) %>
       <% end %>
 
-      <% sum_of_values = values_to_add.sum(&:to_f) %>
-      <% values.push(sum_of_values.round) %>
-    <% end %>
-
-    <canvas width="400" height="200" data-role="profile-chart" data-labels="<%= dates %>" data-values="<%= values %>"></canvas>
+      <canvas width="400" height="250" data-role="profile-chart" data-labels="<%= dates %>" data-values="<%= values %>"></canvas>
+    </div>
   <% end %>
 </div>

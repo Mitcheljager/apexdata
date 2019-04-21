@@ -1,6 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const elements = document.querySelectorAll("[data-action='chart-select']")
+  elements.forEach((element) => element.addEventListener("input", changeChart))
+
   createCharts()
 })
+
+function changeChart() {
+  const parent = this.closest("[data-role='charts']")
+  const charts = parent.querySelectorAll("[data-chart]")
+  const chart = parent.querySelector(`[data-chart='${ this.value }']`)
+
+  console.log(chart)
+
+  charts.forEach(chart => {
+    chart.classList.add("profile__chart--is-hidden")
+    chart.classList.remove("profile__chart--is-visible")
+  })
+  
+  chart.classList.remove("profile__chart--is-hidden")
+  chart.classList.add("profile__chart--is-visible")
+}
 
 function createCharts() {
   const charts = document.querySelectorAll("[data-role='profile-chart']")
