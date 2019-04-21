@@ -48,6 +48,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    params[:user].delete(:password).delete(:password_confirmation) if params[:user][:password].blank?
     @user = current_user
     if @user.update(user_params)
       redirect_to edit_user_path, notice: "User was successfully updated."
@@ -66,15 +67,16 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      params.require(:user).permit(:username, :password, :password_confirmation)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def generate_api_key
+  def user_params
+    params.require(:user).permit(:username, :password, :password_confirmation)
+  end
+
+  def generate_api_key
     loop do
       @token = SecureRandom.base64.tr('+/=', 'Qrt')
       break @token unless User.exists?(api_key: @token)
