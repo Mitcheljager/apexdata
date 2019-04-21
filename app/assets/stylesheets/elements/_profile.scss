@@ -1,3 +1,10 @@
+.item--profile {
+    width: 100%;
+    margin: 0;
+    flex: 0 0 calc(100% - #{ $margin });
+    max-width: calc(100% - #{ $margin });
+}
+
 .profile-intro {
   width: 100%;
   display: flex;
@@ -5,7 +12,7 @@
 }
 
 .intro-platform {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
   margin: 0;
@@ -23,13 +30,13 @@
 }
 
 .profile__button {
-  padding: 8px 20px;
+  padding: 8px $margin / 2;
   background: darken($primary, 3%);
   border-radius: 3px;
   border: 1px solid lighten($primary, 5%);
   text-decoration: none;
   font-size: 14px;
-  margin-left: 15px;
+  margin-left: $margin / 2;
 
   &--primary {
     background: var(--red);
@@ -60,6 +67,12 @@
     color: $white;
     border-color: lighten($green, 10%);
   }
+
+  &--is-in-game {
+    background: $orange;
+    color: $white;
+    border-color: lighten($orange, 10%);
+  }
 }
 
 .profile-content {
@@ -85,8 +98,8 @@
   border: 1px solid lighten($primary, 10%);
   border-radius: 2px;
   background: var(--primary);
-  flex: 0 0 calc(100% - 30px);
-  max-width: calc(100% - 30px);
+  flex: 0 0 calc(100% - #{ $margin });
+  max-width: calc(100% - #{ $margin });
   margin-top: $margin / 2;
   padding: $margin;
 
@@ -147,7 +160,7 @@
   display: flex;
   flex-direction: row;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: $margin / 2;
 
   &--current {
     border: 3px solid var(--red);
@@ -170,7 +183,7 @@
 }
 
 .profile-legend__content {
-  padding: 30px 35px;
+  padding: $margin 35px;
   width: calc(100% - 190px);
 }
 
@@ -212,12 +225,12 @@
   width: 33.3333%;
   display: flex;
   flex-direction: column;
-  padding-right: 20px;
+  padding-right: $margin / 2;
   margin: 8px 0px;
 }
 
 .profile-stats__bar {
-  margin: 7px 0 10px;
+  margin: 2px 0 10px;
 }
 
 .profile-stats__name {
@@ -229,11 +242,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4px;
+  margin-top: $margin / 10;
   font-size: 21px;
   color: var(--white);
   font-weight: 700;
   font-family: "Teko", monospace;
+
+  small {
+    font-family: "Raleway", sans-serif;
+  }
 }
 
 .profile-stats__updates {
@@ -275,7 +292,7 @@
 }
 
 .profile__claim {
-  margin-top: 30px;
+  margin-top: $margin;
   color: var(--text-color);
   font-size: 13px;
   line-height: 18px;
@@ -288,25 +305,25 @@
 }
 
 .profile__notification {
+  flex: 0 0 calc(100% - #{ $margin });
   width: 100%;
-  margin: 0;
-  flex: 0 0 calc(100% - 30px);
-  max-width: calc(100% - 30px);
+  max-width: calc(100% - #{ $margin });
+  padding: $margin / 2;
+  margin-top: $margin / 2;
+  border-radius: 2px;
   background: var(--orange);
   color: var(--white);
-  padding: $margin / 2;
-  border-radius: 2px;
-  margin-top: $margin / 2;
+  font-size: 14px;
 }
 
 .level__badge {
-  margin-top: -20px;
-  margin-bottom: -20px;
+  margin-top: -#{ $margin / 2 };
+  margin-bottom: -#{ $margin / 2 };
   text-align: center;
   position: relative;
 
   h4 {
-    font-family: 'Teko', sans-serif;
+    font-family: "Teko", monospace;
     font-weight: 600;
     position: absolute;
     top: 8px;

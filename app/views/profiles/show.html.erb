@@ -7,7 +7,11 @@
     <div class="user__about">
       <h1 class="user-name"><%= @response["global"]["name"] %></h1>
       <% if @response["realtime"]["isOnline"] == 1 %>
-        <span class="user-status user-status--is-online">Online</span>
+        <% if @response["realtime"]["isInGame"] == 1 %>
+          <span class="user-status user-status--is-in-game">In Game</span>
+        <% else %>
+          <span class="user-status user-status--is-online">Online</span>
+        <% end %>
       <% else %>
         <span class="user-status">Offline</span>
       <% end %>
