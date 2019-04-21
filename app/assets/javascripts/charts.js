@@ -17,7 +17,8 @@ function createCharts() {
           backgroundColor: ["rgba(179, 56, 52, 0.2)"],
           borderColor: ["rgba(179, 56, 52, 1)"],
           borderWidth: 1,
-          lineTension: 0
+          lineTension: 0,
+          pointBackgroundColor: "rgba(179, 56, 52, 1)"
         }]
       },
       options: {
@@ -26,14 +27,30 @@ function createCharts() {
         },
         scales: {
           yAxes: [{
+            gridLines: {
+              drawBorder: false,
+              color: "rgba(0, 0, 0, 0.2)"
+            },
             ticks: {
-              userCallback: function(label, index, labels) {
-                if (Math.floor(label) === label) {
-                  return label
-                }
-              },
+              maxTicksLimit: 2,
+              userCallback: (label, index, labels) => { if (Math.floor(label) === label) return label },
+              userCallback: (label, index, labels) => { return label.toLocaleString()},
+              fontColor: "#8f94a5",
+              fontSize: 8
             }
           }],
+          xAxes: [{
+            gridLines: {
+              drawBorder: false,
+              color: "rgba(0, 0, 0, 0.2)"
+            },
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 2,
+              fontColor: "#8f94a5",
+              fontSize: 8
+            }
+          }]
         }
       }
     })
