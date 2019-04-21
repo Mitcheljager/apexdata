@@ -14,7 +14,9 @@
     <div data-chart="<%= data_name %>" class="profile__chart">
       <div class="chart__title">
         <h5><%= data_name.humanize %></h5>
-        <span><%= number_with_delimiter @response["total"]["#{data_name}"]["value"] %></span>
+        <% if @response["total"][data_name] %>
+          <span><%= number_with_delimiter @response["total"][data_name]["value"] %></span>
+        <% end %>
       </div>
 
       <% dates = [] %>
