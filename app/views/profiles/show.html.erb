@@ -29,49 +29,47 @@
   </div>
 </div>
 
-<div class="profile-content item-columns item-columns--viewing-items item-columns--single">
-  <main class="item-columns__main">
-    <aside class="item-columns__sidebar">
-      <div class="item item--profile">
-        <div class="profile__level">
-          <div class="level__badge">
-            <% level = @response["global"]["level"] %>
-            <% rounded_level = ( level / 5.0 ).floor * 5 %>
-            <% level_range = "#{ rounded_level }_#{ rounded_level + 4 }" %>
-            <% level_range = "100" if rounded_level >= 100 %>
+<div class="profile-content">
+  <aside class="profile-content__sidebar">
+    <div class="item item--profile">
+      <div class="profile__level">
+        <div class="level__badge">
+          <% level = @response["global"]["level"] %>
+          <% rounded_level = ( level / 5.0 ).floor * 5 %>
+          <% level_range = "#{ rounded_level }_#{ rounded_level + 4 }" %>
+          <% level_range = "100" if rounded_level >= 100 %>
 
-            <%= inline_svg "badges/levels/level#{ level_range }.svg", class: "level#{ level_range }" %>
-            <h4 class="<%= "level__max" if level >= 100 %>"><%= @response["global"]["level"] %></h4>
-          </div>
+          <%= inline_svg "badges/levels/level#{ level_range }.svg", class: "level#{ level_range }" %>
+          <h4 class="<%= "level__max" if level >= 100 %>"><%= @response["global"]["level"] %></h4>
         </div>
-
-        <%= render "profiles/claim" %>
       </div>
 
-      <div class="profile__notification">
-        Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve the data you have set as your Tickers.
-      </div>
-
-      <%= render "profiles/charts" %>
-    </aside>
-
-    <div class="item-columns__content">
-      <div class="profile-legends">
-        <% legends_hash = @response["legends"]["all"] %>
-        <% no_data_legends_array = [] %>
-        <% legends_hash.each do |item| %>
-          <% legends_hash = Hash[legends_hash.to_a.unshift(item)] if @response["legends"]["selected"][item.first] %>
-
-          <% legends_hash.delete(item.first) unless item.last["data"] %>
-          <% no_data_legends_array.push(item) unless item.last["data"] %>
-        <% end %>
-
-        <% legends_hash = legends_hash.merge(Hash[no_data_legends_array]) %>
-
-        <% legends_hash.each do |legend, content| %>
-          <%= render "profiles/item", data: content["data"], legend: legend, current: @response["legends"]["selected"][legend] ? true : false, saved_values: @saved_values %>
-        <% end %>
-      </div>
+      <%= render "profiles/claim" %>
     </div>
-  </main>
+
+    <div class="profile__notification">
+      Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve the data you have set as your Tickers.
+    </div>
+
+    <%= render "profiles/charts" %>
+  </aside>
+
+  <div class="profile-content__content">
+    <div class="profile-legends">
+      <% legends_hash = @response["legends"]["all"] %>
+      <% no_data_legends_array = [] %>
+      <% legends_hash.each do |item| %>
+        <% legends_hash = Hash[legends_hash.to_a.unshift(item)] if @response["legends"]["selected"][item.first] %>
+
+        <% legends_hash.delete(item.first) unless item.last["data"] %>
+        <% no_data_legends_array.push(item) unless item.last["data"] %>
+      <% end %>
+
+      <% legends_hash = legends_hash.merge(Hash[no_data_legends_array]) %>
+
+      <% legends_hash.each do |legend, content| %>
+        <%= render "profiles/item", data: content["data"], legend: legend, current: @response["legends"]["selected"][legend] ? true : false, saved_values: @saved_values %>
+      <% end %>
+    </div>
+  </div>
 </div>
