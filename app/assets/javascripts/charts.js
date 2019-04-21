@@ -10,13 +10,11 @@ function changeChart() {
   const charts = parent.querySelectorAll("[data-chart]")
   const chart = parent.querySelector(`[data-chart='${ this.value }']`)
 
-  console.log(chart)
-
   charts.forEach(chart => {
     chart.classList.add("profile__chart--is-hidden")
     chart.classList.remove("profile__chart--is-visible")
   })
-  
+
   chart.classList.remove("profile__chart--is-hidden")
   chart.classList.add("profile__chart--is-visible")
 }
