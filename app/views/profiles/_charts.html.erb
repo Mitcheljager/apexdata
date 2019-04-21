@@ -8,11 +8,17 @@
                               profile_uid: @response["global"]["uid"],
                               data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
       <% dates.push(date) %>
-      <% all_values_of_date = ProfileLegendData.where(
+      <% all_values_by_legend = ProfileLegendData.where(
                               profile_uid: @response["global"]["uid"],
-                              data_name: data_name,
-                              created_at: Date.parse(date).midnight..Date.parse(date).end_of_day).pluck(:data_value) %>
-      <% sum_of_values = all_values_of_date.sum(&:to_f) %>
+                              data_name: data_name).where(
+                              "created_at <= ?", Date.parse(date).end_of_day).select(:legend, :data_value).group_by(&:legend) %>
+
+      <% values_to_add = [] %>
+      <% all_values_by_legend.each do |legend, data| %>
+        <% values_to_add.push(data.last.data_value) %>
+      <% end %>
+
+      <% sum_of_values = values_to_add.sum(&:to_f) %>
       <% values.push(sum_of_values.round) %>
     <% end %>
 
