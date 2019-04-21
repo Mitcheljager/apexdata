@@ -255,13 +255,12 @@
   align-items: center;
   margin-top: $margin / 10;
   font-size: 21px;
-  color: var(--white);
+}
+
+.amount__total {
   font-weight: 700;
   font-family: "Teko", monospace;
-
-  small {
-    font-family: "Raleway", sans-serif;
-  }
+  color: var(--white);
 }
 
 .profile-stats__updates {
