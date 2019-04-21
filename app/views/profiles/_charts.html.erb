@@ -12,7 +12,10 @@
 
   <% @saved_values.group_by(&:data_name).each do |data_name, data| %>
     <div data-chart="<%= data_name %>" class="profile__chart">
-      <h5><%= data_name.humanize %></h5>
+      <div class="chart__title">
+        <h5><%= data_name.humanize %></h5>
+        <span><%= @response["total"]["#{data_name}"]["value"] %></span>
+      </div>
 
       <% dates = [] %>
       <% values = [] %>

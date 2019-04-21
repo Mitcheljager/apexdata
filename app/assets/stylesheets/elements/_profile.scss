@@ -96,6 +96,25 @@
   }
 }
 
+.chart__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 20px;
+
+  h5 {
+    margin: 0;
+    max-width: 75%;
+  }
+
+  span {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 25px;
+    font-family: "Teko", monospace;
+  }
+}
+
 .profile__chart {
   display: none;
 
