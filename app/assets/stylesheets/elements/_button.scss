@@ -113,6 +113,10 @@
     clip-path: polygon(calc(100% - #{$margin}) 0, 100% 100%, #{$margin} 100%, 0 0);
   }
 
+  &[disabled] {
+    opacity: .25;
+  }
+
   img,
   svg {
     display: block;

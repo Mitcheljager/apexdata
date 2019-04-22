@@ -67,8 +67,11 @@ class ClaimedProfilesController < ApplicationController
 
   def destroy
     @claimed_profile = ClaimedProfile.find(params[:id])
-    redirect_to user_path if @claimed_profile.id != current_user.id
-    redirect_to claimed_profile
+    return if @claimed_profile.user_id != current_user.id
+
+    if @claimed_profile.delete
+      redirect_to account_path
+    end
   end
 
   private
@@ -78,7 +81,7 @@ class ClaimedProfilesController < ApplicationController
     response = HTTParty.get(url)
     if response
       @response = JSON.parse(response)
-      @claimed_profile = ClaimedProfile.where(user_id: current_user.id, profile_uid: @response["global"]["uid"]).last
+      @claimed_profile = ClaimedProfile.where(user_id: current_user.id, profile_uid: @response["global"]["uid"], created_at: 30.minutes.ago..DateTime.now).last
     end
   end
 
