@@ -168,6 +168,8 @@
     input {
       padding: $margin / 2 200px $margin / 2 $margin;
       font-size: 21px;
+      box-shadow: 0 6px 32px rgba($black, .2), 0 2px 4px rgba($black, .2);
+      border: 1px solid $border-color;
     }
   }
 }
