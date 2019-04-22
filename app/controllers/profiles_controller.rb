@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
       end
     end
 
-    @claimed_profile = ClaimedProfile.where(profile_uid: @response["global"]["uid"], checks_completed: 1).last
+    get_claimed_profile
 
     respond_to do |format|
       format.html
@@ -41,6 +41,17 @@ class ProfilesController < ApplicationController
 
   def charts
     get_response
+    get_claimed_profile
+
+    if !current_user.present?
+      redirect_to tracker_path
+    elsif !membership.present?
+      redirect_to tracker_path
+    elsif @claimed_profile.nil?
+      redirect_to tracker_path
+    elsif current_user.id != @claimed_profile.user_id
+      redirect_to tracker_path
+    end
 
     if @response["global"]
       @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
@@ -89,5 +100,9 @@ class ProfilesController < ApplicationController
     if response
       @response = JSON.parse(response)
     end
+  end
+
+  def get_claimed_profile
+    @claimed_profile = ClaimedProfile.where(profile_uid: @response["global"]["uid"], checks_completed: 1).last
   end
 end
