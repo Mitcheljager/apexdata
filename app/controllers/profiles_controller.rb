@@ -34,7 +34,14 @@ class ProfilesController < ApplicationController
     end
 
     if @response["legends"]["all"]
-      save_new_values
+      check_latest_update
+      if @latest_record
+        if @latest_record.created_at > 20.seconds.ago
+          save_new_values
+        end
+      else
+        save_new_values
+      end
     end
 
     @claimed_profile = ClaimedProfile.where(profile_uid: @response["global"]["uid"], checks_completed: 1).last
@@ -63,5 +70,9 @@ class ProfilesController < ApplicationController
         end
       end
     end
+  end
+
+  def check_latest_update
+    @latest_record = ProfileLegendData.find_by_profile_uid(@response["global"]["uid"])
   end
 end
