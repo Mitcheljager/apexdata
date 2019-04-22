@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const profileForm = document.querySelector(".player-form")
+  const profileForms = document.querySelectorAll(".player-form")
 
   const platforms = document.querySelectorAll(".platform__icon")
+
   platforms.forEach(function (platform) {
     platform.addEventListener("click", function () {
       const parent = this.closest("form")
@@ -12,13 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   })
 
-  profileForm.addEventListener("submit", function (event) {
-    event.preventDefault()
+  profileForms.forEach(profileForm => {
+    profileForm.addEventListener("submit", function (event) {
+      event.preventDefault()
 
-    const playerName = this.querySelector("#playerName").value
-    const playerPlatform = this.querySelector(".platform__icon.active").dataset.platform
-    
-    toProfile(playerName, playerPlatform)
+      const playerName = this.querySelector("#playerName").value
+      const playerPlatform = this.querySelector(".platform__icon.active").dataset.platform
+
+      toProfile(playerName, playerPlatform)
+    })
   })
 })
 

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :profiles, only: [:index]
+  get "tracker", to: "profiles#index", as: "tracker"
   get "profile/:platform/:user", to: "profiles#show"
 
   get "register", to: "users#new", as: "register"

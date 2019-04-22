@@ -33,25 +33,7 @@
       </div>
 
       <div class="header__content header__content--search">
-        <%= form_tag "/", class: "player-form", autocomplete: "off" do %>
-          <%= text_field_tag :player, "", id: "playerName", disabled: Flipper.enabled?(:profiles) ? false : true, placeholder: Flipper.enabled?(:profiles) ? "Find player" : "Player profiles coming soon" %>
-
-          <div class="player-platforms">
-            <div class="platform__icon active" data-platform="PC">
-              <%= inline_svg "icons/icon-windows.svg" %>
-            </div>
-
-            <div class="platform__icon" data-platform="X1">
-              <%= inline_svg "icons/icon-xbox.svg" %>
-            </div>
-
-            <div class="platform__icon" data-platform="PS4">
-              <%= inline_svg "icons/icon-playstation.svg" %>
-            </div>
-
-            <%= button_tag "Search", type: "submit", class: "player-submit" %>
-          </div>
-        <% end %>
+        <%= render "tracker" %>
       </div>
     </div>
   </div>

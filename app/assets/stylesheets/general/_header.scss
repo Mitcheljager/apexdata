@@ -163,6 +163,13 @@
       color: lighten($primary, 20%);
     }
   }
+
+  &--large {
+    input {
+      padding: $margin / 2 200px $margin / 2 $margin;
+      font-size: 21px;
+    }
+  }
 }
 
 .player-platforms {
@@ -172,6 +179,10 @@
   display: flex;
   height: 100%;
   align-items: center;
+
+  .player-form--large & {
+    right: $margin / 2;
+  }
 }
 
 .platform__icon {
@@ -240,5 +251,9 @@
   &:hover {
     background: var(--red);
     color: var(--white);
+  }
+
+  .player-form--large & {
+    padding: $margin / 4 $margin / 2;
   }
 }
