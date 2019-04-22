@@ -20,8 +20,8 @@
     padding-right: $margin / 2;
   }
 
-  &:hover,
-  &:active {
+  &:hover:not([disabled]),
+  &:active:not([disabled]) {
     color: var(--title-color);
     border-color: darken($red, 5%);
     background: darken($red, 5%);
@@ -46,8 +46,8 @@
       padding-right: $margin / 4;
     }
 
-    &:hover,
-    &:active {
+    &:hover:not([disabled]),
+    &:active:not([disabled]) {
       padding-left: $margin / 2.5;
     }
   }
@@ -115,6 +115,7 @@
 
   &[disabled] {
     opacity: .25;
+    cursor: not-allowed;
   }
 
   img,

@@ -2,13 +2,33 @@
   display: none;
   flex-direction: column;
   position: absolute;
-  left: -#{ $margin };
+  left: calc(-#{ $margin } + 10px);
   top: 0px;
+  padding-right: 10px;
   max-width: 200px;
+  max-height: 70vh;
+  overflow-y: hidden;
   transform: translateX(-100%);
 
   @include media-min(max-width) {
     display: flex;
+  }
+
+  &:hover {
+    overflow-y: auto;
+    overflow-y: overlay;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--primary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
   }
 
   &--is-fixed {

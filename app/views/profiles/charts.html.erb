@@ -1,0 +1,45 @@
+<% content_for :page_title, "Profile | Charts | " + @response["global"]["name"] %>
+
+<%= render "ad_header" %>
+
+<div class="wrapper wrapper--small no-text-transform">
+  <div class="heading">
+    <h2 class="heading__title">Legend Charts</h2>
+  </div>
+
+  <div class="relative">
+    <nav class="scroll-spy" data-role="scroll-spy">
+      <% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
+        <%= link_to legend, "##{ legend }", class: "scroll-spy__item scroll-spy__item--large" %>
+
+        <% legend_data.group_by(&:data_name).each do |data_name, data| %>
+          <%= link_to data_name.humanize, "##{ legend }_#{ data_name }", class: "scroll-spy__item" %>
+        <% end %>
+      <% end %>
+    </nav>
+  </div>
+
+  <% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
+    <h3 data-scroll-spy id="<%= legend %>"><%= legend %></h3>
+
+    <% legend_data.group_by(&:data_name).each do |data_name, data| %>
+      <div class="item item--full-width" id="<%= legend %>_<%= data_name %>" data-scroll-spy>
+        <h5 class="m-0"><%= data_name.humanize %></h5>
+
+        <br>
+
+        <% dates = [] %>
+        <% values = [] %>
+        <% ProfileLegendData.where(
+                                  profile_uid: @response["global"]["uid"],
+                                  legend: legend,
+                                  data_name: data_name).each do |data| %>
+          <% dates.push(data.created_at.strftime("%b %d, %Y")) %>
+          <% values.push(data.data_value) %>
+        <% end %>
+
+        <canvas width="400" height="100" data-role="profile-chart" data-labels="<%= dates %>" data-values="<%= values %>"></canvas>
+      </div>
+    <% end %>
+  <% end if @saved_values.any? %>
+</div>

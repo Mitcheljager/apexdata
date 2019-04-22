@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get "tracker", to: "profiles#index", as: "tracker"
   get "profile/:platform/:user", to: "profiles#show"
+  get "profile/:platform/:user/charts", to: "profiles#charts", as: "profile_charts"
 
   get "register", to: "users#new", as: "register"
   get "login", to: "sessions#new", as: "login"

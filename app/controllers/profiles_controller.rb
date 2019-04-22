@@ -11,20 +11,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    url = "http://api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
-    begin
-      response = HTTParty.get(url)
-    rescue HTTParty::Error
-      render "not_found"
-      return
-    rescue StandardError
-      render "not_found"
-      return
-    end
-
-    if response
-      @response = JSON.parse(response)
-    end
+    get_response
 
     if @response["global"]
       @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
@@ -52,6 +39,17 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def charts
+    get_response
+
+    if @response["global"]
+      @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
+    else
+      render "not_found"
+      return
+    end
+  end
+
   private
 
   def save_new_values
@@ -74,5 +72,22 @@ class ProfilesController < ApplicationController
 
   def check_latest_update
     @latest_record = ProfileLegendData.find_by_profile_uid(@response["global"]["uid"])
+  end
+
+  def get_response
+    url = "http://api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
+    begin
+      response = HTTParty.get(url)
+    rescue HTTParty::Error
+      render "not_found"
+      return
+    rescue StandardError
+      render "not_found"
+      return
+    end
+
+    if response
+      @response = JSON.parse(response)
+    end
   end
 end

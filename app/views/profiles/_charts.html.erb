@@ -38,4 +38,17 @@
       <canvas width="400" height="250" data-role="profile-chart" data-labels="<%= dates %>" data-values="<%= values %>"></canvas>
     </div>
   <% end %>
+
+
+  <% if Flipper.enabled?(:memberships) %>
+    <hr>
+
+    <% if membership.nil? %>
+      <%= link_to "View charts per Legend", "#", class: "button button--small", disabled: "disabled" %> <small>(Members only)</small>
+      <br><br>
+      <%= link_to "Get Membership", new_membership_path, class: "button button--small" %>
+    <% else %>
+      <%= link_to "View charts per Legend", profile_charts_path, class: "button button--small" %>
+    <% end %>
+  <% end %>
 </div>
