@@ -34,18 +34,20 @@ task :keep_profiles_updated => :environment do
             @response = Array.wrap(@response)
 
             @response.each do |profile|
-              if profile["realtime"]["isOnline"] == 1
-                profile_uid = profile["global"]["uid"]
-                legend = profile["realtime"]["selectedLegend"]
+              if profile["realtime"]
+                if profile["realtime"]["isOnline"] == 1
+                  profile_uid = profile["global"]["uid"]
+                  legend = profile["realtime"]["selectedLegend"]
 
-                profile["legends"]["selected"][legend].each do |key, value|
-                  next if key == "ImgAssets"
+                  profile["legends"]["selected"][legend].each do |key, value|
+                    next if key == "ImgAssets"
 
-                  currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
+                    currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
 
-                  if currentData.nil?
-                    @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
-                    @new_entry.save
+                    if currentData.nil?
+                      @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
+                      @new_entry.save
+                    end
                   end
                 end
               end
