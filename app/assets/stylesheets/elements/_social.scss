@@ -28,5 +28,9 @@
 
   svg {
     width: $margin / 2;
+
+    path {
+      fill: currentColor
+    }
   }
 }

@@ -72,6 +72,10 @@
     svg {
       width: 20px;
       height: 23px;
+
+      path {
+        fill: currentColor
+      }
     }
   }
 }
@@ -197,6 +201,10 @@
     height: $margin / 2.5;
     transition: color 250ms ease;
     cursor: pointer;
+
+    path {
+      fill: currentColor;
+    }
   }
 
   &.active {

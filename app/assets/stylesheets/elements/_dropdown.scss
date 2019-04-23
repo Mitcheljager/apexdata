@@ -16,6 +16,10 @@
       @include media-min(xl) {
         display: inline-block;
       }
+
+      path {
+        fill: currentColor
+      }
     }
   }
 
