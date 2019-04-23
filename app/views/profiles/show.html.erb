@@ -23,7 +23,7 @@
       <h1 class="user-name"><%= @response["global"]["name"] %></h1>
       <% if @response["realtime"]["isOnline"] == 1 %>
         <% if @response["realtime"]["isInGame"] == 1 %>
-          <span class="user-status user-status--is-in-game">In Game</span>
+          <span class="user-status user-status--is-in-game">In&nbsp;Game</span>
         <% else %>
           <span class="user-status user-status--is-online">Online</span>
         <% end %>
@@ -59,7 +59,7 @@
           <h4 class="<%= "level__max" if level >= 100 %>"><%= @response["global"]["level"] %></h4>
         </div>
       </div>
-      
+
       <%= render "profiles/claim" %>
     </div>
 
