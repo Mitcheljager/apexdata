@@ -35,18 +35,21 @@
 
               <% if saved_values.where(legend: legend, data_name: key).any? %>
                 <div class="dropdown dropdown--dropup profile-stats__updates">
-                  <small>Updates</small>
+                  <small class="profile-stats__update">Updates</small>
 
-                  <!-- <div class="dropdown__content">
-                    <div class="dropdown__inner">
-                      <%# saved_values.where(legend: legend, data_name: key).order("created_at DESC").limit(8).each do |data| %>
+                  <div class="profile__popup profile__updates">
+                    <div class="profile-popup__inner updates__inner">
+                      <span class="profile-popup__close"><%= inline_svg("layout/close.svg") %></span>
+                      <h3 class="profile-popup__title"><%= key.humanize %></h3>
+                      <span class="profile-popup__description"><%= legend %></span>
+                      <% saved_values.where(legend: legend, data_name: key).order("created_at DESC").limit(5).each do |data| %>
                         <div class="profile-stats__updates-item">
-                          <em><%#= data.created_at.to_formatted_s(:short) %>: </em>
-                          <strong><%#= number_with_delimiter data.data_value %></strong>
+                          <em><%= data.created_at.to_formatted_s(:short) %>: </em>
+                          <strong><%= number_with_delimiter data.data_value %></strong>
                         </div>
-                      <%# end %>
+                      <% end %>
                     </div>
-                  </div> -->
+                  </div>
                 </div>
               <% end %>
             </span>
