@@ -500,7 +500,7 @@
   cursor: default;
 }
 
-.profile-stats__update {  
+.profile-stats__update {
   cursor: pointer;
 }
 
@@ -605,6 +605,7 @@
   svg {
     width: 11px;
     height: 16px;
+    fill: var(--white);
   }
 }
 
