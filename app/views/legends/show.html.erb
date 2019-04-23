@@ -12,7 +12,11 @@
       <article class="item item--full-width legend">
         <%= tag.div class: "legend__image" do %>
           <%= tag.div class: "legend__image" do %>
-            <%= image_tag "legends/#{ @item["name"].downcase }/banner.jpg", alt: "#{ @item["name"] }" %>
+            <picture>
+              <source srcset="<%= image_url "legends/#{ @item["name"].downcase }/banner.webp" %>" type="image/webp">
+              <source srcset="<%= image_url "legends/#{ @item["name"].downcase }/banner.jpg" %>" type="image/jpeg">
+              <%= image_tag "legends/#{ @item["name"].downcase }/banner.jpg", class: "legends-banner__image", alt: @item["name"] %>
+            </picture>
           <% end if asset_exists? "legends/#{ @item["name"].downcase }/banner.jpg" %>
         <% end %>
 
