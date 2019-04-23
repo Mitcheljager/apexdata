@@ -1,14 +1,33 @@
 .item--profile {
-    width: 100%;
-    margin: 0;
+  width: 100%;
+  margin: 0;
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 22px 20px 22px 10px;
+
+  @media screen and (min-width: 900px) {
     flex: 0 0 calc(100% - #{ $margin });
     max-width: calc(100% - #{ $margin });
+    flex-direction: column;
+    padding: 40px;
+  }
 }
 
 .profile-intro {
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 40px;
+
+  @media screen and (min-width: 640px) {
+    padding-top: 0;
+  }
+
+  @media screen and (min-width: 900px) {
+    padding-top: 80px;
+  }
 }
 
 .intro-platform {
@@ -16,17 +35,31 @@
   font-weight: 300;
   text-transform: uppercase;
   margin: 0;
+
+  span {
+    position: relative;
+  }
 }
 
 .intro-user {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: 900px) {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
 }
 
 .user__about {
   display: flex;
   align-items: center;
+  max-width: 100%;
+
+  @media screen and (min-width: 900px) {
+    max-width: 375px;
+  }
 }
 
 .profile__button {
@@ -37,6 +70,7 @@
   text-decoration: none;
   font-size: 14px;
   margin-left: $margin / 2;
+  display: inline-block;
 
   &--primary {
     background: var(--red);
@@ -46,10 +80,45 @@
 }
 
 .user-name {
-  font-size: 35px;
+  font-size: 25px;
   color: var(--white);
   font-weight: 700;
   margin: 0;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+
+  @media screen and (min-width: 900px) {
+    font-size: 35px;
+  }
+}
+
+.user__actions {
+  width: 100%;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: -10px;
+
+  @media screen and (min-width: 900px) {
+    width: calc(100% - 375px);
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  a {
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 0;
+
+    @media screen and (min-width: 900px) {
+      margin-left: 20px;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .user-status {
@@ -61,6 +130,11 @@
   border-radius: 3px;
   margin-left: $margin / 2;
   letter-spacing: .5px;
+  display: none;
+
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
 
   &--is-online {
     background: $green;
@@ -75,19 +149,61 @@
   }
 }
 
+.profile__realtime-mobile {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -24px;
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+
+  .user-status {
+    display: block;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    border-radius: 100%;
+  }
+}
+
 .profile-content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template: "sidebar content";
   grid-template-columns: #{ 100% / 3 * 1 } #{ 100% / 3 * 2 };
   margin-top: $margin;
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 1230px) {
+    display: grid;
+  }
 }
 
 .profile-content__sidebar {
   grid-area: "sidebar";
+  width: 100%;
+  min-width: 100%;
+
+  @media screen and (min-width: 900px) {
+    width: 354px;
+    min-width: 354px;
+  }
+
+  @media screen and (min-width: 1230px) {
+    width: auto;
+    min-width: inherit;
+  }
 }
 
 .profile-content__content {
   grid-area: "content";
+  width: 100%;
 }
 
 .level-graph {
@@ -109,14 +225,25 @@
   border: 1px solid lighten($primary, 10%);
   border-radius: 2px;
   background: var(--primary);
-  flex: 0 0 calc(100% - #{ $margin });
-  max-width: calc(100% - #{ $margin });
+  flex: 0 0 100%;
+  max-width: 100%;
   margin-top: $margin / 2;
-  padding: $margin;
+  padding: 30px 20px 20px;
+  margin-bottom: 20px;
 
   img {
     vertical-align: middle;
     max-width: 100%;
+  }
+
+  @media screen and (min-width: 500px) {
+    padding: $margin;
+  }
+
+  @media screen and (min-width: 900px) {
+    flex: 0 0 calc(100% - #{ $margin });
+    max-width: calc(100% - #{ $margin });
+    margin-bottom: 0;
   }
 }
 
@@ -169,9 +296,21 @@
   max-width: 100%;
   flex: 0 0 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0;
   margin-bottom: $margin / 2;
+
+  @media screen and (min-width: 650px) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 900px) {
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1030px) {
+    flex-direction: row;
+  }
 
   &--current {
     border: 3px solid var(--red);
@@ -179,8 +318,71 @@
 }
 
 .profile-legend__image {
-  width: 190px;
   position: relative;
+  width: 100%;
+  height: 100px;
+  display: none;
+
+  @media screen and (min-width: 650px) {
+    width: 190px;
+    height: auto;
+    display: block;
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 100%;
+    height: 100px;
+    display: none;
+  }
+
+  @media screen and (min-width: 1030px) {
+    width: 190px;
+    height: auto;
+    display: block;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.profile__legend-parent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.profile-parent__legend-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-parent__image {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-right: 20px;
+
+  @media screen and (min-width: 650px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
+
+  @media screen and (min-width: 1030px) {
+    display: none;
+  }
 
   img {
     position: absolute;
@@ -194,8 +396,24 @@
 }
 
 .profile-legend__content {
-  padding: $margin 35px;
-  width: calc(100% - 190px);
+  padding: 20px;
+  width: 100%;
+
+  @media screen and (min-width: 500px) {
+    padding: $margin 35px;
+  }
+
+  @media screen and (min-width: 650px) {
+    width: calc(100% - 190px);
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1030px) {
+    width: calc(100% - 190px);
+  }
 }
 
 .profile-legend__selected {
@@ -233,11 +451,19 @@
 }
 
 .profile-stats {
-  width: 33.3333%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding-right: $margin / 2;
   margin: 8px 0px;
+
+  @media screen and (min-width: 400px) {
+    width: 50%;
+    padding-right: $margin / 2;
+  }
+
+  @media screen and (min-width: 1250px) {
+    width: 33.3333%;
+  }
 }
 
 .profile-stats__bar {
@@ -247,6 +473,10 @@
 .profile-stats__name {
   font-size: 13px;
   font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .profile-stats__amount {
@@ -295,17 +525,103 @@
   color: var(--white);
   font-size: 25px;
   background: rgba($primary, 0.88);
+  text-align: center;
+  padding: 20px;
 }
 
 .profile__level {
   position: relative;
+  width: 90px;
+  margin: 0;
+
+  @media screen and (min-width: 900px) {
+    width: auto;
+  }
+}
+
+.profile__claim-parent {
+  position: fixed;
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.48);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease, visibility 250ms ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media screen and (min-width: 900px) {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+}
+
+.profile__claim-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 20px;
+  text-align: center;
+  width: calc(100% - 90px);
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+}
+
+.profile__claim-popup-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 15px 20px;
+  cursor: pointer;
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+
+  svg {
+    width: 11px;
+    height: 16px;
+  }
 }
 
 .profile__claim {
-  margin-top: $margin;
   color: var(--text-color);
   font-size: 13px;
   line-height: 18px;
+  margin: 0;
+  background: var(--primary);
+  width: calc(100% - 43px);
+  max-width: 470px;
+  border-radius: 4px;
+  padding: 10px 30px 30px;
+  position: relative;
+
+  @media screen and (min-width: 900px) {
+    padding: 0;
+    border-radius: 0;
+    max-width: inherit;
+    margin-top: $margin;
+    width: 100%;
+  }
 
   h3 {
     font-size: 20px;
@@ -315,41 +631,67 @@
 }
 
 .profile__notification {
-  flex: 0 0 calc(100% - #{ $margin });
+  flex: 0 0 100%;
   width: 100%;
-  max-width: calc(100% - #{ $margin });
+  max-width: 100%;
   padding: $margin / 2;
   margin-top: $margin / 2;
   border-radius: 2px;
   background: var(--orange);
   color: var(--white);
   font-size: 14px;
+
+  @media screen and (min-width: 900px) {
+    flex: 0 0 calc(100% - #{ $margin });
+    max-width: calc(100% - #{ $margin });
+  }
 }
 
 .level__badge {
-  margin-top: -#{ $margin / 2 };
+  margin-top: -15px;
   margin-bottom: -#{ $margin / 2 };
   text-align: center;
   position: relative;
 
-  h4 {
+  @media screen and (min-width: 900px) {
+    margin-top: -#{ $margin / 2 };
+  }
+
+  h4, .level__level {
     font-family: "Teko", monospace;
     font-weight: 600;
     position: absolute;
-    top: 8px;
+    top: 5px;
     left: 50%;
     transform: translate(-50%);
-    font-size: 56px;
+    font-size: 20px;
     color: var(--white);
 
+    @media screen and (min-width: 900px) {
+      top: 8px;
+      font-size: 56px;
+    }
+
+    text {
+      fill: var(--white);
+    }
+
     &.level__max {
-      top: 138px;
-      font-size: 36px;
+      top: 30px;
+      font-size: 22px;
       color: var(--white);
       background: lighten($secondary, 7%);
-      width: 100px;
-      height: 46px;
-      border-radius: 10px;
+      width: 50px;
+      height: 29px;
+      border-radius: 4px;
+
+      @media screen and (min-width: 900px) {
+        top: 138px;
+        font-size: 36px;
+        width: 100px;
+        height: 46px;
+        border-radius: 10px;
+      }
     }
   }
 

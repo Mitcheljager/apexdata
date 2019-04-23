@@ -26,3 +26,4 @@
 //= require charts
 //= require ads
 //= require scroll_spy
+//= require profile_popup
