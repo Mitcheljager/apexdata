@@ -55,11 +55,19 @@
 .user__about {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   max-width: 100%;
 
   @media screen and (min-width: 900px) {
     max-width: 375px;
   }
+}
+
+.about__profile-name {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .profile__button {
@@ -106,6 +114,11 @@
     text-align: right;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  small {
+    display: block;
+    margin-bottom: 10px;
   }
 
   a {
