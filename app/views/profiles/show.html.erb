@@ -1,7 +1,22 @@
 <% content_for :page_title, "Profile | " + @response["global"]["name"] %>
 
 <div class="profile-intro top-offset">
-  <h2 class="intro-platform"><%= @response["global"]["platform"] %></h2>
+  <h2 class="intro-platform">
+    <span>
+      <%= @response["global"]["platform"] %>
+      <div class="profile__realtime-mobile">
+        <% if @response["realtime"]["isOnline"] == 1 %>
+          <% if @response["realtime"]["isInGame"] == 1 %>
+            <span class="user-status user-status--is-in-game"></span>
+          <% else %>
+            <span class="user-status user-status--is-online"></span>
+          <% end %>
+        <% else %>
+          <span class="user-status"></span>
+        <% end %>
+      </div>
+    </span>
+  </h2>
 
   <div class="intro-user">
     <div class="user__about">
@@ -18,7 +33,7 @@
     </div>
 
     <div class="user__actions">
-      <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.strftime("%F at %T") %></em></small>
+      <!-- <small><em>Last updated: <%#= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.strftime("%F at %T") %></em></small> -->
       <%= link_to "Update profile", "", class: "profile__button" %>
 
       <% if current_user && @claimed_profile.present? %>
@@ -44,7 +59,7 @@
           <h4 class="<%= "level__max" if level >= 100 %>"><%= @response["global"]["level"] %></h4>
         </div>
       </div>
-
+      
       <%= render "profiles/claim" %>
     </div>
 

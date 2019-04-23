@@ -14,7 +14,7 @@
   border: 1px solid lighten($primary, 10%);
   border-radius: 2px;
   background: var(--primary);
-  filter: drop-shadow(0 6px 32px rgba($black, .05)) drop-shadow(0 2px 4px rgba($black, .2));
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.05);
   transition: transform 100ms;
   will-change: scroll-position, contents;
 
