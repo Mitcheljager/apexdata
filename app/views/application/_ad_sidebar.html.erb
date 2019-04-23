@@ -1,0 +1,32 @@
+<% if Flipper.enabled?(:memberships) %>
+  <% return if membership.present? %>
+<% end %>
+
+<div class="ad-container adsbygoogle">
+  <style>
+    .mobile-ad { display: inline-block }
+    .desktop-ad { display: none }
+    @media (min-width: 900px) { .mobile-ad { display: none; } }
+    @media (min-width: 900px) { .desktop-ad { display: inline-block } }
+  </style>
+  <ins class="adsbygoogle desktop-ad"
+    style="width:336px;height:280px"
+    data-ad-client="ca-pub-6800703662222824"
+    data-ad-slot="8686102948"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <ins class="adsbygoogle mobile-ad"
+    style="width:320px;height:100px"
+    data-ad-client="ca-pub-6800703662222824"
+    data-ad-slot="6654959682"
+    data-auto-ad-size="false"
+    data-full-width-responsive="false"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <span class="ad-container__title">Advertisement</span>
+  <div class="ad-container__background"></div>
+</div>

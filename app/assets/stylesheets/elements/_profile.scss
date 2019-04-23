@@ -8,10 +8,15 @@
   padding: 22px 20px 22px 10px;
 
   @media screen and (min-width: 900px) {
-    flex: 0 0 calc(100% - #{ $margin });
-    max-width: calc(100% - #{ $margin });
+    flex: 0 0 calc(100% - 17px);
+    max-width: calc(100% - 17px);
     flex-direction: column;
     padding: 40px;
+  }
+
+  @media screen and (min-width: 1230px) {
+    flex: 0 0 calc(100% - #{ $margin });
+    max-width: calc(100% - #{ $margin });
   }
 }
 
@@ -20,11 +25,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 40px;
-
-  @media screen and (min-width: 640px) {
-    padding-top: 0;
-  }
-
+  
   @media screen and (min-width: 900px) {
     padding-top: 80px;
   }
@@ -254,6 +255,11 @@
   }
 
   @media screen and (min-width: 900px) {
+    flex: 0 0 calc(100% - 17px);
+    max-width: calc(100% - 17px);
+  }
+
+  @media screen and (min-width: 1230px) {
     flex: 0 0 calc(100% - #{ $margin });
     max-width: calc(100% - #{ $margin });
     margin-bottom: 0;
@@ -709,6 +715,11 @@
   font-size: 14px;
 
   @media screen and (min-width: 900px) {
+    flex: 0 0 calc(100% - 17px);
+    max-width: calc(100% - 17px);
+  }
+
+  @media screen and (min-width: 1230px) {
     flex: 0 0 calc(100% - #{ $margin });
     max-width: calc(100% - #{ $margin });
   }

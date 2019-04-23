@@ -1,5 +1,7 @@
 <% content_for :page_title, "Profile | " + @response["global"]["name"] %>
 
+<%= render "ad_header" %>
+
 <div class="profile-intro top-offset">
   <div class="intro-user">
     <div class="user__about">
@@ -69,6 +71,8 @@
     </div>
 
     <%= render "profiles/charts" %>
+
+    <%= render "ad_sidebar" %>
   </aside>
 
   <div class="profile-content__content">

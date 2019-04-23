@@ -52,3 +52,26 @@
     margin-bottom: $margin / 4;
   }
 }
+
+.profile-content__sidebar {
+  .ad-container {
+    margin: 0 -5vw 20px;
+
+    @media screen and (min-width: 500px) {
+      margin: 20px 0;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    @media screen and (min-width: 900px) {
+      flex: 0 0 calc(100% - 17px);
+      max-width: calc(100% - 17px);
+    }
+
+    @media screen and (min-width: 1230px) {
+      flex: 0 0 calc(100% - #{ $margin });
+      max-width: calc(100% - #{ $margin });
+      margin-bottom: 0;
+    }
+  }
+}
