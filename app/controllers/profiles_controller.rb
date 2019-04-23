@@ -22,8 +22,12 @@ class ProfilesController < ApplicationController
 
     if @response["legends"]["all"]
       check_latest_update
+
+      puts "AAAAAAAAAA"
+
       if @latest_record
-        if @latest_record.created_at > 20.seconds.ago
+        if @latest_record.created_at < 20.seconds.ago
+          puts "BBBBBBBBB"
           save_new_values
         end
       else
@@ -71,7 +75,6 @@ class ProfilesController < ApplicationController
 
       data_values["data"].each do |key, data|
         currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, data["key"], data["value"])
-
 
         if currentData.nil?
           @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: data["key"], data_value: data["value"])
