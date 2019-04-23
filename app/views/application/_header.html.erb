@@ -33,6 +33,18 @@
       </div>
 
       <div class="header__content header__content--search">
+        <div class="header-mobile__right">
+          <% if Flipper.enabled?(:profiles) %>
+            <%= link_to inline_svg("icons/icon-search.svg"), tracker_path %>
+          <% end %>
+          <% if Flipper.enabled?(:users) %>
+            <% if current_user %>
+              <%= link_to inline_svg("icons/icon-user.svg"), account_path %>
+            <% else %>
+              <%= link_to inline_svg("icons/icon-login.svg"), login_path %>
+            <% end %>
+          <% end %>
+        </div>
         <%= render "tracker" %>
       </div>
     </div>
