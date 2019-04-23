@@ -53,38 +53,17 @@
   margin-bottom: $margin / 2;
 }
 
-.profile__notification {
-  flex: 0 0 100%;
-  width: 100%;
-  max-width: 100%;
-  padding: $margin / 2;
-  margin-top: $margin / 2;
-  border-radius: 2px;
-  background: var(--orange);
-  color: var(--white);
-  font-size: 14px;
-
-  @include media-min(lg) {
-    flex: 0 0 calc(100% - #{ $margin / 2 });
-    max-width: calc(100% - #{ $margin / 2 });
-  }
-
-  @include media-min(max-width) {
-    flex: 0 0 calc(100% - #{ $margin });
-    max-width: calc(100% - #{ $margin });
-  }
-}
-
-.profile__claim-popup-close,
 .popup__close {
   position: absolute;
   right: 0;
   top: 0;
-  margin: 15px ($margin / 2);
+  margin: ($margin / 2);
   cursor: pointer;
 
-  @include media-min(lg) {
-    display: none;
+  .popup--claim & {
+    @include media-min(lg) {
+      display: none;
+    }
   }
 
   svg {
@@ -92,8 +71,4 @@
     height: 16px;
     fill: var(--white);
   }
-}
-
-.popup__close {
-  display: block;
 }

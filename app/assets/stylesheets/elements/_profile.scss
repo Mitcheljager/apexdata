@@ -1,20 +1,20 @@
 .item--profile {
   width: 100%;
-  margin: 0;
+  margin: 0 0 ($margin / 2);
   flex: 0 0 100%;
   max-width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 22px 20px 22px 10px;
+  padding: ($margin / 2) ($margin / 2) ($margin / 2) ($margin / 4);
 
-  @media screen and (min-width: 900px) {
-    flex: 0 0 calc(100% - 17px);
-    max-width: calc(100% - 17px);
+  @include media-min(lg) {
+    flex: 0 0 calc(100% - #{ $margin / 2 });
+    max-width: calc(100% - #{ $margin / 2 });
     flex-direction: column;
-    padding: 40px;
+    padding: $margin;
   }
 
-  @media screen and (min-width: 1230px) {
+  @include media-min(max-width) {
     flex: 0 0 calc(100% - #{ $margin });
     max-width: calc(100% - #{ $margin });
   }
@@ -24,10 +24,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
-  
-  @media screen and (min-width: 900px) {
-    padding-top: 80px;
+  padding-top: $margin;
+
+  @include media-min(lg) {
+    padding-top: $margin * 2;
   }
 }
 
@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
@@ -60,8 +60,8 @@
   align-items: flex-start;
   max-width: 100%;
 
-  @media screen and (min-width: 900px) {
-    max-width: 375px;
+  @include media-min(lg) {
+    max-width: ($max-width / 3 * 1) - $margin;
   }
 }
 
@@ -99,7 +99,7 @@
   white-space: nowrap;
   width: 100%;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     font-size: 35px;
   }
 }
@@ -107,11 +107,11 @@
 .user__actions {
   width: 100%;
   text-align: left;
-  margin-top: 20px;
+  margin-top: ($margin / 2);
   margin-bottom: -10px;
 
-  @media screen and (min-width: 900px) {
-    width: calc(100% - 375px);
+  @include media-min(lg) {
+    width: calc(100% - #{ ($max-width / 3 * 1) - $margin });
     text-align: right;
     margin-top: 0;
     margin-bottom: 0;
@@ -119,16 +119,16 @@
 
   small {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: ($margin / 4);
   }
 
   a {
-    margin-bottom: 10px;
-    margin-right: 20px;
+    margin-bottom: ($margin / 4);
+    margin-right: ($margin / 2);
     margin-left: 0;
 
-    @media screen and (min-width: 900px) {
-      margin-left: 20px;
+    @include media-min(lg) {
+      margin-left: ($margin / 2);
       margin-right: 0;
       margin-bottom: 0;
     }
@@ -136,7 +136,7 @@
 }
 
 .user-status {
-  font-size: 10px;
+  font-size: ($margin / 4);
   font-weight: 700;
   color: var(--text-color);
   background: var(--primary);
@@ -146,7 +146,7 @@
   letter-spacing: .5px;
   display: none;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     display: block;
   }
 
@@ -169,7 +169,7 @@
   top: 0;
   right: -24px;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     display: none;
   }
 
@@ -189,12 +189,12 @@
   grid-template-columns: #{ 100% / 3 * 1 } #{ 100% / 3 * 2 };
   margin-top: $margin;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     display: flex;
     flex-direction: row;
   }
 
-  @media screen and (min-width: 1230px) {
+  @include media-min(max-width) {
     display: grid;
   }
 }
@@ -204,12 +204,12 @@
   width: 100%;
   min-width: 100%;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     width: 354px;
     min-width: 354px;
   }
 
-  @media screen and (min-width: 1230px) {
+  @include media-min(max-width) {
     width: auto;
     min-width: inherit;
   }
@@ -242,24 +242,24 @@
   flex: 0 0 100%;
   max-width: 100%;
   margin-top: $margin / 2;
-  padding: 30px 20px 20px;
-  margin-bottom: 20px;
+  padding: 30px ($margin / 2) ($margin / 2);
+  margin-bottom: ($margin / 2);
 
   img {
     vertical-align: middle;
     max-width: 100%;
   }
 
-  @media screen and (min-width: 500px) {
+  @include media-min(sm) {
     padding: $margin;
   }
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     flex: 0 0 calc(100% - 17px);
     max-width: calc(100% - 17px);
   }
 
-  @media screen and (min-width: 1230px) {
+  @include media-min(max-width) {
     flex: 0 0 calc(100% - #{ $margin });
     max-width: calc(100% - #{ $margin });
     margin-bottom: 0;
@@ -270,7 +270,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 40px 0 20px;
+  margin: $margin 0 ($margin / 2);
 
   h5 {
     margin: 0;
@@ -319,15 +319,15 @@
   padding: 0;
   margin-bottom: $margin / 2;
 
-  @media screen and (min-width: 650px) {
+  @include media-min(sm) {
     flex-direction: row;
   }
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     flex-direction: column;
   }
 
-  @media screen and (min-width: 1030px) {
+  @include media-min(xxl) {
     flex-direction: row;
   }
 
@@ -342,19 +342,19 @@
   height: 100px;
   display: none;
 
-  @media screen and (min-width: 650px) {
+  @include media-min(sm) {
     width: 190px;
     height: auto;
     display: block;
   }
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     width: 100%;
     height: 100px;
     display: none;
   }
 
-  @media screen and (min-width: 1030px) {
+  @include media-min(xxl) {
     width: 190px;
     height: auto;
     display: block;
@@ -389,17 +389,17 @@
   height: 70px;
   border-radius: 100%;
   overflow: hidden;
-  margin-right: 20px;
+  margin-right: ($margin / 2);
 
-  @media screen and (min-width: 650px) {
+  @include media-min(sm) {
     display: none;
   }
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     display: block;
   }
 
-  @media screen and (min-width: 1030px) {
+  @include media-min(xxl) {
     display: none;
   }
 
@@ -415,22 +415,22 @@
 }
 
 .profile-legend__content {
-  padding: 20px;
+  padding: ($margin / 2);
   width: 100%;
 
-  @media screen and (min-width: 500px) {
+  @include media-min(sm) {
     padding: $margin 35px;
   }
 
-  @media screen and (min-width: 650px) {
+  @include media-min(sm) {
     width: calc(100% - 190px);
   }
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     width: 100%;
   }
 
-  @media screen and (min-width: 1030px) {
+  @include media-min(xxl) {
     width: calc(100% - 190px);
   }
 }
@@ -486,7 +486,7 @@
 }
 
 .profile-stats__bar {
-  margin: 2px 0 10px;
+  margin: 2px 0 ($margin / 4);
 }
 
 .profile-stats__name {
@@ -549,7 +549,7 @@
   font-size: 25px;
   background: rgba($primary, 0.88);
   text-align: center;
-  padding: 20px;
+  padding: ($margin / 2);
 }
 
 .profile__level {
@@ -557,42 +557,8 @@
   width: 90px;
   margin: 0;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     width: auto;
-  }
-}
-
-.profile__claim-parent {
-  position: fixed;
-  opacity: 1;
-  visibility: visible;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.48);
-  z-index: 999999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 250ms ease, visibility 250ms ease;
-
-  &.active {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  @media screen and (min-width: 900px) {
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-    display: block;
-    width: auto;
-    height: auto;
-    background: none;
   }
 }
 
@@ -600,36 +566,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 ($margin / 2);
   text-align: center;
   width: calc(100% - 90px);
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     display: none;
   }
-}
-
-.profile__claim-popup-close,
-.profile-popup__close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 15px 20px;
-  cursor: pointer;
-
-  @media screen and (min-width: 900px) {
-    display: none;
-  }
-
-  svg {
-    width: 11px;
-    height: 16px;
-    fill: var(--white);
-  }
-}
-
-.profile-popup__close {
-  display: block;
 }
 
 .profile__claim {
@@ -639,12 +582,12 @@
   margin: 0;
   background: var(--primary);
   width: calc(100% - 43px);
-  max-width: 470px;
+  max-width: map-get($media-min-widths, xs);
   border-radius: 4px;
-  padding: 10px 30px 30px;
+  padding: ($margin / 4) 30px 30px;
   position: relative;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     padding: 0;
     border-radius: 0;
     max-width: inherit;
@@ -653,54 +596,10 @@
   }
 
   h3 {
-    font-size: 20px;
+    font-size: ($margin / 2);
     color: var(--white);
     font-weight: 700;
   }
-}
-
-.profile__popup {
-  position: fixed;
-  opacity: 1;
-  visibility: visible;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.48);
-  z-index: 999999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 250ms ease, visibility 250ms ease;
-
-  &.active {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.profile-popup__inner {
-  font-size: 13px;
-  line-height: 18px;
-  margin: 0;
-  background: var(--primary);
-  width: calc(100% - 43px);
-  max-width: 470px;
-  border-radius: 4px;
-  padding: 10px 30px 30px;
-  position: relative;
-}
-
-.profile-popup__title {
-  margin-bottom: 10px;
-}
-
-.profile-popup__description {
-  margin-bottom: 25px;
-  display: block;
 }
 
 .profile__notification {
@@ -708,18 +607,18 @@
   width: 100%;
   max-width: 100%;
   padding: $margin / 2;
-  margin-top: $margin / 2;
+  margin-bottom: $margin / 2;
   border-radius: 2px;
   background: var(--orange);
   color: var(--white);
   font-size: 14px;
 
-  @media screen and (min-width: 900px) {
-    flex: 0 0 calc(100% - 17px);
-    max-width: calc(100% - 17px);
+  @include media-min(lg) {
+    flex: 0 0 calc(100% - #{ $margin / 2 });
+    max-width: calc(100% - #{ $margin / 2 });
   }
 
-  @media screen and (min-width: 1230px) {
+  @include media-min(max-width) {
     flex: 0 0 calc(100% - #{ $margin });
     max-width: calc(100% - #{ $margin });
   }
@@ -731,7 +630,7 @@
   text-align: center;
   position: relative;
 
-  @media screen and (min-width: 900px) {
+  @include media-min(lg) {
     margin-top: -#{ $margin / 2 };
   }
 
@@ -742,10 +641,10 @@
     top: 5px;
     left: 50%;
     transform: translate(-50%);
-    font-size: 20px;
+    font-size: 10px;
     color: var(--white);
 
-    @media screen and (min-width: 900px) {
+    @include media-min(lg) {
       top: 8px;
       font-size: 56px;
     }
@@ -763,12 +662,12 @@
       height: 29px;
       border-radius: 4px;
 
-      @media screen and (min-width: 900px) {
+      @include media-min(lg) {
         top: 138px;
         font-size: 36px;
         width: 100px;
         height: 46px;
-        border-radius: 10px;
+        border-radius: ($margin / 4);
       }
     }
   }
