@@ -1,12 +1,20 @@
 <div class="item profile-legend <%= "profile-legend--current" if current %>">
   <div class="profile-legend__image">
-    <%= image_tag "legends/#{ legend.downcase }/banner.jpg" %>
+    <picture>
+      <source srcset="<%= image_url "legends/#{ legend.downcase }/banner.webp" %>" type="image/webp">
+      <source srcset="<%= image_url "legends/#{ legend.downcase }/banner.jpg" %>" type="image/jpeg">
+      <%= image_tag "legends/#{ legend.downcase }/banner.jpg", class: "legends-banner__image", alt: legend %>
+    </picture>
   </div>
 
   <div class="profile-legend__content">
     <div class="profile__legend-parent">
       <div class="profile-parent__image">
-        <%= image_tag "legends/#{ legend.downcase }/banner.jpg" %>
+        <picture>
+          <source srcset="<%= image_url "legends/#{ legend.downcase }/banner.webp" %>" type="image/webp">
+          <source srcset="<%= image_url "legends/#{ legend.downcase }/banner.jpg" %>" type="image/jpeg">
+          <%= image_tag "legends/#{ legend.downcase }/banner.jpg", class: "legends-banner__image", alt: legend %>
+        </picture>
       </div>
       <div class="profile-parent__legend-name">
         <% if current %>
