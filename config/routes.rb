@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   get "tracker", to: "profiles#index", as: "tracker"
-  get "profile/:platform/:user", to: "profiles#show"
+  get "profile/:platform/:user", to: "profiles#show", as: "profile"
   get "profile/:platform/:user/charts", to: "profiles#charts", as: "profile_charts"
 
   get "register", to: "users#new", as: "register"

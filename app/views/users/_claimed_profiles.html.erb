@@ -7,7 +7,7 @@
     <% @claimed_profiles.each do |profile| %>
       <div class="user__claimed-profile-item">
         <div>
-          <strong><%= profile.username %></strong>
+          <strong class="claimed-profile-link"><%= link_to profile.username, profile_path(profile.platform, profile.username) %></strong>
           <small><%= profile.platform %></small>
         </div>
 
