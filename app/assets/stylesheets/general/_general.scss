@@ -284,3 +284,11 @@ hr {
 .p-25 {
   padding: .25em;
 }
+
+big {
+  font-size: 16px;
+
+  @media screen and (min-width: 992px) {
+    font-size: larger;
+  }
+}

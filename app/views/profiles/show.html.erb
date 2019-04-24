@@ -39,7 +39,7 @@
       <% if @saved_values.any? %>
         <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.strftime("%F at %T") %></em></small>
       <% end %>
-      
+
       <%= link_to "Update profile", "", class: "profile__button" %>
 
       <% if current_user && @claimed_profile.present? %>
