@@ -13,27 +13,31 @@
 
   <%= render "tracker", extra_classes: "player-form--large" %>
 
-  <% unless membership.present? %>
-    <div class="top-offset"></div>
+  <% if Flipper.enabled?(:memberships) %>
+    <% unless membership.present? %>
+      <div class="top-offset"></div>
 
-    <div class="item item--full-width">
-      <div class="heading heading--small">
-        <h4 class="heading__title">Get a Membership</h4>
+      <div class="wrapper wrapper--tiny">
+        <div class="item item--full-width">
+          <div class="heading heading--small">
+            <h4 class="heading__title">Get a Membership</h4>
+          </div>
+
+          <div class="no-text-transform">
+            <p>
+              <big><em>Supports ApexData.gg and gain benefits on your profile, along with ad-free viewing across the entire website.</em></big>
+            </p>
+          </div>
+
+          <h4 class="m-0"><small>Only</small> <strong>€1</strong><small> /month</small></h4>
+
+          <br>
+
+          <div>
+            <%= link_to "Find out more", new_membership_path, class: "button" %>
+          </div>
+        </div>
       </div>
-
-      <div class="no-text-transform">
-        <p>
-          <big><em>Supports ApexData.gg and gain benefits on your profile, along with ad-free viewing across the entire website.</em></big>
-        </p>
-      </div>
-
-      <h4 class="m-0"><small>Only</small> <strong>€1</strong><small> /month</small></h4>
-
-      <br>
-
-      <div>
-        <%= link_to "Find out more", new_membership_path, class: "button" %>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
