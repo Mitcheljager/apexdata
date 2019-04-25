@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const toProfile = (user, platform) => {
   if(user != null && user != "" && platform != null && platform != "") {
-    trackProfileSearch(window.location.href)
+    trackProfileSearch(window.location.pathname)
     window.location.href = `/profile/${platform}/${user}`
   }
 }
