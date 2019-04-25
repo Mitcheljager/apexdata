@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     redirect_to account_path if current_user
   end
 
+  before_action only: [:index] do
+    redirect_to account_path unless current_user && current_user.level == 100
+  end
+
   def index
     @users = User.all
   end

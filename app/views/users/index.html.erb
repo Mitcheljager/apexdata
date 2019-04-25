@@ -1,11 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h2>Users <small><%= @users.count %></small></h2>
 
-<div class="">
-  <% if current_user %>
-    Logged in as <%= current_user.username %>.
-    <%= link_to "Logout", logout_path %>
-  <% else %>
-    <%= link_to "Register", register_path %> |
-    <%= link_to "Login", login_path %>
+<table>
+  <% @users.each_with_index do |user, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><strong><%= user.username %></strong></td>
+      <td><%= user.created_at.localtime %></td>
+    </tr>
   <% end %>
-</div>
+</table>

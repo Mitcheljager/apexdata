@@ -7,7 +7,7 @@
     <% if membership.present? %>
       <br>
       You have an active Membership.<br>
-      <small>This will end on <strong><%= (membership.created_at + 1.month).strftime("%F at %T") %></strong>.</small>
+      <small>This will end on <strong><%= (membership.created_at.localtime + 1.month).strftime("%F at %T") %></strong>.</small>
     <% else %>
       <p>You do not currently have a membership.</p>
 

@@ -5,6 +5,14 @@ class MembershipsController < ApplicationController
     end
   end
 
+  before_action only: [:index] do
+    redirect_to account_path unless current_user && current_user.level == 100
+  end
+
+  def index
+    @memberships = Membership.all
+  end
+
   def new
   end
 

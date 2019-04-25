@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root "high_voltage/pages#show", id: "index"
 
-  resources :users, only: [:new, :create, :destroy]
+  resources :users, only: [:index, :new, :create, :destroy]
   get "user/edit", to: "users#edit", as: "edit_user"
   get "user", to: "users#show", as: "account"
   patch "user", to: "users#update", as: "update_user"
@@ -35,13 +35,13 @@ Rails.application.routes.draw do
     get ":key/:type/:category", to: "api#category"
   end
 
-  resources :claimed_profiles, only: [:destroy]
+  resources :claimed_profiles, only: [:index, :destroy]
   post "claim-initiate", to: "claimed_profiles#initiate", as: "claim_profile_initiate"
   post "claim-step-1", to: "claimed_profiles#step_1", as: "claim_profile_step_1"
   post "claim-step-2", to: "claimed_profiles#step_2", as: "claim_profile_step_2"
   post "claim-step-3", to: "claimed_profiles#step_3", as: "claim_profile_step_3"
 
-  resources :memberships, only: [:new, :create, :update]
+  resources :memberships, only: [:index, :new, :create, :update]
 
   resources :events
 end
