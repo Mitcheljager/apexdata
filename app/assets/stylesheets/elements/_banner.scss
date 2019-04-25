@@ -12,8 +12,6 @@
   background-position: center;
 
   @include media-min(md) {
-    flex-direction: row;
-    align-items: center;
     height: $margin * 2.5;
     padding: $margin;
     margin-top: $margin * 2;
@@ -22,22 +20,6 @@
   @include media-min(xxl) {
     margin-top: $margin * 3;
     padding: ($margin * 1.5) ($margin * 2);
-  }
-
-  &--search {
-    justify-content: center;
-    align-items: flex-start;
-    height: $margin * 2.5;
-    padding: ($margin * 1.5) 0;
-    margin-bottom: 100px;
-
-    @include media-min(md) {
-      margin-bottom: 0;
-    }
-
-    @include media-min(xxl) {
-      padding: ($margin * 1.5) ($margin * 2);
-    }
   }
 
   h3 {
@@ -90,39 +72,61 @@
   }
 }
 
-.banner__search {
-  width: 100%;
-  padding: 0 20px;
+.banner--search {
+  justify-content: center;
+  align-items: flex-start;
+  height: $margin * 2.5;
+  padding: ($margin * 1.5) 0;
+  margin-bottom: $margin * 2.5;
 
   @include media-min(md) {
-    max-width: 652px;
+    margin-bottom: 0;
+  }
+
+  @include media-min(xxl) {
+    padding: ($margin * 1.5) ($margin * 2);
+  }
+}
+
+.banner--search__content {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 $margin / 2;
+
+  @include media-min(md) {
+    max-width: map-get($media-min-widths, sm);
     padding: 0;
+  }
+}
+
+.banner--search__title {
+  margin: ($margin * 2) 0 ($margin / 4 * 3);
+
+  &::after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 100%;
+    max-width: 100%;
+    background: rgba($white, 0.25);
   }
 
   h2 {
-    margin: 0;
-    margin-top: 115px;
-    margin-bottom: 28px;
-    font-size: 26px;
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-end;
-    padding-right: 5px;
+    margin-top: $margin;
+    padding-right: $margin / 2;
+    font-size: 26px;
     font-weight: 300;
 
     @include media-min(md) {
-      margin-top: -29px;
+      margin-top: -#{ $margin / 2 };
       font-size: 36px;
     }
 
-    &::before {
-      display: block;
-      content: "";
-      height: 2px;
-      width: 100%;
-      max-width: 826.6666666667px;
-      background: rgba($white, 0.25);
-      margin-left: 30px;
+    @include media-min(max-width) {
+      margin-left: 0;
     }
   }
 }
