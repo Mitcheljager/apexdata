@@ -10,7 +10,7 @@ class MembershipsController < ApplicationController
   end
 
   def index
-    @memberships = Membership.all
+    @memberships = Membership.all.order(created_at: :asc)
   end
 
   def new

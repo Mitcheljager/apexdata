@@ -7,7 +7,7 @@ class ClaimedProfilesController < ApplicationController
   end
 
   def index
-    @claimed_profiles = ClaimedProfile.all
+    @claimed_profiles = ClaimedProfile.all.order(created_at: :asc)
   end
 
   def initiate
