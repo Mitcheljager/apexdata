@@ -24,6 +24,22 @@
     padding: ($margin * 1.5) ($margin * 2);
   }
 
+  &--search {
+    justify-content: center;
+    align-items: flex-start;
+    height: $margin * 2.5;
+    padding: ($margin * 1.5) 0;
+    margin-bottom: 100px;
+
+    @include media-min(md) {
+      margin-bottom: 0;
+    }
+
+    @include media-min(xxl) {
+      padding: ($margin * 1.5) ($margin * 2);
+    }
+  }
+
   h3 {
     font-weight: 400;
     text-transform: uppercase;
@@ -70,6 +86,42 @@
 
     @include media-min(max-width) {
       right: $margin * 2;
+    }
+  }
+}
+
+.banner__search {
+  width: 100%;
+  padding: 0 20px;
+
+  @include media-min(md) {
+    max-width: 652px;
+    padding: 0;
+  }
+
+  h2 {
+    margin: 0;
+    margin-top: 115px;
+    margin-bottom: 28px;
+    font-size: 26px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    padding-right: 5px;
+
+    @include media-min(md) {
+      margin-top: -29px;
+      font-size: 36px;
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      height: 2px;
+      width: 100%;
+      max-width: 826.6666666667px;
+      background: rgba($white, 0.25);
+      margin-left: 30px;
     }
   }
 }

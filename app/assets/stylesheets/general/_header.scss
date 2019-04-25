@@ -218,6 +218,53 @@
       }
     }
   }
+
+  &--home {
+    input {
+      padding: 15px 110px 15px 20px;
+      font-size: 17px;
+      box-shadow: 0 6px 32px rgba($black, .2), 0 2px 4px rgba($black, .2);
+      border: 1px solid $border-color;
+
+      @include media-min(md) {
+        padding: $margin / 2 200px $margin / 2 $margin;
+        font-size: 21px;
+      }
+    }
+
+    .player-platforms {
+      height: 51px;
+
+      @include media-min(md) {
+        height: 100%;
+      }
+    }
+
+    .player-submit {
+      background: var(--red);
+      color: var(--white);
+
+      &--desktop {
+        display: none;
+
+        @include media-min(md) {
+          display: block;
+        }
+      }
+
+      &--mobile {
+        display: block;
+        padding: 15px 20px !important;
+        width: 100%;
+        margin: 0;
+        margin-top: 15px;
+
+        @include media-min(md) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .player-platforms {
