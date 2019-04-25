@@ -108,6 +108,7 @@
     flex-direction: row-reverse;
     align-items: flex-end;
     padding-right: 5px;
+    font-weight: 300;
 
     @include media-min(md) {
       margin-top: -29px;
