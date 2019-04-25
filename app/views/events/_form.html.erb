@@ -1,0 +1,54 @@
+<%= form_with(model: event, local: true) do |f| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %> <br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :data_names %> <br>
+    <%= f.text_field :data_names %>
+  </p>
+
+  <p>
+    <%= f.label :data_names %> <br>
+    <%= f.text_field :data_names %>
+  </p>
+
+  <p>
+    <%= f.label :legends %> <br>
+    <%= f.select(:legends, legends_list,
+                        { include_blank: "All" },
+                        { multiple: true, size: 5 }) %>
+  </p>
+
+  <p>
+    <%= f.label :start_datetime %> <br>
+    <%= f.datetime_field :start_datetime %>
+  </p>
+
+  <p>
+    <%= f.label :end_datetime %> <br>
+    <%= f.datetime_field :end_datetime %>
+  </p>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

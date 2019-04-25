@@ -9,3 +9,4 @@
 Flipper.enable(:users)
 Flipper.enable(:profiles)
 Flipper.enable(:memberships)
+Flipper.enable(:events)

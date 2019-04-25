@@ -42,4 +42,6 @@ Rails.application.routes.draw do
   post "claim-step-3", to: "claimed_profiles#step_3", as: "claim_profile_step_3"
 
   resources :memberships, only: [:new, :create, :update]
+
+  resources :events
 end
