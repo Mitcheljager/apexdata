@@ -27,6 +27,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const toProfile = (user, platform) => {
   if(user != null && user != "" && platform != null && platform != "") {
+    trackProfileSearch(window.location.href)
     window.location.href = `/profile/${platform}/${user}`
   }
+}
+
+function trackProfileSearch(label) {
+  if (typeof gtag !== "function") return
+
+  gtag("event", "Profile Search", {
+    "event_category" : label
+  })
 }
