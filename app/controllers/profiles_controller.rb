@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
       check_latest_update
 
       if @latest_record
-        if @latest_record.created_at < 20.seconds.ago
+        if @latest_record.created_at < 5.seconds.ago
           save_new_values
         end
       else
