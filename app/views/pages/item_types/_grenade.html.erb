@@ -53,5 +53,10 @@
       Ticks per second
       <span><%= item["ticks_per_second"] %></span>
     <% end if item["ticks_per_second"] %>
+
+    <%= tag.div class: "item__small-info" do %>
+      Impact damage vs shields
+      <span><%= item["impact_damage_vs_shields"] %></span>
+    <% end if item["impact_damage_vs_shields"] %>
   </article>
 <% end %>

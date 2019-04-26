@@ -16,8 +16,9 @@
   ticks_per_second: 10
 -
   name: Arc Star
-  description: A throwable shuriken that <strong>sticks</strong> on impact and <strong>damages</strong> and <strong>stuns</strong> the enemy when it explodes.
+  description: A throwable shuriken that <strong>sticks</strong> on impact and <strong>damages</strong> and <strong>stuns</strong> the enemy when it explodes. The impact damage is higher when sticking it to a enemy with a shield.
   impact_damage: 15
   explosion_damage: 70
   explosion_timer: 3
   effect_timer: 5
+  impact_damage_vs_shields: 60
