@@ -15,12 +15,14 @@ task :keep_profiles_updated => :environment do
       platforms.each do |platform|
         profiles = []
 
-        active_memberships = Membership.where("created_at > ?", 1.month.ago).each do |membership|
-          user = User.find_by_id(membership.user_id)
-          claimed_profiles = ClaimedProfile.where(checks_completed: 1, user_id: user.id, platform: platform).select(:profile_uid).map(&:profile_uid)
+        Rails.logger.silence do
+          active_memberships = Membership.where("created_at > ?", 1.month.ago).each do |membership|
+            user = User.find_by_id(membership.user_id)
+            claimed_profiles = ClaimedProfile.where(checks_completed: 1, user_id: user.id, platform: platform).select(:profile_uid).map(&:profile_uid)
 
-          if claimed_profiles.any?
-            profiles.push(claimed_profiles)
+            if claimed_profiles.any?
+              profiles.push(claimed_profiles)
+            end
           end
         end
 
@@ -42,11 +44,13 @@ task :keep_profiles_updated => :environment do
                   profile["legends"]["selected"][legend].each do |key, value|
                     next if key == "ImgAssets"
 
-                    currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
+                    Rails.logger.silence do
+                      currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
 
-                    if currentData.nil?
-                      @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
-                      @new_entry.save
+                      if currentData.nil?
+                        @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
+                        @new_entry.save
+                      end
                     end
                   end
                 end
