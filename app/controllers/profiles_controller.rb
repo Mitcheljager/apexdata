@@ -13,30 +13,32 @@ class ProfilesController < ApplicationController
   def show
     get_response
 
-    if @response["global"]
-      @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
-    else
-      render "not_found"
-      return
-    end
+    if @response
+      if @response["global"]
+        @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
+      else
+        render "not_found"
+        return
+      end
 
-    if @response["legends"]["all"]
-      check_latest_update
+      if @response["legends"]["all"]
+        check_latest_update
 
-      if @latest_record
-        if @latest_record.created_at < 5.seconds.ago
+        if @latest_record
+          if @latest_record.created_at < 5.seconds.ago
+            save_new_values
+          end
+        else
           save_new_values
         end
-      else
-        save_new_values
       end
-    end
 
-    get_claimed_profile
+      get_claimed_profile
 
-    respond_to do |format|
-      format.html
-      format.json
+      respond_to do |format|
+        format.html
+        format.json
+      end
     end
   end
 
@@ -90,10 +92,10 @@ class ProfilesController < ApplicationController
     begin
       response = HTTParty.get(url)
     rescue HTTParty::Error
-      render "not_found"
+      render "error"
       return
     rescue StandardError
-      render "not_found"
+      render "error"
       return
     end
 
