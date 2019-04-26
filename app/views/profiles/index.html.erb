@@ -1,43 +1,37 @@
 <% content_for :page_title, "Player Profile Tracker" %>
 
-<div class="wrapper wrapper--small">
-  <div class="heading mb-0">
-    <h2 class="heading__title">Player Tracker</h2>
-  </div>
+<%= render "banners/search" %>
 
-  <br>
+<div class="wrapper wrapper--tiny">
+  <br><br>
 
-  <p><big>Find your profile and check out your stats. Keep track of your progress over time, find out how much kills/wins you have in total, and much more!</big></p>
+  <p><small>Find your profile and check out your stats. Keep track of your progress over time, find out how much kills/wins you have in total, and much more!</small></p>
+</div>
 
-  <br>
+<% if Flipper.enabled?(:memberships) %>
+  <% unless membership.present? %>
+    <div class="top-offset"></div>
 
-  <%= render "tracker", extra_classes: "player-form--large" %>
+    <div class="wrapper wrapper--tiny">
+      <div class="item item--full-width">
+        <div class="heading heading--small">
+          <h4 class="heading__title">Get a Membership</h4>
+        </div>
 
-  <% if Flipper.enabled?(:memberships) %>
-    <% unless membership.present? %>
-      <div class="top-offset"></div>
+        <div class="no-text-transform">
+          <p>
+            <big><em>Supports ApexData.gg and gain benefits on your profile, along with ad-free viewing across the entire website.</em></big>
+          </p>
+        </div>
 
-      <div class="wrapper wrapper--tiny">
-        <div class="item item--full-width">
-          <div class="heading heading--small">
-            <h4 class="heading__title">Get a Membership</h4>
-          </div>
+        <h4 class="m-0"><small>Only</small> <strong>€1</strong><small> /month</small></h4>
 
-          <div class="no-text-transform">
-            <p>
-              <big><em>Supports ApexData.gg and gain benefits on your profile, along with ad-free viewing across the entire website.</em></big>
-            </p>
-          </div>
+        <br>
 
-          <h4 class="m-0"><small>Only</small> <strong>€1</strong><small> /month</small></h4>
-
-          <br>
-
-          <div>
-            <%= link_to "Find out more", new_membership_path, class: "button" %>
-          </div>
+        <div>
+          <%= link_to "Find out more", new_membership_path, class: "button" %>
         </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
-</div>
+<% end %>
