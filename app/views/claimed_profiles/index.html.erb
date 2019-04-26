@@ -1,13 +1,49 @@
-<h2>Claimed Profiles <small><%= @claimed_profiles.count %></small></h2>
+<%= render "admin_navigation" %>
+
+<h2>Successful Claimed Profiles <small><%= @successful_claimed_profiles.count %></small></h2>
 
 <table>
-  <% @claimed_profiles.each do |claimed_profile| %>
+  <tr>
+    <th>ID</th>
+    <th>Platform</th>
+    <th>Username</th>
+    <th>UID</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+  <% @successful_claimed_profiles.each do |claimed_profile| %>
     <tr>
       <td><%= claimed_profile.id %></td>
       <td><em><%= claimed_profile.platform %></em></td>
       <td><strong><%= claimed_profile.username %></strong></td>
       <td><small><%= claimed_profile.profile_uid %></small></td>
       <td><%= claimed_profile.created_at.localtime %></td>
+      <td><%= claimed_profile.updated_at.localtime %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Unfinished Claimed Profiles <small><%= @failed_claimed_profiles.count %></small></h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Platform</th>
+    <th>Username</th>
+    <th>UID</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+  <% @failed_claimed_profiles.each do |claimed_profile| %>
+    <tr>
+      <td><%= claimed_profile.id %></td>
+      <td><em><%= claimed_profile.platform %></em></td>
+      <td><strong><%= claimed_profile.username %></strong></td>
+      <td><small><%= claimed_profile.profile_uid %></small></td>
+      <td><%= claimed_profile.created_at.localtime %></td>
+      <td><%= claimed_profile.updated_at.localtime %></td>
     </tr>
   <% end %>
 </table>

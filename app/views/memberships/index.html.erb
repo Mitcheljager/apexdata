@@ -1,6 +1,15 @@
+<%= render "admin_navigation" %>
+
 <h2>Memberships <small><%= @memberships.count %></small></h2>
 
 <table>
+  <tr>
+    <th>ID</th>
+    <th>User ID</th>
+    <th>Order ID</th>
+    <th>Created at</th>
+  </tr>
+
   <% @memberships.each do |membership| %>
     <tr>
       <td><%= membership.id %></td>

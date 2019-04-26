@@ -7,7 +7,8 @@ class ClaimedProfilesController < ApplicationController
   end
 
   def index
-    @claimed_profiles = ClaimedProfile.all.order(created_at: :asc)
+    @successful_claimed_profiles = ClaimedProfile.where(checks_completed: 1).order(created_at: :asc)
+    @failed_claimed_profiles = ClaimedProfile.where(checks_completed: 0).order(created_at: :asc)
   end
 
   def initiate

@@ -1,11 +1,21 @@
+<%= render "admin_navigation" %>
+
 <h2>Users <small><%= @users.count %></small></h2>
 
 <table>
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
   <% @users.each do |user| %>
     <tr>
       <td><%= user.id %></td>
       <td><strong><%= user.username %></strong></td>
       <td><%= user.created_at.localtime %></td>
+      <td><%= user.updated_at.localtime %></td>
     </tr>
   <% end %>
 </table>

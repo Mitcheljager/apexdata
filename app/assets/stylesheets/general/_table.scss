@@ -1,0 +1,19 @@
+table {
+
+}
+
+th {
+  text-align: left;
+  padding: .1em .5em;
+}
+
+td {
+  text-align: left;
+  padding: .1em .5em;
+}
+
+tr:hover {
+  td {
+    background: rgba($white, .1);
+  }
+}
