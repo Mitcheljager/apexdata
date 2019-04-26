@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_25_174954) do
+ActiveRecord::Schema.define(version: 2019_04_26_225112) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
-    t.string "profile_uid", limit: 12
+    t.string "profile_uid", limit: 255
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "check_1"
