@@ -13,7 +13,7 @@ module ApexData
     config.assets.initialize_on_precompile = false
 
     Raven.configure do |config|
-      config.dsn = 'https://583e4534bd2c45d38315c99589775576:fdd0318d8c4d45a491ba2ac8f47563d8@sentry.io/1447599'
+      config.dsn = "https://94cf1bba4aa346b68dded7949ce1e116:24988c7a68304f44836d3bca4912b613@sentry.io/1447612"
     end
 
     config.after_initialize do
