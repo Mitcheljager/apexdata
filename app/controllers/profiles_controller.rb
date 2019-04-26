@@ -64,9 +64,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def error
-  end
-
   private
 
   def save_new_values
@@ -93,11 +90,13 @@ class ProfilesController < ApplicationController
   def get_response
     url = "http://api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
     begin
-      response = HTTParty.get(url, timeout: 3)
+      response = HTTParty.get(url, timeout: 5)
     rescue HTTParty::Error
-      redirect_to profile_error_path
+      render "error"
+      return
     rescue StandardError
-      redirect_to profile_error_path
+      render "error"
+      return
     end
 
     if response

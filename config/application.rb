@@ -12,6 +12,10 @@ module ApexData
     config.load_defaults 5.1
     config.assets.initialize_on_precompile = false
 
+    Raven.configure do |config|
+      config.dsn = 'https://583e4534bd2c45d38315c99589775576:fdd0318d8c4d45a491ba2ac8f47563d8@sentry.io/1447599'
+    end
+
     config.after_initialize do
       Rails.application.load_tasks
 
