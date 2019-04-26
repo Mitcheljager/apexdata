@@ -1,9 +1,9 @@
 <h2>Claimed Profiles <small><%= @claimed_profiles.count %></small></h2>
 
 <table>
-  <% @claimed_profiles.each_with_index do |claimed_profile, index| %>
+  <% @claimed_profiles.each do |claimed_profile| %>
     <tr>
-      <td><%= index + 1 %></td>
+      <td><%= claimed_profile.id %></td>
       <td><em><%= claimed_profile.platform %></em></td>
       <td><strong><%= claimed_profile.username %></strong></td>
       <td><small><%= claimed_profile.profile_uid %></small></td>

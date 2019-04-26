@@ -1,9 +1,9 @@
 <h2>Users <small><%= @users.count %></small></h2>
 
 <table>
-  <% @users.each_with_index do |user, index| %>
+  <% @users.each do |user| %>
     <tr>
-      <td><%= index + 1 %></td>
+      <td><%= user.id %></td>
       <td><strong><%= user.username %></strong></td>
       <td><%= user.created_at.localtime %></td>
     </tr>

@@ -1,9 +1,9 @@
 <h2>Memberships <small><%= @memberships.count %></small></h2>
 
 <table>
-  <% @memberships.each_with_index do |membership, index| %>
+  <% @memberships.each do |membership| %>
     <tr>
-      <td><%= index + 1 %></td>
+      <td><%= membership.id %></td>
       <td><strong><%= membership.user_id %></strong></td>
       <td><em><%= membership.order_id %></em></td>
       <td><%= membership.created_at.localtime %></td>
