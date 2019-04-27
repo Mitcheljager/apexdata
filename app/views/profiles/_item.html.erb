@@ -46,7 +46,7 @@
 
                       <% saved_values.where(legend: legend, data_name: key).order("created_at DESC").limit(5).each do |data| %>
                         <div class="profile-stats__updates-item">
-                          <em><%= data.created_at.localtime.to_formatted_s(:short) %>: </em>
+                          <em><%= data.created_at.localtime.strftime("%d %b, %H %M %z") %>: </em>
                           <strong><%= number_with_delimiter data.data_value %></strong>
                         </div>
                       <% end %>
