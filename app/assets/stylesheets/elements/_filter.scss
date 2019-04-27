@@ -40,7 +40,8 @@
   margin: -#{ $margin / 2 };
 
   @include media-min(md) {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 38% 38% 20% 4%
   }
 
   > div {
@@ -53,6 +54,22 @@
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  input[type="datetime-local"] {
+    &::-webkit-clear-button {
+      display: none;
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      color: var(--text-color);
+
+      &:hover {
+        background: $primary;
+        color: var(--title-color);
+      }
     }
   }
 }
