@@ -33,7 +33,7 @@
         <% ProfileLegendData.where(
                                   profile_uid: @response["global"]["uid"],
                                   legend: legend,
-                                  data_name: data_name).each do |data| %>
+                                  data_name: data_name).last(25).each do |data| %>
           <% dates.push(data.created_at.strftime("%b %d, %Y")) %>
           <% values.push(data.data_value) %>
         <% end %>
