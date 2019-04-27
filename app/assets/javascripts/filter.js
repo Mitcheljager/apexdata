@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   elements.forEach((element) => element.removeEventListener("click", setFilter))
   elements.forEach((element) => element.addEventListener("click", setFilter))
+
+  const element = document.querySelector("[data-action='charts-filter']")
+  if (element) element.addEventListener("submit", setChartFilter)
 })
 
 function setFilter(event) {
@@ -18,4 +21,21 @@ function setFilter(event) {
   }
 
   window.location.href = `/sort/${ filterType }/${ filterSortBy }`
+}
+
+function setChartFilter(event) {
+  event.preventDefault()
+
+  const formData = new FormData(this)
+  const fromFieldValue = formData.get("start_date")
+  const toFieldValue = formData.get("end_date")
+  const limitFieldValue = formData.get("limit")
+
+  const currentPage = window.location.pathname
+  const currentPageArray = currentPage.split("/")
+  const currentPageStart = currentPageArray.slice(1, 5)
+  const currentPageBasic = currentPageStart.join("/")
+
+  if (fromFieldValue && toFieldValue && limitFieldValue)
+    window.location.href = `/${ currentPageBasic }/${ fromFieldValue }/${ toFieldValue }/${ limitFieldValue }`
 }

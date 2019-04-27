@@ -33,3 +33,35 @@
   margin-top: $margin / 4;
   width: 100%;
 }
+
+.chart-filter {
+  display: flex;
+  flex-direction: column;
+  margin: -#{ $margin / 2 };
+
+  @include media-min(md) {
+    flex-direction: row;
+  }
+
+  > div {
+    margin-bottom: $margin / 4;
+
+    @include media-min(md) {
+      margin-right: $margin / 2;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.chart-filter__button {
+  height: $margin * 1.1;
+  margin-top: auto;
+  border: 0;
+  background: $red;
+  color: var(--title-color);
+  cursor: pointer;
+}

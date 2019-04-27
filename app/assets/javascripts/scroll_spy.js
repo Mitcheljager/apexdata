@@ -62,7 +62,7 @@ function moveScrollSpyNav() {
     if (element.classList.contains("scroll-spy--is-fixed")) return
     element.classList.add("scroll-spy--is-fixed")
     element.style.top = "99px"
-    element.style.left = elementPositionLeft - 40 + "px"
+    element.style.left = elementPositionLeft - 30 + "px"
   } else {
     element.classList.remove("scroll-spy--is-fixed")
     element.removeAttribute("style")
@@ -75,5 +75,5 @@ function repositionScrollSpyNav() {
 
   const elementParent = element.closest(".relative")
   const elementPositionLeft = elementParent.getBoundingClientRect().left
-  element.style.left = elementPositionLeft - 40 + "px"
+  element.style.left = elementPositionLeft - 30 + "px"
 }

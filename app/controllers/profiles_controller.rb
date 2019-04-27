@@ -57,7 +57,14 @@ class ProfilesController < ApplicationController
     end
 
     if @response["global"]
-      @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
+      if params[:start_date] && params[:end_date]
+        @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"])
+                                         .where(created_at: DateTime.parse(params[:start_date])..DateTime.parse(params[:end_date]))
+                                         .where.not(data_value: 0)
+      else
+        @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
+      end
+
     else
       render "not_found"
       return

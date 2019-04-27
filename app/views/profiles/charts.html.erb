@@ -7,6 +7,27 @@
     <h2 class="heading__title">Legend Charts</h2>
   </div>
 
+  <div class="item item--full-width">
+    <%= form_tag "/", class: "chart-filter", autocomplete: "off", data: { action: "charts-filter" } do %>
+      <div>
+        <%= label_tag :limit, "From" %>
+        <%= datetime_field_tag :start_date, params[:start_date] || (DateTime.now - 1.month).strftime("%FT%R"), class: "form-control"  %>
+      </div>
+
+      <div>
+        <%= label_tag :limit, "To" %>
+        <%= datetime_field_tag :end_date, params[:end_date] || DateTime.now.strftime("%FT%R"), class: "form-control"  %>
+      </div>
+
+      <div>
+        <%= label_tag :limit, "Max items" %>
+        <%= select_tag :limit, options_for_select([ "5", "10", "25", "50", "100" ], "25")  %>
+      </div>
+
+      <%= submit_tag ">", class: "chart-filter__button" %>
+    <% end %>
+  </div>
+
   <div class="relative">
     <nav class="scroll-spy" data-role="scroll-spy">
       <% @saved_values.group_by(&:legend).each do |legend, legend_data| %>
@@ -33,7 +54,7 @@
         <% ProfileLegendData.where(
                                   profile_uid: @response["global"]["uid"],
                                   legend: legend,
-                                  data_name: data_name).last(25).each do |data| %>
+                                  data_name: data_name).last(params[:limit] || 25).each do |data| %>
           <% dates.push(data.created_at.strftime("%b %d, %Y")) %>
           <% values.push(data.data_value) %>
         <% end %>
