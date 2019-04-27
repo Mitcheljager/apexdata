@@ -96,7 +96,7 @@ class ProfilesController < ApplicationController
 
   def get_response
     begin
-      url = "http://api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
+      url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
       response = HTTParty.get(url, timeout: 5)
     rescue
       render "error"

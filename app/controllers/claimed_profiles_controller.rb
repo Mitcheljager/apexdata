@@ -86,7 +86,7 @@ class ClaimedProfilesController < ApplicationController
   private
 
   def get_claimed_profile
-    url = "http://api.mozambiquehe.re/bridge?platform=#{ claimed_profile_params[:platform].upcase }&player=#{ claimed_profile_params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
+    url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ claimed_profile_params[:platform].upcase }&player=#{ claimed_profile_params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
     response = HTTParty.get(url)
     if response
       @response = JSON.parse(response)
