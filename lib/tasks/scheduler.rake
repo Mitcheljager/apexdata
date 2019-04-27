@@ -27,11 +27,11 @@ task :keep_profiles_updated => :environment do
         end
 
         if profiles.any?
-          profiles = profiles.join(",")
-          url = "http://api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
-          response = HTTParty.get(url)
+          begin
+            profiles = profiles.join(",")
+            url = "http://api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
+            response = HTTParty.get(url, timeout: 5)
 
-          if response
             @response = JSON.parse(response)
             @response = Array.wrap(@response)
 
@@ -58,7 +58,7 @@ task :keep_profiles_updated => :environment do
 
               puts "Updated #{ profile["global"]["name"] }"
             end
-          else
+          rescue
             puts "Response faulty"
           end
         end
