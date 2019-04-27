@@ -51,10 +51,7 @@
 
         <% dates = [] %>
         <% values = [] %>
-        <% ProfileLegendData.where(
-                                  profile_uid: @response["global"]["uid"],
-                                  legend: legend,
-                                  data_name: data_name).last(params[:limit] || 25).each do |data| %>
+        <% @saved_values.where(legend: legend, data_name: data_name).last(params[:limit] || 25).each do |data| %>
           <% dates.push(data.created_at.strftime("%b %d, %Y")) %>
           <% values.push(data.data_value) %>
         <% end %>
