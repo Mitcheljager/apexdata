@@ -5,6 +5,7 @@
 <table>
   <tr>
     <th>ID</th>
+    <th>User ID</th>
     <th>Platform</th>
     <th>Username</th>
     <th>UID</th>
@@ -14,6 +15,7 @@
 
   <% @successful_claimed_profiles.each do |claimed_profile| %>
     <tr>
+      <td><%= claimed_profile.user_id %></td>
       <td><%= claimed_profile.id %></td>
       <td><em><%= claimed_profile.platform %></em></td>
       <td><strong><%= claimed_profile.username %></strong></td>
@@ -29,6 +31,7 @@
 <table>
   <tr>
     <th>ID</th>
+    <th>User ID</th>
     <th>Platform</th>
     <th>Username</th>
     <th>UID</th>
@@ -38,6 +41,7 @@
 
   <% @failed_claimed_profiles.each do |claimed_profile| %>
     <tr>
+      <td><%= claimed_profile.user_id %></td>
       <td><%= claimed_profile.id %></td>
       <td><em><%= claimed_profile.platform %></em></td>
       <td><strong><%= claimed_profile.username %></strong></td>
