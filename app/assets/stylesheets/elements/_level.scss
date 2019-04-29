@@ -1,0 +1,75 @@
+.level {
+  margin-top: -15px;
+  margin-bottom: -#{ $margin / 2 };
+  text-align: center;
+  position: relative;
+
+  @include media-min(md) {
+    margin-right: $margin / 2;
+  }
+
+  h4, .level__level {
+    font-family: "Teko", monospace;
+    font-weight: 600;
+    position: absolute;
+    top: $margin / 10;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 28px;
+    color: var(--white);
+
+    @include media-min(lg) {
+      top: -15px;
+      font-size: 48px;
+    }
+
+    text {
+      fill: var(--white);
+    }
+
+    &.level__max {
+      top: auto;
+      bottom: 0;
+      padding: 0 $margin / 2;
+      font-size: 22px;
+      color: var(--white);
+      background: lighten($secondary, 7%);
+      border-radius: 4px;
+
+      @include media-min(lg) {
+        border-radius: ($margin / 4);
+      }
+    }
+  }
+
+  svg {
+    width: $margin * 3;
+
+    @include media-min(lg) {
+      width: $margin * 4;
+    }
+  }
+
+  polyline,
+  path,
+  polygon,
+  rect {
+    fill: var(--graph-color);
+    stroke: none;
+  }
+
+  .st0 {
+    stroke: var(--graph-color) !important;
+    fill: transparent !important;
+  }
+
+  .level1_4,
+  .level90_94,
+  .level95_99,
+  .level100 {
+    .st1 {
+      stroke: var(--graph-color) !important;
+      fill: transparent !important;
+    }
+  }
+}

@@ -1,90 +1,79 @@
 <% content_for :page_title, "Profile | " + @response["global"]["name"] %>
 <% content_for :no_of, true %>
 <% content_for :extra_style,
-  "@media (min-width: 640px) { body { background-image: url(#{image_path("gradient-bg/md/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}
+  "body { background-image: url(#{image_path("gradient-bg/sm/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }
+  @media (min-width: 640px) { body { background-image: url(#{image_path("gradient-bg/md/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}
   @media (min-width: 768px) { body { background-image: url(#{image_path("gradient-bg/lg/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}
   @media (min-width: 1200px) { body { background-image: url(#{image_path("gradient-bg/xl/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}" %>
 
 <%= render "ad_header" %>
 
-<div class="profile-intro top-offset">
-  <div class="intro-user">
-    <div class="user__about">
-      <h2 class="intro-platform">
-        <span>
-          <%= @response["global"]["platform"] %>
-          <div class="profile__realtime-mobile">
-            <% if @response["realtime"]["isOnline"] == 1 %>
-              <% if @response["realtime"]["isInGame"] == 1 %>
-                <span class="user-status user-status--is-in-game"></span>
-              <% else %>
-                <span class="user-status user-status--is-online"></span>
-              <% end %>
-            <% else %>
-              <span class="user-status"></span>
-            <% end %>
-          </div>
-        </span>
-      </h2>
-      <div class="about__profile-name">
-        <h1 class="user-name"><%= @response["global"]["name"] %></h1>
+<div class="profile__name">
+  <h3 class="profile__platform">
+    <span>
+      <%= @response["global"]["platform"] %>
+
+      <div class="profile__realtime-mobile">
         <% if @response["realtime"]["isOnline"] == 1 %>
           <% if @response["realtime"]["isInGame"] == 1 %>
-            <span class="user-status user-status--is-in-game">In&nbsp;Game</span>
+            <span class="profile__status profile__status--is-in-game"></span>
           <% else %>
-            <span class="user-status user-status--is-online">Online</span>
+            <span class="profile__status profile__status--is-online"></span>
           <% end %>
         <% else %>
-          <span class="user-status">Offline</span>
+          <span class="profile__status"></span>
         <% end %>
       </div>
-    </div>
+    </span>
+  </h3>
 
-    <div class="user__actions">
-      <% if @saved_values.any? %>
-        <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.localtime.strftime("%F at %T %Z") %></em></small>
-      <% end %>
+  <h2 class="profile__title"><%= @response["global"]["name"] %></h2>
+  <% if @response["realtime"]["isOnline"] == 1 %>
+    <% if @response["realtime"]["isInGame"] == 1 %>
+      <span class="profile__status profile__status--is-in-game">In&nbsp;Game</span>
+    <% else %>
+      <span class="profile__status profile__status--is-online">Online</span>
+    <% end %>
+  <% else %>
+    <span class="profile__status">Offline</span>
+  <% end %>
+</div>
 
-      <%= link_to "Update profile", "", class: "profile__button" %>
+<div class="profile__intro">
+  <%= render "level" %>
 
-      <% if Flipper.enabled?(:memberships) %>
-        <% if current_user && @claimed_profile.present? %>
-          <% if @claimed_profile.user_id == current_user.id %>
-            <% if membership.present? %>
-              <span class="profile__button profile__button--primary bg-green border-green">Automatic updates are enabled</span>
-            <% else %>
-              <%= link_to "Get automatic updates", new_membership_path, class: "profile__button profile__button--primary" %>
-            <% end %>
+  <div class="user__actions">
+    <% if @saved_values.any? %>
+      <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.localtime.strftime("%F at %T %Z") %></em></small>
+    <% end %>
+
+    <%= link_to "Update profile", "", class: "profile__button" %>
+
+    <% if Flipper.enabled?(:memberships) %>
+      <% if current_user && @claimed_profile.present? %>
+        <% if @claimed_profile.user_id == current_user.id %>
+          <% if membership.present? %>
+            <span class="profile__button profile__button--primary bg-green border-green">Automatic updates are enabled</span>
+          <% else %>
+            <%= link_to "Get automatic updates", new_membership_path, class: "profile__button profile__button--primary" %>
           <% end %>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 
 <div class="profile-content">
   <aside class="profile-content__sidebar">
-    <div class="item item--profile">
-      <div class="profile__level">
-        <div class="level__badge">
-          <% level = @response["global"]["level"] %>
-          <% rounded_level = ( level / 5.0 ).floor * 5 %>
-          <% level_range = "#{ rounded_level }_#{ rounded_level + 4 }" %>
-          <% level_range = "100" if rounded_level >= 100 %>
-
-          <%= inline_svg "badges/levels/level#{ level_range }.svg", class: "level#{ level_range }" %>
-          <h4 class="<%= "level__max" if level >= 100 %>"><%= @response["global"]["level"] %></h4>
-        </div>
-      </div>
-
-      <%= render "profiles/claim" %>
-    </div>
+    <%= render "profiles/charts" %>
 
     <div class="profile__notification">
       Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve data you have set as your Tickers.
     </div>
 
-    <%= render "profiles/charts" %>
+    <div class="item item--profile">
+      <%= render "profiles/claim" %>
+    </div>
 
     <%= render "ad_sidebar" %>
   </aside>

@@ -1,0 +1,11 @@
+<div class="level">
+  <div class="level__badge">
+    <% level = @response["global"]["level"] %>
+    <% rounded_level = ( level / 5.0 ).floor * 5 %>
+    <% level_range = "#{ rounded_level }_#{ rounded_level + 4 }" %>
+    <% level_range = "100" if rounded_level >= 100 %>
+
+    <%= inline_svg "badges/levels/level#{ level_range }.svg", class: "level#{ level_range }" %>
+    <h4 class="<%= "level__max" if level >= 100 %>"><%= @response["global"]["level"] %></h4>
+  </div>
+</div>
