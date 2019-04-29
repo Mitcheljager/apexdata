@@ -53,12 +53,12 @@
     <% else %>
       <% if current_user %>
         <% if @claimed_profile.user_id == current_user.id %>
-          <p><center>You have claimed this profile</center></p>
+          <center>You have claimed this profile</center>
         <% else %>
-          <p><center>This profile has been claimed</center></p>
+          <center>This profile has been claimed</center>
         <% end %>
       <% else %>
-        <p><center>This profile has been claimed</center></p>
+        <center>This profile has been claimed</center>
       <% end %>
     <% end %>
   </div>
