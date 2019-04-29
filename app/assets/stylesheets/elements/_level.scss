@@ -29,7 +29,7 @@
 
     &.level__max {
       top: auto;
-      bottom: 0;
+      bottom: -#{ $margin / 8 };
       padding: 0 $margin / 2;
       font-size: 22px;
       color: var(--white);

@@ -6,8 +6,6 @@
   @media (min-width: 768px) { body { background-image: url(#{image_path("gradient-bg/lg/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}
   @media (min-width: 1200px) { body { background-image: url(#{image_path("gradient-bg/xl/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}" %>
 
-<%= render "ad_header" %>
-
 <div class="profile__name">
   <h3 class="profile__platform">
     <span>
@@ -74,8 +72,6 @@
     <div class="item item--profile">
       <%= render "profiles/claim" %>
     </div>
-
-    <%= render "ad_sidebar" %>
   </aside>
 
   <div class="profile-content__content">
