@@ -12,10 +12,6 @@
   max-width: 100%;
   padding: $margin;
 
-  &--smallpadding {
-    padding: $margin / 2;
-  }
-
   @include media-min(lg) {
     flex: 0 0 calc(100% - #{ $margin / 2 });
     max-width: calc(100% - #{ $margin / 2 });
