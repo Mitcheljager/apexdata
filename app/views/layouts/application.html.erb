@@ -23,6 +23,10 @@
     <%= javascript_include_tag "application" %>
 
     <%= render "adsense" %>
+
+    <% if yield(:extra_style) != "" %>
+      <style><%= yield(:extra_style) %></style>
+    <% end %>
   </head>
 
   <body>
