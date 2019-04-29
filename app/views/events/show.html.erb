@@ -1,4 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper wrapper--tiny">
+  <div class="heading">
+    <h2 class="heading__title"><%= @event.title %></h2>
+  </div>
 
-<%= link_to "Edit", edit_event_path(@event) %> |
-<%= link_to "Back", events_path %>
+  <%= form_for :event_signup, url: event_signups_path, remote: true do |form| %>
+    <div class="form-field">
+      <% if @claimed_profiles.many? %>
+        <%= form.label :claimed_profile, "What profile would you like to join with?", class: "form-label" %>
+        <%= form.select :claimed_profile, @claimed_profiles.collect {|p| [p.username, p.profile_uid]} %>
+        <div class="form-hint">Select the profile you would like to join with. You can join with multiple Profiles, but they will be counted seperately.</div>
+      <% else %>
+        <%= form.hidden_field :claimed_profile, value: @claimed_profiles.first.profile_uid %>
+      <% end %>
+    </div>
+
+    <%= form.submit "Sign up for event", class: "button" %>
+  <% end %>
+
+  <div class="top-offset">
+    <% @event_signups.each do |event_signup| %>
+      <%= event_signup.user_id %> <br>
+      <%= event_signup.profile_uid %>
+    <% end %>
+  </div>
+</div>

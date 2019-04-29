@@ -11,6 +11,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event_signups = EventSignup.where(event_id: @event.id)
+    @claimed_profiles = ClaimedProfile.where(user_id: current_user.id, checks_completed: 1)
   end
 
   def new
