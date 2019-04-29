@@ -61,20 +61,20 @@
   </div>
 </div>
 
-<div class="profile-content">
-  <aside class="profile-content__sidebar">
+<div class="list-content">
+  <aside class="list-content__sidebar">
     <%= render "profiles/charts" %>
 
     <div class="profile__notification">
       Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve data you have set as your Tickers.
     </div>
 
-    <div class="item item--profile">
+    <div class="item item--list item--list--smallpadding">
       <%= render "profiles/claim" %>
     </div>
   </aside>
 
-  <div class="profile-content__content">
+  <div class="list-content__content">
     <div class="profile-legends">
       <% legends_hash = @response["legends"]["all"] %>
       <% no_data_legends_array = [] %>
