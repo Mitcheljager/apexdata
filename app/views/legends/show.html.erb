@@ -1,7 +1,5 @@
 <% content_for :page_title, @item["name"] if @item["name"] %>
 
-<%= render "ad_header" %>
-
 <% cache "#{ @item["name"] }" do %>
   <div class="wrapper wrapper--medium">
     <div class="heading">
@@ -70,8 +68,6 @@
         <% end %>
       </div>
     <% end %>
-
-    <%= render "ad_content" %>
 
     <div class="heading top-offset">
       <h2 class="heading__title">Extras</h2>

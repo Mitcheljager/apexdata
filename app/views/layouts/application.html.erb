@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ApexData.gg | <%= content_for?(:page_title) ? yield(:page_title) : "Apex Legends Data and Stats" %></title>
+    <% if yield(:page_title) != "" %>
+      <title><%= yield(:page_title) %> <%= "of Apex Legends" unless yield(:no_of) != "" %> | ApexData.gg</title>
+    <% else %>
+      <title>ApexData.gg | Apex Legends Data, Stats, and Player Tracker</title>
+    <% end %>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Apex Data | Apex Legends Data and Statistics to find out what items suit you best.">
     <meta name="keywords" content="Apex Legends, Apex Weapons, Weapon Data, Weapon Statistics, ApexData GG, Apex Data">
@@ -17,7 +22,9 @@
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
 
-    <%= render "adsense" %>
+    <% if yield(:extra_style) != "" %>
+      <style><%= yield(:extra_style) %></style>
+    <% end %>
   </head>
 
   <body>

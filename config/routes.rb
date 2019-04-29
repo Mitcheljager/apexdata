@@ -44,4 +44,5 @@ Rails.application.routes.draw do
   resources :memberships, only: [:index, :new, :create, :update]
 
   resources :events
+  resources :event_signups, only: [:create, :update, :destroy]
 end
