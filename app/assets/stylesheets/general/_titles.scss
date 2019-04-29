@@ -63,6 +63,12 @@ h5 {
   &--half-margin {
     margin: ($margin * 2) 0 $margin;
   }
+
+  &--white-line {
+    &::after {
+      background: rgba($white, .25);
+    }
+  }
 }
 
 .heading__title {
