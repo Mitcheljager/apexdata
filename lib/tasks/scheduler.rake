@@ -30,7 +30,7 @@ task :keep_profiles_updated => :environment do
           begin
             profiles = profiles.join(",")
             url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
-            response = HTTParty.get(url, timeout: 5)
+            response = HTTParty.get(url, timeout: 10)
 
             @response = JSON.parse(response)
             @response = Array.wrap(@response)
