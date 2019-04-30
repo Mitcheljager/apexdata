@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_141339) do
+ActiveRecord::Schema.define(version: 2019_04_30_164651) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2019_04_28_141339) do
     t.integer "checks_completed", default: 0
     t.string "platform"
     t.string "username"
+  end
+
+  create_table "event_legend_data", force: :cascade do |t|
+    t.integer "event_id"
+    t.string "profile_uid"
+    t.string "legend"
+    t.string "initial_value"
+    t.string "current_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "event_signups", force: :cascade do |t|
