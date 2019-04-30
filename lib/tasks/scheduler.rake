@@ -58,8 +58,8 @@ task :keep_profiles_updated => :environment do
 
               puts "Updated #{ profile["global"]["name"] }"
             end
-          rescue
-            puts "Response faulty"
+          rescue => error
+            puts "Response faulty: #{ error }"
           end
         end
       end
