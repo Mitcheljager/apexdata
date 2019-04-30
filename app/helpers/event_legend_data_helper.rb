@@ -1,0 +1,2 @@
+module EventLegendDataHelper
+end

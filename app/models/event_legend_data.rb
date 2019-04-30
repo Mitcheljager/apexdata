@@ -1,0 +1,2 @@
+class EventLegendData < ApplicationRecord
+end
