@@ -60,6 +60,10 @@
   @include media-min(lg) {
     margin-top: $margin;
   }
+
+  @include media-min(xxl) {
+    margin-top: $margin * 2;
+  }
 }
 
 .profile__title {
