@@ -57,8 +57,9 @@
             </span>
 
             <div class="profile-stats__bar">
-              <% if @saved_values.where(legend: legend, data_name: key).order(:data_value).last %>
-                <% max_value = @saved_values.where(legend: legend, data_name: key).order(:data_value).last.data_value %>
+              <% highestItem = ProfileLegendData.where(legend: legend, data_name: key).order(data_value: :asc).last %>
+              <% if highestItem %>
+                <% max_value = highestItem.data_value %>
                 <% value_percentage = ((100 / max_value.to_f) * value["value"].to_f).round(2) %>
               <% else %>
                 <% max_value = value["value"] %>
