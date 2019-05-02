@@ -1,9 +1,7 @@
 <article class="item">
-  <%= tag.div class: "legend__ability" do %>
-    <% if asset_exists? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
-      <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
-    <% end %>
-  <% end unless compact? %>
+  <% if asset_exists? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
+    <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
+  <% end %>
 
   <div class="item__title heading heading--small">
     <h3 class="heading__title"><%= ability["name"] if ability["name"] %></h3>
