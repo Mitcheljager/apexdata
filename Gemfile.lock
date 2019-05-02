@@ -171,6 +171,7 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    silencer (1.0.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -225,6 +226,7 @@ DEPENDENCIES
   rails (~> 5.2)
   sass-rails (~> 5.0)
   selenium-webdriver
+  silencer
   sqlite3 (= 1.3.13)
   turbolinks (~> 5)
   tzinfo-data
