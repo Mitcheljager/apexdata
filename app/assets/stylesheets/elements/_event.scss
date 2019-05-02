@@ -85,6 +85,15 @@
   }
 }
 
+.event-top {
+  &--soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 90px;
+  }
+}
+
 .event__flags {
   display: flex;
   width: 675px;
@@ -226,13 +235,6 @@
 .eventscore__score {
   font-family: "Teko", monospace;
   font-size: 35px;
-}
-
-.event__leaderboard {
-  width: 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  padding: 0;
 }
 
 .leaderboard__item {
@@ -410,4 +412,57 @@
   line-height: 19px;
   margin-top: 6px;
   color: var(--white);
+}
+
+.event__time-wrapper,
+.event__time-information {
+  font-size: 76px;
+  line-height: 76px;
+  margin-top: 20px;
+  color: var(--white);
+  display: flex;
+
+  &--large {
+    font-size: 166px;
+    line-height: 136px;
+
+    .event__double {
+      line-height: 84px;
+    }
+  }
+}
+.event__time {
+  font-family: "Teko", monospace;
+}
+.event__double {
+  font-weight: 600;
+  line-height: 54px;
+}
+.event__sec,
+.event__double--sec {
+  display: none;
+}
+
+.event__info {
+  display: block;
+  font-size: 60px;
+  line-height: 56px;
+}
+
+.event__small {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.event__top-title {
+  color: var(--white);
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.event__top-subtitle {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
 }

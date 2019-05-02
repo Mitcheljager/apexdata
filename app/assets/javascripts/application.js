@@ -27,3 +27,4 @@
 //= require ads
 //= require scroll_spy
 //= require popup
+//= require events

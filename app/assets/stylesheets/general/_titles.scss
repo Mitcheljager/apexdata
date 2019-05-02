@@ -69,6 +69,10 @@ h5 {
       background: rgba($white, .25);
     }
   }
+
+  &--event {
+    margin: 0;
+  }
 }
 
 .heading__title {
@@ -94,6 +98,13 @@ h5 {
     font-weight: 300;
     font-size: 1em;
     color: var(--text-color);
+  }
+
+  &--event {
+    font-size: 30px;
+    line-height: 30px;
+    color: var(--white);
+    font-weight: 400;
   }
 }
 
