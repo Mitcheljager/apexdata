@@ -5,6 +5,6 @@ Rails.application.configure do
     Rails::Rack::Logger,
     Silencer::Logger,
     config.log_tags,
-    silence: [%r{^/}]
+    get: [%r{^/}]
   )
 end
