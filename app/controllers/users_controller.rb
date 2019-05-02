@@ -65,6 +65,8 @@ class UsersController < ApplicationController
     current_user.destroy
     @claimed_profiles = ClaimedProfile.where(user_id: current_user.id)
     @claimed_profiles.destroy_all
+    @event_signups = EventSignup.where(user_id: current_user.id)
+    @event_signups.destroy_all
 
     session[:user_id] = nil
     redirect_to login_path
