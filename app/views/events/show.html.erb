@@ -6,7 +6,20 @@
   </div>
 </div>
 
-<div class="event-top">
+<div class="event-top <%= "event-top--soon" if DateTime.now < @event.start_datetime %>">
+  <% if DateTime.now < @event.start_datetime %>
+    <h1 class="event__top-title"><%= @event.title %></h1>
+    <h3 class="event__top-subtitle">Event is starting in</h3>
+    <div class="event__time-wrapper event__time-wrapper--large" data-current-time="<%= DateTime.now %>" data-start-time="<%= @event.start_datetime %>">
+      <span class="event__time event__day">00</span>
+      <span class="event__double">:</span>
+      <span class="event__time event__hour">00</span>
+      <span class="event__double">:</span>
+      <span class="event__time event__min">00</span>
+      <span class="event__double event__double--sec">:</span>
+      <span class="event__time event__sec">00</span>
+    </div>
+  <% else %>
   <div class="event__flags">
     <div class="event-top__flag event-top__flag--second" style="background-image: url(<%= image_path "legends/bloodhound/banner.webp" %>)">
       <span class="flag__name">Mitsiee</span>
@@ -48,13 +61,19 @@
       </div>
     </div>
   </div>
+  <% end %>
 </div>
 
 <div class="list-content">
   <aside class="list-content__sidebar">
     <div class="item item--list">
-      <div class="heading">
-        <h2 class="heading__title"><%= @event.title %></h2>
+      <small class="event__small">Event</small>
+      <div class="heading heading--event">
+        <% if DateTime.now < @event.start_datetime %>
+          <h2 class="heading__title heading__title--event"><%= @event.title %></h2>
+        <% else %>
+          <h1 class="heading__title heading__title--event"><%= @event.title %></h1>
+        <% end %>
       </div>
 
       <%= form_for :event_signup, url: event_signups_path, remote: true do |form| %>
@@ -78,6 +97,33 @@
         <% end %>
       </div>
     </div>
+
+    <div class="item item--list">
+      <small class="event__small"><span><%= @event.start_datetime %></span> - <span><%= @event.end_datetime %></span></small>
+      <div class="heading heading--event">
+        <% if DateTime.now < @event.start_datetime %>
+          <h2 class="heading__title heading__title--event">Starting soon</h2>
+        <% else %>
+          <h2 class="heading__title heading__title--event">Event ends in</h2>
+        <% end %>
+      </div>
+      <% if DateTime.now > @event.start_datetime && DateTime.now < @event.end_datetime  %>
+        <div class="event__time-wrapper" data-current-time="<%= DateTime.now %>" data-end-time="<%= @event.end_datetime %>">
+          <span class="event__time event__day">00</span>
+          <span class="event__double">:</span>
+          <span class="event__time event__hour">00</span>
+          <span class="event__double">:</span>
+          <span class="event__time event__min">00</span>
+          <span class="event__double event__double--sec">:</span>
+          <span class="event__time event__sec">00</span>
+        </div>
+      <% else %>
+        <div class="event__time-information">
+          <span class="event__time event__info">Event starting soon</span>
+        </div>
+      <% end %>
+    </div>
+
   </aside>
 
   <div class="list-content__content">
