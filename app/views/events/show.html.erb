@@ -83,60 +83,8 @@
 
   <div class="list-content__content">
     <div class="item event__leaderboard">
-
-      <div class="leaderboard__item leaderboard__item--first">
-        <div class="leaderboard__left">
-          <div class="leaderboard__badge">
-            <span class="leaderboard__position">1</span>
-            <%= inline_svg("badges/levels/top3_event.svg") %>
-          </div>
-          <span class="leaderboard__name">GuardianXT705</span>
-        </div>
-        <div class="leaderboard__right">
-          <div class="leaderboard__score">
-            <span class="leaderboard__score-name">Pistol Kills</span>
-            <span class="leaderboard__score-total">687</span>
-          </div>
-          <a class="leaderboard__action" href="">See profile</a>
-        </div>
-      </div>
-
-      <div class="leaderboard__item leaderboard__item--second">
-        <div class="leaderboard__left">
-          <div class="leaderboard__badge">
-            <span class="leaderboard__position">2</span>
-            <%= inline_svg("badges/levels/top3_event.svg") %>
-          </div>
-          <span class="leaderboard__name">Mitsiee</span>
-        </div>
-        <div class="leaderboard__right">
-          <div class="leaderboard__score">
-            <span class="leaderboard__score-name">Pistol Kills</span>
-            <span class="leaderboard__score-total">643</span>
-          </div>
-          <a class="leaderboard__action" href="">See profile</a>
-        </div>
-      </div>
-
-      <div class="leaderboard__item leaderboard__item--third">
-        <div class="leaderboard__left">
-          <div class="leaderboard__badge">
-            <span class="leaderboard__position">3</span>
-            <%= inline_svg("badges/levels/top3_event.svg") %>
-          </div>
-          <span class="leaderboard__name">Doldoc</span>
-        </div>
-        <div class="leaderboard__right">
-          <div class="leaderboard__score">
-            <span class="leaderboard__score-name">Pistol Kills</span>
-            <span class="leaderboard__score-total">534</span>
-          </div>
-          <a class="leaderboard__action" href="">See profile</a>
-        </div>
-      </div>
-
       <% @event_signups.each_with_index do |event_signup, index| %>
-        <%= render "item", item_counter: index + 1 %>
+        <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
       <% end %>
     </div>
   </div>

@@ -7,19 +7,8 @@ module ApplicationHelper
     end
   end
 
-  def alldata?
-    if cookies[:alldata] == "expanded"
-      return true
-    else
-      return false
-    end
-  end
-
-  def compact?
-    if cookies[:viewtype] == "compact"
-      return true
-    else
-      return false
-    end
+  def get_username_for_claimed_profile_uid(uid)
+    profile = ClaimedProfile.find_by_profile_uid_and_checks_completed(uid, 1)
+    return profile.username
   end
 end
