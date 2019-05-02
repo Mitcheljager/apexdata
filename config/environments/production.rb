@@ -50,7 +50,6 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :warn
   Rails.logger.level = 0
-  config.action_view.logger = nil
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
