@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def membership
     if current_user
-      @membership = Membership.where("created_at > ?", 1.month.ago).find_by_user_id(current_user.id)
+      current_user.memberships.where("created_at > ?", 1.month.ago).last
     end
   end
 end
