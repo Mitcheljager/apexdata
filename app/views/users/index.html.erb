@@ -12,8 +12,8 @@
 
   <% @users.each do |user| %>
     <tr>
-      <td><%= user.id %></td>
-      <td><strong><%= user.username %></strong></td>
+      <td><%= link_to user.id, admin_user_path(user.id) %></td>
+      <td><%= link_to user.username, admin_user_path(user.id) %></td>
       <td><%= user.created_at.localtime %></td>
       <td><%= user.updated_at.localtime %></td>
     </tr>

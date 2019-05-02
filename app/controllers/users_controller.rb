@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     redirect_to account_path if current_user
   end
 
-  before_action only: [:index] do
+  before_action only: [:index, :admin_show] do
     redirect_to account_path unless current_user && current_user.level == 100
   end
 
@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     redirect_to root_path unless @user
 
     @claimed_profiles = ClaimedProfile.where(user_id: @user.id, checks_completed: 1)
+  end
+
+  def admin_show
+    @user = User.find_by_id(params[:id])
   end
 
   def new

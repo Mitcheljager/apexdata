@@ -1,0 +1,23 @@
+<%= render "admin_navigation" %>
+
+<h2>Event Signups <small><%= @event_signups.count %></small></h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Profile UID</th>
+    <th>User ID</th>
+    <th>Event ID</th>
+    <th>Created at</th>
+  </tr>
+
+  <% @event_signups.each do |event_signup| %>
+    <tr>
+      <td><%= event_signup.id %></td>
+      <td><%= event_signup.profile_uid %></td>
+      <td><strong><%= link_to event_signup.user_id, admin_user_path(event_signup.user_id) %></strong></td>
+      <td><em><%= event_signup.event_id %></em></td>
+      <td><%= event_signup.created_at.localtime %></td>
+    </tr>
+  <% end %>
+</table>

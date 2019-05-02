@@ -6,6 +6,14 @@ class EventSignupsController < ApplicationController
     end
   end
 
+  before_action only: [:index] do
+    redirect_to account_path unless current_user && current_user.level == 100
+  end
+
+  def index
+    @event_signups = EventSignup.all
+  end
+
   def create
     claimed_profile = current_user.claimed_profiles.where(profile_uid: event_signup_params[:profile_uid], checks_completed: 1).last
     signup = EventSignup.find_by_user_id_and_event_id_and_profile_uid(current_user.id, event_signup_params[:event_id], event_signup_params[:profile_uid])

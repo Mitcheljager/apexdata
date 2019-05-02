@@ -13,7 +13,7 @@
   <% @memberships.each do |membership| %>
     <tr>
       <td><%= membership.id %></td>
-      <td><strong><%= membership.user_id %></strong></td>
+      <td><strong><%= link_to membership.user_id, admin_user_path(membership.user_id) %></strong></td>
       <td><em><%= membership.order_id %></em></td>
       <td><%= membership.created_at.localtime %></td>
     </tr>

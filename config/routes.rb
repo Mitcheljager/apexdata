@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create, :destroy]
   get "user/edit", to: "users#edit", as: "edit_user"
   get "user", to: "users#show", as: "account"
+  get "users/:id", to: "users#admin_show", as: "admin_user"
   patch "user", to: "users#update", as: "update_user"
   delete "user", to: "users#destroy", as: "destroy_user"
 
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
 
-  get "where/:where/:value", to: "where#index", as: "where"
+  get "where/:where/:value", to: "where# index", as: "where"
 
   get "legends", to: "legends#index"
   get "legends/:name", to: "legends#show", as: "legend_show"
@@ -44,6 +45,6 @@ Rails.application.routes.draw do
   resources :memberships, only: [:index, :new, :create, :update]
 
   resources :events
-  resources :event_signups, only: [:create, :update]
+  resources :event_signups, only: [:index, :create, :update]
   resources :event_legend_data, only: [:create, :update]
 end
