@@ -1,0 +1,13 @@
+<div class="event__time-wrapper <%= extra_classes if defined?(extra_classes) %>"
+  data-current-time="<%= DateTime.now %>"
+  <% if defined?(start_time) %>data-start-time="<%= start_time %>"<% end %>
+  <% if defined?(end_time) %>data-end-time="<%= end_time %>"<% end %>>
+
+  <span class="event__time event__day">00</span>
+  <span class="event__double">:</span>
+  <span class="event__time event__hour">00</span>
+  <span class="event__double">:</span>
+  <span class="event__time event__min">00</span>
+  <span class="event__double event__double--sec">:</span>
+  <span class="event__time event__sec">00</span>
+</div>

@@ -1,0 +1,45 @@
+<div class="event-top event-top--soon">
+  <h1 class="event__top-title"><%= @event.title %></h1>
+  <h3 class="event__top-subtitle">Event is starting in</h3>
+
+  <%= render "countdown", extra_classes: "event__time-wrapper--large", current_time: DateTime.now, start_time: @event.start_datetime %>
+</div>
+
+<div class="list-content">
+  <aside class="list-content__sidebar">
+    <div class="item item--list">
+      <small class="event__small">Event</small>
+
+      <div class="heading heading--event">
+        <h2 class="heading__title heading__title--event"><%= @event.title %></h2>
+      </div>
+
+      <%= render "event_signups/form" %>
+
+      <div class="top-offset">
+        <% @event.event_signups.each do |event_signup| %>
+          <%= event_signup.user_id %>: <%= event_signup.profile_uid %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="item item--list">
+      <small class="event__small"><span><%= @event.start_datetime %></span> - <span><%= @event.end_datetime %></span></small>
+      <div class="heading heading--event">
+        <h2 class="heading__title heading__title--event">Starting soon</h2>
+      </div>
+
+      <div class="event__time-information">
+        <span class="event__time event__info">Event starting soon</span>
+      </div>
+    </div>
+  </aside>
+
+  <div class="list-content__content">
+    <div class="item event__leaderboard">
+      <% @event.event_signups.each_with_index do |event_signup, index| %>
+        <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
+      <% end %>
+    </div>
+  </div>
+</div>

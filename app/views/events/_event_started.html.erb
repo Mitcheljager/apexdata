@@ -1,0 +1,79 @@
+<div class="event-top">
+  <div class="event__flags">
+    <div class="event-top__flag event-top__flag--second" style="background-image: url(<%= image_path "legends/bloodhound/banner.webp" %>)">
+      <span class="flag__name">Mitsiee</span>
+      <div class="flag__score">
+        <div class="flag__badge">
+          <span class="event__position">2</span>
+          <%= inline_svg("badges/levels/top3_event.svg") %>
+        </div>
+        <div class="flag__eventscore">
+          <span class="eventscore__name">Pistol Kills</span>
+          <span class="eventscore__score">687</span>
+        </div>
+      </div>
+    </div>
+    <div class="event-top__flag event-top__flag--first" style="background-image: url(<%= image_path "legends/pathfinder/banner.webp" %>)">
+      <span class="flag__name">GuardianXT705</span>
+      <div class="flag__score">
+        <div class="flag__badge">
+          <span class="event__position">1</span>
+          <%= inline_svg("badges/levels/top3_event.svg") %>
+        </div>
+        <div class="flag__eventscore">
+          <span class="eventscore__name">Pistol Kills</span>
+          <span class="eventscore__score">687</span>
+        </div>
+      </div>
+    </div>
+    <div class="event-top__flag event-top__flag--third" style="background-image: url(<%= image_path "legends/gibraltar/banner.webp" %>)">
+      <span class="flag__name">Doldoc</span>
+      <div class="flag__score">
+        <div class="flag__badge">
+          <span class="event__position">3</span>
+          <%= inline_svg("badges/levels/top3_event.svg") %>
+        </div>
+        <div class="flag__eventscore">
+          <span class="eventscore__name">Pistol Kills</span>
+          <span class="eventscore__score">687</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="list-content">
+  <aside class="list-content__sidebar">
+    <div class="item item--list">
+      <small class="event__small">Event</small>
+      <div class="heading heading--event">
+        <h1 class="heading__title heading__title--event"><%= @event.title %></h1>
+      </div>
+
+      <%= render "event_signups/form" %>
+
+      <div class="top-offset">
+        <% @event.event_signups.each do |event_signup| %>
+          <%= event_signup.user_id %>: <%= event_signup.profile_uid %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="item item--list">
+      <small class="event__small"><span><%= @event.start_datetime %></span> - <span><%= @event.end_datetime %></span></small>
+      <div class="heading heading--event">
+        <h2 class="heading__title heading__title--event">Event ends in</h2>
+      </div>
+
+      <%= render "countdown", current_time: DateTime.now, end_time: @event.end_datetime %>
+    </div>
+  </aside>
+
+  <div class="list-content__content">
+    <div class="item event__leaderboard">
+      <% @event.event_signups.each_with_index do |event_signup, index| %>
+        <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
+      <% end %>
+    </div>
+  </div>
+</div>
