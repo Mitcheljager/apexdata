@@ -50,9 +50,10 @@ task :update_event_leaderboards => :environment do
                             if current_legend_data.current_value != data_value.to_s
                               current_legend_data.update(current_value: data_value)
 
+                              total_value = data_value.to_f - current_legend_data.initial_value.to_f
+
                               @signup = EventSignup.find_by_event_id_and_profile_uid(event.id, profile_uid)
-                              total_value = @signup.total_value.to_f + (data_value.to_f - current_legend_data.initial_value.to_f)
-                              @signup.update(total_value: total_value)
+                              @signup.update(total_value: total_value.round)
                             end
                           end
                         end

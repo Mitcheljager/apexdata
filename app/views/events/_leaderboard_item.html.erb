@@ -13,7 +13,7 @@
   <div class="leaderboard__right">
     <div class="leaderboard__score">
       <span class="leaderboard__score-name"><%= JSON.parse(@event.data_names).first.humanize %></span>
-      <span class="leaderboard__score-total"><%= event_signup.total_value.to_f.round %></span>
+      <span class="leaderboard__score-total"><%= event_signup.total_value %></span>
     </div>
 
     <%= link_to "View profile", profile_path_by_uid(event_signup.profile_uid), class: "leaderboard__action" %>
