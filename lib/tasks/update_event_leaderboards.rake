@@ -2,8 +2,6 @@ require "httparty"
 
 desc "Update leaderboard for several events."
 task :update_event_leaderboards => :environment do
-  return unless Flipper.enabled?(:events)
-
   interval = 30.seconds
   platforms = ["X1", "PS4", "PC"]
 
