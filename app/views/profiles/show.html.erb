@@ -25,7 +25,7 @@
     </span>
   </h3>
 
-  <h2 class="profile__title"><%= @response["global"]["name"] %></h2>
+  <h1 class="profile__title"><%= @response["global"]["name"] %></h1>
   <% if @response["realtime"]["isOnline"] == 1 %>
     <% if @response["realtime"]["isInGame"] == 1 %>
       <span class="profile__status profile__status--is-in-game">In&nbsp;Game</span>
