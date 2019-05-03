@@ -41,17 +41,17 @@ task :update_event_leaderboards => :environment do
                       event_data_names.each do |data_name|
                         if profile["legends"]["selected"][legend][data_name]
                           data_value = profile["legends"]["selected"][legend][data_name]
-                          currentLegendData = EventLegendData.find_by_event_id_and_profile_uid_and_legend(event.id, profile_uid, legend)
+                          current_legend_data = EventLegendData.find_by_event_id_and_profile_uid_and_legend(event.id, profile_uid, legend)
 
-                          if currentLegendData.nil?
+                          if current_legend_data.nil?
                             @new_entry = EventLegendData.new(event_id: event.id, profile_uid: profile_uid, legend: legend, initial_value: data_value, current_value: data_value)
                             @new_entry.save
                           else
-                            if currentLegendData.current_value != data_value.to_s
-                              currentLegendData.update(current_value: data_value)
+                            if current_legend_data.current_value != data_value.to_s
+                              current_legend_data.update(current_value: data_value)
 
                               @signup = EventSignup.find_by_event_id_and_profile_uid(event.id, profile_uid)
-                              total_value = @signup.total_value.to_f + data_value.to_f
+                              total_value = @signup.total_value.to_f + (data_value.to_f - current_legend_data.initial_value.to_f)
                               @signup.update(total_value: total_value)
                             end
                           end
