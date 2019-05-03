@@ -1,10 +1,9 @@
-<div class="event-background">
-  <div class="event-background__gradient-left"></div>
-  <div class="event-background__gradient-top"></div>
-  <div class="event-background__image">
-    <%= image_tag("layout/event_bg.jpg") %>
-  </div>
-</div>
+<% content_for :page_title, @event.title + " | Event" %>
+<% content_for :no_of, true %>
+<% content_for :extra_style,
+  "body { background-image: url(#{image_path("gradient-bg/sm/event.png")}) }
+  @media (min-width: 640px) { body { background-image: url(#{image_path("gradient-bg/md/event.png")}) }}
+  @media (min-width: 768px) { body { background-image: url(#{image_path("gradient-bg/lg/event.png")}) }}" %>
 
 <% if DateTime.now.localtime < @event.start_datetime.localtime %>
   <%= render "pre_event" %>
