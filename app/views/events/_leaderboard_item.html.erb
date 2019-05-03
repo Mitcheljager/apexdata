@@ -10,7 +10,7 @@
   <div class="leaderboard__right">
     <div class="leaderboard__score">
       <span class="leaderboard__score-name"><%= JSON.parse(@event.data_names).first.humanize %></span>
-      <span class="leaderboard__score-total"><%= event_signup.total_value %></span>
+      <span class="leaderboard__score-total"><%= event_signup.total_value.to_f.round %></span>
     </div>
     <a class="leaderboard__action" href="">See profile</a>
   </div>

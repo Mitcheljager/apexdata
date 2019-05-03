@@ -71,7 +71,7 @@
 
   <div class="list-content__content">
     <div class="item event__leaderboard">
-      <% @event.event_signups.each_with_index do |event_signup, index| %>
+      <% @event.event_signups.order(total_value: :desc).each_with_index do |event_signup, index| %>
         <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
       <% end %>
     </div>
