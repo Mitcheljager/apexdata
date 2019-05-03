@@ -16,7 +16,10 @@ module ApexData
       Rails.application.load_tasks
 
       if ActiveRecord::Base.connection.table_exists? "flipper_gates"
-        Rake::Task["keep_profiles_updated"].invoke if Flipper.enabled?(:keep_profiles_updated)
+        if Rails.env.development?
+          Rake::Task["keep_profiles_updated"].invoke if Flipper.enabled?(:keep_profiles_updated)
+          Rake::Task["update_event_leaderboards"].invoke if Flipper.enabled?(:events)
+        end
       end
     end
 
