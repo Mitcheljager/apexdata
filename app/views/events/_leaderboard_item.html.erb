@@ -2,8 +2,11 @@
   <div class="leaderboard__left">
     <div class="leaderboard__badge">
       <span class="leaderboard__position"><%= item_counter %></span>
+
       <%= inline_svg "badges/levels/top3_event.svg" if item_counter <= 3 %>
-      <%= inline_svg "badges/levels/top21_50_event.svg" if item_counter > 3 %>
+      <%= inline_svg "badges/levels/top4_10_event.svg" if item_counter > 3 && item_counter < 11 %>
+      <%= inline_svg "badges/levels/top11_20_event.svg" if item_counter > 10 && item_counter < 21 %>
+      <%= inline_svg "badges/levels/top21_50_event.svg" if item_counter > 20 %>
     </div>
     <span class="leaderboard__name"><%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %></span>
   </div>
@@ -12,6 +15,7 @@
       <span class="leaderboard__score-name"><%= JSON.parse(@event.data_names).first.humanize %></span>
       <span class="leaderboard__score-total"><%= event_signup.total_value.to_f.round %></span>
     </div>
-    <a class="leaderboard__action" href="">See profile</a>
+
+    <%= link_to "View profile", profile_path_by_uid(event_signup.profile_uid), class: "leaderboard__action" %>
   </div>
 </div>
