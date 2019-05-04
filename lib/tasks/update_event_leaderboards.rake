@@ -27,7 +27,7 @@ task :update_event_leaderboards => :environment do
               begin
                 profiles = profiles.join(",")
                 url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
-                response = HTTParty.get(url, timeout: 10)
+                response = HTTParty.get(url, timeout: 20)
 
                 @response = JSON.parse(response)
                 @response = Array.wrap(@response)
@@ -58,6 +58,8 @@ task :update_event_leaderboards => :environment do
                         end
                       end
                     end
+
+                    puts "Event user updated: #{ profile["global"]["name"] }"
                   end
                 end
               rescue => error
