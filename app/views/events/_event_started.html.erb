@@ -1,44 +1,11 @@
 <div class="event-top">
   <div class="event__flags">
-    <div class="event-top__flag event-top__flag--second" style="background-image: url(<%= image_path "legends/bloodhound/banner.webp" %>)">
-      <span class="flag__name">Mitsiee</span>
-      <div class="flag__score">
-        <div class="flag__badge">
-          <span class="event__position">2</span>
-          <%= inline_svg("badges/levels/top3_event.svg") %>
-        </div>
-        <div class="flag__eventscore">
-          <span class="eventscore__name">Pistol Kills</span>
-          <span class="eventscore__score">687</span>
-        </div>
-      </div>
-    </div>
-    <div class="event-top__flag event-top__flag--first" style="background-image: url(<%= image_path "legends/pathfinder/banner.webp" %>)">
-      <span class="flag__name">GuardianXT705</span>
-      <div class="flag__score">
-        <div class="flag__badge">
-          <span class="event__position">1</span>
-          <%= inline_svg("badges/levels/top3_event.svg") %>
-        </div>
-        <div class="flag__eventscore">
-          <span class="eventscore__name">Pistol Kills</span>
-          <span class="eventscore__score">687</span>
-        </div>
-      </div>
-    </div>
-    <div class="event-top__flag event-top__flag--third" style="background-image: url(<%= image_path "legends/gibraltar/banner.webp" %>)">
-      <span class="flag__name">Doldoc</span>
-      <div class="flag__score">
-        <div class="flag__badge">
-          <span class="event__position">3</span>
-          <%= inline_svg("badges/levels/top3_event.svg") %>
-        </div>
-        <div class="flag__eventscore">
-          <span class="eventscore__name">Pistol Kills</span>
-          <span class="eventscore__score">687</span>
-        </div>
-      </div>
-    </div>
+    <% sorted_event_signups = @event.event_signups.sort { |a,b| b.total_value.to_f <=> a.total_value.to_f } %>
+
+    <% sorted_event_signups.each_with_index do |event_signup, index| %>
+      <%= render "flag_item", event_signup: event_signup, item_counter: index + 1 %>
+      <% break if index >= 3 %>
+    <% end %>
   </div>
 </div>
 
@@ -71,7 +38,7 @@
 
   <div class="list-content__content">
     <div class="item event__leaderboard">
-      <% @event.event_signups.sort { |a,b| b.total_value.to_f <=> a.total_value.to_f }.each_with_index do |event_signup, index| %>
+      <% sorted_event_signups.each_with_index do |event_signup, index| %>
         <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
       <% end %>
     </div>

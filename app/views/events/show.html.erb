@@ -6,7 +6,7 @@
   @media (min-width: 768px) { body { background-image: url(#{image_path("gradient-bg/lg/event.png")}) }}" %>
 
 <% if DateTime.now.localtime < @event.start_datetime.localtime %>
-  <%= render "pre_event" %>
+  <%= render "event_pre" %>
 <% else %>
   <%= render "event_started" %>
 <% end %>

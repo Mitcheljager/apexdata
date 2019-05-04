@@ -95,7 +95,8 @@
 }
 
 .event__flags {
-  display: flex;
+  display: grid;
+  grid-template: "second first third";
   width: 675px;
   justify-content: space-between;
   margin: 50px auto 100px;
@@ -124,6 +125,7 @@
   }
 
   &--first {
+    grid-area: first;
     transform: scale(1) translate(0, 0);
     transform-origin: center center;
 
@@ -143,6 +145,7 @@
   }
 
   &--second {
+    grid-area: second;
     transform-origin: top left;
 
     svg {
@@ -161,6 +164,8 @@
   }
 
   &--third {
+    grid-area: third;
+
     svg {
       fill: var(--bronze);
     }
