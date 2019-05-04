@@ -1,9 +1,8 @@
 <div class="event-top">
   <div class="event__flags">
-    <% sorted_event_signups = @event.event_signups.sort { |a,b| b.total_value.to_f <=> a.total_value.to_f } %>
+    <% sorted_event_signups = @event.event_signups.order(total_value: :desc) %>
 
-    <% sorted_event_signups.each_with_index do |event_signup, index| %>
-      <% break if index >= 3 %>
+    <% sorted_event_signups.limit(3).each_with_index do |event_signup, index| %>
       <%= render "flag_item", event_signup: event_signup, item_counter: index + 1 %>
     <% end %>
   </div>
