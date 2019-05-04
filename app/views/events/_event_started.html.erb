@@ -3,8 +3,8 @@
     <% sorted_event_signups = @event.event_signups.sort { |a,b| b.total_value.to_f <=> a.total_value.to_f } %>
 
     <% sorted_event_signups.each_with_index do |event_signup, index| %>
-      <%= render "flag_item", event_signup: event_signup, item_counter: index + 1 %>
       <% break if index >= 3 %>
+      <%= render "flag_item", event_signup: event_signup, item_counter: index + 1 %>
     <% end %>
   </div>
 </div>
