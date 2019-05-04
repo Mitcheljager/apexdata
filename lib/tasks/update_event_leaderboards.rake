@@ -15,12 +15,8 @@ task :update_event_leaderboards => :environment do
           platforms.each do |platform|
             profiles = []
 
-            puts platform
-
             event.event_signups.each do |event_signup|
               claimed_profiles = ClaimedProfile.where(checks_completed: 1, profile_uid: event_signup.profile_uid, platform: platform).select(:profile_uid).map(&:profile_uid)
-
-              puts event_signup.profile_uid
 
               if claimed_profiles.any?
                 profiles.push(claimed_profiles)
@@ -32,9 +28,6 @@ task :update_event_leaderboards => :environment do
                 profiles = profiles.join(",")
                 url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
                 response = HTTParty.get(url, timeout: 20)
-
-                puts profiles
-                puts url
 
                 @response = JSON.parse(response)
                 @response = Array.wrap(@response)
@@ -65,8 +58,6 @@ task :update_event_leaderboards => :environment do
                         end
                       end
                     end
-
-                    puts "Event user updated: #{ profile["global"]["name"] }"
                   end
                 end
               rescue => error
