@@ -2,8 +2,6 @@ require "httparty"
 
 desc "Keep claimed profiles updated by checking the api periodically."
 task :keep_profiles_updated => :environment do
-  puts "Updating profiles..."
-
   duration = 10.minutes
   interval = 20.seconds
   number_of_checks_left = duration.seconds / interval.seconds
@@ -45,7 +43,7 @@ task :keep_profiles_updated => :environment do
                     next if key == "ImgAssets"
 
                     Rails.logger.silence do
-                      currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value)
+                      currentData = ProfileLegendData.find_by_profile_uid_and_legend_and_data_name_and_data_value(profile_uid, legend, key, value.to_i)
 
                       if currentData.nil?
                         @new_entry = ProfileLegendData.new(profile_uid: profile_uid, legend: legend, data_name: key, data_value: value)
