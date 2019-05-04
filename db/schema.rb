@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_105721) do
+ActiveRecord::Schema.define(version: 2019_05_04_182601) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_105721) do
     t.string "profile_uid"
     t.string "legend"
     t.string "data_name"
-    t.string "data_value"
+    t.bigint "data_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
