@@ -5,9 +5,9 @@ class ChangeMoreDataValueTypes < ActiveRecord::Migration[5.2]
       change_column :event_legend_data, :current_value, :bigint
       change_column :event_signups, :total_value, :bigint
     else
-      change_column :event_legend_data, :initial_value, "bigint USING CAST(data_value AS bigint)"
-      change_column :event_legend_data, :current_value, "bigint USING CAST(data_value AS bigint)"
-      change_column :event_signups, :total_value, "bigint USING CAST(data_value AS bigint)"
+      change_column :event_legend_data, :initial_value, "bigint USING CAST(initial_value AS bigint)"
+      change_column :event_legend_data, :current_value, "bigint USING CAST(current_value AS bigint)"
+      change_column :event_signups, :total_value, "bigint USING CAST(total_value AS bigint)"
     end
   end
 end
