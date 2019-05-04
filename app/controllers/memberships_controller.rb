@@ -22,7 +22,7 @@ class MembershipsController < ApplicationController
     @membership = Membership.new(user_id: current_user.id, payment_complete: 1, order_id: params[:order_id])
     @membership.save
 
-    create_notification("Thank you for purchasing a Membership. Your support is very much appreciated!") if Flipper.enabled?(:notifications)
+    create_notification("Thank you for purchasing a Membership. Your support is very much appreciated!")
   end
 
   def update

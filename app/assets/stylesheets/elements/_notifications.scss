@@ -21,6 +21,17 @@
   &--is-active {
     display: block;
   }
+
+  > div:empty {
+    &::before {
+      display: block;
+      content: "Loading...";
+      padding: $margin / 4 0;
+      border-top: 2px solid $border-color;
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+  }
 }
 
 .notifications__title {
@@ -32,6 +43,7 @@
   padding: $margin / 4 0;
   border-top: 2px solid $border-color;
   font-size: 14px;
+  line-height: 1.5em;
 }
 
 .notifications__item-action {
@@ -45,6 +57,14 @@
 .notifications__trigger {
   display: flex;
   align-items: center;
+
+  &:hover {
+    color: $white;
+  }
+
+  &--is-active {
+    color: $white;
+  }
 }
 
 .notifications__bubble {

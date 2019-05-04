@@ -7,20 +7,7 @@
       </h1>
 
       <div class="header__content header__content--right header__content--social-icons">
-        <% if Flipper.enabled?(:notifications) %>
-          <div class="notifications">
-            <%= link_to show_notifications_path, remote: true, class: "notifications__trigger header__action" do %>
-              <%= tag.div class: "notifications__bubble" if current_user.notifications.where.not(has_been_read: 1).any? %>
-              Notifications
-            <% end %>
-
-            <div class="notifications__content">
-              <h4 class="notifications__title">Notifications</h4>
-
-              <div data-role="notifications"></div>
-            </div>
-          </div>
-        <% end %>
+        <%= render "notifications/notifications" if Flipper.enabled?(:notifications) %>
 
         <% if Flipper.enabled?(:users) %>
           <% if current_user %>
