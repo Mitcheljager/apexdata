@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_185834) do
+ActiveRecord::Schema.define(version: 2019_05_04_105721) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -77,6 +77,15 @@ ActiveRecord::Schema.define(version: 2019_04_30_185834) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "order_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "has_been_read"
+    t.string "content"
+    t.string "go_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "profile_legend_data", force: :cascade do |t|

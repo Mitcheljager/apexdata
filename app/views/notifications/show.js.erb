@@ -1,0 +1,28 @@
+console.log("Showing notifications")
+
+<% notifications = current_user.notifications.where.not(has_been_read: 1) %>
+
+document.querySelector(".notifications__content").classList.toggle("notifications__content--is-active")
+
+if (document.querySelector(".notifications__content").classList.contains("notifications__content--is-active")) {
+  document.querySelector(".notifications__bubble").remove()
+
+  document.querySelector("[data-role='notifications']").innerHTML = `
+    <% if notifications.any? %>
+      <% notifications.each do |notification| %>
+        <div class="notifications__item">
+          <%= notification.content %>
+          <%= link_to "View", notification.go_to, class: "notifications__item-action" if notification.go_to %>
+        </div>
+
+        <% notification.update!(has_been_read: 1) %>
+      <% end %>
+    <% else %>
+      <div class="notifications__item">
+        You have no new notifications.
+      </div>
+    <% end %>
+  `
+} else {
+  document.querySelector("[data-role='notifications']").innerHTML = ""
+}

@@ -63,7 +63,7 @@
     justify-content: flex-end;
     align-items: center;
 
-    a {
+    > a {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -135,7 +135,7 @@
   }
 }
 
-.header__login {
+.header__action {
   font-size: 14px;
   text-decoration: none;
   padding-right: $margin / 4;

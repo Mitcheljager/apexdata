@@ -47,4 +47,7 @@ Rails.application.routes.draw do
   resources :events
   resources :event_signups, only: [:index, :create, :update]
   resources :event_legend_data, only: [:create, :update]
+
+  resources :notifications, only: [:create, :update]
+  get "show_notifications", to: "notifications#show", as: "show_notifications"
 end

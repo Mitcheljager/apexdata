@@ -1,0 +1,56 @@
+.notifications {
+  position: relative;
+}
+
+.notifications__content {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  max-width: 250px;
+  padding: $margin / 2 $margin / 2 $margin / 4;
+  border: 1px solid $border-color;
+  border-radius: $margin / 10;
+  background: $secondary;
+  text-align: left;
+  transform: translateX(-50%) translateY(calc(100% + #{ $margin / 4 }));
+  box-shadow: 0 $margin / 4 ($margin / 4) rgba($black, .2);
+  z-index: 100;
+
+  &--is-active {
+    display: block;
+  }
+}
+
+.notifications__title {
+  margin: 0 0 $margin / 4;
+  font-size: 16px;
+}
+
+.notifications__item {
+  padding: $margin / 4 0;
+  border-top: 2px solid $border-color;
+  font-size: 14px;
+}
+
+.notifications__item-action {
+  display: block;
+  margin-top: $margin / 8;
+  color: $white;
+  text-decoration: none;
+  text-align: left;
+}
+
+.notifications__trigger {
+  display: flex;
+  align-items: center;
+}
+
+.notifications__bubble {
+  margin-right: .5em;
+  height: .5em;
+  width: .5em;
+  border-radius: 50%;
+  background: $red;
+}

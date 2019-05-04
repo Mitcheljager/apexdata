@@ -61,6 +61,11 @@
     max-width: 100%;
     padding: 0;
   }
+
+  > img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .item__title {
