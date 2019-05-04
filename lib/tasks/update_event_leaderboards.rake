@@ -29,6 +29,9 @@ task :update_event_leaderboards => :environment do
                 url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
                 response = HTTParty.get(url, timeout: 20)
 
+                puts profiles
+                puts url
+
                 @response = JSON.parse(response)
                 @response = Array.wrap(@response)
 
