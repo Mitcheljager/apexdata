@@ -15,8 +15,12 @@ task :update_event_leaderboards => :environment do
           platforms.each do |platform|
             profiles = []
 
+            puts platform
+
             event.event_signups.each do |event_signup|
               claimed_profiles = ClaimedProfile.where(checks_completed: 1, profile_uid: event_signup.profile_uid, platform: platform).select(:profile_uid).map(&:profile_uid)
+
+              puts event_signup.profile_uid
 
               if claimed_profiles.any?
                 profiles.push(claimed_profiles)
