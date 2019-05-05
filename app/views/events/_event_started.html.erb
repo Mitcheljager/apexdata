@@ -16,22 +16,22 @@
         <h1 class="heading__title heading__title--event"><%= @event.title %></h1>
       </div>
 
-      <%= render "event_signups/form" %>
+      <br>
 
-      <div class="top-offset">
-        <% @event.event_signups.each do |event_signup| %>
-          <%= event_signup.user_id %>: <%= event_signup.profile_uid %>
-        <% end %>
-      </div>
+      <%= render "event_signups/form" %>
     </div>
 
     <div class="item item--list">
-      <small class="event__small"><span><%= @event.start_datetime %></span> - <span><%= @event.end_datetime %></span></small>
       <div class="heading heading--event">
         <h2 class="heading__title heading__title--event">Event ends in</h2>
       </div>
 
       <%= render "countdown", current_time: DateTime.now, end_time: @event.end_datetime %>
+
+      <small>
+        <span>Starts at: <%= @event.start_datetime.strftime("%e %B %Y, %T %Z") %></span><br>
+        <span>Ends at: <%= @event.end_datetime.strftime("%e %B %Y, %T %Z") %></span>
+      </small>
     </div>
   </aside>
 
