@@ -7,10 +7,9 @@
       </h1>
 
       <div class="header__content header__content--right header__content--social-icons">
-        <%= render "notifications/notifications" if Flipper.enabled?(:notifications) %>
-
         <% if Flipper.enabled?(:users) %>
           <% if current_user %>
+            <%= render "notifications/notifications" if Flipper.enabled?(:notifications) %>
             <%= link_to "Your account", account_path, class: "header__action" %>
           <% else %>
             <%= link_to "Login", login_path, class: "header__action" %>
