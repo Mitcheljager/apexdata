@@ -65,10 +65,10 @@ task :update_event_leaderboards => :environment do
               end
             end
           end
+
+          puts "Event: #{ event.title } cycle complete"
         end
       end
-
-      puts "Event cycle complete"
 
       sleep(interval)
     end
