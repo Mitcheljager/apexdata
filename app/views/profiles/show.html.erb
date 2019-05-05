@@ -1,5 +1,4 @@
-<% content_for :page_title, "Profile | " + @response["global"]["name"] %>
-<% content_for :no_of, true %>
+<% content_for :page_title, @response["global"]["name"] + "| Profile" %>
 <% content_for :extra_style,
   "body { background-image: url(#{image_path("gradient-bg/sm/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }
   @media (min-width: 640px) { body { background-image: url(#{image_path("gradient-bg/md/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}

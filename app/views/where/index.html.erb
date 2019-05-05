@@ -1,5 +1,4 @@
 <% content_for :page_title, params[:value].humanize %>
-<% content_for :no_of, true %>
 
 <div class="heading">
   <h2 class="heading__title"><%= params[:value].humanize %> <% if @items.many? %><small>(<%= @items.count %>)</small><% end %></h2>

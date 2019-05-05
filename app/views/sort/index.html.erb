@@ -1,5 +1,4 @@
 <% content_for :page_title, "#{  params[:items].underscore.humanize } sorted by #{ params[:sort_by].underscore.humanize }" %>
-<% content_for :no_of, true %>
 
 <div class="heading">
   <h3 class="heading__title"><%= params[:items].underscore.humanize %> <small>sorted by</small> <%= params[:sort_by].underscore.humanize %></h3>
