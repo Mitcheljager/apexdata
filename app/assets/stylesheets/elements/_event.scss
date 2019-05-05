@@ -295,3 +295,118 @@
   font-size: 40px;
   font-weight: 600;
 }
+
+.event__prices {
+  margin-top: 25px;
+}
+
+.event__prices-top3 {
+  display: flex;
+}
+
+.event__prices-number {
+  width: 33.333%;
+  padding: 0 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--one {
+    svg {
+      fill: var(--gold);
+    }
+
+    .st0,
+    .st1,
+    .st2 {
+      stroke: var(--gold);
+    }
+
+    .event__position {
+      color: var(--gold);
+    }
+  }
+
+  &--two {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+
+    svg {
+      fill: var(--silver);
+    }
+
+    .st0,
+    .st1,
+    .st2 {
+      stroke: var(--silver);
+    }
+
+    .event__position {
+      color: var(--silver);
+    }
+  }
+
+  &--three {
+    svg {
+      fill: var(--bronze);
+    }
+
+    .st0,
+    .st1,
+    .st2 {
+      stroke: var(--bronze);
+    }
+
+    .event__position {
+      color: var(--bronze);
+    }
+  }
+
+  .flag__badge {
+    width: 65px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .event__position {
+    font-size: 18px;
+    top: 19px;
+  }
+}
+
+.event__price {
+  font-family: "Teko", monospace;
+  font-size: 23px;
+  color: var(--white);
+}
+
+.event__prices-desc {
+  margin-top: 25px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.event__badges-wrapper {
+  margin-top: 25px;
+}
+
+.badges__title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.event__badges {
+  display: flex;
+}
+
+.event__badge {
+  width: 50%;
+  padding: 0 10px;
+
+  img {
+    width: 100%;
+  }
+}
