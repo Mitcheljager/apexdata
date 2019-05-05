@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
 
-  get "where/:where/:value", to: "where# index", as: "where"
+  get "where/:where/:value", to: "where#index", as: "where"
 
   get "legends", to: "legends#index"
   get "legends/:name", to: "legends#show", as: "legend_show"
