@@ -1,4 +1,8 @@
-<div class="leaderboard__item <%= "leaderboard__item--first" if item_counter == 1 %> <%= "leaderboard__item--second" if item_counter == 2 %> <%= "leaderboard__item--third" if item_counter == 3 %>">
+<div class="leaderboard__item
+  <%= "leaderboard__item--is-owned" if current_user && event_signup.user_id == current_user.id %>
+  <%= "leaderboard__item--first" if item_counter == 1 %>
+  <%= "leaderboard__item--second" if item_counter == 2 %>
+  <%= "leaderboard__item--third" if item_counter == 3 %>">
   <div class="leaderboard__left">
     <div class="leaderboard__badge">
       <span class="leaderboard__position"><%= item_counter %></span>

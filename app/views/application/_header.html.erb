@@ -20,6 +20,7 @@
       </div>
     </div>
   </div>
+
   <div class="header__bottom">
     <div class="wrapper">
       <div class="header__content">
@@ -38,6 +39,7 @@
           <% if Flipper.enabled?(:profiles) %>
             <%= link_to inline_svg("icons/icon-search.svg"), tracker_path %>
           <% end %>
+
           <% if Flipper.enabled?(:users) %>
             <% if current_user %>
               <%= link_to inline_svg("icons/icon-user.svg"), account_path %>
@@ -46,6 +48,7 @@
             <% end %>
           <% end %>
         </div>
+        
         <%= render "tracker" %>
       </div>
     </div>
