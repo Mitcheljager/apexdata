@@ -77,9 +77,12 @@ class ClaimedProfilesController < ApplicationController
 
   def destroy
     @claimed_profile = ClaimedProfile.find(params[:id])
+    @event_signups = EventSignup.where(profile_uid: @claimed_profile.profile_uid)
+
     return if @claimed_profile.user_id != current_user.id
 
     if @claimed_profile.delete
+      @event_signups.delete_all
       redirect_to account_path
     end
   end
