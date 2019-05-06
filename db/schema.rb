@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_183813) do
 
   create_table "notifications", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "has_been_read"
+    t.integer "has_been_read", default: 0
     t.string "content"
     t.string "go_to"
     t.datetime "created_at", null: false

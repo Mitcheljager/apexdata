@@ -245,8 +245,8 @@
 
 .event__time-wrapper,
 .event__time-information {
-  font-size: 76px;
-  line-height: 76px;
+  font-size: 66px;
+  line-height: 66px;
   margin-top: 20px;
   color: var(--white);
   display: flex;
@@ -266,10 +266,6 @@
 .event__double {
   font-weight: 600;
   line-height: 54px;
-}
-.event__sec,
-.event__double--sec {
-  display: none;
 }
 
 .event__info {
