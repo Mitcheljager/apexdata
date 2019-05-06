@@ -15,14 +15,19 @@ class EventSignupsController < ApplicationController
   end
 
   def create
+    puts event_signup_params
+    
     claimed_profile = current_user.claimed_profiles.where(profile_uid: event_signup_params[:profile_uid], checks_completed: 1).last
     signup = EventSignup.find_by_user_id_and_event_id_and_profile_uid(current_user.id, event_signup_params[:event_id], event_signup_params[:profile_uid])
 
     unless signup.present?
+      puts "No sign up present"
       if claimed_profile.present?
+        puts "User has a claimed profile"
         @event_signup = EventSignup.new(event_signup_params.merge(user_id: current_user.id))
         respond_to do |format|
           if @event_signup.save
+            puts "Saved"
             format.js
           else
             puts @event_signup.errors.full_messages
@@ -30,6 +35,8 @@ class EventSignupsController < ApplicationController
           end
         end
       end
+    else
+      puts "Sign up already present"
     end
   end
 
