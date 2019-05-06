@@ -13,7 +13,7 @@
             <div class="form-hint">Select the profile you would like to join with. You can join with multiple Profiles, but they will be counted seperately.</div>
           </div>
         <% else %>
-          <%= form.hidden_field :profile_uid, value: current_user.claimed_profiles.first.profile_uid %>
+          <%= form.hidden_field :profile_uid, value: current_user.claimed_profiles.where(checks_completed: 1).last.profile_uid %>
         <% end %>
 
         <%= form.hidden_field :event_id, value: @event.id %>
