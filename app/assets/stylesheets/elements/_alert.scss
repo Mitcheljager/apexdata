@@ -1,0 +1,14 @@
+.alert {
+  padding: $margin / 4;
+  margin-bottom: $margin / 2;
+
+  &--success {
+    background: $green;
+    color: $white;
+  }
+
+  &--error {
+    background: $red;
+    color: $white;
+  }
+}

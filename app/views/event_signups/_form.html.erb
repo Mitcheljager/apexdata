@@ -5,8 +5,11 @@
         <%= form.hidden_field :event_id, value: @event.id %>
 
         <% if current_user.claimed_profiles.where(checks_completed: 1).many? %>
-          <% claimed_profiles_of_signups = current_user.claimed_profiles.where("profile_uid IN (?)", @event.event_signups.where(user_id: current_user.id).pluck(:profile_uid)).pluck(:profile_uid) %>
-          <% available_signups = current_user.claimed_profiles.where(checks_completed: 1).where.not("profile_uid IN (?)", claimed_profiles_of_signups).pluck(:profile_uid) %>
+          <% claimed_profiles_of_signups = current_user.claimed_profiles.where("profile_uid IN (?)", current_user.event_signups.where(event_id: @event.id).pluck(:profile_uid)).pluck(:profile_uid) %>
+          <% if claimed_profiles_of_signups.any? %>
+            <% available_signups = current_user.claimed_profiles.where(checks_completed: 1).where.not("profile_uid IN (?)", claimed_profiles_of_signups).pluck(:profile_uid) %>
+          <% end %>
+          <% available_signups = available_signups || ["all"] %>
 
           <% if available_signups.any? %>
             <div class="form-field">
