@@ -3,7 +3,7 @@
     <h5>Your position:</h5>
 
     <% current_user.event_signups.order(total_value: :desc).where(event_id: @event.id).each do |event_signup| %>
-      <%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %>: <strong><%= (@event.event_signups.index(event_signup) + 1).ordinalize %></strong><br>
+      <%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %>: <strong><%= (@event.event_signups.order(total_value: :desc).index(event_signup) + 1).ordinalize %></strong><br>
     <% end %>
   <% elsif current_user.event_signups.where(event_id: @event.id).any? %>
     <h5>
