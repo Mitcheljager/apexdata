@@ -1,1 +1,4 @@
-alert("Sign up successful")
+document.querySelector("[data-role='event-signup-wrapper']").innerHTML = `
+  <p class="bg-green color-basic">Sign up successful</p>
+  <%= render "event_signups/form" %>
+`

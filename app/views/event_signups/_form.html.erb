@@ -2,24 +2,40 @@
   <% if current_user %>
     <% if current_user.claimed_profiles.any? %>
       <%= form_for :event_signup, url: event_signups_path, remote: true do |form| %>
-        <% if current_user.claimed_profiles.where(checks_completed: 1).many? %>
-          <div class="form-field">
-            <%= form.label :profile_uid, "What profile would you like to join with?", class: "form-label" %>
-            <%= form.select :profile_uid,
-                            current_user.claimed_profiles
-                            .where(checks_completed: 1)
-                            .collect {|p| [p.username, p.profile_uid]},
-                            disabled: current_user.event_signups.where(event_id: @event.id).pluck(:profile_uid) %>
-            <div class="form-hint">Select the profile you would like to join with. You can join with multiple Profiles, but they will be counted seperately.</div>
-          </div>
-        <% else %>
-          <%= form.hidden_field :profile_uid, value: current_user.claimed_profiles.where(checks_completed: 1).last.profile_uid %>
-        <% end %>
-
         <%= form.hidden_field :event_id, value: @event.id %>
 
-        <%= form.submit "Sign up for event", class: "button" %>
+        <% if current_user.claimed_profiles.where(checks_completed: 1).many? %>
+          <% claimed_profiles_of_signups = current_user.claimed_profiles.where("profile_uid IN (?)", @event.event_signups.where(user_id: current_user.id).pluck(:profile_uid)).pluck(:profile_uid) %>
+          <% available_signups = current_user.claimed_profiles.where(checks_completed: 1).where.not("profile_uid IN (?)", claimed_profiles_of_signups).pluck(:profile_uid) %>
+
+          <% if available_signups.any? %>
+            <div class="form-field">
+              <%= form.label :profile_uid, "What profile would you like to join with?", class: "form-label" %>
+              <%= form.select :profile_uid,
+                              current_user.claimed_profiles
+                              .where(checks_completed: 1)
+                              .collect {|p| [p.username, p.profile_uid]},
+                              disabled: current_user.event_signups.where(event_id: @event.id).pluck(:profile_uid) %>
+              <div class="form-hint">Select the profile you would like to join with. You can join with multiple Profiles, but they will be counted seperately.</div>
+            </div>
+
+            <%= form.submit "Sign up for event", class: "button" %>
+          <% else %>
+            <p>You have signed up with all of your Claimed Profiles.</p>
+          <% end %>
+        <% else %>
+          <% if current_user.event_signups.where(event_id: @event.id).any? %>
+            <p>You have signed up</p>
+          <% else %>
+            <%= form.hidden_field :profile_uid, value: current_user.claimed_profiles.where(checks_completed: 1).last.profile_uid %>
+            <%= form.submit "Sign up for event", class: "button" %>
+          <% end %>
+        <% end %>
       <% end %>
+    <% else %>
+      <p>Claim a profile to participate</p>
     <% end %>
+  <% else %>
+    <%= link_to "Log in to participate", login_path %>
   <% end %>
 </div>

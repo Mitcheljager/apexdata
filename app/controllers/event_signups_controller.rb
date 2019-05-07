@@ -19,6 +19,8 @@ class EventSignupsController < ApplicationController
     signup = EventSignup.find_by_user_id_and_event_id_and_profile_uid(current_user.id, event_signup_params[:event_id], event_signup_params[:profile_uid])
 
     unless signup.present?
+      @event = Event.find(event_signup_params[:event_id])
+
       if claimed_profile.present?
         @event_signup = EventSignup.new(event_signup_params.merge(user_id: current_user.id))
         respond_to do |format|
