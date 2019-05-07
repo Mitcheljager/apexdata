@@ -29,3 +29,4 @@
 //= require popup
 //= require events
 //= require notifications
+//= require favicon
