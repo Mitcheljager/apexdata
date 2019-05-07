@@ -1,4 +1,6 @@
 <div class="event-top">
+  <center><h2 class="event__top-subtitle"><%= @event.title %></h2></center>
+
   <div class="event__flags">
     <% sorted_event_signups = @event.event_signups.order(total_value: :desc) %>
 
