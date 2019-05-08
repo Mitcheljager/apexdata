@@ -6,4 +6,8 @@ module ApplicationHelper
       Rails.application.assets_manifest.assets[path].present?
     end
   end
+
+  def to_slug(string)
+    string.downcase.gsub(" ", "-")
+  end
 end

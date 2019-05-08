@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
   before_action do
     unless Flipper.enabled?(:events)
       redirect_to root_path
@@ -11,6 +11,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.select { |event| event.title.downcase.gsub(" ", "-") == params[:title].downcase }.first
   end
 
   def new

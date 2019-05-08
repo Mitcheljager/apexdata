@@ -13,7 +13,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
-        <td><%= link_to "Show", event %></td>
+        <td><%= link_to "Show", event_slug_path(to_slug(event.title)) %></td>
         <td><%= link_to "Edit", edit_event_path(event) %></td>
         <td><%= link_to "Destroy", event, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>

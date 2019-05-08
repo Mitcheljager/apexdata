@@ -44,9 +44,10 @@ Rails.application.routes.draw do
 
   resources :memberships, only: [:index, :new, :create, :update]
 
-  resources :events
+  resources :events, except: [:destroy, :show]
   resources :event_signups, only: [:index, :create, :update]
   resources :event_legend_data, only: [:create, :update]
+  get "events/:title", to: "events#show", as: "event_slug"
 
   resources :notifications, only: [:create, :update]
   get "show_notifications", to: "notifications#show", as: "show_notifications"
