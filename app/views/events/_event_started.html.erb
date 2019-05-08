@@ -21,21 +21,30 @@
 
       <hr>
 
-      <%= render "event_signups/form" %>
+      <%= render "event_signups/form" if DateTime.now.localtime < @event.end_datetime.localtime %>
       <%= render "current_position" if current_user %>
     </div>
 
     <div class="item item--list">
-      <div class="heading mt-0 mb-20">
-        <h4 class="heading__title">Event ends in</h4>
-      </div>
+      <% if DateTime.now.localtime < @event.end_datetime.localtime %>
+        <div class="heading mt-0 mb-20">
+          <h4 class="heading__title">Event ends in</h4>
+        </div>
 
-      <%= render "countdown", current_time: DateTime.now, end_time: @event.end_datetime %>
+        <%= render "countdown", current_time: DateTime.now, end_time: @event.end_datetime %>
 
-      <small>
-        <span>Starts at: <%= @event.start_datetime.strftime("%e %B %Y, %T %Z") %></span><br>
-        <span>Ends at: <%= @event.end_datetime.strftime("%e %B %Y, %T %Z") %></span>
-      </small>
+        <small>
+          <span>Starts at: <%= @event.start_datetime.strftime("%e %B %Y, %T %Z") %></span><br>
+          <span>Ends at: <%= @event.end_datetime.strftime("%e %B %Y, %T %Z") %></span>
+        </small>
+      <% else %>
+        <h5 class="mt-0">This event has ended</h5>
+
+        <small>
+          <span>Started at: <%= @event.start_datetime.strftime("%e %B %Y, %T %Z") %></span><br>
+          <span>Ended at: <%= @event.end_datetime.strftime("%e %B %Y, %T %Z") %></span>
+        </small>
+      <% end %>
     </div>
 
     <div class="item item--list">

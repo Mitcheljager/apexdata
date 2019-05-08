@@ -21,6 +21,8 @@ class EventSignupsController < ApplicationController
     unless signup.present?
       @event = Event.find(event_signup_params[:event_id])
 
+      return if DateTime.now.localtime > @event.end_datetime.localtime
+
       if claimed_profile.present?
         @event_signup = EventSignup.new(event_signup_params.merge(user_id: current_user.id))
         respond_to do |format|

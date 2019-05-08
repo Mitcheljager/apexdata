@@ -27,6 +27,6 @@
 //= require ads
 //= require scroll_spy
 //= require popup
-//= require events
+//= require countdown
 //= require notifications
 //= require favicon
