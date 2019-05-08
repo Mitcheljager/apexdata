@@ -13,9 +13,8 @@
 <div class="list-content">
   <aside class="list-content__sidebar">
     <div class="item item--list">
-      <small class="event__small">Event</small>
-      <div class="heading heading--event">
-        <h1 class="heading__title heading__title--event"><%= @event.title %></h1>
+      <div class="heading mt-0 mb-20">
+        <h4 class="heading__title"><%= @event.title %></h4>
       </div>
 
       <br>
@@ -25,8 +24,8 @@
     </div>
 
     <div class="item item--list">
-      <div class="heading heading--event">
-        <h2 class="heading__title heading__title--event">Event ends in</h2>
+      <div class="heading mt-0 mb-20">
+        <h4 class="heading__title">Event ends in</h4>
       </div>
 
       <%= render "countdown", current_time: DateTime.now, end_time: @event.end_datetime %>
@@ -38,42 +37,71 @@
     </div>
 
     <div class="item item--list">
-      <div class="heading heading--event">
-        <h2 class="heading__title heading__title--event">Prices</h2>
+      <div class="heading mt-0 mb-20">
+        <h4 class="heading__title">Rewards</h4>
       </div>
-      <div class="event__prices">
-        <div class="event__prices-top3">
-          <div class="event__prices-number event__prices-number--one">
-            <div class="flag__badge">
-              <span class="event__position">1</span>
+
+      <div class="rewards">
+        <div class="rewards__badges">
+          <div class="rewards__item svg-badge-gold">
+            <div class="rewards__badge">
+              <span class="rewards__position">1</span>
               <%= inline_svg("badges/levels/top3_event.svg") %>
             </div>
-            <span class="event__price">&euro;50</span>
+
+            <span class="rewards__item-description">
+              First place
+              <strong>&euro;50</strong>
+            </span>
           </div>
-          <div class="event__prices-number event__prices-number--two">
-            <div class="flag__badge">
-              <span class="event__position">2</span>
+
+          <div class="rewards__item svg-badge-silver">
+            <div class="rewards__badge">
+              <span class="rewards__position">2</span>
               <%= inline_svg("badges/levels/top3_event.svg") %>
             </div>
-            <span class="event__price">&euro;25</span>
+
+            <span class="rewards__item-description">
+              Second place
+              <strong>&euro;25</strong>
+            </span>
           </div>
-          <div class="event__prices-number event__prices-number--three">
-            <div class="flag__badge">
-              <span class="event__position">3</span>
+
+          <div class="rewards__item svg-badge-bronze">
+            <div class="rewards__badge">
+              <span class="rewards__position">3</span>
               <%= inline_svg("badges/levels/top3_event.svg") %>
             </div>
-            <span class="event__price">&euro;10</span>
+
+            <span class="rewards__item-description">
+              Third place
+              <strong>&euro;50</strong>
+            </span>
           </div>
         </div>
-        <small class="event__prices-desc">Paysafecard of zoiets.</small>
+
+        <small class="rewards__description">Rewards are distributed in the form of a PaySafeCard.</small>
+
         <div class="event__badges-wrapper">
-          <h2 class="badges__title">S01 Pistol Kills Badge</h2>
+          <div class="heading mt-0 mb-20">
+            <h4 class="heading__title heading__title">Rewards</h4>
+          </div>
+
+          <p>
+            <center><small>Badges are displayed on your profile.</small></center>
+          </p>
+
           <div class="event__badges">
             <div class="event__badge">
-              <%= image_tag "badges/events/pistol_kills01/leaderboard_badge.png" %>
-            </div>
-            <div class="event__badge">
               <%= image_tag "badges/events/pistol_kills01/winner.png" %>
+
+              <center><small>First place badge</small></center>
+            </div>
+
+            <div class="event__badge">
+              <%= image_tag "badges/events/pistol_kills01/leaderboard_badge.png" %>
+
+              <center><small>Participation badge</small></center>
             </div>
           </div>
         </div>

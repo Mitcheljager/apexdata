@@ -7,16 +7,16 @@
 
 <div class="wrapper wrapper--small">
   <div class="item item--full-width">
-    <div class="heading heading--event">
-      <h2 class="heading__title heading__title--event"><%= @event.title %></h2>
+    <div class="heading mt-0 mb-20">
+      <h4 class="heading__title"><%= @event.title %></h4>
     </div>
 
     <%= @event.description %>
   </div>
 
   <div class="item item--full-width">
-    <div class="heading heading--event">
-      <h2 class="heading__title heading__title--event">Sign up</h2>
+    <div class="heading mt-0 mb-20">
+      <h4 class="heading__title">Sign up</h4>
     </div>
 
     <br>
@@ -29,13 +29,11 @@
   </div>
 
   <div class="item item--full-width">
-    <small class="event__small"><span><%= @event.start_datetime %></span> - <span><%= @event.end_datetime %></span></small>
-    <div class="heading heading--event">
-      <h2 class="heading__title heading__title--event">Starting soon</h2>
-    </div>
+    <span class="event__time event__info color-basic">Event starting soon</span>
 
-    <div class="event__time-information">
-      <span class="event__time event__info">Event starting soon</span>
-    </div>
+    <small>
+      <span>Starts at: <%= @event.start_datetime.strftime("%e %B %Y, %T %Z") %></span><br>
+      <span>Ends at: <%= @event.end_datetime.strftime("%e %B %Y, %T %Z") %></span>
+    </small>
   </div>
 </div>

@@ -218,6 +218,19 @@ $rarities: (
   }
 }
 
+$badge-colors: (
+  basic: $white,
+  bronze: $bronze,
+  silver: $silver,
+  gold: $gold
+);
+
+@each $color, $value in $badge-colors {
+  .svg-badge-#{$color} {
+    @include color-badge($value);
+  }
+}
+
 .text-right {
   @include media-min(max-width) {
     text-align: right;
@@ -262,30 +275,6 @@ hr {
   @include media-min(sm) {
     display: none !important;
   }
-}
-
-.top-offset {
-  padding-top: $margin;
-
-  @include media-min(sm) {
-    padding-top: $margin * 2;
-  }
-}
-
-.relative {
-  position: relative;
-}
-
-.m-0 {
-  margin: 0 !important;
-}
-
-.mb-0 {
-  margin-bottom: 0 !important;
-}
-
-.p-25 {
-  padding: .25em;
 }
 
 big {

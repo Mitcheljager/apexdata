@@ -18,3 +18,17 @@
     @content;
   }
 }
+
+@mixin color-badge($color) {
+  color: $color;
+
+  svg {
+    fill: $color;
+  }
+
+  .st0,
+  .st1,
+  .st2 {
+    stroke: $color;
+  }
+}
