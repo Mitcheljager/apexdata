@@ -17,7 +17,9 @@
         <h4 class="heading__title"><%= @event.title %></h4>
       </div>
 
-      <br>
+      <%= @event.description %>
+
+      <hr>
 
       <%= render "event_signups/form" %>
       <%= render "current_position" if current_user %>
