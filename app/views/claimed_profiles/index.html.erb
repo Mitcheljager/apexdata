@@ -1,5 +1,7 @@
 <%= render "admin_navigation" %>
 
+<h2>Unique profile searches: <strong><%= ProfileLegendData.select(:profile_uid).map(&:profile_uid).uniq.count %></strong></h2>
+
 <h2>Successful Claimed Profiles <small><%= @successful_claimed_profiles.count %></small></h2>
 
 <table>
