@@ -12,7 +12,7 @@
 
 <div class="list-content">
   <aside class="list-content__sidebar">
-    <div class="item item--list">
+    <div class="item item--list item--event">
       <div class="heading mt-0 mb-20">
         <h4 class="heading__title"><%= @event.title %></h4>
       </div>
@@ -25,7 +25,7 @@
       <%= render "current_position" if current_user %>
     </div>
 
-    <div class="item item--list">
+    <div class="item item--list item--event">
       <% if DateTime.now.localtime < @event.end_datetime.localtime %>
         <div class="heading mt-0 mb-20">
           <h4 class="heading__title">Event ends in</h4>
@@ -47,7 +47,7 @@
       <% end %>
     </div>
 
-    <div class="item item--list">
+    <div class="item item--list item--event">
       <div class="heading mt-0 mb-20">
         <h4 class="heading__title">Rewards</h4>
       </div>

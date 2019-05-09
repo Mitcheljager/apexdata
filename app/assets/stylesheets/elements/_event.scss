@@ -95,11 +95,15 @@
 }
 
 .event__flags {
-  display: grid;
-  grid-template: "second first third";
-  width: 675px;
-  justify-content: space-between;
-  margin: 50px auto 100px;
+  display: none;
+
+  @include media-min(lg) {
+    display: grid;
+    grid-template: "second first third";
+    width: 675px;
+    justify-content: space-between;
+    margin: 50px auto 100px;
+  }
 }
 
 .event-top__flag {
@@ -209,9 +213,14 @@
 .event__time-information {
   display: flex;
   margin-top: 20px;
-  font-size: 66px;
-  line-height: 66px;
+  font-size: 56px;
+  line-height: 56px;
   color: var(--white);
+
+  @include media-min(lg) {
+    font-size: 66px;
+    line-height: 66px;
+  }
 
   &--large {
     font-size: 166px;
@@ -229,7 +238,11 @@
 
 .event__double {
   font-weight: 600;
-  line-height: 54px;
+  line-height: 40px;
+
+  @include media-min(lg) {
+    line-height: 54px;
+  }
 }
 
 .event__info {
