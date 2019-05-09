@@ -141,6 +141,11 @@
   color: var(--white);
   font-weight: 600;
   padding-left: $margin / 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 300px;
+  height: 1.2em;
+  white-space: nowrap;
 }
 
 .leaderboard__right {
@@ -149,14 +154,19 @@
 }
 
 .leaderboard__action {
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 300;
-  color: var(--graph-color);
-  border: 1px solid lighten($primary, 10%);
-  background: var(--primary);
-  padding: .75rem 2rem;
-  border-radius: 5px;
+  display: none;
+
+  @media screen and (min-width: 1140px) {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--graph-color);
+    border: 1px solid lighten($primary, 10%);
+    background: var(--primary);
+    padding: .75rem 2rem;
+    border-radius: 5px;
+  }
 
   &:hover {
     background: darken($primary, 5%);
@@ -168,7 +178,10 @@
   display: flex;
   flex-direction: column;
   text-align: right;
-  margin-right: 25px;
+
+  @media screen and (min-width: 1140px) {
+    margin-right: 25px;
+  }
 }
 
 .leaderboard__score-name {
