@@ -1,13 +1,20 @@
 .alert {
   padding: $margin / 4;
   margin-bottom: $margin / 2;
+  border: 1px solid $border-color;
+  text-align: center;
+  color: $white;
 
   &--success {
+    border: 0;
+    text-align: left;
     background: $green;
     color: $white;
   }
 
   &--error {
+    border: 0;
+    text-align: left;
     background: $red;
     color: $white;
   }

@@ -1,4 +1,8 @@
-<%= render "banners/search" %>
+<%= render "banners/search" if Flipper.enabled?(:profiles) %>
+
+<% unless Flipper.enabled?(:login) %>
+  <div class="alert">Player profiles and login are temporarily offline while we investigate server issues</div>
+<% end %>
 
 <div class="heading top-offset">
   <h2 class="heading__title">Legends</h2>

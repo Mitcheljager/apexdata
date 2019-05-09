@@ -1,5 +1,5 @@
 <%= form_tag "/", class: "player-form #{ extra_classes if defined?(extra_classes) }", autocomplete: "off" do %>
-  <%= text_field_tag :player, "", id: "playerName", disabled: Flipper.enabled?(:profiles) ? false : true, placeholder: Flipper.enabled?(:profiles) ? "Find player" : "Player profiles coming soon" %>
+  <%= text_field_tag :player, "", id: "playerName", disabled: Flipper.enabled?(:profiles) ? false : true, placeholder: Flipper.enabled?(:profiles) ? "Find player" : "Player profiles temporarily offline" %>
 
   <div class="player-platforms">
     <div class="platform__icon active" data-platform="PC">
@@ -15,6 +15,6 @@
     </div>
 
     <%= button_tag "Search", type: "submit", class: "player-submit player-submit--desktop" %>
-  </div>  
+  </div>
   <%= button_tag "Search", type: "submit", class: "player-submit player-submit--mobile" %>
 <% end %>
