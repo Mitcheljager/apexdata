@@ -1,6 +1,6 @@
 <% content_for :page_title, "Event Rules" %>
 
-<div class="wrapper wrapper--tiny top-offset">
+<div class="wrapper wrapper--small top-offset">
   <div class="item item--full-width" data-role="paypal-wrapper">
     <div class="heading heading--small">
       <h4 class="heading__title">Event Rules & FAQ</h4>
@@ -11,6 +11,50 @@
       <p>To join an event you need to <%= link_to "create an account", register_path %> or <%= link_to "log in" %>. From here you need to "Claim" the profile you wish to join the event with. You can claim multiple profiles and join with all of them seperately.</p>
 
       <h5>Claiming a profile</h5>
+      <p>
+        To claim a profile please log in to Apex Legends. Look up the username you use on Apex Legends on our <%= link_to "Tracker", tracker_path %> page.
+        <br>Locate and click the <em>"Start claim"</em> button and follow the instructions.
+      </p>
+
+      <h5>Getting your profile ready for the event</h5>
+      <p>To participate in an event you will need to select the right <em>Trackers</em> on your profile in Apex Legends. The event will state which Tracker you will need. To select the correct tracker please follow these instructions:</p>
+
+      <p><strong>1.</strong> In Apex legends navigate to the "Legends" tab.</p>
+      <%= image_tag "instructions/event-signup-1.jpg", class: "w-100" %>
+
+      <p><strong>2.</strong> Select the legend you would like to play as. If you want to participate with multiple legends, you will need to follow these steps for all of them.</p>
+      <%= image_tag "instructions/event-signup-2.jpg", class: "w-100" %>
+
+      <p><strong>3.</strong> Navigate to the "Banners" tab.</p>
+      <%= image_tag "instructions/event-signup-3.jpg", class: "w-100" %>
+
+      <p><strong>4.</strong> Select the Tracker specified for the event in any of your 3 Tracker slots. If the event requires multiple Trackers you would need to select all of them.</p>
+      <%= image_tag "instructions/event-signup-4.jpg", class: "w-100" %>
+
+      <p>Repeat these steps for all Legends you would like to play as during the event.</p>
+
+      <br>
+      <strong>Q: "I don't have the correct Tracker unlocked, can I still participate?"</strong>
+      <p>You will need to unlock the Tracker for us to track your progress. Without it you will not be able to participate in the event.</p>
+
+      <br>
+      <strong>Q: "Can I swap back to a different tracker after signing up with the correct tracker?"</strong>
+      <p>No. You will need to keep your tracker active during the event for your score to be recorded.</p>
+
+      <br>
+      <strong>Q: "I didn't have the correct tracker selected when the event started, can I still participate?"</strong>
+      <p>Your score will be recorded from the moment you set the correct tracker. Any score gained before will be lost.</p>
+
+      <h5>During the event</h5>
+      <strong>Q: "I played a game and my score has not yet updated on the leaderboards, what gives?"</strong>
+      <p>It can take up to a minute for the leaderboards to update correctly. Make sure you are online in Apex Legends to update your score. If you closed the game right after your match finished your score may not yet have updated correctly. Log back in to Apex Legends and your score will once again update. Your score is not lost.</p>
+
+      <h5>Prizes and Rewards</h5>
+      <p>Monetary prizes are distributed in the form of a PaySafeCard. You will receive a notification of any rewards you have won. These can be claimed on your <%= link_to "Account", account_path %> page.</p>
+
+      <br>
+      <strong>Q: "The event has ended and I won something, but I don't yet see my prize."</strong>
+      <p>Please allow up to an hour after the event has ended for your prize to show up. In most cases you will receive your reward within 15 minutes.</p>
     </div>
   </div>
 </div>
