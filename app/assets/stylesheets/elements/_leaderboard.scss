@@ -1,10 +1,8 @@
 .leaderboard__item {
-  height: 75px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   border-bottom: 1px solid lighten($primary, 10%);
-  padding: $margin / 2;
-  justify-content: space-between;
   position: relative;
 
   &:last-of-type {
@@ -146,6 +144,35 @@
   max-width: 300px;
   height: 1.2em;
   white-space: nowrap;
+
+  &--small {
+    display: block;
+    width: 100%;
+    padding: 15px 25px 20px;
+    max-width: 100%;
+
+    @media screen and (min-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &--large {
+    display: none;
+
+    @media screen and (min-width: 1000px) {
+      display: block;
+    }
+  }
+}
+
+.leaderboard__about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: $margin / 2;
+  align-items: center;
+  width: 100%;
+  height: 75px;
 }
 
 .leaderboard__right {
