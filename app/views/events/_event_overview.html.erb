@@ -1,0 +1,18 @@
+<article class="item item--event-overview">
+  <div class="item__event-banner">
+    <%= image_tag "badges/events/pistol_kills01/banner_pistol_kills.jpg" %>
+  </div>
+  <div class="item__event-content">
+    <h3 class="item__title"><%= event.title %></h3>
+
+    <div class="item__event-description">
+      <%= event.description %>
+    </div>
+
+    <div class="item__tray">
+      <%= link_to "Show Event", event_slug_path(to_slug(event.title)), class: "button" %>
+    </div>
+    <%= link_to "Edit", edit_event_path(event) %>
+    <%= link_to "Destroy", event, method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</article>
