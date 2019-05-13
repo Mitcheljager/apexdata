@@ -1,0 +1,5 @@
+<%= form_for :event_signup, url: event_update_leaderboard_item_path, remote: true do |form| %>
+  <%= form.hidden_field :event_id, value: @event.id %>
+
+  <%= form.submit "Update your score", class: "button" %>
+<% end %>

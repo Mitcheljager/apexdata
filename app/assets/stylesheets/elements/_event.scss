@@ -281,10 +281,12 @@
 
 .event__badges {
   display: flex;
+  justify-content: center;
 }
 
 .event__badge {
   width: 50%;
+  max-width: 150px;
   padding: 0 $margin / 4;
 
   img {

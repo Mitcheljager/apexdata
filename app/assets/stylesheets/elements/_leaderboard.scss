@@ -1,9 +1,27 @@
+.leaderboard {
+  width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
 .leaderboard__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid lighten($primary, 10%);
   position: relative;
+
+  &::before {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    z-index: 0;
+  }
 
   &:last-of-type {
     border-bottom: 0;
@@ -15,95 +33,52 @@
 
   &--first {
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 30%;
-      height: 100%;
+      display: block;
       background: linear-gradient(to right, rgba($gold,.15) 0%,rgba($gold,0) 100%);
-      z-index: 0;
     }
   }
 
   &--second {
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 30%;
-      height: 100%;
+      display: block;
       background: linear-gradient(to right, rgba($silver,.15) 0%,rgba($silver,0) 100%);
-      z-index: 0;
     }
   }
 
   &--third {
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 30%;
-      height: 100%;
+      display: block;
       background: linear-gradient(to right, rgba($bronze,.15) 0%,rgba($bronze,0) 100%);
-      z-index: 0;
     }
+  }
+}
+
+.leaderboard__item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: $margin / 4 $margin / 2 $margin / 4 $margin / 4;
+  width: 100%;
+
+  @include media-min("xl") {
+    padding: $margin / 4 $margin / 2;
   }
 }
 
 .leaderboard__left {
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   position: relative;
+
+  @include media-min("xl") {
+    flex-direction: row;
+  }
 
   svg {
     width: 60px;
     height: 60px;
-    fill: var(--graph-color);
-
-    .st0,
-    .st1,
-    .st2 {
-      stroke: var(--graph-color);
-    }
-  }
-
-  .leaderboard__item--first & {
-    svg {
-      fill: var(--gold);
-
-      .st0,
-      .st1,
-      .st2 {
-        stroke: var(--gold);
-      }
-    }
-  }
-
-  .leaderboard__item--second & {
-    svg {
-      fill: var(--silver);
-
-      .st0,
-      .st1,
-      .st2 {
-        stroke: var(--silver);
-      }
-    }
-  }
-
-  .leaderboard__item--third & {
-    svg {
-      fill: var(--bronze);
-
-      .st0,
-      .st1,
-      .st2 {
-        stroke: var(--bronze);
-      }
-    }
   }
 }
 
@@ -113,66 +88,24 @@
 }
 
 .leaderboard__position {
-  font-size: 17px;
-  color: var(--white);
   position: absolute;
-  font-family: "Teko", monospace;
   left: 50%;
-  transform: translate(-50%, -50%);
   top: 50%;
-
-  .leaderboard__item--first & {
-    color: var(--gold);
-  }
-
-  .leaderboard__item--second & {
-    color: var(--silver);
-  }
-
-  .leaderboard__item--third & {
-    color: var(--bronze);
-  }
+  font-size: 17px;
+  font-family: "Teko", monospace;
+  transform: translate(-50%, -50%);
 }
 
 .leaderboard__name {
+  max-width: 300px;
+  padding-left: $margin / 2;
   font-size: 16px;
+  line-height: 1.2em;
   color: var(--white);
   font-weight: 600;
-  padding-left: $margin / 2;
   text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 300px;
-  height: 1.2em;
   white-space: nowrap;
-
-  &--small {
-    display: block;
-    width: 100%;
-    padding: 15px 25px 20px;
-    max-width: 100%;
-
-    @media screen and (min-width: 1000px) {
-      display: none;
-    }
-  }
-
-  &--large {
-    display: none;
-
-    @media screen and (min-width: 1000px) {
-      display: block;
-    }
-  }
-}
-
-.leaderboard__about {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: $margin / 2;
-  align-items: center;
-  width: 100%;
-  height: 75px;
+  overflow: hidden;
 }
 
 .leaderboard__right {
@@ -183,7 +116,7 @@
 .leaderboard__action {
   display: none;
 
-  @media screen and (min-width: 1140px) {
+  @include media-min("xl") {
     display: block;
     font-size: 14px;
     text-decoration: none;

@@ -22,6 +22,10 @@
 @mixin color-badge($color) {
   color: $color;
 
+  @if $color == $white {
+    $color: var(--graph-color);
+  }
+
   svg {
     fill: $color;
   }

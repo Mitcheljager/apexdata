@@ -43,6 +43,12 @@ class EventSignupsController < ApplicationController
   def destroy
   end
 
+  def update_leaderboard_item
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def set_event_signup

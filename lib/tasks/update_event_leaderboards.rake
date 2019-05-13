@@ -15,7 +15,7 @@ task :update_event_leaderboards => :environment do
           platforms.each do |platform|
             profiles = []
 
-            event.event_signups.each do |event_signup|
+            event.event_signups.order(total_value: :desc).limit(10).each do |event_signup|
               claimed_profiles = ClaimedProfile.where(checks_completed: 1, profile_uid: event_signup.profile_uid, platform: platform).select(:profile_uid).map(&:profile_uid)
 
               if claimed_profiles.any?

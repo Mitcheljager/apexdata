@@ -1,10 +1,11 @@
 <div class="leaderboard__item
   <%= "leaderboard__item--is-owned" if current_user && event_signup.user_id == current_user.id %>
-  <%= "leaderboard__item--first" if item_counter == 1 %>
-  <%= "leaderboard__item--second" if item_counter == 2 %>
-  <%= "leaderboard__item--third" if item_counter == 3 %>">
-  <span class="leaderboard__name leaderboard__name--small"><%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %></span>
-  <div class="leaderboard__about">
+  <%= "leaderboard__item--first svg-badge-gold" if item_counter == 1 %>
+  <%= "leaderboard__item--second svg-badge-silver" if item_counter == 2 %>
+  <%= "leaderboard__item--third svg-badge-bronze" if item_counter == 3 %>
+  <%= "svg-badge-basic" if item_counter > 3 %>">
+
+  <div class="leaderboard__item-content">
     <div class="leaderboard__left">
       <div class="leaderboard__badge">
         <span class="leaderboard__position"><%= item_counter %></span>
@@ -14,7 +15,8 @@
         <%= inline_svg "badges/levels/top11_20_event.svg" if item_counter > 10 && item_counter < 21 %>
         <%= inline_svg "badges/levels/top21_50_event.svg" if item_counter > 20 %>
       </div>
-      <span class="leaderboard__name leaderboard__name--large"><%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %></span>
+
+      <span class="leaderboard__name"><%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %></span>
     </div>
     <div class="leaderboard__right">
       <div class="leaderboard__score">

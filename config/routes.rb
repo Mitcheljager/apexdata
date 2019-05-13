@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   resources :event_signups, only: [:index, :create, :update]
   resources :event_legend_data, only: [:create, :update]
   get "events/:title", to: "events#show", as: "event_slug"
+  post "update-leaderboard-item", to: "event_signups#update_leaderboard_item", as: "event_update_leaderboard_item"
 
   resources :notifications, only: [:create, :update]
   get "show_notifications", to: "notifications#show", as: "show_notifications"
