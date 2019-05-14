@@ -25,7 +25,7 @@ task :update_event_leaderboards => :environment do
 
             if profiles.any?
               begin
-                puts "Event: #{ event.title } - Cycle started"
+                puts "Event: #{ event.title } - Cycle started - #{ platform }"
                 profiles = profiles.join(",")
                 url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
                 response = HTTParty.get(url, timeout: 20)
