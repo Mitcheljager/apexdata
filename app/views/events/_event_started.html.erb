@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<%= render "event_signups/update_leaderboard_item" %>
+<%= render "event_signups/update_leaderboard_item" if current_user && current_user.event_signups.where(event_id: @event.id).any? %>
 
 <div class="list-content">
   <aside class="list-content__sidebar">

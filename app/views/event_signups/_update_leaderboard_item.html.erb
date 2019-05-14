@@ -1,5 +1,9 @@
-<%= form_for :event_signup, url: event_update_leaderboard_item_path, remote: true do |form| %>
-  <%= form.hidden_field :event_id, value: @event.id %>
+<div class="event__manual-update">
+  <%= form_for :event_signup, url: event_update_leaderboard_item_path, remote: true do |form| %>
+    <%= form.hidden_field :event_id, value: @event.id %>
 
-  <%= form.submit "Update your score", class: "button" %>
-<% end %>
+    <%= form.submit "Manually update your score", class: "button-alternative", data: { disable_with: "Updating..." } %>
+  <% end %>
+
+  <div data-role="event-signup-message">Your score is automatically kept up to date every few minutes.</div>
+</div>

@@ -44,15 +44,15 @@
       <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.localtime.strftime("%F at %T %Z") %></em></small>
     <% end %>
 
-    <%= link_to "Update profile", "", class: "profile__button" %>
+    <%= link_to "Update profile", "", class: "button-alternative" %>
 
     <% if Flipper.enabled?(:memberships) %>
       <% if current_user && @claimed_profile.present? %>
         <% if @claimed_profile.user_id == current_user.id %>
           <% if membership.present? %>
-            <span class="profile__button profile__button--primary bg-green border-green">Automatic updates are enabled</span>
+            <span class="button-alternative button-alternative--primary bg-green border-green">Automatic updates are enabled</span>
           <% else %>
-            <%= link_to "Get automatic updates", new_membership_path, class: "profile__button profile__button--primary" %>
+            <%= link_to "Get automatic updates", new_membership_path, class: "button-alternative button-alternative--primary" %>
           <% end %>
         <% end %>
       <% end %>

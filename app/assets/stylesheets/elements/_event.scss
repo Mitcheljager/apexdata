@@ -360,3 +360,15 @@
     height: auto;
   }
 }
+
+.event__manual-update {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: 14px;
+
+  div {
+    margin-right: $margin / 2;
+    margin-bottom: 0;
+  }
+}

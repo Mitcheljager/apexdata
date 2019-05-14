@@ -125,6 +125,39 @@
   }
 }
 
+.button-alternative {
+  display: inline-block;
+  padding: 8px $margin / 2;
+  border: 1px solid lighten($primary, 5%);
+  border-radius: 3px;
+  background: darken($primary, 5%);
+  color: var(--text-color);
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover:not([disabled]),
+  &:active:not([disabled]) {
+    background: $primary;
+    color: $white;
+  }
+
+  &--primary {
+    background: var(--red);
+    color: var(--white);
+    border: 1px solid lighten($red, 5%);
+
+    &:hover:not([disabled]),
+    &:active:not([disabled]) {
+      background: lighten($red, 5%);
+    }
+  }
+
+  &[disabled] {
+    opacity: .75;
+  }
+}
+
 
 .button__tooltip {
   display: none;

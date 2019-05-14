@@ -29,7 +29,7 @@ class EventSignupsController < ApplicationController
           if @event_signup.save
             format.js
           else
-            puts @event_signup.errors.full_messages
+            @error_message = "Error signing up. Please try again."
             format.js { render "error.js.erb" }
           end
         end
@@ -44,8 +44,59 @@ class EventSignupsController < ApplicationController
   end
 
   def update_leaderboard_item
-    respond_to do |format|
-      format.js
+    @event = Event.find(event_signup_params[:event_id])
+    event_data_names = JSON.parse @event.data_names
+    return if DateTime.now.localtime > @event.end_datetime.localtime
+
+    signups = current_user.event_signups.where(event_id: @event.id)
+
+    signups.each do |signup|
+      begin
+        claimed_profile = ClaimedProfile.find_by_profile_uid_and_checks_completed(signup.profile_uid, 1)
+        url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ claimed_profile.platform }&uid=#{ claimed_profile.profile_uid }&auth=iokwcDa2wJKnnfkp193u&version=2"
+        response = HTTParty.get(url, timeout: 10)
+
+        @response = JSON.parse(response)
+
+        if @response["realtime"]
+          profile_uid = @response["global"]["uid"]
+          legend = @response["realtime"]["selectedLegend"]
+
+          event_data_names.each do |data_name|
+            if @response["legends"]["selected"][legend][data_name]
+              data_value = @response["legends"]["selected"][legend][data_name]
+              current_legend_data = EventLegendData.find_by_event_id_and_profile_uid_and_legend(@event.id, profile_uid, legend)
+
+              if current_legend_data.nil?
+                @new_entry = EventLegendData.new(event_id: @event.id, profile_uid: profile_uid, legend: legend, initial_value: data_value, current_value: data_value)
+                @new_entry.save
+              else
+                if current_legend_data.current_value != data_value.to_s
+                  event_signup = EventSignup.find_by_event_id_and_profile_uid(@event.id, profile_uid)
+                  total_value = event_signup.total_value.to_f + (data_value - current_legend_data.current_value.to_f)
+
+                  current_legend_data.update(current_value: data_value)
+                  event_signup.update(total_value: total_value.round)
+                end
+              end
+            else
+              @error_message = "You do not have the correct Tracker active. Make sure to use '#{ JSON.parse(@event.data_names).first.humanize }' as one of your Trackers."
+              respond_to do |format|
+                format.js { render "error.js.erb" }
+              end
+
+              return
+            end
+          end
+        end
+      rescue => error
+        @error_message = "There was an error retrieving your data. Please try again later. Your score is not lost."
+        respond_to do |format|
+          format.js { render "error.js.erb" }
+        end
+
+        return
+      end
     end
   end
 
