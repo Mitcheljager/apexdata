@@ -83,19 +83,10 @@
     kick_yaw_base: -15%
     kick_yaw_random: -20%
   legendary:
-    description: <strong>This item is not available.</strong><br>Large recoil reduction. 
-    kick_pitch_base: -20%
-    kick_pitch_random: -35%
-    kick_yaw_base: -20%
-    kick_yaw_random: -25%
--
-  name: Flash Hider
-  type: barrel
-  legendary:
-    description: Minimizes muzzle flash.
+    description: <strong>Minimizes muzzle flash.</strong><br>Large recoil reduction.
     kick_pitch_base: -15%
     kick_pitch_random: -30%
-    kick_yaw_random: -15%
+    kick_yaw_base: -15%
     kick_yaw_random: -20%
 -
   name: Precision Choke
