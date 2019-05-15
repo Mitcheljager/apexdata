@@ -83,7 +83,7 @@
     kick_yaw_base: -15%
     kick_yaw_random: -20%
   legendary:
-    description: <strong>Minimizes muzzle flash.</strong><br>Large recoil reduction.
+    description: Minimizes muzzle flash. Large recoil reduction.
     kick_pitch_base: -15%
     kick_pitch_random: -30%
     kick_yaw_base: -15%
