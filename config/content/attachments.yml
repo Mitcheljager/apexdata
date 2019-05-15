@@ -83,7 +83,7 @@
     kick_yaw_base: -15%
     kick_yaw_random: -20%
   legendary:
-    description: Large recoil reduction.
+    description: <strong>This item is not available.</strong><br>Large recoil reduction. 
     kick_pitch_base: -20%
     kick_pitch_random: -35%
     kick_yaw_base: -20%
