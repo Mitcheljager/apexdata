@@ -1,94 +1,24 @@
-<% content_for :page_title, @response["global"]["name"] + " | Profile" %>
-<% content_for :extra_style,
-  "body { background-image: url(#{image_path("gradient-bg/sm/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }
-  @media (min-width: 640px) { body { background-image: url(#{image_path("gradient-bg/md/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}
-  @media (min-width: 768px) { body { background-image: url(#{image_path("gradient-bg/lg/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}
-  @media (min-width: 1200px) { body { background-image: url(#{image_path("gradient-bg/xl/#{ @response["realtime"]["selectedLegend"].downcase }.png")}) }}" %>
+<% content_for :page_title, params[:user] + " | Profile" %>
 
-<div class="profile__name">
-  <h3 class="profile__platform">
-    <span>
-      <%= @response["global"]["platform"] %>
-
-      <div class="profile__realtime-mobile">
-        <% if @response["realtime"]["isOnline"] == 1 %>
-          <% if @response["realtime"]["isInGame"] == 1 %>
-            <span class="profile__status profile__status--is-in-game"></span>
-          <% else %>
-            <span class="profile__status profile__status--is-online"></span>
-          <% end %>
-        <% else %>
-          <span class="profile__status"></span>
-        <% end %>
-      </div>
-    </span>
-  </h3>
-
-  <h1 class="profile__title"><%= @response["global"]["name"] %></h1>
-  <% if @response["realtime"]["isOnline"] == 1 %>
-    <% if @response["realtime"]["isInGame"] == 1 %>
-      <span class="profile__status profile__status--is-in-game">In&nbsp;Game</span>
-    <% else %>
-      <span class="profile__status profile__status--is-online">Online</span>
-    <% end %>
-  <% else %>
-    <span class="profile__status">Offline</span>
-  <% end %>
-</div>
-
-<div class="profile__intro">
-  <%= render "level" %>
-
-  <div class="user__actions">
-    <% if @saved_values.any? %>
-      <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.localtime.strftime("%F at %T %Z") %></em></small>
-    <% end %>
-
-    <%= link_to "Update profile", "", class: "button-alternative" %>
-
-    <% if Flipper.enabled?(:memberships) %>
-      <% if current_user && @claimed_profile.present? %>
-        <% if @claimed_profile.user_id == current_user.id %>
-          <% if membership.present? %>
-            <span class="button-alternative button-alternative--primary bg-green border-green">Automatic updates are enabled</span>
-          <% else %>
-            <%= link_to "Get automatic updates", new_membership_path, class: "button-alternative button-alternative--primary" %>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
+<div data-role="profile-content">
+  <div class="loading-indicator">
+    <h2>Loading profile...</h2>
+    <div class="loading-indicator__spinner"></div>
   </div>
 </div>
 
-<div class="list-content">
-  <aside class="list-content__sidebar">
-    <%= render "profiles/charts" %>
-
-    <div class="profile__notification">
-      Due to limitations in the API we can only retrieve data from the Legend you have currently selected. On top of that we can only retrieve data you have set as your Tickers.
-    </div>
-
-    <div class="item item--list">
-      <%= render "profiles/claim" %>
-    </div>
-  </aside>
-
-  <div class="list-content__content">
-    <div class="profile-legends">
-      <% legends_hash = @response["legends"]["all"] %>
-      <% no_data_legends_array = [] %>
-      <% legends_hash.each do |item| %>
-        <% legends_hash = Hash[legends_hash.to_a.unshift(item)] if @response["legends"]["selected"][item.first] %>
-
-        <% legends_hash.delete(item.first) unless item.last["data"] %>
-        <% no_data_legends_array.push(item) unless item.last["data"] %>
-      <% end %>
-
-      <% legends_hash = legends_hash.merge(Hash[no_data_legends_array]) %>
-
-      <% legends_hash.each do |legend, content| %>
-        <%= render "profiles/item", data: content["data"], legend: legend, current: @response["legends"]["selected"][legend] ? true : false, saved_values: @saved_values %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<script>
+  fetch("<%= get_api_response_path(params[:platform], params[:user]) %>", {
+    method: "GET",
+    headers: {
+      "contentType": "application/json; charset=utf-8",
+      "X-Requested-With": "XMLHttpRequest",
+      "X-CSRF-Token": Rails.csrfToken()
+    }
+  }).then((response) => {
+    response.text().then(content =>  {
+      document.querySelector("[data-role='profile-content']").innerHTML = content
+      createCharts()
+    })
+  })
+</script>

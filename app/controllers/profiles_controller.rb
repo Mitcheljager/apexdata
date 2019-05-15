@@ -11,13 +11,16 @@ class ProfilesController < ApplicationController
   end
 
   def show
+  end
+
+  def get_api_response
     get_response
 
     if @response
       if @response["global"]
         @saved_values = ProfileLegendData.where(profile_uid: @response["global"]["uid"]).where.not(data_value: 0)
       else
-        render "not_found"
+        render "not_found", layout: false
         return
       end
 
@@ -35,10 +38,7 @@ class ProfilesController < ApplicationController
 
       get_claimed_profile
 
-      respond_to do |format|
-        format.html
-        format.json
-      end
+      render "response", layout: false
     end
   end
 
@@ -99,7 +99,7 @@ class ProfilesController < ApplicationController
       url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
       response = HTTParty.get(url, timeout: 5)
     rescue
-      render "error"
+      render "error", layout: false
       return
     end
 

@@ -1,0 +1,24 @@
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-indicator__spinner {
+  display: block;
+  width: $margin;
+  height: $margin;
+  border-radius: 50%;
+  border: 5px solid $white;
+  border-color: $white transparent $white transparent;
+  animation: spinner 1000ms linear infinite;
+}

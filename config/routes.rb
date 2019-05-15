@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "tracker", to: "profiles#index", as: "tracker"
   get "profile/:platform/:user", to: "profiles#show", as: "profile"
   get "profile/:platform/:user/charts(/:start_date)(/:end_date)(/:limit)", to: "profiles#charts", as: "profile_charts"
+  get "get-api-response/:platform/:user", to: "profiles#get_api_response", as: "get_api_response"
 
   get "register", to: "users#new", as: "register"
   get "login", to: "sessions#new", as: "login"
