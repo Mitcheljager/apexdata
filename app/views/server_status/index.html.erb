@@ -6,7 +6,7 @@
   </div>
 
   <p>
-    <small>The server status is checked every 10 minutes. Last check was at <%= @server_status.last.updated_at %></small>
+    <small>The server status is checked every 10 minutes. Last check was at <%= @server_status.last.updated_at if @server_status.any? %></small>
   </p>
 
   <div class="top-offset"></div>
