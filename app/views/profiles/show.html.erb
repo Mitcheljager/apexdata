@@ -19,6 +19,7 @@
     response.text().then(content =>  {
       document.querySelector("[data-role='profile-content']").innerHTML = content
       createCharts()
+      bindCharts()
     })
   })
 </script>

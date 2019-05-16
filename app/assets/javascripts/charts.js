@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const elements = document.querySelectorAll("[data-action='chart-select']")
-  elements.forEach((element) => element.addEventListener("input", changeChart))
-
   createCharts()
+  bindCharts()
 })
+
+function bindCharts() {
+  const elements = document.querySelectorAll("[data-action='chart-select']")
+  elements.forEach((element) => element.removeEventListener("input", changeChart))
+  elements.forEach((element) => element.addEventListener("input", changeChart))
+}
 
 function changeChart() {
   const parent = this.closest("[data-role='charts']")
