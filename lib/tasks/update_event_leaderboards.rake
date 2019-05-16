@@ -27,12 +27,12 @@ task :update_event_leaderboards => :environment do
 
             if profiles.any?
               begin
-                puts "Event: #{ event.title } - Cycle started - #{ platform }"
+                Rails.logger.info "Event: #{ event.title } - Cycle started - #{ platform }"
                 profiles = profiles.join(",")
                 url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
                 response = HTTParty.get(url, timeout: 20)
 
-                puts "Event: #{ event.title } - Response gotten"
+                Rails.logger.info "Event: #{ event.title } - Response gotten"
 
                 @response = JSON.parse(response)
                 @response = Array.wrap(@response)
@@ -66,12 +66,12 @@ task :update_event_leaderboards => :environment do
                   end
                 end
               rescue => error
-                puts "Response faulty: #{ error }"
+                Rails.logger.debug "Response faulty: #{ error }"
               end
             end
           end
 
-          puts "Event: #{ event.title } - Cycle complete"
+          Rails.logger.info "Event: #{ event.title } - Cycle complete"
         end
       end
 
