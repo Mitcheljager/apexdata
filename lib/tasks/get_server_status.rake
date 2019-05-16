@@ -18,7 +18,8 @@ task :get_server_status => :environment do
           response_time = 0
         end
       end
-    rescue
+    rescue => error
+      puts "Server status check: #{ error }"
       response_time = 0
     end
 
