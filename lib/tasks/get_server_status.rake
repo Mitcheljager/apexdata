@@ -8,19 +8,24 @@ task :get_server_status => :environment do
     response_time = 0
 
     begin
+      puts "a"
       Timeout.timeout(5) do
+        puts "b"
         start_time = Time.now
 
         check = Net::Ping::External.new(data_center["host"])
 
         if check.ping?
+          puts "c"
           end_time = Time.now
           response_time = Time.now - start_time
         else
+          puts "d"
           response_time = 0
         end
       end
     rescue => error
+      puts "e"
       puts "Server status check: #{ error }"
       response_time = 0
     end
