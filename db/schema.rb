@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_183813) do
+ActiveRecord::Schema.define(version: 2019_05_16_122330) do
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -93,6 +93,15 @@ ActiveRecord::Schema.define(version: 2019_05_04_183813) do
     t.string "legend"
     t.string "data_name"
     t.bigint "data_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "server_statuses", force: :cascade do |t|
+    t.string "display"
+    t.string "group"
+    t.string "host"
+    t.decimal "response_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

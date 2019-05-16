@@ -53,4 +53,6 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:create, :update]
   get "show_notifications", to: "notifications#show", as: "show_notifications"
+
+  get "server-status", to: "server_status#index"
 end
