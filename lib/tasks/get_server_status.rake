@@ -1,3 +1,5 @@
+require "net/ping"
+
 desc "Get Apex Legends Server status."
 task :get_server_status => :environment do
   data_centers = YAML.load(File.read(Rails.root.join("config/content", "data_centers.yml")))
