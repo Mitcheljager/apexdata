@@ -2,6 +2,8 @@ require "httparty"
 
 desc "Keep claimed profiles updated by checking the api periodically."
 task :keep_profiles_updated => :environment do
+  next unless Flipper.enabled?(:keep_profiles_updated)
+
   duration = 10.minutes
   interval = 20.seconds
   number_of_checks_left = duration.seconds / interval.seconds
