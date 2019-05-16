@@ -15,6 +15,8 @@ task :get_server_status => :environment do
 
         check = Net::Ping::External.new(data_center["host"])
 
+        puts check.ping?
+
         if check.ping?
           puts "c"
           end_time = Time.now
