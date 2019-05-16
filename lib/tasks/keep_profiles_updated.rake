@@ -56,15 +56,15 @@ task :keep_profiles_updated => :environment do
                 end
               end
 
-              Rails.logger.info "Updated #{ profile["global"]["name"] }"
+              puts "Updated #{ profile["global"]["name"] }"
             end
           rescue => error
-            Rails.logger.debug "Response faulty: #{ error }"
+            puts "Response faulty: #{ error }"
           end
         end
       end
 
-      Rails.logger.info "Check cycle complete"
+      puts "Check cycle complete"
 
       sleep(interval)
     end

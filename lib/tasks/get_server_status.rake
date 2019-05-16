@@ -2,6 +2,8 @@ desc "Get Apex Legends Server status."
 task :get_server_status => :environment do
   data_centers = YAML.load(File.read(Rails.root.join("config/content", "data_centers.yml")))
 
+  puts "Starting server status update"
+
   data_centers.each do |data_center|
     response_time = 0
 
@@ -23,6 +25,8 @@ task :get_server_status => :environment do
       response_time = 0
     end
 
+    puts "#{ data_center["display"] }: #{ response_time }"
+
     @server_status = ServerStatus.find_by_host(data_center["host"])
 
     if @server_status.present?
@@ -32,4 +36,6 @@ task :get_server_status => :environment do
       @new_entry.save
     end
   end
+
+  puts "Server status update complete"
 end
