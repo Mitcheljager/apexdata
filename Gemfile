@@ -14,7 +14,6 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "inline_svg"
-gem "win32-security"
 gem "httparty"
 gem "net-ping"
 gem "chart-js-rails"
@@ -34,6 +33,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "win32-security"
   gem "web-console", ">= 3.3.0"
 end
 
