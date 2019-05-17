@@ -21,8 +21,9 @@
 
       <% dates = [] %>
       <% values = [] %>
-      <% @saved_values.where(data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each_with_index do |(date, data), index| %>
-        <% next if index >= 10 %>
+      <% sorted_values = @saved_values.where(data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") } %>
+      <% sorted_values.each_with_index do |(date, data), index| %>
+        <% next if index > sorted_values.count - 10 %>
 
         <% dates.push(date) %>
         <% all_values_by_legend = @saved_values.where(data_name: data_name).where(
