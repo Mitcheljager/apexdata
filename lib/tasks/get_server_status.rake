@@ -1,4 +1,4 @@
-require "net/ping"
+require "net/ping/tcp"
 
 desc "Get Apex Legends Server status."
 task :get_server_status => :environment do
@@ -10,26 +10,28 @@ task :get_server_status => :environment do
     response_time = 0
 
     begin
-      puts "a"
       Timeout.timeout(5) do
-        puts "b"
         start_time = Time.now
 
-        check = Net::Ping::External.new(data_center["host"])
+        if Rails.env.production?
+          puts "a"
+          x = "ping -c 1 #{ data_center["host"] }"
 
-        puts check.ping?
-
-        if check.ping?
-          puts "c"
           end_time = Time.now
           response_time = Time.now - start_time
         else
-          puts "d"
-          response_time = 0
+          check = Net::Ping::External.new(data_center["host"])
+
+          if check.ping?
+            end_time = Time.now
+            response_time = Time.now - start_time
+          else
+            response_time = 0
+          end
         end
+
       end
     rescue => error
-      puts "e"
       puts "Server status check: #{ error }"
       response_time = 0
     end

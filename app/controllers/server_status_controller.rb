@@ -6,12 +6,6 @@ class ServerStatusController < ApplicationController
   end
 
   def index
-    start_time = Time.now
-    check = Net::Ping::External.new("8.8.8.8")
-
-    puts check.ping?
-    puts Time.now - start_time
-
     @server_status = ServerStatus.all
   end
 end

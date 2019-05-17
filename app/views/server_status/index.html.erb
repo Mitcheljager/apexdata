@@ -20,7 +20,7 @@
   </div>
 
   <% @server_status.group_by(&:group).each do |server_group, hosts| %>
-    <h3 class="mt-0" id="<%= to_slug(server_group) %>"><%= server_group.titleize %></h3>
+    <h3 class="mt-0" data-scroll-spy id="<%= to_slug(server_group) %>"><%= server_group.titleize %></h3>
 
     <div class="server-status">
       <% hosts.each do |server_status| %>
