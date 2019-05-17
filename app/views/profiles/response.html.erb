@@ -44,7 +44,7 @@
       <small><em>Last updated: <%= @saved_values.where(profile_uid: @response["global"]["uid"]).last.created_at.localtime.strftime("%F at %T %Z") %></em></small>
     <% end %>
 
-    <%= link_to "Update profile", "", class: "button-alternative" %>
+    <%= link_to "Update profile", "#", class: "button-alternative", data: { action: "fetch-api-data", url: get_api_response_path(params[:platform], params[:user]) } %>
 
     <% if Flipper.enabled?(:memberships) %>
       <% if current_user && @claimed_profile.present? %>

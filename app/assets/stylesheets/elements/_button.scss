@@ -142,6 +142,10 @@
     color: $white;
   }
 
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
   &--primary {
     background: var(--red);
     color: var(--white);

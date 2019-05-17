@@ -8,20 +8,5 @@
 </div>
 
 <script>
-  fetch("<%= get_api_response_path(params[:platform], params[:user]) %>", {
-    method: "GET",
-    headers: {
-      "contentType": "application/json; charset=utf-8",
-      "X-Requested-With": "XMLHttpRequest",
-      "X-CSRF-Token": Rails.csrfToken()
-    }
-  }).then((response) => {
-    response.text().then(content =>  {
-      document.querySelector("[data-role='profile-content']").innerHTML = content
-      
-      createCharts()
-      bindCharts()
-      bindPopops()
-    })
-  })
+  fetchApiData("<%= get_api_response_path(params[:platform], params[:user]) %>")
 </script>

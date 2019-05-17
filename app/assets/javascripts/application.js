@@ -30,3 +30,4 @@
 //= require countdown
 //= require notifications
 //= require favicon
+//= require profile
