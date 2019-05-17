@@ -18,8 +18,10 @@
   }).then((response) => {
     response.text().then(content =>  {
       document.querySelector("[data-role='profile-content']").innerHTML = content
+      
       createCharts()
       bindCharts()
+      bindPopops()
     })
   })
 </script>

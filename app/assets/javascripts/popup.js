@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+  bindPopops()
+})
+
+function bindPopops() {
   const elements = document.querySelectorAll("[data-action='toggle-popup']")
 
+  elements.forEach(element => element.removeEventListener("click", togglePopup))
   elements.forEach(element => element.addEventListener("click", togglePopup))
-})
+}
 
 function togglePopup(event) {
   event.preventDefault()
