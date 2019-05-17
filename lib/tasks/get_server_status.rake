@@ -13,23 +13,14 @@ task :get_server_status => :environment do
       Timeout.timeout(5) do
         start_time = Time.now
 
-        if Rails.env.production?
-          x = `ping -c 1 #{ data_center["host"] }`
-          puts x
+        check = Net::Ping::External.new(data_center["host"])
 
+        if check.ping?
           end_time = Time.now
           response_time = Time.now - start_time
         else
-          check = Net::Ping::External.new(data_center["host"])
-
-          if check.ping?
-            end_time = Time.now
-            response_time = Time.now - start_time
-          else
-            response_time = 0
-          end
+          response_time = 0
         end
-
       end
     rescue => error
       puts "Server status check: #{ error }"
@@ -38,15 +29,19 @@ task :get_server_status => :environment do
 
     puts "#{ data_center["display"] }: #{ response_time }"
 
-    @server_status = ServerStatus.find_by_host(data_center["host"])
-
-    if @server_status.present?
-      @server_status.update(response_time: response_time)
-    else
-      @new_entry = ServerStatus.new(display: data_center["display"], host: data_center["host"], group: data_center["name"], response_time: response_time)
-      @new_entry.save
-    end
+    save_response_time(data_center, response_time)
   end
 
   puts "Server status update complete"
+end
+
+def save_response_time(data_center, response_time)
+  @server_status = ServerStatus.find_by_host(data_center["host"])
+
+  if @server_status.present?
+    @server_status.update(response_time: response_time)
+  else
+    @new_entry = ServerStatus.new(display: data_center["display"], host: data_center["host"], group: data_center["name"], response_time: response_time)
+    @new_entry.save
+  end
 end
