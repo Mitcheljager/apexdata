@@ -44,7 +44,7 @@
                       <h3 class="popup__title"><%= key.humanize %></h3>
                       <span class="popup__description"><%= legend %></span>
 
-                      <% saved_values.where(legend: legend, data_name: key).order("created_at DESC").limit(5).each do |data| %>
+                      <% saved_values.where(legend: legend, data_name: key).order("created_at DESC").limit(10).each do |data| %>
                         <div class="profile-stats__updates-item">
                           <em><%= data.created_at.localtime.strftime("%d %b, %H %M %Z") %>: </em>
                           <strong><%= number_with_delimiter data.data_value %></strong>
@@ -58,7 +58,7 @@
 
             <div class="profile-stats__bar">
               <% highest_item = ProfileLegendData.where(legend: legend, data_name: key).order(data_value: :desc).first %>
-              
+
               <% if highest_item %>
                 <% max_value = highest_item.data_value %>
                 <% value_percentage = ((100 / max_value.to_f) * value["value"].to_f).round(2) %>
