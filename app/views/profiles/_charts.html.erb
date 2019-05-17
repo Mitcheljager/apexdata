@@ -21,7 +21,9 @@
 
       <% dates = [] %>
       <% values = [] %>
-      <% @saved_values.where(data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each do |date, data| %>
+      <% @saved_values.where(data_name: data_name).group_by{ |t| t.created_at.strftime("%b %d, %Y") }.each_with_index do |(date, data), index| %>
+        <% next if index >= 10 %>
+
         <% dates.push(date) %>
         <% all_values_by_legend = @saved_values.where(data_name: data_name).where(
                                 "created_at <= ?", Date.parse(date).end_of_day).select(:legend, :data_value).group_by(&:legend) %>
