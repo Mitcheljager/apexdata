@@ -14,8 +14,8 @@ task :get_server_status => :environment do
         start_time = Time.now
 
         if Rails.env.production?
-          puts "a"
-          x = "ping -c 1 #{ data_center["host"] }"
+          x = `ping -c 1 #{ data_center["host"] }`
+          puts x
 
           end_time = Time.now
           response_time = Time.now - start_time
