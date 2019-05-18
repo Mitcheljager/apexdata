@@ -59,10 +59,14 @@
   </aside>
 
   <div class="list-content__content">
-    <div class="item leaderboard">
-      <% sorted_event_signups.each_with_index do |event_signup, index| %>
-        <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
-      <% end %>
-    </div>
+    <% if sorted_event_signups.any? %>
+      <div class="item leaderboard">
+        <% sorted_event_signups.each_with_index do |event_signup, index| %>
+          <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="item item--full-width"><center>There are not yet any signups</center></div>
+    <% end %>
   </div>
 </div>

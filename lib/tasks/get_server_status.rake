@@ -1,5 +1,3 @@
-require "net/ping/tcp"
-
 desc "Get Apex Legends Server status."
 task :get_server_status => :environment do
   data_centers = YAML.load(File.read(Rails.root.join("config/content", "data_centers.yml")))
@@ -9,27 +7,18 @@ task :get_server_status => :environment do
   data_centers.each do |data_center|
     response_time = 0
 
-    begin
-      Timeout.timeout(5) do
-        start_time = Time.now
+    uri = URI('https://urlxray.expeditedaddons.com')
 
-        check = Net::Ping::External.new(data_center["host"])
+    uri.query = URI.encode_www_form({
+    	api_key: "4EQ48N29FO2AHRSV86167C0IMGD3P5BJY5W0TUL179ZK3X",
+    	url: data_center["host"],
+    	fetch_content: false
+    })
 
-        if check.ping?
-          end_time = Time.now
-          response_time = Time.now - start_time
-        else
-          response_time = 0
-        end
-      end
-    rescue => error
-      puts "Server status check: #{ error }"
-      response_time = 0
-    end
+    result = JSON.parse(Net::HTTP.get_response(uri).body)
+    puts result["http_status"]
 
-    puts "#{ data_center["display"] }: #{ response_time }"
-
-    save_response_time(data_center, response_time)
+    save_response_time(data_center, result["load_time"])
   end
 
   puts "Server status update complete"
