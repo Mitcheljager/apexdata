@@ -102,6 +102,7 @@ GEM
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    json (2.2.0)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -156,6 +157,11 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rake (12.3.2)
+    raygun4ruby (3.2.1)
+      concurrent-ruby
+      httparty (> 0.13.7)
+      json
+      rack
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -231,6 +237,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.2)
+  raygun4ruby
   sass-rails (~> 5.0)
   scout_apm
   selenium-webdriver
