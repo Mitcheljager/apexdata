@@ -15,7 +15,7 @@ module ApexData
     config.after_initialize do
       Rails.application.load_tasks
 
-      unless $rails_rake_task || defined? Rails::Console
+      if defined? Rails::Server
         if ActiveRecord::Base.connection.table_exists? "flipper_gates"
           Rake::Task["keep_profiles_updated"].invoke if Flipper.enabled?(:keep_profiles_updated)
           Rake::Task["update_event_leaderboards"].invoke if Flipper.enabled?(:keep_events_updated)
