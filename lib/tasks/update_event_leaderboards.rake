@@ -28,7 +28,7 @@ task :update_event_leaderboards => :environment do
 
                     end
                   end
-                  
+
                   puts "Event: #{ event.title } - Updated #{ claimed_profile.username }"
                 end
               rescue => error
@@ -46,6 +46,8 @@ task :update_event_leaderboards => :environment do
     end
   end
 end
+
+private
 
 def get_response(profile_uid, platform)
   url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profile_uid }&auth=iokwcDa2wJKnnfkp193u&version=2"
