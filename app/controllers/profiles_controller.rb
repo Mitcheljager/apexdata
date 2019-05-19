@@ -98,7 +98,9 @@ class ProfilesController < ApplicationController
     begin
       url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=iokwcDa2wJKnnfkp193u&version=2"
       response = HTTParty.get(url, timeout: 5)
-    rescue
+    rescue => error
+      Raygun.track_exception(error)
+      
       render "error", layout: false
       return
     end

@@ -66,6 +66,7 @@ task :update_event_leaderboards => :environment do
                   end
                 end
               rescue => error
+                Raygun.track_exception(error)
                 puts "Response faulty: #{ error }"
               end
             end
