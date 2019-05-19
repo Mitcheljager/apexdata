@@ -367,8 +367,9 @@
   align-items: center;
   font-size: 14px;
 
-  div {
+  > div {
     margin-right: $margin / 2;
     margin-bottom: 0;
+    text-align: right;
   }
 }

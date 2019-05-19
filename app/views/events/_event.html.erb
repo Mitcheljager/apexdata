@@ -6,7 +6,7 @@
     <h3 class="item__title"><%= event.title %></h3>
 
     <div class="item__event-description">
-      <%= event.description %>
+      <%= event.description.html_safe %>
     </div>
 
     <div class="item__tray">

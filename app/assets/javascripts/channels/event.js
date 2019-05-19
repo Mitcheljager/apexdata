@@ -31,7 +31,6 @@ function updateLeaderboardItem(data) {
 }
 
 function createLeaderboardItem(data) {
-  console.log(data)
   const leaderboardElement = document.querySelector("[data-role='leaderboard']")
   const currentItemCount = document.querySelectorAll("[data-role='leaderboard-item']").length
 
@@ -66,7 +65,6 @@ function createLeaderboardItem(data) {
   `
 
   leaderboardItem.innerHTML = template
-
 
   leaderboardElement.append(leaderboardItem)
 }

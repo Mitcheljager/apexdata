@@ -11,7 +11,7 @@
       <h4 class="heading__title"><%= @event.title %></h4>
     </div>
 
-    <%= @event.description %>
+    <%= @event.description.html_safe %>
   </div>
 
   <div class="item item--full-width">

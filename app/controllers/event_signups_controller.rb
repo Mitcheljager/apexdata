@@ -87,6 +87,8 @@ class EventSignupsController < ApplicationController
 
                   current_legend_data.update(current_value: data_value)
                   event_signup.update(total_value: total_value.round)
+
+                  ActionCable.server.broadcast "events_channel_#{ @event.id }", data_value: total_value.round, profile_uid: profile_uid
                 end
               end
             else
