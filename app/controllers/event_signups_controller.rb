@@ -65,7 +65,6 @@ class EventSignupsController < ApplicationController
       begin
         claimed_profile = ClaimedProfile.find_by_profile_uid_and_checks_completed(signup.profile_uid, 1)
         url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ claimed_profile.platform }&uid=#{ claimed_profile.profile_uid }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
-        puts url
         response = HTTParty.get(url, timeout: 10)
 
         @response = JSON.parse(response)
