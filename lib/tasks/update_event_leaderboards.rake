@@ -51,7 +51,7 @@ private
 
 def get_response(profile_uid, platform)
   url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profile_uid }&auth=iokwcDa2wJKnnfkp193u&version=2"
-  response = HTTParty.get(url, timeout: 15)
+  response = HTTParty.get(url, timeout: 5)
 
   @response = JSON.parse(response)
 end
@@ -64,14 +64,13 @@ def save_data(profile_uid, event, event_signup, legend, data_name)
     @new_entry = EventLegendData.new(event_id: event.id, profile_uid: profile_uid, legend: legend, initial_value: data_value, current_value: data_value)
     @new_entry.save
   else
-    if current_legend_data.current_value != data_value.to_s
+    if current_legend_data.current_value.to_s != data_value.to_s
       total_value = event_signup.total_value.to_f + (data_value - current_legend_data.current_value.to_f)
 
       current_legend_data.update(current_value: data_value)
       event_signup.update(total_value: total_value.round)
-    end
 
-    signup = EventSignup.find(event_signup.id)
-    ActionCable.server.broadcast "event_signups_channel", data_value: signup.total_value, profile_uid: profile_uid
+      ActionCable.server.broadcast "events_channel_#{ event.id }", data_value: total_value.round, profile_uid: profile_uid
+    end
   end
 end

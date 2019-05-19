@@ -60,7 +60,7 @@
 
   <div class="list-content__content">
     <% if sorted_event_signups.any? %>
-      <div class="item leaderboard" data-role="leaderboard">
+      <div class="item leaderboard" data-role="leaderboard" data-event-id="<%= @event.id %>">
         <% sorted_event_signups.each_with_index do |event_signup, index| %>
           <%= render "leaderboard_item", event_signup: event_signup, item_counter: index + 1 %>
         <% end %>

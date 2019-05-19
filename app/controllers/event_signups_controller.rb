@@ -1,4 +1,6 @@
 class EventSignupsController < ApplicationController
+  include InlineSvg::ActionView::Helpers
+
   before_action :set_event_signup, only: [:update, :destroy]
   before_action do
     unless Flipper.enabled?(:events)
@@ -27,6 +29,14 @@ class EventSignupsController < ApplicationController
         @event_signup = EventSignup.new(event_signup_params.merge(user_id: current_user.id))
         respond_to do |format|
           if @event_signup.save
+            ActionCable.server.broadcast "events_channel_#{ @event.id }",
+              is_new: true,
+              path: profile_path(claimed_profile.platform, claimed_profile.username),
+              image: inline_svg("badges/levels/top21_50_event.svg"),
+              username: claimed_profile.username,
+              data_name: JSON.parse(@event.data_names).first.humanize,
+              data_value: 0,
+              profile_uid: claimed_profile.profile_uid
             format.js
           else
             @error_message = "Error signing up. Please try again."
