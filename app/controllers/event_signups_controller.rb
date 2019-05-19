@@ -37,6 +37,7 @@ class EventSignupsController < ApplicationController
               data_name: JSON.parse(@event.data_names).first.humanize,
               data_value: 0,
               profile_uid: claimed_profile.profile_uid
+
             format.js
           else
             @error_message = "Error signing up. Please try again."
@@ -63,7 +64,8 @@ class EventSignupsController < ApplicationController
     signups.each do |signup|
       begin
         claimed_profile = ClaimedProfile.find_by_profile_uid_and_checks_completed(signup.profile_uid, 1)
-        url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ claimed_profile.platform }&uid=#{ claimed_profile.profile_uid }&auth=iokwcDa2wJKnnfkp193u&version=2"
+        url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ claimed_profile.platform }&uid=#{ claimed_profile.profile_uid }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
+        puts url
         response = HTTParty.get(url, timeout: 10)
 
         @response = JSON.parse(response)

@@ -12,6 +12,14 @@ module ApexData
     config.load_defaults 5.1
     config.assets.initialize_on_precompile = false
 
+    config.before_configuration do
+      env_file = File.join(Rails.root, "config", "local_env.yml")
+      
+      YAML.load(File.open(env_file)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
+
     config.after_initialize do
       Rails.application.load_tasks
 

@@ -65,7 +65,7 @@ def get_profiles(membership, platform)
 end
 
 def get_response(platform)
-  url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ @profiles }&auth=iokwcDa2wJKnnfkp193u&version=2"
+  url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ platform }&uid=#{ @profiles }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
   response = HTTParty.get(url, timeout: 15)
 
   @response = JSON.parse(response)

@@ -50,7 +50,7 @@ end
 private
 
 def get_response(profile_uid, platform)
-  url = "http://premium-api.mozambiquehe.re/bridge?platform=#{ platform }&uid=#{ profile_uid }&auth=iokwcDa2wJKnnfkp193u&version=2"
+  url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ platform }&uid=#{ profile_uid }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
   response = HTTParty.get(url, timeout: 5)
 
   @response = JSON.parse(response)
