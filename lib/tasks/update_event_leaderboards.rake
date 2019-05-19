@@ -70,5 +70,8 @@ def save_data(profile_uid, event, event_signup, legend, data_name)
       current_legend_data.update(current_value: data_value)
       event_signup.update(total_value: total_value.round)
     end
+
+    signup = EventSignup.find(event_signup.id)
+    ActionCable.server.broadcast "event_signups_channel", data_value: signup.total_value, profile_uid: profile_uid
   end
 end

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     mount Flipper::UI.app(Flipper) => "/flipper"
   end
 
+  mount ActionCable.server => "/cable"
+
   root "high_voltage/pages#show", id: "index"
 
   resources :users, only: [:index, :new, :create, :destroy]

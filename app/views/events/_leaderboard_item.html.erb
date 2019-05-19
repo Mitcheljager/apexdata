@@ -3,7 +3,9 @@
   <%= "leaderboard__item--first svg-badge-gold" if item_counter == 1 %>
   <%= "leaderboard__item--second svg-badge-silver" if item_counter == 2 %>
   <%= "leaderboard__item--third svg-badge-bronze" if item_counter == 3 %>
-  <%= "svg-badge-basic" if item_counter > 3 %>">
+  <%= "svg-badge-basic" if item_counter > 3 %>"
+  data-role="leaderboard-item"
+  data-leaderboard-item="<%= event_signup.profile_uid %>">
 
   <div class="leaderboard__item-content">
     <div class="leaderboard__left">
@@ -21,7 +23,7 @@
     <div class="leaderboard__right">
       <div class="leaderboard__score">
         <span class="leaderboard__score-name"><%= JSON.parse(@event.data_names).first.humanize %></span>
-        <span class="leaderboard__score-total"><%= event_signup.total_value %></span>
+        <span class="leaderboard__score-total" data-role="leaderboard-total-value"><%= event_signup.total_value %></span>
       </div>
 
       <%= link_to "View profile", profile_path_by_uid(event_signup.profile_uid), class: "leaderboard__action" %>
