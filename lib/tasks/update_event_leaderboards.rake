@@ -26,9 +26,10 @@ task :update_event_leaderboards => :environment do
                     if @response["legends"]["selected"][legend][data_name]
                       save_data(claimed_profile.profile_uid, event, event_signup, legend, data_name)
 
-                      puts "Event: #{ event.title } - Updated #{ claimed_profile.username }"
                     end
                   end
+                  
+                  puts "Event: #{ event.title } - Updated #{ claimed_profile.username }"
                 end
               rescue => error
                 Raygun.track_exception(error)
