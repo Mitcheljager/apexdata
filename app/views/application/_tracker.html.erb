@@ -2,15 +2,15 @@
   <%= text_field_tag :player, "", id: "playerName", disabled: Flipper.enabled?(:profiles) ? false : true, placeholder: Flipper.enabled?(:profiles) ? "Find player" : "Player profiles temporarily offline" %>
 
   <div class="player-platforms">
-    <div class="platform__icon active" data-platform="PC">
+    <div class="platform__icon <%= "active" if params[:platform] == "PC" || params[:platform].nil? %>" data-platform="PC">
       <%= inline_svg "icons/icon-windows.svg" %>
     </div>
 
-    <div class="platform__icon" data-platform="X1">
+    <div class="platform__icon <%= "active" if params[:platform] == "X1" %>" data-platform="X1">
       <%= inline_svg "icons/icon-xbox.svg" %>
     </div>
 
-    <div class="platform__icon" data-platform="PS4">
+    <div class="platform__icon <%= "active" if params[:platform] == "PS4" %>" data-platform="PS4">
       <%= inline_svg "icons/icon-playstation.svg" %>
     </div>
 

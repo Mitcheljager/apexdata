@@ -14,6 +14,8 @@ function fetchApiData(url) {
       bindCharts()
       bindPopops()
       bindFetchApiData()
+      bindForms()
+      bindPlatforms()
     })
   })
 }
