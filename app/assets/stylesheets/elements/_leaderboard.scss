@@ -155,4 +155,10 @@
   line-height: 19px;
   margin-top: 6px;
   color: var(--white);
+  transition: color 500ms;
+
+  &--is-updated {
+    color: $green;
+    transition-duration: 0ms;
+  }
 }
