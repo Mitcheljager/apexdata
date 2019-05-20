@@ -98,9 +98,7 @@ class ProfilesController < ApplicationController
     begin
       url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ params[:platform].upcase }&player=#{ params[:user] }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
       response = HTTParty.get(url, timeout: 5)
-    rescue => error
-      Raygun.track_exception(error)
-      
+    rescue => error      
       render "error", layout: false
       return
     end

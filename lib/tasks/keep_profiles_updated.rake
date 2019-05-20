@@ -32,7 +32,6 @@ task :keep_profiles_updated => :environment do
                   puts "Updated #{ profile["global"]["name"] }"
                 end
               rescue => error
-                Raygun.track_exception(error)
                 puts "Response faulty: #{ error }"
               end
             end

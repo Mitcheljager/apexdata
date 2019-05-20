@@ -24,7 +24,6 @@ gem "flipper-ui"
 
 gem "bcrypt", :require => "bcrypt"
 gem "high_voltage", "~> 3.0.0"
-gem "raygun4ruby"
 gem "redis"
 
 group :development, :test do

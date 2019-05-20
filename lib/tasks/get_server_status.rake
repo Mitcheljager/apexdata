@@ -21,7 +21,6 @@ task :get_server_status => :environment do
         end
       end
     rescue => error
-      Raygun.track_exception(error)
       puts "Server status check: #{ error }"
       response_time = 0
     end

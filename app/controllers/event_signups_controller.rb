@@ -103,8 +103,6 @@ class EventSignupsController < ApplicationController
           end
         end
       rescue => error
-        Raygun.track_exception(error)
-
         @error_message = "There was an error retrieving your data. Please try again later. Your score is not lost."
         respond_to do |format|
           format.js { render "error.js.erb" }
