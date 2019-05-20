@@ -22,7 +22,12 @@ task :keep_profiles_updated => :environment do
             if @profiles.any?
               begin
                 @profiles = @profiles.join(",")
-                get_response(platform)
+                
+                url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ platform }&uid=#{ @profiles }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
+                response = HTTParty.get(url, timeout: 15)
+
+                @response = JSON.parse(response)
+                @response = Array.wrap(@response)
 
                 @response.each do |profile|
                   if is_online?(profile)
