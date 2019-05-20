@@ -7,34 +7,29 @@ task :keep_profiles_updated => :environment do
   duration = 10.minutes
   interval = 20.seconds
   number_of_checks_left = duration.seconds / interval.seconds
-  infinite_checks = true
-  platforms = ["X1", "PS4", "PC"]
 
   Thread.new do
     Rails.logger.silence do
-      while(infinite_checks) do
-        platforms.each do |platform|
-          get_active_memberships
+      loop do
+        get_active_memberships
 
-          @active_memberships.each do |membership|
-            get_profiles(membership, platform)
+        @active_memberships.each do |membership|
+          get_profiles(membership)
 
-            if @profiles.any?
+          if @claimed_profiles.any?
+            @claimed_profiles.each do |claimed_profile|
               begin
-                @profiles = @profiles.join(",")
-                
-                url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ platform }&uid=#{ @profiles }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
+                url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ claimed_profile.platform }&uid=#{ claimed_profile.profile_uid }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
                 response = HTTParty.get(url, timeout: 15)
 
-                @response = JSON.parse(response)
-                @response = Array.wrap(@response)
+                if response
+                  @response = JSON.parse(response)
 
-                @response.each do |profile|
-                  if is_online?(profile)
-                    save_data(profile)
+                  if is_online?(@response)
+                    save_data(@response)
                   end
 
-                  puts "Updated #{ profile["global"]["name"] }"
+                  puts "Updated #{ @response["global"]["name"] }"
                 end
               rescue => error
                 puts "Response faulty: #{ error }"
@@ -57,23 +52,9 @@ def get_active_memberships
   @active_memberships = Membership.where("created_at > ?", 1.month.ago)
 end
 
-def get_profiles(membership, platform)
-  @profiles = []
-
+def get_profiles(membership)
   user = User.find_by_id(membership.user_id)
-  claimed_profiles = ClaimedProfile.where(user_id: user.id, checks_completed: 1, platform: platform).select(:profile_uid).map(&:profile_uid)
-
-  if claimed_profiles.any?
-    @profiles.push(claimed_profiles)
-  end
-end
-
-def get_response(platform)
-  url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ platform }&uid=#{ @profiles }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
-  response = HTTParty.get(url, timeout: 15)
-
-  @response = JSON.parse(response)
-  @response = Array.wrap(@response)
+  @claimed_profiles = ClaimedProfile.where(user_id: user.id, checks_completed: 1)
 end
 
 def is_online?(profile)
