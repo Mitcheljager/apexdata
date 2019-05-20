@@ -16,7 +16,7 @@ task :update_event_leaderboards => :environment do
 
             if claimed_profile.present?
               begin
-                get_response(claimed_profile.profile_uid, claimed_profile.platform)
+                events_get_response(claimed_profile.profile_uid, claimed_profile.platform)
 
                 if @response.present?
                   profile_uid = @response["global"]["uid"]
@@ -24,7 +24,7 @@ task :update_event_leaderboards => :environment do
 
                   event_data_names.each do |data_name|
                     if @response["legends"]["selected"][legend][data_name]
-                      save_data(claimed_profile.profile_uid, event, event_signup, legend, data_name)
+                      events_save_data(claimed_profile.profile_uid, event, event_signup, legend, data_name)
 
                     end
                   end
@@ -48,14 +48,14 @@ end
 
 private
 
-def get_response(profile_uid, platform)
+def events_get_response(profile_uid, platform)
   url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ platform }&uid=#{ profile_uid }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
   response = HTTParty.get(url, timeout: 5)
 
   @response = JSON.parse(response)
 end
 
-def save_data(profile_uid, event, event_signup, legend, data_name)
+def events_save_data(profile_uid, event, event_signup, legend, data_name)
   data_value = @response["legends"]["selected"][legend][data_name]
   current_legend_data = EventLegendData.find_by_event_id_and_profile_uid_and_legend(event.id, profile_uid, legend)
 

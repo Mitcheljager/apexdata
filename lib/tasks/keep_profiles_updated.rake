@@ -6,27 +6,25 @@ task :keep_profiles_updated => :environment do
 
   duration = 10.minutes
   interval = 20.seconds
-  number_of_checks_left = duration.seconds / interval.seconds
 
   Thread.new do
     Rails.logger.silence do
       loop do
-        get_active_memberships
+        profiles_get_active_memberships
 
         @active_memberships.each do |membership|
-          get_profiles(membership)
+          profiles_get_profiles(membership)
 
           if @claimed_profiles.any?
             @claimed_profiles.each do |claimed_profile|
               begin
-                url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ claimed_profile.platform }&uid=#{ claimed_profile.profile_uid }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
-                response = HTTParty.get(url, timeout: 15)
+                profiles_get_response(claimed_profile)
 
-                if response
-                  @response = JSON.parse(response)
+                if @response
+                  @response = JSON.parse(@response)
 
-                  if is_online?(@response)
-                    save_data(@response)
+                  if profiles_is_online?(@response)
+                    profiles_save_data(@response)
                   end
 
                   puts "Updated #{ @response["global"]["name"] }"
@@ -48,16 +46,21 @@ end
 
 private
 
-def get_active_memberships
+def profiles_get_active_memberships
   @active_memberships = Membership.where("created_at > ?", 1.month.ago)
 end
 
-def get_profiles(membership)
+def profiles_get_profiles(membership)
   user = User.find_by_id(membership.user_id)
   @claimed_profiles = ClaimedProfile.where(user_id: user.id, checks_completed: 1)
 end
 
-def is_online?(profile)
+def profiles_get_response(claimed_profile)
+  url = "#{ ENV["APEX_API_URL"] }/bridge?platform=#{ claimed_profile.platform }&uid=#{ claimed_profile.profile_uid }&auth=#{ ENV["APEX_API_KEY"] }&version=2"
+  @response = HTTParty.get(url, timeout: 15)
+end
+
+def profiles_is_online?(profile)
   if profile["realtime"]
     if profile["realtime"]["isOnline"] == 1
       return true
@@ -69,7 +72,7 @@ def is_online?(profile)
   end
 end
 
-def save_data(profile)
+def profiles_save_data(profile)
   profile_uid = profile["global"]["uid"]
   legend = profile["realtime"]["selectedLegend"]
 
