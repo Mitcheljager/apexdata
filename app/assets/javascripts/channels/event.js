@@ -32,27 +32,45 @@ function updateLeaderboardItem(data) {
   changeElement.classList.add("leaderboard__score-total-change")
   changeElement.innerHTML = "+" + changeValue
 
+  element.dataset.leaderboardValue = data.data_value
   valueElement.innerHTML = data.data_value
   valueElement.append(changeElement)
+
+  sortLeaderboard()
 
   setTimeout(() => { valueElement.classList.remove("leaderboard__score-total--is-updated") }, 500)
   setTimeout(() => { changeElement.remove() }, 2000)
 }
 
+function sortLeaderboard() {
+  const leaderboardElement = document.querySelector("[data-role='leaderboard']")
+  const elements = document.querySelectorAll(`[data-leaderboard-item]`)
+  const elementsArray = Array.from(elements)
+
+  elementsArray.sort((a, b) => {
+    if (parseInt(a.dataset.leaderboardValue) > parseInt(b.dataset.leaderboardValue)) return -1
+    if (parseInt(a.dataset.leaderboardValue) < parseInt(b.dataset.leaderboardValue)) return 1
+  })
+
+  console.log(elementsArray)
+
+  elementsArray.forEach(element => leaderboardElement.appendChild(element))
+}
+
 function createLeaderboardItem(data) {
   const leaderboardElement = document.querySelector("[data-role='leaderboard']")
-  const currentItemCount = document.querySelectorAll("[data-role='leaderboard-item']").length
 
   const leaderboardItem = document.createElement("div")
   leaderboardItem.setAttribute("data-role", "leaderboard-item")
   leaderboardItem.setAttribute("data-leaderboard-item", data.profile_uid)
+  leaderboardItem.setAttribute("data-leaderboard-value", 0)
   leaderboardItem.classList.add("leaderboard__item", "svg-badge-basic")
 
   const template = `
     <div class="leaderboard__item-content">
       <div class="leaderboard__left">
         <div class="leaderboard__badge">
-          <span class="leaderboard__position">${ currentItemCount + 1 }</span>
+          <span class="leaderboard__position"></span>
 
           ${ data.image }
         </div>

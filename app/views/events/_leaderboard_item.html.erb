@@ -1,12 +1,13 @@
 <div class="leaderboard__item
   <%= "leaderboard__item--is-owned" if current_user && event_signup.user_id == current_user.id %>"
   data-role="leaderboard-item"
-  data-leaderboard-item="<%= event_signup.profile_uid %>">
+  data-leaderboard-item="<%= event_signup.profile_uid %>"
+  data-leaderboard-value="<%= event_signup.total_value %>">
 
   <div class="leaderboard__item-content">
     <div class="leaderboard__left">
       <div class="leaderboard__badge">
-        <span class="leaderboard__position"><%= item_counter %></span>
+        <span class="leaderboard__position"></span>
 
         <%= inline_svg "badges/levels/top3_event.svg" if item_counter <= 3 %>
         <%= inline_svg "badges/levels/top4_10_event.svg" if item_counter > 3 && item_counter < 11 %>
