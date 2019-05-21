@@ -31,21 +31,27 @@
     box-shadow: inset 0 0 0 2px $red;
   }
 
-  &--first {
+  &:first-of-type {
+    @include color-badge($gold);
+
     &::before {
       display: block;
       background: linear-gradient(to right, rgba($gold,.15) 0%,rgba($gold,0) 100%);
     }
   }
 
-  &--second {
+  &:nth-of-type(2) {
+    @include color-badge($silver);
+
     &::before {
       display: block;
       background: linear-gradient(to right, rgba($silver,.15) 0%,rgba($silver,0) 100%);
     }
   }
 
-  &--third {
+  &:nth-of-type(3) {
+    @include color-badge($bronze);
+
     &::before {
       display: block;
       background: linear-gradient(to right, rgba($bronze,.15) 0%,rgba($bronze,0) 100%);
@@ -150,10 +156,11 @@
 }
 
 .leaderboard__score-total {
+  position: relative;
+  margin-top: 6px;
   font-size: 31px;
   font-family: "Teko", monospace;
   line-height: 19px;
-  margin-top: 6px;
   color: var(--white);
   transition: color 500ms;
 
@@ -161,4 +168,36 @@
     color: $green;
     transition-duration: 0ms;
   }
+}
+
+@keyframes fade-leaderboard-change {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) translateY(100%);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateX(-100%) translateY(0);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-100%) translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100%) translateY(-100%);
+  }
+}
+
+.leaderboard__score-total-change {
+  position: absolute;
+  top: 0;
+  left: -.5em;
+  color: $green;
+  font-size: 14px;
+  transform: translateX(-100%);
+  animation: fade-leaderboard-change 2000ms;
 }
