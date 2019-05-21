@@ -47,7 +47,7 @@
 }
 
 .list-content__sidebar {
-  grid-area: "sidebar";
+  grid-area: sidebar;
   width: 100%;
   min-width: 100%;
 
@@ -63,6 +63,6 @@
 }
 
 .list-content__content {
-  grid-area: "content";
+  grid-area: content;
   width: 100%;
 }
