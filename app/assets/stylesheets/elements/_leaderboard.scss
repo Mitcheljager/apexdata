@@ -59,6 +59,10 @@
       background: linear-gradient(to right, rgba($bronze, .15) 0%,rgba($bronze, 0) 100%);
     }
   }
+
+  &:nth-of-type(n+4) {
+    @include color-badge($white);
+  }
 }
 
 .leaderboard__item-content {
