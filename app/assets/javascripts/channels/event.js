@@ -52,8 +52,6 @@ function sortLeaderboard() {
     if (parseInt(a.dataset.leaderboardValue) < parseInt(b.dataset.leaderboardValue)) return 1
   })
 
-  console.log(elementsArray)
-
   elementsArray.forEach(element => leaderboardElement.appendChild(element))
 }
 
