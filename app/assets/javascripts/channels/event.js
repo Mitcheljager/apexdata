@@ -36,23 +36,35 @@ function updateLeaderboardItem(data) {
   valueElement.innerHTML = data.data_value
   valueElement.append(changeElement)
 
-  sortLeaderboard()
+  sortLeaderboard(element)
 
   setTimeout(() => { valueElement.classList.remove("leaderboard__score-total--is-updated") }, 500)
   setTimeout(() => { changeElement.remove() }, 2000)
 }
 
-function sortLeaderboard() {
+function sortLeaderboard(currentElement) {
   const leaderboardElement = document.querySelector("[data-role='leaderboard']")
   const elements = document.querySelectorAll(`[data-leaderboard-item]`)
   const elementsArray = Array.from(elements)
+  const currentElementPosition = elementsArray.indexOf(currentElement)
 
   elementsArray.sort((a, b) => {
     if (parseInt(a.dataset.leaderboardValue) > parseInt(b.dataset.leaderboardValue)) return -1
     if (parseInt(a.dataset.leaderboardValue) < parseInt(b.dataset.leaderboardValue)) return 1
   })
 
+  const newElementPosition = elementsArray.indexOf(currentElement)
+
   elementsArray.forEach(element => leaderboardElement.appendChild(element))
+
+  if (currentElementPosition != newElementPosition) {
+    const currentElementItem = currentElement.dataset.leaderboardItem
+    const element = document.querySelector(`[data-leaderboard-item="${ currentElementItem }"]`)
+
+    element.classList.add("leaderboard__item--has-changed-position")
+
+    setTimeout(() => { element.classList.remove("leaderboard__item--has-changed-position") }, 1000)
+  }
 }
 
 function createLeaderboardItem(data) {
