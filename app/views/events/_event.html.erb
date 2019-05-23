@@ -12,7 +12,5 @@
     <div class="item__tray">
       <%= link_to "Show Event", event_slug_path(to_slug(event.title)), class: "button" %>
     </div>
-    <%= link_to "Edit", edit_event_path(event) %>
-    <%= link_to "Destroy", event, method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
 </article>
