@@ -4,6 +4,7 @@
   data-leaderboard-item="<%= event_signup.profile_uid %>"
   data-leaderboard-value="<%= event_signup.total_value %>">
 
+  <span class="leaderboard__name leaderboard__name--mobile"><%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %></span>
   <div class="leaderboard__item-content">
     <div class="leaderboard__left">
       <div class="leaderboard__badge">
@@ -15,7 +16,7 @@
         <%= inline_svg "badges/levels/top21_50_event.svg" if item_counter > 20 %>
       </div>
 
-      <span class="leaderboard__name"><%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %></span>
+      <span class="leaderboard__name leaderboard__name--desktop"><%= get_username_for_claimed_profile_uid(event_signup.profile_uid) %></span>
     </div>
     <div class="leaderboard__right">
       <div class="leaderboard__score">

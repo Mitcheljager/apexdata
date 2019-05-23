@@ -6,7 +6,7 @@
 </div>
 
 <div class="wrapper wrapper--small">
-  <div class="item item--full-width">
+  <div class="item item--full-width item--event">
     <div class="heading mt-0 mb-20">
       <h4 class="heading__title"><%= @event.title %></h4>
     </div>
@@ -14,7 +14,7 @@
     <%= @event.description.html_safe %>
   </div>
 
-  <div class="item item--full-width">
+  <div class="item item--full-width item--event">
     <div class="heading mt-0 mb-20">
       <h4 class="heading__title">Sign up</h4>
     </div>
@@ -28,12 +28,20 @@
     <% end %>
   </div>
 
-  <div class="item item--full-width">
+  <div class="item item--full-width item--event">
     <span class="event__time event__info color-basic">Event starting soon</span>
 
     <small>
       <span>Starts at: <%= @event.start_datetime.strftime("%e %B %Y, %T %Z") %></span><br>
       <span>Ends at: <%= @event.end_datetime.strftime("%e %B %Y, %T %Z") %></span>
     </small>
+  </div>
+
+  <div class="item item--full-width item--event">
+    <div class="heading mt-0 mb-20">
+      <h4 class="heading__title">Rewards</h4>
+    </div>
+
+    <%= render "rewards" %>
   </div>
 </div>

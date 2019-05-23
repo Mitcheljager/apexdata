@@ -90,7 +90,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 40px 0 90px;
+    margin: 20px 0;
+
+    @media screen and (min-width: 600px) {
+      margin: 40px 0 90px;
+    }
   }
 }
 
@@ -233,8 +237,20 @@
   }
 
   &--large {
-    font-size: 166px;
-    line-height: 136px;
+    font-size: 56px;
+    line-height: 103px;
+    margin-top: 0;
+
+    @media screen and (min-width: 600px) {
+      font-size: 106px;
+      line-height: 116px;
+    }
+
+    @include media-min(lg) {
+      font-size: 166px;
+      line-height: 136px;
+      margin-top: 20px;
+    }
 
     .event__double {
       line-height: 84px;
@@ -275,8 +291,13 @@
 
 .event__top-subtitle {
   margin: 0;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 600;
+  text-align: center;
+
+  @media screen and (min-width: 600px) {
+    font-size: 40px;
+  }
 }
 
 .event__badges-wrapper {

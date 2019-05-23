@@ -146,6 +146,25 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  &--desktop {
+    display: none;
+
+    @include media-min(xl) {
+      display: block;
+    }
+  }
+
+  &--mobile {
+    display: block;
+    width: 100%;
+    padding: 12px 15px 0px;
+    max-width: 100%;
+
+    @include media-min(xl) {
+      display: none;
+    }
+  }
 }
 
 .leaderboard__right {
@@ -156,7 +175,7 @@
 .leaderboard__action {
   display: none;
 
-  @include media-min("xl") {
+  @include media-min(event) {
     display: block;
     font-size: 14px;
     text-decoration: none;
