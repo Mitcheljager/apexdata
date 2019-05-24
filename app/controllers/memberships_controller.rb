@@ -23,6 +23,7 @@ class MembershipsController < ApplicationController
     @membership.save
 
     create_notification("Thank you for purchasing a Membership. Your support is very much appreciated!")
+    Discord::Notifier.message("A Membership has been purchased by User: #{ current_user.id }") if Rails.env.production?
   end
 
   def update
