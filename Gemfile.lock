@@ -71,6 +71,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    discord-notifier (1.0.2)
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -220,6 +221,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   chart-js-rails
   coffee-rails (~> 4.2)
+  discord-notifier
   flipper
   flipper-active_record
   flipper-ui
@@ -244,4 +246,4 @@ DEPENDENCIES
   win32-security
 
 BUNDLED WITH
-   1.16.2
+   1.17.3

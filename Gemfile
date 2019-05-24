@@ -42,6 +42,7 @@ group :production do
   gem "autoprefixer-rails"
   gem "heroku-deflater"
   gem "scout_apm"
+  gem "discord-notifier"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
