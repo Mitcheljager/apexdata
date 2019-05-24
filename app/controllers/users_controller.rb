@@ -49,11 +49,13 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
 
       if Rails.env.production?
+        user = @user
+
         embed = Discord::Embed.new do
           title ":confetti_ball: A new user has been created!"
-          description "User ID:\nUsername: #{ @user.username }"
+          description "User ID: #{ user.id }\nUsername: #{ user.username }"
           color "#357b35"
-          url admin_user_url(@user.id)
+          url admin_user_url(user.id)
         end
 
         Discord::Notifier.message(embed)
