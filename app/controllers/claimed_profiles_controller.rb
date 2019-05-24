@@ -74,7 +74,7 @@ class ClaimedProfilesController < ApplicationController
           platform = @response["global"]["platform"]
 
           embed = Discord::Embed.new do
-            title ":confetti_ball: A new user has been created!"
+            title ":triangular_flag_on_post: A new user has been created!"
             description "**User ID:** #{ user_id }\n**Username:** #{ username }\n**Platform:** #{ platform }"
             color "#8f94a5"
           end
