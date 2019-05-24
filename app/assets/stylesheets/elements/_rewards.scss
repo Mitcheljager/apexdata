@@ -1,0 +1,51 @@
+.reward {
+  padding: $margin / 2 0;
+  border-bottom: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.reward__title {
+  margin-top: 0;
+}
+
+.reward__reveal {
+  display: flex;
+  align-items: center;
+}
+
+.reward__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  border: 0;
+  opacity: 0;
+
+  &:checked + label {
+    background: $secondary;
+    color: $white;
+  }
+}
+
+.reward__label {
+  width: 100%;
+  padding: .25em;
+  margin-left: $margin / 2;
+  background: repeating-linear-gradient(45deg,
+    darken($primary, 3%),
+    darken($primary, 3%) 10px,
+    darken($primary, 6%) $margin / 4,
+    darken($primary, 6%) $margin / 2);
+  border: 2px dashed lighten($secondary, 10%);
+  line-height: 1em;
+  color: transparent;
+  font-weight: bold;
+  cursor: pointer;
+}

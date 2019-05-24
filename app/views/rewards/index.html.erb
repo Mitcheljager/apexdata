@@ -1,0 +1,27 @@
+<%= render "admin_navigation" %>
+
+<h2>Rewards <small><%= @rewards.count %></small></h2>
+
+<p><%= link_to "New Reward", new_reward_path %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rewards.each do |reward| %>
+      <tr>
+        <td><%= reward.user_id %></td>
+        <td><%= reward.title %></td>
+        <td><%= reward.description %></td>
+        <td><%= reward.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

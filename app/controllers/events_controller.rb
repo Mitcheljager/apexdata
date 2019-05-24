@@ -6,6 +6,10 @@ class EventsController < ApplicationController
     end
   end
 
+  before_action only: [:update, :edit, :create, :new] do
+    redirect_to account_path unless current_user && current_user.level == 100
+  end
+
   def index
     @events = Event.all
   end
@@ -22,7 +26,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      redirect_to @event, notice: "Event was successfully created."
+      redirect_to events_path, notice: "Event was successfully created."
     else
       render :new
     end
@@ -33,7 +37,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to @event, notice: "Event was successfully updated."
+      redirect_to events_path, notice: "Event was successfully updated."
     else
       render :edit
     end
