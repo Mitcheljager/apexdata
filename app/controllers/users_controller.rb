@@ -47,7 +47,17 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      Discord::Notifier.message("A new account has been created. (#{ @user.id })") if Rails.env.production?
+
+      if Rails.env.production?
+        embed = Discord::Embed.new do
+          title "A new user has been created!"
+          description "User ID: #{ @user.id }"
+          color "#357b35"
+        end
+
+        Discord::Notifier.message(embed)
+      end
+
       redirect_to account_path, notice: "User was successfully created."
     else
       render :new
