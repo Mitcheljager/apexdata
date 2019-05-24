@@ -50,8 +50,8 @@ class UsersController < ApplicationController
 
       if Rails.env.production?
         embed = Discord::Embed.new do
-          title "A new user has been created!"
-          description "User ID: #{ @user.id }"
+          title ":confetti_ball: A new user has been created!"
+          description "User ID: #{ @user.id }\nUsername: #{ @user.username }"
           color "#357b35"
         end
 
