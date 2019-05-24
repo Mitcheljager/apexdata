@@ -55,33 +55,6 @@
     @include media-min(xl) {
       padding-left: 50px;
     }
-
-    a {
-      display: block;
-      width: 100%;
-      margin-right: $margin / 2;
-      font-size: 15px;
-      color: lighten($text-color, 10%);
-      text-decoration: none;
-      transition: color 250ms ease;
-
-      @include media-min(xl) {
-        width: auto;
-        font-size: 13px;
-      }
-
-      @include media-min(max-width) {
-        font-size: 15px;
-      }
-
-      &:hover {
-        color: $white;
-      }
-
-      &.active {
-        color: $white;
-      }
-    }
   }
 
   &--right {
@@ -108,6 +81,35 @@
     svg {
       width: 20px;
       height: 23px;
+    }
+  }
+}
+
+.header__content-navigation {
+  a {
+    display: block;
+    width: 100%;
+    margin-right: $margin / 2;
+    font-size: 15px;
+    color: lighten($text-color, 10%);
+    text-decoration: none;
+    transition: color 250ms ease;
+
+    @include media-min(xl) {
+      width: auto;
+      font-size: 13px;
+    }
+
+    @include media-min(max-width) {
+      font-size: 15px;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &.active {
+      color: $white;
     }
   }
 }

@@ -38,7 +38,9 @@
       </div>
 
       <div class="header__content header__content--search">
-        <%= link_to "Events", page_path("events"), class: "desktop-only #{ current_page?(page_path("events")) ? "active" : "" }" if Flipper.enabled?(:events) %>
+        <div class="header__content-navigation">
+          <%= link_to "Events", page_path("events"), class: "desktop-only #{ current_page?(page_path("events")) ? "active" : "" }" if Flipper.enabled?(:events) %>
+        </div>
 
         <div class="header-mobile__right">
           <% if Flipper.enabled?(:profiles) %>

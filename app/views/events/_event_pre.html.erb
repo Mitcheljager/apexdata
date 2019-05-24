@@ -22,10 +22,6 @@
     <br>
 
     <%= render "event_signups/form" %>
-
-    <% @event.event_signups.each do |event_signup| %>
-      <%= event_signup.user_id %>: <%= event_signup.profile_uid %>
-    <% end %>
   </div>
 
   <div class="item item--full-width item--event">
