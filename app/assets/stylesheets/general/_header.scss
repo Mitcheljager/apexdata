@@ -49,8 +49,38 @@
   width: calc(50% - 50px);
 
   &--search {
+    display: flex;
+    align-items: center;
+
     @include media-min(xl) {
       padding-left: 50px;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      margin-right: $margin / 2;
+      font-size: 15px;
+      color: lighten($text-color, 10%);
+      text-decoration: none;
+      transition: color 250ms ease;
+
+      @include media-min(xl) {
+        width: auto;
+        font-size: 13px;
+      }
+
+      @include media-min(max-width) {
+        font-size: 15px;
+      }
+
+      &:hover {
+        color: $white;
+      }
+
+      &.active {
+        color: $white;
+      }
     }
   }
 
@@ -364,6 +394,7 @@
 .header-mobile__right {
   display: flex;
   justify-content: flex-end;
+  margin-left: auto;
 
   @include media-min(xl) {
     display: none;

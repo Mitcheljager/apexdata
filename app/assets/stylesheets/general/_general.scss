@@ -263,6 +263,23 @@ hr {
   background: var(--border-color);
 }
 
+.desktop-only {
+  display: none !important;
+
+  @include media-min(xl) {
+    display: block !important;
+  }
+}
+
+
+.below-desktop-only {
+  display: block !important;
+
+  @include media-min(xl) {
+    display: none !important;
+  }
+}
+
 .medium-only {
   display: none;
 

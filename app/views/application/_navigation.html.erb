@@ -3,6 +3,8 @@
     <%= inline_svg("layout/close.svg") %>
   </div>
 
+  <%= link_to "Events", page_path("events"), class: "below-desktop-only #{ current_page?(page_path("events")) ? "active" : "" }" if Flipper.enabled?(:events) %>
+
   <div class="dropdown">
     <%= link_to page_path("weapons"), class: current_page?(page_path("weapons")) ? "active" : "" do %>
       Weapons & items
