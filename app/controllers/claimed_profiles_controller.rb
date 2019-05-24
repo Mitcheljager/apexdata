@@ -67,7 +67,20 @@ class ClaimedProfilesController < ApplicationController
     respond_to do |format|
       if @response["realtime"]["selectedLegend"] == @claimed_profile[:check_3]
         @claimed_profile.update(checks_completed: 1, username: @response["global"]["name"], platform: @response["global"]["platform"])
-        Discord::Notifier.message("User #{ current_user.id } has claimed a profile.") if Rails.env.production?
+
+        if Rails.env.production?
+          username = @response["global"]["name"]
+          platform = @response["global"]["platform"]
+
+          embed = Discord::Embed.new do
+            title ":confetti_ball: A new user has been created!"
+            description "**User ID:** #{ current_user.id }\n**Username:** #{ username }\n**Platform:** #{ platform }"
+            color "#8f94a5"
+          end
+
+          Discord::Notifier.message(embed)
+        end
+
         format.js
       else
         format.js { render "error.js.erb" }

@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
         embed = Discord::Embed.new do
           title ":confetti_ball: A new user has been created!"
-          description "User ID: #{ user.id }\nUsername: #{ user.username }"
+          description "**User ID:** #{ user.id }\n**Username:** #{ user.username }"
           color "#357b35"
         end
 

@@ -1,6 +1,5 @@
 <div class="paypal-wrapper no-text-transform">
-  <% key = Rails.env.development? ? "AUH1yge9_LD5S6MrsFXyVz1hFm196hhTZEXTbaCLvGXYvdXnSJ2bB9rMmmC57UBmZtnL7zE86OUqxIh4" : "AfMGYue-09g8kE3-Xyek_ue8iEp7liOcCxsg7p338c0OiH1MoC8ZYh57W8tOae4ruE0PLgrlzMa5smZb" %>
-  <script src="https://www.paypal.com/sdk/js?client-id=<%= key %>&currency=EUR"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=<%= ENV["PAYPAL_API_KEY"] %>&currency=EUR"></script>
   <script>
     const element = document.querySelector("[data-role='paypal-wrapper']")
 
