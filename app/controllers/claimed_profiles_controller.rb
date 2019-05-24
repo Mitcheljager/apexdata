@@ -69,12 +69,13 @@ class ClaimedProfilesController < ApplicationController
         @claimed_profile.update(checks_completed: 1, username: @response["global"]["name"], platform: @response["global"]["platform"])
 
         if Rails.env.production?
+          user_id = current_user.id
           username = @response["global"]["name"]
           platform = @response["global"]["platform"]
 
           embed = Discord::Embed.new do
             title ":confetti_ball: A new user has been created!"
-            description "**User ID:** #{ current_user.id }\n**Username:** #{ username }\n**Platform:** #{ platform }"
+            description "**User ID:** #{ user_id }\n**Username:** #{ username }\n**Platform:** #{ platform }"
             color "#8f94a5"
           end
 
