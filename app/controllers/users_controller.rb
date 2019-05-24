@@ -53,7 +53,7 @@ class UsersController < ApplicationController
           title ":confetti_ball: A new user has been created!"
           description "User ID: #{ @user.id }\nUsername: #{ @user.username }"
           color "#357b35"
-          url admin_user_path(@user.id)
+          url admin_user_url(@user.id)
         end
 
         Discord::Notifier.message(embed)
