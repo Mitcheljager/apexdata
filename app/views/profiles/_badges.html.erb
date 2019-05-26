@@ -1,0 +1,16 @@
+<% if DistributedBadge.where(profile_uid: @response["global"]["uid"]).any? %>
+  <div class="item item--list">
+    <header class="heading mt-0 mb-20">
+      <h4 class="heading__title">Badges</h4>
+    </header>
+
+    <div class="profile__badges">
+      <% DistributedBadge.where(profile_uid: @response["global"]["uid"]).each do |distributed_badge| %>
+        <div class="profile__badge">
+          <%= image_tag(distributed_badge.badge.image, height: 60) if asset_exists?(distributed_badge.badge.image) %>
+          <%= distributed_badge.badge.title %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

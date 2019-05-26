@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_115530) do
+ActiveRecord::Schema.define(version: 2019_05_26_121428) do
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "claimed_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +31,14 @@ ActiveRecord::Schema.define(version: 2019_05_24_115530) do
     t.integer "checks_completed", default: 0
     t.string "platform"
     t.string "username"
+  end
+
+  create_table "distributed_badges", force: :cascade do |t|
+    t.string "profile_uid"
+    t.integer "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "visibility", default: 1
   end
 
   create_table "event_legend_data", force: :cascade do |t|

@@ -71,6 +71,8 @@
     <div class="item item--list">
       <%= render "profiles/claim" %>
     </div>
+
+    <%= render "badges" if @claimed_profile.present? && Flipper.enabled?(:events) %>
   </aside>
 
   <div class="list-content__content">

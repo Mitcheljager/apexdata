@@ -1,0 +1,22 @@
+.user-badges__item {
+  display: flex;
+  align-items: center;
+  padding: $margin / 2 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.user-badges__content {
+  margin-left: $margin / 2;
+}
+
+.user-badges__title {
+  margin-bottom: $margin / 4;
+  font-size: 16px;
+  color: $white;
+}

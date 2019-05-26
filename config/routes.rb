@@ -59,4 +59,6 @@ Rails.application.routes.draw do
   get "server-status", to: "server_status#index"
 
   resources :rewards, only: [:index, :new, :create]
+  resources :badges, only: [:index, :new, :create, :edit, :update]
+  resources :distributed_badges, only: [:index, :update]
 end

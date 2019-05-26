@@ -1,7 +1,6 @@
 <div class="profile__claim-mobile">
   <% if @claimed_profile.nil? %>
-  <%= link_to "Claim profile", "#", class: "profile__claim-popup button-alternative button-alternative--primary", data: { action: "toggle-popup", target: "claim" } %>
-
+    <%= link_to "Claim profile", "#", class: "profile__claim-popup button-alternative button-alternative--primary", data: { action: "toggle-popup", target: "claim" } %>
   <% else %>
     <% if current_user %>
       <% if @claimed_profile.user_id == current_user.id %>

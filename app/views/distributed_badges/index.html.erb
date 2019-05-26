@@ -1,0 +1,27 @@
+<%= render "admin_navigation" %>
+
+<p id="notice"><%= notice %></p>
+
+<h2>Distributed Badges</h2>
+
+<p><%= link_to "Badges", badges_path %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Profile UID</th>
+      <th>Badge ID</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @distributed_badges.each do |distributed_badge| %>
+      <tr>
+        <td><%= distributed_badge.id %></td>
+        <td><%= distributed_badge.profile_uid %></td>
+        <td><%= distributed_badge.badge_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

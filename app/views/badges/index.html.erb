@@ -1,0 +1,33 @@
+<%= render "admin_navigation" %>
+
+<p id="notice"><%= notice %></p>
+
+<h2>Badges</h2>
+
+<p><%= link_to "New Badge", new_badge_path %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image Path</th>
+      <th>Image</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @badges.each do |badge| %>
+      <tr>
+        <td><%= badge.id %></td>
+        <td><%= badge.title %></td>
+        <td><%= badge.description %></td>
+        <td><%= badge.image %></td>
+        <td><%= image_tag badge.image, height: 100 if asset_exists?(badge.image) %></td>
+        <td><%= link_to "Edit", edit_badge_path(badge) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

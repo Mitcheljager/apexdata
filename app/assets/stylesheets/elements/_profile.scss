@@ -556,3 +556,23 @@
     max-width: calc(100% - #{ $margin });
   }
 }
+
+.profile__badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile__badge {
+  margin-top: $margin / 4;
+  max-width: 120px;
+  font-size: 12px;
+  text-align: center;
+
+  img {
+    height: auto;
+    width: 100%;
+    margin-bottom: $margin / 8;
+  }
+}
