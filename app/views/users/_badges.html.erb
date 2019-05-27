@@ -9,7 +9,7 @@
 
   <div class="user-badges">
     <% current_user.claimed_profiles.each do |claimed_profile| %>
-      <h5><%= claimed_profile.username %></h5>
+      <h5 class="mb-0"><%= claimed_profile.username %></h5>
 
       <% if DistributedBadge.where(profile_uid: claimed_profile.profile_uid).any? %>
         <% DistributedBadge.where(profile_uid: claimed_profile.profile_uid).each do |distributed_badge| %>
