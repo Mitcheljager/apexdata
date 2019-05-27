@@ -2,15 +2,23 @@
   <div class="item__event-banner">
     <%= image_tag "events/banners/gunslinger_01.jpg" %>
   </div>
+
   <div class="item__event-content">
     <h3 class="item__title"><%= event.title %></h3>
 
     <div class="item__event-description">
+      <small>
+        <span>Starts at: <%= event.start_datetime.strftime("%e %B %Y") %></span><br>
+        <span>Ends at: <%= event.end_datetime.strftime("%e %B %Y") %></span>
+      </small>
+
+      <br>
+
       <%= event.description.html_safe %>
     </div>
 
     <div class="item__tray">
-      <%= link_to "Show Event", event_slug_path(to_slug(event.title)), class: "button" %>
+      <%= link_to "View", event_slug_path(to_slug(event.title)), class: "button-alternative w-100" %>
     </div>
   </div>
 </article>
