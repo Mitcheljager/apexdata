@@ -3,8 +3,8 @@
     <h4 class="heading__title">Claimed profiles</h4>
   </div>
 
-  <% if current_user.claimed_profiles.where(checks_completed: 1).any? %>
-    <% current_user.claimed_profiles.where(checks_completed: 1).each do |profile| %>
+  <% if current_user.claimed_profiles.any? %>
+    <% current_user.claimed_profiles.each do |profile| %>
       <div class="user__claimed-profile-item">
         <div>
           <strong class="claimed-profile-link"><%= link_to profile.username, profile_path(profile.platform, profile.username) %></strong>
