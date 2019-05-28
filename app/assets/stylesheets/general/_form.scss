@@ -93,3 +93,34 @@ select {
     }
   }
 }
+
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    border-radius: 2px;
+    border: 2px solid $text-color;
+    cursor: pointer;
+
+    &:checked {
+      background: $white;
+      box-shadow: inset 0 0 0 2px $text-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    padding-left: 1rem;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_26_121428) do
+ActiveRecord::Schema.define(version: 2019_05_28_112006) do
 
   create_table "badges", force: :cascade do |t|
     t.string "title"
@@ -109,6 +109,13 @@ ActiveRecord::Schema.define(version: 2019_05_26_121428) do
     t.string "legend"
     t.string "data_name"
     t.bigint "data_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "remember_tokens", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
