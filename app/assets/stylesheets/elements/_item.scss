@@ -357,3 +357,10 @@
   font-size: 12px;
   line-height: 1.25em;
 }
+
+.item__event-description {
+  small {
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+}

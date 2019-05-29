@@ -390,13 +390,25 @@
 
 .event__manual-update {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
   font-size: 14px;
+  margin-top: 30px;
+
+  @include media-min(lg) {
+    margin-top: 0;
+    flex-direction: row-reverse;
+  }
 
   > div {
-    margin-right: $margin / 2;
+    margin-top: 10px;
     margin-bottom: 0;
-    text-align: right;
+    text-align: center;
+
+    @include media-min(lg) {
+      text-align: right;
+      margin-top: 0;
+      margin-right: $margin / 2;
+    }
   }
 }
