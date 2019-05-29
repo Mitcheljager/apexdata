@@ -12,21 +12,23 @@
   <% end %>
 
   <p>
-    <%= form.label :title %> <br>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </p>
 
   <p>
-    <%= form.label :description %> <br>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
   </p>
 
   <p>
-    <%= form.label :image %> <br>
-    <%= form.text_field :image %>
+    <%= form.label :image, class: "form-label" %>
+    <%= form.text_field :image, class: "form-control" %>
   </p>
 
+  <hr>
+
   <p>
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "button-alternative" %>
   </p>
 <% end %>

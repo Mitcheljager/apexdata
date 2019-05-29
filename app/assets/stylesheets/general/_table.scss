@@ -1,19 +1,29 @@
 table {
-
+  border-collapse: collapse;
+  width: 100%;
 }
 
 th {
+  padding: .5em .5em;
+  background: $primary;
+  border: 0;
   text-align: left;
-  padding: .1em .5em;
 }
 
 td {
   text-align: left;
-  padding: .1em .5em;
+  padding: .25em .5em;
+  border: 0;
+}
+
+tr:nth-child(odd) {
+  td {
+    background: lighten($bg-color, 3%);
+  }
 }
 
 tr:hover {
   td {
-    background: rgba($white, .1);
+    background: $secondary;
   }
 }

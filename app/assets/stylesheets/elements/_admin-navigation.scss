@@ -1,0 +1,21 @@
+.admin-navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: $margin * 2;
+
+  a {
+    display: block;
+    padding: .25em .5em;
+    margin-right: .5em;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    background: $primary;
+    color: $text-color;
+    text-decoration: none;
+
+    &.active {
+      border-color: $text-color;
+      color: $white;
+    }
+  }
+}

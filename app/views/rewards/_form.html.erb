@@ -12,26 +12,28 @@
   <% end %>
 
   <p>
-    <%= form.label :user_id %> <br>
-    <%= form.number_field :user_id %>
+    <%= form.label :user_id, class: "form-label" %>
+    <%= form.number_field :user_id, class: "form-control" %>
   </p>
 
   <p>
-    <%= form.label :title %> <br>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </p>
 
   <p>
-    <%= form.label :description %> <br>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
   </p>
 
   <p>
-    <%= form.label :content %> <br>
-    <%= form.text_field :content %>
+    <%= form.label :content, class: "form-label" %>
+    <%= form.text_field :content, class: "form-control" %>
   </p>
 
+  <hr>
+
   <p>
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "button-alternative" %>
   </p>
 <% end %>

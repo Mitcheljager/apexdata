@@ -1,6 +1,8 @@
-<%= link_to "Users", users_path %> |
-<%= link_to "Claimed Profiles", claimed_profiles_path %> |
-<%= link_to "Memberships", memberships_path %> |
-<%= link_to "Event Signups", event_signups_path %> |
-<%= link_to "Rewards", rewards_path %> |
-<%= link_to "Distributed Badges", distributed_badges_path %>
+<nav class="admin-navigation">
+  <%= link_to "Users", users_path, class: current_page?(users_path) ? "active" : "" %>
+  <%= link_to "Claimed Profiles", claimed_profiles_path, class: current_page?(claimed_profiles_path) ? "active" : "" %>
+  <%= link_to "Memberships", memberships_path, class: current_page?(memberships_path) ? "active" : "" %>
+  <%= link_to "Event Signups", event_signups_path, class: current_page?(event_signups_path) ? "active" : "" %>
+  <%= link_to "Rewards", rewards_path, class: current_page?(rewards_path) ? "active" : "" %>
+  <%= link_to "Distributed Badges", distributed_badges_path, class: current_page?(distributed_badges_path) ? "active" : "" %>
+</nav>
