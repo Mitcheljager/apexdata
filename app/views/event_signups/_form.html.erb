@@ -4,7 +4,7 @@
       <p>Sorry, we've reached the maximum number of Sign ups</p>
     <% end %>
   <% else %>
-    <% unless current_user && current_user.event_signups.where(event_id: @event.id).any? %>
+    <% unless current_user %>
       <%= link_to "Log in to participate", login_path, class: "button-alternative" %>
     <% end %>
   <% end %>
