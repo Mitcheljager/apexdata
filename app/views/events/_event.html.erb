@@ -14,7 +14,7 @@
 
       <br>
 
-      <%= event.description.html_safe %>
+      <%= event.description.truncate(300).html_safe %>
     </div>
 
     <div class="item__tray">
