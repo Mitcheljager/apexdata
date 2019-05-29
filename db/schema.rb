@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_112006) do
+ActiveRecord::Schema.define(version: 2019_05_29_183711) do
 
   create_table "badges", force: :cascade do |t|
     t.string "title"
@@ -69,6 +69,11 @@ ActiveRecord::Schema.define(version: 2019_05_28_112006) do
     t.string "legends"
     t.datetime "start_datetime"
     t.datetime "end_datetime"
+    t.integer "badge_id_first_place"
+    t.integer "badge_id_participation"
+    t.string "reward_first_place"
+    t.string "reward_second_place"
+    t.string "reward_third_place"
   end
 
   create_table "flipper_features", force: :cascade do |t|

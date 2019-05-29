@@ -1,40 +1,46 @@
 <div class="rewards">
   <div class="rewards__badges">
-    <div class="rewards__item svg-badge-gold">
-      <div class="rewards__badge">
-        <span class="rewards__position">1</span>
-        <%= inline_svg("badges/levels/top3_event.svg") %>
+    <% if @event.reward_first_place %>
+      <div class="rewards__item svg-badge-gold">
+        <div class="rewards__badge">
+          <span class="rewards__position">1</span>
+          <%= inline_svg("badges/levels/top3_event.svg") %>
+        </div>
+
+        <span class="rewards__item-description">
+          First place
+          <strong><%= @event.reward_first_place %></strong>
+        </span>
       </div>
+    <% end %>
 
-      <span class="rewards__item-description">
-        First place
-        <strong>&euro;50</strong>
-      </span>
-    </div>
+    <% if @event.reward_second_place %>
+      <div class="rewards__item svg-badge-silver">
+        <div class="rewards__badge">
+          <span class="rewards__position">2</span>
+          <%= inline_svg("badges/levels/top3_event.svg") %>
+        </div>
 
-    <div class="rewards__item svg-badge-silver">
-      <div class="rewards__badge">
-        <span class="rewards__position">2</span>
-        <%= inline_svg("badges/levels/top3_event.svg") %>
+        <span class="rewards__item-description">
+          Second place
+          <strong><%= @event.reward_first_place %></strong>
+        </span>
       </div>
+    <% end %>
 
-      <span class="rewards__item-description">
-        Second place
-        <strong>&euro;25</strong>
-      </span>
-    </div>
+    <% if @event.reward_third_place %>
+      <div class="rewards__item svg-badge-bronze">
+        <div class="rewards__badge">
+          <span class="rewards__position">3</span>
+          <%= inline_svg("badges/levels/top3_event.svg") %>
+        </div>
 
-    <div class="rewards__item svg-badge-bronze">
-      <div class="rewards__badge">
-        <span class="rewards__position">3</span>
-        <%= inline_svg("badges/levels/top3_event.svg") %>
+        <span class="rewards__item-description">
+          Third place
+          <strong><%= @event.reward_third_place %></strong>
+        </span>
       </div>
-
-      <span class="rewards__item-description">
-        Third place
-        <strong>&euro;50</strong>
-      </span>
-    </div>
+    <% end %>
   </div>
 
   <small class="rewards__description">Rewards are distributed in the form of a PaySafeCard.</small>
@@ -49,17 +55,25 @@
     </p>
 
     <div class="event__badges">
-      <div class="event__badge">
-        <%= image_tag "badges/events/gunslinger_01_first_place.png" %>
+      <% if @event.badge_id_first_place %>
+        <% badge = Badge.find(@event.badge_id_first_place) %>
 
-        <center><small>First place badge</small></center>
-      </div>
+        <div class="event__badge">
+          <%= image_tag badge.image if asset_exists?(badge.image) %>
 
-      <div class="event__badge">
-        <%= image_tag "badges/events/gunslinger_01_participation.png" %>
+          <center><small>First place badge</small></center>
+        </div>
+      <% end %>
 
-        <center><small>Participation badge</small></center>
-      </div>
+      <% if @event.badge_id_participation %>
+        <% badge = Badge.find(@event.badge_id_participation) %>
+
+        <div class="event__badge">
+          <%= image_tag badge.image if asset_exists?(badge.image) %>
+
+          <center><small>Participation badge</small></center>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

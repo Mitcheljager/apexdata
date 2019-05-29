@@ -50,6 +50,11 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :data_names, :legends, :start_datetime, :end_datetime)
+    params.require(:event).permit(
+      :title, :description,
+      :data_names, :legends,
+      :start_datetime, :end_datetime,
+      :reward_first_place, :reward_second_place, :reward_third_place,
+      :badge_id_first_place, :badge_id_participation)
   end
 end
