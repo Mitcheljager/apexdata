@@ -79,6 +79,7 @@ function updateEventTime(eventCat, runCounter) {
         getEventDay = parseInt(getEventDay) - 1;
         if(getEventDay < 0) {
           clearInterval(runCounter);
+          location.reload();
         } else {
           document.querySelector(".event__day").innerHTML = minTwoDigits(getEventDay);
         }
