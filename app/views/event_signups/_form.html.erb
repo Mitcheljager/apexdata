@@ -1,4 +1,14 @@
 <div data-role="event-signup-wrapper">
+  <% unless @event.event_signups.count < 300 %>
+    <% unless current_user && current_user.event_signups.where(event_id: @event.id).any? %>
+      <p>Sorry, we've reached the maximum number of Sign ups</p>
+    <% end %>
+  <% else %>
+    <% unless current_user && current_user.event_signups.where(event_id: @event.id).any? %>
+      <%= link_to "Log in to participate", login_path, class: "button-alternative" %>
+    <% end %>
+  <% end %>
+
   <% if current_user %>
     <% if current_user.claimed_profiles.any? %>
       <%= form_for :event_signup, url: event_signups_path, remote: true do |form| %>
@@ -37,7 +47,5 @@
     <% else %>
       <p>Claim a profile to participate</p>
     <% end %>
-  <% else %>
-    <%= link_to "Log in to participate", login_path %>
   <% end %>
 </div>
