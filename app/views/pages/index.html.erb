@@ -1,5 +1,5 @@
-<% if ENV["MAIN_BANNER"] %>
-  <%= render "banners/#{ ENV["MAIN_BANNER"] }", url: ENV["MAIN_BANNER_URL"] %>
+<% if ENV["BANNER_MAIN"] %>
+  <%= render "banners/#{ ENV["BANNER_MAIN"] }", url: ENV["BANNER_MAIN_URL"] %>
 <% end %>
 
 <% unless Flipper.enabled?(:users) %>

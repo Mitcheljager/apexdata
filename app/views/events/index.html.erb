@@ -18,9 +18,9 @@
   </center>
 </div>
 
-<% if ENV['EVENT_BANNER'] %>
+<% if ENV['BANNER_EVENT'] %>
   <div class="top-offset">
-    <%= render "banners/#{ ENV["EVENT_BANNER"] }", url: ENV["EVENT_BANNER_URL"] %>
+    <%= render "banners/#{ ENV["BANNER_EVENT"] }", url: ENV["BANNER_EVENT_URL"] %>
   </div>
 <% end %>
 
