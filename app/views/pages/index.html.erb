@@ -1,7 +1,5 @@
-<% if Flipper.enabled?(:events) %>
-  <%= render "banners/gunslinger" %>
-<% else %>
-  <%= render "banners/search" if Flipper.enabled?(:profiles) %>
+<% if ENV["MAIN_BANNER"] %>
+  <%= render "banners/#{ ENV["MAIN_BANNER"] }", url: ENV["MAIN_BANNER_URL"] %>
 <% end %>
 
 <% unless Flipper.enabled?(:users) %>

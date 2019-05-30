@@ -18,9 +18,11 @@
   </center>
 </div>
 
-<div class="top-offset">
-  <%= render "banners/gunslinger" %>
-</div>
+<% if ENV['EVENT_BANNER'] %>
+  <div class="top-offset">
+    <%= render "banners/#{ ENV["EVENT_BANNER"] }", url: ENV["EVENT_BANNER_URL"] %>
+  </div>
+<% end %>
 
 <div class="wrapper wrapper--medium">
   <% if @events.where("start_datetime < ?", DateTime.now).where("end_datetime > ?", DateTime.now).any? %>
