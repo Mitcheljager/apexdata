@@ -195,7 +195,8 @@ $rarities: (
   epic: #f128f1,
   legendary: orange,
   green: $green,
-  red: $red
+  red: $red,
+  discord: $discord
 );
 
 @each $rarity, $value in $rarities {

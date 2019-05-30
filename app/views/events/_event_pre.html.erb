@@ -12,6 +12,15 @@
     </div>
 
     <%= @event.description.html_safe %>
+
+    <hr>
+
+    <small class="mb-20">For more information:</small>
+
+    <div>
+      <%= link_to "Event Rules & FAQ", page_path("event-rules"), class: "button-alternative mb-5" %>
+      <%= link_to "Join us on Discord", "https://discord.gg/4Xa3PKq", class: "button-alternative bg-discord color-basic", target: "_blank" %>
+    </div>
   </div>
 
   <div class="item item--full-width item--event">

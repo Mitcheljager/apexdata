@@ -23,6 +23,13 @@
 
       <hr>
 
+      <small class="mb-20">For more information:</small>
+
+      <%= link_to "Event Rules & FAQ", page_path("event-rules"), class: "button-alternative mb-5" %>
+      <%= link_to "Join us on Discord", "https://discord.gg/4Xa3PKq", class: "button-alternative bg-discord color-basic", target: "_blank" %>
+
+      <hr>
+
       <%= render "event_signups/form" if DateTime.now.localtime < @event.end_datetime.localtime %>
       <%= render "current_position" if current_user %>
     </div>
