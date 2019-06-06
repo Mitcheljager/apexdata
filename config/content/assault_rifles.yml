@@ -211,7 +211,7 @@
   tactical_reload: 2.4
   empty_reload: 3.2
   ammo_type: energy
-  projectile_speed: 30500
+  projectile_speed: 763
   draw_time: 0.5
   holster_time: 0.55
   available_attachments:
