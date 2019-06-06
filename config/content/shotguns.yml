@@ -9,7 +9,7 @@
   tactical_reload: 2.1
   empty_reload: 2.6
   ammo_type: shotgun
-  projectile_speed: 10000
+  projectile_speed: 254
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
@@ -42,7 +42,7 @@
   tactical_reload: 2.5
   empty_reload: 3.5
   ammo_type: shotgun
-  projectile_speed: 16000
+  projectile_speed: 406
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
@@ -101,7 +101,7 @@
   tactical_reload: 2.75
   empty_reload: 3.0
   ammo_type: shotgun
-  projectile_speed: 16000
+  projectile_speed: 406
   draw_time: 0.45
   holster_time: 0.4
   available_attachments:
@@ -146,7 +146,7 @@
   tactical_reload: 1.03
   empty_reload: n/a
   ammo_type: unique
-  projectile_speed: 12000
+  projectile_speed: 304
   draw_time: 0.8
   holster_time: 0.4
   fire_modes:

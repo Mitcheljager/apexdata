@@ -8,7 +8,7 @@
   tactical_reload: 2.4
   empty_reload: 3.0
   ammo_type: light
-  projectile_speed: 31500
+  projectile_speed: 800
   draw_time: 0.9
   holster_time: 0.6
   available_attachments:
@@ -47,7 +47,7 @@
   tactical_reload: 2.66
   empty_reload: 3.66
   ammo_type: heavy
-  projectile_speed: 30500
+  projectile_speed: 774
   draw_time: 0.9
   holster_time: 0.6
   available_attachments:
@@ -83,7 +83,7 @@
   tactical_reload: 2.6
   empty_reload: 3.4
   ammo_type: energy
-  projectile_speed: 32000
+  projectile_speed: 812
   draw_time: 0.9
   holster_time: 0.6
   available_attachments:
@@ -121,7 +121,7 @@
   tactical_reload: 3.2
   empty_reload: 4.3
   ammo_type: unique
-  projectile_speed: 29500
+  projectile_speed: 749
   draw_time: 1.2
   holster_time: 0.7
   fire_modes:
