@@ -7,7 +7,7 @@
         <div class="item-columns__item"
           data-action="item-columns-change-details"
           data-columns-data="<%= item.except("spray_pattern", "attachments_overwrite").to_json %>"
-          data-icon-source="<%= image_url "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" %>"
+          data-icon-source="<%= image_url "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" if asset_exists? "weapons/icons/#{ item["name"].downcase.gsub(" ", "_") }.png" %>"
           data-compare-source="<%= item["name"].downcase.gsub(" ", "_") %>">
           <div class="item-columns__item-name">
             <%= item["name"] %>

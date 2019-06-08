@@ -188,3 +188,18 @@
         y: 0
       - x: -4
         y: -4
+-
+  name: L-Star (Tentative)
+  damage: 21
+  headshot_damage: 21
+  legshot_damage: 15.75
+  rate_of_fire: 720
+  ammo_capacity: 60
+  tactical_reload: 3.26
+  empty_reload: 3.26
+  ammo_type: unique
+  projectile_speed: 300
+  draw_time: 0.55
+  holster_time: 0.4
+  fire_modes:
+    auto: true
