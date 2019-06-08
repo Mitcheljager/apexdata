@@ -32,8 +32,8 @@
   }
 
   @include media-min(max-width) {
-    flex: 0 0 calc(100% / 9);
-    width: calc(100% / 9);
+    flex: 0 0 calc(100% / 10);
+    width: calc(100% / 10);
   }
 
   &:hover,

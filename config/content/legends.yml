@@ -490,3 +490,30 @@
       desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
     - name: Hot streak
       desc: When playing as Octane, win 2 games in a row
+-
+  name: Wattson
+  function: Static Defender
+  lore: |
+    <p>
+      Natalie “Wattson” Paquette is a familiar face in the Apex Games, though for a different reason than most. Daughter of the Games’ lead electrical engineer, she studied his manuals to stay close to him, and discovered her calling at a young age. Though she could be completely distracted one moment and hyper-focused the next, electricity grounded her – its ordered, predictable flow made sense in a way the rest of the world didn’t.
+    </p>
+    <p>
+      She devoured every book she could on the subject, and eventually became such a skilled engineer that she was commissioned to build the Apex Games’ Modified Containment Ring. Unfortunately, her father died the day it was revealed, leaving her alone. At her lowest moment, a group of competitors invited her to return to the arena with them, assuring her she would always have a home. She now fights alongside her friends in the arena she helped build, destroying incoming missiles, recharging shields, creating fences, and using her pylon to silence fights that get too loud. Nobody knows the arena better than Wattson – anyone who underestimates her is in for a shock.
+    </p>
+  about:
+    real_name: Natalie Paquette
+    age: 22
+    home_world: Solace
+  abilities:
+    ability_1:
+      type: Tactical Ability
+      name: Perimeter Security
+      description: Connect nodes to create electrified fences that damage and slow enemies.
+    ability_2:
+      type: Passive Ability
+      name: Spark of Genius
+      description: Ultimate Accelerants fully charge your Ultimate Ability, and standing near interception pylons boosts your Tactical Ability recharge.
+    ability_3:
+      type: Ultimate Ability
+      name: Interception Pylon
+      description: Place an electrified pylon that destroys incoming ordnance and repairs damaged shields as long as it stands. (Max 3)
