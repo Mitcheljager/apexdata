@@ -107,6 +107,10 @@
     width: 675px;
     justify-content: space-between;
     margin: 50px auto 100px;
+
+    @supports (-ms-ime-align: auto) {
+      display: none;
+    }
   }
 }
 

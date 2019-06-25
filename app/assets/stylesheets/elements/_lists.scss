@@ -32,22 +32,15 @@
 .list-content {
   display: flex;
   flex-direction: column;
-  grid-template: "sidebar content";
-  grid-template-columns: #{ 100% / 3 * 1 } #{ 100% / 3 * 2 };
   margin-top: $margin;
 
   @include media-min(lg) {
     display: flex;
     flex-direction: row;
   }
-
-  @include media-min(max-width) {
-    display: grid;
-  }
 }
 
 .list-content__sidebar {
-  grid-area: sidebar;
   width: 100%;
   min-width: 100%;
 
@@ -57,7 +50,8 @@
   }
 
   @include media-min(max-width) {
-    width: auto;
+    flex: 0 0 #{ 100% / 3 * 1 };
+    width: #{ 100% / 3 * 1 };
     min-width: inherit;
   }
 }
@@ -65,4 +59,9 @@
 .list-content__content {
   grid-area: content;
   width: 100%;
+
+  @include media-min(max-width) {
+    flex: 0 0 #{ 100% / 3 * 2 };
+    width: #{ 100% / 3 * 2 }
+  }
 }
