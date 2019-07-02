@@ -177,3 +177,52 @@
     }
   }
 }
+
+.banner--season-2 {
+  background-image: image_url("layout/banner_2.jpg");
+  flex-direction: column;
+  align-items: flex-start;
+  height: 130px;
+  padding: 37px 15px;
+
+  @media screen and (min-width: 640px) {
+    padding: 37px 30px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    flex-direction: row;
+    align-items: center;
+    height: 130px;
+    padding: 60px 30px;
+  }
+
+  @media screen and (min-width: 1240px) {
+    padding: 60px 50px;
+  }
+
+  h2 {
+    margin: 0;
+
+    @media screen and (min-width: 1100px) {
+      margin: 0 0 0 20px;
+    }
+
+    @media screen and (min-width: 1240px) {
+      margin: 0 0 0 80px;
+    }
+  }
+
+  .banner__image {
+    right: 5px;
+    width: 360px;
+
+    @media screen and (min-width: 1100px) {
+      width: auto;
+      right: 10px;
+    }
+
+    @media screen and (min-width: 1300px) {
+      right: 10px;
+    }
+  }
+}

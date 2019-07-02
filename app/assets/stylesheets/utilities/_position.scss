@@ -10,6 +10,10 @@
   position: relative !important;
 }
 
+.absolute {
+  position: absolute !important;
+}
+
 .m-0 {
   margin: 0 !important;
 }
@@ -34,10 +38,22 @@
   margin-bottom: $margin / 4 !important;
 }
 
+.mb-40 {
+  margin-bottom: $margin / 2 !important;
+}
+
 .p-0 {
   padding: 0 !important;
 }
 
 .p-25 {
   padding: .25em !important;
+}
+
+.pin-l {
+  left: 0;
+}
+
+.pin-b {
+  bottom: 0;
 }

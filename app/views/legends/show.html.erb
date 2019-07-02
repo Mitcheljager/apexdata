@@ -1,12 +1,17 @@
 <% content_for :page_title, @item["name"] if @item["name"] %>
 
+<style>
+  body { background-image: url(<%= image_path("gradient-bg/sm/#{ params[:name].downcase }.png") %>) }
+  @media (min-width: 640px) { body { background-image: url(<%= image_path("gradient-bg/md/#{ params[:name].downcase }.png") %>) }}
+  @media (min-width: 768px) { body { background-image: url(<%= image_path("gradient-bg/lg/#{ params[:name].downcase }.png") %>) }}
+  @media (min-width: 1200px) { body { background-image: url(<%= image_path("gradient-bg/xl/#{ params[:name].downcase }.png") %>) }}
+</style>
+
 <% cache "#{ @item["name"] }" do %>
   <div class="wrapper wrapper--medium">
-    <div class="heading">
-      <h2 class="heading__title"><%= @item["name"] if @item["name"] %></h2>
-    </div>
+    <h1><center><%= @item["name"] if @item["name"] %></center></h1>
 
-    <div class="items">
+    <div class="items top-offset">
       <article class="item item--full-width legend">
         <%= tag.div class: "legend__image" do %>
           <%= tag.div class: "legend__image" do %>

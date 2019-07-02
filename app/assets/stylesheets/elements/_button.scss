@@ -158,6 +158,10 @@
     }
   }
 
+  &--huge {
+    font-size: 18px;
+  }
+
   &[disabled] {
     opacity: .75;
   }

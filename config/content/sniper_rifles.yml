@@ -113,9 +113,9 @@
         y: 70
 -
   name: Kraber
-  damage: 125
-  headshot_damage: 250
-  legshot_damage: 95
+  damage: 145
+  headshot_damage: 297.25
+  legshot_damage: 110.2
   rate_of_fire: 36
   ammo_capacity: 4
   tactical_reload: 3.2

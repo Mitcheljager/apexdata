@@ -127,7 +127,7 @@
       type: Passive Ability
       name: Nox Vision
       description: Allows you to see enemies through your gas.
-      extra: <h5>Fortified</h5> Reduces damage taken by 10%
+      extra: <h5>Fortified</h5> Reduces damage taken by 15%
     ability_3:
       type: Ultimate Ability
       name: Nox Gas Grenade
@@ -180,7 +180,7 @@
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
       primary_data:
         shield: 75
-      extra: <h5>Fortified</h5> Reduces damage taken by 10%
+      extra: <h5>Fortified</h5> Reduces damage taken by 15%
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment
@@ -232,6 +232,7 @@
       type: Passive Ability
       name: Combat Medic
       description: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
+      extra: <h5>Low Profile</h5> Increases damage taken by 5%
       primary_data:
         revive: 4<span>s</span>
         self_heal: -25<span>%</span>
@@ -348,6 +349,7 @@
       type: Passive Ability
       name: Insider Knowledge
       description: Scan a survey beacon to reveal the ring’s next location.
+      extra: <h5>Low Profile</h5> Increases damage taken by 5%
       primary_data:
         cast_time: 8<span>s</span>
     ability_3:
@@ -409,6 +411,7 @@
       type: Passive Ability
       name: Voices from the Void
       description: A voice warns you when danger approaches. As far as you can tell, it’s on your side.
+      extra: <h5>Low Profile</h5> Increases damage taken by 5%
       primary_data:
         cooldown: 10<span>s</span>
         warn_teammates: +6<span>s</span>

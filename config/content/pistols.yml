@@ -68,9 +68,9 @@
         y: -3
 -
   name: P2020
-  damage: 12
-  headshot_damage: 18
-  legshot_damage: 10.8
+  damage: 13
+  headshot_damage: 19.5
+  legshot_damage: 11.7
   rate_of_fire: 430
   ammo_capacity: 10
   tactical_reload: 1.25

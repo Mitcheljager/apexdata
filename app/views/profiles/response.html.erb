@@ -1,5 +1,5 @@
 <style>
-  body { background-image: url(<%= image_path("gradient-bg/sm/#{ @response["realtime"]["selectedLegend"].downcase }.png") %>}) }
+  body { background-image: url(<%= image_path("gradient-bg/sm/#{ @response["realtime"]["selectedLegend"].downcase }.png") %>) }
   @media (min-width: 640px) { body { background-image: url(<%= image_path("gradient-bg/md/#{ @response["realtime"]["selectedLegend"].downcase }.png") %>) }}
   @media (min-width: 768px) { body { background-image: url(<%= image_path("gradient-bg/lg/#{ @response["realtime"]["selectedLegend"].downcase }.png") %>) }}
   @media (min-width: 1200px) { body { background-image: url(<%= image_path("gradient-bg/xl/#{ @response["realtime"]["selectedLegend"].downcase }.png") %>) }}

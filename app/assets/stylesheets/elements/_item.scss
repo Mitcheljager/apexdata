@@ -55,6 +55,33 @@
     max-width: 100%;
   }
 
+  &--patch-notes-banner {
+    padding-left: 40vw;
+
+    @include media-min(md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    @include media-min(xl) {
+      padding-left: $margin;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: $margin / 4;
+
+      @include media-min(md) {
+        margin-bottom: 0;
+      }
+    }
+
+    img {
+      max-width: 40vw;
+    }
+  }
+
   > img {
     max-width: 100%;
     height: auto;
