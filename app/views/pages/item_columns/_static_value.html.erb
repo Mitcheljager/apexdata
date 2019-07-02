@@ -1,5 +1,11 @@
 <div class="item-columns__data">
   <%= label %>
-  <div class="item-columns__data-value" data-role="static-value" data-target="<%= target %>" data-compare-static="<%= target %>" data-modify-target="<%= modify_target if defined?(modify_target) %>" <%= "data-modify-round" if defined?(modify_round) %>></div>
+  <div class="item-columns__data-value"
+    data-role="static-value"
+    data-target="<%= target %>"
+    data-compare-static="<%= target %>"
+    data-modify-target="<%= modify_target if defined?(modify_target) %>"
+    <%= "data-modify-round" if defined?(modify_round) %>
+    <%= "data-compare-inverse" if defined?(compare_inverse) %>></div>
   <div class="item-columns__data-identifier"><%= identifier if defined?(identifier) %></div>
 </div>

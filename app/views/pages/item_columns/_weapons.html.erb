@@ -62,10 +62,10 @@
 
         <%= render "pages/item_columns/static_value", target: "ammo_capacity", modify_target: "ammo_increase", modify_round: true, label: "Ammo capacity" %>
         <%= render "pages/item_columns/static_value", target: "projectile_speed", modify_target: "projectile_speed", label: "Projectile speed", identifier: "m/s" %>
-        <%= render "pages/item_columns/static_value", target: "tactical_reload", modify_target: "reload_time", label: "Tactical reload", identifier: "s" %>
-        <%= render "pages/item_columns/static_value", target: "empty_reload", modify_target: "reload_time", label: "Empty reload", identifier: "s" %>
-        <%= render "pages/item_columns/static_value", target: "draw_time", modify_target: "draw_time", label: "Draw time", identifier: "s" %>
-        <%= render "pages/item_columns/static_value", target: "holster_time", modify_target: "holster_time", label: "Holster time", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "tactical_reload", modify_target: "reload_time", compare_inverse: true, label: "Tactical reload", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "empty_reload", modify_target: "reload_time", compare_inverse: true, label: "Empty reload", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "draw_time", modify_target: "draw_time", compare_inverse: true, label: "Draw time", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "holster_time", modify_target: "holster_time", compare_inverse: true, label: "Holster time", identifier: "s" %>
 
         <% items.each do |item| %>
           <div class="item-columns__detail-extra-static-content" data-extra-static-content="<%= item["name"].downcase.gsub(" ", "_") %>">

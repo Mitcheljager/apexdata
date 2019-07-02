@@ -85,19 +85,22 @@ function compareStaticValues(detailElement) {
   elements.forEach(element => {
     const target = element.dataset.compareStatic
     const compareDifference = getDifference(target)
+    const compareInverse = typeof element.dataset.compareInverse !== "undefined"
     if (compareDifference == 0) return
 
     let isPositive = true
     if (Math.sign(compareDifference) == -1) isPositive = false
 
+    if (compareInverse) isPositive = !isPositive
+
     const resultElement = document.createElement("div")
     resultElement.classList.add("compare-element")
     if (isPositive) {
-      resultElement.innerHTML = `(+${ compareDifference })`
+      resultElement.innerHTML = `(${ compareInverse ? "" : "+" }${ compareDifference })`
       resultElement.classList.add("compare-higher")
     } else {
       resultElement.classList.add("compare-lower")
-      resultElement.innerHTML = `(${ compareDifference })`
+      resultElement.innerHTML = `(${ compareInverse ? "+" : "" }${ compareDifference })`
     }
 
     element.prepend(resultElement)
