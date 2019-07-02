@@ -124,6 +124,8 @@
     barrel:
       - barrel_stabilizer
       - flash_hider
+    magazine:
+      - extended_energy_mag
     optics:
       - 1x_hcog_classic
       - 1x_holo
@@ -135,6 +137,14 @@
       - turbocharger
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_energy_mag:
+      basic:
+        ammo_increase: 17%
+      rare:
+        ammo_increase: 32%
+      epic:
+        ammo_increase: 50%
   fire_modes:
     auto: true
   spray_pattern:

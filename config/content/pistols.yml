@@ -23,6 +23,8 @@
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 1x_digital_threat
+    hop_up:
+      - disruptor_rounds
   attachments_overwrite:
     extended_light_mag:
       basic:
@@ -91,6 +93,8 @@
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 1x_digital_threat
+    hop_up:
+      - hammerpoint_rounds
   attachments_overwrite:
     extended_light_mag:
       basic:

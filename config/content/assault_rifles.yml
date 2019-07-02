@@ -215,6 +215,8 @@
   draw_time: 0.5
   holster_time: 0.55
   available_attachments:
+    magazine:
+      - extended_energy_mag
     optics:
       - 2x_hcog_bruiser
       - 1x_hcog_classic
@@ -227,6 +229,14 @@
       - turbocharger
     stock:
       - standard_stock
+  attachments_overwrite:
+    extended_energy_mag:
+      basic:
+        ammo_increase: 15%
+      rare:
+        ammo_increase: 35%
+      epic:
+        ammo_increase: 50%
   fire_modes:
     single: true
     auto: true

@@ -19,6 +19,8 @@
       - 1x_holo
       - 1x-2x_variable_holo
       - 1x_digital_threat
+    hop_up:
+      - hammerpoint_rounds
     stock:
       - shotgun_bolt
   fire_modes:

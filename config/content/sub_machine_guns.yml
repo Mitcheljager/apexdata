@@ -102,6 +102,8 @@
       - 2x-4x_variable_aog
       - 3x_hcog_ranger
       - 1x_digital_threat
+    hop_up:
+      - disruptor_rounds
     stock:
       - standard_stock
   attachments_overwrite:

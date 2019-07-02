@@ -101,9 +101,19 @@
   epic:
     description: Enables fire select for compatible weapons.
 -
-  name: Skullpiercer Rifling
+  name: Hammerpoint Rounds
   type: hop-up
   epic:
+    description: Increased damage to unshielded targets.
+-
+  name: Disruptor Rounds
+  type: hop-up
+  epic:
+    description: Increased damage to shielded targets.
+-
+  name: Skullpiercer Rifling
+  type: hop-up
+  legendary:
     description: Increased headshot damage for compatible weapons.
     headshot_damage_modifier: 50%
 -
@@ -140,6 +150,21 @@
   epic:
     description: High ammo capacity with fast reloads.
     reload_time: -13%
+    ammo_increase: 100%
+-
+  name: Extended Energy Mag
+  type: magazine
+  note: Magazine increasements vary per weapon. These are the general rules.
+  basic:
+    description: Slightly increases ammo capacity.
+    ammo_increase: 20%
+  rare:
+    description: Increased ammo capacity with quicker reloads.
+    reload_time: -8%
+    ammo_increase: 40%
+  epic:
+    description: High ammo capacity with fast reloads.
+    reload_time: -50%
     ammo_increase: 100%
 -
   name: 1x HCOG 'CLASSIC'
