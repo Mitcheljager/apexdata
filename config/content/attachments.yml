@@ -96,20 +96,22 @@
     charge_levels: 4
     charge_time: 1.5
 -
-  name: Selectfire receiver
-  type: hop-up
-  epic:
-    description: Enables fire select for compatible weapons.
--
   name: Hammerpoint Rounds
   type: hop-up
   epic:
     description: Increased damage to unshielded targets.
+    damage_modifier: 15%
 -
   name: Disruptor Rounds
   type: hop-up
   epic:
     description: Increased damage to shielded targets.
+    damage_modifier: 15%
+-
+  name: Selectfire receiver
+  type: hop-up
+  epic:
+    description: Enables fire select for compatible weapons.
 -
   name: Skullpiercer Rifling
   type: hop-up

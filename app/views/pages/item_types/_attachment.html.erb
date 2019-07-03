@@ -23,8 +23,8 @@
         <% end if item[rarity]["description"] %>
 
         <%= tag.div class: "item__small-info", title: "This can vary per weapon" do %>
-        Ammo Increase:
-        <span><%= item[rarity]["ammo_increase"] %></span>
+          Ammo Increase:
+          <span><%= item[rarity]["ammo_increase"] %></span>
         <% end if item[rarity]["ammo_increase"] %>
 
         <%= tag.div class: "item__small-info" do %>
@@ -66,6 +66,11 @@
           Recoil (roughly):
           <span><%= item[rarity]["kick_yaw_random"] %></span>
         <% end if item[rarity]["kick_yaw_random"] %>
+
+        <%= tag.div class: "item__small-info" do %>
+          Damage Increase:
+          <span><%= item[rarity]["damage_modifier"] %></span>
+        <% end if item[rarity]["damage_modifier"] %>
       <% end %>
     <% end %>
   </article>

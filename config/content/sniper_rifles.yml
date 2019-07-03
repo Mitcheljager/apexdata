@@ -87,6 +87,8 @@
   draw_time: 0.9
   holster_time: 0.6
   available_attachments:
+    magazine:
+      - extended_energy_mag
     optics:
       - 1x_hcog_classic
       - 1x_holo
@@ -101,6 +103,14 @@
       - precision_choke
     stock:
       - sniper_stock
+  attachments_overwrite:
+    extended_energy_mag:
+      basic:
+        ammo_increase: 20%
+      rare:
+        ammo_increase: 35%
+      epic:
+        ammo_increase: 50%
   fire_modes:
     single: true
   spray_pattern:
