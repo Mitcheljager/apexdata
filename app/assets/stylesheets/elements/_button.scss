@@ -184,3 +184,14 @@
   border: 1px solid var(--border-color);
   z-index: 10;
 }
+
+.btn-link {
+  color: lighten($text-color, 20%);
+  text-decoration: none;
+  font-size: 12px;
+
+  &:hover,
+  &:active {
+    color: $white;
+  }
+}

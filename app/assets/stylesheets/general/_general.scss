@@ -187,6 +187,30 @@ blockquote {
       width: 33.333%;
     }
   }
+
+  &--collapsing {
+    display: block;
+
+    @include media-min(sm) {
+      display: flex;
+    }
+
+    .columns__column {
+      width: 100%;
+
+      @include media-min(sm) {
+        width: 50%;
+
+        &:first-child {
+          padding-right: $margin / 4;
+        }
+
+        &:last-child {
+          padding-left: $margin / 4;
+        }
+      }
+    }
+  }
 }
 
 $rarities: (
