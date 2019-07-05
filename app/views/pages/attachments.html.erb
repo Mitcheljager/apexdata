@@ -1,15 +1,15 @@
 <% content_for :page_title, "Attachments" %>
 
 <div class="wrapper wrapper--medium">
-  <div class="heading top-offset">
+  <div class="heading">
     <h2 class="heading__title"><%= link_to "Hop-ups", page_path("attachments") %></h2>
   </div>
 
   <div class="items">
     <%= render partial: "pages/item_types/attachment", collection: attachments.select { |attachment| attachment["type"] == "hop-up" }, as: :item %>
   </div>
-  
-  <div class="heading">
+
+  <div class="heading top-offset">
     <h2 class="heading__title"><%= link_to "Stocks", page_path("attachments") %></h2>
   </div>
 
