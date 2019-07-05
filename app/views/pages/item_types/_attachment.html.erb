@@ -67,9 +67,15 @@
           <span><%= item[rarity]["kick_yaw_random"] %></span>
         <% end if item[rarity]["kick_yaw_random"] %>
 
-        <%= tag.div class: "item__small-info" do %>
-          Damage Increase:
-          <span><%= item[rarity]["damage_modifier"] %></span>
+        <%= tag.div do %>
+          <p><small>Damage Increase:</small></p>
+
+          <% item[rarity]["damage_modifier"].each do |weapon, value| %>
+            <div class="item__small-info">
+              <%= weapon %>
+              <span><%= value %></span>
+            </div>
+          <% end %>
         <% end if item[rarity]["damage_modifier"] %>
       <% end %>
     <% end %>

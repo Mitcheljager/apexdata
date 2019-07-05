@@ -100,13 +100,17 @@
   type: hop-up
   epic:
     description: Increased damage to unshielded targets.
-    damage_modifier: 51%
+    damage_modifier:
+      Mozambique: 51%
+      P2020: 162%
 -
   name: Disruptor Rounds
   type: hop-up
   epic:
     description: Increased damage to shielded targets.
-    damage_modifier: 140%
+    damage_modifier:
+      Alternator: 140%
+      Re-45: 45.45%
 -
   name: Selectfire receiver
   type: hop-up
