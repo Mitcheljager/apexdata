@@ -16,10 +16,9 @@
       type: Tactical Ability
       name: Smoke Launcher
       description: Fire a high-velocity smoke canister that explodes into a smoke wall on impact.
-      primary_data:
-        damage: 10
-        duration: 20<span>s</span>
       secondary_data:
+        damage: 10
+        duration: 20<small>s</small>
         radius: 7.5<small>m</small>
         cooldown: 33<small>s</small>
         charges: 2
@@ -27,17 +26,16 @@
       type: Passive Ability
       name: Double Time
       description: Taking fire while sprinting makes you move faster for a brief time.
-      primary_data:
-        movement: +25<span>%</span>
-        duration: 2<span>s</span>
+      secondary_data:
+        movement: +25<small>%</small>
+        duration: 2<small>s</small>
     ability_3:
       type: Ultimate Ability
       name: Rolling Thunder
       description: Call in an artillery strike that slowly creeps across the landscape.
-      primary_data:
-        damage: 40
-        charge_time: 270<span>s</span>
       secondary_data:
+        damage: 40
+        charge_time: 270<small>s</small>
         radius: 25<small>m</small>
         slow: -35<small>%</small>
         detonation_time: 8<small>s</small>
@@ -70,21 +68,24 @@
       type: Tactical Ability
       name: Eye of the Allfather
       description: Briefly reveal hidden enemies, traps, and clues throughout structures in front of you.
-      primary_data:
-        scan_range: 35<span>m</span>
-        cooldown: 35<span>s</span>
+      secondary_data:
+        cone: 110<small>deg</small>
+        scan_range: 35<small>m</small>
+        reveal_time: 1.5<small>s</small>
+        cooldown: 35<small>s</small>
     ability_2:
       type: Passive Ability
       name: Tracker
       description: See tracks left behind by your foes.
+      secondary_data:
+        duration: 90<small>sec</small>
     ability_3:
       type: Ultimate Ability
       name: Beast of the Hunt
       description: Enhances your senses, allowing you move faster and highlighting your prey.
-      primary_data:
-        movement: +25<span>%</span>
-        charge_time: 180<span>s</span>
       secondary_data:
+        movement: +25<small>%</small>
+        charge_time: 180<small>s</small>
         duration: 35<small>s</small>
   badges:
     - name: Apex Bloodhound
@@ -113,16 +114,15 @@
       type: Tactical Ability
       name: Nox Gas Trap
       description: Drop canisters that release deadly Nox gas when shot or triggered by enemies.
-      primary_data:
-        gas_radius: 5<span>m</span>
-        duration: 12.5<span>s</span>
       secondary_data:
         damage: 4 / 10<small>tick</small>
-        cooldown: 30<small>s</small>
+        gas_radius: 5<small>m</small>
+        duration: 12.5<small>s</small>
         speed: -25<small>%</small>
         detection: 2.5<small>m</small>
         traps: 3
         max_traps_on_field: 6
+        cooldown: 30<small>s</small>
     ability_2:
       type: Passive Ability
       name: Nox Vision
@@ -132,14 +132,13 @@
       type: Ultimate Ability
       name: Nox Gas Grenade
       description: Blankets a large area in Nox gas. Damage increases the longer an enemy is inside of it.
-      primary_data:
-        gas_radius: 10<span>m</span>
-        charge_time: 150<span>s</span>
       secondary_data:
         damage: 1 / 10<small>tick</small>
+        gas_radius: 10<small>m</small>
         duration: 20<small>s</small>
         speed: -25<small>%</small>
         throw_distance: 33<small>m</small>
+        charge_time: 150<small>s</small>
   badges:
     - name: Apex Caustic
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -168,32 +167,30 @@
       type: Tactical Ability
       name: Dome of Protection
       description: Throw down a dome-shield that blocks attacks for 15 seconds.
-      primary_data:
-        radius: 5<span>m</span>
-        cooldown: 20<span>s</span>
       secondary_data:
-        duration: 15<small>s</small>
+        radius: 5<small>m</small>
+        duration: 18<small>s</small>
         throw_distance: 15<small>m</small>
+        cooldown: 20<small>s</small>
     ability_2:
       type: Passive Ability
       name: Gun Shield
       description: Aiming down sights deploys a gun shield that blocks incoming fire.
-      primary_data:
+      secondary_data:
         shield: 75
       extra: <h5>Fortified</h5> Reduces damage taken by 15%
     ability_3:
       type: Ultimate Ability
       name: Defensive Bombardment
       description: Call in a concentrated mortar strike on a marked position.
-      primary_data:
-        damage: 40
-        charge_time: 270<span>s</span>
       secondary_data:
+        damage: 40
         duration: 8<small>s</small>
         delay: 2<small>s</small>
         stun: 4<small>s</small>
         radius: 25<small>m</small>
         throw_range: 50<small>m</small>
+        charge_time: 270<small>s</small>
   badges:
     - name: Apex Gibraltar
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -221,10 +218,9 @@
       type: Tactical Ability
       name: D.O.C. Heal Drone
       description: Call your Drone of Compassion to automatically heal nearby teammates over time.
-      primary_data:
-        cast_time: 2<span>s</span>
-        cooldown: 60<span>s</span>
       secondary_data:
+        cast_time: 2<small>s</small>
+        cooldown: 60<small>s</small>
         healing_per_second: 5
         max_healing_range: 2<small>m</small>
         duration: 20<small>s</small>
@@ -233,18 +229,17 @@
       name: Combat Medic
       description: Revive knocked down teammates faster while protected by a shield wall. Healing items are used 25% faster.
       extra: <h5>Low Profile</h5> Increases damage taken by 5%
-      primary_data:
-        revive: 4<span>s</span>
-        self_heal: -25<span>%</span>
+      secondary_data:
+        revive: 4<small>s</small>
+        self_heal: -25<small>%</small>
     ability_3:
       type: Ultimate Ability
       name: Care Package
       description: Call in a drop pod full of high-quality defensive gear.
-      primary_data:
-        cast_time: 15<span>s</span>
-        charge_time: 360<span>s</span>
       secondary_data:
         items: 3
+        cast_time: 15<small>s</small>
+        charge_time: 360<small>s</small>
   badges:
     - name: Apex Lifeline
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -273,25 +268,24 @@
       type: Tactical Ability
       name: Psyche Out
       description: Send out a holographic decoy to confuse the enemy.
-      primary_data:
-        cooldown: 15<span>s</span>
-        duration: 15<span>s</span>
+      secondary_data:
+        cooldown: 15<small>s</small>
+        duration: 15<small>s</small>
     ability_2:
       type: Passive Ability
       name: Encore!
       description: Automatically drop a decoy and cloak for five seconds when knocked down.
-      primary_data:
-        invisible_duration: 5<span>s</span>
+      secondary_data:
+        invisible_duration: 5<small>s</small>
     ability_3:
       type: Ultimate Ability
       name: Vanishing Act
       description: Deploy a team of Decoys to distract enemies while you cloak.
-      primary_data:
-        duration: 5<span>s</span>
-        charge_time: 150<span>s</span>
       secondary_data:
+        duration: 5<small>s</small>
         decoys: 5
         invisible: 5<small>s</small>
+        charge_time: 150<small>s</small>
   badges:
     - name: Apex Mirage
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -342,25 +336,24 @@
       type: Tactical Ability
       name: Grappling Hook
       description: Grapple to get to out-of-reach places quickly.
-      primary_data:
-        range: 20<span>m</span>
-        cooldown: 15<span>s</span>
+      secondary_data:
+        range: 20<small>m</small>
+        cooldown: 15<small>s</small>
     ability_2:
       type: Passive Ability
       name: Insider Knowledge
       description: Scan a survey beacon to reveal the ring’s next location.
       extra: <h5>Low Profile</h5> Increases damage taken by 5%
-      primary_data:
-        cast_time: 8<span>s</span>
+      secondary_data:
+        cast_time: 8<small>s</small>
     ability_3:
       type: Ultimate Ability
       name: Zipline Gun
       description: Create a zipline for everyone to use.
-      primary_data:
-        range: 135<span>m</span>
-        charge_time: 90<span>s</span>
       secondary_data:
+        range: 135<small>m</small>
         max_speed_zipline: +200<small>%</small>
+        charge_time: 90<small>s</small>
   badges:
     - name: Apex Pathfinder
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -402,28 +395,26 @@
       type: Tactical Ability
       name: Into the Void
       description: Reposition quickly through the safety of void space, avoiding all damage.
-      primary_data:
-        cooldown: 20<span>s</span>
-        duration: 3<span>s</span>
       secondary_data:
         movement: +10<small>%</small>
+        duration: 3<small>s</small>
+        cooldown: 20<small>s</small>
     ability_2:
       type: Passive Ability
       name: Voices from the Void
       description: A voice warns you when danger approaches. As far as you can tell, it’s on your side.
       extra: <h5>Low Profile</h5> Increases damage taken by 5%
-      primary_data:
-        cooldown: 10<span>s</span>
-        warn_teammates: +6<span>s</span>
+      secondary_data:
+        cooldown: 10<small>s</small>
+        warn_teammates: +6<small>s</small>
     ability_3:
       type: Ultimate Ability
       name: Dimensional Rift
       description: Link two locations with portals for 60 seconds, allowing your entire team to use them.
-      primary_data:
-        duration: 60<span>s</span>
-        charge_time: 150<span>s</span>
       secondary_data:
+        duration: 60<small>s</small>
         movement: +110<small>%</small>
+        charge_time: 150<small>s</small>
   badges:
     - name: Apex Wraith
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
@@ -468,22 +459,22 @@
       type: Tactical Ability
       name: Stim
       description: Move 30% faster for six seconds. Costs health to use.
-      primary_data:
-        movement: +30<span>%</span>
-        health_cost: 10<span>%</span>
+      secondary_data:
+        movement: +30<small>%</small>
+        health_cost: 10<small>%</small>
     ability_2:
       type: Passive Ability
       name: Swift Mend
       description: Automatically restores health over time.
-      primary_data:
-        healing: 1 <span>/ 2 secs</span>
-        cooldown: 5 <span>sec</span>
+      secondary_data:
+        healing: 1 <small>/ 2 secs</small>
+        cooldown: 5 <small>sec</small>
     ability_3:
       type: Ultimate Ability
       name: Launch Pad
       description: Deploy a jump pad that catapults teammates through the air.
-      primary_data:
-        charge_time: 90<span>s</span>
+      secondary_data:
+        charge_time: 90<small>s</small>
   badges:
     - name: Apex Octane
       desc: Win (1 / 5 / 15 / 50 / 100) game(s)
