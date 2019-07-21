@@ -61,10 +61,6 @@ module ContentHelper
     YAML.load(File.read(Rails.root.join("config/content", "universal_badges.yml")))
   end
 
-  def tierlist
-    YAML.load(File.read(Rails.root.join("config/content", "tierlist.yml")))
-  end
-
   def weapons
     assault_rifles.concat(sub_machine_guns).concat(pistols).concat(light_machine_guns).concat(shotguns).concat(sniper_rifles)
   end

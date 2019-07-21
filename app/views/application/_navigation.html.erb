@@ -76,7 +76,7 @@
       <div class="dropdown__inner">
         <%= link_to "Tracker", tracker_path, class: current_page?(tracker_path) ? "active" : "" if Flipper.enabled?(:profiles) %>
         <%= link_to "Server Status", server_status_path, class: current_page?(server_status_path) ? "active" : "" if Flipper.enabled?(:server_status) %>
-        <%= link_to "Tier List", page_path("tierlist"), class: current_page?(page_path("tierlist")) ? "active" : "" %>
+        <%= link_to "Events", page_path("events"), class: current_page?(page_path("events")) ? "active" : "" if Flipper.enabled?(:events) %>
 
         <hr>
 

@@ -21,7 +21,6 @@
 //= require filter
 //= require navigation
 //= require theme_switch
-//= require strawpoll
 //= require item_columns
 //= require profile_form
 //= require charts
