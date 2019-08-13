@@ -4,7 +4,7 @@
   headshot_damage: 16.5
   legshot_damage: 9.9
   rate_of_fire: 750
-  ammo_capacity: 15
+  ammo_capacity: 16
   tactical_reload: 1.74
   empty_reload: 2.12
   ammo_type: light
@@ -32,7 +32,7 @@
       rare:
         ammo_increase: 40%
       epic:
-        ammo_increase: 60%
+        ammo_increase: 55%
   fire_modes:
     auto: true
   spray_pattern:

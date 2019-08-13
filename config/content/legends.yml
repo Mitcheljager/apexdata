@@ -69,7 +69,7 @@
       name: Eye of the Allfather
       description: Briefly reveal hidden enemies, traps, and clues throughout structures in front of you.
       secondary_data:
-        cone: 110<small>deg</small>
+        cone: 125<small>deg</small>
         scan_range: 35<small>m</small>
         reveal_time: 1.5<small>s</small>
         cooldown: 35<small>s</small>

@@ -109,7 +109,7 @@
   epic:
     description: Increased damage to shielded targets.
     damage_modifier:
-      Alternator: 70%
+      Alternator: 55%
       Re-45: 45.45%
 -
   name: Selectfire receiver
