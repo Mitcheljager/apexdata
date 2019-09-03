@@ -22,8 +22,6 @@
       - 1x_holo
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
-      - 2x-4x_variable_aog
-      - 3x_hcog_ranger
       - 1x_digital_threat
     stock:
       - standard_stock
@@ -99,8 +97,6 @@
       - 1x_holo
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
-      - 2x-4x_variable_aog
-      - 3x_hcog_ranger
       - 1x_digital_threat
     hop_up:
       - disruptor_rounds
@@ -172,8 +168,6 @@
       - 1x_holo
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
-      - 2x-4x_variable_aog
-      - 3x_hcog_ranger
       - 1x_digital_threat
     stock:
       - standard_stock
