@@ -43,12 +43,12 @@
     display: block;
 
     @include media-min(xl) {
-      font-size: 13px;
+      font-size: 16px;
       width: auto;
     }
 
     @include media-min(max-width) {
-      font-size: 15px;
+      font-size: 16px;
     }
 
     &:hover {
@@ -77,13 +77,13 @@
     color: var(--white);
 
     @include media-min(xl) {
-      margin-right: $margin / 4;
+      margin-right: $margin / 2;
       padding: 0;
       color: lighten($text-color, 10%);
     }
 
     @include media-min(max-width) {
-      margin-right: $margin / 1.25;
+      margin-right: $margin;
 
       &:last-child {
         margin-right: 0;

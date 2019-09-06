@@ -507,7 +507,8 @@
       type: Passive Ability
       name: Spark of Genius
       description: Ultimate Accelerants fully charge your Ultimate Ability, and standing near interception pylons boosts your Tactical Ability recharge.
+      extra: <h5>Low Profile</h5> Increases damage taken by 5%
     ability_3:
       type: Ultimate Ability
       name: Interception Pylon
-      description: Place an electrified pylon that destroys incoming ordnance and repairs damaged shields as long as it stands. (Max 3)
+      description: Place an electrified pylon that destroys incoming ordnance and repairs damaged shields as long as it stands. (Max 1)
