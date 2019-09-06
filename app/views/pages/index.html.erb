@@ -1,18 +1,10 @@
-<% if ENV["BANNER_MAIN"] %>
-  <%= render "banners/#{ ENV["BANNER_MAIN"] }", url: ENV["BANNER_MAIN_URL"] %>
-<% end %>
-
-<% unless Flipper.enabled?(:users) %>
-  <div class="alert">Player profiles and login are temporarily offline while we investigate server issues</div>
-<% end %>
-
-<div class="heading top-offset">
+<div class="heading mt-0">
   <h2 class="heading__title">Legends</h2>
 </div>
 
 <%= render "legends/legends_banner" %>
 
-<div class="heading top-offset">
+<div class="heading top-offset-half">
   <h2 class="heading__title">Weapons</h2>
 </div>
 
