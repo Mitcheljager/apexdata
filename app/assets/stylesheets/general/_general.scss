@@ -94,6 +94,15 @@ blockquote {
   border-left: 3px solid var(--border-color)
 }
 
+.link-small {
+  display: inline-block;
+  margin-top: 1em;
+  font-size: 12px;
+  line-height: 1.25em;
+  text-decoration: none;
+  box-shadow: 0 1px var(--border-color);
+}
+
 .content-page p {
   margin: ($margin / 2) 0;
 }

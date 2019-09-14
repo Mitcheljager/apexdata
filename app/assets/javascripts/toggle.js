@@ -9,11 +9,14 @@ function toggleElement(event) {
   event.preventDefault()
 
   const target = this.dataset.target
-  const targetElement = document.querySelector(`[data-is=${ target }]`)
-  const display = (window.getComputedStyle ? getComputedStyle(targetElement, null) : targetElement.currentStyle).display
-  if (display == "none") {
-    targetElement.style.display = "block";
-  } else {
-    targetElement.style.display = "none";
-  }
+  const targetElements = document.querySelectorAll(`[data-is=${ target }]`)
+
+  targetElements.forEach(element => {
+    const display = (window.getComputedStyle ? getComputedStyle(element, null) : element.currentStyle).display
+    if (display == "none") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  })
 }

@@ -58,6 +58,19 @@
         <%= render "pages/item_columns/bar_graph", target: "legshot_damage", label: "Legshot damage", max: get_max_value(items, "legshot_damage") %>
         <%= render "pages/item_columns/bar_graph", target: "damage_per_magazine", label: "Damage per mag", modify_target: "ammo_increase", max: get_max_value(items, "damage_per_magazine") %>
 
+        <%= link_to "How is 'damage per second' calculated?", "#", class: "link-small", data: { action: "toggle", target: "dps-explanation" } %>
+
+        <div data-is="dps-explanation" style="display: none">
+          <small>
+            <p>Damage per second is <strong>not</strong> the average damage dealt with body shots in 1 second. It's a realistic amount of damage you can deal in a 1 second slice. If a weapon can fire 1.5 shots a second, we only count 1 shot. That .5 of a shot can not be realistically dealt.</p>
+            <p>Here are additional values that might interest you:</p>
+          </small>
+
+          <%= render "pages/item_columns/bar_graph", target: "average_dps", label: "Average dps/sec.", max: get_max_value(items, "average_dps") %>
+          <%= render "pages/item_columns/bar_graph", target: "headshot_dps", label: "Headshot dps", max: get_max_value(items, "headshot_dps") %>
+          <%= render "pages/item_columns/bar_graph", target: "legshot_dps", label: "Legshot dps", max: get_max_value(items, "legshot_dps") %>
+        </div>
+
         <hr>
 
         <%= render "pages/item_columns/static_value", target: "ammo_capacity", modify_target: "ammo_increase", modify_round: true, label: "Ammo capacity" %>

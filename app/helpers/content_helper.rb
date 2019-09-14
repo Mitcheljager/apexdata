@@ -85,6 +85,14 @@ module ContentHelper
 
       item["damage_per_second"] = dps_value.to_i
 
+      average_dps_value = item["damage"] * (item["rate_of_fire"].to_f / 60)
+      average_dps_value = average_dps_value.to_i * item["damage_modifier"] if item["damage_modifier"]
+
+      item["average_dps"] = average_dps_value.to_i
+
+      item["headshot_dps"] = (dps_value.to_i * (item["headshot_damage"].to_i / item["damage"].to_i))
+      item["legshot_dps"] = (dps_value.to_f * (item["legshot_damage"].to_f / item["damage"].to_f)).to_i
+
       damage = item["ammo_capacity"] * item["damage"]
       if item["damage_modifier"]
         damage = damage * item["damage_modifier"]

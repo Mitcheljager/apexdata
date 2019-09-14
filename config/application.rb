@@ -20,17 +20,6 @@ module ApexData
       end if File.exists?(env_file)
     end
 
-    config.after_initialize do
-      if defined? Rails::Server
-        Rails.application.load_tasks
-        
-        if ActiveRecord::Base.connection.table_exists? "flipper_gates"
-          Rake::Task["keep_profiles_updated"].invoke if Flipper.enabled?(:keep_profiles_updated)
-          Rake::Task["update_event_leaderboards"].invoke if Flipper.enabled?(:keep_events_updated)
-        end
-      end
-    end
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
