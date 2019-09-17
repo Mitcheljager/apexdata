@@ -294,7 +294,7 @@ hr {
   margin: $margin / 2 0;
   border: 0;
   height: 1px;
-  background: var(--border-color);
+  background: rgba($white, .15);
 }
 
 .desktop-only {

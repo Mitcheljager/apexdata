@@ -213,7 +213,6 @@
     font-size: 12px;
     font-weight: 700;
     margin-bottom: .1em;
-    text-transform: uppercase;
   }
 
   + .item__small-info {
@@ -314,7 +313,6 @@
   background: rgba($black, .2);
   box-shadow: 0 3px 10px rgba($black, .25);
   line-height: 1.1em;
-  text-transform: uppercase;
 
   .theme-light & {
     background: $white;

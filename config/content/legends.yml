@@ -1,16 +1,5 @@
 -
   name: Bangalore
-  function: Professional Soldier
-  lore: |
-    <p>
-      Born into a military family where she, her parents, and her four older brothers all served in the IMC Armed Forces, Bangalore has been an exceptional soldier since she was young. She was top of her class at the IMC Military Academy and the only cadet who could take apart a Peacekeeper, equip it with a Precision Choke hop-up, and put it back together in under twenty seconds – blindfolded.
-    </p>
-    <p>
-      Three years ago, Anita and her brother Jackson were ordered to retrieve a mercenary fleet from the Outlands to aid in the IMC's fight against the Militia. However, their unit lost contact with IMC HQ and were ambushed on arrival. The squad scattered, but Jackson stayed behind to give his sister time to escape. Alone and with no way home, Anita put her training, extensive weapon knowledge, and competitive spirit to work by joining the Apex Games. Now, she fights to raise money for passage back to the IMC home base, where she hopes to reunite with what remains of her family.
-    </p>
-  about:
-    real_name: Anita Williams
-    age: 35
   abilities:
     ability_1:
       type: Tactical Ability
@@ -40,29 +29,8 @@
         slow: -35<small>%</small>
         detonation_time: 8<small>s</small>
         duration: 5<small>s</small>
-  badges:
-    - name: Apex Bangalore
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Bangalore's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Bangalore's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Bangalore, win 2 games in a row
 -
   name: Bloodhound
-  function: Technological Tracker
-  lore: |
-    <p>
-      Bloodhound is known across the Outlands as one of the greatest game hunters the Frontier has ever seen - and that's about all anyone knows. Their identity is a mystery wrapped in layers of rumors they are fabulously wealthy, a bloodthirsty murderer, a Goliath whisperer, a former slave, half bat, and a dozen other things depending on who's doing the whispering.
-    </p>
-    <p>
-      All anyone truly knows is that Bloodhound is a force to be reckoned with in the Apex Games. Bloodhound's unparalleled tracking skills are a boon to any team they join, helping them root out hidden opponents and tracking the enemy's movements. Calling on Earth's Old Norse Gods to guide them, Bloodhound believes that destiny is a path that has already been laid out, eventually carrying all to their death. But with that knowledge comes strength, because until that day comes, Bloodhound knows they can't be stopped.
-    </p>
-  about:
-    real_name: Unknown
-    age: Unknown
-    home_world: Unknown
   abilities:
     ability_1:
       type: Tactical Ability
@@ -87,28 +55,8 @@
         movement: +25<small>%</small>
         charge_time: 180<small>s</small>
         duration: 35<small>s</small>
-  badges:
-    - name: Apex Bloodhound
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Bloodhound's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Bloodhound's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Bloodhound, win 2 games in a row
 -
   name: Caustic
-  function: Toxic Trapper
-  lore: |
-    <p>
-      Before there was Caustic, a scientist named Alexander Nox worked at Humbert Labs, the Frontier’s leading manufacturer of pesticide gases. With a glut of pesticides needed to protect the growing Frontier colonies’ crops, Humbert Labs was constantly on the hunt for better and stronger formulas. Nox was one of their brightest scientists and worked day and night developing new gases. But to make sure they worked, he needed to test them on more than just inert tissue, he needed something living.
-    </p>
-    <p>
-      As he toiled in secret, Nox began to see the beauty in his creations and their ability to destroy anything they touched. But the head of Humbert Labs soon discovered his gruesome experiments, and their confrontation ended with the lab in flames and its chief dead. Today, Nox is missing and presumed deceased. Caustic, meanwhile, now finds new test subjects in the Apex Games, where he puts his gaseous creations to work and observes their effects with great interest.
-    </p>
-  about:
-    real_name: Alexander Nox
-    age: 48
   abilities:
     ability_1:
       type: Tactical Ability
@@ -139,29 +87,8 @@
         speed: -25<small>%</small>
         throw_distance: 33<small>m</small>
         charge_time: 150<small>s</small>
-  badges:
-    - name: Apex Caustic
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Caustic's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Caustic's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Caustic, win 2 games in a row
 -
   name: Gibraltar
-  function: Shielded Fortress
-  lore: |
-    <p>
-      Gibraltar is a gentle giant with a wild side. The son of two SARAS (Search and Rescue Association of Solace) volunteers, he has always been skilled at getting others out of dangerous situations that are common in the Outlands. However, he only began to understand the value of protecting others when he and his boyfriend stole his father’s motorcycle, took it on a joyride, and got trapped by a deadly mudslide. His parents saved them, and his father lost an arm in the process. Gibraltar has never forgotten that sacrifice and has devoted his life to helping those in need.
-    </p>
-    <p>
-      The Apex Games didn’t change that, but they changed what it meant. Many of Gibraltar’s friends and colleagues have competed in the Games for extra money, fame, and glory over the years, and some never came home. Gibraltar joined to keep them safe and, for the first time, his skills as a rescuer and his rebellious nature worked together. He’s now become an icon in the Apex Games, putting himself in the line of fire to protect his squad and send his opponents running for cover.
-    </p>
-  about:
-    real_name: Makoa Gibraltar
-    age: 30
-    home_world: Solace
   abilities:
     ability_1:
       type: Tactical Ability
@@ -191,25 +118,8 @@
         radius: 25<small>m</small>
         throw_range: 50<small>m</small>
         charge_time: 270<small>s</small>
-  badges:
-    - name: Apex Gibraltar
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Gibraltar's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Gibraltar's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Gibraltar, win 2 games in a row
 -
   name: Lifeline
-  function: Combat Medic
-  lore: |
-    <p>
-      Ajay Che, aka Lifeline, isn’t someone you would expect to find in the Apex Games. Once the child of wealthy war profiteers, she left home when she learned of the damage her family had caused and enlisted in the Frontier Corps, a humanitarian organization that aids Frontier communities in need. She’s since devoted her life to helping others and joined the Apex Games to fund the Frontier Corps with her winnings.
-    </p>
-    <p>
-      Since no one in the Games is innocent — they all know what they signed up for — and every one of her victories means help for those in need, Lifeline has no problem engaging in the popular bloodsport. Or so she tells herself. She may seem sarcastic and callous, but deep down she wants to help people and make the world a better place. If that means taking a few people down in the process, so be it.
-    </p>
   about:
     real_name: Ajay Che
     age: 24
@@ -240,29 +150,8 @@
         items: 3
         cast_time: 15<small>s</small>
         charge_time: 360<small>s</small>
-  badges:
-    - name: Apex Lifeline
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Lifeline's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Lifeline's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Lifeline, win 2 games in a row
 -
   name: Mirage
-  function: Holographic Trickster
-  lore: |
-    <p>
-      Mirage is the kind of guy who likes to stand out. The youngest of four brothers, he perfected the art of fooling around to get attention. The one thing he took seriously was Holo-Pilot technology, introduced to the illusion-creating tech by his engineer mother, he poured over the mechanisms and learned all he could about them. Even when his brothers went MIA during the Frontier War, Mirage and his mother continued to develop holo devices, and the work brought them closer.
-    </p>
-    <p>
-      While working as a bartender to make ends meet, Mirage heard amazing stories from his patrons about the Apex Games and the wealth and glory that came with victory. As good as both of those sounded, he knew he couldn’t risk leaving his mother childless – until she gave him a set of customized holo devices and told him to follow his dream. Mirage is now the life of the Apex Games, outwitting opponents and charming audiences across the Outlands.
-    </p>
-  about:
-    real_name: Elliott Witt
-    age: 30
-    home_world: Solace
   abilities:
     ability_1:
       type: Tactical Ability
@@ -286,51 +175,8 @@
         decoys: 5
         invisible: 5<small>s</small>
         charge_time: 150<small>s</small>
-  badges:
-    - name: Apex Mirage
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Mirage's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Mirage's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Mirage, win 2 games in a row
-  tips:
-    - name: Ataraxic89
-      tip: |
-        <p>Send your decoy through any door before you go through it, going in or out</p>
-    - name: Ataraxic89
-      tip: |
-        <p>When trying to escape a pursuer, try to break line of sight long enough to send a decoy the direction you were heading. Use crouch to silently double back on the enemy to lose them or ambush them from behind.</p>
-    - name: Ataraxic89
-      tip: |
-        <p>Do NOT send the illusion out if you aren't ready to fight and an enemy could guess the point of origin</p>
-    - name: Ataraxic89
-      tip: |
-        <p>The illusion works best if you are in position to shoot the enemy just after they shoot your decoy.</p>
-    - name: Ataraxic89
-      tip: |
-        <p>Even experienced players can be fooled if you give them very little time to study the decoy.</p>
-    - name: Ataraxic89
-      tip: |
-        <p>When downed use the 5 seconds of invisibility to get out of line of sight.</p>
-    - name: Ataraxic89
-      tip: |
-        <p>You cannot fire until the stealth from your Ultimate has ended. Be careful when using your Ultimate offensively.</p>
 -
   name: Pathfinder
-  function: Forward Scout
-  lore: |
-    <p>
-      Pathfinder is the picture of optimism, despite his circumstances. A MRVN (Mobile Robotic Versatile eNtity) modified to specialize in location scouting and surveying, he booted up decades ago in an abandoned laboratory with no idea who created him or why. With only his MRVN designation to hint at his identity, Pathfinder set off in search of his creator.
-    </p>
-    <p>
-      Pathfinder has learned much in his travels since then (like how to make a mean Eastern Leviathan Stew) but hasn’t come any closer to finding his creator. Still, he’s never given up hope, and has joined the Apex Games to gain a following--and hopefully draw the attention of his maker. In the meantime, he remains enthusiastic and helpful, always ready to make new friends (then shoot them).
-    </p>
-  about:
-    real_name: MRVN
-    age: Unknown
-    home_world: Unknown
   abilities:
     ability_1:
       type: Tactical Ability
@@ -354,42 +200,8 @@
         range: 135<small>m</small>
         max_speed_zipline: +200<small>%</small>
         charge_time: 90<small>s</small>
-  badges:
-    - name: Apex Pathfinder
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Pathfinder's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Pathfinder's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Pathfinder, win 2 games in a row
-  tips:
-    - name: Mitsiee
-      tip: |
-        <p>Jump right after your Grappling Hook hits to get a serious height boost.</p>
-    - name: Mitsiee
-      tip: |
-        <p>Your passive will often put you in a very open and dangerous position. Have an escape plan before you start channeling.</p>
-    - name: Mitsiee
-      tip: |
-        <p>Your Ultimate makes a lot of noise. If you plan on using it to get close to an enemy, know that the enemy will likely have noticed.</p>
-    - name: Mitsiee
-      tip: |
-        <p>Your grappling hook can be used to pull enemies towards you. This can be useful to get a downed enemy close to you and finish them off, their loot will be right at your feet.</p>
 -
   name: Wraith
-  function: Interdimensional Skirmisher
-  lore: |
-    <p>
-      Wraith is a whirlwind fighter, able to execute swift and deadly attacks and manipulate spacetime by opening rifts in the fabric of reality — but she has no idea how she got that way. Years ago, she woke up in an IMC Detention Facility for the Mentally Ill with no memory of her life before. She also began hearing a distant voice whispering in her mind that would keep her awake for days on end. Despite nearly driving her insane, once she started to listen and trust it, the voice helped her harness her newfound power of void manipulation and escape the facility.
-    </p>
-    <p>
-      Determined to uncover her true identity, Wraith began a quest to find out more about the experiments. Many of the old research facilities, however, are buried beneath heavily guarded arenas used for the Apex Games. Now Wraith has joined the competition, and with every match she gets closer to the truth.
-    </p>
-  about:
-    real_name: Redacted
-    age: Redacted
-    home_world: Redacted
   abilities:
     ability_1:
       type: Tactical Ability
@@ -415,45 +227,8 @@
         duration: 60<small>s</small>
         movement: +110<small>%</small>
         charge_time: 150<small>s</small>
-  badges:
-    - name: Apex Wraith
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Wraith's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Wraith's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Wraith, win 2 games in a row
-  tips:
-    - name: Jordan C.
-      tip: |
-        <p>Voices from the void has saved my team countless times. Keep an ear out for her voice lines and notify your team</p>
-    - name: Jordan C
-      tip: |
-        <p>Use you use your Ultimate ahead of a fight to create two angles of attack. Try to take advantage of high ground where possible.</p>
-    - name: Jordan C
-      tip: |
-        <p>Wraiths portal will vanish when the Ultimate is back to 39% charge.</p>
-    - name: Jordan C
-      tip: |
-        <p>Dimensional Rift provides a slight speed boost after dropping the first portal and before setting the second portal. This can be combined with the Into the Void ability to get into great positions.</p>
-    - name: Jordan C
-      tip: |
-        <p>Team mates can travel through portals when downed.</p>
 -
   name: Octane
-  function: The Adrenaline Junkie
-  lore: |
-    <p>
-      One day, Octavio Silva was bored. In fact, he was bored most days. Heir to the preoccupied CEOs of Silva Pharmaceuticals and wanting for nothing in life, he entertained himself by performing death-defying stunts and posting holovids of them for his fans to gawk over. So, this day, he decided to set the course record for a nearby Gauntlet by launching himself across the finish line – using a grenade.
-    </p>
-    <p>
-      As he lay in triage hours later, the doctors informed him that the damage done to his legs meant his daredevil days were over. That didn’t sit well with Octavio, who turned to an old friend for help: Ajay Che, who he guilted into forging an order to replace his legs with bionic ones. Suddenly able to repair his limbs at a moment’s notice, Octavio decided petty online stunts weren’t enough: the ultimate adrenaline rush, the Apex Games, was calling. Now, he’s going to become an Apex Champion doing the most incredible, death-defying moves anyone’s ever seen. Maybe in the arena, he won’t be so bored.
-    </p>
-  about:
-    real_name: Octavio Silva
-    age: 24
-    home_world: Psamathe
   abilities:
     ability_1:
       type: Tactical Ability
@@ -467,7 +242,7 @@
       name: Swift Mend
       description: Automatically restores health over time.
       secondary_data:
-        healing: 1 <small>/ 2 secs</small>
+        healing: 0.5 <small>/sec</small>
         cooldown: 5 <small>sec</small>
     ability_3:
       type: Ultimate Ability
@@ -475,34 +250,16 @@
       description: Deploy a jump pad that catapults teammates through the air.
       secondary_data:
         charge_time: 90<small>s</small>
-  badges:
-    - name: Apex Octane
-      desc: Win (1 / 5 / 15 / 50 / 100) game(s)
-    - name: Octanes's wake
-      desc: Kill at least 20 enemies in one game
-    - name: Octanes's wrath
-      desc: Deal (2000 / 2500 / 3000 / 4000) damage in a single game
-    - name: Hot streak
-      desc: When playing as Octane, win 2 games in a row
 -
   name: Wattson
-  function: Static Defender
-  lore: |
-    <p>
-      Natalie “Wattson” Paquette is a familiar face in the Apex Games, though for a different reason than most. Daughter of the Games’ lead electrical engineer, she studied his manuals to stay close to him, and discovered her calling at a young age. Though she could be completely distracted one moment and hyper-focused the next, electricity grounded her – its ordered, predictable flow made sense in a way the rest of the world didn’t.
-    </p>
-    <p>
-      She devoured every book she could on the subject, and eventually became such a skilled engineer that she was commissioned to build the Apex Games’ Modified Containment Ring. Unfortunately, her father died the day it was revealed, leaving her alone. At her lowest moment, a group of competitors invited her to return to the arena with them, assuring her she would always have a home. She now fights alongside her friends in the arena she helped build, destroying incoming missiles, recharging shields, creating fences, and using her pylon to silence fights that get too loud. Nobody knows the arena better than Wattson – anyone who underestimates her is in for a shock.
-    </p>
-  about:
-    real_name: Natalie Paquette
-    age: 22
-    home_world: Solace
   abilities:
     ability_1:
       type: Tactical Ability
       name: Perimeter Security
       description: Connect nodes to create electrified fences that damage and slow enemies.
+      secondary_data:
+        damage: 10
+        duration: 3 <small>sec</small>
     ability_2:
       type: Passive Ability
       name: Spark of Genius
@@ -511,4 +268,6 @@
     ability_3:
       type: Ultimate Ability
       name: Interception Pylon
-      description: Place an electrified pylon that destroys incoming ordnance and repairs damaged shields as long as it stands. (Max 1)
+      description: Place an electrified pylon that destroys incoming ordnance and repairs damaged shields as long as it stands.
+      secondary_data:
+        max_pylons: 1

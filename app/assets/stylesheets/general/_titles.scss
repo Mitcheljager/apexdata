@@ -34,40 +34,19 @@ h5 {
 }
 
 .heading {
-  display: flex;
-  align-items: flex-end;
-  margin: 0 0 $margin;
+  margin: $margin / 4 0 $margin * 1.5;
+  text-align: center;
 
   @include media-min(xxl) {
-    margin: 0 0 $margin * 2;
-  }
-
-  &::after {
-    display: block;
-    content: "";
-    height: 2px;
-    width: 100%;
-    max-width: $max-width / 3 * 2;
-    margin-left: auto;
-    background: var(--border-color);
+    margin: $margin / 2 0 $margin * 2.5;
   }
 
   &--small {
     margin: 0;
-
-    &::after {
-      height: 2px;
-    }
   }
 
   &--half-margin {
     margin: ($margin * 2) 0 $margin;
-  }
-
-  &--white-line {
-    &::after {
-      background: rgba($white, .25);
-    }
   }
 }
 

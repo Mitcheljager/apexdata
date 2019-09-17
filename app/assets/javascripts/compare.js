@@ -96,11 +96,11 @@ function compareStaticValues(detailElement) {
     const resultElement = document.createElement("div")
     resultElement.classList.add("compare-element")
     if (isPositive) {
-      resultElement.innerHTML = `(${ compareInverse ? "" : "+" }${ compareDifference })`
+      resultElement.innerHTML = `${ compareInverse ? "" : "+" }${ compareDifference }`
       resultElement.classList.add("compare-higher")
     } else {
       resultElement.classList.add("compare-lower")
-      resultElement.innerHTML = `(${ compareInverse ? "+" : "" }${ compareDifference })`
+      resultElement.innerHTML = `${ compareInverse ? "+" : "" }${ compareDifference }`
     }
 
     element.prepend(resultElement)
@@ -179,7 +179,7 @@ function compareCircleGraph(detailElement) {
     resultElement.classList.add("compare-element")
 
     if (isPositive) {
-      resultElement.innerHTML = `(+${ compareDifference })`
+      resultElement.innerHTML = `+${ compareDifference }`
       resultElement.classList.add("compare-higher")
 
       barElement.style.backgroundImage = `conic-gradient(var(--graph-color) ${ compareValuePercentage }%,
@@ -187,7 +187,7 @@ function compareCircleGraph(detailElement) {
                                           var(--green) var(--compare-value),
                                           var(--graph-bg) 0%)`
     } else {
-      resultElement.innerHTML = `(${ compareDifference })`
+      resultElement.innerHTML = `${ compareDifference }`
       resultElement.classList.add("compare-lower")
 
       barElement.style.backgroundImage = `conic-gradient(var(--graph-color) var(--compare-value),

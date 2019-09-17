@@ -9,62 +9,9 @@
 
 <% cache "#{ @item["name"] }" do %>
   <div class="wrapper wrapper--medium">
-    <h1><center><%= @item["name"] if @item["name"] %></center></h1>
-
-    <div class="items top-offset">
-      <article class="item item--full-width legend">
-        <%= tag.div class: "legend__image" do %>
-          <%= tag.div class: "legend__image" do %>
-            <picture>
-              <source srcset="<%= image_url "legends/#{ @item["name"].downcase }/banner.webp" %>" type="image/webp">
-              <source srcset="<%= image_url "legends/#{ @item["name"].downcase }/banner.jpg" %>" type="image/jpeg">
-              <%= image_tag "legends/#{ @item["name"].downcase }/banner.jpg", class: "legends-banner__image", alt: @item["name"] %>
-            </picture>
-          <% end if asset_exists? "legends/#{ @item["name"].downcase }/banner.jpg" %>
-        <% end %>
-
-        <div class="legend__intro">
-          <div class="item__title heading heading--small">
-            <h3 class="heading__title"><%= @item["function"] if @item["function"] %></h3>
-            <div class="heading__line"></div>
-          </div>
-
-          <%= @item["lore"].html_safe %>
-
-          <br>
-
-          <div class="columns columns__about">
-            <div class="columns__column">
-              <% @item["about"].each do |key, about| %>
-                <div class="item__full-width-info item__full-width-info--large">
-                  <span class="color-basic"><%= key.humanize %></span>
-                  <small class="no-text-transform"><%= about %></small>
-                </div>
-              <% end if @item["about"] %>
-            </div>
-
-            <%= tag.div class: "columns__column" do %>
-              <% @item["abilities"].each do |key, ability| %>
-                <div class="item__full-width-info item__full-width-info--large item__full-width-info--image">
-                  <% if asset_exists? "legends/#{ @item["name"].downcase }/#{ key }.png" %>
-                    <%= image_tag "legends/#{ @item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
-                  <% end %>
-
-                  <div>
-                    <span class="color-basic"><%= ability["name"] %></span>
-                    <small class="no-text-transform"><%= ability["type"] %></small>
-                  </div>
-                </div>
-              <% end %>
-            <% end if @item["abilities"] %>
-          </div>
-        </div>
-      </article>
-    </div>
-
     <% if @item["abilities"] %>
-      <div class="heading top-offset">
-        <h2 class="heading__title">Abilities</h2>
+      <div class="heading">
+        <h2 class="heading__title"><%= @item["name"] if @item["name"] %></h2>
       </div>
 
       <div class="items">
@@ -73,21 +20,5 @@
         <% end %>
       </div>
     <% end %>
-
-    <div class="heading top-offset">
-      <h2 class="heading__title">Extras</h2>
-    </div>
-
-    <div class="items">
-      <div class="columns columns__extra">
-        <%= tag.div class: "columns__column columns__column--spacing" do %>
-          <%= render "badges" %>
-        <% end if @item["badges"] %>
-
-        <div class="columns__column">
-          <%= render "tips_tricks" %>
-        </div>
-      </div>
-    </div>
   </div>
 <% end %>
