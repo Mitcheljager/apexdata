@@ -1,9 +1,9 @@
 .circle-graph {
   position: relative;
-  width: 10vw;
-  height: 10vw;
-  max-width: 10rem;
-  max-height: 10rem;
+  width: 12vw;
+  height: 12vw;
+  max-width: 10.5rem;
+  max-height: 10.5rem;
 }
 
 .circle-graph__label {
@@ -13,12 +13,12 @@
   text-align: center;
   transform: translate(-50%, -50%);
   z-index: 2;
-  color: var(--title-color);
 
   h4 {
     margin: 0 0 -.25em;
     font-weight: 700;
     font-family: "Teko", sans-serif;
+    color: var(--title-color);
   }
 
   [class^="compare-"] {
@@ -50,7 +50,7 @@
     position: absolute;
     top: $circle-graph-thickness;
     left: $circle-graph-thickness;
-    background: var(--primary);
+    background: var(--bg-color);
     width: calc(100% - #{ $circle-graph-thickness * 2 });
     height: calc(100% - #{ $circle-graph-thickness * 2 });
     border-radius: 50%;

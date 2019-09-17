@@ -22,10 +22,6 @@
     filter: none;
   }
 
-  @include media-min(xs) {
-    padding: $margin;
-  }
-
   @media (min-width: 640px) and (max-width: $max-width - 1) {
     flex: 0 0 calc((100% - #{$margin} / 2) / 2);
     max-width: calc((100% - #{$margin} / 2) / 2);

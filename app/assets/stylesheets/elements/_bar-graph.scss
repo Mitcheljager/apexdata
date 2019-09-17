@@ -6,11 +6,12 @@
   align-items: center;
   width: 100%;
   font-size: 14px;
-  margin-bottom: $margin / 8;
+  margin-bottom: $margin / 4;
 
   @include media-min(sm) {
     grid-template: "label bar value";
     grid-template-columns: 9fr 9fr 4fr;
+    margin-bottom: $margin / 8;
   }
 
   @supports (-ms-ime-align: auto) {
@@ -22,6 +23,11 @@
 .bar-graph__label {
   grid-area: label;
   position: relative;
+  margin-bottom: $margin / 8;
+
+  @include media-min(sm) {
+    margin-bottom: 0;
+  }
 
   @supports (-ms-ime-align: auto) {
     flex: 0 0 40%;

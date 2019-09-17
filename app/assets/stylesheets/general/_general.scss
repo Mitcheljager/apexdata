@@ -13,7 +13,7 @@ body {
   --border-color: #{ $border-color };
   --text-color: #{ $text-color };
   --title-color: #{ $white };
-  --graph-bg: #{ darken($primary, 5%) };
+  --graph-bg: #{ darken($bg-color, 5%) };
   --graph-color: #{ lighten($primary, 55%) };
   --primary: #{ $primary };
   --secondary: #{ $secondary };

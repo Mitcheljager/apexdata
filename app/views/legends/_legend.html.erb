@@ -1,10 +1,4 @@
 <article class="item">
-  <div class="item__large-icon-wrapper">
-    <% if asset_exists?("legends/#{ item["name"].downcase }/character.png") %>
-      <%= image_tag "legends/#{ item["name"].downcase }/character.png", class: "item__large-icon", alt: item["name"] %>
-    <% end %>
-  </div>
-
   <h3 class="item__title"><%= item["name"] if item["name"] %></h3>
 
   <div class="columns columns--abilities">
