@@ -134,12 +134,12 @@ function compareBarGraph(detailElement) {
     compareBarElement.classList.add("compare-element")
 
     if (isPositive) {
-      resultElement.innerHTML = `(+${ compareDifference })`
+      resultElement.innerHTML = `+${ compareDifference }`
       resultElement.classList.add("compare-higher")
       compareBarElement.classList.add("bar-graph__compare--positive")
     } else {
       resultElement.classList.add("compare-lower")
-      resultElement.innerHTML = `(${ compareDifference })`
+      resultElement.innerHTML = `${ compareDifference }`
       compareBarElement.classList.add("bar-graph__compare--negative")
 
       const lineElementWidth = parseInt(lineElement.style.width)

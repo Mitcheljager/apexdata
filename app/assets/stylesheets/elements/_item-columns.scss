@@ -481,15 +481,18 @@
 
 .item-columns__data-value {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-left: auto;
-  font-weight: 700;
+  margin-bottom: -.25em;
+  font-family: "Teko", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 12px;
   color: var(--title-color);
 
   [class^="compare-"],
   [class^="modify-"] {
     margin-right: .5em;
-    font-size: 11px;
   }
 }
 

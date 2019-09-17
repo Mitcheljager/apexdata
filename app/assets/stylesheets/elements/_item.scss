@@ -89,7 +89,7 @@
 }
 
 .item__title {
-  font-size: 24px;
+  font-size: 21px;
   margin: 0 0 $margin / 2;
 }
 
@@ -126,6 +126,8 @@
   > div {
     display: flex;
     align-items: flex-end;
+    font-family: "Teko", sans-serif;
+    font-weight: 600;
 
     > span {
       margin-bottom: 6px;
@@ -135,9 +137,11 @@
 }
 
 .item__small-info {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  padding-right: 1.25rem;
   width: 100%;
   font-size: 12px;
   font-weight: 300;
@@ -146,8 +150,10 @@
   span {
     margin-left: auto;
     display: block;
-    font-size: 16px;
-    font-weight: 700;
+    font-family: "Teko", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1em;
     color: $white;
 
     .theme-light & {
@@ -162,7 +168,12 @@
   }
 
   small {
-    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 11px;
     margin-left: .25em;
     color: var(--text-color);
     font-weight: 300;

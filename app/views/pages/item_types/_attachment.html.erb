@@ -1,8 +1,8 @@
 <% cache "#{ item["name"] }" do %>
   <article class="item">
-    <% if asset_exists?("attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png") %>
+    <% if asset_exists?("attachments/#{ item["name"].downcase.to_s.gsub(" ", "_").to_s.gsub("'", "") }.png") %>
       <div class="item__large-icon-wrapper">
-        <%= image_tag "attachments/#{ item["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
+        <%= image_tag "attachments/#{ item["name"].downcase.to_s.gsub(" ", "_").to_s.gsub("'", "") }.png", class: "item__large-icon", alt: item["name"] %>
       </div>
     <% end %>
 
@@ -24,47 +24,47 @@
 
         <%= tag.div class: "item__small-info", title: "This can vary per weapon" do %>
           Ammo Increase:
-          <span><%= item[rarity]["ammo_increase"] %></span>
+          <span><%= raw item[rarity]["ammo_increase"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["ammo_increase"] %>
 
         <%= tag.div class: "item__small-info" do %>
           Reload time:
-          <span><%= item[rarity]["reload_time"] %></span>
+          <span><%= raw item[rarity]["reload_time"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["reload_time"] %>
 
         <%= tag.div class: "item__small-info" do %>
           Headshot damage multiplier:
-          <span><%= item[rarity]["damage_multiplier"] %></span>
+          <span><%= raw item[rarity]["damage_multiplier"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["damage_multiplier"] %>
 
         <%= tag.div class: "item__small-info" do %>
           Charge time:
-          <span><%= item[rarity]["charge_time"] %></span>
+          <span><%= raw item[rarity]["charge_time"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["charge_time"] %>
 
         <%= tag.div class: "item__small-info" do %>
           Fire Rate Increase:
-          <span><%= item[rarity]["fire_rate"] %></span>
+          <span><%= raw item[rarity]["fire_rate"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["fire_rate"] %>
 
         <%= tag.div class: "item__small-info" do %>
           Rechamber time:
-          <span><%= item[rarity]["rechamber_time"] %></span>
+          <span><%= raw item[rarity]["rechamber_time"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["rechamber_time"] %>
 
         <%= tag.div class: "item__small-info" do %>
           Draw, Holster, and Zoom time:
-          <span><%= item[rarity]["draw_time"] %></span>
+          <span><%= raw item[rarity]["draw_time"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["draw_time"] %>
 
         <%= tag.div class: "item__small-info" do %>
           ADS time:
-          <span><%= item[rarity]["ads"] %></span>
+          <span><%= raw item[rarity]["ads"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["ads"] %>
 
         <%= tag.div class: "item__small-info" do %>
           Recoil (roughly):
-          <span><%= item[rarity]["kick_yaw_random"] %></span>
+          <span><%= raw item[rarity]["kick_yaw_random"].to_s.gsub(/\%$/, "<small>%</small>") %></span>
         <% end if item[rarity]["kick_yaw_random"] %>
 
         <%= tag.div do %>
@@ -73,7 +73,7 @@
           <% item[rarity]["damage_modifier"].each do |weapon, value| %>
             <div class="item__small-info">
               <%= weapon %>
-              <span><%= value %></span>
+              <span><%= raw value.to_s.gsub(/\%$/, "<small>%</small>") %></span>
             </div>
           <% end %>
         <% end if item[rarity]["damage_modifier"] %>

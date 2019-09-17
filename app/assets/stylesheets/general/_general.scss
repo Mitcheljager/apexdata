@@ -30,7 +30,7 @@ body {
   background-image: image_url("layout/bg-body.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-display: auto;
   color: var(--text-color);
   font-weight: 300;
@@ -284,7 +284,7 @@ $badge-colors: (
 
 .tiny-help {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   font-style: italic;
   text-transform: none;
   margin: ($margin / 8) 0;

@@ -62,7 +62,11 @@
   align-items: flex-start;
   justify-content: flex-end;
   text-align: right;
-  font-weight: 700;
+  margin-bottom: -.25em;
+  font-family: "Teko", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 12px;
   color: var(--title-color);
 
   @supports (-ms-ime-align: auto) {
@@ -72,7 +76,6 @@
   [class^="compare-"],
   [class^="modify-"] {
     margin-right: .5em;
-    font-size: 11px;
   }
 }
 

@@ -33,20 +33,17 @@
 
     <%= tag.div class: "item__small-info" do %>
       Explosion timer
-      <span><%= item["explosion_timer"] %></span>
-      <% if item["explosion_timer"].is_a?(Fixnum) %><small>s</small><% end %>
+      <span><%= item["explosion_timer"] %><% if item["explosion_timer"].is_a?(Fixnum) %><small>s</small><% end %></span>
     <% end if item["explosion_timer"] %>
 
     <%= tag.div class: "item__small-info" do %>
       Effect timer
-      <span><%= item["effect_timer"] %></span>
-      <small>s</small>
+      <span><%= item["effect_timer"] %><small>s</small></span>
     <% end if item["effect_timer"] %>
 
     <%= tag.div class: "item__small-info" do %>
       After Burn timer
-      <span><%= item["after_burn_timer"] %></span>
-      <small>s</small>
+      <span><%= item["after_burn_timer"] %><small>s</small></span>
     <% end if item["after_burn_timer"] %>
 
     <%= tag.div class: "item__small-info" do %>
