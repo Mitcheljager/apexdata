@@ -161,7 +161,7 @@
   padding: ($margin / 8) 0;
   text-decoration: none;
   transition-property: font-size, padding;
-  transition-duration: 100ms;
+  transition-duration: 50ms;
   will-change: padding, font-size;
 
   &:hover,

@@ -7,6 +7,10 @@
   transition: top 250ms;
   box-shadow: 0px 3px 7px rgba($black, .15), 0px 10px 50px rgba($black, .35);
 
+  @include media-min(xl) {
+    position: relative;
+  }
+
   &--small {
     @include media-min(xl) {
       top: -$header-top-height;

@@ -36,10 +36,10 @@ h5 {
 .heading {
   display: flex;
   align-items: flex-end;
-  margin: $margin 0;
+  margin: 0 0 $margin;
 
   @include media-min(xxl) {
-    margin: $margin * 2 0;
+    margin: 0 0 $margin * 2;
   }
 
   &::after {
