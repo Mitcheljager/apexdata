@@ -1,4 +1,4 @@
-<% content_for :page_title, "#{  params[:items].underscore.humanize } sorted by #{ params[:sort_by].underscore.humanize }" %>
+<% content_for :page_title, "#{ params[:items].underscore.humanize } sorted by #{ params[:sort_by].underscore.humanize }" %>
 
 <div class="heading">
   <h3 class="heading__title"><%= params[:items].underscore.humanize %> <small>sorted by</small> <%= params[:sort_by].underscore.humanize %></h3>
@@ -14,7 +14,9 @@
     </aside>
 
     <% if @items.any? %>
-      <%= render "pages/item_columns/weapons", block_id: @items, items: @items, is_active: true %>
+      <% cache params[:items].underscore + params[:sort_by].underscore do %>
+        <%= render "pages/item_columns/weapons", block_id: @items, items: @items, is_active: true %>
+      <% end %>
     <% else %>
       Nothing found
     <% end %>
