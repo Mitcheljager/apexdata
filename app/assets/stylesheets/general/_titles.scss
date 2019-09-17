@@ -51,18 +51,9 @@ h5 {
 }
 
 .heading__title {
-  padding-right: $margin / 2;
   margin: 0;
   line-height: .75em;
   white-space: nowrap;
-
-  @include media-min(sm) {
-    padding-right: $margin;
-  }
-
-  .heading--small & {
-    padding-right: $margin / 2;
-  }
 
   a {
     color: var(--title-color);
