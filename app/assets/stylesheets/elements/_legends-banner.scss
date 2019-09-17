@@ -59,6 +59,7 @@
   width: calc(100% - #{ $margin / 4 });
   color: $white;
   font-size: 14px;
+  font-weight: bold;
   line-height: 1em;
   text-align: center;
   background: linear-gradient(to top, rgba($black, .25) 0%, rgba($black, 0) 100%);
