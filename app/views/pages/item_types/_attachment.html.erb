@@ -16,7 +16,7 @@
 
     <% ["basic", "rare", "epic", "legendary"].each do |rarity| %>
       <% if item[rarity] %>
-        <%= tag.div class: "item__full-width-info" do %>
+        <%= tag.div class: "item__full-width-info item__full-width-info--small mb-40" do %>
           <span class="color-<%= rarity %>"><%= rarity.humanize %></span>
 
           <%= item[rarity]["description"].html_safe %>

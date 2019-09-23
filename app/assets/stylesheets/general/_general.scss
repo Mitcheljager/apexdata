@@ -220,6 +220,10 @@ blockquote {
       }
     }
   }
+
+  &--center {
+    justify-content: center;
+  }
 }
 
 $rarities: (
@@ -269,6 +273,10 @@ $badge-colors: (
   @include media-min(max-width) {
     text-align: right;
   }
+}
+
+.text-left {
+  text-align: center;
 }
 
 .center-element {

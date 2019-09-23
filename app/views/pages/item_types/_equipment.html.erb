@@ -10,22 +10,22 @@
       <%= item["name"] %>
     </h3>
 
-    <%= tag.div class: "item__full-width-info" do %>
+    <%= tag.div class: "item__full-width-info item__full-width-info--small" do %>
       <span class="color-basic">Basic</span>
       <%= item["basic"].html_safe %>
     <% end if item["basic"] %>
 
-    <%= tag.div class: "item__full-width-info" do %>
+    <%= tag.div class: "item__full-width-info item__full-width-info--small" do %>
       <span class="color-rare">Rare</span>
       <%= item["rare"].html_safe %>
     <% end if item["rare"] %>
 
-    <%= tag.div class: "item__full-width-info" do %>
+    <%= tag.div class: "item__full-width-info item__full-width-info--small" do %>
       <span class="color-epic">Epic</span>
       <%= item["epic"].html_safe %>
     <% end if item["epic"] %>
 
-    <%= tag.div class: "item__full-width-info" do %>
+    <%= tag.div class: "item__full-width-info item__full-width-info--small" do %>
       <span class="color-legendary">Legendary</span>
       <%= item["legendary"].html_safe %>
     <% end if item["legendary"] %>
