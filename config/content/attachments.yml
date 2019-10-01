@@ -104,24 +104,23 @@
       Mozambique: 51%
       P2020: 162%
 -
-  name: Disruptor Rounds
+  name: Anvil Receiver
   type: hop-up
-  epic:
-    description: Increased damage to shielded targets.
+  legendary:
+    description: Empowers semi-auto mode.
     damage_modifier:
       Alternator: 55%
       Re-45: 45.45%
 -
-  name: Selectfire receiver
+  name: Selectfire Receiver
   type: hop-up
   epic:
     description: Enables fire select for compatible weapons.
 -
-  name: Skullpiercer Rifling
+  name: Double Tap Trigger
   type: hop-up
-  legendary:
-    description: Increased headshot damage for compatible weapons.
-    headshot_damage_modifier: 50%
+  epic:
+    description: Makes each trigger pull fire a quick two round burst.
 -
   name: Turbocharger
   type: hop-up

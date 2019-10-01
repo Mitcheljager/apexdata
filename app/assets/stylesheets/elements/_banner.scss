@@ -178,7 +178,8 @@
   }
 }
 
-.banner--season-2 {
+.banner--season-2,
+.banner--season-3 {
   background-image: image_url("layout/banner_2.jpg");
   flex-direction: column;
   align-items: flex-start;
@@ -224,5 +225,19 @@
     @media screen and (min-width: 1300px) {
       right: 10px;
     }
+  }
+}
+
+.banner--season-3 {
+  background-image: image_url("layout/banner_3.jpg");
+  margin-bottom: $margin * 2;
+  justify-content: center;
+
+  @media screen and (min-width: 1100px) {
+    justify-content: flex-start;
+  }
+
+  h2 {
+    color: $black;
   }
 }

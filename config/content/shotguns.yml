@@ -115,6 +115,8 @@
       - 1x_digital_threat
     stock:
       - shotgun_bolt
+    hop_up:
+      - double_tap_trigger
   fire_modes:
     auto: true
   spray_pattern:

@@ -50,7 +50,7 @@ module ContentHelper
   end
 
   def legends_list
-    ["Bangalore", "Bloodhound", "Caustic", "Gibraltar", "Lifeline", "Mirage", "Pathfinder", "Wraith", "Octane", "Wattson"]
+    ["Bangalore", "Bloodhound", "Caustic", "Gibraltar", "Lifeline", "Mirage", "Pathfinder", "Wraith", "Octane", "Wattson", "Crypto"]
   end
 
   def legend(name)

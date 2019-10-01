@@ -26,6 +26,10 @@
   margin-top: 0 !important;
 }
 
+.mt-120 {
+  margin-top: $margin * 3 !important;
+}
+
 .mt-80 {
   margin-top: $margin * 2 !important;
 }
@@ -39,7 +43,11 @@
 }
 
 .mb-40 {
-  margin-bottom: $margin / 2 !important;
+  margin-bottom: $margin !important;
+}
+
+.mb-80 {
+  margin-bottom: $margin * 2 !important;
 }
 
 .my-40 {

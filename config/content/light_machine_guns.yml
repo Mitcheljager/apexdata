@@ -200,7 +200,7 @@
         y: -4
 -
   name: L-Star
-  damage: 21
+  damage: 19
   headshot_damage: 42
   legshot_damage: 15.75
   rate_of_fire: 720

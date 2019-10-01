@@ -78,6 +78,34 @@
     }
   }
 
+  &--patch-notes-banner-season-3 {
+    background-image: image_url("layout/banner_3.jpg");
+    background-size: cover;
+
+    h2 {
+      margin: $margin / 2 0;
+    }
+
+    h2,
+    h3 {
+      color: $black;
+    }
+  }
+
+  &--patch-notes-banner-left {
+    border: 0;
+
+    @include media-min(md) {
+      justify-content: flex-start;
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
   > img {
     max-width: 100%;
     height: auto;
@@ -189,6 +217,10 @@
   font-size: 18px;
   text-transform: none;
   text-align: center;
+
+  .item--full-width & {
+    text-align: left;
+  }
 
   span {
     display: block;

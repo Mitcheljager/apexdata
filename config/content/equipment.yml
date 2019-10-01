@@ -9,7 +9,7 @@
   basic: Absorbs <strong>50</strong> Damage
   rare: Absorbs <strong>75</strong> Damage
   epic: Absorbs <strong>100</strong> Damage
-  legendary: Absorbs <strong>100</strong> Damage. <br><br> Finishing Moves <strong>Fully restore shields</strong>.
+  legendary: <strong>6</strong> Extra inventory slots. <br><br> Healing and Shielding consumables take <Strong>half the time</strong> to use.
 -
   name: Knockdown Shield
   basic: Blocks <strong>100</strong> Damage
@@ -21,4 +21,4 @@
   basic: <strong>2</strong> Extra Inventory Slots
   rare: <strong>4</strong> Extra Inventory Slots
   epic: <strong>6</strong> Extra Inventory Slots
-  legendary: <strong>6</strong> Extra inventory slots. <br><br> Healing and Shielding consumables take <Strong>half the time</strong> to use.
+  legendary: Revive downed teammates with bonus health and shields (if they have armor).

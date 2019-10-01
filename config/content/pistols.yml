@@ -124,8 +124,6 @@
       - flash_hider
     magazine:
       - extended_heavy_mag
-    hop_up:
-      - skullpiercer_rifling
     optics:
       - 1x_hcog_classic
       - 1x_holo

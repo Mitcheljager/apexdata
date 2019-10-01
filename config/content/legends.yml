@@ -52,7 +52,7 @@
       name: Beast of the Hunt
       description: Enhances your senses, allowing you move faster and highlighting your prey.
       secondary_data:
-        movement: +25<small>%</small>
+        movement: +30<small>%</small>
         charge_time: 180<small>s</small>
         duration: 35<small>s</small>
 -
@@ -93,12 +93,13 @@
     ability_1:
       type: Tactical Ability
       name: Dome of Protection
-      description: Throw down a dome-shield that blocks attacks for 15 seconds.
+      description: Throw down a dome-shield that blocks attacks for 15 seconds. Players inside of the dome heal faster.
       secondary_data:
         radius: 5<small>m</small>
         duration: 18<small>s</small>
-        throw_distance: 15<small>m</small>
-        cooldown: 20<small>s</small>
+        throw_distance: 24<small>m</small>
+        cooldown: 30<small>s</small>
+        healing_speed_increase: 25<small>%</small>
     ability_2:
       type: Passive Ability
       name: Gun Shield
@@ -112,12 +113,12 @@
       description: Call in a concentrated mortar strike on a marked position.
       secondary_data:
         damage: 40
-        duration: 8<small>s</small>
+        duration: 6<small>s</small>
         delay: 2<small>s</small>
         stun: 4<small>s</small>
         radius: 25<small>m</small>
-        throw_range: 50<small>m</small>
-        charge_time: 270<small>s</small>
+        throw_range: 68<small>m</small>
+        charge_time: 180<small>s</small>
 -
   name: Lifeline
   about:
@@ -199,7 +200,7 @@
       secondary_data:
         range: 135<small>m</small>
         max_speed_zipline: +200<small>%</small>
-        charge_time: 90<small>s</small>
+        charge_time: 120<small>s</small>
 -
   name: Wraith
   abilities:
@@ -271,3 +272,18 @@
       description: Place an electrified pylon that destroys incoming ordnance and repairs damaged shields as long as it stands.
       secondary_data:
         max_pylons: 1
+-
+  name: Crypto
+  abilities:
+    ability_1:
+      type: Tactical Ability
+      name: Neurolink
+      description: Crypto and his teammates see what his Surveillance Drone detects up to a 30m distance.
+    ability_2:
+      type: Passive Ability
+      name: Surveillance Drone
+      description: Deploy an aerial camera drone. 40 second cooldown if destroyed.
+    ability_3:
+      type: Ultimate Ability
+      name: Drone EMP
+      description: Charge up an EMP from your drone. The blast deals 50 shield damage, slows players, and destroys traps.

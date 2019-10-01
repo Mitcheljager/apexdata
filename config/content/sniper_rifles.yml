@@ -1,6 +1,6 @@
 -
   name: G7 Scout
-  damage: 30
+  damage: 34
   headshot_damage: 60
   legshot_damage: 27
   rate_of_fire: 273
@@ -29,6 +29,8 @@
       - 4x-10x_digital_sniper_threat
     stock:
       - sniper_stock
+    hop_up:
+      - double_tap_trigger
   attachments_overwrite:
     extended_light_mag:
       basic:
@@ -41,8 +43,8 @@
   name: Longbow
   damage: 55
   headshot_damage: 110
-  legshot_damage: 50
-  rate_of_fire: 108
+  legshot_damage: 44
+  rate_of_fire: 78
   ammo_capacity: 6
   tactical_reload: 2.66
   empty_reload: 3.66
@@ -66,8 +68,6 @@
       - 6x_sniper
       - 4x-8x_variable_sniper
       - 4x-10x_digital_sniper_threat
-    hop_up:
-      - skullpiercer_rifling
     stock:
       - sniper_stock
   fire_modes:
@@ -136,3 +136,10 @@
   holster_time: 0.7
   fire_modes:
     single: true
+-
+  name: Charge Rifle
+  damage: 90
+  rate_of_fire: 30
+  ammo_capacity: 4
+  headshot_damage: 121
+  legshot_damage: 90
