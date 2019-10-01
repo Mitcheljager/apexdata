@@ -18,8 +18,11 @@ function checkScrollSpy(event) {
   const scrollPosition = document.documentElement.scrollTop
 
   const items = document.querySelectorAll("[data-scroll-spy]")
+
   items.forEach(item => {
     const itemPosition = item.offsetTop
+
+    console.log(itemPosition)
 
     if (scrollPosition > itemPosition - 100) {
       activeItem++
