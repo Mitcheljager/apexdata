@@ -277,13 +277,24 @@
   abilities:
     ability_1:
       type: Tactical Ability
-      name: Neurolink
-      description: Crypto and his teammates see what his Surveillance Drone detects up to a 30m distance.
-    ability_2:
-      type: Passive Ability
       name: Surveillance Drone
       description: Deploy an aerial camera drone. 40 second cooldown if destroyed.
+      secondary_data:
+        max_range: 200 <small>m</small>
+        cooldown: 40 <small>s</small>
+        activation_time: 2 <small>s</small>
+    ability_2:
+      type: Passive Ability
+      name: Neurolink
+      description: Crypto and his teammates see what his Surveillance Drone detects up to a 30m distance.
+      secondary_data:
+        max_scan_range: 30 <small>m</small>
     ability_3:
       type: Ultimate Ability
       name: Drone EMP
       description: Charge up an EMP from your drone. The blast deals 50 shield damage, slows players, and destroys traps.
+      secondary_data:
+        range: 20 <small>m</small>
+        damage: 50
+        slow_percentage: 75 <small>%</small>
+        slow_duration: 3 <small>s</small>
