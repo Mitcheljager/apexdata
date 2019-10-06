@@ -109,8 +109,8 @@
   legendary:
     description: Empowers semi-auto mode.
     damage_modifier:
-      Alternator: 55%
-      Re-45: 45.45%
+      Flatline: 125%
+      R-301: 150%
 -
   name: Selectfire Receiver
   type: hop-up
