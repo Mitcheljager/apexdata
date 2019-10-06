@@ -98,8 +98,6 @@
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 1x_digital_threat
-    hop_up:
-      - disruptor_rounds
     stock:
       - standard_stock
   attachments_overwrite:

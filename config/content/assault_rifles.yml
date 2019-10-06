@@ -31,6 +31,9 @@
         ammo_increase: 40%
       epic:
         ammo_increase: 50%
+    anvil_receiver:
+      legendary:
+        damage_modifier: 126.3%
   fire_modes:
     single: true
     auto: true
@@ -165,6 +168,9 @@
         ammo_increase: 40%
       epic:
         ammo_increase: 55%
+    anvil_receiver:
+      legendary:
+        damage_modifier: 150%
   fire_modes:
     single: true
     auto: true

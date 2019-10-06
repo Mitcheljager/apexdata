@@ -35,6 +35,10 @@
       filter: brightness(20%);
     }
   }
+
+  span:first-child {
+    font-weight: bold;
+  }
 }
 
 .attachments-table__dropdown {

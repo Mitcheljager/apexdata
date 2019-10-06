@@ -15,10 +15,22 @@
   z-index: 2;
 
   h4 {
+    position: relative;
+    display: block;
     margin: 0 0 -.25em;
+    text-align: center;
     font-weight: 700;
     font-family: "Teko", sans-serif;
     color: var(--title-color);
+
+    .modify-element {
+      position: absolute;
+      font-size: 18px;
+      line-height: 1em;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) translateX(-100%);
+    }
   }
 
   [class^="compare-"] {

@@ -1,7 +1,7 @@
 <div class="circle-graph" data-role="circle-graph" data-target="<%= target %>">
   <div class="circle-graph__label">
     <%= label %>
-    <h4 data-role="circle-graph-value" data-compare-circle="<%= target %>"></h4>
+    <h4 data-role="circle-graph-value" data-compare-circle="<%= target %>" data-modify-target="<%= modify_target %>" data-target="<%= target %>"></h4>
     <% if defined?(damage_modifier) %>
       <div class="circle-graph__extra-modifier" data-role="damage-modifier"></div>
     <% end %>

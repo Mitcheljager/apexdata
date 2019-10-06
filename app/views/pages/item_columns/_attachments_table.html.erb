@@ -26,10 +26,12 @@
                   <% end %>
                 <% end %>
 
+                <%= attachment["name"].downcase.gsub(" ", "_").gsub("'", "")  %>
+
                 <a class="attachments-table__dropdown-item"
                    data-action="set-modifier"
                    data-modify-rarity="<%= rarity %>"
-                   data-to-modify="<%= attachment[rarity].without("description").to_json %>">
+                   data-to-modify="<%= to_modify = attachment[rarity].without("description").to_json %>">
                   <%= image_tag "attachments/#{ attachment["name"].downcase.gsub(" ", "_").gsub("'", "") }.png", alt: attachment["name"].humanize %>
 
                   <div>

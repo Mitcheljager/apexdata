@@ -23,8 +23,6 @@
       - 2x_hcog_bruiser
       - 1x-2x_variable_holo
       - 1x_digital_threat
-    hop_up:
-      - disruptor_rounds
   attachments_overwrite:
     extended_light_mag:
       basic:
@@ -103,6 +101,9 @@
         ammo_increase: 50%
       epic:
         ammo_increase: 80%
+    hammerpoint_rounds:
+      epic:
+        damage_modifier: 161.5%
   fire_modes:
     single: true
 -

@@ -23,6 +23,10 @@
       - hammerpoint_rounds
     stock:
       - shotgun_bolt
+  attachments_overwrite:
+    hammerpoint_rounds:
+      epic:
+        damage_modifier: 53.32%
   fire_modes:
     auto: true
   spray_pattern:

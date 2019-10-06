@@ -49,8 +49,8 @@
         </div>
 
         <div class="item-columns__radial-graphs">
-          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage"), damage_modifier: true, extra_damage: true %>
-          <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire") %>
+          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage"), modify_target: "damage_modifier", damage_modifier: true, extra_damage: true %>
+          <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire"), modify_target: "rate_of_fire" %>
         </div>
 
         <%= render "pages/item_columns/bar_graph", target: "damage_per_second", label: "Damage per second", max: get_max_value(items, "damage_per_second") %>

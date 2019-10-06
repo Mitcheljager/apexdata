@@ -22,6 +22,9 @@ function setModifier(event) {
 
     targetElements.forEach((targetElement) => {
       const dataTarget = targetElement.dataset.target
+
+      console.log(targetElement)
+
       const targetValue = parseFloat(currentItemData[dataTarget])
       const attachmentValue = parseFloat(targets[target])
 
@@ -29,6 +32,9 @@ function setModifier(event) {
         modifyCSSVariable(targetElement, attachmentValue)
         return
       }
+
+      console.log(targetElement)
+      console.log(targetValue)
 
       const alreadyActiveModifier = targetElement.querySelector(".item__small-info-modify-value")
       if (alreadyActiveModifier) alreadyActiveModifier.remove()
