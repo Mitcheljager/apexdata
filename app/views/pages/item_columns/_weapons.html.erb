@@ -49,7 +49,7 @@
         </div>
 
         <div class="item-columns__radial-graphs">
-          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage"), damage_modifier: true %>
+          <%= render "pages/item_columns/radial_graph", target: "damage", label: "DMG", max: get_max_value(items, "damage"), damage_modifier: true, extra_damage: true %>
           <%= render "pages/item_columns/radial_graph", target: "rate_of_fire", label: "RPM", max: get_max_value(items, "rate_of_fire") %>
         </div>
 
@@ -79,6 +79,7 @@
         <%= render "pages/item_columns/static_value", target: "empty_reload", modify_target: "reload_time", compare_inverse: true, label: "Empty reload", identifier: "s" %>
         <%= render "pages/item_columns/static_value", target: "draw_time", modify_target: "draw_time", compare_inverse: true, label: "Draw time", identifier: "s" %>
         <%= render "pages/item_columns/static_value", target: "holster_time", modify_target: "holster_time", compare_inverse: true, label: "Holster time", identifier: "s" %>
+        <%= render "pages/item_columns/static_value", target: "charge_time", modify_target: "charge_time", compare_inverse: true, label: "Charge time", identifier: "s" %>
 
         <% items.each do |item| %>
           <div class="item-columns__detail-extra-static-content" data-extra-static-content="<%= item["name"].downcase.gsub(" ", "_") %>">

@@ -402,13 +402,15 @@
 
   .circle-graph {
     @media (max-width: 1099px) {
-      width: 16vw;
-      height: 16vw;
+      width: 18vw;
+      height: 18vw;
     }
 
     @media (max-width: 639px) {
-      width: 32vw;
-      height: 32vw;
+      width: 40vw;
+      height: 40vw;
+      max-width: 12rem;
+      max-height: 12rem;
     }
   }
 }

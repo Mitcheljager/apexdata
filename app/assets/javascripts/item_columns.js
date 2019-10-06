@@ -96,6 +96,16 @@ function changeStaticValues(parent, data) {
     const value = data[target]
 
     element.innerHTML = value
+
+    const parent = element.closest(".item-columns__data")
+
+    if (!parent) return
+
+    if (value == undefined) {
+      parent.style.display = "none"
+    } else {
+      parent.style = ""
+    }
   })
 }
 
@@ -129,6 +139,7 @@ function changeCircleGraphs(parent, data) {
     const barElement = graph.querySelector("[data-role='circle-graph-bar']")
     const valueElement = graph.querySelector("[data-role='circle-graph-value']")
     const damageModifierElement = graph.querySelector("[data-role='damage-modifier']")
+    const extraDamageElement = graph.querySelector("[data-role='extra-damage']")
 
     valueElement.innerHTML = data[dataTarget]
 
@@ -136,6 +147,12 @@ function changeCircleGraphs(parent, data) {
       damageModifierElement.innerHTML = "x" + data.damage_modifier
     } else if (damageModifierElement) {
       damageModifierElement.innerHTML = ""
+    }
+
+    if (data.extra_damage && extraDamageElement) {
+      extraDamageElement.innerHTML = data.extra_damage
+    } else if (extraDamageElement) {
+      extraDamageElement.innerHTML = ""
     }
 
     setCircleValue(barElement, data[dataTarget])

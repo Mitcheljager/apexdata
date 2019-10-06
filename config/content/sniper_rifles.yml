@@ -138,8 +138,41 @@
     single: true
 -
   name: Charge Rifle
-  damage: 90
-  rate_of_fire: 30
+  damage: 45
+  extra_damage: Plus 15x3
+  rate_of_fire: 42
+  charge_time: 0.5
   ammo_capacity: 4
-  headshot_damage: 121
-  legshot_damage: 90
+  headshot_damage: 56
+  legshot_damage: 45
+  ammo_type: energy
+  projectile_speed: 800
+  tactical_reload: 3.6
+  empty_reload: 3.6
+  draw_time: 0.6
+  holster_time: 0.6
+  fire_modes:
+    single: true
+  available_attachments:
+    magazine:
+      - extended_energy_mag
+    optics:
+      - 1x_hcog_classic
+      - 1x_holo
+      - 2x_hcog_bruiser
+      - 1x-2x_variable_holo
+      - 2x-4x_variable_aog
+      - 3x_hcog_ranger
+      - 6x_sniper
+      - 4x-8x_variable_sniper
+      - 4x-10x_digital_sniper_threat
+    stock:
+      - sniper_stock
+  attachments_overwrite:
+    extended_energy_mag:
+      basic:
+        ammo_increase: 25%
+      rare:
+        ammo_increase: 50%
+      epic:
+        ammo_increase: 70%

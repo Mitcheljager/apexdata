@@ -5,6 +5,10 @@
     <% if defined?(damage_modifier) %>
       <div class="circle-graph__extra-modifier" data-role="damage-modifier"></div>
     <% end %>
+
+    <% if defined?(extra_damage) %>
+      <div class="circle-graph__extra-modifier" data-role="extra-damage"></div>
+    <% end %>
   </div>
 
   <div class="circle-graph__graph">
