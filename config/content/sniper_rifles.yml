@@ -140,7 +140,7 @@
   name: Charge Rifle
   damage: 45
   extra_damage: Plus 15x3
-  rate_of_fire: 42
+  rate_of_fire: 57
   charge_time: 0.5
   ammo_capacity: 4
   headshot_damage: 56
@@ -154,8 +154,6 @@
   fire_modes:
     single: true
   available_attachments:
-    magazine:
-      - extended_energy_mag
     optics:
       - 1x_hcog_classic
       - 1x_holo
