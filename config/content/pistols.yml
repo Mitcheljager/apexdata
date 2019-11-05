@@ -109,7 +109,7 @@
 -
   name: Wingman
   damage: 45
-  headshot_damage: 90
+  headshot_damage: 94.5
   legshot_damage: 40.5
   rate_of_fire: 156
   ammo_capacity: 4
