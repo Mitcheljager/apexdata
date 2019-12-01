@@ -80,9 +80,9 @@
         y: -4
 -
   name: Hemlok
-  damage: 18
-  headshot_damage: 36
-  legshot_damage: 13.5
+  damage: 22
+  headshot_damage: 44
+  legshot_damage: 17
   rate_of_fire: 490
   ammo_capacity: 18
   tactical_reload: 2.4

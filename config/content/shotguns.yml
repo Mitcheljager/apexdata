@@ -41,9 +41,9 @@
   name: Peacekeeper
   damage: 10
   damage_modifier: 11
-  headshot_damage: 15
+  headshot_damage: 12.5
   legshot_damage: 8
-  rate_of_fire: 58
+  rate_of_fire: 50
   ammo_capacity: 6
   tactical_reload: 2.5
   empty_reload: 3.5
