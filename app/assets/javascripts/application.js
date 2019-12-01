@@ -13,7 +13,6 @@
 //= require rails-ujs
 
 //= require cable
-//= require Chart.min
 //= require compare
 //= require dropdown
 //= require modify
