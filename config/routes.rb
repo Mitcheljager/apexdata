@@ -7,19 +7,13 @@ Rails.application.routes.draw do
 
   root "high_voltage/pages#show", id: "index"
 
-  resources :users, only: [:index, :new, :create, :destroy]
+  resources :users, only: [:new, :create, :destroy]
   get "user/edit", to: "users#edit", as: "edit_user"
   get "user", to: "users#show", as: "account"
-  get "users/:id", to: "users#admin_show", as: "admin_user"
   patch "user", to: "users#update", as: "update_user"
   delete "user", to: "users#destroy", as: "destroy_user"
 
   resources :sessions, only: [:new, :create, :destroy]
-
-  get "tracker", to: "profiles#index", as: "tracker"
-  get "profile/:platform/:user", to: "profiles#show", as: "profile"
-  get "profile/:platform/:user/charts(/:start_date)(/:end_date)(/:limit)", to: "profiles#charts", as: "profile_charts"
-  get "get-api-response/:platform/:user", to: "profiles#get_api_response", as: "get_api_response"
 
   get "register", to: "users#new", as: "register"
   get "login", to: "sessions#new", as: "login"
@@ -39,26 +33,8 @@ Rails.application.routes.draw do
     get ":key/:type/:category", to: "api#category"
   end
 
-  resources :claimed_profiles, only: [:index, :destroy]
-  post "claim-initiate", to: "claimed_profiles#initiate", as: "claim_profile_initiate"
-  post "claim-step-1", to: "claimed_profiles#step_1", as: "claim_profile_step_1"
-  post "claim-step-2", to: "claimed_profiles#step_2", as: "claim_profile_step_2"
-  post "claim-step-3", to: "claimed_profiles#step_3", as: "claim_profile_step_3"
-
-  resources :memberships, only: [:index, :new, :create, :update]
-
-  resources :events, except: [:destroy, :show]
-  resources :event_signups, only: [:index, :create, :update]
-  resources :event_legend_data, only: [:create, :update]
-  get "events/:title", to: "events#show", as: "event_slug"
-  post "update-leaderboard-item", to: "event_signups#update_leaderboard_item", as: "event_update_leaderboard_item"
+  resources :memberships, only: [:new, :create, :update]
 
   resources :notifications, only: [:create, :update]
   get "show_notifications", to: "notifications#show", as: "show_notifications"
-
-  get "server-status", to: "server_status#index"
-
-  resources :rewards, only: [:index, :new, :create]
-  resources :badges, only: [:index, :new, :create, :edit, :update]
-  resources :distributed_badges, only: [:index, :update]
 end

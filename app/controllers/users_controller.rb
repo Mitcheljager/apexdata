@@ -1,10 +1,4 @@
 class UsersController < ApplicationController
-  before_action do
-    unless Flipper.enabled?(:users)
-      redirect_to root_path
-    end
-  end
-
   before_action only: [:show] do
     redirect_to login_path unless current_user
   end
@@ -13,21 +7,9 @@ class UsersController < ApplicationController
     redirect_to account_path if current_user
   end
 
-  before_action only: [:index, :admin_show] do
-    redirect_to account_path unless current_user && current_user.level == 100
-  end
-
-  def index
-    @users = User.all.order(created_at: :asc)
-  end
-
   def show
     @user = current_user
     redirect_to root_path unless @user
-  end
-
-  def admin_show
-    @user = User.find_by_id(params[:id])
   end
 
   def new

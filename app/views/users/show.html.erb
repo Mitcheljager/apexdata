@@ -15,10 +15,4 @@
   </div>
 
   <%= render "memberships" if Flipper.enabled?(:memberships) %>
-
-  <%= render "rewards" if current_user.rewards.any? %>
-
-  <%= render "claimed_profiles" if Flipper.enabled?(:profiles) %>
-
-  <%= render "badges" if Flipper.enabled?(:events) %>
 </div>

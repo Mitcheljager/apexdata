@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  profile_uid: MyString
-  badge_id: 1
-
-two:
-  profile_uid: MyString
-  badge_id: 1

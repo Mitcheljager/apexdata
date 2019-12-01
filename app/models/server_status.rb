@@ -1,2 +1,0 @@
-class ServerStatus < ApplicationRecord
-end

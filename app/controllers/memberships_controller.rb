@@ -7,14 +7,6 @@ class MembershipsController < ApplicationController
     end
   end
 
-  before_action only: [:index] do
-    redirect_to account_path unless current_user && current_user.level == 100
-  end
-
-  def index
-    @memberships = Membership.all.order(created_at: :asc)
-  end
-
   def new
   end
 
