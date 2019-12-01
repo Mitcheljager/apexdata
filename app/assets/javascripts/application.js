@@ -20,14 +20,7 @@
 //= require toggle
 //= require filter
 //= require navigation
-//= require theme_switch
 //= require item_columns
-//= require profile_form
-//= require charts
-//= require ads
 //= require scroll_spy
-//= require popup
-//= require countdown
 //= require notifications
 //= require favicon
-//= require profile

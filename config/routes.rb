@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  if Rails.env.development?
-    mount Flipper::UI.app(Flipper) => "/flipper"
-  end
-
   mount ActionCable.server => "/cable"
 
   root "high_voltage/pages#show", id: "index"
@@ -32,8 +28,6 @@ Rails.application.routes.draw do
     get ":key/:type/sort/:items/:sort_by", to: "api#sort"
     get ":key/:type/:category", to: "api#category"
   end
-
-  resources :memberships, only: [:new, :create, :update]
 
   resources :notifications, only: [:create, :update]
   get "show_notifications", to: "notifications#show", as: "show_notifications"

@@ -1,10 +1,4 @@
 class SessionsController < ApplicationController
-  before_action do
-    unless Flipper.enabled?(:users)
-      redirect_to root_path
-    end
-  end
-
   before_action only: [:new, :create] do
     redirect_to root_path if current_user
   end

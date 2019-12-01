@@ -3,7 +3,7 @@
 
   <div class="columns columns--abilities">
     <% item["abilities"].each do |key, ability| %>
-      <div class="item__full-width-info item__full-width-info--image">
+      <div class="item__full-width-info item__full-width-info--image text-left">
         <% if asset_exists? "legends/#{ item["name"].downcase }/#{ key }.png" %>
           <%= image_tag "legends/#{ item["name"].downcase }/#{ key }.png", alt: ability["name"] %>
         <% end %>

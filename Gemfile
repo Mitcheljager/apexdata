@@ -14,17 +14,10 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "inline_svg"
-gem "httparty"
 gem "net-ping"
-gem "chart-js-rails"
-
-gem "flipper"
-gem "flipper-active_record"
-gem "flipper-ui"
 
 gem "bcrypt", :require => "bcrypt"
 gem "high_voltage", "~> 3.0.0"
-gem "redis"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -42,7 +35,6 @@ group :production do
   gem "autoprefixer-rails"
   gem "heroku-deflater"
   gem "scout_apm"
-  gem "discord-notifier"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

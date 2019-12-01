@@ -24,7 +24,7 @@ function checkScrollSpy(event) {
 
     console.log(itemPosition)
 
-    if (scrollPosition > itemPosition - 100) {
+    if (scrollPosition > itemPosition - 20) {
       activeItem++
     }
   })
@@ -50,7 +50,7 @@ function goToScrollSpyItem(event) {
   const url = this.href.substring(this.href.indexOf("#")+1)
   const itemPosition = document.querySelector(`#${ url }`).offsetTop
 
-  window.scrollTo(0, itemPosition - 99)
+  window.scrollTo(0, itemPosition - 19)
 }
 
 function moveScrollSpyNav() {
@@ -61,10 +61,10 @@ function moveScrollSpyNav() {
   const elementPositionTop = elementParent.offsetTop
   const elementPositionLeft = elementParent.getBoundingClientRect().left
 
-  if (scrollPosition > elementPositionTop - 100) {
+  if (scrollPosition > elementPositionTop - 20) {
     if (element.classList.contains("scroll-spy--is-fixed")) return
     element.classList.add("scroll-spy--is-fixed")
-    element.style.top = "99px"
+    element.style.top = "19px"
     element.style.left = elementPositionLeft - 30 + "px"
   } else {
     element.classList.remove("scroll-spy--is-fixed")

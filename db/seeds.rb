@@ -5,10 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-Flipper.enable(:users)
-Flipper.enable(:profiles)
-Flipper.enable(:memberships)
-Flipper.enable(:events)
-Flipper.enable(:notifications)
-Flipper.enable(:server_status)

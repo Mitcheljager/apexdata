@@ -36,11 +36,6 @@ body {
   font-weight: 300;
   max-width: 100%;
   overflow-x: hidden;
-  padding-top: $header-bottom-height;
-
-  @include media-min(xl) {
-    padding-top: $header-top-height + $header-bottom-height;
-  }
 
   &.theme-light {
     --primary-dark: #DEDEDE;
@@ -276,7 +271,7 @@ $badge-colors: (
 }
 
 .text-left {
-  text-align: center;
+  text-align: left !important;
 }
 
 .center-element {
