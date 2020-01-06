@@ -8,345 +8,164 @@
 
 
 <url>
-  <loc>https://www.apexdata.gg/</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://www.apexdata.gg/</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/login</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/weapons</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/weapons</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/sub-machine-guns</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/sub-machine-guns</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/assault-rifles</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/assault-rifles</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/light-machine-guns</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/light-machine-guns</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/pistols</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/pistols</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/shotguns</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/shotguns</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/sniper-rifles</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/sniper-rifles</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/grenades</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/grenades</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/consumables</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/consumables</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/equipment</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/equipment</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/attachments</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/attachments</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/bangalore</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/bangalore</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/bloodhound</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/bloodhound</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/caustic</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/caustic</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/gibraltar</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/gibraltar</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/lifeline</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/lifeline</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/mirage</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/mirage</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/pathfinder</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/pathfinder</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/wraith</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/wraith</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/octane</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/octane</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/wattson</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/legends/wattson</loc>
-  <lastmod>2019-06-07T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/legends/crypto</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/api</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes/9-3-2019</loc>
-  <lastmod>2019-09-3 T19:05:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/where/ammo-type/heavy</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes/8-13-2019</loc>
-  <lastmod>2019-08-13 T20:05:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/where/ammo-type/light</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes/6-1-2019</loc>
-  <lastmod>2019-06-11 T20:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/where/ammo-type/energy</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes/6-5-2019</loc>
-  <lastmod>2019-06-05 T23:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/where/ammo-type/unique</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes/5-20-2019</loc>
-  <lastmod>2019-5-20 T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/where/ammo-type/shotgun</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes/4-16-2019</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/login</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.apexdata.gg/patch-notes/4-3-2019</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://www.apexdata.gg/users/new</loc>
+<lastmod>2020-01-06T11:57:01+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-<url>
-  <loc>https://www.apexdata.gg/patch-notes/3-19-2019</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/patch-notes/3-6-2019</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/patch-notes/2-19-2019</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/patch-notes/2-13-2019</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/tracker</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/server-status</loc>
-  <lastmod>2019-05-16T13:33:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/api</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/ammo-type/heavy</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/ammo-type/light</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/ammo-type/energy</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/ammo-type/shotgun</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/ammo-type/unique</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/privacy-policy</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/users/new</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/memberships/new</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/kraber</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/mastiff</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/peacekeeper</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/havoc</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/r-301</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/spitfire</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/r-99</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/longbow</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/devotion</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/wingman</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/hemlok</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/flatline</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/prowler</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/eva-8_auto</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/g7_scout</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/triple_take</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/alternator</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/re-45</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/p2020</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/where/name/mozambique</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.apexdata.gg/register</loc>
-  <lastmod>2019-04-29T19:28:35+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
 
 </urlset>
