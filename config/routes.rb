@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  mount ActionCable.server => "/cable"
-
   root "high_voltage/pages#show", id: "index"
 
   resources :users, only: [:new, :create, :destroy]
