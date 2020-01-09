@@ -34,8 +34,13 @@
     <%= render "header" %>
 
     <main class="wrapper top-offset">
+      <div class="alert mb-80">
+        <strong>ApexData.gg will shut down next month</strong>. We appreciate all the visitors we've had over the past year (Over 400.000 of you!) and we hope we've been helpful.
+        <br> If there's any questions or requests <%= link_to "hit us up on Discord", "https://discord.gg/EFW5U4", target: "_blank" %>.
+      </div>
+
       <%= yield %>
-      
+
       <%= render "footer" %>
     </main>
 
